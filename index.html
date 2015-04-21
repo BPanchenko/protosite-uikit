@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+        
+        <title>protosite.uikit</title>
+        <meta name="author" content="Boris Panchenko, bp@bp-studio.ru">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+    	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+        
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:400,300,300italic,800,700,600,600italic,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Mono&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+        
+        <link href='css/normalize.css' rel='stylesheet' type='text/css'>
+        <link href='css/main.css' rel='stylesheet' type='text/css'>
+        
+        <link href='css/ui/colors.css' rel='stylesheet' type='text/css'>
+        <link href='css/ui/base.css' rel='stylesheet' type='text/css'>
+        <link href='css/ui/badge.css' rel='stylesheet' type='text/css'>
+        <link href='css/ui/form.css' rel='stylesheet' type='text/css'>
+        <link href='css/ui/button.css' rel='stylesheet' type='text/css'>
+        <link href='css/ui/utility.css' rel='stylesheet' type='text/css'>
+        <link href='css/ui/panel.css' rel='stylesheet' type='text/css'>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="http://tools.protosite.ru/js/utils/ruler.min.js"></script>
+        
+        <script src="js/common.js"></script>
+        
+        <script>
+			
+			window.addEventListener('load', function(){
+				
+				[].slice.call(document.body.getElementsByClassName('ui-field-hint')).forEach(function (label) {
+					label.dataset.initvalue = label.innerHTML;
+				});
+				
+				document.body.addEventListener('focus', function(e){
+					var fieldset, label,
+						target = e.target;
+				
+					if(target.classList.contains('ui-field')) {
+						fieldset = target.getParentByClassName('ui-fieldset');
+						label = fieldset.getElementsByClassName('ui-field-hint')[0];
+						if(fieldset instanceof HTMLElement) {
+							label.innerHTML = "focus & filled";
+							fieldset.classList.add('ui-fieldset--focus');
+							fieldset.classList.add('ui-fieldset--filled');
+						}
+					}
+					
+					return;
+				}, true);
+				
+				document.body.addEventListener('blur', function(e){
+					var fieldset, label,
+						field = e.target;
+						
+					if(field.classList.contains('ui-field')) {
+						fieldset = field.getParentByClassName('ui-fieldset');
+						label = fieldset.getElementsByClassName('ui-field-hint')[0];
+						if(fieldset instanceof HTMLElement) {
+							fieldset.classList.remove('ui-fieldset--focus');
+							if(!field.value.trim()) {
+								label.innerHTML = label.dataset.initvalue;
+								fieldset.classList.remove('ui-fieldset--filled');
+							} else
+								label.innerHTML = "filled, value: " + field.value.trim();
+						}
+					}
+					
+					return;
+				}, true);
+				
+				[].slice.call(document.body.getElementsByClassName('ui-field')).forEach(function(field){
+					var fieldset;
+					
+					if(field.value.trim()) {
+						fieldset = field.getParentByClassName('ui-fieldset');
+						if(fieldset instanceof HTMLElement)
+							fieldset.classList.add('ui-fieldset--filled');
+					}
+				});
+				
+			}, false);
+		</script>
+    </head>
+    <body>
+    	<div class="ui-container">
+            <header class="header" role="banner"></header>
+			
+            <main class="content" role="main">
+				<section id="colors" class="ui-panel">
+					<h3 class="ui-panel-title">
+						<a href="">Colors</a>
+					</h3>
+					<div class="ui-bg-cyan-A700 ui-display-inline-block ui-margin" style="width: 8rem; height: 8rem;">
+						Cyan A700
+					</div>
+					<div class="ui-bg-pink-A700 ui-display-inline-block ui-margin" style="width: 12rem; height: 6rem;">
+						Pink A700
+					</div>
+					<div class="ui-bg-indigo-700 ui-display-inline-block ui-margin" style="width: 12rem; height: 6rem;">
+						Indigo A700
+					</div>
+					<div class="ui-bg-cyan-A700 ui-display-inline-block ui-margin" style="width: 12rem; height: 6rem;">
+						Cyan A700
+					</div>
+					<div class="ui-bg-cyan-A700 ui-display-inline-block ui-margin" style="width: 12rem; height: 6rem;">
+						Cyan A700
+					</div>
+					<br>
+					<div class="ui-bg-light-blue-800 ui-display-inline-block ui-margin" style="width: 12rem; height: 6rem;">
+						Light Blue 800
+					</div>
+				</section>
+				
+				<section id="badges" class="ui-panel ui-panel--transparent" data-hover-shadow="false">
+					<h3 class="ui-panel-title">
+						<a href="">Badges</a>
+					</h3>
+					<div class="ui-badge">
+						<span class="ui-badge-str">99</span>
+					</div>
+					<div class="ui-badge">
+						<span class="ui-badge-str">99</span>
+					</div>
+					<div class="ui-badge">
+						<span class="ui-badge-str">99</span>
+					</div>
+				</section>
+				
+				<section id="buttons" class="ui-panel" data-hover-shadow="false">
+					<h3 class="ui-panel-title">
+						<a href="">Buttons</a>
+					</h3>
+					<button type="button" class="ui-button ui-button--submit">SUBMIT</button>
+					<button type="button" class="ui-button">RESET</button>
+					<button type="button" class="ui-button ui-button--primary">PRIMARY</button>
+					<button type="button" class="ui-button ui-button--secondary">SECONDARY</button>
+				</section>
+				
+				<article id="form" class="ui-article ui-margin-large-top ui-panel" data-hover-shadow="true">
+					<h3>
+						<a href="#form">Form</a>
+					</h3>
+					
+					<form class="ui-form">
+						<div class="ui-form-row">
+							 <label class="ui-fieldset ui-fieldset--large">
+								<span class="ui-field-hint">Представьтесь</span>
+								<!--span aria-hidden="true" class="iconic" data-glyph="person-genderless"></span-->
+								<input type="text" class="ui-field" value="Boris Panchenko">
+							 </label>
+						</div>
+						<div class="ui-form-row">
+							<label class="ui-fieldset">
+								<span class="ui-field-hint">Укажите ваш E-mail</span>
+								<input type="mail" class="ui-field ui-field--long" value="oberon@list.ru">
+							 </label>
+						</div>
+						<div class="ui-form-row">
+							<label class="ui-fieldset">
+								<span class="ui-field-hint">Номер телефона</span>
+								<input type="tel" class="ui-field" value="">
+							 </label>
+							<label class="ui-fieldset ui-fieldset--error">
+								<span class="ui-field-hint">Номер мобильного телефона</span>
+								<input type="tel" class="ui-field" value="">
+							 </label>
+						</div>
+						<div class="ui-form-row">
+							<label class="ui-fieldset">
+								<span class="ui-field-hint">Пароль</span>
+								<input type="password" class="ui-field ui-field--short" value="1234567890">
+							 </label>
+							<label class="ui-fieldset">
+								<span class="ui-field-hint">Повтор пароля</span>
+								<input type="password" class="ui-field ui-field--short" value="">
+							 </label>
+						</div>
+						<div class="ui-form-row">
+							<label class="ui-chxset" ui-toggle="{ selector: '.js-toggle-target', animate: 'true' }" --data-state="">
+								<input type="checkbox" class="ui-chx" value="true" name="has_gender" checked>
+								<span class="ui-chx-sham iconic" data-glyph></span>
+								<span class="ui-chx-label">Пол?</span>
+							 </label>
+							<label class="ui-radioset js-toggle-target">
+								<input type="radio" name="gender" class="ui-radio" value="male" checked>
+								<span class="ui-radio-sham iconic" data-glyph></span>
+								<span class="ui-radio-label">Мужской</span>
+							 </label>
+							<label class="ui-radioset js-toggle-target">
+								<input type="radio" name="gender" class="ui-radio" value="female">
+								<span class="ui-radio-sham iconic" data-glyph></span>
+								<span class="ui-radio-label">Женский</span>
+							 </label>
+						</div>
+						<div class="ui-form-row">
+							<label class="ui-fieldset">
+								<span class="ui-field-hint">Город:</span>
+								<select class="ui-select">
+									<option>Красногорск</option>
+								</select>
+							 </label>
+						</div>
+						<div class="ui-form-buttons">
+							<button type="submit" class="ui-button ui-button--primary ui-button--success">Готово</button>
+							<button type="reset" class="ui-button">Отмена</button>
+						</div>
+					</form>
+					<br><br><br>
+				</article>
+					
+				<article class="ui-article ui-panel ui-margin-large-top" data-hover-shadow="true">
+					<h1 class="ui-article-title">
+						UiKit
+					</h1>
+					<hr class="ui-article-divider">
+					<h3 id="headers">
+						<a href="#headers">Headers</a>
+					</h3>
+					<p>
+						<h1>Header 1</h1>
+						<h2>Header 2</h2>
+						<h3>Header 3</h3>
+						<h4>Header 4</h4>
+						<h5>Header 5</h5>
+						<h6>Header 6</h6>
+					</p>
+					<hr class="ui-article-divider">
+					<h3 id="headers">
+						<a href="#headers">Article</a>
+					</h3>
+					<p class="ui-article-meta">
+						<small>Векторное поле стабилизирует постулат, таким образом сбылась мечта идиота - утверждение полностью доказано.</small>
+					</p>
+					<p class="ui-article-lead">
+						Линейное программирование не критично. Вектор последовательно синхронизирует полином.
+					</p>
+					<p>
+						<a href="#">Постулат решительно упорядочивает определитель системы линейных уравнений.</a> Точка перегиба переворачивает максимум. Окрестность точки, конечно, нейтрализует натуральный логарифм. Функция выпуклая кверху, в первом приближении, транслирует многочлен.
+						<br><br>
+Математический анализ продуцирует интеграл Фурье, как и предполагалось. Подмножество обуславливает график функции многих переменных. Подмножество непредсказуемо. Ротор векторного поля изящно переворачивает ортогональный определитель.
+					</p>
+					<hr class="ui-article-divider">
+					<p></p>
+				</article>
+            </main>
+        </div>
+    </body>
+</html>

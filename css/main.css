@@ -1,0 +1,211 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    font-size: 62.5%;
+    line-height: 1.4;
+}
+   
+body {
+	background: rgb(245,245,245); /* @clr-gray-100 */
+	
+	font-size: 1.4rem;
+	font-family: "Open Sans", Arial;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    color: rgb(66,66,66); /* @clr-gray-800 */
+}
+
+
+/* HTML5 elements
+ ========================================================================== */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary { display: block; }
+
+/*
+ * Reset margin
+ */
+
+blockquote,
+figure { margin: 0; }
+
+/*
+ * Margins
+ */
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure { margin: 0 0 1rem 0; }
+
+
+/* Block elements
+ ========================================================================== */
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + blockquote,
+* + pre,
+* + address,
+* + fieldset,
+* + figure { margin-top: 1rem; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.footer[role="contentinfo"] {
+	display: block;
+	width: 100%;
+	height: 8rem;
+	line-height: 8rem;
+	
+	background: #546E7A; /* @clr-blue-gray-600 */
+}
+.logo,
+.logo:hover {
+	font-family: 'Open Sans Condensed', Arial;
+	font-size: 2.8rem;
+	color: #CFD8DC; /* @clr-blue-gray-100 */
+	text-decoration: none;
+}
+
+/* Container
+ ========================================================================== */
+ 
+.ui-container {
+	display: block;
+	width: auto;
+	margin: 3.2rem auto;
+}
+.ui-container:before,
+.ui-container:after {
+    content: " ";
+    display: table;
+}
+.ui-container:after { clear: both; }
+
+@media (min-width: 126rem) {
+    .ui-container { width: 130rem; }
+}
+@media (min-width: 118rem) and (max-width: 125.9rem) {
+    .ui-container { width: 110rem; }
+}
+/* album */
+@media (min-width: 102.4rem) and (max-width: 117.9rem) {
+    .ui-container { width: 92rem; }
+}
+/* portrait */
+@media (min-width: 76.8rem) and (max-width: 102.3rem) {
+    .ui-container { width: 72rem; }
+}
+@media (min-width: 30rem) and (max-width: 76.7rem) {
+    .ui-container { width: 30rem; }
+}
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+[hidden] {
+    display: none !important;
+    visibility: hidden;
+}

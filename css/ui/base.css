@@ -1,0 +1,128 @@
+/**
+ * Name: Base
+ * Description: Sets default values for HTML elements
+ ========================================================================== */
+
+
+/* Links
+ ========================================================================== */
+
+a,
+.ui-link {
+	outline: 0;
+	background: transparent;
+	color: rgb(2,119,189); /* @clr-cyan-800 */
+	text-decoration: underline;
+}
+a:hover,
+.ui-link:hover {
+	color: #0277BD; /* @clr-cyan-800 */
+	text-decoration: none;
+}
+
+
+
+/* Text-level semantics
+ ========================================================================== */
+abbr[title] { border-bottom: 1px dotted; }
+
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+    font-size: 1.4rem;
+    font-family:  "PT Mono", monospace;
+    color: rgb(66,66,66);
+    white-space: nowrap;
+}
+
+em { color: rgb(97,97,97); }
+ins,
+mark {
+    background: rgb(224,224,224);
+    color: rgb(97,97,97);
+    text-decoration: none;
+}
+q { font-style: italic; }
+small { font-size: 92.85%; }
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* Headings
+ ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 .8rem 0;
+    font-family: "PT Serif Caption", Arial, sans-serif;
+    font-weight: 400;
+    color: #444;
+    text-transform: none;
+	text-shadow: .2rem .2rem .1rem white;
+}
+
+h3, h4, h5, h6 {
+	/* text-shadow: .1rem .1rem 0 white; раскоментировать для дисктопных версий */
+}
+
+/*
+ * Margins
+ */
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 { margin-top: 1.6rem; }
+
+/*
+ * Sizes
+ */
+
+h1, .uk-h1 {
+    font-size: 2.8rem;
+    line-height: normal;
+}
+
+h2, .uk-h2 {
+    font-size: 2.2rem;
+    line-height: normal;
+}
+
+h3, .uk-h3 {
+    font-size: 1.8rem;
+    line-height: normal;
+}
+
+h4, .uk-h4 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+
+
+h5, .uk-h5 {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+}
+
+h6, .uk-h6 {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+
+/* Lists
+ ========================================================================== */
+
+ul,
+ol { padding-left: .8rem; }
