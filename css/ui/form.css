@@ -61,7 +61,7 @@
 	.ui-field-hint {
 		color: rgb(158,158,158); /* @clr-gray-500 */
 		height: inherit;
-		line-height: 7rem;
+		line-height: 7.2rem;
 	}
 	
 	.ui-field {
@@ -147,6 +147,7 @@
 .ui-fieldset--error .ui-field {
 	border-bottom-color: rgb(198,40,40); /* @clr-red-800 */
 }
+.ui-fieldset--error .ui-field,
 .ui-fieldset--error .ui-field-hint {
 	color: rgb(198,40,40);
 }
@@ -161,6 +162,8 @@
 .ui-fieldset--large:not(.ui-fieldset--filled):not(.ui-fieldset--focus) .ui-field-hint {
 	font-size: 2.2rem;
 	height: 3.4rem;
+}
+.ui-fieldset--large .ui-field {
 	line-height: 3.4rem;
 }
 
@@ -190,41 +193,33 @@
 .ui-chx,
 .ui-radio { display: none; }
 
-.ui-radio-sham,
-.ui-chx-sham {
+.ui-chx-sham,
+.ui-radio-sham {
 	display: inline-block;
 	position: relative;
 	vertical-align: bottom;
+	box-sizing: border-box;
 	
-	width: 1.6rem;
-	height: 1.6rem;
+	width: 2rem;
+	height: 2rem;
 	margin: 0 .8rem;
 	border: .2rem solid rgb(97,97,97);
+	padding: .1rem;
 }
-
 .ui-radio-sham {
-	width: 1.6rem;
-	height: 1.6rem;
-	line-height: 2.2rem;
-	margin: 0 .8rem;
 	border-radius: 50vh;
+	padding: .3rem;
 }
 
-.ui-chx:checked + .ui-chx-sham:before {
-	position: absolute;
-	color: rgb(97,97,97);
-	left: 0rem;
-	top: .1rem;
-	content:'\e152';
+.ui-chx:checked + .ui-chx-sham {
+	background: url('/svg/icons/check-thin.svg') no-repeat;
+	background-size: cover;
+	background-origin: content-box;
 }
-
-.ui-radio:checked + .ui-radio-sham:before {
-	position: absolute;
-	color: rgb(97,97,97);
-	left: 0;
-	top: .86rem;
-	content:'\e1e6';
-	line-height: .1em;
+.ui-radio:checked + .ui-radio-sham {
+	background: url('/svg/icons/circle.svg') no-repeat;
+	background-size: cover;
+	background-origin: content-box;
 }
 
 .ui-chx-label,

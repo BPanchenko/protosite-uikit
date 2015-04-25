@@ -13,21 +13,30 @@
 .ui-bg-pink-500 { background-color: #E91E63; color: white; }
 .ui-bg-pink-A700 { background-color: #c51162; color: white; }
 
+.ui-bg-indigo-50 { background-color: #E8EAF6; color: black; }
 .ui-bg-indigo-500 { background-color: #3F51B5; color: white; }
 .ui-bg-indigo-700 { background-color: #303f9f; color: white; }
+
+.ui-bg-blue-50 { background-color: #E3F2FD; color: black; }
 
 .ui-bg-light-blue-800 { background-color: rgb(2, 119, 189); color: white; }
 .ui-bg-light-blue-A400 { background-color: #00B0FF; color: black; }
 .ui-bg-light-blue-A700 { background-color: #0091EA; color: black; }
 
 .ui-bg-cyan-500 { background-color: #00BCD4; color: black; }
+.ui-bg-cyan-700 { background-color: #0097A7; color: white; }
+.ui-bg-cyan-900 { background-color: #006064; color: white; }
 .ui-bg-cyan-A700 { background-color: #00B8D4; color: black; }
 
 .ui-bg-teal-500 { background-color: #009688; color: white; }
 .ui-bg-teal-A700 { background-color: #00BFA5; color: black; }
 
 .ui-bg-light-green-500 { background-color: #8BC34A; color: black; }
+.ui-bg-light-green-A100 { background-color: #CCFF90; color: black; }
+.ui-bg-light-green-A200 { background-color: #B2FF59; color: black; }
 .ui-bg-light-green-A700 { background-color: #64DD17; color: black; }
+
+.ui-bg-green-600 { background-color: #43A047; color: white; }
 
 .ui-bg-cyan-A700 { background-color: #00b8d4; }
 .ui-bg-cyan-A700 { background-color: #00b8d4; }

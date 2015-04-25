@@ -8,18 +8,6 @@ if (!Element.prototype.getParentByClassName) {
 		return null;
 	}
 }
-if (!Element.prototype.getParentByTagName) {
-    Element.prototype.getParentByTagName = function (tagName) {
-        var _el = this, tag = tagName.toLowerCase();
-        do {
-            _el = _el.parentNode;
-            if (_el.tagName.toLowerCase() == tag) return _el;
-
-        } while (_el.parentNode instanceof Element);
-
-        return null;
-    }
-}
 if (!Element.prototype.getPreviousByClassName) {
     Element.prototype.getPreviousByClassName = function (className) {
         var _el = this;
@@ -102,41 +90,13 @@ if(!Element.prototype.width || !Element.prototype.height) {
 	}
 }
 
-if (!Function.prototype.bind) {
-    Function.prototype.bind = function (oThis) {
-        if (typeof this !== 'function')
-            throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
-
-        var aArgs = Array.prototype.slice.call(arguments, 1),
-            fToBind = this,
-            fNOP = function () { },
-            fBound = function () {
-                return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
-                                        aArgs.concat(Array.prototype.slice.call(arguments)));
-            };
-
-        fNOP.prototype = this.prototype;
-        fBound.prototype = new fNOP();
-
-        return fBound;
-    };
-}
-
 if (!Number.prototype.ci) {
     // (1).ci('cущност|ей|ь|и')
     Number.prototype.ci = function (c, f) {
-        var n = this.toString().substr(-2);
+		f || (f = true);
         c = c.split('|');
-        if (typeof f == 'undefined') f = true;
-        var res = f ? this + ' ' : '';
+        var n = this.toString().substr(-2), res = f ? this + ' ' : '';
         return res + c[0] + ((/^[0,2-9]?[1]$/.test(n)) ? c[2] : ((/^[0,2-9]?[2-4]$/.test(n)) ? c[3] : c[1]));
-    }
-}
-if (!Number.prototype.plural) {
-    // (1).plural('cущност|ей|ь|и')
-    Number.prototype.plural = function (word) {
-        var forms = word.split('|');
-        return this % 10 === 1 && this % 100 !== 11 ? forms[0] : (this % 10 >= 2 && this % 10 <= 4 && (this % 100 < 10 || this % 100 >= 20) ? forms[1] : forms[2]);
     }
 }
 
@@ -235,3 +195,59 @@ if (!Number.prototype.toWord) {
 		return h || "\u043d\u043e\u043b\u044c"
 	}
 }
+
+
+document.addEventListener("DOMContentLoaded", function(){
+	
+	[].slice.call(document.body.getElementsByClassName('ui-field-hint')).forEach(function (label) {
+		label.dataset.initvalue = label.innerHTML;
+	});
+	
+	document.body.addEventListener('focus', function(e){
+		var fieldset, label,
+			target = e.target;
+	
+		if(target.classList.contains('ui-field')) {
+			fieldset = target.getParentByClassName('ui-fieldset');
+			label = fieldset.getElementsByClassName('ui-field-hint')[0];
+			if(fieldset instanceof HTMLElement) {
+				label.innerHTML = "focus & filled";
+				fieldset.classList.add('ui-fieldset--focus');
+				fieldset.classList.add('ui-fieldset--filled');
+			}
+		}
+		
+		return;
+	}, true);
+	
+	document.body.addEventListener('blur', function(e){
+		var fieldset, label,
+			field = e.target;
+			
+		if(field.classList.contains('ui-field')) {
+			fieldset = field.getParentByClassName('ui-fieldset');
+			label = fieldset.getElementsByClassName('ui-field-hint')[0];
+			if(fieldset instanceof HTMLElement) {
+				fieldset.classList.remove('ui-fieldset--focus');
+				if(!field.value.trim()) {
+					label.innerHTML = label.dataset.initvalue;
+					fieldset.classList.remove('ui-fieldset--filled');
+				} else
+					label.innerHTML = "filled, value: " + field.value.trim();
+			}
+		}
+		
+		return;
+	}, true);
+	
+	[].slice.call(document.body.getElementsByClassName('ui-field')).forEach(function(field){
+		var fieldset;
+		
+		if(field.value.trim()) {
+			fieldset = field.getParentByClassName('ui-fieldset');
+			if(fieldset instanceof HTMLElement)
+				fieldset.classList.add('ui-fieldset--filled');
+		}
+	});
+	
+}, false);

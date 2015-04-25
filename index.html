@@ -22,7 +22,6 @@
         <link href='/css/normalize.css' rel='stylesheet' type='text/css'>
         <link href='/css/main.css' rel='stylesheet' type='text/css'>
         
-        <link href='/css/ui/colors.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/text.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/base.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/badge.css' rel='stylesheet' type='text/css'>
@@ -30,68 +29,11 @@
         <link href='/css/ui/button.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/utility.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/panel.css' rel='stylesheet' type='text/css'>
+        <link href='/css/ui/colors.css' rel='stylesheet' type='text/css'>
         
         <script src="/js/common.js"></script>
         <script src="/js/ruler.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        
-        <script>
-			
-			window.addEventListener('load', function(){
-				
-				[].slice.call(document.body.getElementsByClassName('ui-field-hint')).forEach(function (label) {
-					label.dataset.initvalue = label.innerHTML;
-				});
-				
-				document.body.addEventListener('focus', function(e){
-					var fieldset, label,
-						target = e.target;
-				
-					if(target.classList.contains('ui-field')) {
-						fieldset = target.getParentByClassName('ui-fieldset');
-						label = fieldset.getElementsByClassName('ui-field-hint')[0];
-						if(fieldset instanceof HTMLElement) {
-							label.innerHTML = "focus & filled";
-							fieldset.classList.add('ui-fieldset--focus');
-							fieldset.classList.add('ui-fieldset--filled');
-						}
-					}
-					
-					return;
-				}, true);
-				
-				document.body.addEventListener('blur', function(e){
-					var fieldset, label,
-						field = e.target;
-						
-					if(field.classList.contains('ui-field')) {
-						fieldset = field.getParentByClassName('ui-fieldset');
-						label = fieldset.getElementsByClassName('ui-field-hint')[0];
-						if(fieldset instanceof HTMLElement) {
-							fieldset.classList.remove('ui-fieldset--focus');
-							if(!field.value.trim()) {
-								label.innerHTML = label.dataset.initvalue;
-								fieldset.classList.remove('ui-fieldset--filled');
-							} else
-								label.innerHTML = "filled, value: " + field.value.trim();
-						}
-					}
-					
-					return;
-				}, true);
-				
-				[].slice.call(document.body.getElementsByClassName('ui-field')).forEach(function(field){
-					var fieldset;
-					
-					if(field.value.trim()) {
-						fieldset = field.getParentByClassName('ui-fieldset');
-						if(fieldset instanceof HTMLElement)
-							fieldset.classList.add('ui-fieldset--filled');
-					}
-				});
-				
-			}, false);
-		</script>
     </head>
     <body>
     	<div class="ui-container">
@@ -102,14 +44,14 @@
 					<h3 class="ui-panel-title">
 						<a href="">Colors</a>
 					</h3>
+					<a href="javascript:void(0)" class="color_preview ui-margin ui-bg-cyan-700">
+						<small>
+                        	<small>Cyan 700</small>
+                        </small>
+					</a>
 					<a href="javascript:void(0)" class="color_preview ui-margin ui-bg-teal-500">
 						<small>
                         	<small>Teal 500</small>
-                        </small>
-					</a>
-					<a href="javascript:void(0)" class="color_preview ui-margin ui-bg-cyan-500">
-						<small>
-                        	<small>Cyan 500</small>
                         </small>
 					</a>
 					<a href="javascript:void(0)" class="color_preview ui-margin ui-bg-pink-500">
@@ -127,6 +69,7 @@
                         	<small>Light Green 500</small>
                         </small>
 					</a>
+                    <br>
 					<a href="javascript:void(0)" class="color_preview ui-margin ui-bg-light-blue-A400">
 						<small>
                         	<small>Light Blue A400</small>
@@ -159,7 +102,7 @@
                     
                     <div class="ui-panel ui-margin-small">
                         <div class="ui-badge">
-                            <span class="ui-badge-str">99</span>
+                            <span class="ui-badge-str ui-bg-cyan-700">99</span>
                         </div>
                         <div class="ui-badge">
                             <span class="ui-badge-str">99</span>
@@ -203,7 +146,7 @@
 							<label class="ui-fieldset">
 								<span class="ui-field-hint">Предпочтительный способ связи</span>
 								<select name="" class="ui-field">
-                                	<option value=""></option>
+                                	<option value="">Отсутствует</option>
                                 	<option value="tel">Номер телефона</option>
                                 	<option value="email">E-mail</option>
                                 	<option value="search">Поисковик</option>
@@ -232,21 +175,25 @@
 								<input type="password" class="ui-field ui-field--short" value="">
 							 </label>
 						</div>
-						<div class="ui-form-row">
+						<div class="ui-form-row" unselectable="on">
 							<label class="ui-chxset" ui-toggle="{ selector: '.js-toggle-target', animate: 'true' }" --data-state="">
 								<input type="checkbox" class="ui-chx" value="true" name="has_gender" checked>
-								<span class="ui-chx-label">Пол?</span>
+                                <span class="ui-chx-sham"></span>
+								<span class="ui-chx-label">Пол:</span>
 							 </label>
 							<label class="ui-radioset js-toggle-target">
-								<input type="radio" name="gender" class="ui-radio" value="male" checked>
+								<input type="radio" name="gender" class="ui-radio" value="male">
+                                <span class="ui-radio-sham"></span>
 								<span class="ui-radio-label">Мужской</span>
 							 </label>
 							<label class="ui-radioset js-toggle-target">
 								<input type="radio" name="gender" class="ui-radio" value="female">
+                                <span class="ui-radio-sham"></span>
 								<span class="ui-radio-label">Женский</span>
 							 </label>
 							<label class="ui-radioset js-toggle-target">
-								<input type="radio" name="none" class="ui-radio" value="female">
+								<input type="radio" name="gender" class="ui-radio" value="none" checked>
+                                <span class="ui-radio-sham"></span>
 								<span class="ui-radio-label">Не важно</span>
 							 </label>
 						</div>
