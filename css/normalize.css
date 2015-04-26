@@ -67,16 +67,6 @@ audio:not([controls]) {
   height: 0;
 }
 
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
- */
-
-[hidden],
-template {
-  display: none;
-}
-
 /* Links
    ========================================================================== */
 
@@ -84,18 +74,7 @@ template {
  * Remove the gray background color from active links in IE 10.
  */
 
-a {
-  background: transparent;
-}
 
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-
-a:active,
-a:hover {
-  outline: 0;
-}
 
 /* Text-level semantics
    ========================================================================== */
@@ -114,7 +93,11 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: 600;
+}
+b + b,
+strong + strong {
+  font-weight: 600;
 }
 
 /**
@@ -149,7 +132,7 @@ mark {
  */
 
 small {
-  font-size: 80%;
+  font-size: 1.1rem;
 }
 
 /**

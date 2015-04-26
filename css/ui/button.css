@@ -68,7 +68,33 @@
 .ui-button + .ui-button { margin-left: .8rem; }
 
 
+/* Modifier: `ui-button--primary`
+ ====== */
 .ui-button--primary {
-	background: rgb(2,119,189); /* @clr-cyan-800 */
+	background: #0277bd url('/img/bgs/squairy_light--light-blue-800.png') center;
 	color: white;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
+	.ui-button--primary {
+		background: #0277bd url('/img/bgs/squairy_light--light-blue-800--@2X.png') center;
+		background-size: 200px 200px;
+	}
+}
+
+/* Modifier: `ui-button--link`
+ ====== */
+.ui-button--link {
+	background: transparent;
+	color: #0277BD;
+	font-weight: 600;
+	text-decoration: underline;
+	
+	-webkit-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+}
+.ui-button--link:hover {
+	text-decoration: underline;
+	color: #01579B; /* light blue */
 }

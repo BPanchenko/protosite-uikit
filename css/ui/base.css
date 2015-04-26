@@ -11,15 +11,20 @@ a,
 .ui-link {
 	outline: 0;
 	background: transparent;
-	color: rgb(2,119,189); /* @clr-cyan-800 */
+	color: #0277BD; /* @clr-light-blue-800 */
 	text-decoration: underline;
+	
+	-webkit-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
 }
 a:hover,
 .ui-link:hover {
-	color: #0277BD; /* @clr-cyan-800 */
-	text-decoration: none;
+	outline: 0;
+	color: #01579B; /* @clr-light-blue-900 */
+	text-decoration: underline;
 }
-
 
 
 /* Text-level semantics

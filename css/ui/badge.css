@@ -20,6 +20,8 @@
 	
 	cursor: default;
 	background-image: -webkit-radial-gradient(1rem 1rem, farthest-side, #D3D3D3, #FFFFFF);
+	background-image: 	 -moz-radial-gradient(1rem 1rem, farthest-side, #D3D3D3, #FFFFFF);
+	background-image: radial-gradient(1rem 1rem, farthest-side, #D3D3D3, #FFFFFF);
 	/* border: .1rem solid #FAFAFA; */
 	border: .1rem solid #E0E0E0;
 }
