@@ -210,8 +210,8 @@
  ========================================================================== */
 
 .ui-position-absolute,
-[class*='uk-position-top'],
-[class*='uk-position-bottom'] { position: absolute !important; }
+[class*='ui-position-top'],
+[class*='ui-position-bottom'] { position: absolute !important; }
 
 .ui-position-top {
     top: 0;
@@ -337,8 +337,8 @@
  ========================================================================== */
 
 .ui-position-absolute,
-[class*='uk-position-top'],
-[class*='uk-position-bottom'] { position: absolute !important; }
+[class*='ui-position-top'],
+[class*='ui-position-bottom'] { position: absolute !important; }
 
 .ui-position-top {
     top: 0;
@@ -407,20 +407,16 @@
 
 /* Desktop and bigger */
 @media (min-width: @breakpoint-large) {
-
     .ui-visible-small { display: none !important; }
     .ui-visible-medium { display: none !important; }
     .ui-hidden-large { display: none !important; }
-
 }
 
 /* Tablets portrait */
 @media (min-width: @breakpoint-medium) and (max-width: @breakpoint-medium-max) {
-
     .ui-visible-small { display: none !important; }
     .ui-visible-large { display: none !important ; }
     .ui-hidden-medium { display: none !important; }
-
 }
 
 /* Phone landscape and smaller*/

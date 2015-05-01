@@ -33,7 +33,7 @@
 			};
 		ctx.clearRect(0,0,canv.width,canv.height);
 		var x,y,w,h,wc,hc;
-		ctx.font="9px Tahoma";
+		ctx.font="9px PT Mono";
 		for(var cur=0;cur<=len;cur+=scale.st2) {
 			if(or>0){ x=cur; y=0; w=wc=scale.st2; h=scale.h2; hc=h+1; }
 			else { x=0; y=cur; w=scale.h2; wc=w+1; h=hc=scale.st2; }
@@ -64,14 +64,14 @@
 		ctx.lineTo(x1,y1);
 		if(or>0){
 			ctx.stroke();
-			ctx.font="11px Tahoma";
+			ctx.font="11px PT Mono";
 			ctx.textAlign = "center";
 			ctx.fillText(scale.o,scale.o,scale.h2*2+11);
-			ctx.font="11px Tahoma";
+			ctx.font="11px PT Mono";
 			ctx.textAlign = "right";
 			ctx.fillText(len+' ',len,scale.h2*2-5);
 		} else {
-			ctx.font="11px Tahoma";
+			ctx.font="11px PT Mono";
 			ctx.fillText(len,scale.h1+5,len-3);
 		}
 		ctx.beginPath();

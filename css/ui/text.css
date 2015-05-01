@@ -1,6 +1,110 @@
-.font-header {
+// Name:            Text
+// Description:     Collection of useful text utility classes to style your content
+//
+// Component:       `ui-text-*`
+//
+// ========================================================================
+
+ 
+/* Fonts
+ ========================================================================== */
+ 
+.ui-font-header {
 	font-family: "PT Serif Caption", Arial, sans-serif;
 }
-.font-secondary {
+.ui-font-secondary {
 	font-family: 'Open Sans Condensed', Arial;
+}
+
+
+/* Size modifiers
+ ========================================================================== */
+
+.ui-text-small {
+    font-size: @text-small-font-size;
+    line-height: @text-small-line-height;
+}
+
+.ui-text-large {
+    font-size: @text-large-font-size;
+    line-height: @text-large-line-height;
+    font-weight: @text-large-font-weight;
+}
+
+
+/* Weight modifiers
+ ========================================================================== */
+
+.ui-text-bold { font-weight: bold; }
+
+
+/* Color modifiers
+ ========================================================================== */
+
+.ui-text-muted { color: @text-muted-color !important; }
+.ui-text-primary { color: @text-primary-color !important; }
+.ui-text-success { color: @text-success-color !important; }
+.ui-text-warning { color: @text-warning-color !important; }
+.ui-text-danger { color: @text-danger-color !important; }
+.ui-text-contrast { color: @text-contrast-color !important; }
+
+
+/* Alignment modifiers
+ ========================================================================== */
+
+.ui-text-left { text-align: left !important; }
+.ui-text-right { text-align: right !important; }
+.ui-text-center { text-align: center !important; }
+.ui-text-justify { text-align: justify !important; }
+
+.ui-text-top { vertical-align: top !important; }
+.ui-text-middle { vertical-align: middle !important; }
+.ui-text-bottom { vertical-align: bottom !important; }
+
+/* Only tablets portrait and smaller */
+@media (max-width: @breakpoint-medium-max) {
+
+    .ui-text-center-medium { text-align: center !important; }
+    .ui-text-left-medium { text-align: left !important; }
+
+}
+
+/* Phone landscape and smaller */
+@media (max-width: @breakpoint-small-max) {
+
+    .ui-text-center-small { text-align: center !important; }
+    .ui-text-left-small { text-align: left !important; }
+
+}
+
+
+/* Wrap modifiers
+ ========================================================================== */
+
+/*
+ * Prevent text from wrapping onto multiple lines
+ */
+
+.ui-text-nowrap { white-space: nowrap; }
+
+/*
+ * Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ */
+
+.ui-text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*
+ * Break strings if their length exceeds the width of their container
+ */
+
+.ui-text-break {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
