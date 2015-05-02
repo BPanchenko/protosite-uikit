@@ -62,22 +62,48 @@
     line-height: 3.6rem;
     min-height: 3.6rem;
     font-size: 1.4rem;
-    text-decoration: none;
     text-align: center;
 }
+.ui-button,
+.ui-button:hover {
+    text-decoration: none;
+}
+.ui-button:active {
+	box-shadow: inset 0 0 .2rem #e0e0e0;
+}
+
 .ui-button + .ui-button { margin-left: .8rem; }
+
+.ui-button > span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+}
+.ui-button > .iconic {
+	margin-right: .6rem;
+}
 
 
 /* Modifier: `ui-button--primary`
  ====== */
-.ui-button--primary {
+.ui-button--primary,
+.ui-button--primary:hover {
 	background: #0277bd url('/img/bgs/squairy_light--light-blue-800.png') center;
+	background-size: 200px 200px;
 	color: white;
 }
+
+.ui-button--primary:hover,
+.ui-button--primary:focus {
+	box-shadow: 0 0 .16rem .16rem #e0e0e0;
+}
+.ui-button--primary:active {
+	box-shadow: inset 0 0 .2rem #424242;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
 	.ui-button--primary {
-		background: #0277bd url('/img/bgs/squairy_light--light-blue-800--@2X.png') center;
-		background-size: 200px 200px;
+		background-image: url('/img/bgs/squairy_light--light-blue-800--@2X.png');
 	}
 }
 
