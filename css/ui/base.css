@@ -31,11 +31,13 @@ a:hover,
  ========================================================================== */
 abbr[title] { border-bottom: 1px dotted; }
 
-b,
+b {
+  font-weight: 600;
+}
+b > b,
 strong {
   font-weight: 700;
 }
-b > b,
 strong > strong {
   font-weight: 800;
 }
