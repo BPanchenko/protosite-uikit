@@ -31,23 +31,41 @@ a:hover,
  ========================================================================== */
 abbr[title] { border-bottom: 1px dotted; }
 
-:not(pre) > code,
-:not(pre) > kbd,
-:not(pre) > samp {
+b,
+strong {
+  font-weight: 700;
+}
+b > b,
+strong > strong {
+  font-weight: 800;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
     font-size: 1.4rem;
     font-family:  "PT Mono", monospace;
     color: rgb(66,66,66);
     white-space: nowrap;
 }
 
-em { color: rgb(97,97,97); }
 ins,
 mark {
     background: rgb(224,224,224);
     color: rgb(97,97,97);
     text-decoration: none;
 }
+
+i,
+em,
+dfn,
 q { font-style: italic; }
+
 small { font-size: 92.85%; }
 sub,
 sup {
@@ -57,8 +75,8 @@ sup {
     vertical-align: baseline;
 }
 
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
+sup { top: -.5em; }
+sub { bottom: -.25em; }
 
 
 /* Headings
@@ -92,34 +110,40 @@ h3, h4, h5, h6 {
  * Sizes
  */
 
-h1, .uk-h1 {
+h1,
+.uk-h1 {
     font-size: 2.8rem;
     line-height: normal;
 }
 
-h2, .uk-h2 {
+h2,
+.uk-h2 {
     font-size: 2.2rem;
     line-height: normal;
 }
 
-h3, .uk-h3 {
+h3,
+.uk-h3 {
     font-size: 1.8rem;
     line-height: normal;
 }
 
-h4, .uk-h4 {
+h4,
+.uk-h4 {
     font-size: 1.4rem;
     line-height: 1.4rem;
 }
 
 
-h5, .uk-h5 {
+h5,
+.uk-h5 {
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 2.2rem;
     line-height: 2.6rem;
 }
 
-h6, .uk-h6 {
+h6,
+.uk-h6 {
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.3rem;
     line-height: 2rem;

@@ -20,8 +20,11 @@ body {
 	
 	font-size: 1.6rem;
 	font-family: "Open Sans", Arial;
+	font-style: normal;
+	font-weight: 400;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+	
     margin: 0;
     color: rgb(66,66,66); /* @clr-gray-800 */
 }
@@ -29,6 +32,7 @@ body {
 
 /* HTML5 elements
  ========================================================================== */
+
 article,
 aside,
 details,
@@ -36,10 +40,24 @@ figcaption,
 figure,
 footer,
 header,
+hgroup,
 main,
 nav,
 section,
 summary { display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
 
 /*
  * Reset margin
@@ -60,7 +78,7 @@ blockquote,
 pre,
 address,
 fieldset,
-figure { margin: 0 0 1rem 0; }
+figure { margin: 0 0 .8rem 0; }
 
 
 /* Block elements
@@ -73,7 +91,7 @@ figure { margin: 0 0 1rem 0; }
 * + pre,
 * + address,
 * + fieldset,
-* + figure { margin-top: 1rem; }
+* + figure { margin-top: .8rem; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -134,6 +152,32 @@ fieldset {
 textarea {
     resize: vertical;
 }
+
+/* Embedded content
+ ========================================================================== */
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+
+/* Tables
+   ========================================================================== */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
 
 /* ==========================================================================
    Browse Happy prompt
