@@ -1,9 +1,11 @@
-// Name:            Text
-// Description:     Collection of useful text utility classes to style your content
-//
-// Component:       `ui-text-*`
-//
-// ========================================================================
+/**
+ * Name:            Text
+ * Description:     Collection of useful text utility classes to style your content
+ * 
+ * Component:       `ui-text-*`
+ *					`ui-font-*`
+ * 
+ * ======================================================================== */
 
  
 /* Fonts
@@ -11,9 +13,43 @@
  
 .ui-font-header {
 	font-family: "PT Serif Caption", Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
 }
+.ui-font-header em,
+em.ui-font-header {
+	font-style: italic;
+}
+
+.ui-font-primary {
+	font-family: "Open Sans", Arial;
+	font-style: normal;
+	font-weight: 400;
+}
+.ui-font-primary--light {
+	font-weight: 300;
+}
+.ui-font-primary--semibold {
+	font-weight: 600;
+}
+.ui-font-primary--bold {
+	font-weight: 700;
+}
+.ui-font-primary--extrabold {
+	font-weight: 800;
+}
+
 .ui-font-secondary {
 	font-family: 'Open Sans Condensed', Arial;
+	font-weight: 300;
+}
+.ui-font-secondary em,
+em.ui-font-secondary {
+	font-style: italic;
+}
+.ui-font-secondary strong,
+strong.ui-font-secondary {
+	font-weight: 700;
 }
 
 
