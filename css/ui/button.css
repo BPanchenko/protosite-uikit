@@ -29,11 +29,9 @@
  * <!-- ui-button-dropdown -->
  * <div class="ui-button-dropdown" data-ui-dropdown>
  *     <button class="ui-button"></button>
- *     <div class="ui-dropdown ui-dropdown-small">
- *         <ul class="ui-nav ui-nav-dropdown">
- *             <li><a href=""></a></li>
- *         </ul>
- *     </div>
+ *     <ul class="ui-dropdown">
+ *         <li><a href=""></a></li>
+ *     </ul>
  * </div>
  * 
  ========================================================================== */
@@ -68,11 +66,12 @@
 .ui-button:hover {
     text-decoration: none;
 }
-.ui-button:active {
-	box-shadow: inset 0 0 .2rem #e0e0e0;
+.ui-button:active,
+.ui-button--active {
+	box-shadow: inset 0 0 .3rem #BDBDBD;
 }
 
-.ui-button + .ui-button { margin-left: .8rem; }
+.ui-button + .ui-button { margin-left: .4rem; }
 
 .ui-button > span {
 	display: inline-block;
@@ -84,8 +83,9 @@
 }
 
 
-/* Modifier: `ui-button--primary`
- ====== */
+/* Modifier `ui-button--primary`
+ ========================================================================== */
+ 
 .ui-button--primary,
 .ui-button--primary:hover {
 	background: #0277bd url('/img/bgs/squairy_light--light-blue-800.png') center;
@@ -107,11 +107,13 @@
 	}
 }
 
-/* Modifier: `ui-button--link`
- ====== */
+
+/* Modifier `ui-button--link`
+ ========================================================================== */
+ 
 .ui-button--link {
 	background: transparent;
-	color: #0277BD;
+	color: #0277BD; /* light blue 800 */
 	font-weight: 600;
 	text-decoration: underline;
 	
@@ -122,5 +124,28 @@
 }
 .ui-button--link:hover {
 	text-decoration: underline;
-	color: #01579B; /* light blue */
+	color: #01579B; /* light blue 900 */
+}
+
+
+/* Sub-object `ui-button-group`
+ ========================================================================== */
+
+.ui-button-group {
+    position: relative;
+    display: block;
+	background-color: #F5B2D8;
+	
+	width: inherit;
+	height: 4.8rem;
+	line-height: 4.8rem;
+	
+	text-align: right;
+    font-size: .001px;
+    white-space: nowrap;
+	
+	margin-top: 2.4rem;
+	margin-bottom: .8rem;
+	padding-right: .8rem;
+	padding-left: 2.4rem;
 }

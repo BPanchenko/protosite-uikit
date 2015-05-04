@@ -24,7 +24,7 @@
 		display: block;
 		clear: both;
 		width: inherit;
-		font-size: .0001em;
+		font-size: .001px;
 	}
 	.ui-form-row + .ui-form-row { margin-top: .8rem; }
 	
@@ -227,16 +227,3 @@
 	vertical-align: bottom;
 	line-height: 1.6rem;
 }
-
-
-/* Sub-object form: `ui-form-buttons`
- ========================================================================== */
- 
-.ui-form-row + .ui-form-buttons {
-	margin-top: 2.4rem;
-}
-   
-   .no-js .ui-field-hint,
-   .no-js .ui-field-field {
-      position: static;
-   }
