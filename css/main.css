@@ -19,6 +19,7 @@ body {
 	background: rgb(245,245,245); /* @clr-gray-100 */
 	
 	font-size: 1.6rem;
+	line-height: 1.6;
 	font-family: "Open Sans", Arial;
 	font-style: normal;
 	font-weight: 400;

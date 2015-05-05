@@ -18,7 +18,7 @@
  * 
  ========================================================================== */
  
-.ui-form { width: inherit; }
+.ui-form { width: 32rem; }
 	.ui-form-buttons,
 	.ui-form-row {
 		display: block;
@@ -155,6 +155,7 @@
 
 /* Modifiers size and proportions
  ========================================================================== */
+.ui-form--long,
 .ui-fieldset--large .ui-field,
 .ui-field.ui-field--long { width: 65.8rem; }
 

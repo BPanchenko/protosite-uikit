@@ -68,7 +68,9 @@ em,
 dfn,
 q { font-style: italic; }
 
-small { font-size: 92.85%; }
+small { font-size: 1.3rem; }
+small > small { font-size: 1.2rem; }
+
 sub,
 sup {
     font-size: 75%;
