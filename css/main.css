@@ -226,22 +226,27 @@ th {
 }
 .ui-container:after { clear: both; }
 
+/* x-desktop */
 @media (min-width: 1260px) {
     .ui-container { width: 130rem; }
 }
 
+/* desktop */
 @media (min-width: 1180px) and (max-width: 1259px) {
     .ui-container { width: 110rem; }
 }
 
+/* album */
 @media (min-width: 1024px) and (max-width: 1179px) {
     .ui-container { width: 92rem; }
 }
 
+/* portrait */
 @media (min-width: 768px) and (max-width: 1023px) {
     .ui-container { width: 72rem; }
 }
 
+/* tablet */
 @media (max-width: 767px) {
     .ui-container { width: 30rem; }
 }

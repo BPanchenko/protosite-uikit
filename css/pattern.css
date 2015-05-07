@@ -1,0 +1,62 @@
+/**
+ * Defines styles only for patterns uikit
+ ========================================================================== */
+
+.pattern-animation-fade,
+.pattern-animation-movement {
+	display: block;
+	line-height: 5.2rem;
+	text-align: center;
+	background-color: #F3E5F5; /* @clr-purple-50 */
+}
+.pattern-animation-fade,
+.pattern-animation-movement,
+.pattern-animation-fade:hover,
+.pattern-animation-movement:hover {
+	text-decoration: none;
+}
+
+.pattern-animation-fade {
+	opacity: 1;
+	transition: opacity .3s cubic-bezier(0.3, 0, 0.2, 1);
+}
+.pattern-animation-fade:hover {
+	opacity: 0;
+}
+
+.pattern-animation-movement {
+	position: relative;
+}
+.pattern-animation-movement::after {
+	content: ' ';
+	display: block;
+	
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	transition: all .8s cubic-bezier(0.3, 0, 0.2, 1);
+	
+	width: 1.6rem;
+	line-height: inherit;
+	background-color: #4A148C;
+}
+.pattern-animation-movement:hover::after {
+	left: 100%;
+    margin-left: -1.6rem;
+}
+
+
+.pattern.ui-hidden-x-desktop {
+	
+}
+.pattern.ui-hidden-desktop {
+	
+}
+.pattern.ui-hidden-album {
+	
+}
+.pattern.ui-hidden-portrait {
+	
+}
+.pattern.ui-hidden-tablet {
+	
+}
