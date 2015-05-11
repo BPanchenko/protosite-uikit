@@ -1,0 +1,94 @@
+/**
+ * Name:            List
+ * Description:     Defines styles for ordered and unordered lists
+ * 
+ * Component:       `uk-list`
+ * 
+ * Modifiers:       `uk-list--small`
+ *                  `uk-list--space`
+ *                  `uk-list--striped`
+ * 
+ ========================================================================== */
+
+
+/* ========================================================================
+   Component: Unordered list
+ ========================================================================== */
+ul,
+.ui-list {
+	padding: 0;
+	list-style: none;
+}
+
+
+/*
+ * List item
+ */
+
+ul > li,
+.ui-list > li {
+	padding-left: 1.7rem;
+	margin-bottom: .4rem;
+	background: url('/svg/icons/square.svg') no-repeat .4rem 1rem;
+	background-size: 5px 5px;
+}
+.ui-list li:last-child { margin-bottom: 0; }
+
+
+/*
+ * Nested list
+ */
+
+.ui-list ul {
+    margin: 0;
+    padding-left: 1.6rem;
+    list-style: none;
+}
+
+
+/* Modifier: `ui-list--small`
+ ========================================================================== */
+.ui-list--small {
+	font-size: 1.4rem;
+}
+.ui-list--small li {
+	padding-left: 1.2rem;
+	margin-bottom: 0;
+	background-position: left .9rem;
+	background-size: 4px 4px;
+}
+
+/* Modifier: `ui-list--space`
+ ========================================================================== */
+
+.ui-list--space li {
+	background: none;
+	padding-left: 0;
+}
+.ui-list--space > li:nth-child(n+2) { margin-top: 1.6rem; }
+.ui-list--space.ui-list--small > li:nth-child(n+2) { margin-top: .8rem; }
+
+
+/* ========================================================================
+   Component: Ordered list
+ ========================================================================== */
+ 
+ol,
+ol.ui-list {
+	list-style: decimal;
+	padding-left: 2.4rem;
+}
+ol li,
+ol.ui-list li {
+	background: none;
+	padding-left: 0;
+}
+
+
+/*
+ * Nested list
+ */
+
+.ui-list ol {
+	list-style: lower-alpha;
+}
