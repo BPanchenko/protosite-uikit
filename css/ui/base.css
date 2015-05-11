@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 .8rem 0;
     font-family: "PT Serif Caption", Arial, sans-serif;
     font-weight: 400;
-    color: #444;
+    color: rgb(66,66,66); /* @clr-gray-800 */
     text-transform: none;
 	text-shadow: .2rem .2rem .1rem white;
 }

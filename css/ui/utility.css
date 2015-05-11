@@ -142,44 +142,57 @@
 /* Display
  ========================================================================== */
 
-/*
- * Display
- */
-
 .ui-display-block { display: block !important; }
 .ui-display-inline { display: inline !important; }
 .ui-display-inline-block { display: inline-block !important; }
 
-/*
- * Visibility
- * Avoids setting display to `block` so it works also with `inline-block` and `table`
- */
 
-/* Desktop and bigger */
-@media (min-width: @breakpoint-large) {
-
-    .ui-visible-small { display: none !important; }
-    .ui-visible-medium { display: none !important; }
-    .ui-hidden-large { display: none !important; }
-
+/* Visibility
+ ========================================================================== */
+ 
+/* x-desktop */
+@media (min-width: 1260px) {
+    .ui-hidden-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-landscape,
+    .ui-visible-portrait,
+    .ui-visible-tablet { display: none !important; }
 }
 
-/* Tablets portrait */
-@media (min-width: @breakpoint-medium) and (max-width: @breakpoint-medium-max) {
-
-    .ui-visible-small { display: none !important; }
-    .ui-visible-large { display: none !important ; }
-    .ui-hidden-medium { display: none !important; }
-
+/* desktop */
+@media (min-width: 1180px) and (max-width: 1259px) {
+    .ui-hidden-desktop,
+    .ui-visible-x-desktop,
+    .ui-visible-landscape,
+    .ui-visible-portrait,
+    .ui-visible-tablet { display: none !important; }
 }
 
-/* Phone landscape and smaller*/
-@media (max-width: @breakpoint-small-max) {
+/* landscape */
+@media (min-width: 1024px) and (max-width: 1179px) and (orientation: landscape) {
+    .ui-hidden-landscape,
+    .ui-visible-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-portrait,
+    .ui-visible-tablet { display: none !important; }
+}
 
-    .ui-visible-medium { display: none !important; }
-    .ui-visible-large { display: none !important; }
-    .ui-hidden-small { display: none !important; }
+/* portrait */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+    .ui-hidden-portrait,
+    .ui-visible-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-landscape,
+    .ui-visible-tablet { display: none !important; }
+}
 
+/* tablet */
+@media (max-width: 767px) {
+    .ui-hidden-tablet,
+    .ui-visible-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-landscape,
+    .ui-visible-portrait { display: none !important; }
 }
 
 /* Remove from the flow and screen readers on any device */
@@ -198,10 +211,6 @@
     display: inline-block !important;
     visibility: visible !important;
 }
-
-/* Hide on touch */
-.ui-touch .ui-hidden-touch,
-.ui-notouch .ui-hidden-notouch { display: none !important; }
 
 
 

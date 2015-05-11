@@ -19,6 +19,7 @@
         <link href='http://fonts.googleapis.com/css?family=PT+Mono&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
         
+        <link href='/css/normalize.css' rel='stylesheet' type='text/css'>
         <link href='/css/main.css' rel='stylesheet' type='text/css'>
         
         <link href='/css/ui/text.css' rel='stylesheet' type='text/css'>
@@ -29,6 +30,7 @@
         <link href='/css/ui/utility.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/panel.css' rel='stylesheet' type='text/css'>
         <link href='/css/ui/colors.css' rel='stylesheet' type='text/css'>
+        <link href='/css/ui/list.css' rel='stylesheet' type='text/css'>
         
         <link href='/css/pattern.css' rel='stylesheet' type='text/css'>
         
@@ -80,10 +82,10 @@
                 <h3 class="ui-panel-title">
                     <a href="#animations">Animations</a>
                 </h3>
-                <a href="#" class="pattern-animation-fade ui-margin">
+                <a href="javascript:void(0)" class="pattern-animation-fade ui-margin">
                 	Fade: <q>.3s cubic-bezier(0.3, 0, 0.2, 1)</q> (Hover to see effect)
                 </a>
-                <a href="#" class="pattern-animation-movement ui-margin">
+                <a href="javascript:void(0)" class="pattern-animation-movement ui-margin">
                 	Movement: <q>.8s cubic-bezier(0.3, 0, 0.2, 1)</q> (Hover to see effect)
                 </a>
             </section>
@@ -131,9 +133,9 @@
                 </div>
             </section>
             
-            <article id="form" class="ui-article ui-margin ui-panel">
+            <section id="form" class="ui-article ui-margin ui-panel">
                 <h3>
-                    <a href="#form">Form</a>
+                    <a href="#form">Registration form</a>
                 </h3>
                 
                 <form class="ui-form ui-form--long">
@@ -210,9 +212,26 @@
                     </div>
                 </form>
                 <br><br><br>
-            </article>
+            </section>
+            
+            <section id="visibility" class="ui-panel">
+               <h3>
+                  <a href="#visibility">Visibility</a>
+               </h3>
+               <p>
+                  <span class="pattern ui-visible-tablet">This text is visible on tablet</span>
+                  <br>
+                  <span class="pattern ui-visible-portrait">This text is visible on devices with portrait orientation</span>
+                  <br>
+                  <span class="pattern ui-visible-landscape">This text is visible on devices with landscape orientation</span>
+                  <br>
+                  <span class="pattern ui-visible-desktop">This text is visible on medium desktop</span>
+                  <br>
+                  <span class="pattern ui-visible-x-desktop">This text is visible on large desktop</span>
+               </p>
+            </section>
                 
-            <article id="fonts" class="ui-article ui-panel ui-margin-large-top">
+            <section id="fonts" class="ui-article ui-panel ui-margin-large-top">
                 <h3>
                     <a href="#fonts">Fonts</a>
                 </h3>
@@ -263,7 +282,7 @@
 				<p>
 					Если архаический миф не знал противопоставления реальности тексту, образ дает механизм сочленений. Ритмический рисунок, на первый взгляд, неравномерен. Возможно, что сходство Гугона и Микулы объясняется родством бродячих мотивов, однако графомания точно выбирает музыкальный дискурс. Цикл, по определению отталкивает анжамбеман. Поэт инстинктивно чувствовал преимущества реального устного исполнения тех стихов, в которых мифопоэтическое пространство представляет собой символ. Холодный цинизм аннигилирует культурный гекзаметр.
                 </p>
-            </article>
+            </section>
         </main>
     </body>
 </html>

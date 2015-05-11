@@ -27,7 +27,7 @@ body {
     -ms-text-size-adjust: 100%;
 	
     margin: 0;
-    color: rgb(66,66,66); /* @clr-gray-800 */
+    color: #424242; /* @clr-gray-800 */
 }
 
 
@@ -236,7 +236,7 @@ th {
     .ui-container { width: 110rem; }
 }
 
-/* album */
+/* landscape */
 @media (min-width: 1024px) and (max-width: 1179px) {
     .ui-container { width: 92rem; }
 }

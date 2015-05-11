@@ -2,12 +2,21 @@
  * Defines styles only for patterns uikit
  ========================================================================== */
 
+
+/* Animation
+ ========================================================================== */
+
 .pattern-animation-fade,
 .pattern-animation-movement {
 	display: block;
+	background-color: #F5F5F5; /* @clr-grey-100 */
+	cursor: default;
 	line-height: 5.2rem;
 	text-align: center;
-	background-color: #F3E5F5; /* @clr-purple-50 */
+}
+.pattern-animation-fade q,
+.pattern-animation-movement q {
+	cursor: text;
 }
 .pattern-animation-fade,
 .pattern-animation-movement,
@@ -17,11 +26,11 @@
 }
 
 .pattern-animation-fade {
-	opacity: 1;
-	transition: opacity .3s cubic-bezier(0.3, 0, 0.2, 1);
+	transition: all .3s cubic-bezier(0.3, 0, 0.2, 1);
 }
 .pattern-animation-fade:hover {
-	opacity: 0;
+	color: white;
+	background-color: white;
 }
 
 .pattern-animation-movement {
@@ -33,11 +42,12 @@
 	
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
+	margin-left: 0;
 	transition: all .8s cubic-bezier(0.3, 0, 0.2, 1);
 	
 	width: 1.6rem;
 	line-height: inherit;
-	background-color: #4A148C;
+	background-color: #424242; /* @clr-grey-800 */
 }
 .pattern-animation-movement:hover::after {
 	left: 100%;
@@ -45,18 +55,49 @@
 }
 
 
-.pattern.ui-hidden-x-desktop {
-	
+/* Visibility
+ ========================================================================== */
+
+.pattern.ui-visible-x-desktop,
+.pattern.ui-visible-desktop,
+.pattern.ui-visible-landscape,
+.pattern.ui-visible-portrait,
+.pattern.ui-visible-tablet {
+   display: inline-block !important;
+   color: #BDBDBD; /* @clr-gray-400 */
 }
-.pattern.ui-hidden-desktop {
-	
+
+/* x-desktop */
+@media (min-width: 1260px) {
+	.ui-visible-x-desktop {
+		color: #424242 !important; /* @clr-gray-800 */
+    }
 }
-.pattern.ui-hidden-album {
-	
+
+/* desktop */
+@media (min-width: 1180px) and (max-width: 1259px) {
+    .ui-visible-desktop {
+		color: #424242 !important; /* @clr-gray-800 */
+    }
 }
-.pattern.ui-hidden-portrait {
-	
+
+/* landscape */
+@media (min-width: 1024px) and (max-width: 1179px) {
+    .ui-visible-landscape {
+		color: #424242 !important; /* @clr-gray-800 */
+    }
 }
-.pattern.ui-hidden-tablet {
-	
+
+/* portrait */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ui-visible-portrait {
+		color: #424242 !important; /* @clr-gray-800 */
+    }
+}
+
+/* tablet */
+@media (max-width: 767px) {
+    .ui-visible-tablet {
+		color: #424242 !important; /* @clr-gray-800 */
+    }
 }

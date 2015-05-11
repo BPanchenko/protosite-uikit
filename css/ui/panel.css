@@ -10,10 +10,6 @@
 	box-shadow: .12rem .06rem .1rem #e0e0e0;
 }
 
-/*
- * Micro clearfix to make panels more robust
- */
-
 .ui-panel:before,
 .ui-panel:after {
     content: " ";
@@ -21,6 +17,10 @@
 }
 
 .ui-panel:after { clear: both; }
+
+.ui-panel + .ui-panel {
+   margin-top: 1.6rem;
+}
 
 
 /* Modifier: `uk-panel-divider`
@@ -35,11 +35,11 @@
     top: -.1rem;
     left: 0;
     right: 0;
-    border-top: .1rem solid #424242; /* grey-800 */
+    border-top: .1rem solid #424242; /* @clr-grey-800 */
 }
 
 
-/* Modifier: `uk-panel-divider`
+/* Modifier `uk-panel--transparent`
  ========================================================================== */
  
 .ui-panel--transparent {
