@@ -116,26 +116,26 @@ h3, h4, h5, h6 {
 
 h1,
 .uk-h1 {
-    font-size: 2.8rem;
+    font-size: 3.6rem;
     line-height: normal;
 }
 
 h2,
 .uk-h2 {
-    font-size: 2.2rem;
+    font-size: 2,4rem;
     line-height: normal;
 }
 
 h3,
 .uk-h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: normal;
 }
 
 h4,
 .uk-h4 {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
+    font-size: 1.5rem;
+    line-height: normal;
 }
 
 
