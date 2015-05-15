@@ -151,7 +151,7 @@
  ========================================================================== */
  
 /* x-desktop */
-@media (min-width: 1260px) {
+@media (min-width: 1360px) {
     .ui-hidden-x-desktop,
     .ui-visible-desktop,
     .ui-visible-landscape,
@@ -160,7 +160,7 @@
 }
 
 /* desktop */
-@media (min-width: 1180px) and (max-width: 1259px) {
+@media (min-width: 1180px) and (max-width: 1359px) {
     .ui-hidden-desktop,
     .ui-visible-x-desktop,
     .ui-visible-landscape,
@@ -169,7 +169,7 @@
 }
 
 /* landscape */
-@media (min-width: 1024px) and (max-width: 1179px) and (orientation: landscape) {
+@media (min-width: 1024px) and (max-width: 1179px) {
     .ui-hidden-landscape,
     .ui-visible-x-desktop,
     .ui-visible-desktop,
@@ -178,7 +178,7 @@
 }
 
 /* portrait */
-@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .ui-hidden-portrait,
     .ui-visible-x-desktop,
     .ui-visible-desktop,

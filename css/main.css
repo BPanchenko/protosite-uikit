@@ -227,12 +227,12 @@ th {
 .ui-container:after { clear: both; }
 
 /* x-desktop */
-@media (min-width: 1260px) {
+@media (min-width: 1360px) {
     .ui-container { width: 130rem; }
 }
 
 /* desktop */
-@media (min-width: 1180px) and (max-width: 1259px) {
+@media (min-width: 1180px) and (max-width: 1359px) {
     .ui-container { width: 110rem; }
 }
 
