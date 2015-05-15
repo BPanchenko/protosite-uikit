@@ -106,8 +106,16 @@
 .ui-button--primary:focus {
 	box-shadow: 0 .1rem .16rem .16rem #e0e0e0;
 }
+.ui-panel .ui-button--primary:hover,
+.ui-panel .ui-button--primary:focus {
+	box-shadow: 0 .1rem .2rem .1rem #e0e0e0;
+}
+
+
 .ui-button--primary:active,
-.ui-button--primary.ui-button--active {
+.ui-button--primary.ui-button--active,
+.ui-panel .ui-button--primary:active,
+.ui-panel .ui-button--primary.ui-button--active {
 	box-shadow: inset 0 0 .2rem #424242;
 }
 
