@@ -20,12 +20,12 @@ body {
  ========================================================================== */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #B2EBF2; /* @clr-cyan-100 */
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #B2EBF2;
     text-shadow: none;
 }
 
@@ -115,17 +115,20 @@ code,
 kbd,
 pre,
 samp {
-    font-size: 1.4rem;
     font-family:  "PT Mono", monospace;
-    color: rgb(66,66,66);
     white-space: nowrap;
 }
 
 ins,
 mark {
-    background: rgb(224,224,224);
-    color: rgb(97,97,97);
+    background: #E6EE9C; /* @clr-lime-200 */
     text-decoration: none;
+}
+ins {
+    color: #212121; /* @clr-grey-900 */
+}
+mark {
+    color: #424242; /* @clr-grey-800 */
 }
 
 i,
@@ -155,7 +158,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 .8rem 0;
     font-family: "PT Serif Caption", Arial, sans-serif;
     font-weight: 400;
-    color: rgb(66,66,66); /* @clr-gray-800 */
     text-transform: none;
 }
 
