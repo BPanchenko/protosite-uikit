@@ -39,19 +39,6 @@ em.ui-font-header {
 	font-weight: 800;
 }
 
-.ui-font-secondary {
-	font-family: 'Open Sans Condensed', Arial;
-	font-weight: 300;
-}
-.ui-font-secondary em,
-em.ui-font-secondary {
-	font-style: italic;
-}
-.ui-font-secondary strong,
-strong.ui-font-secondary {
-	font-weight: 700;
-}
-
 
 /* Size modifiers
  ========================================================================== */
