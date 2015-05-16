@@ -1,7 +1,47 @@
 /**
- * Name: Base
+ * Name: Base styles
  * Description: Sets default values for HTML elements
  ========================================================================== */
+
+body {
+	background: #F5F5F5; /* @clr-grey-100 */
+	
+	font-family: "Open Sans", Arial;
+	font-size: 1.6rem;
+	line-height: 1.6;
+	font-style: normal;
+	font-weight: 400;
+	
+    color: #424242; /* @clr-grey-800 */
+}
+
+
+/* Selection
+ ========================================================================== */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/* Horizontal rule
+ ========================================================================== */
+
+hr {
+    display: block;
+    box-sizing: content-box;
+	height: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 
 
 /* Links
@@ -10,7 +50,7 @@
 a,
 .ui-link {
 	outline: 0;
-	background: transparent;
+	background-color: transparent;
 	color: #0277BD; /* @clr-light-blue-800 */
 	text-decoration: underline;
 	
@@ -26,24 +66,49 @@ a:hover,
 	text-decoration: underline;
 }
 
+/* Block elements
+ ========================================================================== */
+ 
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure { margin: 0 0 .8rem 0; }
+
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + blockquote,
+* + pre,
+* + address,
+* + fieldset,
+* + figure { margin-top: .8rem; }
+
 
 /* Text-level semantics
  ========================================================================== */
+
+
 abbr[title] { border-bottom: 1px dotted; }
 
 b {
-  font-weight: 600;
+	font-weight: 600;
 }
 b > b,
 strong {
-  font-weight: 700;
+	font-weight: 700;
 }
 strong > strong {
-  font-weight: 800;
+	font-weight: 800;
 }
 
 pre {
-  overflow: auto;
+	overflow: auto;
 }
 
 code,
@@ -92,16 +157,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     color: rgb(66,66,66); /* @clr-gray-800 */
     text-transform: none;
-	text-shadow: .2rem .2rem .1rem white;
 }
-
-h3, h4, h5, h6 {
-	/* text-shadow: .1rem .1rem 0 white; раскоментировать для дисктопных версий */
-}
-
-/*
- * Margins
- */
 
 * + h1,
 * + h2,
@@ -109,10 +165,6 @@ h3, h4, h5, h6 {
 * + h4,
 * + h5,
 * + h6 { margin-top: 1.6rem; }
-
-/*
- * Sizes
- */
 
 h1,
 .uk-h1 {

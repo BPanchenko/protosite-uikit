@@ -147,6 +147,53 @@
 .ui-display-inline-block { display: inline-block !important; }
 
 
+/* Container
+ ========================================================================== */
+ 
+.ui-container {
+	display: block;
+	width: auto;
+	margin: 3.2rem auto;
+}
+.ui-container:before,
+.ui-container:after {
+    content: " ";
+    display: table;
+}
+.ui-container:after { clear: both; }
+
+/* x-desktop */
+@media (min-width: 1360px) {
+    .ui-container {
+		width: 130rem;
+		transform: translateX(-1.5vw);
+	}
+}
+
+/* desktop */
+@media (min-width: 1180px) and (max-width: 1359px) {
+    .ui-container {
+		width: 110rem;
+		transform: translateX(-2vw);
+	}
+}
+
+/* tablet--landscape */
+@media (min-width: 1024px) and (max-width: 1179px) {
+    .ui-container { width: 92rem; }
+}
+
+/* tablet--portrait */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ui-container { width: 72rem; }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .ui-container { width: 30rem; }
+}
+
+
 /* Visibility
  ========================================================================== */
  
@@ -196,6 +243,7 @@
 }
 
 /* Remove from the flow and screen readers on any device */
+[hidden],
 .ui-hidden {
     display: none !important;
     visibility: hidden !important;
