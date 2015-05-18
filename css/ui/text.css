@@ -64,7 +64,7 @@ em.ui-font-header {
 /* Color modifiers
  ========================================================================== */
 
-.ui-text-muted { color: @text-muted-color !important; }
+.ui-text-muted { color: #9E9E9E !important; } /* @clr-grey-500 */
 .ui-text-primary { color: @text-primary-color !important; }
 .ui-text-success { color: @text-success-color !important; }
 .ui-text-warning { color: @text-warning-color !important; }

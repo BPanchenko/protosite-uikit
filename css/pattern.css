@@ -60,44 +60,44 @@
 
 .pattern.ui-visible-x-desktop,
 .pattern.ui-visible-desktop,
-.pattern.ui-visible-landscape,
-.pattern.ui-visible-portrait,
-.pattern.ui-visible-tablet {
+.pattern.ui-visible-tablet-landscape,
+.pattern.ui-visible-tablet-portrait,
+.pattern.ui-visible-mobile {
    display: inline-block !important;
    color: #BDBDBD; /* @clr-gray-400 */
 }
 
 /* x-desktop */
-@media (min-width: 1260px) {
+@media (min-width: 1360px) {
 	.ui-visible-x-desktop {
 		color: #424242 !important; /* @clr-gray-800 */
     }
 }
 
 /* desktop */
-@media (min-width: 1180px) and (max-width: 1259px) {
+@media (min-width: 1180px) and (max-width: 1359px) {
     .ui-visible-desktop {
 		color: #424242 !important; /* @clr-gray-800 */
     }
 }
 
-/* landscape */
+/* tablet--landscape */
 @media (min-width: 1024px) and (max-width: 1179px) {
-    .ui-visible-landscape {
+    .ui-visible-tablet-landscape {
 		color: #424242 !important; /* @clr-gray-800 */
     }
 }
 
-/* portrait */
+/* tablet--portrait */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .ui-visible-portrait {
+    .ui-visible-tablet-portrait {
 		color: #424242 !important; /* @clr-gray-800 */
     }
 }
 
-/* tablet */
+/* mobile */
 @media (max-width: 767px) {
-    .ui-visible-tablet {
+    .ui-visible-mobile {
 		color: #424242 !important; /* @clr-gray-800 */
     }
 }

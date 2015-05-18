@@ -13,8 +13,8 @@
 .svgicon[data-glyph]::before {
 	content: ' ';
 	display: inline-block;
-	width: 16px;
-	height: 16px;
+	width: 1.6rem;
+	height: 1.6rem;
 	font-size: 1em;
 	line-height: 1;
 	text-align: center;
