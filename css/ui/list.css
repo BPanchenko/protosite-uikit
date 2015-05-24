@@ -14,7 +14,6 @@
 /* ========================================================================
    Component: Unordered list
  ========================================================================== */
-ul,
 .ui-list {
 	padding: 0;
 	list-style: none;
@@ -25,7 +24,6 @@ ul,
  * List item
  */
 
-ul > li,
 .ui-list > li {
 	padding-left: 1.7rem;
 	margin-bottom: .4rem;
@@ -73,13 +71,11 @@ ul > li,
    Component: Ordered list
  ========================================================================== */
  
-ol,
-ol.ui-list {
+.ui-list {
 	list-style: decimal;
 	padding-left: 2.4rem;
 }
-ol li,
-ol.ui-list li {
+.ui-list li {
 	background: none;
 	padding-left: 0;
 }

@@ -8,9 +8,20 @@
 	
 	return {
 		_helpers: {
+			extend: function(obj) {
+				[].slice.call(arguments, 1).forEach(function(src) {
+					if(src)
+						for (var prop in src)
+							obj[prop] = src[prop];
+				});
+				return obj;
+			},
 			findElement: function(startElement, selector) {
 				var result, parent;
 				var isClassName = this.isClassName(selector);
+				
+				if(isClassName)
+					selector = selector.replace('.', '');
 				
 				function _getElement(parent, selector) {
 					return isClassName ?

@@ -5,6 +5,7 @@
 
 body {
 	background: #F5F5F5; /* @clr-grey-100 */
+	overflow-x: hidden;
 	
 	font-family: "Open Sans", Arial;
 	font-size: 1.6rem;

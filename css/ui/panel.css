@@ -8,6 +8,10 @@
 	padding: .8rem;
 	background: white;
 	box-shadow: .12rem .06rem .1rem #e0e0e0;
+	
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
 }
 
 .ui-panel:before,
