@@ -165,22 +165,22 @@
 /* x-desktop */
 @media (min-width: 1360px) {
     .ui-container {
-		width: 130rem;
-		transform: translateX(-1.5vw);
+		width: 129.6rem;
+		/* transform: translateX(-1.5vw); */
 	}
 }
 
 /* desktop */
 @media (min-width: 1180px) and (max-width: 1359px) {
     .ui-container {
-		width: 110rem;
-		transform: translateX(-2vw);
+		width: 110.4rem;
+		/* transform: translateX(-2vw); */
 	}
 }
 
 /* tablet--landscape */
 @media (min-width: 1024px) and (max-width: 1179px) {
-    .ui-container { width: 92rem; }
+    .ui-container { width: 92.8rem; }
 }
 
 /* tablet--portrait */
@@ -188,11 +188,16 @@
     .ui-container { width: 72rem; }
 }
 
-/* mobile */
+/* mobile--landscape */
 @media (max-width: 767px) {
-    .ui-container { width: 30rem; }
+    .ui-container { width: 49.6rem; }
 }
 
+/* mobile--portrait
+@media (max-width: 767px) {
+    .ui-container { width: 32rem; }
+}
+ */
 
 /* Visibility
  ========================================================================== */
