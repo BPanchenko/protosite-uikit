@@ -6,6 +6,25 @@
 	}
 }(function () {
 	
+	// Global handlers of DOM events
+	var _ons = {
+		'window': {
+			'resize': function(e) {
+				
+				return;
+			}
+		}
+	};
+	
+	window.addEventListener('resize', _ons.window.resize, false);
+	
+	var _space = {
+		width: 0,
+		height: 0,
+		screen: 'desktop'
+	};
+	
+	
 	return {
 		_helpers: {
 			extend: function(obj) {
@@ -60,6 +79,7 @@
 			isClassName: function(str) {
 				return /^\.[\S]+$/.test(str);
 			}
-		}
+		},
+		space: _space
 	};
 }));

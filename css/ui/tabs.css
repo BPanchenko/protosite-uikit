@@ -43,10 +43,10 @@
 	height: 2px;
 	background-color: #0277BD;
 	
-	-webkit-transition: all .16s cubic-bezier(0.3, 0, 0.2, 1);
-       -moz-transition: all .16s cubic-bezier(0.3, 0, 0.2, 1);
-    	 -o-transition: all .16s cubic-bezier(0.3, 0, 0.2, 1);
-			transition: all .16s cubic-bezier(0.3, 0, 0.2, 1);
+	-webkit-transition: all .7s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: all .7s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: all .7s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: all .7s cubic-bezier(0.3, 0, 0.2, 1);
 }
 
 .ui-tabs-container {
@@ -57,12 +57,12 @@
 	position: absolute;
 	width: inherit;
 	margin: 0;
-	left: 0;
+	translate: transform3d(0,0,0);
 	
-	-webkit-transition: left .16s cubic-bezier(0.3, 0, 0.2, 1);
-       -moz-transition: left .16s cubic-bezier(0.3, 0, 0.2, 1);
-    	 -o-transition: left .16s cubic-bezier(0.3, 0, 0.2, 1);
-			transition: left .16s cubic-bezier(0.3, 0, 0.2, 1);
+	-webkit-transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
 }
 .ui-tabs-container > .ui-panel + .ui-panel {
 	margin-top: 0;

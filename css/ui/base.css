@@ -3,6 +3,10 @@
  * Description: Sets default values for HTML elements
  ========================================================================== */
 
+html {
+   overflow-x: hidden;
+}
+
 body {
 	background: #F5F5F5; /* @clr-grey-100 */
 	overflow-x: hidden;

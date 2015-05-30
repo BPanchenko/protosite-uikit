@@ -58,11 +58,11 @@
 		
 		this.elems.views.forEach((function(_el, _i) {
 			if(_i < this.i)
-				_el.style.left = - window.innerWidth + 'px';
+            	_el.style.translate = 'transform3d(-' + window.innerWidth + 'px,0,0)';
 			else if(_i > this.i)
-				_el.style.left = window.innerWidth + 'px';
+            	_el.style.translate = 'transform3d(' + window.innerWidth + 'px,0,0)';
 			else
-				_el.style.left = null;
+            	_el.style.translate = null;
 			
 			return;
 		}).bind(this));
