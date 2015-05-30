@@ -49,6 +49,15 @@
 .svgicon[data-glyph=liker]::before {
 	background-image: url('/svg/icons/liker.svg');
 }
+.svgicon[data-glyph=limit-down]::before {
+	background-image: url('/svg/icons/limit-down.svg');
+}
+.svgicon[data-glyph=limit-up]::before {
+	background-image: url('/svg/icons/limit-up.svg');
+}
+.svgicon[data-glyph=limits-vertical]::before {
+	background-image: url('/svg/icons/limits-vertical.svg');
+}
 .svgicon[data-glyph=people]::before {
 	background-image: url('/svg/icons/people.svg');
 }
