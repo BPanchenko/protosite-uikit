@@ -57,12 +57,12 @@
 	position: absolute;
 	width: inherit;
 	margin: 0;
-	translate: transform3d(0,0,0);
+	transform: translate3d(0,0,0);
 	
-	-webkit-transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
-       -moz-transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
-    	 -o-transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
-			transition: translate .8s cubic-bezier(0.3, 0, 0.2, 1);
+	-webkit-transition: transform .8s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: transform .8s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: transform .8s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: transform .8s cubic-bezier(0.3, 0, 0.2, 1);
 }
 .ui-tabs-container > .ui-panel + .ui-panel {
 	margin-top: 0;
