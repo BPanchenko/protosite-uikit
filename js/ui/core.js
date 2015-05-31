@@ -8,24 +8,64 @@
 	
 	// Global handlers of DOM events
 	var _ons = {
+		'document': {
+			'DOMContentLoaded': function(e) {
+				_ons.window.resize();
+				return;
+			}
+		},
 		'window': {
 			'resize': function(e) {
-				
+				UiCore.win.set({
+					'width': window.innerWidth,
+					'height': window.innerHeight
+				});
 				return;
 			}
 		}
 	};
 	
+	document.addEventListener('DOMContentLoaded', _ons.document.DOMContentLoaded, false);
 	window.addEventListener('resize', _ons.window.resize, false);
 	
-	var _space = {
-		width: 0,
-		height: 0,
-		screen: 'desktop'
-	};
+	
+	// Window settings
+	var _win = new (Backbone.Model.extend({
+		defaults: {
+			width: 0,
+			height: 0,
+			format: ''
+		},
+		initialize: function() {
+			this.on('change:width', this._fixFormat);
+		},
+		_fixFormat: function() {
+			var _f, _w = this.get('width');
+			
+			
+			if(_w >= 1360)
+				_f = 'x-desktop';
+			
+			else if(_w >= 1180 && _w <= 1359)
+				_f = 'desktop';
+			
+			else if(_w >= 1024 && _w <= 1179)
+				_f = 'tablet--landscape';
+			
+			else if(_w >= 768 && _w <= 1023)
+				_f = 'tablet--portrait';
+				
+			else if(_w <= 767)
+				_f = 'mobile--landscape';
+			
+			
+			return this.set('format', _f);
+		}
+	}));
 	
 	
-	return {
+	// 
+	var UiCore = {
 		_helpers: {
 			extend: function(obj) {
 				[].slice.call(arguments, 1).forEach(function(src) {
@@ -80,6 +120,8 @@
 				return /^\.[\S]+$/.test(str);
 			}
 		},
-		space: _space
+		win: _win
 	};
+	
+	return UiCore;
 }));

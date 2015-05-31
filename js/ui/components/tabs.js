@@ -55,14 +55,12 @@
 	function _positioningViews() {
 		if(!this.elems.views.length)
 			return;
-		
+			
 		this.elems.views.forEach((function(_el, _i) {
 			if(_i < this.i)
-            	_el.style.translate = 'transform3d(-' + window.innerWidth + 'px,0,0)';
+            	_el.style.transform = 'translate3d(-' + UI.win.get('width') + 'px,0,0)';
 			else if(_i > this.i)
-            	_el.style.translate = 'transform3d(' + window.innerWidth + 'px,0,0)';
-			else
-            	_el.style.translate = null;
+            	_el.style.transform = 'translate3d(' + UI.win.get('width') + 'px,0,0)';
 			
 			return;
 		}).bind(this));
@@ -122,7 +120,7 @@
 			_setContainerHeight.call(this);
 			_setViewsWidth.call(this);
 			_positioningViews.call(this);
-			window.addEventListener('resize', (function(){
+			UI.win.on('change:width', (function(){
 				_setContainerHeight.call(this);
 				_setViewsWidth.call(this);
 				_positioningViews.call(this);
