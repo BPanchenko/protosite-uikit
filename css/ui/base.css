@@ -4,12 +4,14 @@
  ========================================================================== */
 
 html {
-   overflow-x: hidden;
+	overflow-x: hidden;
+	height: 100%;
 }
 
 body {
 	background: #F5F5F5; /* @clr-grey-100 */
 	overflow-x: hidden;
+   	height: 100%;
 	
 	font-family: "Open Sans", Arial;
 	font-size: 1.6rem;
