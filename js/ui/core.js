@@ -1,10 +1,10 @@
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
-		define(factory);
+		define(['backbone'], factory);
 	} else {
-		window.UI = factory();
+		window.UI || (window.UI = factory(Backbone));
 	}
-}(function () {
+}(function (Backbone) {
 	
 	// Global handlers of DOM events
 	var _ons = {

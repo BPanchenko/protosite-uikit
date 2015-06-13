@@ -61,6 +61,8 @@
             	_el.style.transform = 'translate3d(-' + UI.win.get('width') + 'px,0,0)';
 			else if(_i > this.i)
             	_el.style.transform = 'translate3d(' + UI.win.get('width') + 'px,0,0)';
+			else
+            	_el.style.transform = null;
 			
 			return;
 		}).bind(this));
