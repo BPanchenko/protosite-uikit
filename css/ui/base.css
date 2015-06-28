@@ -205,14 +205,14 @@ h5,
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 1.6rem;
 	font-weight: 600;
-    line-height: 2.6rem;
+    line-height: normal;
 }
 
 h6,
 .uk-h6 {
     font-family: "Open Sans", Arial, sans-serif;
-    font-size: 1.3rem;
-    line-height: 2rem;
+    font-size: 1.4rem;
+    line-height: normal;
 }
 
 
