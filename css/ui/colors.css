@@ -1,12 +1,5 @@
 /* Google material design colors */
 
-.color_preview {
-	width: 12.1rem; line-height: 2.4rem;
-	display: inline-block;
-	vertical-align: bottom;
-	padding: .8rem .8rem 0;
-}
-
 .ui-color-primary { color: ; }
 .ui-color-primary-light { color: ; }
 .ui-color-primary-dark { color: ; }

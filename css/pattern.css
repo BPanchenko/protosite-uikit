@@ -1,5 +1,5 @@
 /**
- * Defines styles only for patterns uikit
+ * Defines styles only for patterns protosite.uikit
  ========================================================================== */
 
 
@@ -52,6 +52,17 @@
 .pattern-animation-movement:hover::after {
 	left: 100%;
     margin-left: -1.6rem;
+}
+
+
+/* Preview colors
+ ========================================================================== */
+
+.pattern[class*="ui-bg-"] {
+    width: 12.1rem; line-height: 2.4rem;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: .8rem .8rem 0;
 }
 
 
