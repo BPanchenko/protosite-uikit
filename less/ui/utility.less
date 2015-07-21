@@ -1,0 +1,332 @@
+@import "color.less";
+@import "variables.less";
+
+// Variables
+// ========================================================================
+
+@utility-border-rounded: .3rem;
+
+@utility-container-width:                   auto;
+@utility-container-width-xdesktop:          129.6rem;
+@utility-container-width-desktop:           110.4rem;
+@utility-container-width-tablet-landscape:  92.8rem;
+@utility-container-width-tablet-portrait:   72rem;
+@utility-container-width-mobile-landscape:  49.6rem;
+
+@utility-link-muted-color:        @clr-blue-grey-500;
+@utility-link-muted-hover-color:  @clr-blue-grey-400;
+
+@utility-margin:        1.6rem;
+@utility-margin-small:  0.8rem;
+@utility-margin-large:  5.6rem;
+
+
+
+/* Clearing
+ ========================================================================== */
+
+.ui-clearfix:before,
+.ui-clearfix:after {
+    content: " ";
+    display: table;
+}
+.ui-clearfix:after { clear: both; }
+
+.ui-float-left { float: left; }
+.ui-float-right { float: right; }
+
+[class*='ui-align-'] {
+    display: block;
+    margin-bottom: .8rem;
+}
+
+.ui-align-left {
+    margin-right: .8rem;
+    float: left;
+}
+
+.ui-align-right {
+    margin-left: .8rem;
+    float: right;
+}
+
+.ui-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Vertical alignment
+ ========================================================================== */
+
+.ui-vertical-align { font-size: 0.001px; }
+.ui-vertical-align:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.ui-vertical-align-middle,
+.ui-vertical-align-bottom,
+.ui-vertical-align-top {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1.4rem;
+}
+
+.ui-vertical-align-top { vertical-align: top; }
+.ui-vertical-align-middle { vertical-align: middle; }
+.ui-vertical-align-bottom { vertical-align: bottom; }
+
+
+/* Margin
+ ========================================================================== */
+
+.ui-margin { margin-bottom: @utility-margin; }
+* + .ui-margin { margin-top: @utility-margin; }
+
+.ui-margin-top { margin-top: @utility-margin !important; }
+.ui-margin-bottom { margin-bottom: @utility-margin !important; }
+.ui-margin-left { margin-left: @utility-margin !important; }
+.ui-margin-right { margin-right: @utility-margin !important; }
+
+
+.ui-margin-large { margin-bottom: @utility-margin-large; }
+* + .ui-margin-large { margin-top: @utility-margin-large; }
+
+.ui-margin-large-top { margin-top: @utility-margin-large !important; }
+.ui-margin-large-bottom { margin-bottom: @utility-margin-large !important; }
+.ui-margin-large-left { margin-left: @utility-margin-large !important; }
+.ui-margin-large-right { margin-right: @utility-margin-large !important; }
+
+
+.ui-margin-small { margin-bottom: @utility-margin-small; }
+* + .ui-margin-small { margin-top: @utility-margin-small; }
+
+.ui-margin-small-top { margin-top: @utility-margin-small !important; }
+.ui-margin-small-bottom { margin-bottom: @utility-margin-small !important; }
+.ui-margin-small-left { margin-left: @utility-margin-small !important; }
+.ui-margin-small-right { margin-right: @utility-margin-small !important; }
+
+
+.ui-margin-remove { margin: 0 !important; }
+.ui-margin-top-remove { margin-top: 0 !important; }
+.ui-margin-bottom-remove { margin-bottom: 0 !important; }
+
+
+/* Border
+ ========================================================================== */
+
+.ui-border-circle { border-radius: 50vw; }
+.ui-border-rounded { border-radius: @utility-border-rounded; }
+
+
+/* Link
+ ========================================================================== */
+
+/*
+ * Let links appear in default text color
+ */
+
+.ui-link-muted,
+.ui-link-muted a { color: @utility-link-muted-color; }
+
+.ui-link-muted:hover,
+.ui-link-muted a:hover { color: @utility-link-muted-hover-color; }
+
+/*
+ * Reset link style
+ */
+
+.ui-link-reset,
+.ui-link-reset a,
+.ui-link-reset:hover,
+.ui-link-reset a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Display
+ ========================================================================== */
+
+.ui-display-block { display: block !important; }
+.ui-display-inline { display: inline !important; }
+.ui-display-inline-block { display: inline-block !important; }
+
+
+/* Container
+ ========================================================================== */
+
+.ui-container {
+	display: block;
+	width: @utility-container-width;
+	margin: 3.2rem auto;
+}
+.ui-container:before,
+.ui-container:after {
+    content: " ";
+    display: table;
+}
+.ui-container:after { clear: both; }
+
+/* x-desktop */
+@media (min-width: @screen-xdesktop) {
+    .ui-container {
+		width: @utility-container-width-xdesktop;
+		/* transform: translateX(-1.5vw); */
+	}
+}
+
+/* desktop */
+@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .ui-container {
+		width: @utility-container-width-desktop;
+		/* transform: translateX(-2vw); */
+	}
+}
+
+/* tablet--landscape */
+@media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
+    .ui-container { width: @utility-container-width-tablet-landscape; }
+}
+
+/* tablet--portrait */
+@media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
+    .ui-container { width: @utility-container-width-tablet-portrait; }
+}
+
+/* mobile--landscape */
+@media (max-width: @screen-mobile-landscape-max) {
+    .ui-container { width: @utility-container-width-mobile-landscape; }
+}
+
+/* mobile--portrait
+@media (max-width: 767px) {
+    .ui-container { width: 32rem; }
+}
+ */
+
+/* Visibility
+ ========================================================================== */
+
+/* x-desktop */
+@media (min-width: @screen-xdesktop) {
+    .ui-hidden-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-tablet-landscape,
+    .ui-visible-tablet-portrait,
+    .ui-visible-mobile { display: none !important; }
+}
+
+/* desktop */
+@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+    .ui-hidden-desktop,
+    .ui-visible-x-desktop,
+    .ui-visible-tablet-landscape,
+    .ui-visible-tablet-portrait,
+    .ui-visible-mobile { display: none !important; }
+}
+
+/* tablet--landscape */
+@media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
+    .ui-hidden-tablet-landscape,
+    .ui-visible-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-tablet-portrait,
+    .ui-visible-mobile { display: none !important; }
+}
+
+/* tablet--portrait */
+@media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-landscape-max) {
+    .ui-hidden-tablet-portrait,
+    .ui-visible-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-tablet-landscape,
+    .ui-visible-mobile { display: none !important; }
+}
+
+/* mobile */
+@media (max-width: @screen-tablet-portrait-max) {
+    .ui-hidden-mobile,
+    .ui-visible-x-desktop,
+    .ui-visible-desktop,
+    .ui-visible-tablet-landscape,
+    .ui-visible-tablet-portrait { display: none !important; }
+}
+
+/* Remove from the flow and screen readers on any device */
+[hidden],
+.ui-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Show on hover */
+.ui-visible-hover:hover .ui-hidden {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.ui-visible-hover-inline:hover .ui-hidden {
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+
+
+/* Position
+ ========================================================================== */
+
+.ui-position-absolute,
+[class*='ui-position-top'],
+[class*='ui-position-bottom'] { position: absolute !important; }
+
+.ui-position-top {
+    top: 0;
+    width: 100%;
+}
+
+.ui-position-bottom {
+    bottom: 0;
+    width: 100%;
+}
+
+.ui-position-top-left {
+    top: 0;
+    left: 0;
+}
+
+.ui-position-top-right {
+    top: 0;
+    right: 0;
+}
+
+.ui-position-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.ui-position-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+/*
+ * Cover
+ */
+
+.ui-position-cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/*
+ * Relative
+ */
+
+.ui-position-relative { position: relative !important; }

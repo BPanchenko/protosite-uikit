@@ -9,47 +9,43 @@
  *					`ui-thumbnail--large`
  * 
  ========================================================================== */
-
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
 /*figure*/
 .ui-thumbnail {
-    display: inline-block;
-	overflow: hidden;
-	
-	width: 6.4rem;
-	height: 6.4rem;
-	max-width: 6.4rem;
-	max-height: 6.4rem;
-	
-	font-size: .001px;
-    vertical-align: middle;
-	
-	/* reset default styles figure */
-	margin: 0;
+  display: inline-block;
+  overflow: hidden;
+  width: 6.4rem;
+  height: 6.4rem;
+  max-width: 6.4rem;
+  max-height: 6.4rem;
+  font-size: .001px;
+  vertical-align: middle;
+  /* reset default styles figure */
+  margin: 0;
 }
-	.ui-thumbnail img {
-		max-width: inherit;
-		max-height: inherit;
-	}
-
-
+.ui-thumbnail img {
+  max-width: inherit;
+  max-height: inherit;
+}
 /* Sizes modifiers
  ========================================================================== */
-
 .ui-thumbnail--mini {
-	width: 4rem;
-	height: 4rem;
-	max-width: 4rem;
-	max-height: 4rem;
+  width: 4rem;
+  height: 4rem;
+  max-width: 4rem;
+  max-height: 4rem;
 }
 .ui-thumbnail--small {
-	width: 8rem;
-	height: 8rem;
-	max-width: 8rem;
-	max-height: 8rem;
+  width: 8rem;
+  height: 8rem;
+  max-width: 8rem;
+  max-height: 8rem;
 }
 .ui-thumbnail--large {
-	width: 13.6rem;
-	height: 13.6rem;
-	max-width: 13.6rem;
-	max-height: 13.6rem;
+  width: 13.6rem;
+  height: 13.6rem;
+  max-width: 13.6rem;
+  max-height: 13.6rem;
 }

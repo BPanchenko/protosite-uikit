@@ -1,0 +1,69 @@
+/**
+ * Name:            Avatar
+ * Description:     Defines styles for the user picture
+ * 
+ * Component:       `ui-thumbnail`
+ * 
+ * Modifiers:       `ui-thumbnail--mini`
+ *					`ui-thumbnail--small`
+ *					`ui-thumbnail--large`
+ * 
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@ui-thumbnail-side: 6.4rem;
+@ui-thumbnail-mini-side: 4rem;
+@ui-thumbnail-small-side: 8rem;
+@ui-thumbnail-large-side: 13.6rem;
+
+
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
+
+/*figure*/
+.ui-thumbnail {
+    display: inline-block;
+	overflow: hidden;
+	
+	width: @ui-thumbnail-side;
+	height: @ui-thumbnail-side;
+	max-width: @ui-thumbnail-side;
+	max-height: @ui-thumbnail-side;
+	
+	font-size: .001px;
+    vertical-align: middle;
+	
+	/* reset default styles figure */
+	margin: 0;
+}
+	.ui-thumbnail img {
+		max-width: inherit;
+		max-height: inherit;
+	}
+
+
+/* Sizes modifiers
+ ========================================================================== */
+
+.ui-thumbnail--mini {
+	width: @ui-thumbnail-mini-side;
+	height: @ui-thumbnail-mini-side;
+	max-width: @ui-thumbnail-mini-side;
+	max-height: @ui-thumbnail-mini-side;
+}
+.ui-thumbnail--small {
+	width: @ui-thumbnail-small-side;
+	height: @ui-thumbnail-small-side;
+	max-width: @ui-thumbnail-small-side;
+	max-height: @ui-thumbnail-small-side;
+}
+.ui-thumbnail--large {
+	width: @ui-thumbnail-large-side;
+	height: @ui-thumbnail-large-side;
+	max-width: @ui-thumbnail-large-side;
+	max-height: @ui-thumbnail-large-side;
+}

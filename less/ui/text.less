@@ -1,0 +1,150 @@
+@import "color.less";
+@import "base.less";
+@import "variables.less";
+
+/**
+ * Name:            Text
+ * Description:     Collection of useful text utility classes to style your content
+ * 
+ * Component:       `ui-font-*`
+ *					`ui-text-*`
+ * 
+ * ======================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@text-small-font-size:                          @base-small-font-size;
+@text-small-line-height:                        @base-small-line-height;
+@text-large-font-size:                          @base-h4-font-size;
+@text-large-line-height:                        @base-h4-line-height;
+@text-large-font-weight:                        normal;
+
+@text-muted-color:                              #999;
+@text-primary-color:                            #2d7091;
+@text-success-color:                            @clr-green-A700;
+@text-warning-color:                            #e28327;
+@text-danger-color:                             #d85030;
+@text-contrast-color:                           #fff;
+
+
+// Fonts
+// ========================================================================
+ 
+.ui-font-header {
+	font-family: "PT Serif Caption", Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.ui-font-primary {
+	font-family: "Open Sans", Arial;
+	font-style: normal;
+	font-weight: 400;
+}
+
+
+// Text
+// ========================================================================
+
+
+/* Size modifiers
+ ========================================================================== */
+
+.ui-text-small {
+    font-size: @text-small-font-size;
+    line-height: @text-small-line-height;
+}
+
+.ui-text-large {
+    font-size: @text-large-font-size;
+    line-height: @text-large-line-height;
+    font-weight: @text-large-font-weight;
+}
+
+
+/* Weight modifiers
+ ========================================================================== */
+
+.ui-text-light { font-weight: 300; }
+.ui-text-semibold { font-weight: 600; }
+.ui-text-bold { font-weight: 700; }
+.ui-text-extrabold { font-weight: 800; }
+
+
+/* Color modifiers
+ ========================================================================== */
+
+.ui-text-muted { color: #9E9E9E !important; } /* @clr-grey-500 */
+.ui-text-primary { color: @text-primary-color !important; }
+.ui-text-success { color: @text-success-color !important; }
+.ui-text-warning { color: @text-warning-color !important; }
+.ui-text-danger { color: @text-danger-color !important; }
+.ui-text-contrast { color: @text-contrast-color !important; }
+
+
+/* Alignment modifiers
+ ========================================================================== */
+
+.ui-text-left { text-align: left !important; }
+.ui-text-right { text-align: right !important; }
+.ui-text-center { text-align: center !important; }
+.ui-text-justify { text-align: justify !important; }
+
+.ui-text-top { vertical-align: top !important; }
+.ui-text-middle { vertical-align: middle !important; }
+.ui-text-bottom { vertical-align: bottom !important; }
+
+/* x-desktop */
+@media (min-width: @screen-xdesktop) {
+	.ui-text-center-xdesktop { text-align: center !important; }
+	.ui-text-left-xdesktop { text-align: left !important; }
+	.ui-text-right-xdesktop { text-align: right !important; }
+}
+
+/* desktop */
+@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+	.ui-text-center-desktop { text-align: center !important; }
+	.ui-text-left-desktop { text-align: left !important; }
+	.ui-text-right-desktop { text-align: right !important; }
+}
+
+/* tablet--landscape */
+@media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
+	.ui-text-center-tablet { text-align: center !important; }
+	.ui-text-left-tablet { text-align: left !important; }
+	.ui-text-right-tablet { text-align: right !important; }
+}
+
+/* tablet--portrait */
+@media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
+	.ui-text-center-tablet--portrait { text-align: center !important; }
+	.ui-text-left-tablet--portrait { text-align: left !important; }
+	.ui-text-right-tablet--portrait { text-align: right !important; }
+}
+
+/* mobile--landscape */
+@media (max-width: @screen-mobile-landscape-max) {
+	.ui-text-center-mobile { text-align: center !important; }
+	.ui-text-left-mobile { text-align: left !important; }
+	.ui-text-right-mobile { text-align: right !important; }
+}
+
+
+/* Wrap modifiers
+ ========================================================================== */
+
+.ui-text-nowrap { white-space: nowrap; }
+.ui-text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ui-text-break {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+		-ms-hyphens: auto;
+    		hyphens: auto;
+}

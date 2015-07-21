@@ -1,0 +1,123 @@
+@import "color.less";
+@import "base.less";
+@import "variables.less";
+
+// Name:            Table
+// Description:     Defines styles for tables
+//
+// Component:       `ui-table`
+//
+// Modifiers:       `ui-table-middle`
+//                  `ui-table-striped`
+//                  `ui-table-condensed`
+//                  `ui-table-hover`
+//
+// States:          `ui-active`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@table-margin-vertical:		@base-margin;
+@table-padding-vertical:	@base-margin / 2;
+@table-padding-horizontal:	@base-margin / 2;
+
+@table-caption-color:                           #999;
+@table-caption-font-size:                       12px;
+
+@table-striped-background: #62d1f5;
+
+@table-condensed-padding-vertical:              4px;
+@table-condensed-padding-horizontal:            8px;
+
+@table-hover-background:                        #EEE;
+
+@table-active-background:                       @table-hover-background;
+
+
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
+
+.ui-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	margin-bottom: @table-margin-vertical;
+}
+
+/*
+ * Add margin if adjacent element
+ */
+
+* + .ui-table { margin-top: @table-margin-vertical; }
+
+.ui-table th,
+.ui-table td {
+	padding: @table-padding-vertical @table-padding-horizontal;
+}
+
+/*
+ * Set alignment
+ */
+
+.ui-table th { text-align: left; }
+.ui-table td { vertical-align: top; }
+
+.ui-table thead th { vertical-align: bottom; }
+
+/*
+ * Caption and footer
+ */
+
+.ui-table caption,
+.ui-table tfoot {
+	font-size: @table-caption-font-size;
+	font-style: italic;
+}
+
+.ui-table caption {
+	text-align: left;
+	color: @table-caption-color;
+}
+
+/*
+ * Active State
+ */
+
+.ui-table tbody tr.ui-active {
+	background: @table-active-background;
+}
+
+
+/* Sub-modifier: `ui-table-middle`
+ ========================================================================== */
+
+.ui-table-middle,
+.ui-table-middle td { vertical-align: middle !important; }
+
+
+/* Modifier: `ui-table-striped`
+ ========================================================================== */
+
+.ui-table-striped tbody tr:nth-of-type(odd) {
+	background: @table-striped-background;
+}
+
+
+/* Modifier: `ui-table-condensed`
+ ========================================================================== */
+
+.ui-table-condensed td {
+	padding: @table-condensed-padding-vertical @table-condensed-padding-horizontal;
+}
+
+
+/* Modifier: `ui-table-hover`
+ ========================================================================== */
+
+.ui-table-hover tbody tr:hover {
+	background: @table-hover-background;
+}

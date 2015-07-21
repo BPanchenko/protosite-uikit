@@ -104,8 +104,6 @@
   background-color: #C62828;
   color: white;
 }
-/* Media queries breakpoints
- ========================================================================== */
 /**
  * Name: Base styles
  * Description: Sets default values for HTML elements
@@ -315,4 +313,76 @@ h6,
 ul,
 ol {
   padding-left: 0.8rem;
+}
+/* Media queries breakpoints
+ ========================================================================== */
+/* ========================================================================
+   Component: Table
+ ========================================================================== */
+.ui-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 1.6rem;
+}
+/*
+ * Add margin if adjacent element
+ */
+* + .ui-table {
+  margin-top: 1.6rem;
+}
+.ui-table th,
+.ui-table td {
+  padding: 0.8rem 0.8rem;
+}
+/*
+ * Set alignment
+ */
+.ui-table th {
+  text-align: left;
+}
+.ui-table td {
+  vertical-align: top;
+}
+.ui-table thead th {
+  vertical-align: bottom;
+}
+/*
+ * Caption and footer
+ */
+.ui-table caption,
+.ui-table tfoot {
+  font-size: 12px;
+  font-style: italic;
+}
+.ui-table caption {
+  text-align: left;
+  color: #999999;
+}
+/*
+ * Active State
+ */
+.ui-table tbody tr.ui-active {
+  background: #eeeeee;
+}
+/* Sub-modifier: `ui-table-middle`
+ ========================================================================== */
+.ui-table-middle,
+.ui-table-middle td {
+  vertical-align: middle !important;
+}
+/* Modifier: `ui-table-striped`
+ ========================================================================== */
+.ui-table-striped tbody tr:nth-of-type(odd) {
+  background: #62d1f5;
+}
+/* Modifier: `ui-table-condensed`
+ ========================================================================== */
+.ui-table-condensed td {
+  padding: 4px 8px;
+}
+/* Modifier: `ui-table-hover`
+ ========================================================================== */
+.ui-table-hover tbody tr:hover {
+  background: #eeeeee;
 }

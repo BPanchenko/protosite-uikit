@@ -1,0 +1,291 @@
+@import "color.less";
+@import "variables.less";
+
+/**
+ * Name: Base styles
+ * Description: Sets default values for HTML elements
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@base-body-background:  @clr-grey-100;
+@base-body-font-family: "Open Sans", Arial;
+@base-body-font-weight: 400;
+@base-body-font-size:   1.6rem;
+@base-body-line-height: 1.6;
+@base-body-color:       @clr-grey-800;
+
+@base-link-color:                 @clr-light-blue-800;
+@base-link-text-decoration:       underline;
+@base-link-hover-color:           @clr-light-blue-900;
+@base-link-hover-text-decoration: underline;
+
+@base-code-font-family:	"PT Mono", monospace;
+@base-code-font-size:	@base-body-font-size;
+@base-ins-background:	@clr-lime-200;
+@base-ins-color:		@clr-grey-900;
+@base-mark-background:	@clr-lime-200;
+@base-mark-color:		@clr-grey-800;
+
+@base-margin: 1.6rem;
+
+@base-heading-font-family:		"PT Serif Caption", Arial, sans-serif;
+@base-heading-font-weight:		400;
+@base-heading-color:			@base-body-color;
+@base-heading-text-transform:	none;
+@base-heading-margin-top:		@base-margin;
+
+@base-h1-font-size:				3.6rem;
+@base-h1-line-height:			normal;
+@base-h2-font-size:				2.4rem;
+@base-h2-line-height:			normal;
+@base-h3-font-size:				2rem;
+@base-h3-line-height:			normal;
+@base-h4-font-size:				1.5rem;
+@base-h4-line-height:			normal;
+@base-h5-font-family:			"Open Sans", Arial, sans-serif;
+@base-h5-font-size:				1.6rem;
+@base-h5-font-weight:			600;
+@base-h5-line-height:			normal;
+@base-h6-font-family:			@base-h5-font-family;
+@base-h6-font-size:				1.4rem;
+@base-h6-line-height:			normal;
+
+@base-small-font-size:	 1.3rem;
+@base-small-line-height: 1.6rem;
+@base-xsmall-font-size:	 1.2rem;
+
+@base-selection-background: @clr-cyan-100;
+@base-selection-color:      @base-body-color;
+@base-selection-shadow:     none;
+
+
+/* ========================================================================
+   Component: Base
+ ========================================================================== */
+
+html {
+	overflow-x: hidden;
+	height: 100%;
+}
+
+body {
+	background: @base-body-background;
+	overflow-x: hidden;
+   	height: 100%;
+	
+	font-family: @base-body-font-family;
+	font-size: @base-body-font-size;
+	line-height: @base-body-line-height;
+	font-style: normal;
+	font-weight: @base-body-font-weight;
+	
+    color: @base-body-color;
+}
+
+
+/* Selection
+ ========================================================================== */
+
+::-moz-selection {
+    background: @base-selection-background;
+    color: @base-selection-color;
+    text-shadow: @base-selection-shadow;
+}
+
+::selection {
+    background: @base-selection-background;
+    color: @base-selection-color;
+    text-shadow: @base-selection-shadow;
+}
+
+
+/* Horizontal rule
+ ========================================================================== */
+
+hr {
+    display: block;
+    box-sizing: content-box;
+	height: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: @base-margin 0;
+    padding: 0;
+}
+
+
+/* Links
+ ========================================================================== */
+
+a,
+.ui-link {
+	outline: 0;
+	background-color: transparent;
+	color: @base-link-color;
+	text-decoration: @base-link-text-decoration;
+	
+	-webkit-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+
+    &:hover {
+        outline: 0;
+        color: @base-link-hover-color;
+        text-decoration: @base-link-hover-text-decoration;
+    }
+}
+
+
+/* Block elements
+ ========================================================================== */
+ 
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure { margin: 0 0 @base-margin/2 0; }
+
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + blockquote,
+* + pre,
+* + address,
+* + fieldset,
+* + figure { margin-top: @base-margin/2; }
+
+
+/* Text-level semantics
+ ========================================================================== */
+
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b {
+	font-weight: 600;
+}
+b > b,
+strong {
+	font-weight: 700;
+}
+strong > strong {
+	font-weight: 800;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: @base-code-font-family;
+	font-size: @base-code-font-size;
+    white-space: nowrap;
+}
+
+ins {
+	background: @base-ins-background;
+    color: @base-ins-color;
+	text-decoration: none;
+}
+
+mark {
+	background: @base-mark-background;
+    color: @base-mark-color;
+	text-decoration: none;
+}
+
+i,
+em,
+dfn,
+q { font-style: italic; }
+
+small { font-size: @base-small-font-size; }
+small > small { font-size: @base-xsmall-font-size; }
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup { top: -.5em; }
+sub { bottom: -.25em; }
+
+
+/* Headings
+ ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 @base-margin/2 0;
+    font-family: @base-heading-font-family;
+    font-weight: @base-heading-font-weight;
+    text-transform: @base-heading-text-transform;
+	color: @base-heading-color;
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 { margin-top: @base-margin; }
+
+h1,
+.ui-h1 {
+    font-size: @base-h1-font-size;
+    line-height: @base-h1-line-height;
+}
+
+h2,
+.ui-h2 {
+    font-size: @base-h2-font-size;
+    line-height: @base-h2-line-height;
+}
+
+h3,
+.ui-h3 {
+    font-size: @base-h3-font-size;
+    line-height: @base-h3-line-height;
+}
+
+h4,
+.ui-h4 {
+    font-size: @base-h4-font-size;
+    line-height: @base-h4-line-height;
+}
+
+
+h5,
+.ui-h5 {
+    font-family: @base-h5-font-family;
+    font-size: @base-h5-font-size;
+	font-weight: @base-h5-font-weight;
+    line-height: @base-h5-line-height;
+}
+
+h6,
+.ui-h6 {
+    font-family: @base-h6-font-family;
+    font-size: @base-h6-font-size;
+    line-height: @base-h6-line-height;
+}
+
+
+/* Lists
+ ========================================================================== */
+
+ul,
+ol { padding-left: @base-margin/2; }

@@ -1,0 +1,48 @@
+/**
+ * Name:            Avatar
+ * Description:     Defines styles for the user picture
+ * 
+ * Component:       `ui-avatar`
+ * 
+ * Modifiers:       `ui-avatar--mini`
+ *					`ui-avatar--small`
+ *					`ui-avatar--large`
+ * 
+ ========================================================================== */
+
+/*figure*/
+.ui-avatar {
+    display: inline-block;
+    border-radius: 50%;
+	overflow: hidden;
+	
+	width: 8rem;
+	height: 8rem;
+	
+	font-size: .001px;
+	text-align: center;
+    vertical-align: middle;
+	
+	box-shadow: inset 0 0 .16rem 0 rgba(0,0,0,.3);
+	background-size: cover;
+	
+	/* reset default styles figure */
+	margin: 0;
+}
+
+
+/* Sizes modifiers
+ ========================================================================== */
+
+.ui-avatar--mini {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.ui-avatar--small {
+	width: 4.8rem;
+	height: 4.8rem;
+}
+.ui-avatar--large {
+	width: 13.6rem;
+	height: 13.6rem;
+}
