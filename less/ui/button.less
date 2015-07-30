@@ -1,3 +1,6 @@
+@import "color.less";
+@import "variables.less";
+
 /**
  * Name:            Button
  * Description:     Defines styles for buttons
@@ -41,6 +44,7 @@
 // ========================================================================
 
 @ui-button-background-color: @clr-grey-300;
+@ui-button-primary-background-color: rgba(2,119,189,.9);
 
 
 /* ========================================================================
@@ -102,7 +106,7 @@
 .ui-button--primary:hover {
 	background-image: url('/img/bgs/cream_pixels.png');
 	background-position: center;
-	background-color: rgba(2,119,189,.9);
+	background-color: @ui-button-primary-background-color;
 	background-blend-mode: multiply;
 	background-size: 160px 160px;
 	
