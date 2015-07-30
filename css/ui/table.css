@@ -265,6 +265,7 @@ h6 {
   font-family: "PT Serif Caption", Arial, sans-serif;
   font-weight: 400;
   text-transform: none;
+  text-shadow: none;
   color: #424242;
 }
 * + h1,
@@ -352,37 +353,39 @@ ol {
  */
 .ui-table caption,
 .ui-table tfoot {
-  font-size: 12px;
+  font-size: #eeeeee;
   font-style: italic;
 }
 .ui-table caption {
   text-align: left;
-  color: #999999;
+  color: #212121;
 }
 /*
  * Active State
  */
-.ui-table tbody tr.ui-active {
-  background: #eeeeee;
+.ui-table tbody tr[data-active=true] {
+  background: #0277bd;
+  color: #ffffff;
 }
-/* Sub-modifier: `ui-table-middle`
+/* Sub-modifier: `ui-table--middle`
  ========================================================================== */
-.ui-table-middle,
-.ui-table-middle td {
+.ui-table--middle,
+.ui-table--middle td {
   vertical-align: middle !important;
 }
-/* Modifier: `ui-table-striped`
+/* Modifier: `ui-table--striped`
  ========================================================================== */
-.ui-table-striped tbody tr:nth-of-type(odd) {
+.ui-table--striped tr:nth-of-type(odd) {
   background: #62d1f5;
 }
-/* Modifier: `ui-table-condensed`
+/* Modifier: `ui-table--condensed`
  ========================================================================== */
-.ui-table-condensed td {
-  padding: 4px 8px;
+.ui-table--condensed td {
+  padding: 0.4rem 0.8rem;
 }
-/* Modifier: `ui-table-hover`
+/* Modifier: `ui-table--hover`
  ========================================================================== */
-.ui-table-hover tbody tr:hover {
-  background: #eeeeee;
+.ui-table--hover tr:hover {
+  background: #e0e0e0;
+  color: currenColor;
 }

@@ -20,21 +20,23 @@
 // Variables
 // ========================================================================
 
-@table-margin-vertical:		@base-margin;
-@table-padding-vertical:	@base-margin / 2;
-@table-padding-horizontal:	@base-margin / 2;
+@table-margin-vertical:			@base-margin;
+@table-td-padding-vertical:		@base-margin / 2;
+@table-td-padding-horizontal:	@base-margin / 2;
 
-@table-caption-color:                           #999;
-@table-caption-font-size:                       12px;
+@table-caption-color:		@clr-grey-900;
+@table-caption-font-size:	@clr-grey-200;
 
 @table-striped-background: #62d1f5;
 
-@table-condensed-padding-vertical:              4px;
-@table-condensed-padding-horizontal:            8px;
+@table-condensed-td-padding-vertical:	@base-margin / 4;
+@table-condensed-td-padding-horizontal: @base-margin / 2;
 
-@table-hover-background:                        #EEE;
+@table-hover-background:	@clr-grey-300;
+@table-hover-color:			currenColor;
 
-@table-active-background:                       @table-hover-background;
+@table-active-background:	@clr-light-blue-800;
+@table-active-color:		@clr-white;
 
 
 /* ========================================================================
@@ -56,7 +58,7 @@
 
 .ui-table th,
 .ui-table td {
-	padding: @table-padding-vertical @table-padding-horizontal;
+	padding: @table-td-padding-vertical @table-td-padding-horizontal;
 }
 
 /*
@@ -87,37 +89,41 @@
  * Active State
  */
 
-.ui-table tbody tr.ui-active {
+.ui-table tbody tr[data-active=true] {
 	background: @table-active-background;
+	color: @table-active-color;
 }
 
 
-/* Sub-modifier: `ui-table-middle`
+/* Sub-modifier: `ui-table--middle`
  ========================================================================== */
 
-.ui-table-middle,
-.ui-table-middle td { vertical-align: middle !important; }
+.ui-table--middle,
+.ui-table--middle td {
+	vertical-align: middle !important;
+}
 
 
-/* Modifier: `ui-table-striped`
+/* Modifier: `ui-table--striped`
  ========================================================================== */
 
-.ui-table-striped tbody tr:nth-of-type(odd) {
+.ui-table--striped tr:nth-of-type(odd) {
 	background: @table-striped-background;
 }
 
 
-/* Modifier: `ui-table-condensed`
+/* Modifier: `ui-table--condensed`
  ========================================================================== */
 
-.ui-table-condensed td {
-	padding: @table-condensed-padding-vertical @table-condensed-padding-horizontal;
+.ui-table--condensed td {
+	padding: @table-condensed-td-padding-vertical @table-condensed-td-padding-horizontal;
 }
 
 
-/* Modifier: `ui-table-hover`
+/* Modifier: `ui-table--hover`
  ========================================================================== */
 
-.ui-table-hover tbody tr:hover {
+.ui-table--hover tr:hover {
 	background: @table-hover-background;
+	color: @table-hover-color;
 }
