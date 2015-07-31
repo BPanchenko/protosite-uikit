@@ -152,18 +152,18 @@
 }
 .ui-button {
   -webkit-appearance: none;
+  -moz-appearance: none;
   border: none;
   text-transform: none;
   display: inline-block;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0 1.6rem;
+  padding: 0 2.4rem;
   background: #e0e0e0;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   outline: none;
   vertical-align: middle;
   height: 3.6rem;
-  line-height: 3.6rem;
+  line-height: normal;
   font-size: 1.6rem;
   text-align: center;
   cursor: pointer;
@@ -182,10 +182,13 @@
 .ui-button > span {
   display: inline-block;
   vertical-align: middle;
-  line-height: 1;
+  line-height: inherit;
 }
-.ui-button > .iconic {
+.ui-button > .iconic[data-glyph] {
   margin-right: .6rem;
+}
+.ui-button > .iconic[data-glyph]:before {
+  vertical-align: middle;
 }
 /* Modifier `ui-button--primary`
  ========================================================================== */

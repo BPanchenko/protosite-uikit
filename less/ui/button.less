@@ -1,4 +1,5 @@
 @import "color.less";
+@import "mixins.less";
 @import "variables.less";
 
 /**
@@ -44,7 +45,19 @@
 // ========================================================================
 
 @ui-button-background-color: @clr-grey-300;
+@ui-button-border-radius: .3rem;
+
+@ui-button-height: 3.6rem;
+@ui-button-padding: 0 2.4rem;
+
+@ui-button-font-size: 1.6rem;
+@ui-button-line-height: normal;
+
 @ui-button-primary-background-color: rgba(2,119,189,.9);
+@ui-button-primary-background-image: url('/img/bgs/cream_pixels.png');
+@ui-button-primary-background-image-retina: url('/img/bgs/cream_pixels_@2X.png');
+@ui-button-primary-background-size: 160px 160px;
+@ui-button-primary-background-blend-mode: multiply;
 
 
 /* ========================================================================
@@ -57,24 +70,25 @@
 }
 
 .ui-button {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+
     border: none;
     text-transform: none;
 	
     display: inline-block;
-    -moz-box-sizing: border-box;
-    	 box-sizing: border-box;
+	box-sizing: border-box;
 	
-    padding: 0 1.6rem;
+    padding: @ui-button-padding;
     background: @ui-button-background-color;
-	border-radius: .3rem;
+	border-radius: @ui-button-border-radius;
 	outline: none;
 	
     vertical-align: middle;
     
-    height: 3.6rem;
-    line-height: 3.6rem;
-    font-size: 1.6rem;
+    height: @ui-button-height;
+    line-height: @ui-button-line-height;
+    font-size: @ui-button-font-size;
     text-align: center;
 	cursor: pointer;
 }
@@ -92,10 +106,13 @@
 .ui-button > span {
 	display: inline-block;
 	vertical-align: middle;
-	line-height: 1;
+	line-height: inherit;
 }
-.ui-button > .iconic {
+.ui-button > .iconic[data-glyph] {
 	margin-right: .6rem;
+	&:before {
+		vertical-align: middle;
+	}
 }
 
 
@@ -104,11 +121,11 @@
 
 .ui-button--primary,
 .ui-button--primary:hover {
-	background-image: url('/img/bgs/cream_pixels.png');
+	background-image: @ui-button-primary-background-image;
 	background-position: center;
 	background-color: @ui-button-primary-background-color;
-	background-blend-mode: multiply;
-	background-size: 160px 160px;
+	background-blend-mode: @ui-button-primary-background-blend-mode;
+	background-size: @ui-button-primary-background-size;
 	
 	box-shadow: none;
 	text-shadow: 0 -.1rem rgba(0,0,0,.8);
@@ -134,12 +151,12 @@
 	box-shadow: inset 0 0 .2rem #424242;
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	   only screen and (min-resolution: 192dpi),
+	   only screen and (min-resolution: 2dppx)
+{
 	.ui-button--primary {
-		background-image: url('/img/bgs/cream_pixels_@2X.png');
+		background-image: @ui-button-primary-background-image-retina;
 	}
 }
 
