@@ -1,0 +1,207 @@
+@import "color";
+@import "../mixins";
+@import "../variables";
+
+/**
+ * Name:            Button
+ * Description:     Defines styles for buttons
+ * 
+ * Component:       `ui-button`
+ * 
+ * Sub-objects:     `ui-button-group`
+ *                  `ui-button-dropdown`
+ * 
+ * Modifiers:       `ui-button--primary`
+ *                  `ui-button--secondary`
+ *                  `ui-button--success`
+ *                  `ui-button--danger`
+ *                  `ui-button--link`
+ *                  `ui-button--mini`
+ *                  `ui-button--small`
+ *                  `ui-button--large`
+ * 
+ * States:          `ui-button--active`
+ * 
+ * Markup:
+ * 
+ * <!-- ui-button-group -->
+ * <div class="ui-button-group">
+ *     <button class="ui-button"></button>
+ *     <button class="ui-button"></button>
+ * </div>
+ * 
+ * <!-- ui-button-dropdown -->
+ * <div class="ui-button-dropdown" data-ui-dropdown>
+ *     <button class="ui-button"></button>
+ *     <ul class="ui-dropdown">
+ *         <li><a href=""></a></li>
+ *     </ul>
+ * </div>
+ * 
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@ui-button-background-color: @clr-grey-300;
+@ui-button-border-radius: .3rem;
+
+@ui-button-height: 3.6rem;
+@ui-button-padding: 0 2.4rem;
+
+@ui-button-font-size: 1.6rem;
+@ui-button-line-height: normal;
+
+@ui-button-primary-background-color: rgba(2,119,189,.9);
+@ui-button-primary-background-image: url('/img/bgs/cream_pixels.png');
+@ui-button-primary-background-image-retina: url('/img/bgs/cream_pixels_@2X.png');
+@ui-button-primary-background-size: 160px 160px;
+@ui-button-primary-background-blend-mode: multiply;
+
+
+/* ========================================================================
+   Component: Button
+ ========================================================================== */
+ 
+.ui-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.ui-button {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+
+    border: none;
+    text-transform: none;
+	
+    display: inline-block;
+	box-sizing: border-box;
+	
+    padding: @ui-button-padding;
+    background: @ui-button-background-color;
+	border-radius: @ui-button-border-radius;
+	outline: none;
+	
+    vertical-align: middle;
+    
+    height: @ui-button-height;
+    line-height: @ui-button-line-height;
+    font-size: @ui-button-font-size;
+    text-align: center;
+	cursor: pointer;
+}
+.ui-button,
+.ui-button:hover {
+    text-decoration: none;
+}
+.ui-button:active,
+.ui-button--active {
+	box-shadow: inset 0 0 .3rem #BDBDBD;
+}
+
+.ui-button + .ui-button { margin-left: .4rem; }
+
+.ui-button > span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: inherit;
+}
+.ui-button > .iconic[data-glyph] {
+	margin-right: .6rem;
+	&:before {
+		vertical-align: middle;
+	}
+}
+
+
+/* Modifier `ui-button--primary`
+ ========================================================================== */
+
+.ui-button--primary,
+.ui-button--primary:hover {
+	background-image: @ui-button-primary-background-image;
+	background-position: center;
+	background-color: @ui-button-primary-background-color;
+	background-blend-mode: @ui-button-primary-background-blend-mode;
+	background-size: @ui-button-primary-background-size;
+	
+	box-shadow: none;
+	text-shadow: 0 -.1rem rgba(0,0,0,.8);
+	transition: box-shadow .16s ease-out;
+	
+	color: white;
+}
+
+.ui-button--primary:hover,
+.ui-button--primary:focus {
+	box-shadow: 0 .1rem .16rem .16rem #e0e0e0;
+}
+.ui-panel .ui-button--primary:hover,
+.ui-panel .ui-button--primary:focus {
+	box-shadow: 0 .1rem .2rem .1rem #e0e0e0;
+}
+
+
+.ui-button--primary:active,
+.ui-button--primary.ui-button--active,
+.ui-panel .ui-button--primary:active,
+.ui-panel .ui-button--primary.ui-button--active {
+	box-shadow: inset 0 0 .2rem #424242;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	   only screen and (min-resolution: 192dpi),
+	   only screen and (min-resolution: 2dppx)
+{
+	.ui-button--primary {
+		background-image: @ui-button-primary-background-image-retina;
+	}
+}
+
+
+/* Modifier `ui-button--link`
+ ========================================================================== */
+ 
+.ui-button--link {
+	background: transparent;
+	color: #0277BD; /* light blue 800 */
+	font-weight: 600;
+	text-decoration: underline;
+	
+	-webkit-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+       -moz-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+    	 -o-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+			transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+}
+.ui-button--link:hover,
+.ui-button--link:focus,
+.ui-button--link:active,
+.ui-button--link.ui-button--active {
+	text-decoration: underline;
+	color: #01579B; /* light blue 900 */
+	box-shadow: none;
+}
+
+
+/* Sub-object `ui-button-group`
+ ========================================================================== */
+
+.ui-button-group {
+    position: relative;
+    display: block;
+	/* background-color: #F5B2D8; */
+	
+	height: 4.8rem;
+	line-height: 4.8rem;
+	
+	text-align: right;
+    font-size: .001px;
+    white-space: nowrap;
+	
+	margin-top: 2.4rem;
+	margin-bottom: .8rem;
+	padding-right: .8rem;
+	padding-left: 2.4rem;
+}
