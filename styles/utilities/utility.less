@@ -249,24 +249,29 @@
 
 /* mobile */
 @media (max-width: @screen-tablet-portrait-max) {
-    .ui-hidden-mobile,
-    .ui-visible-x-desktop,
-    .ui-visible-desktop,
-    .ui-visible-tablet-landscape,
-    .ui-visible-tablet-portrait { display: none !important; }
+    .u-hidden\@handset,
+    .u-visible\@x-desktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-portrait { display: none !important; }
 }
 
 /* Remove from the flow and screen readers on any device */
+.u-hidden,
 [hidden],
-.ui-hidden {
+[area-hidden=true] {
     display: none !important;
     visibility: hidden !important;
 }
 
 /* Show on hover */
-.ui-visible-hover:hover .ui-hidden {
-    display: block !important;
-    visibility: visible !important;
+.ui-visible-hover:hover {
+    .u-hidden,
+    [hidden],
+    [area-hidden=true] {
+		display: block !important;
+		visibility: visible !important;
+    }
 }
 
 .ui-visible-hover-inline:hover .ui-hidden {
