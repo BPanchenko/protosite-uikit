@@ -1,0 +1,9 @@
+{
+	"name"			: "protosite.uikit",
+	"dependencies"  : {
+		"backbone"	  : "latest",
+		"less"		  : "latest",
+		"underscore"  : "latest"
+	},
+	"ignore": ["docs", "examples", "test", "*.yml", "*.html", "*.ico", "*.md", "CNAME", ".*", "karma.*", "component.json", "package.json"]
+}
