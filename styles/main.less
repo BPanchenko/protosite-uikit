@@ -1,1 +1,208 @@
 @import "variables";
+@import "mixins";
+
+
+html {
+	overflow-x: hidden;
+	height: 100%;
+}
+body {
+	background: @body-background;
+	height: 100%;
+	font-family: @body-font-family;
+	font-size: @body-font-size;
+	line-height: @body-line-height;
+	font-style: normal;
+	font-weight: 400;
+	color: @body-color;
+}
+
+/* Selection
+ ========================================================================== */
+::-moz-selection {
+	background: #b2ebf2;
+	color: #424242;
+	text-shadow: none;
+}
+::selection {
+	background: #b2ebf2;
+	color: #424242;
+	text-shadow: none;
+}
+/* Horizontal rule
+ ========================================================================== */
+hr {
+	display: block;
+	box-sizing: content-box;
+	height: 0;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1.6rem 0;
+	padding: 0;
+}
+/* Links
+ ========================================================================== */
+a,
+.ui-link {
+	outline: 0;
+	background-color: transparent;
+	color: #0277bd;
+	text-decoration: underline;
+	-webkit-transition: color 0.16s cubic-bezier(0.3, 0, 0.2, 1);
+	-moz-transition: color 0.16s cubic-bezier(0.3, 0, 0.2, 1);
+	-o-transition: color 0.16s cubic-bezier(0.3, 0, 0.2, 1);
+	transition: color 0.16s cubic-bezier(0.3, 0, 0.2, 1);
+}
+a:hover,
+.ui-link:hover {
+	outline: 0;
+	color: #01579b;
+	text-decoration: underline;
+}
+/* Block elements
+ ========================================================================== */
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure {
+	margin: 0 0 0.8rem 0;
+}
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + blockquote,
+* + pre,
+* + address,
+* + fieldset,
+* + figure {
+	margin-top: 0.8rem;
+}
+/* Text-level semantics
+ ========================================================================== */
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+b {
+	font-weight: 600;
+}
+b > b,
+strong {
+	font-weight: 700;
+}
+strong > strong {
+	font-weight: 800;
+}
+pre {
+	overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+	font-family: "PT Mono", monospace;
+	font-size: 1.6rem;
+	white-space: nowrap;
+}
+ins {
+	background: #e6ee9c;
+	color: #212121;
+	text-decoration: none;
+}
+mark {
+	background: #e6ee9c;
+	color: #424242;
+	text-decoration: none;
+}
+i,
+em,
+dfn,
+q {
+	font-style: italic;
+}
+small {
+	font-size: 1.3rem;
+}
+small > small {
+	font-size: 1.2rem;
+}
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+/* Headings
+ ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.8rem 0;
+	font-family: "PT Serif Caption", Arial, sans-serif;
+	font-weight: 400;
+	text-transform: none;
+	text-shadow: none;
+	color: #424242;
+}
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-top: 1.6rem;
+}
+h1,
+.ui-h1 {
+	font-size: 3.6rem;
+	line-height: normal;
+}
+h2,
+.ui-h2 {
+	font-size: 2.4rem;
+	line-height: normal;
+}
+h3,
+.ui-h3 {
+	font-size: 2rem;
+	line-height: normal;
+}
+h4,
+.ui-h4 {
+	font-size: 1.5rem;
+	line-height: normal;
+}
+h5,
+.ui-h5 {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.6rem;
+	font-weight: 600;
+	line-height: normal;
+}
+h6,
+.ui-h6 {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.4rem;
+	line-height: normal;
+}
+/* Lists
+ ========================================================================== */
+ul,
+ol {
+	padding-left: 0.8rem;
+}

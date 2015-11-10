@@ -1,52 +1,62 @@
+@import "../variables";
+@import "../mixins";
+
+// Variables of the components
+// ========================================================================
+
+@c-panel-background: white;
+@c-panel-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+
+
 /* ========================================================================
    Component: Panel
  ========================================================================== */
  
-.ui-panel {
+.c-panel {
     display: block;
     position: relative;
-	padding: .8rem;
-	background: white;
-	box-shadow: .1rem .1rem .2rem #e0e0e0;
-	
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-			box-sizing: border-box;
+	padding: @unit / 2;
+	background: @c-panel-background;
+	box-shadow: @c-panel-box-shadow;
+	box-sizing: border-box;
 }
 
-.ui-panel:before,
-.ui-panel:after {
+.c-panel::before,
+.c-panel::after {
     content: " ";
     display: table;
 }
 
-.ui-panel:after { clear: both; }
+.c-panel::after { clear: both; }
 
-.ui-panel + .ui-panel {
-   margin-top: 1.6rem;
+.c-panel + .c-panel {
+   margin-top: @unit;
 }
 
 
-/* Modifier: `uk-panel-divider`
+/* Element `c-panel-divider`
  ========================================================================== */
  
-.ui-panel + .ui-panel-divider { margin-top: 1.6rem !important; }
+.c-panel + .c-panel-divider {
+	position: relative;
+	margin-top: @unit !important;
+}
 
-.ui-panel + .ui-panel-divider:before {
+.c-panel + .c-panel-divider::after {
     content: "";
     display: block;
     position: absolute;
     top: -.1rem;
     left: 0;
     right: 0;
-    border-top: .1rem solid #424242; /* @clr-grey-800 */
+    border-top: .1rem solid @clr-grey-800;
 }
 
 
-/* Modifier `uk-panel--transparent`
+/* Modifier `c-panel--transparent`
  ========================================================================== */
  
-.ui-panel--transparent {
+.c-panel--transparent {
 	background: transparent;
 	box-shadow: none;
 }

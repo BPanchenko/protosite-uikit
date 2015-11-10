@@ -18,32 +18,24 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Mono&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-        
+
         <link rel="stylesheet" type="text/css" href="styles/normalize.css">
-        <link rel="stylesheet" type="text/css" href="./css/base.css">
         <link rel="stylesheet/less" type="text/css" href="./styles/main.less">
+        <link rel="stylesheet/less" type="text/css" href="./styles/components/panel.less">
+        <link rel="stylesheet/less" type="text/css" href="./styles/components/button.less">
+
         <link rel="stylesheet" type="text/css" href="styles/pattern.css">
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.0/backbone-min.js"></script>
         
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.0/backbone-min.js"></script>
-        
-        <script src="./js/common.js"></script>
-        <script src="./js/ruler.js"></script>
-        
-        <script src="./js/ui/core.js"></script>
-        <script src="./js/ui/components/tabs.js"></script>
-        
-        <script>
-			window.addEventListener('load', function() {
-				
-				[].slice.call(document.body.querySelectorAll('[data-ui-tabs]')).forEach(function(elem) {
-					new window.UI.Tabs(elem);
-				});
-				
-			}, false);
-		</script>
+        <script src="js/ui/core.js"></script>
+        <script src="js/ui/common.js"></script>
+        <script src="js/ui/components/tabs.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="js/ruler.js"></script>
     </head>
     <body>
         <header class="ui-container header" role="banner"></header>

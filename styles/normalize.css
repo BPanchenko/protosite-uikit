@@ -1,13 +1,14 @@
 /*! normalize.css */
 
 html {
-	font-size: 62.5%;
+    font-size: 62.5%;
 	-webkit-text-size-adjust: 100%;
 		-ms-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    padding: 0;
 }
 
 article,
