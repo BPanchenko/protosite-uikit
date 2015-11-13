@@ -1,0 +1,70 @@
+@import "../variables";
+@import "../mixins";
+
+/* ========================================================================
+   Object: Container
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@object-container-margin:                  (4 * @unit) auto;
+
+@object-container-width:                   auto;
+@object-container-width-xdesktop:          129.6rem;
+@object-container-width-desktop:           110.4rem;
+@object-container-width-tablet:			   92.8rem;
+@object-container-width-tablet-portrait:   72rem;
+@object-container-width-handset:		   49.6rem;
+@object-container-width-handset-portrait:  49.6rem;
+
+
+// Definition
+// ========================================================================
+
+.o-container {
+	display: block;
+	width: @object-container-width;
+	margin: @object-container-margin;
+}
+.o-container:before,
+.o-container:after {
+	content: " ";
+	display: table;
+}
+.o-container:after { clear: both; }
+
+
+/* Media queries
+ ========================================================================== */
+
+// xdesktop
+@media (min-width: @screen-xdesktop) {
+	.o-container { width: @object-container-width-xdesktop; }
+}
+
+// desktop
+@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+	.o-container { width: @object-container-width-desktop; }
+}
+
+// tablet
+@media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+	.o-container { width: @object-container-width-tablet; }
+}
+
+// tablet--portrait
+@media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
+	.o-container { width: @object-container-width-tablet-portrait; }
+}
+
+// handset
+@media (min-width: @screen-handset) and (max-width: @screen-handset-max) {
+	.o-container { width: @object-container-width-handset; }
+}
+
+// handset--portrait
+@media (max-width: @screen-handset-portrait-max) {
+    .o-container { width: @object-container-width-handset-portrait; }
+}
