@@ -1,29 +1,32 @@
+@import "../mixins";
+@import "../variables";
+
 /* ========================================================================
-   Component: Grid
+   Object: Grid
  ========================================================================== */
 
 /*
  * Micro clearfix
  */
 
-.ui-grid:before,
-.ui-grid:after {
+.o-grid:before,
+.o-grid:after {
     content: " ";
     display: table;
 }
 
-.ui-grid:after { clear: both; }
+.o-grid:after { clear: both; }
 
 /*
  * 1. Needed for the gutter
  * 2. Makes grid more robust so that it can be used with other block elements like lists
  */
 
-.ui-grid {
+.o-grid {
     padding: 0;
     list-style: none;
 }
-.ui-grid .ui-grid {
+.o-grid .o-grid {
 	padding: 1.6rem
 }
 
@@ -34,7 +37,7 @@
  * 3. `float` is set by default so columns always behave the same and create a new block format context
  */
 
-.ui-grid > * {
+.o-grid > * {
     margin: 0;
     float: left;
 }
@@ -43,7 +46,7 @@
  * Remove margin from the last-child
  */
 
-.ui-grid > * > :last-child { margin-bottom: 0; }
+.o-grid > * > :last-child { margin-bottom: 0; }
 
 
 /* Grid gutter
@@ -53,20 +56,20 @@
  * Vertical gutter
  */
 
-.ui-grid + .ui-grid { margin-top: 2.4rem; }
+.o-grid + .o-grid { margin-top: 2.4rem; }
 
 /*
  * This class is set by JavaScript and applies a vertical gutter if the columns stack or float into the next row
  * Higher specificity to override margin
  */
 
-.ui-grid > .ui-grid-margin { margin-top: @grid-gutter-vertical; }
+.o-grid > .o-grid-margin { margin-top: @grid-gutter-vertical; }
 
 /*
  * Vertical gutter for panels
  */
 
-.ui-grid > * > .ui-panel + .ui-panel { margin-top: .6rem; }
+.o-grid > * > .ui-panel + .ui-panel { margin-top: .6rem; }
 
 /*
  * Larger gutter for large screens
@@ -74,21 +77,21 @@
 
 Large screen and bigger
 @media (min-width: @breakpoint-xlarge) {
-    .ui-grid:not(.ui-grid-preserve) { margin-left: -@grid-gutter-large-horizontal; }
-    .ui-grid:not(.ui-grid-preserve) > * { padding-left: @grid-gutter-large-horizontal; }
-    .ui-grid:not(.ui-grid-preserve) + .ui-grid { margin-top: @grid-gutter-large-vertical; }
-    .ui-grid:not(.ui-grid-preserve) > .ui-grid-margin { margin-top: @grid-gutter-large-vertical; }
-    .ui-grid:not(.ui-grid-preserve) > * > .ui-panel + .ui-panel { margin-top: @grid-gutter-large-vertical; }
+    .o-grid:not(.o-grid-preserve) { margin-left: -@grid-gutter-large-horizontal; }
+    .o-grid:not(.o-grid-preserve) > * { padding-left: @grid-gutter-large-horizontal; }
+    .o-grid:not(.o-grid-preserve) + .o-grid { margin-top: @grid-gutter-large-vertical; }
+    .o-grid:not(.o-grid-preserve) > .o-grid-margin { margin-top: @grid-gutter-large-vertical; }
+    .o-grid:not(.o-grid-preserve) > * > .ui-panel + .ui-panel { margin-top: @grid-gutter-large-vertical; }
 
 }
 
-.ui-grid.ui-grid-small { margin-left: -@grid-gutter-small-horizontal; }
-.ui-grid.ui-grid-small > * { padding-left: @grid-gutter-small-horizontal; }
+.o-grid.o-grid-small { margin-left: -@grid-gutter-small-horizontal; }
+.o-grid.o-grid-small > * { padding-left: @grid-gutter-small-horizontal; }
 
-.ui-grid.ui-grid-small + .ui-grid-small { margin-top: @grid-gutter-small-vertical; }
-.ui-grid.ui-grid-small > .ui-grid-margin { margin-top: @grid-gutter-small-vertical; }
+.o-grid.o-grid-small + .o-grid-small { margin-top: @grid-gutter-small-vertical; }
+.o-grid.o-grid-small > .o-grid-margin { margin-top: @grid-gutter-small-vertical; }
 
-.ui-grid.ui-grid-small > * > .ui-panel + .ui-panel { margin-top: @grid-gutter-small-vertical; }
+.o-grid.o-grid-small > * > .ui-panel + .ui-panel { margin-top: @grid-gutter-small-vertical; }
 
 */
 
@@ -102,58 +105,57 @@ Large screen and bigger
     width: 100%;
 }
 
-.ui-grid-width-1-2 > * { width: 50%; }
-.ui-grid-width-1-3 > * { width: 33.333%; }
-.ui-grid-width-1-4 > * { width: 25%; }
-.ui-grid-width-1-5 > * { width: 20%; }
-.ui-grid-width-1-6 > * { width: 16.666%; }
-.ui-grid-width-1-10 > * { width: 10%; }
+.o-grid-width-1-2 > * { width: 50%; }
+.o-grid-width-1-3 > * { width: 33.333%; }
+.o-grid-width-1-4 > * { width: 25%; }
+.o-grid-width-1-5 > * { width: 20%; }
+.o-grid-width-1-6 > * { width: 16.666%; }
+.o-grid-width-1-10 > * { width: 10%; }
 
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-small) {
 
-    .ui-grid-width-small-1-2 > * { width: 50%; }
-    .ui-grid-width-small-1-3 > * { width: 33.333%; }
-    .ui-grid-width-small-1-4 > * { width: 25%; }
-    .ui-grid-width-small-1-5 > * { width: 20%; }
-    .ui-grid-width-small-1-6 > * { width: 16.666%; }
-    .ui-grid-width-small-1-10 > * { width: 10%; }
+    .o-grid-width-small-1-2 > * { width: 50%; }
+    .o-grid-width-small-1-3 > * { width: 33.333%; }
+    .o-grid-width-small-1-4 > * { width: 25%; }
+    .o-grid-width-small-1-5 > * { width: 20%; }
+    .o-grid-width-small-1-6 > * { width: 16.666%; }
+    .o-grid-width-small-1-10 > * { width: 10%; }
 
 }
 
 /* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .ui-grid-width-medium-1-2 > * { width: 50%; }
-    .ui-grid-width-medium-1-3 > * { width: 33.333%; }
-    .ui-grid-width-medium-1-4 > * { width: 25%; }
-    .ui-grid-width-medium-1-5 > * { width: 20%; }
-    .ui-grid-width-medium-1-6 > * { width: 16.666%; }
-    .ui-grid-width-medium-1-10 > * { width: 10%; }
+    .o-grid-width-medium-1-2 > * { width: 50%; }
+    .o-grid-width-medium-1-3 > * { width: 33.333%; }
+    .o-grid-width-medium-1-4 > * { width: 25%; }
+    .o-grid-width-medium-1-5 > * { width: 20%; }
+    .o-grid-width-medium-1-6 > * { width: 16.666%; }
+    .o-grid-width-medium-1-10 > * { width: 10%; }
 
 }
 
 /* Desktop and bigger */
 @media (min-width: @breakpoint-large) {
-
-    .ui-grid-width-large-1-2 > * { width: 50%; }
-    .ui-grid-width-large-1-3 > * { width: 33.333%; }
-    .ui-grid-width-large-1-4 > * { width: 25%; }
-    .ui-grid-width-large-1-5 > * { width: 20%; }
-    .ui-grid-width-large-1-6 > * { width: 16.666%; }
-    .ui-grid-width-large-1-10 > * { width: 10%; }
+    .o-grid-width-large-1-2 > * { width: 50%; }
+    .o-grid-width-large-1-3 > * { width: 33.333%; }
+    .o-grid-width-large-1-4 > * { width: 25%; }
+    .o-grid-width-large-1-5 > * { width: 20%; }
+    .o-grid-width-large-1-6 > * { width: 16.666%; }
+    .o-grid-width-large-1-10 > * { width: 10%; }
 
 }
 
 /* Large screen and bigger */
 @media (min-width: @breakpoint-xlarge) {
 
-    .ui-grid-width-xlarge-1-2 > * { width: 50%; }
-    .ui-grid-width-xlarge-1-3 > * { width: 33.333%; }
-    .ui-grid-width-xlarge-1-4 > * { width: 25%; }
-    .ui-grid-width-xlarge-1-5 > * { width: 20%; }
-    .ui-grid-width-xlarge-1-6 > * { width: 16.666%; }
-    .ui-grid-width-xlarge-1-10 > * { width: 10%; }
+    .o-grid-width-xlarge-1-2 > * { width: 50%; }
+    .o-grid-width-xlarge-1-3 > * { width: 33.333%; }
+    .o-grid-width-xlarge-1-4 > * { width: 25%; }
+    .o-grid-width-xlarge-1-5 > * { width: 20%; }
+    .o-grid-width-xlarge-1-6 > * { width: 16.666%; }
+    .o-grid-width-xlarge-1-10 > * { width: 10%; }
 
 }
 

@@ -1,14 +1,15 @@
+@import "../variables";
+@import "../mixins";
+
 /**
- * Name:            Badge
+ * Component:       `c-badge`
  * Description:     Defines styles for badges
  * 
- * Component:       `ui-badge`
- * 
- * Modifiers:       `ui-badge--*colors*`
+ * Modifiers:       `c-badge--*colors*`
  * 
  ========================================================================== */
 
-.ui-badge {
+.c-badge {
     display: inline-block;
     border-radius: 50vw;
 	line-height: 3.2rem;
@@ -25,12 +26,12 @@
 	/* border: .1rem solid #FAFAFA; */
 	border: .1rem solid #E0E0E0;
 }
-.ui-panel:not(.ui-panel--transparent) .ui-badge {
+.c-panel:not(.c-panel--transparent) .c-badge {
 	background-image: -webkit-radial-gradient(1rem 1rem, farthest-side, #E0E0E0, #FFFFFF);
 	border: .1rem solid #EEEEEE;
 }
 
-.ui-badge-str {
+.c-badge-str {
     display: inline-block;
     border-radius: 50vw;
 	line-height: 1em;
@@ -42,7 +43,7 @@
 	letter-spacing: .1rem;
 	
 }
-a.ui-badge:hover .ui-badge-str { color: rgb(2,119,189); }
+a.c-badge:hover .c-badge-str { color: rgb(2,119,189); }
 
 
 

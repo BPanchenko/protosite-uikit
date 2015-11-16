@@ -1,38 +1,35 @@
-@import "color";
 @import "../mixins";
 @import "../variables";
 
 /**
- * Name:            Button
+ * Component:       `c-button`
  * Description:     Defines styles for buttons
  * 
- * Component:       `ui-button`
+ * Sub-objects:     `c-button-group`
+ *                  `c-button-dropdown`
  * 
- * Sub-objects:     `ui-button-group`
- *                  `ui-button-dropdown`
+ * Modifiers:       `c-button--primary`
+ *                  `c-button--secondary`
+ *                  `c-button--success`
+ *                  `c-button--danger`
+ *                  `c-button--link`
+ *                  `c-button--mini`
+ *                  `c-button--small`
+ *                  `c-button--large`
  * 
- * Modifiers:       `ui-button--primary`
- *                  `ui-button--secondary`
- *                  `ui-button--success`
- *                  `ui-button--danger`
- *                  `ui-button--link`
- *                  `ui-button--mini`
- *                  `ui-button--small`
- *                  `ui-button--large`
- * 
- * States:          `ui-button--active`
+ * States:          `c-button--active`
  * 
  * Markup:
  * 
- * <!-- ui-button-group -->
- * <div class="ui-button-group">
- *     <button class="ui-button"></button>
- *     <button class="ui-button"></button>
+ * <!-- c-button-group -->
+ * <div class="c-button-group">
+ *     <button class="c-button"></button>
+ *     <button class="c-button"></button>
  * </div>
  * 
- * <!-- ui-button-dropdown -->
- * <div class="ui-button-dropdown" data-ui-dropdown>
- *     <button class="ui-button"></button>
+ * <!-- c-button-dropdown -->
+ * <div class="c-button-dropdown" data-ui-dropdown>
+ *     <button class="c-button"></button>
  *     <ul class="ui-dropdown">
  *         <li><a href=""></a></li>
  *     </ul>
@@ -44,32 +41,32 @@
 // Variables
 // ========================================================================
 
-@ui-button-background-color: @clr-grey-300;
-@ui-button-border-radius: .3rem;
+@c-button-background-color: @clr-grey-300;
+@c-button-border-radius: .3rem;
 
-@ui-button-height: 3.6rem;
-@ui-button-padding: 0 2.4rem;
+@c-button-height: (@unit * 3);
+@c-button-padding: 0 (@unit * 1.5);
 
-@ui-button-font-size: 1.6rem;
-@ui-button-line-height: normal;
+@c-button-font-size: @body-font-size;
+@c-button-line-height: normal;
 
-@ui-button-primary-background-color: rgba(2,119,189,.9);
-@ui-button-primary-background-image: url('/img/bgs/cream_pixels.png');
-@ui-button-primary-background-image-retina: url('/img/bgs/cream_pixels_@2X.png');
-@ui-button-primary-background-size: 160px 160px;
-@ui-button-primary-background-blend-mode: multiply;
+@c-button-primary-background-color: rgba(2,119,189,.9);
+@c-button-primary-background-image: url('/img/bgs/cream_pixels.png');
+@c-button-primary-background-image-retina: url('/img/bgs/cream_pixels_@2X.png');
+@c-button-primary-background-size: 160px 160px;
+@c-button-primary-background-blend-mode: multiply;
 
 
 /* ========================================================================
    Component: Button
  ========================================================================== */
  
-.ui-button::-moz-focus-inner {
+.c-button::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
 
-.ui-button {
+.c-button {
 	-webkit-appearance: none;
 	   -moz-appearance: none;
 
@@ -79,53 +76,53 @@
     display: inline-block;
 	box-sizing: border-box;
 	
-    padding: @ui-button-padding;
-    background: @ui-button-background-color;
-	border-radius: @ui-button-border-radius;
+    padding: @c-button-padding;
+    background: @c-button-background-color;
+	border-radius: @c-button-border-radius;
 	outline: none;
 	
     vertical-align: middle;
     
-    height: @ui-button-height;
-    line-height: @ui-button-line-height;
-    font-size: @ui-button-font-size;
+    height: @c-button-height;
+    line-height: @c-button-line-height;
+    font-size: @c-button-font-size;
     text-align: center;
 	cursor: pointer;
 }
-.ui-button,
-.ui-button:hover {
+.c-button,
+.c-button:hover {
     text-decoration: none;
 }
-.ui-button:active,
-.ui-button--active {
+.c-button:active,
+.c-button--active {
 	box-shadow: inset 0 0 .3rem #BDBDBD;
 }
 
-.ui-button + .ui-button { margin-left: .4rem; }
+.c-button + .c-button { margin-left: (@unit / 2); }
 
-.ui-button > span {
+.c-button > span {
 	display: inline-block;
 	vertical-align: middle;
 	line-height: inherit;
 }
-.ui-button > .iconic[data-glyph] {
-	margin-right: .6rem;
+.c-button > .iconic[data-glyph] {
+	margin-right: (@unit / 2);
 	&:before {
 		vertical-align: middle;
 	}
 }
 
 
-/* Modifier `ui-button--primary`
+/* Modifier `c-button--primary`
  ========================================================================== */
 
-.ui-button--primary,
-.ui-button--primary:hover {
-	background-image: @ui-button-primary-background-image;
+.c-button--primary,
+.c-button--primary:hover {
+	background-image: @c-button-primary-background-image;
 	background-position: center;
-	background-color: @ui-button-primary-background-color;
-	background-blend-mode: @ui-button-primary-background-blend-mode;
-	background-size: @ui-button-primary-background-size;
+	background-color: @c-button-primary-background-color;
+	background-blend-mode: @c-button-primary-background-blend-mode;
+	background-size: @c-button-primary-background-size;
 	
 	box-shadow: none;
 	text-shadow: 0 -.1rem rgba(0,0,0,.8);
@@ -134,74 +131,71 @@
 	color: white;
 }
 
-.ui-button--primary:hover,
-.ui-button--primary:focus {
+.c-button--primary:hover,
+.c-button--primary:focus {
 	box-shadow: 0 .1rem .16rem .16rem #e0e0e0;
 }
-.ui-panel .ui-button--primary:hover,
-.ui-panel .ui-button--primary:focus {
+.c-panel .c-button--primary:hover,
+.c-panel .c-button--primary:focus {
 	box-shadow: 0 .1rem .2rem .1rem #e0e0e0;
 }
 
 
-.ui-button--primary:active,
-.ui-button--primary.ui-button--active,
-.ui-panel .ui-button--primary:active,
-.ui-panel .ui-button--primary.ui-button--active {
-	box-shadow: inset 0 0 .2rem #424242;
+.c-button--primary:active,
+.c-button--primary.c-button--active,
+.c-panel .c-button--primary:active,
+.c-panel .c-button--primary.c-button--active {
+	box-shadow: inset 0 0 .2rem @clr-grey-800;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
 	   only screen and (min-resolution: 192dpi),
 	   only screen and (min-resolution: 2dppx)
 {
-	.ui-button--primary {
-		background-image: @ui-button-primary-background-image-retina;
+	.c-button--primary {
+		background-image: @c-button-primary-background-image-retina;
 	}
 }
 
 
-/* Modifier `ui-button--link`
+/* Modifier `c-button--link`
  ========================================================================== */
  
-.ui-button--link {
+.c-button--link {
 	background: transparent;
-	color: #0277BD; /* light blue 800 */
+	color: @clr-light-blue-800;
 	font-weight: 600;
 	text-decoration: underline;
-	
-	-webkit-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
-       -moz-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
-    	 -o-transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
-			transition: color .16s cubic-bezier(0.3, 0, 0.2, 1);
+	transition: color .16s @easing;
 }
-.ui-button--link:hover,
-.ui-button--link:focus,
-.ui-button--link:active,
-.ui-button--link.ui-button--active {
+
+.c-button--link:hover,
+.c-button--link:focus,
+.c-button--link:active,
+.c-button--link.c-button--active {
 	text-decoration: underline;
-	color: #01579B; /* light blue 900 */
+	color: @clr-light-blue-900;
 	box-shadow: none;
 }
 
 
-/* Sub-object `ui-button-group`
+/* Component: `c-button-group`
  ========================================================================== */
 
-.ui-button-group {
+.c-button-group {
     position: relative;
     display: block;
-	/* background-color: #F5B2D8; */
+	// background-color: @clr-yellow-900;
 	
-	height: 4.8rem;
-	line-height: 4.8rem;
+	height: (3 * @unit);
+	line-height: (@unit * 3);
 	
 	text-align: right;
     font-size: .001px;
     white-space: nowrap;
 	
-	margin-top: 2.4rem;
-	margin-bottom: .8rem;
-	padding-right: .8rem;
-	padding-left: 2.4rem;
+	margin-top: (@unit * 1.5);
+	margin-bottom: (@unit / 2);
+	padding-right: (@unit / 2);
+	padding-left: (@unit * 1.5);
 }

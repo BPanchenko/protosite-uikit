@@ -1,12 +1,13 @@
+@import "../mixins";
+@import "../variables";
+
 /**
- * Name:            List
+ * Component:       `c-list`
  * Description:     Defines styles for ordered and unordered lists
  * 
- * Component:       `uk-list`
- * 
- * Modifiers:       `uk-list--small`
- *                  `uk-list--space`
- *                  `uk-list--striped`
+ * Modifiers:       `c-list--small`
+ *                  `c-list--space`
+ *                  `c-list--striped`
  * 
  ========================================================================== */
 
@@ -15,7 +16,7 @@
    Component: Unordered list
  ========================================================================== */
 
-.ui-list {
+.c-list {
 	padding: 0;
 	list-style: none;
 }
@@ -25,58 +26,58 @@
  * List item
  */
 
-.ui-list > li {
+.c-list > li {
 	padding-left: 1.7rem;
-	margin-bottom: .4rem;
+	margin-bottom: (@unit / 2);
 	background: url('/svg/icons/square.svg') no-repeat .4rem 1rem;
 	background-size: 5px 5px;
 }
-.ui-list li:last-child { margin-bottom: 0; }
+.c-list li:last-child { margin-bottom: 0; }
 
 
 /*
  * Nested list
  */
 
-.ui-list ul {
+.c-list ul {
     margin: 0;
     padding-left: 1.6rem;
     list-style: none;
 }
 
 
-/* Modifier: `ui-list--small`
+/* Modifier: `c-list--small`
  ========================================================================== */
-.ui-list--small {
+.c-list--small {
 	font-size: 1.4rem;
 }
-.ui-list--small li {
+.c-list--small li {
 	padding-left: 1.2rem;
 	margin-bottom: 0;
 	background-position: left .9rem;
 	background-size: 4px 4px;
 }
 
-/* Modifier: `ui-list--space`
+/* Modifier: `c-list--space`
  ========================================================================== */
 
-.ui-list--space li {
+.c-list--space li {
 	background: none;
 	padding-left: 0;
 }
-.ui-list--space > li:nth-child(n+2) { margin-top: 1.6rem; }
-.ui-list--space.ui-list--small > li:nth-child(n+2) { margin-top: .8rem; }
+.c-list--space > li:nth-child(n+2) { margin-top: 1.6rem; }
+.c-list--space.c-list--small > li:nth-child(n+2) { margin-top: .8rem; }
 
 
 /* ========================================================================
    Component: Ordered list
  ========================================================================== */
  
-.ui-list {
+.c-list {
 	list-style: decimal;
 	padding-left: 2.4rem;
 }
-.ui-list li {
+.c-list li {
 	background: none;
 	padding-left: 0;
 }
@@ -86,6 +87,6 @@
  * Nested list
  */
 
-.ui-list ol {
+.c-list ol {
 	list-style: lower-alpha;
 }
