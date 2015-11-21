@@ -21,8 +21,8 @@
         
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet/less" type="text/css" href="css/main.less">
-        <link rel="stylesheet/less" type="text/css" href="css/components/panel.less">
         <link rel="stylesheet/less" type="text/css" href="css/components/button.less">
+        <link rel="stylesheet/less" type="text/css" href="css/objects/panel.less">
 
         <!-- Custom styles -->
         <link rel="stylesheet" type="text/css" href="css/pattern.css">
@@ -42,9 +42,18 @@
         <main class="o-container" role="main">
             <hgroup>
                 <h1>Protosite.UiKit</h1>
-                <h2>Интерфейс / Кнопки</h2>
+                <section class="o-breadcrumbs">
+                    <h2 class="o-breadcrumbs__link">Интерфейс</h2>
+                    <h2 class="o-breadcrumbs__current">Кнопки</h2>
+                </section>
             </hgroup>
-            <hr>
+            <hr class="u-margin-bottom">
+
+            <section class="c-panel c-panel--clean u-margin-large-top u-margin-large-bottom">
+                <div class="c-panel-body u-text-center">
+                    <button type="button" class="c-button">Кнопка</button>
+                </div>
+            </section>
             
             <section id="buttons" class="c-panel u-margin">
                 <div class="c-panel-body">

@@ -4,45 +4,45 @@
 // Variables of the components
 // ========================================================================
 
-@c-panel-background: white;
-@c-panel-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+@o-panel-background: white;
+@o-panel-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
 
 
 /* ========================================================================
    Component: Panel
  ========================================================================== */
  
-.c-panel {
+.o-panel {
     display: block;
     position: relative;
 	padding: @unit / 2;
-	background: @c-panel-background;
-	box-shadow: @c-panel-box-shadow;
+	background: @o-panel-background;
+	box-shadow: @o-panel-box-shadow;
 	box-sizing: border-box;
 }
 
-.c-panel::before,
-.c-panel::after {
+.o-panel::before,
+.o-panel::after {
     content: " ";
     display: table;
 }
 
-.c-panel::after { clear: both; }
+.o-panel::after { clear: both; }
 
-.c-panel + .c-panel {
+.o-panel + .o-panel {
    margin-top: @unit;
 }
 
 
-/* Element `c-panel-divider`
+/* Element `o-panel-divider`
  ========================================================================== */
  
-.c-panel + .c-panel-divider {
+.o-panel + .o-panel-divider {
 	position: relative;
 	margin-top: @unit !important;
 }
 
-.c-panel + .c-panel-divider::after {
+.o-panel + .o-panel-divider::after {
     content: "";
     display: block;
     position: absolute;
@@ -53,10 +53,10 @@
 }
 
 
-/* Modifier `c-panel--transparent`
+/* Modifier `o-panel--transparent`
  ========================================================================== */
  
-.c-panel--transparent {
+.o-panel--transparent {
 	background: transparent;
 	box-shadow: none;
 }
