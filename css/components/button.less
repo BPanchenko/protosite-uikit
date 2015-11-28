@@ -288,6 +288,14 @@ luminosity
 }
 
 
+/* Modifier: `c-button--rounded`
+ ========================================================================== */
+
+.c-button--rounded {
+	border-radius: 50vh;
+}
+
+
 /* ========================================================================
    Elements: `c-button__icon` and `c-button__text`
  ========================================================================== */
@@ -320,6 +328,18 @@ luminosity
 .c-button--link:hover {
 	.c-button__text {
 		text-decoration: @link-text-decoration-hover;
+	}
+}
+
+
+/* Modifier: `c-button--icon`
+ ========================================================================== */
+
+.c-button--icon {
+	text-align: center;
+	.c-button__icon {
+		margin-left: -(@unit / 1.618);
+		margin-right: -(@unit / 1.618);
 	}
 }
 
