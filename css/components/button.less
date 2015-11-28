@@ -17,7 +17,7 @@
  *                  `c-button--small`
  *                  `c-button--large`
  * 
- * States:          `c-button--active`
+ * States:          `c-button--active` | c-button:active | [aria-checked=true]
  * 
  * Markup:
  * 
@@ -41,24 +41,76 @@
 // Variables
 // ========================================================================
 
-@c-button-background-color: @clr-grey-300;
-@c-button-border-radius: .3rem;
+@c-button-background-color: fade(@clr-grey-700, 52%);
+@c-button-background-color-focus: fade(@clr-grey-700, 70%);
 
-@c-button-height: (@unit * 3);
-@c-button-padding: 0 (@unit * 1.5);
+@c-button-background-image: url('/img/bgs/subtle_dots.png');
+@c-button-background-image-retina: url('/img/bgs/subtle_dots_@2X.png');
+@c-button-background-size: 27px 15px;
+@c-button-background-blend-mode: overlay;
+@c-button-border-radius: @unit / 4;
 
+@c-button-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.1), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+@c-button-box-shadow-active: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
+
+@c-button-min-height: (@unit * 2);
+@c-button-padding: (@unit / 1.618) (@unit * 1.618);
+
+@c-button-color: @body-color;
 @c-button-font-size: @body-font-size;
+@c-button-font-weight: 600;
 @c-button-line-height: normal;
+@c-button-text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
 
-@c-button-primary-background-color: rgba(2,119,189,.9);
-@c-button-primary-background-image: url('/img/bgs/cream_pixels.png');
-@c-button-primary-background-image-retina: url('/img/bgs/cream_pixels_@2X.png');
-@c-button-primary-background-size: 160px 160px;
-@c-button-primary-background-blend-mode: multiply;
+
+@c-button-danger-background-color: fade(@clr-red-800, 76%);
+@c-button-danger-background-color-focus: fade(@clr-red-900, 82%);
+@c-button-danger-background-blend-mode: color-burn;
+@c-button-danger-color: @clr-white;
+@c-button-danger-text-shadow: none;
+
+@c-button-primary-background-color: fade(@clr-light-blue-800, 90%);
+@c-button-primary-background-color-focus: fade(@clr-light-blue-900, 80%);
+@c-button-primary-background-blend-mode: color-burn;
+@c-button-primary-color: @clr-white;
+@c-button-primary-text-shadow: none;
+
+@c-button-success-background-color: fade(@clr-green-800, 76%);
+@c-button-success-background-color-focus: fade(@clr-green-900, 72%);
+@c-button-success-background-blend-mode: color-burn;
+@c-button-success-color: @clr-white;
+@c-button-success-text-shadow: none;
+
+@c-button-warning-background-color: fade(@clr-orange-800, 76%);
+@c-button-warning-background-color-focus: fade(@clr-orange-900, 78%);
+@c-button-warning-background-blend-mode: color-burn;
+@c-button-warning-color: @clr-white;
+@c-button-warning-text-shadow: none;
+
+
+/*
+normal
+multiply
+screen
+overlay
+darken
+lighten
+color-dodge
+color-burn
+hard-light
+soft-light
+difference
+exclusion
+hue
+saturation
+color
+luminosity
+*/
+@c-button-panel-box-shadow: none;
 
 
 /* ========================================================================
-   Component: Button
+   Component: `c-button`
  ========================================================================== */
  
 .c-button::-moz-focus-inner {
@@ -71,31 +123,34 @@
 	   -moz-appearance: none;
 
     border: none;
+	outline: none;
+	text-align: center;
     text-transform: none;
+	text-shadow: @c-button-text-shadow;
 	
     display: inline-block;
+	vertical-align: middle;
 	box-sizing: border-box;
-	
-    padding: @c-button-padding;
-    background: @c-button-background-color;
-	border-radius: @c-button-border-radius;
-	outline: none;
-	
-    vertical-align: middle;
-    
-    height: @c-button-height;
-    line-height: @c-button-line-height;
-    font-size: @c-button-font-size;
-    text-align: center;
+	padding: @c-button-padding;
+	min-height: @c-button-min-height;
+	line-height: @c-button-line-height;
+
+	color: @c-button-color;
 	cursor: pointer;
-}
-.c-button,
-.c-button:hover {
-    text-decoration: none;
-}
-.c-button:active,
-.c-button--active {
-	box-shadow: inset 0 0 .3rem #BDBDBD;
+	font-size: @c-button-font-size;
+	font-weight: @c-button-font-weight;
+
+	background-color: @c-button-background-color;
+	background-image: @c-button-background-image;
+	background-size: @c-button-background-size;
+	background-position: center;
+	background-blend-mode: @c-button-background-blend-mode;
+
+	border-radius: @c-button-border-radius;
+	box-shadow: @c-button-box-shadow;
+	box-sizing: border-box;
+
+	transition: @link-transition, background-color 160ms @easing;
 }
 
 .c-button + .c-button { margin-left: (@unit / 2); }
@@ -113,69 +168,123 @@
 }
 
 
-/* Modifier `c-button--primary`
+/* State: active
  ========================================================================== */
 
-.c-button--primary,
-.c-button--primary:hover {
-	background-image: @c-button-primary-background-image;
-	background-position: center;
-	background-color: @c-button-primary-background-color;
-	background-blend-mode: @c-button-primary-background-blend-mode;
-	background-size: @c-button-primary-background-size;
-	
-	box-shadow: none;
-	text-shadow: 0 -.1rem rgba(0,0,0,.8);
-	transition: box-shadow .16s ease-out;
-	
-	color: white;
-}
-
-.c-button--primary:hover,
-.c-button--primary:focus {
-	box-shadow: 0 .1rem .16rem .16rem #e0e0e0;
-}
-.c-panel .c-button--primary:hover,
-.c-panel .c-button--primary:focus {
-	box-shadow: 0 .1rem .2rem .1rem #e0e0e0;
+.c-button:active,
+.c-button[aria-checked=true],
+.c-button--active,
+.o-panel:not(.o-panel--clean) .c-button:active,
+.o-panel:not(.o-panel--clean) .c-button[aria-checked=true],
+.o-panel:not(.o-panel--clean) .c-button--active {
+	box-shadow: @c-button-box-shadow-active;
 }
 
 
-.c-button--primary:active,
-.c-button--primary.c-button--active,
-.c-panel .c-button--primary:active,
-.c-panel .c-button--primary.c-button--active {
-	box-shadow: inset 0 0 .2rem @clr-grey-800;
+/* State: focus
+ ========================================================================== */
+
+.c-button:focus,
+.o-panel:not(.o-panel--clean) .c-button:focus {
+	background-color: @c-button-background-color-focus;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-	   only screen and (min-resolution: 192dpi),
-	   only screen and (min-resolution: 2dppx)
-{
-	.c-button--primary {
-		background-image: @c-button-primary-background-image-retina;
+
+/* Context: button on the panel
+ ========================================================================== */
+
+.o-panel:not(.o-panel--clean) {
+	.c-button {
+		box-shadow: @c-button-panel-box-shadow;
 	}
 }
 
 
-/* Modifier `c-button--link`
+/* Modifier: `c-button--danger`
+ ========================================================================== */
+
+.c-button--danger {
+	background-color: @c-button-danger-background-color;
+	background-blend-mode: @c-button-danger-background-blend-mode;
+	color: @c-button-danger-color;
+	text-shadow: @c-button-danger-text-shadow;
+}
+
+.c-button--danger:focus,
+.o-panel:not(.o-panel--clean) .c-button--danger:focus {
+	background-color: @c-button-danger-background-color-focus;
+}
+
+
+/* Modifier: `c-button--primary`
+ ========================================================================== */
+
+.c-button--primary,
+.c-button--primary:hover {
+	background-color: @c-button-primary-background-color;
+	background-blend-mode: @c-button-primary-background-blend-mode;
+	color: @c-button-primary-color;
+	text-shadow: @c-button-primary-text-shadow;
+}
+
+.c-button--primary:focus,
+.o-panel:not(.o-panel--clean) .c-button--primary:focus {
+	background-color: @c-button-primary-background-color-focus;
+}
+
+
+/* Modifier: `c-button--success`
+ ========================================================================== */
+
+.c-button--success {
+	background-color: @c-button-success-background-color;
+	background-blend-mode: @c-button-success-background-blend-mode;
+	color: @c-button-success-color;
+	text-shadow: @c-button-success-text-shadow;
+}
+
+.c-button--success:focus,
+.o-panel:not(.o-panel--clean) .c-button--success:focus {
+	background-color: @c-button-success-background-color-focus;
+}
+
+
+/* Modifier: `c-button--warning`
+ ========================================================================== */
+
+.c-button--warning {
+	background-color: @c-button-warning-background-color;
+	background-blend-mode: @c-button-warning-background-blend-mode;
+	color: @c-button-warning-color;
+	text-shadow: @c-button-warning-text-shadow;
+}
+
+.c-button--warning:focus,
+.o-panel:not(.o-panel--clean) .c-button--warning:focus {
+	background-color: @c-button-warning-background-color-focus;
+}
+
+
+/* Modifier: `c-button--link`
  ========================================================================== */
  
 .c-button--link {
-	background: transparent;
-	color: @clr-light-blue-800;
-	font-weight: 600;
-	text-decoration: underline;
-	transition: color .16s @easing;
+	background: transparent !important;
+	color: @link-color;
+	text-decoration: @link-text-decoration;
+	transition: @link-transition;
+	box-shadow: none !important;
 }
 
-.c-button--link:hover,
+.c-button--link:hover {
+	text-decoration: @link-text-decoration-hover;
+}
+
 .c-button--link:focus,
 .c-button--link:active,
+.c-button--link[aria-checked=true],
 .c-button--link.c-button--active {
-	text-decoration: underline;
-	color: @clr-light-blue-900;
-	box-shadow: none;
+	color: @link-color-hover;
 }
 
 
@@ -194,4 +303,17 @@
 	padding-right: (@unit / 2);
 	padding-left: (@unit * 1.5);
 	font-size: .001px;
+}
+
+
+/* Media queries
+ ========================================================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	   only screen and (min-resolution: 192dpi),
+	   only screen and (min-resolution: 2dppx)
+{
+	.c-button {
+		background-image: @c-button-background-image-retina;
+	}
 }

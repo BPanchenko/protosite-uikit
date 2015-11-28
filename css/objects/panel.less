@@ -6,6 +6,7 @@
 
 @o-panel-background: white;
 @o-panel-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+@o-panel-padding: @unit;
 
 
 /* ========================================================================
@@ -15,7 +16,7 @@
 .o-panel {
     display: block;
     position: relative;
-	padding: @unit / 2;
+	padding: @o-panel-padding;
 	background: @o-panel-background;
 	box-shadow: @o-panel-box-shadow;
 	box-sizing: border-box;
@@ -34,7 +35,7 @@
 }
 
 
-/* Element `o-panel-divider`
+/* Element: `o-panel-divider`
  ========================================================================== */
  
 .o-panel + .o-panel-divider {
@@ -53,10 +54,22 @@
 }
 
 
+/* Subobject: `o-panel__title`
+ ========================================================================== */
+
+
+/* Subobject: `o-panel__body`
+ ========================================================================== */
+
+.o-panel__title + .o-panel__body {
+	padding: (@unit / 2) 0 @unit;
+}
+
+
 /* Modifier `o-panel--transparent`
  ========================================================================== */
  
-.o-panel--transparent {
+.o-panel--clean {
 	background: transparent;
 	box-shadow: none;
 }

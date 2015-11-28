@@ -42,27 +42,56 @@
         <main class="o-container" role="main">
             <hgroup>
                 <h1>Protosite.UiKit</h1>
-                <section class="o-breadcrumbs">
+                <nav class="o-breadcrumbs">
                     <h2 class="o-breadcrumbs__link">Интерфейс</h2>
                     <h2 class="o-breadcrumbs__current">Кнопки</h2>
-                </section>
+                </nav>
             </hgroup>
-            <hr class="u-margin-bottom">
 
-            <section class="o-panel o-panel--clean u-margin-large-bottom">
-                <div class="o-panel-body u-text-center">
-                    <button type="button" class="c-button">Кнопка</button>
+            <hr class="u-margin-large-bottom">
+
+            <div class="u-grid">
+                <div class="u-width-50">
+                    <section class="o-panel o-panel--clean">
+                        <div class="o-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                            <button type="button" class="c-button">Кнопка</button>
+                        </div>
+                    </section>
                 </div>
-            </section>
-            
-            <section id="buttons" class="o-panel u-margin">
-                <div class="o-panel-body">
-                    <div class="c-button-group">
-                        <button type="button" class="c-button c-button--link">Кнопка как ссылка</button>
-                        <button type="button" class="c-button c-button--secondary">Вторичная</button>
-                        <button type="button" class="c-button c-button--primary">Первичная</button>
-                        <button type="button" class="c-button c-button--primary">ОТПРАВИТЬ</button>
-                    </div>
+                <div class="u-width-50">
+                    <section class="o-panel">
+                        <div class="o-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                            <button type="button" class="c-button">Кнопка</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <article class="o-article u-margin-large">
+                <p class="o-article-lead">
+                    Кнопка есть компонент пользовательского интерфейса реализующий гипертекстовый механизм взаимодействия с пользователем.<br>
+                </p>
+                <p>
+                    В отличии от ссылки реакция на действие пользователя приводит к изменению содержимого текущей страницы приложения.<br>
+                    Исключением может являтся только лишь кнопка как ссылка, о чем даёт понять её модификатор.
+                </p>
+                <p>
+                    В пассивном состоянии поведение кнопки зависит от контекста: по умолчанию кнопка приподнята над базовой поверхностью приложения, но на панеле её поверхность совпадает с поверхностью контекста.
+                    <br>
+                    При нажатии кнопка уходит внутрь поверхности контекста.
+                </p>
+            </article>
+
+            <section class="o-panel u-margin">
+                <hgroup class="o-panel__title">
+                    <h3>Разновидности кнопок</h3>
+                </hgroup>
+                <div class="o-panel__body u-text-center">
+                    <button type="button" class="c-button c-button--link">Кнопка как ссылка</button>
+                    <button type="button" class="c-button c-button--primary">Важная</button>
+                    <button type="button" class="c-button c-button--danger">Опасная</button>
+                    <button type="button" class="c-button c-button--warning">Предупреждающая</button>
+                    <button type="button" class="c-button c-button--success">Успешная</button>
                 </div>
             </section>
         </main>
