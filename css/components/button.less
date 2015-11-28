@@ -131,9 +131,9 @@ luminosity
     display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
-	padding: @c-button-padding;
 	min-height: @c-button-min-height;
 	line-height: @c-button-line-height;
+	padding: @c-button-padding;
 
 	color: @c-button-color;
 	cursor: pointer;
@@ -288,7 +288,44 @@ luminosity
 }
 
 
-/* Component: `c-button-group`
+/* ========================================================================
+   Elements: `c-button__icon` and `c-button__text`
+ ========================================================================== */
+
+.c-button__icon,
+.c-button__text {
+	display: inline-block;
+	vertical-align: middle;
+	float: left;
+}
+.c-button__icon {
+	margin-left: -(@unit / 1.618);
+	margin-right: (@unit / 1.618);
+}
+
+.c-button__text + .c-button__icon {
+	margin-left: (@unit / 1.618);
+	margin-right: -(@unit / 1.618);
+}
+
+.c-button--link {
+	.c-button__icon {
+		text-decoration: none;
+	}
+	.c-button__text {
+		text-decoration: @link-text-decoration;
+	}
+}
+
+.c-button--link:hover {
+	.c-button__text {
+		text-decoration: @link-text-decoration-hover;
+	}
+}
+
+
+/* ========================================================================
+   Component: `c-button-group`
  ========================================================================== */
 
 .c-button-group {
