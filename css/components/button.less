@@ -54,7 +54,7 @@
 @c-button-box-shadow-active: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
 
 @c-button-min-height: (@unit * 2);
-@c-button-padding: (@unit / 1.618) (@unit * 1.618);
+@c-button-padding: (@unit / 2) (@unit * 1.618);
 
 @c-button-color: @body-color;
 @c-button-font-size: @body-font-size;
@@ -87,26 +87,7 @@
 @c-button-warning-color: @clr-white;
 @c-button-warning-text-shadow: none;
 
-
-/*
-normal
-multiply
-screen
-overlay
-darken
-lighten
-color-dodge
-color-burn
-hard-light
-soft-light
-difference
-exclusion
-hue
-saturation
-color
-luminosity
-*/
-@c-button-panel-box-shadow: none;
+@c-button_on_panel-box-shadow: none;
 
 
 /* ========================================================================
@@ -151,6 +132,11 @@ luminosity
 	box-sizing: border-box;
 
 	transition: @link-transition, background-color 160ms @easing;
+
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
 }
 
 .c-button + .c-button { margin-left: (@unit / 2); }
@@ -195,7 +181,7 @@ luminosity
 
 .o-panel:not(.o-panel--clean) {
 	.c-button {
-		box-shadow: @c-button-panel-box-shadow;
+		box-shadow: @c-button_on_panel-box-shadow;
 	}
 }
 
@@ -285,14 +271,6 @@ luminosity
 .c-button--link[aria-checked=true],
 .c-button--link.c-button--active {
 	color: @link-color-hover;
-}
-
-
-/* Modifier: `c-button--rounded`
- ========================================================================== */
-
-.c-button--rounded {
-	border-radius: 50vh;
 }
 
 
