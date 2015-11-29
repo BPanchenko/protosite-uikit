@@ -1,5 +1,7 @@
+@import "variables";
+
 /**
- * Defines styles only for patterns protosite.uikit
+ * Defines styles only for patterns Protosite.UiKit
  ========================================================================== */
 
 
@@ -13,6 +15,7 @@
 	cursor: default;
 	line-height: 5.2rem;
 	text-align: center;
+	background-color: @clr-white;
 }
 .pattern-animation-fade q,
 .pattern-animation-movement q {
@@ -26,7 +29,7 @@
 }
 
 .pattern-animation-fade {
-	transition: all .3s cubic-bezier(0.3, 0, 0.2, 1);
+	transition: all .3s @easing;
 }
 .pattern-animation-fade:hover {
 	color: white;
@@ -43,7 +46,7 @@
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 	margin-left: 0;
-	transition: all .8s cubic-bezier(0.3, 0, 0.2, 1);
+	transition: all .8s @easing;
 	
 	width: 1.6rem;
 	line-height: inherit;

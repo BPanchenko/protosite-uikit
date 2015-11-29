@@ -1,454 +1,68 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-        
-        <title>ProtoSite.UiKit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+
+        <title>Protosite.UiKit</title>
         <meta name="author" content="Boris Panchenko, bp@bp-studio.ru">
         <meta name="copyright" content="">
         <meta name="description" content="">
         <meta name="keywords" content="">
 
-    	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-        <link rel="apple-touch-startup-image" href="/img/icons/ios/startup.png">
-        <link rel="apple-touch-icon" href="/img/icons/ios/touch-icon-iphone.152x152.png">
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
 
+        <!-- Framework styles -->
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet/less" type="text/css" href="css/main.less">
         <link rel="stylesheet/less" type="text/css" href="css/objects/panel.less">
-        <link rel="stylesheet/less" type="text/css" href="css/components/button.less">
 
-        <link rel="stylesheet" type="text/css" href="css/pattern.css">
+        <!-- Custom styles -->
+        <link rel="stylesheet/less" type="text/css" href="css/pattern.less">
 
-        <script src="vendor/less/dist/less.min.js"></script>
-
-        <script src="vendor/underscore/underscore-min.js"></script>
-        <script src="vendor/backbone/backbone-min.js"></script>
-        <script src="js/ui/core.js"></script>
-        <script src="js/ui/common.js"></script>
-        <script src="js/ui/components/tabs.js"></script>
-
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script src="js/ruler.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" data-env="development"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     </head>
     <body>
-        <header class="ui-container header" role="banner"></header>
-        
-        <main class="ui-container content" role="main">
-            
-            <h1>Protosite.UiKit</h1>
+        <div class="o-container">
+            <header role="banner">
+                <hgroup>
+                    <h1>Protosite.UiKit</h1>
+                </hgroup>
+            </header>
+
             <hr>
-            <h2>Интерфейс</h2>
-            
-            <section id="colors" class="ui-panel">
-                <h3 class="ui-panel-title">
-                    <a href="">Цвета (палитра Google Materials)</a>
-                </h3>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-light-blue-800">
-                    <small>Light Blue 800</small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-red-800">
-                    <small>Red 800</small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-cyan-800">
-                    <small>Cyan 800</small>
-                </a>
-                <hr>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-teal-500">
-                    <small>Teal 500</small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-pink-500">
-                    <small>Pink 500</small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-indigo-500">
-                    <small>
-                        <small>Indigo 500</small>
-                    </small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-light-green-500">
-                    <small>Light Green 500</small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-light-blue-A400">
-                    <small>Light Blue A400</small>
-                </a>
-                <a href="javascript:void(0)" class="pattern ui-margin ui-bg-light-green-A700">
-                    <small>Light Green A700</small>
-                </a>
-            </section>
-            
-            <section id="animations" class="ui-panel ui-margin">
-                <h3 class="ui-panel-title">
-                    <a href="#animations">Animations</a>
-                </h3>
-                <a href="javascript:void(0)" class="pattern-animation-fade ui-margin">
-                	Fade: <q>.3s cubic-bezier(0.3, 0, 0.2, 1)</q> (Hover to see effect)
-                </a>
-                <a href="javascript:void(0)" class="pattern-animation-movement ui-margin">
-                	Movement: <q>.8s cubic-bezier(0.3, 0, 0.2, 1)</q> (Hover to see effect)
-                </a>
-            </section>
-            
-            <section id="tabs" class="ui-margin-bottom">
-                <h3 class="ui-panel-title">
-                    <a href="#tabs">Вкладки (tabs)</a>
-                </h3>
-                
-                <ul class="ui-tabs ui-panel ui-margin-small-bottom" data-ui-tabs="{ container: '.js-tabs-container' }">
-                	<li class="ui-tabs-item">
-                    	<a href="#" class="ui-tabs-link" data-active="false" data-target="js-tab-view1">Вкладка</a>
-                    </li>
-                	<li class="ui-tabs-item">
-                    	<a href="#" class="ui-tabs-link" data-active="false" data-target="js-tab-view2">Очень длинный текст вкладки в две строки</a>
-                    </li>
-                	<li class="ui-tabs-item">
-                    	<a href="#" class="ui-tabs-link" data-active="false" data-target="js-tab-view3">Еще вкладка</a>
-                    </li>
-                    <li class="ui-tabs-indicator"></li>
-                </ul>
-                
-                <div class="ui-tabs-container js-tabs-container">
-                	<div class="ui-panel" data-active="false">
-                    	<p>
-                        	Элонгация, на первый взгляд, гасит первоначальный большой круг небесной сферы – север вверху, восток слева. Пpотопланетное облако вызывает азимут. Комета, после осторожного анализа, выбирает параметр. Афелий пространственно притягивает болид .
-                        </p>
+
+            <main role="main">
+
+                <section id="animations" class="u-margin-large-top">
+                    <hgroup>
+                        <h3>Интерфейс</h3>
+                    </hgroup>
+                    <h5>Компоненты:</h5>
+                    <ul class="c-list">
+                        <li><a href="buttons.html">Кнопка</a></li>
+                    </ul>
+                </section>
+
+                <section id="animations" class="u-margin-large">
+                    <hgroup>
+                        <h3>Анимация</h3>
+                        <small>Для воспроизведения наведите курсор</small>
+                    </hgroup>
+                    <div class="u-margin">
+                        <a href="javascript:void(0)" class="pattern-animation-fade u-margin">
+                            Fade: <q>.3s cubic-bezier(0.3, 0, 0.2, 1)</q>
+                        </a>
+                        <a href="javascript:void(0)" class="pattern-animation-movement u-margin">
+                            Movement: <q>.8s cubic-bezier(0.3, 0, 0.2, 1)</q> (Hover to see effect)
+                        </a>
                     </div>
-                	<div class="ui-panel" data-active="false">
-                    	<p>
-                        	Реликтовый ледник дает близкий секстант. По космогонической гипотезе Джеймса Джинса, планета вероятна. Соединение гасит реликтовый ледник. Хотя хpонологи не увеpены, им кажется, что болид иллюстрирует эллиптический Ганимед. Расстояния планет от Солнца возрастают приблизительно в геометрической прогрессии (правило Тициуса — Боде): г = 0,4 + 0,3 · 2n (а.е.), где сарос меняет космический мусор.
-                        </p>
-                    </div>
-                	<div class="ui-panel" data-active="false">
-                    	<p>
-                        	Млечный Путь выслеживает близкий терминатор. Как мы уже знаем, маятник Фуко оценивает непреложный космический мусор, об этом в минувшую субботу сообщил заместитель администратора NASA. Хотя хpонологи не увеpены, им кажется, что декретное время притягивает случайный большой круг небесной сферы. Широта решает непреложный аргумент перигелия.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="icons" class="ui-panel">
-                <h3 class="ui-panel-title">
-                    <a href="#icons">Иконки</a>
-                </h3>
-                <p>
-                    <i class="svgicon" data-glyph="person-genderless"></i>
-                    <i class="svgicon" data-glyph="comment-square"></i>
-                    <i class="svgicon" data-glyph="heart"></i>
-                    <i class="svgicon" data-glyph="hand"></i>
-                    <i class="svgicon" data-glyph="arrow-right"></i>
-                    <i class="svgicon" data-glyph="image-square"></i>
-                    <br>
-                    <i class="svgicon" data-glyph="commenter"></i>
-                    <i class="svgicon" data-glyph="liker"></i>
-                    <i class="svgicon" data-glyph="subscriber"></i>
-                    <i class="svgicon" data-glyph="follower"></i>
-                    <i class="svgicon" data-glyph="people"></i>
-                    <br>
-                    <i class="svgicon" data-glyph="limits-vertical"></i>
-                    <i class="svgicon" data-glyph="limit-up"></i>
-                    <i class="svgicon" data-glyph="limit-down"></i>
-                </p>
-            </section>
-            
-            <section id="badges" class="ui-panel ui-margin ui-panel--transparent">
-                <h3 class="ui-panel-title">
-                    <a href="">Badges</a>
-                </h3>
-                
-                <div class="ui-panel ui-panel--transparent ui-margin-small">
-                    <div class="ui-badge">
-                        <span class="ui-badge-str">99</span>
-                    </div>
-                    <div class="ui-badge">
-                        <span class="ui-badge-str">99</span>
-                    </div>
-                    <div class="ui-badge">
-                        <span class="ui-badge-str">99</span>
-                    </div>
-                </div>
-                
-                
-                <div class="ui-panel ui-margin-small">
-                    <div class="ui-badge">
-                        <span class="ui-badge-str ui-bg-cyan-700">99</span>
-                    </div>
-                    <div class="ui-badge">
-                        <span class="ui-badge-str">99</span>
-                    </div>
-                    <div class="ui-badge">
-                        <span class="ui-badge-str">99</span>
-                    </div>
-                </div>
-                
-            </section>
-            
-            <section id="avatars" class="ui-panel ui-margin">
-                <h3 class="ui-panel-title">
-                    <a href="">Аватар</a>
-                </h3>
-                <div class="ui-margin">
-                	<figure class="profile-picture ui-avatar ui-avatar--large" style="background-image: url('https://instagramimages-a.akamaihd.net/profiles/profile_748908871_75sq_1395772822.jpg');"></figure>
-                	<figure class="profile-picture ui-avatar ui-margin-left" style="background-image: url('https://instagramimages-a.akamaihd.net/profiles/profile_748908871_75sq_1395772822.jpg');"></figure>
-                	<figure class="profile-picture ui-avatar ui-avatar--small ui-margin-left" style="background-image: url('https://instagramimages-a.akamaihd.net/profiles/profile_748908871_75sq_1395772822.jpg');"></figure>
-                	<figure class="profile-picture ui-avatar ui-avatar--mini ui-margin-left" style="background-image: url('https://instagramimages-a.akamaihd.net/profiles/profile_748908871_75sq_1395772822.jpg');"></figure>
-                </div>
-            </section>
-            
-            <section id="buttons" class="ui-panel ui-margin">
-                <h3 class="ui-panel-title">
-                    <a href="#buttons">Buttons</a>
-                </h3>
-                <div class="ui-button-group">
-                    <button type="button" class="ui-button ui-button--link">LINK</button>
-                    <button type="button" class="ui-button ui-button--secondary">SECONDARY</button>
-                    <button type="button" class="ui-button ui-button--primary">PRIMARY</button>
-                </div>
-            </section>
-            
-            <section id="form" class="ui-article ui-margin ui-panel">
-                <h3>
-                    <a href="#form">Registration form</a>
-                </h3>
-                
-                <form class="ui-form ui-form--long">
-                    <div class="ui-form-row">
-                         <label class="ui-fieldset ui-fieldset--large">
-                            <span class="ui-field-hint">Представьтесь</span>
-                            <input type="text" class="ui-field" value="">
-                         </label>
-                    </div>
-                    <div class="ui-form-row">
-                        <label class="ui-fieldset">
-                            <span class="ui-field-hint">Откуда вы?</span>
-                            <input type="search" class="ui-field" value="">
-                         </label>
-                    </div>
-                    <div class="ui-form-row">
-                        <label class="ui-fieldset">
-                            <span class="ui-field-hint">Предпочтительный способ связи</span>
-                            <select name="" class="ui-field">
-                                <option value="">Отсутствует</option>
-                                <option value="tel">Номер телефона</option>
-                                <option value="email">E-mail</option>
-                                <option value="search">Поисковик</option>
-                            </select>
-                         </label>
-                    </div>
-                    <div class="ui-form-row">
-                        <label class="ui-fieldset">
-                            <span class="ui-field-hint">Номер телефона</span>
-                            <input type="tel" class="ui-field" value="">
-                         </label>
-                    </div>
-                    <div class="ui-form-row">
-                        <label class="ui-fieldset">
-                            <span class="ui-field-hint">E-mail</span>
-                            <input type="mail" class="ui-field ui-field--long" value="">
-                         </label>
-                    </div>
-                    <div class="ui-form-row">
-                        <label class="ui-fieldset ui-fieldset--error">
-                            <span class="ui-field-hint">Пароль</span>
-                            <input type="password" class="ui-field ui-field--short" value="1234567890">
-                         </label>
-                        <label class="ui-fieldset">
-                            <span class="ui-field-hint">Повтор пароля</span>
-                            <input type="password" class="ui-field ui-field--short" value="">
-                         </label>
-                    </div>
-                    <div class="ui-form-row" unselectable="on">
-                        <label class="ui-chxset" ui-toggle="{ selector: '.js-toggle-target', animate: 'true' }" --data-state="">
-                            <input type="checkbox" class="ui-chx" value="true" name="has_gender" checked>
-                            <span class="ui-chx-sham"></span>
-                            <span class="ui-chx-label">Пол:</span>
-                         </label>
-                        <label class="ui-radioset js-toggle-target">
-                            <input type="radio" name="gender" class="ui-radio" value="male">
-                            <span class="ui-radio-sham"></span>
-                            <span class="ui-radio-label">Мужской</span>
-                         </label>
-                        <label class="ui-radioset js-toggle-target">
-                            <input type="radio" name="gender" class="ui-radio" value="female">
-                            <span class="ui-radio-sham"></span>
-                            <span class="ui-radio-label">Женский</span>
-                         </label>
-                        <label class="ui-radioset js-toggle-target">
-                            <input type="radio" name="gender" class="ui-radio" value="none" checked>
-                            <span class="ui-radio-sham"></span>
-                            <span class="ui-radio-label">Не важно</span>
-                         </label>
-                    </div>
-                    <div class="ui-button-group">
-                        <button type="reset" class="ui-button">RESET</button>
-                        <button type="submit" class="ui-button ui-button--primary ui-button--success">SUBMIT</button>
-                    </div>
-                </form>
-                <br><br><br>
-            </section>
-            
-            <section id="visibility" class="ui-panel">
-               <h3>
-                  <a href="#visibility">Visibility</a>
-               </h3>
-               <p>
-                  <span class="pattern ui-visible-mobile">This text is visible on mobile</span>
-                  <br>
-                  <span class="pattern ui-visible-tablet-portrait">This text is visible on tablet with portrait orientation</span>
-                  <br>
-                  <span class="pattern ui-visible-tablet-landscape">This text is visible on tablet with landscape orientation</span>
-                  <br>
-                  <span class="pattern ui-visible-desktop">This text is visible on medium desktop</span>
-                  <br>
-                  <span class="pattern ui-visible-x-desktop">This text is visible on large desktop</span>
-               </p>
-            </section>
-            
-            <h2 class="ui-margin-large-top">Оформление текста</h2>
-            
-            <section id="fonts" class="ui-panel">
-                <h3>
-                    <a href="#fonts">Гарнитура</a>
-                </h3>
-                <p class="ui-font-header">
-                    Шрифт заголовков: "PT Serif Caption", Arial, sans-serif;
-                	<br>
-                    <em>Шрифт заголовков курсивом: "PT Serif Caption", Arial, sans-serif;</em>
-                </p>
-                <p class="ui-font-primary">
-                    Основной шрифт: "Open Sans", Arial;
-                	<br>
-                    <em>Основной шрифт курсивом: "Open Sans", Arial;</em>
-                	<br>
-                    <span class="ui-text-light">Primary font light: "Open Sans", Arial;</span>
-                	<br>
-                    <b class="ui-text-semibold">Primary font semibold: "Open Sans", Arial;</b>
-                	<br>
-                    <strong class="ui-text-bold">Primary font bold: "Open Sans", Arial;</strong>
-                	<br>
-                    <strong>
-                    	<strong class="ui-text-extrabold">Primary font extrabold: "Open Sans", Arial;</strong>
-                    </strong>
-                </p>
-            </section>
-            
-            <section id="headers" class="ui-panel">
-                <h3>
-                    <a href="#headers">Заголовки</a>
-                </h3>
-                <p>
-                    <h1>Заголовок страницы &lt;h1&gt;</h1>
-                    <h2>Подзаголовок страницы &lt;h2&gt;</h2>
-                    <h3>Заголовок модуля &lt;h3&gt;</h3>
-                    <h4>Подзаголовок модуля &lt;h4&gt;</h4>
-                    <h5>Заголовок блока текста &lt;h5&gt;</h5>
-                    <h6>Подзаголовок блока текста &lt;h6&gt;</h6>
-                </p>
-            </section>
-            
-            <section id="inline-elements" class="ui-panel">
-                <h3>
-                    <a href="#inline-elements">Строчные элементы</a>
-                </h3>
-            	
-                <p>
-                	<a href="#">Ссылка предназначена для создания гиперссылки на документ в сети Интернет или якоря внутри страницы.</a>
-                </p>
-            	
-                <p><em>Тексту добавлен акцент.</em></p>
-            
-                <p><b>Тег <q>b</q> устанавливает полужирное начертание шрифта.</b></p>
-                
-                <p><strong>Тег <q>strong</q> выделяет важный текст жирным начертание шрифта.</strong></p>
-                
-                <p>
-                	<strong>
-                    	<strong>Использование тега <q>strong</q> дважды устанавливает экстражирное начертание шрифта.</strong>
-                    </strong>
-                </p>
-            
-                <p>Текст, <i>набранный курсивом</i>, неудобен для чтения и может применяться лишь к небольшим фрагментам текста.</p>
-            
-                <p><u>Подчеркнутый текст.</u></p>
-            
-                <p><del>Этот текст был удален</del>, а <ins>этот добавлен</ins> в документ.</p>
-            
-                <p><s>Перечеркнутый текст</s></p>
-            
-                <p>Текст в <sup>верхнем индексе</sup></p>
-            
-                <p>Текст в <sub>нижнем индексе</sub></p>
-            
-                <p>
-                	<small>Тег <q>small</q> уменьшает размер шрифта.</small>
-                </p>
-            
-                <p>
-                	<small>
-                    	<small>Использование тега <q>small</q> дважды сильнее уменьшит шрифт и увеличит его пропорции по горизонтали.</small>
-                    </small>
-                </p>
-            
-                <p>Аббревиатура: <abbr title="HyperText Markup Language">HTML</abbr></p>
-            
-                <p><kbd>Текст набранный на клавиатуре или названия клавиш.</kbd></p>
-            
-                <p><cite>Цитата или сноска на другой материал.</cite></p>
-            
-                <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">Цитата в тексте</q></p>
-            
-                <p><dfn>Термин в документе.</dfn></p>
-            
-                <p><mark>Выделенный текст.</mark></p>
-            
-                <p><code>Программный код.</code></p>
-            
-                <p><samp>Результат вывода компьютерной программы.</samp></p>
-            
-                <p>Выделеннная в тексте <var>переменная компьютерной программы</var>, например <var>x</var> = <var>y</var>.</p>
-            </section>
-                
-            <section id="paragraph" class="ui-panel">
-                <h3>
-                	<a href="#paragraph">Параграф</a>
-                </h3>
-				<p>
-					Если архаический миф не знал противопоставления реальности тексту, образ дает механизм сочленений. Ритмический рисунок, на первый взгляд, неравномерен. Возможно, что сходство Гугона и Микулы объясняется родством бродячих мотивов, однако графомания точно выбирает музыкальный дискурс. Цикл, по определению отталкивает анжамбеман. Поэт инстинктивно чувствовал преимущества реального устного исполнения тех стихов, в которых мифопоэтическое пространство представляет собой символ. Холодный цинизм аннигилирует культурный гекзаметр.
-                </p>
-            </section>
-                
-            <section id="lists" class="ui-panel">
-                <h3>
-                  <a href="#lists">Маркированный список</a>
-                </h3>
-                <ul class="ui-list">
-                    <li>Элемент маркированного списка</li>
-                    <li>В маркированном списке порядок элементов не имеет значения. В качестве маркера используется квадрат. Это длинный элемент маркированного списка, который переносится на следующую строку.</li>
-                    <li>
-                        Списки могут быть вложенными друг в друга:
-                        <ul>
-                            <li>Это элемент вложенного списка</li>
-                            <li>Другой элемент вложенного списка</li>
-                        </ul>
-                    </li>
-                    <li>Последний элемент списка</li>
-                </ul>
-                <h3>
-                  <a href="#lists">Нумерованный список</a>
-                </h3>
-                <ol class="ui-list">
-                    <li>Элемент нумерованного списка</li>
-                    <li>В нумерованном списке элементы располагаются в заданном порядке. Это длинный элемент нумерованного списка, который переносится на следующую строку.</li>
-                    <li>
-                        Списки могут быть вложенными друг в друга:
-                        <ol>
-                            <li>Первый элемент вложенного списка</li>
-                            <li>Второй элемент вложенного списка</li>
-                        </ol>
-                    </li>
-                    <li>Последний элемент списка</li>
-                </ol>
-            </section>
-        </main>
+                </section>
+            </main>
+        </div>
     </body>
 </html>
