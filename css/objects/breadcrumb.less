@@ -1,0 +1,70 @@
+@import "../mixins";
+@import "../variables";
+
+/**
+ * Object:		Breadcrumbs
+ * Description: Indicate the current page's location within a navigational hierarchy.
+ *
+ * Elements:	`o-breadcrumb__item`
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@o-breadcrumb-margin: @unit 0 (@unit * 2);
+@o-breadcrumb-after-background-color: @clr-grey-400;
+@o-breadcrumb-after-border-bottom: 1px solid @clr-white;
+
+@o-breadcrumb-item-line-height: @unit * 1.5;
+@o-breadcrumb-item-color: @clr-grey-600;
+
+@o-breadcrumb-item-current-font-family: @body-font-family-caption;
+@o-breadcrumb-item-current-font-size: @h4-font-size;
+@o-breadcrumb-item-current-font-weight: 400;
+@o-breadcrumb-item-current-color: @body-color;
+
+
+/* ========================================================================
+   Object: `o-breadcrumb`
+ ========================================================================== */
+
+.o-breadcrumb {
+	display: block;
+	width: inherit;
+	margin: @o-breadcrumb-margin;
+	color: @o-breadcrumb-item-color;
+
+	// volumetric bottom border as the default style
+	&::after {
+		content: ' ';
+		display: block;
+		width: inherit;
+		height: 1px;
+		background-color: @o-breadcrumb-after-background-color;
+		border-bottom: @o-breadcrumb-after-border-bottom;
+	}
+}
+
+.o-breadcrumb__item {
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: @body-font-size;
+	line-height: @o-breadcrumb-item-line-height;
+
+	&:not(:last-child)::after {
+		content: '/';
+		display: inherit;
+		width: @unit;
+		text-align: center;
+	}
+}
+
+
+.o-breadcrumb__item--current {
+	font-family: @o-breadcrumb-item-current-font-family;
+	font-size: @o-breadcrumb-item-current-font-size;
+	font-weight: @o-breadcrumb-item-current-font-weight;
+	color: @o-breadcrumb-item-current-color;
+}
