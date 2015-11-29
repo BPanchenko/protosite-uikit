@@ -170,12 +170,11 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.8rem 0;
-	font-family: "PT Serif Caption", Arial, sans-serif;
+	margin: 0 0 (@unit / 2) 0;
+	font-family: @body-font-family-caption;
 	font-weight: 400;
 	text-transform: none;
-	text-shadow: none;
-	color: #424242;
+	color: @body-color;
 }
 * + h1,
 * + h2,
@@ -183,40 +182,41 @@ h6 {
 * + h4,
 * + h5,
 * + h6 {
-	margin-top: 1.6rem;
+	margin-top: @unit;
 }
 h1,
 .u-h1 {
-	font-size: 3.6rem;
-	line-height: normal;
+	font-size: @h1-font-size;
+	line-height: @h1-line-height;
+	text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
 }
 h2,
 .u-h2 {
-	font-size: 2.4rem;
-	line-height: normal;
+	font-size: @h2-font-size;
+	line-height: @h2-line-height;
 }
 h3,
 .u-h3 {
-	font-size: 2rem;
-	line-height: normal;
+	font-size: @h3-font-size;
+	line-height: @h3-line-height;
 }
 h4,
 .u-h4 {
-	font-size: 1.5rem;
-	line-height: normal;
+	font-size: @h4-font-size;
+	line-height: @h4-line-height;
 }
 h5,
 .u-h5 {
-	font-family: "Open Sans", Arial, sans-serif;
-	font-size: 1.6rem;
+	font-family: @body-font-family;
+	font-size: @h5-font-size;
 	font-weight: 600;
-	line-height: normal;
+	line-height: @h5-line-height;
 }
 h6,
 .u-h6 {
-	font-family: "Open Sans", Arial, sans-serif;
-	font-size: 1.4rem;
-	line-height: normal;
+	font-family: @body-font-family;
+	font-size: @h5-font-size;
+	line-height: @h6-line-height;
 }
 
 
@@ -225,5 +225,5 @@ h6,
 
 ul,
 ol {
-	padding-left: 0.8rem;
+	padding-left: (@unit / 2);
 }
