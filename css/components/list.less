@@ -29,8 +29,8 @@
 .c-list > li {
 	padding-left: 1.7rem;
 	margin-bottom: (@unit / 2);
-	background: url('/svg/icons/square.svg') no-repeat .4rem 1rem;
-	background-size: 5px 5px;
+	background: url('/icons/svg/square.svg') no-repeat (@unit / 2) (@unit / 1.6);
+	background-size: (@unit / 4) (@unit / 4);
 }
 .c-list li:last-child { margin-bottom: 0; }
 
@@ -41,7 +41,7 @@
 
 .c-list ul {
     margin: 0;
-    padding-left: 1.6rem;
+    padding-left: @unit;
     list-style: none;
 }
 
@@ -73,20 +73,16 @@
    Component: Ordered list
  ========================================================================== */
  
-.c-list {
+ol.c-list {
 	list-style: decimal;
 	padding-left: 2.4rem;
 }
-.c-list li {
+ol.c-list li {
 	background: none;
 	padding-left: 0;
 }
 
-
-/*
- * Nested list
- */
-
-.c-list ol {
+// Nested list
+ol.c-list ol {
 	list-style: lower-alpha;
 }
