@@ -13,7 +13,8 @@
 // Variables
 // ========================================================================
 
-@u-text-caption-font-family:                          @body-font-family-caption;
+@u-text-caption-font-family:                      @body-font-family-caption;
+@u-text-cursive-font-family:                      @body-font-family-cursive;
 
 @u-text-small-font-size:                          @small-font-size;
 @u-text-small-line-height:                        @small-line-height;
@@ -38,14 +39,14 @@
 	font-weight: 400;
 }
 
-.u-font-primary {
-	font-family: "Open Sans", Arial;
+.u-font-cursive {
+	font-family: @u-text-cursive-font-family;
 	font-style: normal;
 	font-weight: 400;
 }
 
-.u-font-secondary {
-	font-family: Tahoma;
+.u-font-primary {
+	font-family: @body-font-family;
 	font-style: normal;
 	font-weight: 400;
 }
