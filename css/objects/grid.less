@@ -1,0 +1,36 @@
+@import "../variables";
+
+/**
+ * Object:		Grid
+ * Description: Seamless Flexbox grid.
+ *
+ * Elements:	`o-grid-cell`
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@o-grid-unit: (@unit * 1.5);
+
+@o-grid-margin-horizontal: -(@o-grid-unit / 2);
+@o-grid-cell-padding: 0 (@o-grid-unit / 2) @o-grid-unit;
+
+
+/* ========================================================================
+   Object: `o-grid`
+ ========================================================================== */
+
+.o-grid {
+	display: flex;
+	flex-flow: row wrap;
+	margin-left: @o-grid-margin-horizontal;
+	margin-right: @o-grid-margin-horizontal;
+}
+	.o-grid-cell {
+		flex: 1 0 25%;
+		box-sizing: border-box;
+		padding: @o-grid-cell-padding;
+	}
+
