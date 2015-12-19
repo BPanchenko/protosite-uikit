@@ -4,46 +4,46 @@
 // Variables of the components
 // ========================================================================
 
-@o-panel-background: white;
-@o-panel-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
-@o-panel-padding: @unit;
+@c-panel-background: white;
+@c-panel-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+@c-panel-padding: @unit;
 
 
 /* ========================================================================
    Component: Panel
  ========================================================================== */
  
-.o-panel {
+.c-panel {
     display: block;
     position: relative;
-	padding: @o-panel-padding;
-	background: @o-panel-background;
-	box-shadow: @o-panel-box-shadow;
+	padding: @c-panel-padding;
+	background: @c-panel-background;
+	box-shadow: @c-panel-box-shadow;
 	box-sizing: border-box;
 }
 
-.o-panel::before,
-.o-panel::after {
+.c-panel::before,
+.c-panel::after {
     content: " ";
     display: table;
 }
 
-.o-panel::after { clear: both; }
+.c-panel::after { clear: both; }
 
-.o-panel + .o-panel {
+.c-panel + .c-panel {
    margin-top: @unit;
 }
 
 
-/* Element: `o-panel-divider`
+/* Element: `c-panel-divider`
  ========================================================================== */
  
-.o-panel + .o-panel-divider {
+.c-panel + .c-panel-divider {
 	position: relative;
 	margin-top: @unit !important;
 }
 
-.o-panel + .o-panel-divider::after {
+.c-panel + .c-panel-divider::after {
     content: "";
     display: block;
     position: absolute;
@@ -54,22 +54,22 @@
 }
 
 
-/* Subobject: `o-panel__title`
+/* Subobject: `c-panel__title`
  ========================================================================== */
 
 
-/* Subobject: `o-panel__body`
+/* Subobject: `c-panel__body`
  ========================================================================== */
 
-.o-panel__title + .o-panel__body {
+.c-panel__title + .c-panel__body {
 	padding: (@unit / 2) 0 @unit;
 }
 
 
-/* Modifier `o-panel--transparent`
+/* Modifier `c-panel--transparent`
  ========================================================================== */
  
-.o-panel--clean {
+.c-panel--clean {
 	background: transparent;
 	box-shadow: none;
 }
