@@ -3,7 +3,9 @@
 
 /**
  * Component:       `c-avatar`
- * Description:     Defines styles for the user picture
+ * Description:     Defines styles for the user picture.
+ *
+ * Sub-elements:	`c-avatar__shutter`
  * 
  * Modifiers:       `c-avatar--mini`
  *					`c-avatar--small`
@@ -11,14 +13,35 @@
  * 
  ========================================================================== */
 
+// Variables of the components
+// ========================================================================
+
+@c-avatar-width: @unit * 5;
+@c-avatar-height: @unit * 5;
+
+@c-avatar-shutter-background-color: fade(@clr-blue-grey-700, 30);
+
+@c-avatar-mini-width: @unit * 2;
+@c-avatar-mini-height: @unit * 2;
+@c-avatar-small-width: @unit * 3;
+@c-avatar-small-height: @unit * 3;
+@c-avatar-large-width: @unit * 8;
+@c-avatar-large-height: @unit * 8;
+
+
+/* ========================================================================
+   Component: Avatar
+ ========================================================================== */
+
 /*figure*/
 .c-avatar {
+	position: relative;
     display: inline-block;
     border-radius: 50%;
 	overflow: hidden;
 	
-	width: 8rem;
-	height: 8rem;
+	width: @c-avatar-width;
+	height: @c-avatar-height;
 	
 	font-size: .001px;
 	text-align: center;
@@ -29,21 +52,51 @@
 	
 	/* reset default styles figure */
 	margin: 0;
+
+	img {
+		max-width: @c-avatar-width;
+		max-height: @c-avatar-height;
+		border-radius: inherit;
+		overflow: inherit;
+	}
 }
+
+	.c-avatar__shutter {
+		position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		background-color: @c-avatar-shutter-background-color;
+		border-radius: inherit;
+
+		opacity: 0;
+		transition: opacity 160ms @easing;
+	}
+
+	.c-avatar:hover {
+		img {
+			.grayscale;
+		}
+		.c-avatar__shutter {
+			opacity: 1;
+		}
+	}
+
+		.c-avatar__shutter-text {
+
+		}
 
 
 /* Sizes modifiers
  ========================================================================== */
 
 .c-avatar--mini {
-	width: 2.4rem;
-	height: 2.4rem;
+	width: @c-avatar-mini-width;
+	height: @c-avatar-mini-height;
 }
 .c-avatar--small {
-	width: 4.8rem;
-	height: 4.8rem;
+	width: @c-avatar-small-width;
+	height: @c-avatar-small-height;
 }
 .c-avatar--large {
-	width: 13.6rem;
-	height: 13.6rem;
+	width: @c-avatar-large-width;
+	height: @c-avatar-large-height;
 }
