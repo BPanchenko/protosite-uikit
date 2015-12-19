@@ -1,8 +1,10 @@
 @import "../variables";
 
-@u-margin:        @unit;
-@u-margin-small:  (@unit / 2);
-@u-margin-large:  (@unit * 3.5);
+@u-margin:        @unit * 1.5;
+@u-margin-mini:   @unit / 2;
+@u-margin-small:  @unit;
+@u-margin-large:  @unit * 3.5;
+@u-margin-xlarge:  @unit * 6;
 
 
 .u-margin { margin-bottom: @u-margin; }
@@ -14,13 +16,13 @@
 .u-margin-right { margin-right: @u-margin !important; }
 
 
-.u-margin-large { margin-bottom: @u-margin-large; }
-* + .u-margin-large { margin-top: @u-margin-large; }
+.u-margin-mini { margin-bottom: @u-margin-mini; }
+* + .u-margin-mini { margin-top: @u-margin-mini; }
 
-.u-margin-large-top { margin-top: @u-margin-large !important; }
-.u-margin-large-bottom { margin-bottom: @u-margin-large !important; }
-.u-margin-large-left { margin-left: @u-margin-large !important; }
-.u-margin-large-right { margin-right: @u-margin-large !important; }
+.u-margin-mini-top { margin-top: @u-margin-mini !important; }
+.u-margin-mini-bottom { margin-bottom: @u-margin-mini !important; }
+.u-margin-mini-left { margin-left: @u-margin-mini !important; }
+.u-margin-mini-right { margin-right: @u-margin-mini !important; }
 
 
 .u-margin-small { margin-bottom: @u-margin-small; }
@@ -30,6 +32,24 @@
 .u-margin-small-bottom { margin-bottom: @u-margin-small !important; }
 .u-margin-small-left { margin-left: @u-margin-small !important; }
 .u-margin-small-right { margin-right: @u-margin-small !important; }
+
+
+.u-margin-large { margin-bottom: @u-margin-large; }
+* + .u-margin-large { margin-top: @u-margin-large; }
+
+.u-margin-large-top { margin-top: @u-margin-large !important; }
+.u-margin-large-bottom { margin-bottom: @u-margin-large !important; }
+.u-margin-large-left { margin-left: @u-margin-large !important; }
+.u-margin-large-right { margin-right: @u-margin-large !important; }
+
+
+.u-margin-xlarge { margin-bottom: @u-margin-xlarge; }
+* + .u-margin-xlarge { margin-top: @u-margin-xlarge; }
+
+.u-margin-xlarge-top { margin-top: @u-margin-xlarge !important; }
+.u-margin-xlarge-bottom { margin-bottom: @u-margin-xlarge !important; }
+.u-margin-xlarge-left { margin-left: @u-margin-xlarge !important; }
+.u-margin-xlarge-right { margin-right: @u-margin-large !important; }
 
 
 .u-margin-remove { margin: 0 !important; }
