@@ -11,7 +11,7 @@
 .pattern-animation-fade,
 .pattern-animation-movement {
 	display: block;
-	background-color: #F5F5F5; /* @clr-grey-100 */
+	background-color: @clr-grey-100;
 	cursor: default;
 	line-height: 5.2rem;
 	text-align: center;
@@ -61,57 +61,57 @@
 /* Preview colors
  ========================================================================== */
 
-.pattern[class*="ui-bg-"] {
+.pattern[class*="u-bg-"] {
     width: 12.1rem; line-height: 2.4rem;
     display: inline-block;
     vertical-align: bottom;
-    padding: .8rem .8rem 0;
+    padding: @unit/2 @unit/2 0;
 }
 
 
 /* Visibility
  ========================================================================== */
 
-.pattern.ui-visible-x-desktop,
-.pattern.ui-visible-desktop,
-.pattern.ui-visible-tablet-landscape,
-.pattern.ui-visible-tablet-portrait,
-.pattern.ui-visible-mobile {
+.pattern.u-visible-x-desktop,
+.pattern.u-visible-desktop,
+.pattern.u-visible-tablet-landscape,
+.pattern.u-visible-tablet-portrait,
+.pattern.u-visible-mobile {
    display: inline-block !important;
-   color: #BDBDBD; /* @clr-gray-400 */
+   color: @clr-grey-400;
 }
 
 /* x-desktop */
 @media (min-width: 1360px) {
-	.ui-visible-x-desktop {
-		color: #424242 !important; /* @clr-gray-800 */
+	.u-visible-x-desktop {
+		color: @body-color !important;
     }
 }
 
 /* desktop */
 @media (min-width: 1180px) and (max-width: 1359px) {
-    .ui-visible-desktop {
-		color: #424242 !important; /* @clr-gray-800 */
+    .u-visible-desktop {
+		color: @body-color !important;
     }
 }
 
 /* tablet--landscape */
 @media (min-width: 1024px) and (max-width: 1179px) {
-    .ui-visible-tablet-landscape {
-		color: #424242 !important; /* @clr-gray-800 */
+    .u-visible-tablet-landscape {
+		color: @body-color !important;
     }
 }
 
 /* tablet--portrait */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .ui-visible-tablet-portrait {
-		color: #424242 !important; /* @clr-gray-800 */
+    .u-visible-tablet-portrait {
+		color: @body-color !important;
     }
 }
 
 /* mobile */
 @media (max-width: 767px) {
-    .ui-visible-mobile {
-		color: #424242 !important; /* @clr-gray-800 */
+    .u-visible-mobile {
+		color: @body-color !important;
     }
 }
