@@ -9,7 +9,7 @@
 // Variables
 // ========================================================================
 
-@object-container-margin:                  (4 * @unit) auto;
+@object-container-padding:                  (4 * @unit) 0;
 
 @object-container-width:                   auto;
 @object-container-width-xdesktop:          129.6rem;
@@ -26,7 +26,8 @@
 .o-container {
 	display: block;
 	width: @object-container-width;
-	margin: @object-container-margin;
+	margin: 0 auto;
+	padding: @object-container-padding;
 }
 .o-container:before,
 .o-container:after {
@@ -54,7 +55,7 @@
 	.o-container { width: @object-container-width-tablet; }
 }
 
-// tablet--portrait
+// tablet portrait
 @media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
 	.o-container { width: @object-container-width-tablet-portrait; }
 }
@@ -64,7 +65,7 @@
 	.o-container { width: @object-container-width-handset; }
 }
 
-// handset--portrait
+// handset portrait
 @media (max-width: @screen-handset-portrait-max) {
     .o-container { width: @object-container-width-handset-portrait; }
 }
