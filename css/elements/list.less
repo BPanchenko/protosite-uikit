@@ -2,6 +2,7 @@
 @import "../variables";
 
 /**
+ * Elements:        ul, ol
  * Component:       `c-list`
  * Description:     Defines styles for ordered and unordered lists
  * 
@@ -16,6 +17,7 @@
    Component: Unordered list
  ========================================================================== */
 
+ul,
 .c-list {
 	padding: 0;
 	list-style: none;
@@ -26,20 +28,23 @@
  * List item
  */
 
-.c-list > li {
+ul > li,
+.c-list > * {
 	padding-left: 1.7rem;
 	margin-bottom: (@unit / 2);
 	background: url('/icons/svg/square.svg') no-repeat (@unit / 2) (@unit / 1.6);
 	background-size: (@unit / 4) (@unit / 4);
 }
-.c-list li:last-child { margin-bottom: 0; }
+ul li:last-child,
+.c-list *:last-child { margin-bottom: 0; }
 
 
 /*
  * Nested list
  */
 
-.c-list ul {
+ul ul,
+.c-list .c-list {
     margin: 0;
     padding-left: @unit;
     list-style: none;
@@ -72,17 +77,20 @@
 /* ========================================================================
    Component: Ordered list
  ========================================================================== */
- 
-ol.c-list {
+
+ol,
+.c-list--ordered {
 	list-style: decimal;
 	padding-left: 2.4rem;
 }
-ol.c-list li {
+ol > li,
+.c-list--ordered > * {
 	background: none;
 	padding-left: 0;
 }
 
 // Nested list
-ol.c-list ol {
+ol ol,
+.c-list--ordered .c-list--ordered {
 	list-style: lower-alpha;
 }

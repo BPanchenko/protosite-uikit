@@ -52,25 +52,6 @@ hr {
 }
 
 
-/* Links
- ========================================================================== */
-
-a,
-.u-link {
-	outline: 0;
-	background-color: transparent;
-	color: @link-color;
-	text-decoration: @link-text-decoration;
-	transition: @link-transition;
-}
-a:hover,
-.u-link:hover {
-	outline: 0;
-	color: @link-color-hover;
-	text-decoration: @link-text-decoration-hover;
-}
-
-
 /* Block elements
  ========================================================================== */
 
@@ -83,7 +64,7 @@ pre,
 address,
 fieldset,
 figure {
-	margin: 0 0 0.8rem 0;
+	margin: 0 0 (@unit / 2) 0;
 }
 * + p,
 * + ul,
@@ -94,137 +75,5 @@ figure {
 * + address,
 * + fieldset,
 * + figure {
-	margin-top: 0.8rem;
-}
-
-
-/* Text-level semantics
- ========================================================================== */
-
-abbr[title] {
-	border-bottom: 1px dotted;
-}
-b {
-	font-weight: 600;
-}
-b > b,
-strong {
-	font-weight: 700;
-}
-strong > strong {
-	font-weight: 800;
-}
-pre {
-	overflow: auto;
-}
-code,
-kbd,
-pre,
-samp {
-	font-family: "PT Mono", monospace;
-	font-size: 1.6rem;
-	white-space: nowrap;
-}
-ins {
-	background: #e6ee9c;
-	color: #212121;
-	text-decoration: none;
-}
-mark {
-	background: #e6ee9c;
-	color: #424242;
-	text-decoration: none;
-}
-i,
-em,
-dfn,
-q {
-	font-style: italic;
-}
-small {
-	font-size: 1.3rem;
-}
-small > small {
-	font-size: 1.2rem;
-}
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-sup {
-	top: -0.5em;
-}
-sub {
-	bottom: -0.25em;
-}
-
-
-/* Headings
- ========================================================================== */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-	font-family: @body-font-family-caption;
-	font-weight: 400;
-	text-transform: none;
-	color: @body-color;
-}
-* + h1,
-* + h2,
-* + h3,
-* + h4,
-* + h5,
-* + h6 {
-	margin-top: @unit;
-}
-h1,
-.u-h1 {
-	font-size: @h1-font-size;
-	line-height: @h1-line-height;
-	text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
-}
-h2,
-.u-h2 {
-	font-size: @h2-font-size;
-	line-height: @h2-line-height;
-}
-h3,
-.u-h3 {
-	font-size: @h3-font-size;
-	line-height: @h3-line-height;
-}
-h4,
-.u-h4 {
-	font-size: @h4-font-size;
-	line-height: @h4-line-height;
-}
-h5,
-.u-h5 {
-	font-family: @body-font-family;
-	font-size: @h5-font-size;
-	font-weight: 600;
-	line-height: @h5-line-height;
-}
-h6,
-.u-h6 {
-	font-family: @body-font-family;
-	font-size: @h5-font-size;
-	line-height: @h6-line-height;
-}
-
-
-/* Lists
- ========================================================================== */
-
-ul,
-ol {
-	padding-left: (@unit / 2);
+	margin-top: (@unit / 2);
 }

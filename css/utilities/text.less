@@ -16,12 +16,6 @@
 @u-text-caption-font-family:                      @body-font-family-caption;
 @u-text-cursive-font-family:                      @body-font-family-cursive;
 
-@u-text-small-font-size:                          @small-font-size;
-@u-text-small-line-height:                        @small-line-height;
-@u-text-large-font-size:                          1.6;
-@u-text-large-line-height:                        normal;
-@u-text-large-font-weight:                        400;
-
 @u-text-muted-color:                              #999;
 @u-text-primary-color:                            #2d7091;
 @u-text-success-color:                            @clr-green-A700;
@@ -54,31 +48,6 @@
 
 // Text
 // ========================================================================
-
-
-/* Size modifiers
- ========================================================================== */
-
-.u-text-small {
-    font-size: @u-text-small-font-size;
-    line-height: @u-text-small-line-height;
-}
-
-.u-text-large {
-    font-size: @u-text-large-font-size;
-    line-height: @u-text-large-line-height;
-    font-weight: @u-text-large-font-weight;
-}
-
-
-/* Weight modifiers
- ========================================================================== */
-
-.u-text-light { font-weight: 300; }
-.u-text-semibold { font-weight: 600; }
-.u-text-bold { font-weight: 700; }
-.u-text-extrabold { font-weight: 800; }
-
 
 /* Color modifiers
  ========================================================================== */
@@ -117,21 +86,21 @@
 	.u-text-right-desktop { text-align: right !important; }
 }
 
-/* tablet--landscape */
+/* tablet landscape */
 @media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
 	.u-text-center-tablet { text-align: center !important; }
 	.u-text-left-tablet { text-align: left !important; }
 	.u-text-right-tablet { text-align: right !important; }
 }
 
-/* tablet--portrait */
+/* tablet portrait */
 @media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
-	.u-text-center-tablet--portrait { text-align: center !important; }
-	.u-text-left-tablet--portrait { text-align: left !important; }
-	.u-text-right-tablet--portrait { text-align: right !important; }
+	.u-text-center-tablet-portrait { text-align: center !important; }
+	.u-text-left-tablet-portrait { text-align: left !important; }
+	.u-text-right-tablet-portrait { text-align: right !important; }
 }
 
-/* mobile--landscape */
+/* handset landscape */
 @media (max-width: @screen-handset-max) {
 	.u-text-center-mobile { text-align: center !important; }
 	.u-text-left-mobile { text-align: left !important; }

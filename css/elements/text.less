@@ -1,0 +1,190 @@
+@import "../variables";
+
+/**
+ * Name:            Text elements
+ * Description:     Defining styles for formatting text
+ *
+ * ======================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@link-color: @clr-light-blue-800;
+@link-color-hover: @clr-light-blue-900;
+@link-text-decoration: underline;
+@link-text-decoration-hover: none;
+@link-transition: color 0.16s @easing;
+
+@small-line-height:                        @small-line-height;
+@u-text-large-font-size:                          1.6;
+@u-text-large-line-height:                        normal;
+@u-text-large-font-weight:                        400;
+
+
+/* Links
+ ========================================================================== */
+
+a,
+.u-link {
+	outline: 0;
+	background-color: transparent;
+	color: @link-color;
+	text-decoration: @link-text-decoration;
+	transition: @link-transition;
+}
+a:hover,
+.u-link:hover {
+	outline: 0;
+	color: @link-color-hover;
+	text-decoration: @link-text-decoration-hover;
+}
+
+
+/* Weight modifiers
+ ========================================================================== */
+
+.u-text-light { font-weight: 300; }
+b, .u-text-semibold { font-weight: 600; }
+b > b, strong, .u-text-bold { font-weight: 700; }
+strong > strong, .u-text-extrabold { font-weight: 800; }
+
+/* Size modifiers
+ ========================================================================== */
+
+small,
+.u-text-small {
+	font-size: @small-font-size;
+	line-height: @small-line-height;
+}
+small > small,
+.u-text-xsmall {
+	font-size: @xsmall-font-size;
+	line-height: @small-line-height;
+}
+
+.u-text-large {
+	font-size: @u-text-large-font-size;
+	line-height: @u-text-large-line-height;
+	font-weight: @u-text-large-font-weight;
+}
+
+
+
+/* Text-level semantics
+ ========================================================================== */
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+pre { overflow: auto; }
+code,
+kbd,
+pre,
+samp {
+	font-family: "PT Mono", monospace;
+	font-size: 1.6rem;
+	white-space: nowrap;
+}
+ins {
+	background: #e6ee9c;
+	color: #212121;
+	text-decoration: none;
+}
+mark {
+	background: #e6ee9c;
+	color: #424242;
+	text-decoration: none;
+}
+i,
+em,
+dfn,
+q {
+	font-style: italic;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+
+/* Headings
+ ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-family: @body-font-family-caption;
+	font-weight: 400;
+	text-transform: none;
+	color: @body-color-caption;
+}
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-top: @unit;
+}
+h1,
+.u-h1 {
+	font-size: @h1-font-size;
+	line-height: @h1-line-height;
+	text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
+}
+h2,
+.u-h2 {
+	font-size: @h2-font-size;
+	line-height: @h2-line-height;
+}
+h3,
+.u-h3 {
+	font-size: @h3-font-size;
+	line-height: @h3-line-height;
+}
+h4,
+.u-h4 {
+	font-size: @h4-font-size;
+	line-height: @h4-line-height;
+}
+h5,
+.u-h5 {
+	font-family: @body-font-family;
+	font-size: @h5-font-size;
+	font-weight: 600;
+	line-height: @h5-line-height;
+}
+h6,
+.u-h6 {
+	font-family: @body-font-family;
+	font-size: @h5-font-size;
+	line-height: @h6-line-height;
+}
+
+hgroup {
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+
+	h1, h2, h3, h4, h5, h6,
+	.u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6 {
+		line-height: 1;
+		margin: 0 !important;
+	}
+}
