@@ -1,32 +1,23 @@
+@import "../variables";
+
 /**
- * Name: Form
- * Description: Defines styles for form elements with floating labels.
+ * Object: Form
  * 
- * Component: `ui-form`
- *			  `ui-chxset`
- *			  `ui-chx`
- *			  `ui-chx-sham`
- *			  `ui-chx-label`
- *			  `ui-radioset`
- *			  `ui-radio`
- *			  `ui-radio-sham`
- *			  `ui-radio-label`
- * 
- * Sub-objects: ``
+ * Elements: ``
  * 
  * Modifiers: ``
  * 
  ========================================================================== */
  
-.ui-form { width: 32rem; }
-	.ui-form-buttons,
-	.ui-form-row {
+.o-form { width: 32rem; }
+	.o-form-buttons,
+	.o-form-row {
 		display: block;
 		clear: both;
 		width: inherit;
 		font-size: .001px;
 	}
-	.ui-form-row + .ui-form-row { margin-top: .8rem; }
+	.o-form-row + .o-form-row { margin-top: @unit; }
 	
 	.ui-chx-sham,
 	.ui-chx-label,
@@ -44,23 +35,11 @@
 /* Sub-object's form: `ui-field`, `ui-field-hint`
  ========================================================================== */
  
-.ui-fieldset {
-	display: inline-block;
-	position: relative;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	
-	width: inherit;
-	height: 5.4rem;
-	/* margin: .8rem; */
-	line-height: 5.4rem;
-	
-	/* background-color: rgb(176,190,197); */
-}
+
 .ui-fieldset + .ui-fieldset { margin-left: 1.6rem; }
 	
 	.ui-field-hint {
-		color: rgb(158,158,158); /* @clr-gray-500 */
+		color: @clr-gray-500;
 		height: inherit;
 		line-height: 7.2rem;
 	}
@@ -156,7 +135,7 @@
 
 /* Modifiers size and proportions
  ========================================================================== */
-.ui-form--long,
+.o-form--long,
 .ui-fieldset--large .ui-field,
 .ui-field.ui-field--long { width: 65.8rem; }
 

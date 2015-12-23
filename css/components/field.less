@@ -1,0 +1,62 @@
+@import "../variables";
+
+/**
+ * Component:		`c-field`
+ *
+ * Elements:		`c-field-input`
+ *                  `c-field-label`
+ *                  `c-field-error`
+ *
+ * States:			`is-filled`
+ *					`is-focused`
+ *					`is-invalid`
+ *					`is-valid`
+ *
+ ========================================================================== */
+
+// Variables
+// ========================================================================
+
+@c-field-border-bottom: 1px solid @body-color;
+
+@c-field-width: 32rem;
+@c-field-height: 5.4rem;
+@c-field-line-height: 5.4rem;
+
+
+/* Parent element: `c-field` (if you want to use the input tag)
+ ========================================================================== */
+
+.c-field {
+	display: inline-block;
+	position: relative;
+	box-sizing: border-box;
+
+	width: @c-field-width;
+	height: @c-field-height;
+	line-height: @c-field-line-height;
+}
+
+
+/* Element: `c-field-input`
+ ========================================================================== */
+
+.c-field-input {
+	display: inline-block;
+	background-color: transparent;
+	width: inherit;
+
+	outline: none;
+	border: none;
+	border-bottom: @c-field-border-bottom;
+}
+
+
+/* Element: `c-field-label`
+ ========================================================================== */
+
+.c-field-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
