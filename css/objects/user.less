@@ -1,0 +1,61 @@
+@import "../variables";
+@import "../mixins";
+
+// Variables of the components
+// ========================================================================
+
+@o-user-thumbnail-width: @unit * 5;
+@o-user-thumbnail-height: @unit * 5;
+
+@o-user-thumbnail-shutter-background-color: fade(@clr-blue-grey-700, 30);
+
+@o-user-thumbnail-mini-width: @unit * 2;
+@o-user-thumbnail-mini-height: @unit * 2;
+@o-user-thumbnail-small-width: @unit * 3;
+@o-user-thumbnail-small-height: @unit * 3;
+@o-user-thumbnail-large-width: @unit * 8;
+@o-user-thumbnail-large-height: @unit * 8;
+
+
+/* ========================================================================
+   Component: Thumbnail (avatar)
+ ========================================================================== */
+
+.c-thumbnail.o-user {
+	border-radius: 50%;
+	width: @o-user-thumbnail-width;
+	height: @o-user-thumbnail-height;
+	img {
+		max-width: @o-user-thumbnail-width;
+		max-height: @o-user-thumbnail-height;
+	}
+}
+
+
+/* Modifiers: thumbnail sizes
+ ========================================================================== */
+
+.c-thumbnail--mini {
+	width: @o-user-thumbnail-mini-width;
+	height: @o-user-thumbnail-mini-height;
+	img {
+		max-width: @o-user-thumbnail-mini-width;
+		max-height: @o-user-thumbnail-mini-height;
+	}
+}
+.c-thumbnail--small {
+	width: @o-user-thumbnail-small-width;
+	height: @o-user-thumbnail-small-height;
+	img {
+		max-width: @o-user-thumbnail-small-width;
+		max-height: @o-user-thumbnail-small-height;
+	}
+}
+.c-thumbnail--large {
+	width: @o-user-thumbnail-large-width;
+	height: @o-user-thumbnail-large-height;
+	img {
+		max-width: @o-user-thumbnail-large-width;
+		max-height: @o-user-thumbnail-large-height;
+	}
+}

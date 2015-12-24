@@ -1,12 +1,15 @@
+@import "../variables";
+@import "../mixins";
+
 /**
- * Name:            Avatar
- * Description:     Defines styles for the user picture
+ * Name:            Thumbnail
+ * Description:     Defines styles for the picture preview
  * 
- * Component:       `ui-thumbnail`
+ * Component:       `c-thumbnail`
  * 
- * Modifiers:       `ui-thumbnail--mini`
- *					`ui-thumbnail--small`
- *					`ui-thumbnail--large`
+ * Modifiers:       `c-thumbnail--mini`
+ *					`c-thumbnail--small`
+ *					`c-thumbnail--large`
  * 
  ========================================================================== */
 
@@ -14,35 +17,77 @@
 // Variables
 // ========================================================================
 
-@ui-thumbnail-side: 6.4rem;
-@ui-thumbnail-mini-side: 4rem;
-@ui-thumbnail-small-side: 8rem;
-@ui-thumbnail-large-side: 13.6rem;
+@c-thumbnail-width: 6.4rem;
+@c-thumbnail-height: 6.4rem;
+@c-thumbnail-mini-width: 4rem;
+@c-thumbnail-mini-height: 4rem;
+@c-thumbnail-small-width: 8rem;
+@c-thumbnail-small-height: 8rem;
+@c-thumbnail-large-width: 13.6rem;
+@c-thumbnail-large-height: 13.6rem;
+
+@c-thumbnail-shutter-background-color: fade(@clr-blue-grey-700, 30);
 
 
 /* ========================================================================
-   Component: Table
+   Component: Thumbnail
  ========================================================================== */
 
 /*figure*/
-.ui-thumbnail {
-    display: inline-block;
+.c-thumbnail {
+	position: relative;
+	display: inline-block;
 	overflow: hidden;
-	
-	width: @ui-thumbnail-side;
-	height: @ui-thumbnail-side;
-	max-width: @ui-thumbnail-side;
-	max-height: @ui-thumbnail-side;
-	
+
+	width: @c-thumbnail-width;
+	height: @c-thumbnail-height;
+
 	font-size: .001px;
-    vertical-align: middle;
-	
+	text-align: center;
+	vertical-align: middle;
+
+	box-shadow: inset 0 0 .16rem 0 rgba(0,0,0,.3);
+	background-size: cover;
+
 	/* reset default styles figure */
 	margin: 0;
 
 	img {
-		max-width: 100%;
-		max-height: 100%;
+		max-width: @c-thumbnail-width;
+		max-height: @c-thumbnail-height;
+		border-radius: inherit;
+		overflow: inherit;
+	}
+}
+
+
+/* Element: `c-thumbnail__shutter`
+ ========================================================================== */
+
+.c-thumbnail__shutter {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: @c-thumbnail-shutter-background-color;
+	border-radius: inherit;
+
+	opacity: 0;
+	transition: opacity 160ms @easing;
+}
+
+	.c-avatar__shutter-text {
+
+	}
+
+
+/* State `:hover`
+ ========================================================================== */
+
+.c-thumbnail:hover {
+	img {
+		.grayscale;
+	}
+	.c-thumbnail__shutter {
+		opacity: 1;
 	}
 }
 
@@ -50,21 +95,27 @@
 /* Sizes modifiers
  ========================================================================== */
 
-.ui-thumbnail--mini {
-	width: @ui-thumbnail-mini-side;
-	height: @ui-thumbnail-mini-side;
-	max-width: @ui-thumbnail-mini-side;
-	max-height: @ui-thumbnail-mini-side;
+.c-thumbnail--mini {
+	width: @c-thumbnail-mini-width;
+	height: @c-thumbnail-mini-height;
+	img {
+		max-width: @c-thumbnail-mini-width;
+		max-height: @c-thumbnail-mini-height;
+	}
 }
-.ui-thumbnail--small {
-	width: @ui-thumbnail-small-side;
-	height: @ui-thumbnail-small-side;
-	max-width: @ui-thumbnail-small-side;
-	max-height: @ui-thumbnail-small-side;
+.c-thumbnail--small {
+	width: @c-thumbnail-small-width;
+	height: @c-thumbnail-small-height;
+	img {
+		max-width: @c-thumbnail-small-width;
+		max-height: @c-thumbnail-small-height;
+	}
 }
-.ui-thumbnail--large {
-	width: @ui-thumbnail-large-side;
-	height: @ui-thumbnail-large-side;
-	max-width: @ui-thumbnail-large-side;
-	max-height: @ui-thumbnail-large-side;
+.c-thumbnail--large {
+	width: @c-thumbnail-large-width;
+	height: @c-thumbnail-large-height;
+	img {
+		max-width: @c-thumbnail-large-width;
+		max-height: @c-thumbnail-large-height;
+	}
 }
