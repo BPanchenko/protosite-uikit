@@ -19,9 +19,19 @@
 
 @c-field-border-bottom: 1px solid @body-color;
 
-@c-field-width: 32rem;
-@c-field-height: 5.4rem;
-@c-field-line-height: 5.4rem;
+@c-field-width: @unit * 30;
+@c-field-padding: @unit 0;
+
+
+@c-field-label-top: @unit;
+@c-field-label-left: 0;
+@c-field-label-font-size: @body-font-size;
+@c-field-label-color: @body-color;
+
+@c-field-focused-label-top: 0;
+@c-field-focused-label-left: 0;
+@c-field-focused-label-font-size: 1.1rem;
+@c-field-focused-label-color: @clr-grey-600;
 
 
 /* Parent element: `c-field` (if you want to use the input tag)
@@ -33,8 +43,7 @@
 	box-sizing: border-box;
 
 	width: @c-field-width;
-	height: @c-field-height;
-	line-height: @c-field-line-height;
+	padding: @c-field-padding;
 }
 
 
@@ -57,6 +66,23 @@
 
 .c-field-label {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: @c-field-label-top;
+	left: @c-field-label-left;
+	font-size: @c-field-label-font-size;
+	color: @c-field-label-color;
+
+	transition: 160ms @easing;
 }
+
+.c-field.is-filled .c-field-label,
+.c-field.is-focused .c-field-label {
+	top: @c-field-focused-label-top;
+	left: @c-field-focused-label-left;
+	font-size: @c-field-focused-label-font-size;
+	color: @c-field-focused-label-color;
+}
+
+
+/* Element: `c-field-error`
+ ========================================================================== */
+
