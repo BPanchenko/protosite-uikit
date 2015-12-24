@@ -58,15 +58,15 @@
                 <div class="o-grid">
                     <div class="o-grid-cell u-width-1-2">
                         <label class="c-field">
-                            <span class="c-field-label">Поле ввода текста</span>
-                            <input type="text" class="c-field-input" value="" role="textbox">
+                            <span class="c-field-label">Текст</span>
+                            <input type="text" class="c-field-input" role="textbox">
                         </label>
                     </div>
                     <div class="o-grid-cell u-width-1-2">
                         <label class="c-field">
-                            <span class="c-field-label">Поле ввода чисел</span>
-                            <input type="text" class="c-field-input" value="" role="textbox">
-                            <span class="c-field-error"></span>
+                            <span class="c-field-label">Цифра</span>
+                            <input type="text" class="c-field-input" pattern="^-?\d+\.?\d*$" role="textbox">
+                            <span class="c-field-error">Ошибка ввода</span>
                         </label>
                     </div>
                 </div>
@@ -74,19 +74,37 @@
                 <script>
                     $('.c-field-input')
                         .on('focus', function (e) {
-                            var $target = $(this),
-                                $container = $target.parents('.c-field').eq(0),
-                                $label = $container.find('.c-field-label');
-                            console.log($target, $container, $label);
+                            var $container = $(this).parents('.c-field').eq(0);
+                            $container.length && $container.addClass('is-focused');
                             return;
                         })
                         .on('blur', function (e) {
-                            var $target = $(this),
-                                $container = $target.parents('.c-field').eq(0),
-                                $label = $container.find('.c-field-label');
-                            console.log($target, $container, $label);
+                            var $input = $(this),
+                                $container = $input.parents('.c-field').eq(0),
+                                value = $input.val();
+                            $container.removeClass('is-focused');
+                            $container[ !!value ? 'addClass' : 'removeClass']('is-filled');
                             return;
                         });
+
+                    $('.c-field-input[pattern]').on('input', _.debounce(function (e) {
+                        var $input = $(this),
+                            $container = $input.parents('.c-field').eq(0),
+                            value = $input.val(),
+                            pattern = $input.attr('pattern');
+
+                        if(value) {
+                            var reg = new RegExp(pattern);
+                            if(reg.test(value))
+                                $container.addClass('is-valid').removeClass('is-invalid');
+                            else
+                                $container.addClass('is-invalid').removeClass('is-valid');
+                        } else
+                            $container.removeClass('is-valid is-invalid');
+
+                        return;
+                    }, 150));
+
                 </script>
 
             </main>
