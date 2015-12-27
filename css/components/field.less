@@ -17,21 +17,29 @@
 // Variables
 // ========================================================================
 
-@c-field-border-bottom: 1px solid @body-color;
-
 @c-field-width: @unit * 30;
 @c-field-padding: @unit 0;
+
+
+@c-field-error-font-size: 1.1rem;
+@c-field-error-font-weight: 700;
+@c-field-error-line-height: 1;
+@c-field-error-color: @clr-red-400;
 
 
 @c-field-label-top: @unit;
 @c-field-label-left: 0;
 @c-field-label-font-size: @body-font-size;
-@c-field-label-color: @body-color;
+@c-field-label-color: @clr-grey-600;
 
 @c-field-focused-label-top: 0;
 @c-field-focused-label-left: 0;
 @c-field-focused-label-font-size: 1.1rem;
-@c-field-focused-label-color: @clr-grey-600;
+@c-field-focused-label-color: @body-color;
+
+
+@c-field-input-border-bottom: 1px solid @body-color;
+@c-field-input-invalid-border-bottom: 1px solid @clr-red-400;
 
 
 /* Parent element: `c-field` (if you want to use the input tag)
@@ -57,7 +65,14 @@
 
 	outline: none;
 	border: none;
-	border-bottom: @c-field-border-bottom;
+	border-bottom: @c-field-input-border-bottom;
+
+	transition: border-bottom 160ms @easing;
+}
+
+// Invalid modifier
+.c-field.is-invalid .c-field-input {
+	border-bottom: @c-field-input-invalid-border-bottom;
 }
 
 
@@ -71,14 +86,18 @@
 	font-size: @c-field-label-font-size;
 	color: @c-field-label-color;
 
-	transition: 160ms @easing;
+	transition: font-size 160ms @easing, color 160ms @easing, top 160ms @easing;
 }
 
+// Modifiers: `is-focused` and `is-filled`
 .c-field.is-filled .c-field-label,
 .c-field.is-focused .c-field-label {
 	top: @c-field-focused-label-top;
 	left: @c-field-focused-label-left;
 	font-size: @c-field-focused-label-font-size;
+}
+
+.c-field.is-focused .c-field-label {
 	color: @c-field-focused-label-color;
 }
 
@@ -86,3 +105,17 @@
 /* Element: `c-field-error`
  ========================================================================== */
 
+.c-field-error {
+	font-size: @c-field-error-font-size;
+	font-weight: @c-field-error-font-weight;
+	line-height: @c-field-error-line-height;
+	color: @c-field-error-color;
+	opacity: 0;
+
+	transition: opacity 160ms @easing;
+}
+
+// Invalid modifier
+.c-field.is-invalid .c-field-error {
+	opacity: 1;
+}
