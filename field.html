@@ -25,12 +25,17 @@
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
         <script src="/vendor/underscore/underscore.js"></script>
+        <script src="/vendor/underscore.string/dist/underscore.string.min.js"></script>
         <script src="/vendor/zepto/zepto.js"></script>
         <script src="/vendor/backbone/backbone.js"></script>
 
+        <script>
+            _.mixin(s.exports());
+        </script>
+
         <script src="/js/ui/common.js"></script>
         <script src="/js/ui/core.js"></script>
-        <script src="/js/ui/components/button.js"></script>
+        <script src="/js/ui/components/field.js"></script>
     </head>
     <body>
         <div class="o-container">
@@ -70,42 +75,6 @@
                         </label>
                     </div>
                 </div>
-
-                <script>
-                    $('.c-field-input')
-                        .on('focus', function (e) {
-                            var $container = $(this).parents('.c-field').eq(0);
-                            $container.length && $container.addClass('is-focused');
-                            return;
-                        })
-                        .on('blur', function (e) {
-                            var $input = $(this),
-                                $container = $input.parents('.c-field').eq(0),
-                                value = $input.val();
-                            $container.removeClass('is-focused');
-                            $container[ !!value ? 'addClass' : 'removeClass']('is-filled');
-                            return;
-                        });
-
-                    $('.c-field-input[pattern]').on('input', _.debounce(function (e) {
-                        var $input = $(this),
-                            $container = $input.parents('.c-field').eq(0),
-                            value = $input.val(),
-                            pattern = $input.attr('pattern');
-
-                        if(value) {
-                            var reg = new RegExp(pattern);
-                            if(reg.test(value))
-                                $container.addClass('is-valid').removeClass('is-invalid');
-                            else
-                                $container.addClass('is-invalid').removeClass('is-valid');
-                        } else
-                            $container.removeClass('is-valid is-invalid');
-
-                        return;
-                    }, 150));
-
-                </script>
 
             </main>
 
