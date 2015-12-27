@@ -1,9 +1,10 @@
 {
 	"name"			: "protosite.uikit",
 	"dependencies"  : {
-		"backbone"	  : "latest",
-		"underscore"  : "latest",
-		"zepto"		  : "latest"
+		"backbone"			: "latest",
+		"underscore"		: "latest",
+		"underscore.string"	: "latest",
+		"zepto"				: "latest"
 	},
 	"ignore": ["docs", "examples", "test", "*.yml", "*.html", "*.ico", "*.md", "CNAME", ".*", "karma.*", "component.json", "package.json"]
 }
