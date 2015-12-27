@@ -105,3 +105,5 @@ if (!String.prototype.toBoolean)
     String.prototype.toBoolean = function () {
         return this.toLowerCase() == 'true';
     }
+
+_.mixin(s.exports());
