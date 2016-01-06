@@ -15,6 +15,8 @@
 @o-user-thumbnail-small-height: @unit * 3;
 @o-user-thumbnail-large-width: @unit * 8;
 @o-user-thumbnail-large-height: @unit * 8;
+@o-user-thumbnail-x-large-width: @unit * 14;
+@o-user-thumbnail-x-large-height: @unit * 14;
 
 
 /* ========================================================================
@@ -26,16 +28,17 @@
 	width: @o-user-thumbnail-width;
 	height: @o-user-thumbnail-height;
 	img {
+		border-radius: inherit;
 		max-width: @o-user-thumbnail-width;
 		max-height: @o-user-thumbnail-height;
 	}
 }
 
 
-/* Modifiers: thumbnail sizes
+/* Size modifiers of the thumbnail
  ========================================================================== */
 
-.c-thumbnail--mini {
+.c-thumbnail--mini.o-user {
 	width: @o-user-thumbnail-mini-width;
 	height: @o-user-thumbnail-mini-height;
 	img {
@@ -43,7 +46,7 @@
 		max-height: @o-user-thumbnail-mini-height;
 	}
 }
-.c-thumbnail--small {
+.c-thumbnail--small.o-user {
 	width: @o-user-thumbnail-small-width;
 	height: @o-user-thumbnail-small-height;
 	img {
@@ -51,11 +54,19 @@
 		max-height: @o-user-thumbnail-small-height;
 	}
 }
-.c-thumbnail--large {
+.c-thumbnail--large.o-user {
 	width: @o-user-thumbnail-large-width;
 	height: @o-user-thumbnail-large-height;
 	img {
 		max-width: @o-user-thumbnail-large-width;
 		max-height: @o-user-thumbnail-large-height;
+	}
+}
+.c-thumbnail--x-large.o-user {
+	width: @o-user-thumbnail-x-large-width;
+	height: @o-user-thumbnail-x-large-height;
+	img {
+		max-width: @o-user-thumbnail-x-large-width;
+		max-height: @o-user-thumbnail-x-large-height;
 	}
 }
