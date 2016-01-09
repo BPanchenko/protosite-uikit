@@ -56,12 +56,20 @@
 
 /* Subobject: `c-panel__header`
  ========================================================================== */
+
 .c-panel__header {
-	hgroup {
+	border-bottom: 1px solid @clr-grey-300;
+}
+
+	.c-panel__header hgroup,
+	.c-panel__header-hgroup {
 		line-height: 1.2;
 		h1,h2,h3,h4,h5,h6 { margin: 0; }
 	}
-}
+
+	.c-panel__header-controls {
+		float: right;
+	}
 
 
 /* Subobject: `c-panel__body`
