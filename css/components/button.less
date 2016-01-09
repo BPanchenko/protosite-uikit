@@ -44,8 +44,8 @@
 @c-button-background-color: fade(@clr-grey-700, 52%);
 @c-button-background-color-focus: fade(@clr-grey-700, 70%);
 
-@c-button-background-image: url('/img/bgs/subtle_dots.png');
-@c-button-background-image-retina: url('/img/bgs/subtle_dots_@2X.png');
+@c-button-background-image: url('http://ui.protosite.rocks/img/bgs/subtle_dots.png');
+@c-button-background-image-retina: url('http://ui.protosite.rocks/img/bgs/subtle_dots_@2X.png');
 @c-button-background-size: 27px 15px;
 @c-button-background-blend-mode: overlay;
 @c-button-border-radius: @unit / 4;
@@ -87,6 +87,10 @@
 @c-button-warning-color: @clr-white;
 @c-button-warning-text-shadow: none;
 
+@c-button-small-font-size: 1.3rem;
+@c-button-small-min-height: (@unit * 1.5);
+@c-button-small-padding: (@unit / 3) @unit;
+
 @c-button_on_panel-box-shadow: none;
 
 
@@ -116,7 +120,6 @@
 	line-height: @c-button-line-height;
 	padding: @c-button-padding;
 
-	color: @c-button-color;
 	cursor: pointer;
 	font-size: @c-button-font-size;
 	font-weight: @c-button-font-weight;
@@ -137,6 +140,11 @@
 	   -moz-user-select: none;
 		-ms-user-select: none;
 			user-select: none;
+}
+
+.c-button,
+.c-button:hover {
+	color: @c-button-color;
 }
 
 .c-button + .c-button { margin-left: (@unit / 2); }
@@ -192,8 +200,12 @@
 .c-button--danger {
 	background-color: @c-button-danger-background-color;
 	background-blend-mode: @c-button-danger-background-blend-mode;
-	color: @c-button-danger-color;
 	text-shadow: @c-button-danger-text-shadow;
+}
+
+.c-button--danger,
+.c-button--danger:hover {
+	color: @c-button-danger-color;
 }
 
 .c-button--danger:focus,
@@ -209,8 +221,12 @@
 .c-button--primary:hover {
 	background-color: @c-button-primary-background-color;
 	background-blend-mode: @c-button-primary-background-blend-mode;
-	color: @c-button-primary-color;
 	text-shadow: @c-button-primary-text-shadow;
+}
+
+.c-button--primary,
+.c-button--primary:hover {
+	color: @c-button-primary-color;
 }
 
 .c-button--primary:focus,
@@ -225,8 +241,12 @@
 .c-button--success {
 	background-color: @c-button-success-background-color;
 	background-blend-mode: @c-button-success-background-blend-mode;
-	color: @c-button-success-color;
 	text-shadow: @c-button-success-text-shadow;
+}
+
+.c-button--success,
+.c-button--success:hover {
+	color: @c-button-success-color;
 }
 
 .c-button--success:focus,
@@ -241,8 +261,12 @@
 .c-button--warning {
 	background-color: @c-button-warning-background-color;
 	background-blend-mode: @c-button-warning-background-blend-mode;
-	color: @c-button-warning-color;
 	text-shadow: @c-button-warning-text-shadow;
+}
+
+.c-button--warning,
+.c-button--warning:hover {
+	color: @c-button-warning-color;
 }
 
 .c-button--warning:focus,
@@ -253,13 +277,17 @@
 
 /* Modifier: `c-button--link`
  ========================================================================== */
- 
+
 .c-button--link {
 	background: transparent !important;
-	color: @link-color;
 	text-decoration: @link-text-decoration;
 	transition: @link-transition;
 	box-shadow: none !important;
+}
+
+.c-button--link,
+.c-button--link:hover {
+	color: @link-color;
 }
 
 .c-button--link:hover {
@@ -271,6 +299,16 @@
 .c-button--link[aria-checked=true],
 .c-button--link.c-button--active {
 	color: @link-color-hover;
+}
+
+
+/* Size modifier: `c-button--small`
+ ========================================================================== */
+
+.c-button--small {
+	font-size: @c-button-small-font-size;
+	min-height: @c-button-small-min-height;
+	padding: @c-button-small-padding;
 }
 
 
