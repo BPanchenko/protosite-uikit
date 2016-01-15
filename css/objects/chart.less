@@ -1,0 +1,36 @@
+@import "../variables";
+
+/**
+ * Object:		Chart
+ * Description: Style of charts made using the "D3.js" library.
+ *
+ * Subobjects:	`o-chart__graph`
+ *
+ * Elements:	`o-chart-container`
+ *				`o-chart__graph-axis`
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@o-chart-color: #4F4E4D;
+
+
+/* ========================================================================
+   Object: `o-grid`
+ ========================================================================== */
+
+
+/* Subobject: `o-chart__graph`
+ ========================================================================== */
+
+.o-chart svg,
+.o-chart__graph {}
+	.o-chart__graph-axis {
+		.tick {
+			line { stroke: @o-chart-color; }
+			text { color: @o-chart-color; }
+		}
+	}
