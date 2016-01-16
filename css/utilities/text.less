@@ -16,12 +16,13 @@
 @u-text-caption-font-family:                      @body-font-family-caption;
 @u-text-cursive-font-family:                      @body-font-family-cursive;
 
-@u-text-muted-color:                              #999;
-@u-text-primary-color:                            #2d7091;
-@u-text-success-color:                            @clr-green-A700;
-@u-text-warning-color:                            #e28327;
-@u-text-danger-color:                             #d85030;
-@u-text-contrast-color:                           #fff;
+@u-text-color:			@body-color;
+@u-text-muted-color:    #999;
+@u-text-primary-color:  #2d7091;
+@u-text-success-color:  @clr-green-A700;
+@u-text-warning-color:  #e28327;
+@u-text-danger-color:   #d85030;
+@u-text-contrast-color: #fff;
 
 
 // Fonts
@@ -52,6 +53,7 @@
 /* Color modifiers
  ========================================================================== */
 
+.u-text-color { color: @u-text-color; }
 .u-text-muted { color: #9E9E9E !important; } /* @clr-grey-500 */
 .u-text-primary { color: @u-text-primary-color !important; }
 .u-text-success { color: @u-text-success-color !important; }
