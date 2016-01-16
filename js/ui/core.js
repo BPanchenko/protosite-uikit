@@ -104,7 +104,8 @@
             } else
                 console.error("Error initialization of the component.", _component);
         },
-        
+        _components: {},
+
         helpers: {
             getAttributeObject: function(el, attr_name) {
                 var data;
@@ -122,9 +123,7 @@
 
                 return data;
             }
-        },
-
-        _components: {}
+        }
 	};
 	
 	return UiCore;
