@@ -6,6 +6,8 @@
  * Elements:		`c-field-input`
  *                  `c-field-label`
  *                  `c-field-error`
+ *                  `c-field-icon`
+ *                  `c-field-value`
  *
  * States:			`is-filled`
  *					`is-focused`
@@ -57,6 +59,7 @@
 	display: inline-block;
 	position: relative;
 	box-sizing: border-box;
+	cursor: pointer;
 
 	width: @c-field-width;
 	height: @c-field-height;
@@ -83,6 +86,8 @@
  ========================================================================== */
 
 .c-field-input {
+	-webkit-appearance: none;
+
 	display: inline-block;
 	background-color: transparent;
 	width: inherit;
@@ -91,6 +96,13 @@
 
 	border: none;
 	outline: none;
+
+	&[type=file] {
+		opacity: 0;
+		cursor: pointer;
+		position: relative;
+		z-index: -1;
+	}
 }
 
 
@@ -103,6 +115,7 @@
 	left: @c-field-label-left;
 	font-size: @c-field-label-font-size;
 	color: @c-field-label-color;
+	cursor: pointer;
 
 	transition: left 160ms @easing, font-size 160ms @easing, color 160ms @easing, top 160ms @easing;
 }
@@ -113,6 +126,7 @@
 	top: @c-field-focused-label-top;
 	left: @c-field-focused-label-left;
 	font-size: @c-field-focused-label-font-size;
+	cursor: text;
 }
 
 .c-field.is-focused .c-field-label {
@@ -120,18 +134,32 @@
 }
 
 
-/* Element: `c-field-icon`
+/* Element: `c-field-value` (the field used for file selection)
  ========================================================================== */
 
-.c-field-icon {
+.c-field-value {
+	position: absolute;
+	top: @c-field-padding-top;
+}
+
+
+/* Elements: `c-field-icon` and `c-field-value`
+ * (`c-field-value` is used for the field file selection)
+ ========================================================================== */
+
+.c-field-icon,
+.c-field-value {
 	position: absolute;
 	top: @c-field-padding-top;
 
 	display: inline-block;
-	width: @c-field-icon-width;
 	height: @c-field-icon-height;
-	text-align: center;
 	line-height: @c-field-icon-height + .3rem;
+}
+
+.c-field-icon {
+	width: @c-field-icon-width;
+	text-align: center;
 }
 
 .c-field-icon + .c-field-label {
@@ -139,8 +167,14 @@
 }
 
 .c-field-icon + .c-field-input,
-.c-field-icon + .c-field-label + .c-field-input {
+.c-field-icon + .c-field-input + .c-field-value,
+.c-field-icon + .c-field-label + .c-field-input,
+.c-field-icon + .c-field-label + .c-field-input + .c-field-value {
 	padding-left: @c-field-label-left-after-icon;
+}
+
+.is-invalid .c-field-icon {
+	color: @c-field-error-color;
 }
 
 
