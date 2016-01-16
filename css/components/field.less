@@ -18,8 +18,9 @@
 // ========================================================================
 
 @c-field-width: @unit * 30;
-@c-field-padding: @unit 0;
-
+@c-field-height: 6rem;
+@c-field-padding-top: @unit;
+@c-field-padding-bottom: @unit;
 
 @c-field-error-font-size: 1.1rem;
 @c-field-error-font-weight: 700;
@@ -27,7 +28,7 @@
 @c-field-error-color: @clr-red-400;
 
 
-@c-field-label-top: @unit;
+@c-field-label-top: @c-field-padding-top + .3rem;
 @c-field-label-left: 0;
 @c-field-label-font-size: @body-font-size;
 @c-field-label-color: @clr-grey-600;
@@ -37,7 +38,14 @@
 @c-field-focused-label-font-size: 1.1rem;
 @c-field-focused-label-color: @body-color;
 
+@c-field-label-left-after-icon: @c-field-icon-width;
 
+
+@c-field-icon-width: @c-field-input-height;
+@c-field-icon-height: @c-field-input-height;
+
+
+@c-field-input-height: @unit * 1.5;
 @c-field-input-border-bottom: 1px solid @body-color;
 @c-field-input-invalid-border-bottom: 1px solid @clr-red-400;
 
@@ -51,7 +59,23 @@
 	box-sizing: border-box;
 
 	width: @c-field-width;
-	padding: @c-field-padding;
+	height: @c-field-height;
+	padding-top: @c-field-padding-top;
+	padding-bottom: @c-field-padding-bottom;
+
+	&::before {
+		content: ' ';
+		display: block;
+		width: inherit;
+		border-bottom: @c-field-input-border-bottom;
+		transform: translate(0, @c-field-input-height);
+		transition: border-bottom 160ms @easing;
+	}
+	
+	// Invalid state
+	&.is-invalid::before {
+		border-bottom: @c-field-input-invalid-border-bottom;
+	}
 }
 
 
@@ -62,17 +86,11 @@
 	display: inline-block;
 	background-color: transparent;
 	width: inherit;
+	height: @c-field-input-height;
+	box-sizing: border-box;
 
-	outline: none;
 	border: none;
-	border-bottom: @c-field-input-border-bottom;
-
-	transition: border-bottom 160ms @easing;
-}
-
-// Invalid modifier
-.c-field.is-invalid .c-field-input {
-	border-bottom: @c-field-input-invalid-border-bottom;
+	outline: none;
 }
 
 
@@ -86,7 +104,7 @@
 	font-size: @c-field-label-font-size;
 	color: @c-field-label-color;
 
-	transition: font-size 160ms @easing, color 160ms @easing, top 160ms @easing;
+	transition: left 160ms @easing, font-size 160ms @easing, color 160ms @easing, top 160ms @easing;
 }
 
 // Modifiers: `is-focused` and `is-filled`
@@ -99,6 +117,30 @@
 
 .c-field.is-focused .c-field-label {
 	color: @c-field-focused-label-color;
+}
+
+
+/* Element: `c-field-icon`
+ ========================================================================== */
+
+.c-field-icon {
+	position: absolute;
+	top: @c-field-padding-top;
+
+	display: inline-block;
+	width: @c-field-icon-width;
+	height: @c-field-icon-height;
+	text-align: center;
+	line-height: @c-field-icon-height + .3rem;
+}
+
+.c-field-icon + .c-field-label {
+	left: @c-field-label-left-after-icon;
+}
+
+.c-field-icon + .c-field-input,
+.c-field-icon + .c-field-label + .c-field-input {
+	padding-left: @c-field-label-left-after-icon;
 }
 
 
@@ -115,7 +157,7 @@
 	transition: opacity 160ms @easing;
 }
 
-// Invalid modifier
+// Invalid state
 .c-field.is-invalid .c-field-error {
 	opacity: 1;
 }
