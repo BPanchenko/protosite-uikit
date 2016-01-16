@@ -41,46 +41,57 @@
 	
 	
 	// Window settings
-	var _win = new (Backbone.Model.extend({
+	var _window = new (Backbone.Model.extend({
 		defaults: {
 			width: 0,
-			height: 0,
-			format: ''
+			height: 0
 		},
 		initialize: function() {
             this._origin = window;
-			this.on('change:width', this.setFormat);
-		},
-        setFormat: function() {
-			var _f, _w = this.get('width');
-			
-			
-			if(_w >= 1360)
-				_f = 'x-desktop';
-			
-			else if(_w >= 1180 && _w <= 1359)
-				_f = 'desktop';
-			
-			else if(_w >= 1024 && _w <= 1179)
-				_f = 'tablet';
-			
-			else if(_w >= 768 && _w <= 1023)
-				_f = 'tablet--portrait';
-				
-			else if(_w >= 480 && _w <= 767)
-				_f = 'handset';
-
-            else if(_w <= 479)
-                _f = 'handset--portrait';
-
-			
-			return this.set('format', _f);
 		}
 	}));
-	
+
+
+    // Container
+    var _container = new (Backbone.Model.extend({
+        defaults: {
+            width: 0,
+            height: 0,
+            format: ''
+        },
+        initialize: function() {
+            this.listenTo(_window, 'change:width', this.onChangeWindowWidth);
+        },
+        onChangeWindowWidth: function(model, win_width) {
+            var format;
+
+            if(win_width >= 1360)
+                format = 'xdesktop';
+            else if(win_width >= 1180 && win_width <= 1359)
+                format = 'desktop';
+            else if(win_width >= 1024 && win_width <= 1179)
+                format = 'tablet';
+            else if(win_width >= 768 && win_width <= 1023)
+                format = 'tablet-portrait';
+            else if(win_width >= 480 && win_width <= 767)
+                format = 'handset';
+            else if(win_width <= 479)
+                format = 'handset-portrait';
+
+            return this.set({
+                'format': format,
+                'height': Math.max($(document.body).height(), _window.get('height')),
+                'width': $('.o-container').eq(0).width()
+            });
+        }
+    }));
+
 	
 	// 
 	var UiCore = {
+        container: _container,
+        window: _window,
+
 		component: function(addon) {
             var _component;
 
@@ -93,8 +104,6 @@
             } else
                 console.error("Error initialization of the component.", _component);
         },
-
-		window: _win,
 
         _components: {},
         _helpers: {
