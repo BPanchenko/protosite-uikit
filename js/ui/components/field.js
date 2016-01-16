@@ -10,6 +10,24 @@
 
 })(function(UiCore){
 
+    var checkPattern = _.debounce(function () {
+        var $input = $(this),
+            $container = $input.parents('.c-field').eq(0),
+            value = $input.val(),
+            pattern = $input.attr('pattern');
+
+        if(value) {
+            var reg = new RegExp(pattern);
+            if(reg.test(value))
+                $container.addClass('is-valid').removeClass('is-invalid');
+            else
+                $container.addClass('is-invalid').removeClass('is-valid');
+        } else
+            $container.removeClass('is-valid is-invalid');
+
+        return;
+    }, 150);
+
     return {
         NAME: 'field',
         $elements: null,
@@ -32,23 +50,8 @@
                     return;
                 });
 
-            this.$elements.filter('*[pattern]').on('input', _.debounce(function (e) {
-                var $input = $(this),
-                    $container = $input.parents('.c-field').eq(0),
-                    value = $input.val(),
-                    pattern = $input.attr('pattern');
-
-                if(value) {
-                    var reg = new RegExp(pattern);
-                    if(reg.test(value))
-                        $container.addClass('is-valid').removeClass('is-invalid');
-                    else
-                        $container.addClass('is-invalid').removeClass('is-valid');
-                } else
-                    $container.removeClass('is-valid is-invalid');
-
-                return;
-            }, 150));
+            this.$elements.filter('*[pattern]:not([type=email])').on('input', checkPattern);
+            this.$elements.filter('*[pattern][type=email]').on('change', checkPattern);
         }
     };
 });
