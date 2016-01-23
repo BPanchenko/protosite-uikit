@@ -1,0 +1,31 @@
+{
+  "name": "rocks.protosite.uikit",
+  "version": "1.0.0",
+  "description": "Front-end framework for developing web interfaces using BEMIT",
+  "author": "Boris Panchenko <bp@bp-studio.ru>",
+  "contributors": [
+    {
+      "name": "Boris Panchenko",
+      "email": "bp-studio.ru"
+    }
+  ],
+  "main": "./index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BPanchenko/protosite.uikit.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "bower": "^1.7.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.0.5"
+  },
+  "devDependencies": {},
+  "preferGlobal": true,
+  "private": true,
+  "analyze": true,
+  "license": "MIT"
+}
