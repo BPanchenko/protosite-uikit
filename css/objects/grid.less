@@ -27,9 +27,10 @@
 	flex-flow: row wrap;
 	margin-left: @o-grid-margin-horizontal;
 	margin-right: @o-grid-margin-horizontal;
+
+	> * { flex: 0 0 inherit; }
 }
 	.o-grid-cell {
-		flex: 1 0 25%;
 		box-sizing: border-box;
 		padding: @o-grid-cell-padding;
 	}
