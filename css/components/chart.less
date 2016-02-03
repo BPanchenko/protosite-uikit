@@ -4,8 +4,8 @@
  * Component:	Chart
  * Description: Style of charts made using the "D3.js" library.
  *
- * Elements:	`o-chart__axis`
- *				`o-chart__line`
+ * Elements:	`c-chart__axis`
+ *				`c-chart__line`
  *
  ========================================================================== */
 
@@ -13,7 +13,7 @@
 // Variables
 // ========================================================================
 
-@o-chart-color: #4F4E4D;
+@c-chart-color: #4F4E4D;
 
 
 /* ========================================================================
@@ -21,20 +21,20 @@
  ========================================================================== */
 
 
-/* Element: `o-chart__graph`
+/* Element: `c-chart__graph`
  ========================================================================== */
 
-svg.o-chart,
-.o-chart svg {}
-	.o-chart__axis {
+svg.c-chart,
+.c-chart svg {}
+	.c-chart__axis {
 		.tick {
-			line { stroke: @o-chart-color; }
-			text { color: @o-chart-color; }
+			line { stroke: @c-chart-color; }
+			text { color: @c-chart-color; }
 		}
 	}
 
 	/*path*/
-	.o-chart__line {
+	.c-chart__line {
 		stroke: @clr-cyan-400;
 		stroke-width: 3px;
 		stroke-linecap: round;
