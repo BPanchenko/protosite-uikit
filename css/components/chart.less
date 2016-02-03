@@ -1,13 +1,11 @@
 @import "../variables";
 
 /**
- * Object:		Chart
+ * Component:	Chart
  * Description: Style of charts made using the "D3.js" library.
  *
- * Subobjects:	`o-chart__graph`
- *
- * Elements:	`o-chart-container`
- *				`o-chart__graph-axis`
+ * Elements:	`o-chart__axis`
+ *				`o-chart__line`
  *
  ========================================================================== */
 
@@ -23,12 +21,12 @@
  ========================================================================== */
 
 
-/* Subobject: `o-chart__graph`
+/* Element: `o-chart__graph`
  ========================================================================== */
 
-.o-chart svg,
-.o-chart__graph {}
-	.o-chart__graph-axis {
+svg.o-chart,
+.o-chart svg {}
+	.o-chart__axis {
 		.tick {
 			line { stroke: @o-chart-color; }
 			text { color: @o-chart-color; }
@@ -36,7 +34,7 @@
 	}
 
 	/*path*/
-	.o-chart__graph-line {
+	.o-chart__line {
 		stroke: @clr-cyan-400;
 		stroke-width: 3px;
 		stroke-linecap: round;
