@@ -1,5 +1,14 @@
 @import "../variables";
-@import "../mixins";
+
+/**
+ * Component:	Panel
+ * Description: Reusable content areas.
+ *
+ * Elements:	`c-panel__header`
+ *				`c-panel__controls`
+ *
+ ========================================================================== */
+
 
 // Variables of the components
 // ========================================================================
@@ -35,7 +44,7 @@
 }
 
 
-/* Element: `c-panel-divider`
+/* Subcomponent: `c-panel-divider`
  ========================================================================== */
  
 .c-panel + .c-panel-divider {
@@ -54,7 +63,7 @@
 }
 
 
-/* Subobject: `c-panel__header`
+/* Element: `c-panel__header`
  ========================================================================== */
 
 .c-panel__header {
@@ -62,17 +71,17 @@
 }
 
 	.c-panel__header hgroup,
-	.c-panel__header-hgroup {
+	.c-panel__header__hgroup {
 		line-height: 1.2;
 		h1,h2,h3,h4,h5,h6 { margin: 0; }
 	}
 
-	.c-panel__header-controls {
-		float: right;
-	}
+.c-panel__controls {
+	float: right;
+}
 
 
-/* Subobject: `c-panel__body`
+/* Element: `c-panel__body`
  ========================================================================== */
 
 .c-panel__body {
@@ -83,7 +92,7 @@
 }
 
 
-/* Modifier `c-panel--transparent`
+/* Modifier: `c-panel--clean`
  ========================================================================== */
  
 .c-panel--clean {
