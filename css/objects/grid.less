@@ -28,7 +28,7 @@
 	margin-left: @o-grid-margin-horizontal;
 	margin-right: @o-grid-margin-horizontal;
 
-	& > * { flex: 0 0 inherit; }
+	& > * { flex: 0 0 auto; }
 	& > * > * {
 		-ms-flex: none;
 		-webkit-flex: none;
@@ -40,5 +40,8 @@
 	.o-grid__cell {
 		box-sizing: border-box;
 		padding: @o-grid-cell-padding;
+		display: flex;
+		flex-direction: column;
+		& > * { flex: 1 1 auto; }
 	}
 
