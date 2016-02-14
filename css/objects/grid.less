@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../settings/variables";
 
 /**
  * Object:		Grid
@@ -28,7 +28,14 @@
 	margin-left: @o-grid-margin-horizontal;
 	margin-right: @o-grid-margin-horizontal;
 
-	> * { flex: 0 0 inherit; }
+	& > * { flex: 0 0 inherit; }
+	& > * > * {
+		-ms-flex: none;
+		-webkit-flex: none;
+		flex: none;
+		box-sizing: border-box;
+		width: 100%;
+	}
 }
 	.o-grid-cell {
 		box-sizing: border-box;
