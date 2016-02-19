@@ -45,11 +45,14 @@
     return {
         NAME: 'field',
         $elements: null,
+        $buttons: null,
+        $inputs: null,
 
         init: function() {
-            this.$elements = $('.c-field-input');
+            this.$elements = $('.c-field');
+            this.$inputs = this.$elements.find('.c-field-input');
 
-            this.$elements.filter('*:not([type=file])')
+            this.$inputs.filter('*:not([type=file])')
                 .on('focus', function (e) {
                     var $container = $(this).parent('.c-field');
                     $container.length && $container.addClass('is-focused');
@@ -65,11 +68,11 @@
                 });
 
             // check fields with a pattern
-            this.$elements.filter('*[pattern]:not([type=email])').on('input', checkPattern);
-            this.$elements.filter('*[pattern][type=email]').on('change', checkPattern);
+            this.$inputs.filter('*[pattern]:not([type=email])').on('input', checkPattern);
+            this.$inputs.filter('*[pattern][type=email]').on('change', checkPattern);
 
             // processing the field file
-            this.$elements.filter('input[type=file]').on('change', onChangeFieldFile);
+            this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
         }
     };
 });
