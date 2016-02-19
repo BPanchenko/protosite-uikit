@@ -42,6 +42,23 @@
         return;
     };
 
+    var onClickButton = function(e) {
+        var $this = $(this),
+            $input = $this.siblings('.c-field-input').eq(0),
+            $icon = $this.find('.iconic').eq(0);
+
+        // processing the password field
+        if($icon.data('glyph') == 'eye-closed') {
+            $icon.data('glyph', 'eye-open');
+            $input.attr('type', 'text')
+        } else if($icon.data('glyph') == 'eye-open') {
+            $icon.data('glyph', 'eye-closed');
+            $input.attr('type', 'password')
+        }
+
+        return;
+    };
+
     return {
         NAME: 'field',
         $elements: null,
@@ -50,6 +67,7 @@
 
         init: function() {
             this.$elements = $('.c-field');
+            this.$buttons = this.$elements.find('.c-field-button');
             this.$inputs = this.$elements.find('.c-field-input');
 
             this.$inputs.filter('*:not([type=file])')
@@ -73,6 +91,9 @@
 
             // processing the field file
             this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
+
+            // click by the field button
+            this.$buttons.on('click', onClickButton);
         }
     };
 });
