@@ -98,13 +98,16 @@
 
                 <div class="u-flex">
                     <div class="u-width-1-2">
-                        <label class="c-field">
-                            <span class="c-field-label">Поиск</span>
-                            <input type="search" name="q" class="c-field-input" role="textbox">
-                            <button type="button" class="c-field-button">
-                                <span aria-hidden="true" class="iconic" data-glyph="loupe"></span>
-                            </button>
-                        </label>
+                        <form>
+                            <label class="c-field">
+                                <span class="c-field-label">Поиск</span>
+                                <input type="search" name="q" class="c-field-input" role="textbox">
+                                <span class="c-field-error">Не указан поисковый запрос</span>
+                                <button type="submit" class="c-field-button">
+                                    <span aria-hidden="true" class="iconic" data-glyph="loupe"></span>
+                                </button>
+                            </label>
+                        </form>
                     </div>
                     <div class="u-width-1-2">
                         <label class="c-field">
