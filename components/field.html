@@ -21,8 +21,6 @@
 
         <!-- Framework styles -->
         <link rel="stylesheet/less" type="text/css" href="../css/core.less">
-        <link rel="stylesheet/less" type="text/css" href="../css/components/field.less">
-        <link rel="stylesheet/less" type="text/css" href="../css/components/panel.less">
 
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" data-env="development"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -94,6 +92,27 @@
                             <span class="c-field-label">Выбрать файл...</span>
                             <input type="file" class="c-field-input">
                             <span class="c-field-value"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="u-flex">
+                    <div class="u-width-1-2">
+                        <label class="c-field">
+                            <span class="c-field-label">Поиск</span>
+                            <input type="search" name="q" class="c-field-input" role="textbox">
+                            <button type="button" class="c-field-button">
+                                <span aria-hidden="true" class="iconic" data-glyph="loupe"></span>
+                            </button>
+                        </label>
+                    </div>
+                    <div class="u-width-1-2">
+                        <label class="c-field">
+                            <span class="c-field-label">Пароль</span>
+                            <input type="password" name="password" class="c-field-input" role="textbox">
+                            <button type="button" class="c-field-button">
+                                <span aria-hidden="true" class="iconic" data-glyph="eye-closed"></span>
+                            </button>
                         </label>
                     </div>
                 </div>

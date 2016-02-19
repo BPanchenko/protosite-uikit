@@ -3,10 +3,11 @@
 /**
  * Component:		`c-field`
  *
- * Elements:		`c-field-input`
- *                  `c-field-label`
+ * Elements:		`c-field-button`
  *                  `c-field-error`
  *                  `c-field-icon`
+ *					`c-field-input`
+ *                  `c-field-label`
  *                  `c-field-value`
  *
  * States:			`is-filled`
@@ -23,6 +24,9 @@
 @c-field-height: 6rem;
 @c-field-padding-top: @unit;
 @c-field-padding-bottom: @unit;
+
+@c-field-button-width: @c-field-input-height;
+@c-field-button-height: @c-field-input-height;
 
 @c-field-error-font-size: 1.1rem;
 @c-field-error-font-weight: 700;
@@ -176,6 +180,30 @@
 
 .is-invalid .c-field-icon {
 	color: @c-field-error-color;
+}
+
+
+/* Element: `c-field-button`
+ ========================================================================== */
+
+/*button*/.c-field-button {
+	position: absolute;
+	top: @c-field-padding-top;
+	right: 0;
+
+	// default component style
+	.c-button;
+
+	// reset component style
+	background: transparent;
+	border: none;
+	box-shadow: none;
+  	padding: 0;
+	min-height: auto;
+	width: @c-field-button-width;
+	height: @c-field-button-height;
+	line-height: @c-field-icon-height + .3rem;
+
 }
 
 
