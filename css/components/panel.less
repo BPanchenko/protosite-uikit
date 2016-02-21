@@ -68,6 +68,7 @@
 
 .c-panel__head {
 	border-bottom: 1px solid @clr-grey-300;
+	float: left;
 }
 
 	.c-panel__head hgroup,
@@ -86,6 +87,14 @@
 
 .c-panel__body {
 	font-size: @body-font-size;
+
+	// Micro clearfix to make the body panel more robust
+	&::before,
+	&::after {
+		content: ' ';
+		display: table;
+		clear: both;
+	}
 }
 .c-panel__head + .c-panel__body {
 	padding: (@unit / 2) 0 @unit;
