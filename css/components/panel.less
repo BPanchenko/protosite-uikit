@@ -4,7 +4,7 @@
  * Component:	Panel
  * Description: Reusable content areas.
  *
- * Elements:	`c-panel__header`
+ * Elements:	`c-panel__head`
  *				`c-panel__controls`
  *
  ========================================================================== */
@@ -63,15 +63,15 @@
 }
 
 
-/* Element: `c-panel__header`
+/* Element: `c-panel__head`
  ========================================================================== */
 
-.c-panel__header {
+.c-panel__head {
 	border-bottom: 1px solid @clr-grey-300;
 }
 
-	.c-panel__header hgroup,
-	.c-panel__header__hgroup {
+	.c-panel__head hgroup,
+	.c-panel__head__hgroup {
 		line-height: 1.2;
 		h1,h2,h3,h4,h5,h6 { margin: 0; }
 	}
@@ -87,7 +87,7 @@
 .c-panel__body {
 	font-size: @body-font-size;
 }
-.c-panel__header + .c-panel__body {
+.c-panel__head + .c-panel__body {
 	padding: (@unit / 2) 0 @unit;
 }
 
