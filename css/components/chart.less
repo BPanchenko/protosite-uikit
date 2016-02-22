@@ -26,6 +26,11 @@
 @c-chart-graph-line-stroke-width: .2rem;
 
 @c-chart-graph-point-fill: @clr-white;
+@c-chart-graph-point-stroke: @clr-grey-800;
+@c-chart-graph-point-stroke-width: @c-chart-graph-line-stroke-width;
+@c-chart-graph-point-hover-fill: @clr-grey-800;
+@c-chart-graph-point-hover-stroke: @clr-grey-800;
+@c-chart-graph-point-transition: stroke 160ms @easing,  fill 160ms @easing;
 
 
 /* ========================================================================
@@ -40,7 +45,8 @@
  ========================================================================== */
 
 /*g*/.c-chart__axis {
-	/*g*/.tick {
+	/*g*/
+	.tick {
 		line { stroke: @c-chart-color; }
 		text { color: @c-chart-color; }
 	}
@@ -52,6 +58,7 @@
  ========================================================================== */
 
 /*g*/.c-chart__graph {
+
  	/*path*/
 	.line {
 		stroke: @c-chart-graph-line-stroke;
@@ -59,14 +66,34 @@
 		stroke-linecap: round;
 		fill: none;
 	}
-	/*circle*/
+
+	/*g*/
 	.point {
-		stroke: @c-chart-graph-line-stroke;
-		stroke-width: @c-chart-graph-line-stroke-width;
-		fill: @c-chart-graph-point-fill;
+
+		/*circle*/
+		.dot {
+			stroke: @c-chart-graph-point-stroke;
+			stroke-width: @c-chart-graph-point-stroke-width;
+			fill: @c-chart-graph-point-fill;
+
+			transition: @c-chart-graph-point-transition;
+		}
+
+		/*circle*/
+		.handle {
+			stroke-width: 0;
+			fill: transparent;
+		}
 
 		&--hovered {
 			cursor: pointer;
+
+			&:hover {
+				.dot {
+					stroke: @c-chart-graph-point-hover-stroke;
+					fill: @c-chart-graph-point-hover-fill;
+				}
+			}
 		}
 	}
  }
