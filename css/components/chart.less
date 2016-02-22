@@ -6,6 +6,13 @@
  *
  * Elements:	`c-chart__axis`
  *				`c-chart__graph`
+ *				`c-chart__legend`
+ *
+ * Modifiers:   `c-chart--area`
+ *				`c-chart--bar`
+ *				`c-chart--bubbles`
+ *				`c-chart--line`
+ *				`c-chart--line`
  *
  ========================================================================== */
 
@@ -13,26 +20,53 @@
 // Variables
 // ========================================================================
 
-@c-chart-color: #4F4E4D;
+@c-chart-color: @clr-grey-800;
+
+@c-chart-graph-line-stroke: @c-chart-color;
+@c-chart-graph-line-stroke-width: .2rem;
+
+@c-chart-graph-point-fill: @clr-white;
 
 
 /* ========================================================================
-   Component: `c-chart`
+	Component: `c-chart`
  ========================================================================== */
 
-svg.c-chart,
-.c-chart svg {}
-	.c-chart__axis {
-		.tick {
-			line { stroke: @c-chart-color; }
-			text { color: @c-chart-color; }
-		}
-	}
+.c-chart {}
 
-	/*path*/
-	.c-chart__line {
-		stroke: @clr-cyan-400;
-		stroke-width: 3px;
+
+/* ========================================================================
+	Element: `c-chart__axis`
+ ========================================================================== */
+
+/*g*/.c-chart__axis {
+	/*g*/.tick {
+		line { stroke: @c-chart-color; }
+		text { color: @c-chart-color; }
+	}
+}
+
+
+/* ========================================================================
+	Element: `c-chart__graph`
+ ========================================================================== */
+
+/*g*/.c-chart__graph {
+ 	/*path*/
+	.line {
+		stroke: @c-chart-graph-line-stroke;
+		stroke-width: @c-chart-graph-line-stroke-width;
 		stroke-linecap: round;
 		fill: none;
 	}
+	/*circle*/
+	.point {
+		stroke: @c-chart-graph-line-stroke;
+		stroke-width: @c-chart-graph-line-stroke-width;
+		fill: @c-chart-graph-point-fill;
+
+		&--hovered {
+			cursor: pointer;
+		}
+	}
+ }
