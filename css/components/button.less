@@ -367,15 +367,11 @@
 .c-button-group {
 	display: block;
     position: relative;
-	
-	height: (3 * @unit);
-	line-height: (@unit * 3);
-
-	margin-top: (@unit * 1.5);
-	margin-bottom: (@unit / 2);
-	padding-right: (@unit / 2);
-	padding-left: (@unit * 1.5);
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
 	font-size: .001px;
+	white-space: nowrap;
 
 	.c-button {
 		&:not(:first-child) {
