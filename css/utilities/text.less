@@ -76,37 +76,56 @@
 
 /* xdesktop */
 @media (min-width: @screen-xdesktop) {
-	.u-text-center-xdesktop { text-align: center !important; }
-	.u-text-left-xdesktop { text-align: left !important; }
-	.u-text-right-xdesktop { text-align: right !important; }
+	.u-text-center\@xdesktop { text-align: center !important; }
+	.u-text-left\@xdesktop { text-align: left !important; }
+	.u-text-right\@xdesktop { text-align: right !important; }
 }
 
 /* desktop */
 @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
-	.u-text-center-desktop { text-align: center !important; }
-	.u-text-left-desktop { text-align: left !important; }
-	.u-text-right-desktop { text-align: right !important; }
+	.u-text-center\@desktop { text-align: center !important; }
+	.u-text-left\@desktop { text-align: left !important; }
+	.u-text-right\@desktop { text-align: right !important; }
 }
 
 /* tablet-landscape */
 @media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
-	.u-text-center-tablet { text-align: center !important; }
-	.u-text-left-tablet { text-align: left !important; }
-	.u-text-right-tablet { text-align: right !important; }
+	.u-text-center\@tablet,
+	.u-text-center\@tablet-landscape { text-align: center !important; }
+	.u-text-left\@tablet,
+	.u-text-left\@tablet-landscape { text-align: left !important; }
+	.u-text-right\@tablet,
+	.u-text-right\@tablet-landscape { text-align: right !important; }
 }
 
-/* tablet portrait */
+/* tablet-portrait */
 @media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
-	.u-text-center-tablet-portrait { text-align: center !important; }
-	.u-text-left-tablet-portrait { text-align: left !important; }
-	.u-text-right-tablet-portrait { text-align: right !important; }
+	.u-text-center\@tablet,
+	.u-text-center\@tablet-portrait { text-align: center !important; }
+	.u-text-left\@tablet,
+	.u-text-left\@tablet-portrait { text-align: left !important; }
+	.u-text-right\@tablet,
+	.u-text-right\@tablet-portrait { text-align: right !important; }
 }
 
 /* handset-landscape */
-@media (max-width: @screen-handset-landscape-max) {
-	.u-text-center-handset { text-align: center !important; }
-	.u-text-left-handset { text-align: left !important; }
-	.u-text-right-handset { text-align: right !important; }
+@media (min-width: @screen-handset-landscape) and (max-width: @screen-handset-landscape-max) {
+	.u-text-center\@handset,
+	.u-text-center\@handset-landscape { text-align: center !important; }
+	.u-text-left\@handset,
+	.u-text-left\@handset-landscape { text-align: left !important; }
+	.u-text-right\@handset,
+	.u-text-right\@handset-landscape { text-align: right !important; }
+}
+
+// handset-portrait
+@media (max-width: @screen-handset-portrait-max) {
+	.u-text-center\@handset,
+	.u-text-center\@handset-portrait { text-align: center !important; }
+	.u-text-left\@handset,
+	.u-text-left\@handset-portrait { text-align: left !important; }
+	.u-text-right\@handset,
+	.u-text-right\@handset-portrait { text-align: right !important; }
 }
 
 
