@@ -1,4 +1,4 @@
-@import "../mixins";
+@import "../tools/mixins";
 @import "../settings/variables";
 
 /**
@@ -53,10 +53,10 @@
 @c-button-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.1), 0 .1rem .5rem 0 rgba(0,0,0,.12);
 @c-button-box-shadow-active: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
 
-@c-button-min-height: (@unit * 2);
 @c-button-padding: (@unit / 2) (@unit * 1.618);
 
 @c-button-color: @body-color;
+@c-button-font-family: @body-font-family;
 @c-button-font-size: @body-font-size;
 @c-button-font-weight: 600;
 @c-button-line-height: normal;
@@ -105,24 +105,24 @@
 
 .c-button {
 	-webkit-appearance: none;
-	   -moz-appearance: none;
+	-moz-appearance: none;
 
-    border: none;
+	border: none;
 	outline: none;
 	text-align: center;
-    text-transform: none;
+	text-transform: none;
 	text-shadow: @c-button-text-shadow;
-	
-    display: inline-block;
+
+	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
-	min-height: @c-button-min-height;
-	line-height: @c-button-line-height;
 	padding: @c-button-padding;
 
 	cursor: pointer;
+	font-family: @c-button-font-family;
 	font-size: @c-button-font-size;
 	font-weight: @c-button-font-weight;
+	line-height: @c-button-line-height;
 
 	background-color: @c-button-background-color;
 	background-image: @c-button-background-image;
@@ -132,14 +132,9 @@
 
 	border-radius: @c-button-border-radius;
 	box-shadow: @c-button-box-shadow;
-	box-sizing: border-box;
 
 	transition: @link-transition, background-color 160ms @easing;
-
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-		-ms-user-select: none;
-			user-select: none;
+	user-select: none;
 }
 
 .c-button,
