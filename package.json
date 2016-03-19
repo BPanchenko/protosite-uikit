@@ -15,7 +15,8 @@
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
   },
   "keywords": [],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "bower": "^1.7.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
@@ -23,9 +24,8 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-less": "^3.0.5"
   },
-  "devDependencies": {},
   "preferGlobal": true,
-  "private": true,
+  "private": false,
   "analyze": true,
   "license": "MIT"
 }
