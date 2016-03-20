@@ -17,8 +17,7 @@
    Component: Unordered list
  ========================================================================== */
 
-ul,
-.c-list {
+ul {
 	padding: 0;
 	list-style: none;
 }
@@ -28,69 +27,40 @@ ul,
  * List item
  */
 
-ul > li,
-.c-list > * {
+ul > li {
 	padding-left: 1.7rem;
 	margin-bottom: (@unit / 2);
 	background: url('/icons/svg/square.svg') no-repeat (@unit / 2) (@unit / 1.6);
 	background-size: (@unit / 4) (@unit / 4);
 }
-ul li:last-child,
-.c-list *:last-child { margin-bottom: 0; }
+ul li:last-child { margin-bottom: 0; }
 
 
 /*
  * Nested list
  */
 
-ul ul,
-.c-list .c-list {
+ul ul {
     margin: 0;
     padding-left: @unit;
     list-style: none;
 }
 
 
-/* Modifier: `c-list--small`
- ========================================================================== */
-.c-list--small {
-	font-size: 1.4rem;
-}
-.c-list--small li {
-	padding-left: 1.2rem;
-	margin-bottom: 0;
-	background-position: left .9rem;
-	background-size: 4px 4px;
-}
-
-/* Modifier: `c-list--space`
- ========================================================================== */
-
-.c-list--space li {
-	background: none;
-	padding-left: 0;
-}
-.c-list--space > li:nth-child(n+2) { margin-top: 1.6rem; }
-.c-list--space.c-list--small > li:nth-child(n+2) { margin-top: .8rem; }
-
-
 /* ========================================================================
    Component: Ordered list
  ========================================================================== */
 
-ol,
-.c-list--ordered {
+ol {
 	list-style: decimal;
 	padding-left: 2.4rem;
 }
-ol > li,
-.c-list--ordered > * {
+ol > li {
 	background: none;
 	padding-left: 0;
 }
 
 // Nested list
-ol ol,
-.c-list--ordered .c-list--ordered {
+ol ol {
 	list-style: lower-alpha;
 }
