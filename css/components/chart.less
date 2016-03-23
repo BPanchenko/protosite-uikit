@@ -4,6 +4,9 @@
  * Component:	Chart
  * Description: Style of charts made using the "D3.js" library.
  *
+ * Components:	`c-chart`
+ *				`c-geo-chart`
+ *
  * Elements:	`c-chart__axis`
  *				`c-chart__graph`
  *				`c-chart__legend`
@@ -97,3 +100,39 @@
 		}
 	}
  }
+
+
+/* ========================================================================
+	Component: `c-geo-chart`
+ ========================================================================== */
+
+@c-geo-chart-city-opacity: .3;
+@c-geo-chart-city-outside-fill: fade(@clr-lime-A400, 20%);
+@c-geo-chart-city-outside-stroke: rgba(198,255,0,.2);
+@c-geo-chart-city-outside-stroke-width: 2rem;
+@c-geo-chart-city-inside-fill: @clr-lime-A200;
+@c-geo-chart-city-inside-stroke: none;
+
+.c-geo-chart {
+
+}
+
+	.c-geo-chart__boundary {
+		fill: none;
+		stroke: #fff;
+		stroke-width: .5px;
+	}
+
+	.c-geo-chart__city { opacity: @c-geo-chart-city-opacity; }
+		.c-geo-chart__city-outside {
+			fill: fade(@c-geo-chart-city-outside-fill, 20%);
+			stroke: @c-geo-chart-city-outside-stroke;
+			stroke-width: @c-geo-chart-city-outside-stroke-width;
+
+		}
+
+		.c-geo-chart__city-inside {
+			fill: fade(@c-geo-chart-city-inside-fill, 80%);
+			stroke: none;
+			box-shadow: 0 0 .3rem rgba(0,0,0,.8);
+		}
