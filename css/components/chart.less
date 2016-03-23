@@ -106,12 +106,13 @@
 	Component: `c-geo-chart`
  ========================================================================== */
 
-@c-geo-chart-city-opacity: .3;
+@c-geo-chart-city-opacity: 1;
 @c-geo-chart-city-outside-fill: fade(@clr-lime-A400, 20%);
 @c-geo-chart-city-outside-stroke: rgba(198,255,0,.2);
 @c-geo-chart-city-outside-stroke-width: 2rem;
 @c-geo-chart-city-inside-fill: @clr-lime-A200;
 @c-geo-chart-city-inside-stroke: none;
+@c-geo-chart-city-inside-box-shadow: 0 0 .8rem rgba(0,0,0,.8);
 
 .c-geo-chart {
 
@@ -128,11 +129,10 @@
 			fill: fade(@c-geo-chart-city-outside-fill, 20%);
 			stroke: @c-geo-chart-city-outside-stroke;
 			stroke-width: @c-geo-chart-city-outside-stroke-width;
-
 		}
 
 		.c-geo-chart__city-inside {
 			fill: fade(@c-geo-chart-city-inside-fill, 80%);
 			stroke: none;
-			box-shadow: 0 0 .3rem rgba(0,0,0,.8);
+			box-shadow: @c-geo-chart-city-inside-box-shadow;
 		}
