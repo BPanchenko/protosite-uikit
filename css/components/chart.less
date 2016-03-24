@@ -42,6 +42,9 @@
 
 .c-chart {}
 
+.c-chart-container { }
+.c-chart-svg { }
+
 
 /* ========================================================================
 	Element: `c-chart__axis`
@@ -60,7 +63,8 @@
 	Element: `c-chart__graph`
  ========================================================================== */
 
-/*g*/.c-chart__graph {
+/*g*/
+.c-chart__graph {
 
  	/*path*/
 	.line {
@@ -101,11 +105,37 @@
 	}
  }
 
+/* ========================================================================
+ Element: `c-chart__loader`
+ ========================================================================== */
+
+/*g*/.c-chart__loader {
+
+}
+
+/* ========================================================================
+ Element: `c-chart__tracker`
+ ========================================================================== */
+
+/*g*/.c-chart__tracker {
+
+}
+
+/* ========================================================================
+ Element: `c-chart__tracker`
+ ========================================================================== */
+
+/*g*/
+.c-chart__controls {
+	position: relative;
+}
+
 
 /* ========================================================================
 	Component: `c-geo-chart`
  ========================================================================== */
 
+@c-geo-chart-height: 40rem;
 @c-geo-chart-city-opacity: 1;
 @c-geo-chart-city-outside-fill: fade(@clr-lime-A400, 20%);
 @c-geo-chart-city-outside-stroke: rgba(198,255,0,.2);
@@ -115,7 +145,36 @@
 @c-geo-chart-city-inside-box-shadow: 0 0 .8rem rgba(0,0,0,.8);
 
 .c-geo-chart {
+	width: inherit;
+	height: @c-geo-chart-height;
 
+	/*g*/
+	.c-chart__controls {
+		position: absolute;
+		top: 0; right: 0; bottom: 0;
+		z-index: 6;
+	}
+
+	/* g*/
+	.c-chart__tracker {
+		position: absolute;
+		top: auto;
+		right: 3rem;
+		bottom: 50%;
+		transform: rotate(90deg);
+	}
+
+	/*section*/
+	.c-chart-container {
+		position: relative;
+		width: inherit;
+		height: @c-geo-chart-height;
+		overflow: hidden;
+
+		text-align: center;
+		box-shadow: inset .1rem .1rem .3rem rgba(0,0,0,.2);
+		background-color: @clr-grey-200;
+	}
 }
 
 	.c-geo-chart__boundary {
