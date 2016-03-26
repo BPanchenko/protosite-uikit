@@ -20,9 +20,11 @@
     "bower": "^1.7.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.4",
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
-    "gulp-less": "^3.0.5"
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2"
   },
   "preferGlobal": true,
   "private": false,
