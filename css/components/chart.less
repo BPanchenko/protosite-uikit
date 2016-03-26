@@ -5,7 +5,7 @@
  * Description: Style of charts made using the "D3.js" library.
  *
  * Components:	`c-chart`
- *				`c-geo-chart`
+ *				`o-worldmap`
  *
  * Elements:	`c-chart__axis`
  *				`c-chart__graph`
@@ -40,10 +40,13 @@
 	Component: `c-chart`
  ========================================================================== */
 
-.c-chart {}
-
-.c-chart-container { }
-.c-chart-svg { }
+.c-chart,
+.c-chart__container {
+	position: relative;
+}
+.c-chart__svg {
+	display: inline-block;
+}
 
 
 /* ========================================================================
@@ -129,69 +132,3 @@
 .c-chart__controls {
 	position: relative;
 }
-
-
-/* ========================================================================
-	Component: `c-geo-chart`
- ========================================================================== */
-
-@c-geo-chart-height: 40rem;
-@c-geo-chart-city-opacity: 1;
-@c-geo-chart-city-outside-fill: fade(@clr-lime-A400, 20%);
-@c-geo-chart-city-outside-stroke: rgba(198,255,0,.2);
-@c-geo-chart-city-outside-stroke-width: 2rem;
-@c-geo-chart-city-inside-fill: @clr-lime-A200;
-@c-geo-chart-city-inside-stroke: none;
-@c-geo-chart-city-inside-box-shadow: 0 0 .8rem rgba(0,0,0,.8);
-
-.c-geo-chart {
-	width: inherit;
-	height: @c-geo-chart-height;
-
-	/*g*/
-	.c-chart__controls {
-		position: absolute;
-		top: 0; right: 0; bottom: 0;
-		z-index: 6;
-	}
-
-	/* g*/
-	.c-chart__tracker {
-		position: absolute;
-		top: auto;
-		right: 3rem;
-		bottom: 50%;
-		transform: rotate(90deg);
-	}
-
-	/*section*/
-	.c-chart-container {
-		position: relative;
-		width: inherit;
-		height: @c-geo-chart-height;
-		overflow: hidden;
-
-		text-align: center;
-		box-shadow: inset .1rem .1rem .3rem rgba(0,0,0,.2);
-		background-color: @clr-grey-200;
-	}
-}
-
-	.c-geo-chart__boundary {
-		fill: none;
-		stroke: #fff;
-		stroke-width: .5px;
-	}
-
-	.c-geo-chart__city { opacity: @c-geo-chart-city-opacity; }
-		.c-geo-chart__city-outside {
-			fill: fade(@c-geo-chart-city-outside-fill, 20%);
-			stroke: @c-geo-chart-city-outside-stroke;
-			stroke-width: @c-geo-chart-city-outside-stroke-width;
-		}
-
-		.c-geo-chart__city-inside {
-			fill: fade(@c-geo-chart-city-inside-fill, 80%);
-			stroke: none;
-			box-shadow: @c-geo-chart-city-inside-box-shadow;
-		}

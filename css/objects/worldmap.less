@@ -1,0 +1,101 @@
+@import "../settings/variables";
+
+/**
+ * Object:		`o-orldmap`
+ * Description: Style of world map.
+ *
+ * Components:	`c-chart`
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@o-worldmap-height: 40rem;
+@o-worldmap-city-opacity: 1;
+@o-worldmap-city-outside-fill: fade(@clr-lime-A400, 20%);
+@o-worldmap-city-outside-stroke: rgba(198,255,0,.2);
+@o-worldmap-city-outside-stroke-width: 2rem;
+@o-worldmap-city-inside-fill: @clr-lime-A200;
+@o-worldmap-city-inside-stroke: none;
+@o-worldmap-city-inside-box-shadow: 0 0 .8rem rgba(0,0,0,.8);
+
+@o-worldmap__boundary-fill: none;
+@o-worldmap__boundary-stroke: #d7d6d1;
+@o-worldmap__boundary-stroke-width: .1rem;
+
+@o-worldmap__land-fill: #E9E8E3;
+@o-worldmap__land-stroke: @o-worldmap__boundary-stroke;
+@o-worldmap__land-stroke-width: .1rem;
+
+/* ========================================================================
+	Object: `o-worldmap`
+ ========================================================================== */
+
+.o-worldmap {
+	width: inherit;
+	height: @o-worldmap-height;
+
+	/*g*/
+	.c-chart__controls {
+		position: absolute;
+		top: 0; right: 0; bottom: 0;
+		z-index: 6;
+	}
+
+	/* g*/
+	.c-chart__tracker {
+		position: absolute;
+		top: auto;
+		right: 3rem;
+		bottom: 50%;
+		transform: rotate(90deg);
+	}
+
+	/*section*/
+	.c-chart__container {
+		position: relative;
+		width: inherit;
+		height: @o-worldmap-height;
+		overflow: hidden;
+
+		text-align: center;
+		box-shadow: inset .1rem .1rem .3rem rgba(0,0,0,.2);
+		background-color: #D5D5DD;
+	}
+
+	/*g*/
+	.c-chart__marker { opacity: @o-worldmap-city-opacity; }
+	.c-chart__marker-outside {
+		fill: fade(@o-worldmap-city-outside-fill, 20%);
+		stroke: @o-worldmap-city-outside-stroke;
+		stroke-width: @o-worldmap-city-outside-stroke-width;
+	}
+
+	.c-chart__marker-inside {
+		fill: fade(@o-worldmap-city-inside-fill, 80%);
+		stroke: none;
+		box-shadow: @o-worldmap-city-inside-box-shadow;
+	}
+}
+
+.o-worldmap__boundary {
+	fill: @o-worldmap__boundary-fill;
+	stroke: @o-worldmap__boundary-stroke;
+	stroke-width: @o-worldmap__boundary-stroke-width;
+}
+
+.o-worldmap__land {
+	fill: @o-worldmap__land-fill;
+	stroke: @o-worldmap__land-stroke;
+	stroke-width: @o-worldmap__land-stroke-width;
+}
+
+.o-worldmap__graticule {
+	display: none;
+	fill: none;
+	stroke: #777;
+	stroke-width: .5px;
+	stroke-opacity: .5;
+}
