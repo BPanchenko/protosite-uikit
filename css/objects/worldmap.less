@@ -12,12 +12,15 @@
 // Variables
 // ========================================================================
 
+@o-worldmap-width: inherit;
 @o-worldmap-height: 40rem;
+@o-worldmap-container-box-shadow: inset 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+
 @o-worldmap-city-opacity: 1;
-@o-worldmap-city-outside-fill: fade(@clr-lime-A400, 20%);
-@o-worldmap-city-outside-stroke: rgba(198,255,0,.2);
+@o-worldmap-city-outside-fill: fade(@clr-white, 20%);
+@o-worldmap-city-outside-stroke: fade(@clr-white, 20%);
 @o-worldmap-city-outside-stroke-width: 2rem;
-@o-worldmap-city-inside-fill: @clr-lime-A200;
+@o-worldmap-city-inside-fill: fade(@clr-white, 80%);
 @o-worldmap-city-inside-stroke: none;
 @o-worldmap-city-inside-box-shadow: 0 0 .8rem rgba(0,0,0,.8);
 
@@ -34,7 +37,7 @@
  ========================================================================== */
 
 .o-worldmap {
-	width: inherit;
+	width: @o-worldmap-width;
 	height: @o-worldmap-height;
 
 	/*g*/
@@ -56,27 +59,46 @@
 	/*section*/
 	.c-chart__container {
 		position: relative;
-		width: inherit;
+		width: 92%;
 		height: @o-worldmap-height;
 		overflow: hidden;
 
 		text-align: center;
-		box-shadow: inset .1rem .1rem .3rem rgba(0,0,0,.2);
 		background-color: #D5D5DD;
+
+		&::before {
+			content: ' ';
+			position: absolute;
+			z-index: 2;
+			top: 0; right: 0; left: 0; bottom: 0;
+			box-shadow: @o-worldmap-container-box-shadow;
+		}
+	}
+
+	/*svg*/
+	.c-chart__svg {
+		position: relative;
+		z-index: 1;
 	}
 
 	/*g*/
-	.c-chart__marker { opacity: @o-worldmap-city-opacity; }
+	.c-chart__marker {
+		opacity: @o-worldmap-city-opacity;
+	}
 	.c-chart__marker-outside {
-		fill: fade(@o-worldmap-city-outside-fill, 20%);
+		fill: @o-worldmap-city-outside-fill;
 		stroke: @o-worldmap-city-outside-stroke;
 		stroke-width: @o-worldmap-city-outside-stroke-width;
+
+		transform-origin: 50% 50%;
 	}
 
 	.c-chart__marker-inside {
-		fill: fade(@o-worldmap-city-inside-fill, 80%);
+		fill: @o-worldmap-city-inside-fill;
 		stroke: none;
 		box-shadow: @o-worldmap-city-inside-box-shadow;
+
+		transform-origin: 50% 50%;
 	}
 }
 
