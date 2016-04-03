@@ -1,0 +1,88 @@
+@import "../tools/mixins";
+@import "../settings/variables";
+
+/**
+ * Component:       `c-list`
+ * Description:     Defines styles for list items
+ *
+ * Elements:		`c-list__head`
+ *                  `c-list__body`
+ *                  `c-list__item`
+ *                  `c-list__column` (with `s-table`)
+ *                  `c-list__footer`
+ *
+ * Styles:          `s-table`
+ *
+ * Markup:
+ *
+ * <!-- basic list style -->
+ * <ul class="c-list">
+		<li class="c-list__item">
+			...
+		</li>
+    </ul>
+ *
+ * <!-- table style -->
+ * <section class="c-list s-table">
+        <div class="c-list__head">
+			<h6 class="c-list__column">...</h6>
+			<h6 class="c-list__column">...</h6>
+			<h6 class="c-list__column">...</h6>
+        </div>
+        <div class="c-list__body">
+            <section class="c-list__item>
+                <div class="c-list__column">...</div>
+                <div class="c-list__column">...</div>
+                <div class="c-list__column">...</div>
+            </section>
+        </div>
+    </section>
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+
+
+/* ========================================================================
+   Component: `c-button`
+ ========================================================================== */
+
+.c-list {}
+
+	.c-list__head {}
+	.c-list__meta {}
+	.c-list__body {}
+	.c-list__footer {}
+
+		.c-list__item,
+		.c-list__column {
+			box-sizing: border-box;
+		}
+
+		.c-list__column {
+			display: inline-block;
+			width: auto;
+			font-size: inherit;
+			color: currentColor;
+		}
+
+
+/* ========================================================================
+   Style: `s-table`
+ ========================================================================== */
+
+@c-list-table-column-font-size: 1.4rem;
+
+.s-table {
+	.c-list__item {
+		display: flex;
+		font-size: .001px;
+	}
+
+	.c-list__column {
+		font-size: @c-list-table-column-font-size;
+	}
+}
