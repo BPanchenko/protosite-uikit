@@ -27,10 +27,15 @@
 	border-radius: 50%;
 	width: @o-avatar-width;
 	height: @o-avatar-height;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+
 	img {
 		border-radius: inherit;
-		max-width: @o-avatar-width;
-		max-height: @o-avatar-height;
+		width: inherit;
+		height: inherit;
+		object-fit: cover;
 	}
 }
 
@@ -41,32 +46,16 @@
 .o-avatar--mini {
 	width: @o-avatar-mini-width;
 	height: @o-avatar-mini-height;
-	img {
-		max-width: @o-avatar-mini-width;
-		max-height: @o-avatar-mini-height;
-	}
 }
 .o-avatar--small {
 	width: @o-avatar-small-width;
 	height: @o-avatar-small-height;
-	img {
-		max-width: @o-avatar-small-width;
-		max-height: @o-avatar-small-height;
-	}
 }
 .o-avatar--large {
 	width: @o-avatar-large-width;
 	height: @o-avatar-large-height;
-	img {
-		max-width: @o-avatar-large-width;
-		max-height: @o-avatar-large-height;
-	}
 }
 .o-avatar--xlarge {
 	width: @o-avatar-xlarge-width;
 	height: @o-avatar-xlarge-height;
-	img {
-		max-width: @o-avatar-xlarge-width;
-		max-height: @o-avatar-xlarge-height;
-	}
 }
