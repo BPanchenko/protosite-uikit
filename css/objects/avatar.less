@@ -1,0 +1,72 @@
+@import "../settings/variables";
+@import "../tools/mixins";
+
+// Variables of the components
+// ========================================================================
+
+@o-avatar-width: @unit * 5;
+@o-avatar-height: @unit * 5;
+
+@o-avatar-shutter-background-color: fade(@clr-blue-grey-700, 30);
+
+@o-avatar-mini-width: @unit * 2;
+@o-avatar-mini-height: @unit * 2;
+@o-avatar-small-width: @unit * 3;
+@o-avatar-small-height: @unit * 3;
+@o-avatar-large-width: @unit * 8;
+@o-avatar-large-height: @unit * 8;
+@o-avatar-xlarge-width: @unit * 14;
+@o-avatar-xlarge-height: @unit * 14;
+
+
+/* ========================================================================
+   Component: Thumbnail (avatar)
+ ========================================================================== */
+
+.o-avatar {
+	border-radius: 50%;
+	width: @o-avatar-width;
+	height: @o-avatar-height;
+	img {
+		border-radius: inherit;
+		max-width: @o-avatar-width;
+		max-height: @o-avatar-height;
+	}
+}
+
+
+/* Size modifiers of the thumbnail
+ ========================================================================== */
+
+.o-avatar--mini {
+	width: @o-avatar-mini-width;
+	height: @o-avatar-mini-height;
+	img {
+		max-width: @o-avatar-mini-width;
+		max-height: @o-avatar-mini-height;
+	}
+}
+.o-avatar--small {
+	width: @o-avatar-small-width;
+	height: @o-avatar-small-height;
+	img {
+		max-width: @o-avatar-small-width;
+		max-height: @o-avatar-small-height;
+	}
+}
+.o-avatar--large {
+	width: @o-avatar-large-width;
+	height: @o-avatar-large-height;
+	img {
+		max-width: @o-avatar-large-width;
+		max-height: @o-avatar-large-height;
+	}
+}
+.o-avatar--xlarge {
+	width: @o-avatar-xlarge-width;
+	height: @o-avatar-xlarge-height;
+	img {
+		max-width: @o-avatar-xlarge-width;
+		max-height: @o-avatar-xlarge-height;
+	}
+}
