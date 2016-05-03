@@ -106,4 +106,14 @@ if (!String.prototype.toBoolean)
         return this.toLowerCase() == 'true';
     }
 
+if (!Object.prototype.toQuery)
+    Object.prototype.toQuery = function(){
+        var obj = this;
+        return '?' +
+        Object.keys(obj).map(function(key) {
+            return encodeURIComponent(key) + '=' +
+            encodeURIComponent(obj[key]);
+        }).join('&');
+    };
+
 _.mixin(s.exports());
