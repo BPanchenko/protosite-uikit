@@ -65,20 +65,15 @@
 
 		text-align: center;
 		background-color: #D5D5DD;
-
-		&::before {
-			content: ' ';
-			position: absolute;
-			z-index: 2;
-			top: 0; right: 0; left: 0; bottom: 0;
-			box-shadow: @o-worldmap-container-box-shadow;
-		}
+		border-radius: .3rem;
+		box-shadow: @o-worldmap-container-box-shadow;
 	}
 
 	/*svg*/
 	.c-chart__svg {
 		position: relative;
 		z-index: 1;
+		transition: transform 160ms @easing;
 	}
 
 	/*g*/
