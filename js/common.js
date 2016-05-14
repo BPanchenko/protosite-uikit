@@ -115,5 +115,3 @@ if (!Object.prototype.toQuery)
             encodeURIComponent(obj[key]);
         }).join('&');
     };
-
-_.mixin(s.exports());
