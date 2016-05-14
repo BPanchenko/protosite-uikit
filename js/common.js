@@ -106,12 +106,16 @@ if (!String.prototype.toBoolean)
         return this.toLowerCase() == 'true';
     }
 
-if (!Object.prototype.toQuery)
-    Object.prototype.toQuery = function(){
-        var obj = this;
-        return '?' +
-        Object.keys(obj).map(function(key) {
-            return encodeURIComponent(key) + '=' +
-            encodeURIComponent(obj[key]);
-        }).join('&');
-    };
+if (_) {
+    s && _.mixin(s.exports());
+
+    _.mixin({
+        'objectToQuery': function(obj) {
+            return '?' +
+            Object.keys(obj).map(function(key) {
+                return encodeURIComponent(key) + '=' +
+                encodeURIComponent(obj[key]);
+            }).join('&');
+        }
+    });
+}
