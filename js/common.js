@@ -103,7 +103,7 @@ if (!Number.prototype.toWord) {
 
 if (!String.prototype.toBoolean)
     String.prototype.toBoolean = function () {
-        return this.toLowerCase() == 'true';
+        return ['false', '0', ''].indexOf(this.toLowerCase()) === -1;
     }
 
 if (_) {
