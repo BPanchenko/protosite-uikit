@@ -28,5 +28,8 @@
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4",
     "zepto": "^1.1.6"
+  },
+  "dependencies": {
+    "moment": "^2.13.0"
   }
 }
