@@ -1,10 +1,19 @@
 var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
-	cssmin = require('gulp-cssmin'),
+    csslint = require('gulp-csslint'),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
+    gutil = require('gulp-util'),
 	less = require('gulp-less'),
     rename = require('gulp-rename');
+
+function cssLintReporter(file) {
+    gutil.log(gutil.colors.cyan(file.csslint.errorCount)+' errors in '+gutil.colors.magenta(file.path));
+
+    file.csslint.results.forEach(function(result) {
+        gutil.log(result.error.message+' on line '+result.error.line);
+    });
+}
 
 gulp.task('css', function () {
     gulp.src('./css/core.less')
@@ -13,7 +22,10 @@ gulp.task('css', function () {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(csslint())
+        .pipe(csslint.reporter(cssLintReporter))
+        .pipe(gulp.dest('./css/'))
+        .pipe(cleanCSS({compatibility: '*'}))
         .pipe(rename("core.min.css"))
         .pipe(gulp.dest('./css/'));
 });
