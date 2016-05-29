@@ -177,7 +177,7 @@
 /* Visibility
  ========================================================================== */
 
-/* xdesktop */
+/* xdesktop and bigger */
 @media (min-width: @screen-xdesktop) {
     .u-hidden\@xdesktop,
 	.u-visible\@desktop,
@@ -237,7 +237,7 @@
 	.u-visible\@handset-portrait { display: none !important; }
 }
 
-// handset-portrait
+// handset-portrait and smaller
 @media (max-width: @screen-handset-portrait-max) {
 	.u-hidden\@handset,
 	.u-hidden\@handset-portrait,
@@ -248,6 +248,8 @@
 	.u-visible\@tablet-portrait,
 	.u-visible\@handset-landscape { display: none !important; }
 }
+
+
 
 /* Remove from the flow and screen readers on any device */
 .u-hidden,

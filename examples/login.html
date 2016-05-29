@@ -49,7 +49,7 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 var email = form.email.value.trim(),
-                        password = form.password.value.trim();
+                    password = form.password.value.trim();
 
                 fetch('http://api.protosite.rocks/v1/users/auth/', {
                     credentials: 'include',
@@ -58,23 +58,23 @@
                     },
                     method: 'post',
                     mode: 'cors',
-                    body: ({
+                    body: _.objectToQuery({
                         email: email,
                         password: password
-                    }).toQuery().replace('?', '')
+                    }).replace('?', '')
                 })
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(response) {
-                    console.log('Request successful', response);
-                    if(response.meta.code == 200) {
-                        // TODO: сохранить куку и выполнить переход на '/site/'
-                    }
-                })
-                .catch(function(error) {
-                    console.error('Request failed', error)
-                });
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(response) {
+                        console.log('Request successful', response);
+                        if(response.meta.code == 200) {
+                            // TODO: сохранить куку и выполнить переход на сайт
+                        }
+                    })
+                    .catch(function(error) {
+                        console.trace(error)
+                    });
 
                 return;
             });

@@ -62,12 +62,27 @@
 			box-sizing: border-box;
 		}
 
+		.c-list__item {
+			font-size: .001px;
+		}
+
 		.c-list__column {
 			display: inline-block;
 			width: auto;
-			font-size: inherit;
+			font-size: @body-font-size;
 			color: currentColor;
 		}
+
+
+/* ========================================================================
+   Style: basic style with use ul tag
+ ========================================================================== */
+
+ul.c-list {
+	li.c-list__item {
+		font-size: @body-font-size;
+	}
+}
 
 
 /* ========================================================================
