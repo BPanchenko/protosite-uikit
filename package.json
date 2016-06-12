@@ -31,5 +31,8 @@
   "preferGlobal": true,
   "private": false,
   "analyze": true,
-  "license": "MIT"
+  "license": {
+	"type": "GNU GPLv2",
+	"url": "http://choosealicense.com/licenses/gpl-2.0/"
+  }
 }
