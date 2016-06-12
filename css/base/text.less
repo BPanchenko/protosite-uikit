@@ -54,16 +54,16 @@ small > small {
 abbr[title] {
 	border-bottom: 1px dotted;
 }
-
-pre { overflow: auto; }
 code,
 kbd,
 pre,
 samp {
 	font-family: "PT Mono", monospace;
 	font-size: inherit;
-	white-space: nowrap;
 }
+code,
+kbd,
+samp { white-space: nowrap; }
 ins {
 	background: #e6ee9c;
 	color: #212121;
@@ -77,8 +77,11 @@ mark {
 i,
 em,
 dfn,
-q {
-	font-style: italic;
+q { font-style: italic; }
+
+pre {
+	overflow: auto;
+	white-space: pre-wrap;
 }
 
 sub,
