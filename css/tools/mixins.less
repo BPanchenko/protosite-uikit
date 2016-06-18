@@ -3,3 +3,24 @@
 	   -moz-filter: grayscale(@percent);
 			filter: grayscale(@percent);
 }
+
+.filter-shadow(@x, @y, @size, @color) {
+	// Firefox 10+
+	.svgfilters & {
+		@svgSize: @size/2; // the SVG blur is a little larger than the CSS equivalent
+		filter: url('data:image/svg+xml;utf8,<svg height="100" xmlns="http://www.w3.org/2000/svg"><filter id="drop-shadow"><feGaussianBlur in="SourceAlpha" stdDeviation="@{svgSize}"/><feOffset dx="@{x}" dy="@{y}" result="offsetblur"/><feFlood flood-color="@{color}"/><feComposite in2="offsetblur" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></svg>#drop-shadow');
+	}
+
+	// Chrome 19+, Safari 6+
+	.cssfilters & {
+		-webkit-filter: drop-shadow(@arguments);
+		filter: drop-shadow(@arguments);
+	}
+
+	// Everything else that supports conventional box-shadows
+	.no-cssfilters.no-svgfilters & {
+		-webkit-box-shadow: @arguments;
+		-moz-box-shadow: @arguments;
+		box-shadow: @arguments;
+	}
+}

@@ -4,7 +4,7 @@
 // ========================================================================
 
 @c-tooltip-padding: 0;
-@c-tooltip-border-radius: .6rem;
+@c-tooltip-border-radius: 0;
 @c-tooltip-box-shadow: @box-shadow;
 
 @c-tooltip-color: @clr-grey-50;
@@ -33,6 +33,7 @@
 	font-family: @c-tooltip-font-family;
 	font-size: @c-tooltip-font-size;
 
+	/*
 	// Triangle
 	&::after {
 		display: block;
@@ -49,6 +50,7 @@
 		transform: rotate(45deg);
 		content: ' ';
 	}
+	*/
 }
 
 
@@ -65,14 +67,28 @@
 	background-image: @c-tooltip-body-background-image;
 	background-blend-mode: @c-tooltip-body-background-blend-mode;
 	border-radius: @c-tooltip-border-radius;
-	box-shadow: @box-shadow;
+	box-shadow: @c-tooltip-box-shadow;
 	overflow: hidden;
 
 	font-size: @c-tooltip-font-size;
 }
 
 
-/* Element: `c-c-tooltip__tilt`
+/* Element: `c-tooltip__tail`
+ ========================================================================== */
+
+/*svg*/
+.c-tooltip__tail {
+	position: absolute;
+	top: -1rem; left: 0;
+
+	path {
+		filter: url({@url-filters}#drop-shadow);
+	}
+}
+
+
+/* Control element: `c-tooltip-item`
  ========================================================================== */
 
 .c-tooltip-item {
