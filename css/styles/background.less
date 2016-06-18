@@ -1,0 +1,43 @@
+@import "../tools/mixins";
+@import "../settings/variables";
+
+@s-bg-square-background-image: url('http://ui.protosite.rocks/img/bgs/square_bg.png');
+@s-bg-square-background-image-x2: url('http://ui.protosite.rocks/img/bgs/square_bg_@2X.png');
+@s-bg-square-background-size: 252px 230px;
+
+@s-bg-subtle-dots-background-image: url('http://ui.protosite.rocks/img/bgs/subtle_dots.png');
+@s-bg-subtle-dots-background-image-x2: url('http://ui.protosite.rocks/img/bgs/subtle_dots_@2X.png');
+@s-bg-subtle-dots-background-size: 27px 15px;
+
+
+/* ========================================================================
+   Background styles
+ ========================================================================== */
+
+.s-bg-square {
+	background-image: @s-bg-square-background-image;
+	background-size: @s-bg-square-background-size;
+	background-position: center;
+}
+
+.s-bg-subtle_dots {
+	background-image: @s-bg-subtle-dots-background-image;
+	background-size: @s-bg-subtle-dots-background-size;
+	background-position: center;
+}
+
+
+/* Media queries
+ ========================================================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+	   only screen and (min-resolution: 192dpi),
+	   only screen and (min-resolution: 2dppx)
+{
+	.s-bg-square {
+		background-image: @s-bg-square-background-image-x2;
+	}
+	.s-bg-subtle_dots {
+		background-image: @s-bg-subtle-dots-background-image-x2;
+	}
+}
