@@ -1,20 +1,19 @@
-
+@import "../settings/variables";
 
 // Variables
 // ========================================================================
 
-@c-tooltip-padding: 0;
 @c-tooltip-border-radius: 0;
 @c-tooltip-box-shadow: @box-shadow;
 
-@c-tooltip-color: @clr-grey-50;
-@c-tooltip-font-family: 1.3rem;
-@c-tooltip-font-size: 1.3rem;
+@c-tooltip-padding: .7rem 1.2rem .8rem;
 
-@c-tooltip-body-padding: .6rem 1.6rem;
-@c-tooltip-body-background-color: @clr-blue-grey-700;
-@c-tooltip-body-background-image: none;
-@c-tooltip-body-background-blend-mode: normal;
+@c-tooltip-background-color: @clr-blue-grey-700;
+
+@c-tooltip-body-color: @clr-grey-50;
+@c-tooltip-body-font-family: @body-font-family;
+@c-tooltip-body-font-size: 1.3rem;
+@c-tooltip-body-line-height: 1.2;
 
 
 /* ========================================================================
@@ -24,33 +23,19 @@
 .c-tooltip {
 	display: inline-block;
 	position: absolute;
+	left: 50%; top: 50%;
 
-	padding: @c-tooltip-padding;
 	cursor: default;
 	user-select: none;
 
-	color: @c-tooltip-color;
-	font-family: @c-tooltip-font-family;
-	font-size: @c-tooltip-font-size;
+	box-shadow: @c-tooltip-box-shadow;
 
-	/*
-	// Triangle
-	&::after {
-		display: block;
-		position: absolute;
-		left: .8rem; top: -.5rem;
-		z-index: 2;
-		width: .001px; height: .001px; font-size: .001px;
+	padding: @c-tooltip-padding;
+	background-color: @c-tooltip-background-color;
+	text-align: left;
+	line-height: 1;
 
-		border: .5rem solid @c-tooltip-body-background-color;
-		border-bottom-color: transparent;
-		border-right-color: transparent;
-
-		box-shadow: @box-shadow;
-		transform: rotate(45deg);
-		content: ' ';
-	}
-	*/
+	margin: .8rem;
 }
 
 
@@ -58,33 +43,62 @@
  ========================================================================== */
 
 .c-tooltip__body {
-	position: absolute;
-	display: inline-block;
+	position: relative;
 	z-index: 3;
-	padding: @c-tooltip-body-padding;
 
-	background-color: @c-tooltip-body-background-color;
-	background-image: @c-tooltip-body-background-image;
-	background-blend-mode: @c-tooltip-body-background-blend-mode;
-	border-radius: @c-tooltip-border-radius;
-	box-shadow: @c-tooltip-box-shadow;
+	background-color: @c-tooltip-background-color;
 	overflow: hidden;
 
-	font-size: @c-tooltip-font-size;
+	color: @c-tooltip-body-color;
+	font-family: @c-tooltip-body-font-family;
+	font-size: @c-tooltip-body-font-size;
+	line-height: @c-tooltip-body-line-height;
 }
 
 
-/* Element: `c-tooltip__tail`
+/* Element: `c-tooltip__caret`
  ========================================================================== */
 
 /*svg*/
-.c-tooltip__tail {
+.c-tooltip__caret {
 	position: absolute;
-	top: -1rem; left: 0;
+	z-index: 2;
+	width: 24px;
+	height: 25px;
 
-	path {
-		filter: url({@url-filters}#drop-shadow);
-	}
+	top: auto; right: auto; bottom: auto; left: auto;
+	transition-property: top, right, bottom, left;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
+	transition-delay: 0ms;
+}
+
+// Position modifiers:
+//   `pos-top`
+//   `pos-bottom`
+//   `pos-left`
+//   `pos-right`
+//   `pos-left-top`
+//   `pos-left-bottom`
+//   `pos-right-top`
+//   `pos-right-bottom`
+//   `pos-top-left`
+//   `pos-top-right`
+//   `pos-bottom-left`
+//   `pos-bottom-left`
+.c-tooltip__caret {
+	&.pos-top			{ top: -24px; left: calc(50% - 12px); }
+	&.pos-bottom		{ bottom: -24px; left: calc(50% - 12px); }
+	&.pos-left			{ top: calc(50% - 12px); left: -24px; }
+	&.pos-right			{ top: calc(50% - 12px); right: -24px; }
+	&.pos-left-top		{ top: -4px; left: -24px; }
+	&.pos-left-bottom	{ bottom: -4px; left: -24px; }
+	&.pos-right-top		{ top: -4px; right: -24px; }
+	&.pos-right-bottom	{ bottom: -4px; right: -24px; }
+	&.pos-top-left		{ top: -24px; left: -4px; }
+	&.pos-top-right		{ top: -24px; right: -4px; }
+	&.pos-bottom-left	{ bottom: -24px; left: -4px; }
+	&.pos-bottom-right	{ bottom: -24px; right: -4px; }
 }
 
 
