@@ -38,21 +38,42 @@
 	
 	document.addEventListener('DOMContentLoaded', _ons.document.DOMContentLoaded, false);
 	window.addEventListener('resize', _ons.window.resize, false);
-	
-	
-	// Window settings
-	var _window = new (Backbone.Model.extend({
-		defaults: {
-			width: 0,
-			height: 0
-		},
-		initialize: function() {
-            this._origin = window;
-		}
-	}));
 
+    // {view} Backdrop
+    var _backdrop = new (Backbone.View.extend({
+        tagName: 'div',
+        className: 'c-backdrop',
 
-    // Container
+        events: {
+            'click': function (e) { this.trigger('click', this, e); }
+        },
+
+        show: function (options) {
+            options || (options = {});
+            document.body.appendChild(this.el);
+
+            _.isNumber(options.opacity) && (this.el.style.opacity = options.opacity);
+            _.isNumber(options.zIndex) && (this.el.style.zIndex = options.zIndex);
+
+            this.trigger('show', this);
+            return this;
+        },
+        hide: function () {
+            this.el.style.opacity = 0;
+            this.el.style.zIndex = '';
+
+            // waiting for the end opacity css transition
+            setTimeout(function () {
+                this.el.style.opacity = '';
+                document.body.removeChild(this.el);
+                this.trigger('hide', this);
+            }.bind(this), 160);
+
+            return this;
+        }
+    }));
+
+    // {model} Container
     var _container = new (Backbone.Model.extend({
         defaults: {
             width: 0,
@@ -86,12 +107,26 @@
         }
     }));
 
+
+    // {model} Window settings
+    var _window = new (Backbone.Model.extend({
+        defaults: {
+            width: 0,
+            height: 0
+        },
+        initialize: function() {
+            this._origin = window;
+        }
+    }));
+
 	
 	// 
 	var UiCore = {
+        backdrop: _backdrop,
         container: _container,
         window: _window,
 
+        _components: {},
 		component: function(addon) {
             var _component;
 
@@ -104,7 +139,6 @@
             } else
                 console.error("Error initialization of the component.", _component);
         },
-        _components: {},
 
         helpers: {
             getAttributeObject: function(el, attr_name) {
