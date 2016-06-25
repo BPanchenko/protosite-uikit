@@ -1,314 +1,314 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
 
-    <title>Protosite.UiKit</title>
-    <meta name="author" content="Boris Panchenko, bp@bp-studio.ru">
-    <meta name="copyright" content="">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, bp@bp-studio.ru">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
 
-    <link rel="prefetch" href="/index.html">
-    <link rel="prerender" href="/index.html">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic">
+        <link rel="prefetch" href="/index.html">
+        <link rel="prerender" href="/index.html">
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic">
 
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
-    <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
 
-    <!-- Framework styles -->
-    <link rel="stylesheet/less" type="text/css" href="/css/core.less">
+        <!-- Framework styles -->
+        <link rel="stylesheet/less" type="text/css" href="/css/core.less">
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" data-env="development"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" data-env="development"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-    <script src="/vendor/underscore/underscore.js"></script>
-    <script src="/vendor/underscore.string/dist/underscore.string.min.js"></script>
-    <script src="/vendor/zepto/zepto.js"></script>
-    <script src="/vendor/backbone/backbone.js"></script>
+        <script src="/vendor/underscore/underscore.js"></script>
+        <script src="/vendor/underscore.string/dist/underscore.string.min.js"></script>
+        <script src="/vendor/zepto/zepto.js"></script>
+        <script src="/vendor/backbone/backbone.js"></script>
 
-    <script src="/js/common.js"></script>
-    <script src="/js/ui/core.js"></script>
-    <script src="/js/ui/components/field.js"></script>
-    <script src="/js/ui/components/tooltip.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/js/ui/core.js"></script>
+        <script src="/js/ui/components/field.js"></script>
+        <script src="/js/ui/components/tooltip.js"></script>
 
-</head>
-<body>
-<div class="o-container">
-    <header role="banner">
-        <div class="u-float-right">
-            <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/tooltip.html" target="_blank">
-                <span class="iconic" data-glyph="social-github"></span>
-            </a>
+    </head>
+    <body>
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/tooltip.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <hgroup>
+                    <h1>Protosite.UiKit</h1>
+                </hgroup>
+            </header>
+
+            <nav class="o-breadcrumb">
+                        <span class="o-breadcrumb__item">
+                            <a href="/" class="">Главная</a>
+                        </span>
+                <span class="o-breadcrumb__item">Компоненты</span>
+                <span class="o-breadcrumb__item is-current">Подсказка (tooltip)</span>
+            </nav>
+
+            <main role="main">
+
+                <div class="o-grid">
+                    <div class="o-grid__cell u-width-1-2@tablet-landscape">
+                        <section class="c-panel s-bg-square">
+                            <div class="c-panel__head">
+                                <h3>Внешний вид</h3>
+                            </div>
+                            <div class="c-panel__body [ u-margin-large-top u-margin-large-bottom u-text-center ]">
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <!-- top -->
+                                    <svg class="c-tooltip__caret pos-top-left" width="24" height="25" viewBox="0 0 24 25">
+                                        <g>
+                                            <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
+                                                                    C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
+                                            <rect x="0" y="0" width="24" height="25" fill="none"></rect>
+                                        </g>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-top" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
+                                                                C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-top-right" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
+                                                                C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
+                                    </svg>
+                                    <!-- right -->
+                                    <svg class="c-tooltip__caret pos-right-top" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
+                                                                C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-right" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
+                                                                C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-right-bottom" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
+                                                                C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z"></path>
+                                    </svg>
+                                    <!-- bottom -->
+                                    <svg class="c-tooltip__caret pos-bottom-right" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
+                                                                C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-bottom" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
+                                                                C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-bottom-left" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
+                                                                C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z"></path>
+                                    </svg>
+                                    <!-- left -->
+                                    <svg class="c-tooltip__caret pos-left-bottom" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
+                                                                C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-left" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
+                                                                C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z"></path>
+                                    </svg>
+                                    <svg class="c-tooltip__caret pos-left-top" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
+                                                                C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                                <br><br>
+                                <!-- caret top -->
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-top-left" width="24" height="25" viewBox="0 0 24 25">
+                                        <g>
+                                            <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
+                                                                    C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
+                                            <rect x="0" y="0" width="24" height="25" fill="none"></path>
+                                        </g>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Содержимое подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-top" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
+                                                                C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Содержимое подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-top-right" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
+                                                                C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Содержимое подсказки
+                                    </span>
+                                </div>
+
+                                <br><br>
+                                <!-- caret right -->
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-right-top" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
+                                                                C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-right" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
+                                                                C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-right-bottom" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
+                                                                C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                                <br><br>
+                                <!-- caret bottom -->
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-bottom-right" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
+                                                                C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Содержимое подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-bottom" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
+                                                                C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Содержимое подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-bottom-left" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
+                                                                C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Содержимое подсказки
+                                    </span>
+                                </div>
+
+                                <br><br>
+                                <!-- caret left -->
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-left-bottom" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
+                                                                C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-left" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
+                                                                C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                                <div class="c-tooltip" style="position: relative; left: auto;">
+                                    <svg class="c-tooltip__caret pos-left-top" width="24" height="25" viewBox="0 0 24 25">
+                                        <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
+                                                                C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z"></path>
+                                    </svg>
+                                    <span class="c-tooltip__body">
+                                        Три строки<br>
+                                        содержимого<br>
+                                        подсказки
+                                    </span>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2@tablet-landscape">
+                        <section class="c-panel s-bg-square">
+                            <div class="c-panel__head">
+                                <h3>Поведение</h3>
+                            </div>
+                            <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                                <span class="c-tooltip-item" data-ui-tooltip="Содержимое подсказки">активный элемент</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <article class="o-article u-margin">
+                    <p class="o-article-lead">
+
+                    </p>
+                    <p>
+
+                    </p>
+                </article>
+
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <h4 class="u-font-cursive">&copy; <a href="http://www.bp-studio.ru" class="u-text-color">Boris Panchenko</a>, 2015&mdash;2016</h4>
+                </div>
+            </footer>
         </div>
-        <hgroup>
-            <h1>Protosite.UiKit</h1>
-        </hgroup>
-    </header>
-
-    <nav class="o-breadcrumb">
-                <span class="o-breadcrumb__item">
-                    <a href="/" class="">Главная</a>
-                </span>
-        <span class="o-breadcrumb__item">Компоненты</span>
-        <span class="o-breadcrumb__item is-current">Подсказка (tooltip)</span>
-    </nav>
-
-    <main role="main">
-
-        <div class="o-grid">
-            <div class="o-grid__cell u-width-1-2@tablet-landscape">
-                <section class="c-panel s-bg-square">
-                    <div class="c-panel__head">
-                        <h3>Внешний вид</h3>
-                    </div>
-                    <div class="c-panel__body [ u-margin-large-top u-margin-large-bottom u-text-center ]">
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <!-- top -->
-                            <svg class="c-tooltip__caret pos-top-left" width="24" height="25" viewBox="0 0 24 25">
-                                <g>
-                                    <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
-	C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z"></path>
-                                    <rect x="0" y="0" width="24" height="25" fill="none" />
-                                </g>
-                            </svg>
-                            <svg class="c-tooltip__caret pos-top" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
-	C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-top-right" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
-	C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z" />
-                            </svg>
-                            <!-- right -->
-                            <svg class="c-tooltip__caret pos-right-top" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
-	C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-right" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
-	C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-right-bottom" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
-	C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z" />
-                            </svg>
-                            <!-- bottom -->
-                            <svg class="c-tooltip__caret pos-bottom-right" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
-	C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-bottom" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
-	C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-bottom-left" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
-	C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z" />
-                            </svg>
-                            <!-- left -->
-                            <svg class="c-tooltip__caret pos-left-bottom" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
-	C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-left" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
-	C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z" />
-                            </svg>
-                            <svg class="c-tooltip__caret pos-left-top" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
-	C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                        <br><br>
-                        <!-- caret top -->
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-top-left" width="24" height="25" viewBox="0 0 24 25">
-                                <g>
-                                    <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
-	C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z" />
-                                    <rect x="0" y="0" width="24" height="25" fill="none" />
-                                </g>
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Содержимое подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-top" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
-	C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Содержимое подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-top-right" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M19.678,23.84l-7.522-7.523c-0.049-0.039-0.107-0.063-0.156-0.063s-0.103,0.023-0.151,0.063L4.327,23.84
-	C4.231,23.926,4.146,24,4,24v1h16v-1C19.856,24,19.761,23.924,19.678,23.84z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Содержимое подсказки
-                            </span>
-                        </div>
-
-                        <br><br>
-                        <!-- caret right -->
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-right-top" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
-	C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-right" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
-	C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-right-bottom" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M1.16,20.178l7.523-7.521c0.039-0.049,0.063-0.107,0.063-0.156s-0.023-0.104-0.063-0.15L1.16,4.827
-	C1.074,4.731,1,4.646,1,4.5H0v16h1C1,20.355,1.076,20.261,1.16,20.178z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                        <br><br>
-                        <!-- caret bottom -->
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-bottom-right" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
-	C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Содержимое подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-bottom" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
-	C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Содержимое подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-bottom-left" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M4.322,1.16l7.521,7.523C11.893,8.723,11.951,8.746,12,8.746s0.103-0.023,0.151-0.063l7.522-7.523
-	C19.77,1.074,19.854,1,20,1V0H4v1C4.145,1,4.239,1.076,4.322,1.16z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Содержимое подсказки
-                            </span>
-                        </div>
-
-                        <br><br>
-                        <!-- caret left -->
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-left-bottom" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
-	C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-left" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
-	C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                        <div class="c-tooltip" style="position: relative; left: auto;">
-                            <svg class="c-tooltip__caret pos-left-top" width="24" height="25" viewBox="0 0 24 25">
-                                <path fill="#455A64" d="M22.84,4.822l-7.523,7.521c-0.039,0.049-0.063,0.107-0.063,0.156s0.023,0.103,0.063,0.151l7.523,7.522
-	C22.926,20.27,23,20.354,23,20.5h1v-16h-1C23,4.645,22.924,4.739,22.84,4.822z" />
-                            </svg>
-                            <span class="c-tooltip__body">
-                                Три строки<br>
-                                содержимого<br>
-                                подсказки
-                            </span>
-                        </div>
-
-                    </div>
-                </section>
-            </div>
-            <div class="o-grid__cell u-width-1-2@tablet-landscape">
-                <section class="c-panel s-bg-square">
-                    <div class="c-panel__head">
-                        <h3>Поведение</h3>
-                    </div>
-                    <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
-                        <span class="c-tooltip-item" data-ui-tooltip="Содержимое подсказки">активный элемент</span>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <article class="o-article u-margin">
-            <p class="o-article-lead">
-
-            </p>
-            <p>
-
-            </p>
-        </article>
-
-    </main>
-
-    <footer role="contentinfo" class="u-margin-large-top">
-        <hr>
-        <div class="u-float-right">
-            <h4 class="u-font-cursive">&copy; <a href="http://www.bp-studio.ru" class="u-text-color">Boris Panchenko</a>, 2015&mdash;2016</h4>
-        </div>
-    </footer>
-</div>
-</body>
+    </body>
 </html>
