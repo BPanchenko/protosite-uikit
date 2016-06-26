@@ -135,28 +135,10 @@
 
             if(_.isObject(_component)) {
                 this._components[_.camelize(_component.NAME)] = _component;
-                _domReady(_component.init);
+                _.extend(_component, Backbone.Events);
+                _domReady(_component.init.bind(_component));
             } else
                 console.error("Error initialization of the component.", _component);
-        },
-
-        helpers: {
-            getAttributeObject: function(el, attr_name) {
-                var data;
-
-                if(!el.hasAttribute(attr_name))
-                    console.error('The element has no attribute "' + attr_name + '"');
-
-                data = el.getAttribute(attr_name);
-                data = data.replace(/'/g, '"');
-                data = data.replace(/([a-zA-Z0-9]+):/g, function(match, group, i) {
-                    var count = data.substring(0, i).match(/"/g);
-                    return (!count || count.length % 2 === 0 ? '"' + group + '":' : group + ':');
-                });
-                data = JSON.parse(data);
-
-                return data;
-            }
         }
 	};
 	
