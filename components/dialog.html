@@ -32,8 +32,7 @@
 
         <script src="/js/common.js"></script>
         <script src="/js/ui/core.js"></script>
-        <script src="/js/ui/components/field.js"></script>
-        <script src="/js/ui/components/tooltip.js"></script>
+        <script src="/js/ui/components/dialog.js"></script>
 
     </head>
     <body>
@@ -64,7 +63,7 @@
                         <h3>Внешний вид</h3>
                     </div>
                     <div class="c-panel__body [ u-margin-large-top u-margin-large-bottom u-text-center ]">
-                        <section class="c-dialog is-opened" style="position: relative; transform: translate(-50%, 0);">
+                        <section class="c-dialog is-opened" style="position: relative; transform: translate(-50%, 0); z-index: 10;">
                             <header class="c-dialog__header">
                                 <h3>Заголовок диалога</h3>
                             </header>
@@ -85,7 +84,7 @@
                         <h3>Поведение</h3>
                     </div>
                     <div class="c-panel__body">
-                        <a href="#" data-ui-dialog="{ title: 'Выбрать спутник юпитера', body: '.js-tpl-dialog-body' }">активный элемент</a>
+                        <a href="#" data-ui-dialog="{ tpl: '.js-tpl-dialog' }">активный элемент</a>
                     </div>
                 </section>
 
@@ -100,7 +99,19 @@
         </div>
 
         <template class="js-tpl-dialog">
-
+            <header class="c-dialog__header">
+                <h3>Прецизионный гироинтегратор: основные моменты</h3>
+            </header>
+            <div class="c-dialog__body">
+                Угол курса искажает стабилизатор.
+                Механическая система перманентно трансформирует гироскопический прибор, что неправильно при большой интенсивности диссипативных сил.
+                Исходя из уравнения Эйлера, гироскопический стабилизатоор участвует в погрешности определения курса меньше,
+                чем апериодический прибор с учётом интеграла собственного кинетического момента ротора.
+            </div>
+            <div class="c-dialog__buttons">
+                <a href="#" class="js-ctrl-close">нет</a>
+                <a href="#" class="js-ctrl-close">да</a>
+            </div>
         </template>
     </body>
 </html>
