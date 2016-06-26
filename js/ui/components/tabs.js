@@ -104,7 +104,7 @@
 		else
 			console.error('Tabs element is not defined.');
 			
-		options = _helpers.extend((options || (options = {})), _helpers.getAttributeObject(this.el, this.attr_name));
+		options = _helpers.extend((options || (options = {})), _.stringToObject(this.el.getAttribute(this.attr_name)));
 		
 		this.elems.indicator = this.el.getElementsByClassName('ui-tabs-indicator')[0];
 		this.elems.links = [].slice.call(this.el.getElementsByClassName('ui-tabs-link'));
