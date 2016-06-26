@@ -3,8 +3,8 @@
 /**
  * Component:   `c-dialog`
  *
- * Elements:	`c-panel__head`
- *				`c-panel__controls`
+ * Elements:	`c-dialog__head`
+ *				`c-dialog__body`
  *
  * State:       `is-closed` (by default)
  *				`is-opened`
@@ -27,6 +27,8 @@
 @c-dialog-padding: @unit * 1.5;
 @c-dialog-header-body-margin-top: @unit * 1.25;
 
+@c-dialog-body-max-height: 26.2rem;
+
 @c-dialog-buttons-padding: @unit / 2;
 @c-dialog-button-min-width: @unit * 4;
 @c-dialog-button-height: @unit * 2.25;
@@ -41,7 +43,6 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: @c-dialog-zIndex;
 
 	min-width: @c-dialog-min-width;
 	min-height: @c-dialog-min-height;
@@ -75,6 +76,7 @@
 
 // state: `is-opened`
 .c-dialog.is-opened {
+	z-index: @c-dialog-zIndex;
 	transform: translate(-50%, -50%);
 	opacity: 1;
 }
@@ -94,6 +96,19 @@
 	padding: 0 @c-dialog-padding;
 }
 
+
+/* Wrapper: `c-dialog__body-viewport`
+ ========================================================================== */
+
+.c-dialog__body-viewport {
+	max-height: @c-dialog-body-max-height;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+// margin between header and content
+// ========================================================================
+.c-dialog__header + .c-dialog__body-wrapper,
 .c-dialog__header + .c-dialog__body {
 	margin-top: @c-dialog-header-body-margin-top;
 }
