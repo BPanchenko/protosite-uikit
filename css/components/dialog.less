@@ -1,4 +1,4 @@
-@import "../settings/variables";
+@import "./button";
 
 /**
  * Component:   `c-dialog`
@@ -18,7 +18,7 @@
 // Variables
 // ========================================================================
 
-@c-dialog-max-width: 50rem;
+@c-dialog-min-width: 50rem;
 @c-dialog-min-height: 30rem;
 @c-dialog-background-color: @clr-white;
 @c-dialog-box-shadow: @box-shadow-large;
@@ -43,9 +43,10 @@
 	transform: translate(-50%, -50%);
 	z-index: @c-dialog-zIndex;
 
-	max-width: @c-dialog-max-width;
+	min-width: @c-dialog-min-width;
 	min-height: @c-dialog-min-height;
 	box-sizing: border-box;
+	padding-bottom: @c-dialog-padding;
 
 	background-color: @c-dialog-background-color;
 	box-shadow: @c-dialog-box-shadow;
@@ -67,6 +68,7 @@
 // state: `is-closed`
 .c-dialog,
 .c-dialog.is-closed {
+	z-index: -1;
 	transform: translate(-50%, -54%);
 	opacity: 0;
 }
