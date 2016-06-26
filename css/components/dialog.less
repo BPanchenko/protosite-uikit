@@ -1,9 +1,13 @@
 @import "../settings/variables";
 
 /**
- * Component:       `c-dialog`
+ * Component:   `c-dialog`
  *
- * State:           `is-opened`
+ * Elements:	`c-panel__head`
+ *				`c-panel__controls`
+ *
+ * State:       `is-closed` (by default)
+ *				`is-opened`
  *
  * Markup:
  *
@@ -36,7 +40,7 @@
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform:  translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	z-index: @c-dialog-zIndex;
 
 	max-width: @c-dialog-max-width;
@@ -46,7 +50,12 @@
 	background-color: @c-dialog-background-color;
 	box-shadow: @c-dialog-box-shadow;
 
-	/* reset */
+	// animation
+	transition-property: transform, opacity;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
+
+	// reset
 	border: none;
 	text-align: left;
 
@@ -55,6 +64,18 @@
 	}
 }
 
+// state: `is-closed`
+.c-dialog,
+.c-dialog.is-closed {
+	transform: translate(-50%, -54%);
+	opacity: 0;
+}
+
+// state: `is-opened`
+.c-dialog.is-opened {
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
 
 /* Element: `c-dialog__header`
  ========================================================================== */
