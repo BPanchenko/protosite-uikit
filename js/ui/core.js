@@ -5,26 +5,9 @@
 		window.UI || (window.UI = factory(Backbone, _));
 	}
 }(function (Backbone, _) {
-    var _isPageLoaded, _readyCalls = [];
-
-    var _domReady = function(callback) {
-        _isPageLoaded ? callback() : _readyCalls.push(callback);
-    };
 	
 	// Global handlers of DOM events
 	var _ons = {
-		'document': {
-			'DOMContentLoaded': function(e) {
-				_ons.window.resize();
-
-                // run dom ready callbacks
-                _isPageLoaded = true;
-                _readyCalls.forEach(function(fn) { fn(); });
-                _readyCalls = [];
-
-				return;
-			}
-		},
 		'window': {
 			'resize': function(e) {
 				UI.window.set({
@@ -35,9 +18,9 @@
 			}
 		}
 	};
-	
-	document.addEventListener('DOMContentLoaded', _ons.document.DOMContentLoaded, false);
+
 	window.addEventListener('resize', _ons.window.resize, false);
+    $(document).ready(_ons.window.resize);
 
     // {view} Backdrop
     var _backdrop = new (Backbone.View.extend({
@@ -73,6 +56,19 @@
         }
     }));
 
+
+    // {model} Window settings
+    var _window = new (Backbone.Model.extend({
+        defaults: {
+            width: 0,
+            height: 0
+        },
+        initialize: function() {
+            this._origin = window;
+        }
+    }));
+
+
     // {model} Container
     var _container = new (Backbone.Model.extend({
         defaults: {
@@ -81,10 +77,12 @@
             format: ''
         },
         initialize: function() {
-            this.listenTo(_window, 'change:width', this.onChangeWindowWidth);
+            this.listenTo(_window, 'change:width', _.throttle(this.setFormat));
+            this.setFormat();
         },
-        onChangeWindowWidth: function(model, win_width) {
-            var format;
+        setFormat: function() {
+            var format,
+                win_width = _window.get('width');
 
             if(win_width >= 1360)
                 format = 'xdesktop';
@@ -106,19 +104,6 @@
             });
         }
     }));
-
-
-    // {model} Window settings
-    var _window = new (Backbone.Model.extend({
-        defaults: {
-            width: 0,
-            height: 0
-        },
-        initialize: function() {
-            this._origin = window;
-        }
-    }));
-
 	
 	// 
 	var UiCore = {
@@ -136,7 +121,7 @@
             if(_.isObject(_component)) {
                 this._components[_.camelize(_component.NAME)] = _component;
                 _.extend(_component, Backbone.Events);
-                _domReady(_component.init.bind(_component));
+                $(document).ready(_component.init.bind(_component));
             } else
                 console.error("Error initialization of the component.", _component);
         }
