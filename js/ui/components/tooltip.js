@@ -4,7 +4,7 @@
         UI.component(addon);
 
     if (typeof define == 'function' && define.amd)
-        define('ui-components-field', ['ui'], function (UiCore) {
+        define('ui-components-tooltip', ['ui'], function (UiCore) {
             return addon(UiCore);
         });
 
@@ -80,8 +80,6 @@
     return {
         NAME: 'field',
         $elements: null,
-        $buttons: null,
-        $inputs: null,
 
         init: function() {
             this.$elements = $('*[data-ui-tooltip]');
