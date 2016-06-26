@@ -22,10 +22,18 @@ gulp.task('css', function () {
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(csslint())
+        .pipe(csslint({
+            'adjoining-classes': false,
+            'fallback-colors': false,
+            'font-sizes': false,
+            'important': false,
+            'unqualified-attributes': false
+        }))
         .pipe(csslint.reporter(cssLintReporter))
         .pipe(gulp.dest('./css/'))
-        .pipe(cleanCSS({compatibility: '*'}))
+        .pipe(cleanCSS({
+            'compatibility': '*'
+        }))
         .pipe(rename("core.min.css"))
         .pipe(gulp.dest('./css/'));
 });
