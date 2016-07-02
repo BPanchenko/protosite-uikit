@@ -1,5 +1,36 @@
 @import "../settings/variables";
 
+/**
+ * Component:       `c-article`
+ *
+ * Elements:		`c-article-picture`
+ *                  `c-article-lead`
+ *
+ *
+ * Markup:
+ *
+<article class="c-article" role="main">
+	<header>
+		<h6 class="u-text-muted">...</h6>
+		<h1>...</h1>
+		<h4 class="u-text-muted">...</h4>
+	</header>
+	<figure class="c-article-picture">
+		<img src="...">
+	</figure>
+	<p class="c-article-lead">...</p>
+	<p>...</p>
+	<h3>...</h3>
+	<hr>
+	<p>...</p>
+</article>
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
 @c-article-padding: @unit;
 @c-article-margin: @unit 0 (@unit * 2.5) 0;
 
@@ -60,7 +91,8 @@
 @c-article-paragraph-img-max-height: 11.8rem;
 
 
-/* Component: `c-article`
+/* ========================================================================
+   Component: `c-article`
  ========================================================================== */
 
 .c-article {
