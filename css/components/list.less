@@ -11,7 +11,6 @@
  *                  `c-list__column` (with `s-table`)
  *                  `c-list__footer`
  *
- * Styles:          `s-table`
  *
  * Markup:
  *
@@ -54,24 +53,21 @@
 
 .c-list {}
 
-	.c-list__head {}
-	// .c-list__meta {}
-	.c-list__body {}
-	.c-list__footer {}
+	.c-list__head,
+	// .c-list__meta,
+	.c-list__body,
+	.c-list__footer,
+	.c-list__item,
+	.c-list__column {
+		box-sizing: border-box;
+	}
 
-		.c-list__item,
+	.c-list__item {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+
 		.c-list__column {
-			box-sizing: border-box;
-		}
-
-		.c-list__item {
-			display: flex;
-		}
-
-		.c-list__column {
-			display: inline-block;
-			width: auto;
-			font-size: @body-font-size;
 			color: currentColor;
 		}
 
