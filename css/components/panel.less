@@ -38,10 +38,9 @@
 	&::after {
 		content: "";
 		display: table;
+		clear: both;
 	}
 }
-
-.c-panel::after { clear: both; }
 
 .c-panel + .c-panel {
    margin-top: @unit;
@@ -75,7 +74,6 @@
 	float: left;
 }
 
-	.c-panel__head hgroup,
 	.c-panel__head__hgroup {
 		line-height: 1.2;
 		h1,h2,h3,h4,h5,h6 { margin: 0; }
@@ -95,7 +93,7 @@
 	// Micro clearfix to make the body panel more robust
 	&::before,
 	&::after {
-		content: ' ';
+		content: "";
 		display: table;
 		clear: both;
 	}
@@ -107,8 +105,9 @@
 
 /* Modifier: `c-panel--clean`
  ========================================================================== */
- 
-.c-panel--clean {
+
+.c-panel--clean,
+.c-panel--transparent {
 	background: transparent;
 	box-shadow: none;
 }
