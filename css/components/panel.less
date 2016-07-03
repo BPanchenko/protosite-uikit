@@ -14,6 +14,7 @@
 // ========================================================================
 
 @c-panel-background: white;
+@c-panel-border-radius: .2rem;
 @c-panel-box-shadow: @box-shadow;
 @c-panel-padding: @unit;
 
@@ -27,8 +28,10 @@
     position: relative;
 	padding: @c-panel-padding;
 	background: @c-panel-background;
+	border-radius: @c-panel-border-radius;
 	box-shadow: @c-panel-box-shadow;
 	box-sizing: border-box;
+	overflow: hidden;
 
 	// Micro clearfix to make articles more robust
 	&::before,
