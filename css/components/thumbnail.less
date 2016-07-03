@@ -17,14 +17,19 @@
 // Variables
 // ========================================================================
 
-@c-thumbnail-width: 6.4rem;
-@c-thumbnail-height: 6.4rem;
-@c-thumbnail-mini-width: 4rem;
-@c-thumbnail-mini-height: 4rem;
-@c-thumbnail-small-width: 8rem;
-@c-thumbnail-small-height: 8rem;
-@c-thumbnail-large-width: 13.6rem;
-@c-thumbnail-large-height: 13.6rem;
+@c-thumbnail-width: 20rem;
+@c-thumbnail-mini-width: 10rem;
+@c-thumbnail-small-width: 16rem;
+@c-thumbnail-large-width: 40rem;
+
+@c-thumbnail-background-color: @clr-white;
+@c-thumbnail-border-radius: .2rem;
+@c-thumbnail-padding: .4rem;
+
+@c-thumbnail-img-max-width: @c-thumbnail-width - @c-thumbnail-padding * 2;
+
+@c-thumbnail-caption-font-size: @body-font-size;
+@c-thumbnail-caption-margin-top: .6rem;
 
 @c-thumbnail-shutter-background-color: fade(@clr-blue-grey-700, 30);
 
@@ -38,26 +43,41 @@
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
-
 	width: @c-thumbnail-width;
-	height: @c-thumbnail-height;
 
 	font-size: .001px;
 	text-align: center;
 	vertical-align: middle;
 
-	box-shadow: inset 0 0 .16rem 0 rgba(0,0,0,.3);
-	background-size: cover;
+	background-color: @c-thumbnail-background-color;
+	border-radius: @c-thumbnail-border-radius;
+	box-shadow: @box-shadow;
+	box-sizing: border-box;
 
-	/* reset default styles figure */
 	margin: 0;
+	padding: @c-thumbnail-padding;
+}
 
-	img {
-		max-width: @c-thumbnail-width;
-		max-height: @c-thumbnail-height;
-		border-radius: inherit;
-		overflow: inherit;
-	}
+
+/* Combination of components: `c-article` & `c-panel`
+ ========================================================================== */
+
+.c-panel .c-thumbnail {
+
+	/* reset basic style */
+	box-shadow: none;
+}
+
+
+/* Element: `c-thumbnail__caption`
+ ========================================================================== */
+
+.c-thumbnail__caption {
+	font-size: @c-thumbnail-caption-font-size;
+}
+
+.c-thumbnail img + .c-thumbnail__caption {
+	margin-top: @c-thumbnail-caption-margin-top;
 }
 
 
@@ -74,16 +94,12 @@
 	transition: opacity 160ms @easing;
 }
 
-	.c-avatar__shutter-text {
-
-	}
-
 
 /* State `:hover`
  ========================================================================== */
 
 .c-thumbnail:hover {
-	img {
+	a > img {
 		.grayscale;
 	}
 	.c-thumbnail__shutter {
@@ -97,25 +113,10 @@
 
 .c-thumbnail--mini {
 	width: @c-thumbnail-mini-width;
-	height: @c-thumbnail-mini-height;
-	img {
-		max-width: @c-thumbnail-mini-width;
-		max-height: @c-thumbnail-mini-height;
-	}
 }
 .c-thumbnail--small {
 	width: @c-thumbnail-small-width;
-	height: @c-thumbnail-small-height;
-	img {
-		max-width: @c-thumbnail-small-width;
-		max-height: @c-thumbnail-small-height;
-	}
 }
 .c-thumbnail--large {
 	width: @c-thumbnail-large-width;
-	height: @c-thumbnail-large-height;
-	img {
-		max-width: @c-thumbnail-large-width;
-		max-height: @c-thumbnail-large-height;
-	}
 }
