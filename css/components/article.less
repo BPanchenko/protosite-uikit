@@ -186,15 +186,26 @@
 
 
 		img {
-			float: left;
-			width: auto;
-			max-height: @c-article-paragraph-img-max-height;
-			margin: @c-article-paragraph-img-left-margin;
+
 		}
-		img[align="right"] {
-			float: right;
-			margin: @c-article-paragraph-img-right-margin;
-		}
+
+	}
+}
+
+
+/* Images in the paragraphs of article
+ ========================================================================== */
+
+.c-article p img,
+p.c-article-lead img {
+	float: left;
+	width: auto;
+	max-height: @c-article-paragraph-img-max-height;
+	margin: @c-article-paragraph-img-left-margin;
+
+	&[align="right"] {
+		float: right;
+		margin: @c-article-paragraph-img-right-margin;
 	}
 }
 
@@ -218,6 +229,7 @@ p.c-article-lead {
 	margin-top: @c-article-lead-margin-top;
 	margin-bottom: @c-article-lead-margin-bottom;
 
+	font-family: @c-article-paragraph-font-family;
 	font-size: @c-article-lead-font-size;
 	font-style: @c-article-lead-font-style;
 	font-weight: @c-article-lead-font-font-weight;
