@@ -100,6 +100,13 @@
 	padding: @c-article-padding;
 	margin: @c-article-margin;
 
+	// Micro clearfix to make articles more robust
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
+
 	header {
 		line-height: @c-article-header-line-height;
 		margin-bottom: @c-article-header-margin-bottom;
@@ -200,6 +207,8 @@
  ========================================================================== */
 
 p.c-article-lead {
+	display: block;
+
 	max-width: @c-article-lead-max-width;
 	margin-top: @c-article-lead-margin-top;
 	margin-bottom: @c-article-lead-margin-bottom;
@@ -209,6 +218,12 @@ p.c-article-lead {
 	font-weight: @c-article-lead-font-font-weight;
 	line-height: @c-article-lead-line-height;
 	color: @c-article-lead-color;
+
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
 }
 
 /* Element: `c-article-picture`

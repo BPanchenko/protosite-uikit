@@ -29,12 +29,13 @@
 	background: @c-panel-background;
 	box-shadow: @c-panel-box-shadow;
 	box-sizing: border-box;
-}
 
-.c-panel::before,
-.c-panel::after {
-    content: " ";
-    display: table;
+	// Micro clearfix to make articles more robust
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
 }
 
 .c-panel::after { clear: both; }
