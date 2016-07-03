@@ -87,7 +87,8 @@
 @c-article-paragraph-font-font-weight: 400;
 @c-article-paragraph-line-height: 2.4rem;
 
-@c-article-paragraph-img-margin: .3rem 1.2rem 0 .8rem;
+@c-article-paragraph-img-left-margin: .3rem 1.2rem 0 .8rem;
+@c-article-paragraph-img-right-margin: .3rem .8rem 0 1.2rem;
 @c-article-paragraph-img-max-height: 11.8rem;
 
 
@@ -188,7 +189,11 @@
 			float: left;
 			width: auto;
 			max-height: @c-article-paragraph-img-max-height;
-			margin: @c-article-paragraph-img-margin;
+			margin: @c-article-paragraph-img-left-margin;
+		}
+		img[align="right"] {
+			float: right;
+			margin: @c-article-paragraph-img-right-margin;
 		}
 	}
 }
