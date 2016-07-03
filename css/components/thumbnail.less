@@ -24,6 +24,7 @@
 
 @c-thumbnail-background-color: @clr-white;
 @c-thumbnail-border-radius: .2rem;
+@c-thumbnail-margin-left: @unit;
 @c-thumbnail-padding: .4rem;
 
 @c-thumbnail-img-max-width: @c-thumbnail-width - @c-thumbnail-padding * 2;
@@ -47,7 +48,7 @@
 
 	font-size: .001px;
 	text-align: center;
-	vertical-align: middle;
+	vertical-align: bottom;
 
 	background-color: @c-thumbnail-background-color;
 	border-radius: @c-thumbnail-border-radius;
@@ -56,6 +57,10 @@
 
 	margin: 0;
 	padding: @c-thumbnail-padding;
+}
+
+.c-thumbnail + .c-thumbnail {
+	margin-left: @c-thumbnail-margin-left;
 }
 
 
