@@ -39,11 +39,26 @@ gulp.task('css', function () {
 });
 
 
-var gulp = require('gulp');
+var webpack_config = require('./webpack.config');
 
-gulp.task('minify-css', function() {
-    return gulp.src('styles/*.css')
-        ;
+gulp.task("webpack-dev-server", function(callback) {
+    // Start a webpack-dev-server
+    new WebpackDevServer(webpack(webpack_config), {
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Headers': 'X-Requested-With'
+		},
+		stats: {
+			colors: false
+		}
+    }).listen(8080, "localhost", function(err) {
+        if(err) throw new gutil.PluginError("webpack-dev-server", err);
+        // Server listening
+        gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
+
+        // keep the server alive or continue?
+        // callback();
+    });
 });
 
 
