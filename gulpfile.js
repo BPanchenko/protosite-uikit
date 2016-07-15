@@ -30,20 +30,28 @@ gulp.task('css', function () {
             'unqualified-attributes': false
         }))
         .pipe(csslint.reporter(cssLintReporter))
-        .pipe(gulp.dest('./css/'))
+        .pipe(rename("ui.css"))
+        .pipe(gulp.dest('./assets/'))
         .pipe(cleanCSS({
             'compatibility': '*'
         }))
-        .pipe(rename("core.min.css"))
-        .pipe(gulp.dest('./css/'));
+        .pipe(rename("ui.min.css"))
+        .pipe(gulp.dest('./assets/'));
 });
 
 
-var webpack_config = require('./webpack.config');
+var webpack = require('webpack'),
+    webpackConfig = require('./webpack.config'),
+    WebpackDevServer = require('webpack-dev-server');
 
 gulp.task("webpack-dev-server", function(callback) {
     // Start a webpack-dev-server
-    new WebpackDevServer(webpack(webpack_config), {
+    new WebpackDevServer(webpack(webpackConfig), {
+        contentBase: __dirname,
+        publicPath: webpackConfig.output.publicPath,
+        hot: true,
+        noInfo: false,
+        quiet: false,
 		headers: {
 			'Access-Control-Allow-Origin': '*',
 			'Access-Control-Allow-Headers': 'X-Requested-With'
