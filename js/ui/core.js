@@ -18,15 +18,21 @@ const _ons = Object.create(null, {
 
 // {view} Backdrop
 class Backdrop extends Backbone.View {
-    NAME = 'UiBackdropView';
+    NAME = 'UiBackdrop';
     className = 'c-backdrop';
     events = Object.create(null, {
         click: function (e) { this.trigger('click', this, e); }
     });
     tagName = 'div';
 
-    show (options) {
-        options || (options = {});
+    constructor (options = {}) {
+        console.log(super(options));
+        console.log(this.NAME);
+        this._ensureElement();
+        this.initialize.apply(this, arguments);
+    }
+
+    show (options = {}) {
         this.el.setAttribute('class', this.className);
         document.body.appendChild(this.el);
 

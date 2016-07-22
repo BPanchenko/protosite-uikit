@@ -1,9 +1,10 @@
-var webpack = require('webpack');
+const webpack = require('webpack'),
+      path = require('path');
 
 module.exports = {
     entry: __dirname + '/js/ui/core.js',
     output: {
-        path: __dirname + '/assets/',
+        path: path.join(__dirname, "assets"),
         filename: 'core.bundle.js',
         publicPath: '/assets/'
     },
@@ -21,7 +22,14 @@ module.exports = {
 		]
 	},
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+            },
+            output: {
+                comments: false,
+            },
+        }),
         new webpack.HotModuleReplacementPlugin()
     ]
 };
