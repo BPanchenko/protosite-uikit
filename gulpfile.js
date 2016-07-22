@@ -69,5 +69,5 @@ gulp.task("webpack-dev-server", function(callback) {
     });
 });
 
-
+gulp.task('default', ['webpack-dev-server']);
 gulp.task('build', ['css']);

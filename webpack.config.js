@@ -1,15 +1,11 @@
 var webpack = require('webpack');
 
 module.exports = {
+    entry: __dirname + '/js/ui/core.js',
     output: {
-        // Where to build results
-        path: __dirname,
-
-        // Filename to use in HTML
-        filename: 'ui-core.js',
-
-        // Path to use in HTML
-        publicPath: '/js/ui/'
+        path: __dirname + '/assets/',
+        filename: 'core.bundle.js',
+        publicPath: '/assets/'
     },
 	module: {
 		loaders: [
@@ -18,7 +14,8 @@ module.exports = {
 				exclude: /(node_modules|vendor)/,
 				loader: 'babel',
 				query: {
-					presets: ['es2015']
+					presets: ['es2015'],
+                    plugins: ['transform-class-properties']
 				}
 			}
 		]
