@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "assets"),
         filename: 'core.bundle.js',
-        publicPath: '/assets/'
+        publicPath: './assets/'
     },
 	module: {
 		loaders: [
@@ -22,6 +22,11 @@ module.exports = {
 		]
 	},
     plugins: [
+        new webpack.DefinePlugin({
+            "process.env": {
+                "NODE_ENV": JSON.stringify("production")
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,

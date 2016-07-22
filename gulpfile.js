@@ -45,7 +45,14 @@ var webpack = require('webpack'),
     WebpackDevServer = require('webpack-dev-server');
 
 gulp.task("webpack-dev-server", function(callback) {
-    // Start a webpack-dev-server
+
+    // run webpack
+    webpack(webpackConfig, function(err, stats) {
+        if (err) throw new gutil.PluginError("webpack:build", err);
+        gutil.log("[webpack:build]", stats.toString({colors: true}));
+    });
+
+        // Start a webpack-dev-server
     new WebpackDevServer(webpack(webpackConfig), {
         contentBase: __dirname,
         publicPath: webpackConfig.output.publicPath,
@@ -67,6 +74,10 @@ gulp.task("webpack-dev-server", function(callback) {
         // keep the server alive or continue?
         // callback();
     });
+
+    return gulp.src(webpackConfig.output.entry)
+        .pipe(webpack(webpackConfig))
+        .pipe(gulp.dest(webpackConfig.publicPath));
 });
 
 gulp.task('default', ['webpack-dev-server']);
