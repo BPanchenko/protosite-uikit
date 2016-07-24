@@ -48,8 +48,8 @@
             // waiting for the end opacity css transition
             setTimeout(function () {
                 this.el.style.opacity = '';
-                document.body.removeChild(this.el);
                 this.trigger('hide', this);
+                try { document.body.removeChild(this.el); } catch(e){}
             }.bind(this), 160);
 
             return this;
