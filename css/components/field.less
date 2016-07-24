@@ -77,7 +77,10 @@
 		width: inherit;
 		border-bottom: @c-field-input-border-bottom;
 		transform: translate(0, @c-field-input-height);
-		transition: border-bottom 160ms @easing;
+
+		transition-property: border-bottom;
+		transition-duration: 160ms;
+		transition-timing-function: @easing;
 	}
 	
 	// Invalid state
@@ -226,3 +229,58 @@
 .c-field.is-invalid .c-field-error {
 	opacity: 1;
 }
+
+
+/*
+.ui-chxset,
+.ui-radioset {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	height: 4.8rem;
+	line-height: 3.6rem;
+}
+.ui-chxset + .ui-chxset,
+.ui-chxset + .ui-radioset,
+.ui-radioset + .ui-radioset {
+	margin-left: 1.6rem;
+}
+
+.ui-chx,
+.ui-radio { display: none; }
+
+.ui-chx-sham,
+.ui-radio-sham {
+	display: inline-block;
+	position: relative;
+	vertical-align: bottom;
+	box-sizing: border-box;
+
+	width: 2rem;
+	height: 2rem;
+	margin: 0 .8rem;
+	border: .2rem solid rgb(97,97,97);
+	padding: .1rem;
+}
+.ui-radio-sham {
+	border-radius: 50vh;
+	padding: .3rem;
+}
+
+.ui-chx:checked + .ui-chx-sham {
+	background: url('/svg/icons/check-thin.svg') no-repeat;
+	background-size: cover;
+	background-origin: content-box;
+}
+.ui-radio:checked + .ui-radio-sham {
+	background: url('/svg/icons/circle.svg') no-repeat;
+	background-size: cover;
+	background-origin: content-box;
+}
+
+.ui-chx-label,
+.ui-radio-label {
+	vertical-align: bottom;
+	line-height: 1.6rem;
+}
+*/
