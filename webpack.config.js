@@ -5,8 +5,8 @@ module.exports = {
     entry: __dirname + '/js/ui/core.js',
     output: {
         path: path.join(__dirname, "assets"),
-        filename: 'core.bundle.js',
-        publicPath: './assets/'
+        filename: 'ui.bundle.js',
+        publicPath: './build/'
     },
 	module: {
 		loaders: [
