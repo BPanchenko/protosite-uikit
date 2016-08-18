@@ -3,4 +3,7 @@
 /vendor
 /css/core.css
 /css/core.min.css
-/base/objects
+/base
+/components
+/examples
+/objects
