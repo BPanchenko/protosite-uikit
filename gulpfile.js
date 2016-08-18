@@ -20,8 +20,10 @@ gulp.task('css', function () {
         .pipe(less())
 		.pipe(autoprefixer({
             browsers: ['last 2 versions'],
-            cascade: false
+            cascade: true
         }))
+        .pipe(rename("ui-core.css"))
+        .pipe(gulp.dest('./dist/'))
         .pipe(csslint({
             'adjoining-classes': false,
             'fallback-colors': false,
@@ -30,13 +32,11 @@ gulp.task('css', function () {
             'unqualified-attributes': false
         }))
         .pipe(csslint.reporter(cssLintReporter))
-        .pipe(rename("ui.css"))
-        .pipe(gulp.dest('./assets/'))
         .pipe(cleanCSS({
             'compatibility': '*'
         }))
-        .pipe(rename("ui.min.css"))
-        .pipe(gulp.dest('./assets/'));
+        .pipe(rename("ui-core.min.css"))
+        .pipe(gulp.dest('./dist/'));
 });
 
 

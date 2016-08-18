@@ -4,9 +4,9 @@ const webpack = require('webpack'),
 module.exports = {
     entry: __dirname + '/js/ui/core.js',
     output: {
-        path: path.join(__dirname, "assets"),
-        filename: 'ui-core.bundle.js',
-        publicPath: './assets/'
+        path: path.join(__dirname, "dist"),
+        filename: 'ui-core.js',
+        publicPath: './dist/'
     },
 	module: {
 		loaders: [
@@ -20,21 +20,5 @@ module.exports = {
 				}
 			}
 		]
-	},
-    plugins: [
-        new webpack.DefinePlugin({
-            "process.env": {
-                "NODE_ENV": JSON.stringify("production")
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-            },
-            output: {
-                comments: false,
-            },
-        }),
-        new webpack.HotModuleReplacementPlugin()
-    ]
+	}
 };
