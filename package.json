@@ -33,6 +33,7 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-less": "^3.0.5",
     "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "jquery": "^3.1.0",
     "moment": "^2.14.1",

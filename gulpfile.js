@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     gutil = require('gulp-util'),
 	less = require('gulp-less'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    uglify = require('gulp-uglify');
 
 function cssLintReporter(file) {
     gutil.log(gutil.colors.cyan(file.csslint.errorCount)+' errors in '+gutil.colors.magenta(file.path));
@@ -36,6 +37,13 @@ gulp.task('css', function () {
             'compatibility': '*'
         }))
         .pipe(rename("ui-core.min.css"))
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('js', function () {
+    gulp.src('./dist/ui-core.js')
+        .pipe(uglify())
+        .pipe(rename("ui-core.min.js"))
         .pipe(gulp.dest('./dist/'));
 });
 
@@ -81,4 +89,4 @@ gulp.task("webpack-dev-server", function(callback) {
 });
 
 gulp.task('default', ['webpack-dev-server']);
-gulp.task('build', ['css']);
+gulp.task('build', ['css', 'js']);
