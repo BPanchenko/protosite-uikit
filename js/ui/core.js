@@ -1,9 +1,10 @@
-var $ = require("jquery"),
-    _ = require("underscore"),
-    Backbone = require("backbone"),
-    moment = require("moment");
-
-(function(){
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['backbone', 'underscore'], factory);
+    } else {
+        window.ui || (window.ui = factory(Backbone, _));
+    }
+}(function (Backbone, _) {
 
     var _components = [];
 
@@ -127,7 +128,8 @@ var $ = require("jquery"),
         }
     }
 
-    window.ui = new UiCore;
     window.addEventListener('resize', _ons.window.resize, false);
     $(document).ready(_ons.window.resize);
-}());
+
+    return new UiCore;
+}));

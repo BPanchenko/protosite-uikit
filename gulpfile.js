@@ -40,53 +40,19 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('js', function () {
-    gulp.src('./dist/ui-core.js')
+gulp.task('js-libs', function () {
+    gulp.src([
+        './node_modules/underscore/underscore.js',
+        './node_modules/underscore.string/dist/underscore.string.js',
+        './node_modules/jquery/dist/jquery.js',
+        './node_modules/backbone/backbone.js',
+        './js/common.js'
+    ])
+        .pipe(concat('ui-libs.js'))
+        .pipe(gulp.dest('./dist/'))
         .pipe(uglify())
-        .pipe(rename("ui-core.min.js"))
+        .pipe(rename('ui-libs.min.js'))
         .pipe(gulp.dest('./dist/'));
 });
 
-
-var webpack = require('webpack'),
-    webpackConfig = require('./webpack.config'),
-    WebpackDevServer = require('webpack-dev-server');
-
-gulp.task("webpack-dev-server", function(callback) {
-
-    // run webpack
-    webpack(webpackConfig, function(err, stats) {
-        if (err) throw new gutil.PluginError("webpack:build", err);
-        gutil.log("[webpack:build]", stats.toString({colors: true}));
-    });
-
-        // Start a webpack-dev-server
-    new WebpackDevServer(webpack(webpackConfig), {
-        contentBase: __dirname,
-        publicPath: webpackConfig.output.publicPath,
-        hot: true,
-        noInfo: false,
-        quiet: false,
-		headers: {
-			'Access-Control-Allow-Origin': '*',
-			'Access-Control-Allow-Headers': 'X-Requested-With'
-		},
-		stats: {
-			colors: false
-		}
-    }).listen(8080, "localhost", function(err) {
-        if(err) throw new gutil.PluginError("webpack-dev-server", err);
-        // Server listening
-        gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
-
-        // keep the server alive or continue?
-        // callback();
-    });
-
-    return gulp.src(webpackConfig.output.entry)
-        .pipe(webpack(webpackConfig))
-        .pipe(gulp.dest(webpackConfig.publicPath));
-});
-
-gulp.task('default', ['webpack-dev-server']);
-gulp.task('build', ['css', 'js']);
+gulp.task('build', ['css', 'js-libs', 'js-ui']);

@@ -7,3 +7,6 @@
 /components
 /examples
 /objects
+/dist/ui-libs.js
+/dist/ui-core.js
+/dist/ui-core.css
