@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
+    babel = require('gulp-babel'),
     csslint = require('gulp-csslint'),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
@@ -52,6 +53,24 @@ gulp.task('js-libs', function () {
         .pipe(gulp.dest('./dist/'))
         .pipe(uglify())
         .pipe(rename('ui-libs.min.js'))
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('js-ui', function () {
+    gulp.src([
+        './js/ui/core.js',
+        './js/ui/components/dialog.js',
+        './js/ui/components/field.js',
+        './js/ui/components/tabs.js',
+        './js/ui/components/tooltip.js'
+    ])
+        .pipe(concat('ui-core.js'))
+        .pipe(gulp.dest('./dist/'))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(uglify())
+        .pipe(rename('ui-core.min.js'))
         .pipe(gulp.dest('./dist/'));
 });
 

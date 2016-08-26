@@ -1,7 +1,5 @@
 ;(function(ui){
 	
-	var _helpers = window.UI._helpers;
-	
 	function _activateView() {
 		if(!this.elems.views.length)
 			return;
@@ -52,9 +50,9 @@
 			
 		this.elems.views.forEach((function(_el, _i) {
 			if(_i < this.i)
-            	_el.style.transform = 'translate3d(-' + UI.win.get('width') + 'px,0,0)';
+            	_el.style.transform = 'translate3d(-' + ui.win.get('width') + 'px,0,0)';
 			else if(_i > this.i)
-            	_el.style.transform = 'translate3d(' + UI.win.get('width') + 'px,0,0)';
+            	_el.style.transform = 'translate3d(' + ui.win.get('width') + 'px,0,0)';
 			else
             	_el.style.transform = null;
 			
@@ -98,7 +96,7 @@
 		else
 			console.error('Tabs element is not defined.');
 			
-		options = _helpers.extend((options || (options = {})), _.stringToObject(this.el.getAttribute(this.attr_name)));
+		options = _.extend((options || (options = {})), _.stringToObject(this.el.getAttribute(this.attr_name)));
 		
 		this.elems.indicator = this.el.getElementsByClassName('ui-tabs-indicator')[0];
 		this.elems.links = [].slice.call(this.el.getElementsByClassName('ui-tabs-link'));
@@ -110,13 +108,13 @@
 		}).bind(this));
 		
 		if(typeof options.container == 'string') {
-			this.elems.container = _helpers.findElement(this.el, options.container);
+			// this.elems.container = _helpers.findElement(this.el, options.container);
 			this.elems.views = [].slice.call(this.elems.container.children);
 			
 			_setContainerHeight.call(this);
 			_setViewsWidth.call(this);
 			_positioningViews.call(this);
-			UI.win.on('change:width', (function(){
+			ui.win.on('change:width', (function(){
 				_setContainerHeight.call(this);
 				_setViewsWidth.call(this);
 				_positioningViews.call(this);

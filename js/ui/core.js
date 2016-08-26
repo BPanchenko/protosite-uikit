@@ -110,11 +110,10 @@
             console.assert(_.isObject(addon) || _.isFunction(addon), "Error initialization of the component.", addon);
 
             let component = _.isFunction(addon) ? new addon(this) : addon;
-
-            _.extend(component.prototype, Backbone.Events);
+            _.extend(component, Backbone.Events);
             this.components[_.camelize(component._name)] = component;
 
-            $(document).ready(component.init.bind(component));
+            component.listenTo(this, 'ready', component.init);
             return this;
         }
     };

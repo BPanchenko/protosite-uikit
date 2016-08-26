@@ -24,7 +24,7 @@
             var template = document.body.querySelector(options.tpl);
         }
 
-        UI.backdrop.show();
+        ui.backdrop.show();
         document.body.appendChild(elDialog);
         elDialog.appendChild(template.content.cloneNode(true));
 
@@ -32,7 +32,7 @@
             elDialog.classList.add('is-opened');
         }, 0);
 
-        UI._components.dialog.stack.push(elDialog);
+        ui._components.dialog.stack.push(elDialog);
 
         return;
     }
@@ -46,13 +46,13 @@
             this.$elements = $('*[data-ui-dialog]');
             this.$elements.on('click', _onMouseClick);
 
-            this.listenTo(UI.backdrop, 'click', this.remove);
+            this.listenTo(ui.backdrop, 'click', this.remove);
         },
 
         remove: function() {
             var last = _.last(this.stack);
 
-            UI.backdrop.hide();
+            ui.backdrop.hide();
 
             last.classList.remove('is-opened');
             last.classList.add('is-closed');
