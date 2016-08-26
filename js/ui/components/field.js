@@ -1,14 +1,4 @@
-(function(addon) {
-
-    if (window.UI)
-        UI.component(addon);
-
-    if (typeof define == 'function' && define.amd)
-        define('ui-components-field', ['ui'], function (UiCore) {
-            return addon(UiCore);
-        });
-
-})(function(UiCore){
+;(function(ui){
 
     var checkPattern = _.debounce(function () {
         var $input = $(this),
@@ -76,8 +66,8 @@
         return;
     };
 
-    return {
-        NAME: 'field',
+    ui.component({
+        _name: 'field',
         $elements: null,
         $buttons: null,
         $inputs: null,
@@ -115,5 +105,5 @@
             // click by the field button
             this.$buttons.on('click', onClickButton);
         }
-    };
-});
+    });
+}(ui));

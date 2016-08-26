@@ -1,29 +1,21 @@
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(['backbone', 'underscore'], factory);
-    } else {
-        window.ui || (window.ui = factory(Backbone, _));
-    }
-}(function (Backbone, _) {
-
-    var _components = [];
+;(function (Backbone, _) {
 
     // DOM-listeners
-    var _ons = {
+    const _ons = {
         'window': {
-            'resize': function(e) {
+            'resize': _.throttle(function(e) {
                 ui.window.set({
                     'width': window.innerWidth,
                     'height': window.innerHeight
                 });
                 return;
-            }
+            }, 160)
         }
     };
 
     // {view} Backdrop
-    var BackdropView = Backbone.View.extend({
-        name: 'BackdropView',
+    const BackdropView = Backbone.View.extend({
+        _name: 'BackdropView',
         tagName: 'div',
         className: 'c-backdrop',
 
@@ -58,21 +50,19 @@
 
 
     // {model} Window settings
-    var WindowModel = Backbone.Model.extend({
-        name: 'WindowModel',
+    const WindowModel = Backbone.Model.extend({
+        _name: 'WindowModel',
+        _origin: window,
         defaults: {
             width: 0,
             height: 0
-        },
-        initialize: function() {
-            this._origin = window;
         }
     });
 
 
     // {model} Container
-    var ContainerModel = Backbone.Model.extend({
-        name: 'ContainerModel',
+    const ContainerModel = Backbone.Model.extend({
+        _name: 'ContainerModel',
         defaults: {
             width: 0,
             height: 0,
@@ -84,21 +74,21 @@
 
             if(win_width >= 1360)
                 format = 'xdesktop';
-            else if(win_width >= 1180 && win_width <= 1359)
+            else if(win_width >= 1180)
                 format = 'desktop';
-            else if(win_width >= 1024 && win_width <= 1179)
+            else if(win_width >= 1024)
                 format = 'tablet';
-            else if(win_width >= 768 && win_width <= 1023)
+            else if(win_width >= 768)
                 format = 'tablet-portrait';
-            else if(win_width >= 480 && win_width <= 767)
+            else if(win_width >= 480)
                 format = 'handset';
-            else if(win_width <= 479)
+            else
                 format = 'handset-portrait';
 
             return this.set({
                 'format': format,
-                'height': Math.max($(document.body).height(), ui.window.get('height')),
-                'width': $('.o-container').eq(0).width()
+                'height': this.el.offsetHeight,
+                'width': this.el.offsetWidth
             });
         }
     });
@@ -107,29 +97,37 @@
 
     class UiCore {
         constructor() {
+            this.components = [];
+
             this.backdrop = new BackdropView;
             this.window = new WindowModel;
             this.container = new ContainerModel;
 
-            this.container.listenTo(this.window, 'change:width', _.throttle(this.container.setFormat));
+            this.container.listenTo(this.window, 'change:width', this.container.setFormat);
         }
 
         component(addon) {
-            let _component;
+            console.assert(_.isObject(addon) || _.isFunction(addon), "Error initialization of the component.", addon);
 
-            _.isFunction(addon) && (_component = new addon(this));
-            console.assert(_.isObject(_component), "Error initialization of the component.", _component);
+            let component = _.isFunction(addon) ? new addon(this) : addon;
 
-            _components[_.camelize(_component.NAME)] = _component;
-            _.extend(_component, Backbone.Events);
-            $(document).ready(_component.init.bind(_component));
+            _.extend(component.prototype, Backbone.Events);
+            this.components[_.camelize(component._name)] = component;
 
+            $(document).ready(component.init.bind(component));
             return this;
         }
-    }
+    };
 
-    window.addEventListener('resize', _ons.window.resize, false);
-    $(document).ready(_ons.window.resize);
+    _.extend(UiCore.prototype, Backbone.Events);
 
-    return new UiCore;
-}));
+    window.ui = new UiCore;
+
+    document.addEventListener("DOMContentLoaded", function(){
+        window.ui.container.el = document.body.getElementsByClassName('o-container')[0];
+        window.ui.trigger('ready');
+        window.addEventListener('resize', _ons.window.resize, false);
+        _ons.window.resize();
+        return;
+    });
+}(Backbone, _));

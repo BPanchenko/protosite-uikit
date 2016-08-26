@@ -1,14 +1,4 @@
-(function(addon) {
-
-    if (window.UI)
-        UI.component(addon);
-
-    if (typeof define == 'function' && define.amd)
-        define('ui-components-tooltip', ['ui'], function (UiCore) {
-            return addon(UiCore);
-        });
-
-})(function(UiCore){
+;(function(ui){
 
     // TODO: уменьшить размер svg до высоты каретки (+ тень)
 
@@ -78,7 +68,7 @@
     }
 
     return {
-        NAME: 'field',
+        _name: 'field',
         $elements: null,
 
         init: function() {
@@ -89,4 +79,4 @@
 
         }
     };
-});
+}(ui));

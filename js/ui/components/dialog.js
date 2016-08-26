@@ -1,14 +1,4 @@
-(function(addon) {
-
-    if (window.UI)
-        UI.component(addon);
-
-    if (typeof define == 'function' && define.amd)
-        define('ui-components-dialog', ['ui'], function (UiCore) {
-            return addon(UiCore);
-        });
-
-})(function(UiCore){
+;(function(ui){
 
     var _html = '';
 
@@ -48,7 +38,7 @@
     }
 
     return {
-        NAME: 'dialog',
+        _name: 'dialog',
         $elements: null,
         stack: [],
 
@@ -73,4 +63,4 @@
             return this;
         }
     };
-});
+}(ui));

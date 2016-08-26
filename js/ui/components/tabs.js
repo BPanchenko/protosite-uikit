@@ -1,10 +1,4 @@
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
-		define(factory);
-	} else {
-		window.UI.Tabs = factory();
-	}
-}(function () {
+;(function(ui){
 	
 	var _helpers = window.UI._helpers;
 	
@@ -136,6 +130,7 @@
 	}
 	
 	Tabs.prototype = {
+        _name: 'tabs',
 		attr_name: 'data-ui-tabs',
 		el: null,
 		elems: {},
@@ -144,4 +139,4 @@
 	};
 	
 	return Tabs;
-}));
+}(ui));
