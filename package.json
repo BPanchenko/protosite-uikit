@@ -14,9 +14,7 @@
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
   },
-  "scripts": {
-    "start": "gulp webpack-dev-server"
-  },
+  "scripts": {},
   "keywords": [],
   "dependencies": {},
   "devDependencies": {
