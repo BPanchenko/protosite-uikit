@@ -249,11 +249,17 @@
 	.u-visible\@handset-landscape { display: none !important; }
 }
 
+// hide elements when printing
+@media print {
+	.u-hidden\@print {
+		display: none !important;
+		visibility: hidden !important;
+	}
+}
 
 
 /* Remove from the flow and screen readers on any device */
 .u-hidden,
-[hidden],
 [aria-hidden=true] {
     display: none !important;
     visibility: hidden !important;
@@ -262,7 +268,6 @@
 /* Show on hover */
 .u-visible-hover:hover {
     .u-hidden,
-    [hidden],
     [aria-hidden=true] {
 		display: block !important;
 		visibility: visible !important;
