@@ -47,6 +47,7 @@ gulp.task('js-libs', function () {
         './node_modules/underscore.string/dist/underscore.string.js',
         './node_modules/jquery/dist/jquery.js',
         './node_modules/backbone/backbone.js',
+        './node_modules/moment/min/moment-with-locales.js',
         './js/common.js'
     ])
         .pipe(concat('ui-libs.js'))
