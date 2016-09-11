@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+        
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, bp@bp-studio.ru">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="prefetch" href="/index.html">
+        <link rel="prerender" href="/index.html">
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic">
+
+    	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+
+        <!-- Framework styles -->
+        <link rel="stylesheet/less" type="text/css" href="/css/core.less">
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
+        <script async src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    </head>
+    <body>
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/buttons.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <hgroup>
+                    <h1>Protosite.UiKit</h1>
+                </hgroup>
+            </header>
+
+            <nav class="o-breadcrumb">
+                <span class="o-breadcrumb__item">
+                    <a href="/" class="">Главная</a>
+                </span>
+                <span class="o-breadcrumb__item">Компоненты</span>
+                <span class="o-breadcrumb__item is-current">Кнопка</span>
+            </nav>
+
+            <main role="main">
+
+                <div class="o-grid">
+                    <div class="o-grid__cell u-width-1-2@handset-landscape">
+                        <section class="c-panel">
+                            <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                                <button type="button" class="c-button">Кнопка</button>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2@handset-landscape">
+                        <section class="c-panel c-panel--clean">
+                            <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                                <button type="button" class="c-button">Кнопка</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <article class="o-article u-margin">
+                    <p class="o-article-lead">
+                        Кнопка есть компонент пользовательского интерфейса реализующий гипертекстовый механизм взаимодействия с пользователем.<br>
+                    </p>
+                    <p>
+                        В отличии от ссылки реакция на действие пользователя приводит к изменению содержимого блока или страницы приложения.<br>
+                        Исключением может являться только лишь кнопка как ссылка, о чем даёт понять её модификатор.
+                    </p>
+                    <p>
+                        В пассивном состоянии поведение кнопки зависит от контекста: по умолчанию кнопка приподнята над базовой поверхностью приложения, но на панели её поверхность совпадает с поверхностью контекста.
+                        <br>
+                        При нажатии кнопка уходит внутрь поверхности контекста.
+                    </p>
+                </article>
+
+
+                <div class="o-grid">
+                    <div class="o-grid__cell u-width-2-3@desktop">
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Кнопки с иконкой</h3>
+                            </div>
+                            <div class="c-panel__body">
+
+                                <button type="button" class="c-button c-button--link">
+                                    <span class="c-button__text">Ссылка</span>
+                                    <span class="c-button__icon">
+                                        <span class="iconic" data-glyph="external-link"></span>
+                                    </span>
+                                </button>
+
+                                <button type="button" class="c-button c-button--primary">
+                                    <span class="c-button__icon">
+                                        <span class="iconic" data-glyph="arrow-right-angle-top-right-fill-acute"></span>
+                                    </span>
+                                    <span class="c-button__text">Кнопка</span>
+                                </button>
+
+                                <button type="button" class="c-button c-button--danger">
+                                    <span class="c-button__icon">
+                                        <span class="iconic" data-glyph="ban"></span>
+                                    </span>
+                                    <span class="c-button__text">Кнопка</span>
+                                </button>
+
+                                <button type="button" class="c-button c-button--warning">
+                                    <span class="c-button__icon">
+                                        <span class="iconic" data-glyph="warning"></span>
+                                    </span>
+                                    <span class="c-button__text">Кнопка</span>
+                                </button>
+
+                                <button type="button" class="c-button c-button--success">
+                                    <span class="c-button__icon">
+                                        <span class="iconic" data-glyph="check-thin"></span>
+                                    </span>
+                                    <span class="c-button__text">Кнопка</span>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="o-grid__cell u-width-2-3@tablet-landscape u-width-1-3@xdesktop">
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Группа кнопок</h3>
+                            </div>
+                            <div class="c-panel__body">
+
+                                <div class="c-button-group">
+                                    <button type="button" class="c-button">Кнопка</button>
+                                    <button type="button" class="c-button">Кнопка</button>
+                                    <button type="button" class="c-button">Кнопка</button>
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <h4 class="u-font-cursive">&copy; <a href="http://www.bp-studio.ru" class="u-text-color">Boris Panchenko</a>, 2015&mdash;2016</h4>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

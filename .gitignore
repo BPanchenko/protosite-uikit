@@ -1,12 +1,8 @@
 /.idea
 /node_modules
-/vendor
 /css/core.css
 /css/core.min.css
-/base
-/components
 /examples
-/objects
 /dist/ui-libs.js
 /dist/ui-core.js
 /dist/ui-core.css

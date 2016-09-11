@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, bp@bp-studio.ru">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="prefetch" href="/index.html">
+        <link rel="prerender" href="/index.html">
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic">
+
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+
+        <link rel="stylesheet/less" type="text/css" href="/css/core.less">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
+
+        <script src="/dist/ui-libs.min.js"></script>
+        <script src="/dist/ui-core.min.js"></script>
+    </head>
+    <body>
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/field.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <hgroup>
+                    <h1>Protosite.UiKit</h1>
+                </hgroup>
+            </header>
+
+            <nav class="o-breadcrumb">
+                <span class="o-breadcrumb__item">
+                    <a href="/" class="">Главная</a>
+                </span>
+                <span class="o-breadcrumb__item">Компоненты</span>
+                <span class="o-breadcrumb__item is-current">Поле ввода данных</span>
+            </nav>
+
+            <main role="main">
+
+                <div class="o-grid">
+                    <!-- row -->
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-label">Текст</span>
+                            <input type="text" class="c-field-input" role="textbox">
+                        </label>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-label">Цифра</span>
+                            <input type="text" class="c-field-input" pattern="^-?\d+\.?\d*$" role="textbox">
+                            <span class="c-field-error">Ошибка ввода</span>
+                        </label>
+                    </div>
+
+                    <!-- row -->
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-icon">
+                                <i class="iconic" data-glyph="envelope-closed"></i>
+                            </span>
+                            <span class="c-field-label">Email</span>
+                            <input type="email" class="c-field-input" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" role="textbox">
+                            <span class="c-field-error">Некорректный e-mail</span>
+                        </label>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-icon">
+                                <i class="iconic" data-glyph="data-transfer-download"></i>
+                            </span>
+                            <span class="c-field-label">Выбрать файл...</span>
+                            <input type="file" class="c-field-input">
+                            <span class="c-field-value"></span>
+                        </label>
+                    </div>
+
+                    <!-- row -->
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <form>
+                            <label class="c-field">
+                                <span class="c-field-label">Поиск</span>
+                                <input type="search" name="q" class="c-field-input" role="textbox">
+                                <span class="c-field-error">Не указан поисковый запрос</span>
+                                <button type="submit" class="c-field-button">
+                                    <span class="iconic" data-glyph="loupe"></span>
+                                </button>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-label">Пароль</span>
+                            <input type="password" name="password" class="c-field-input" role="textbox">
+                            <button type="button" class="c-field-button">
+                                <span class="iconic" data-glyph="eye-closed"></span>
+                            </button>
+                        </label>
+                    </div>
+
+                    <!-- row -->
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-label">Типы нейронных сетей</span>
+                            <select name="type" class="c-field-input">
+                                <option value="0"></option>
+                                <option value="1">Competitive</option>
+                                <option value="1">Cascade-forward backprop</option>
+                                <option value="1">Elman backprop</option>
+                                <option value="1">Feed-forward backprop</option>
+                                <option value="1">Time delay backprop</option>
+                                <option value="1">Generalized regression</option>
+                                <option value="1">Hopfield</option>
+                                <option value="1">Linear layer (design)</option>
+                                <option value="1">Linear layer (train)</option>
+                                <option value="1">LVQ</option>
+                                <option value="1">Perceptron</option>
+                                <option value="1">Probabalistic</option>
+                                <option value="1">Radial basis (exact fit)</option>
+                                <option value="1">Radial basis (fewer neurons)</option>
+                                <option value="1">Self-organizing map</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
+                        <label class="c-field">
+                            <span class="c-field-label">Поле ввода текста</span>
+                            <textarea name="text" class="c-field-input" role="textbox"></textarea>
+                            <span class="c-field-icon">
+                                <i class="iconic" data-glyph="envelope-closed"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <h4 class="u-font-cursive">&copy; <a href="http://www.bp-studio.ru" class="u-text-color">Boris Panchenko</a>, 2015&mdash;2016</h4>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
