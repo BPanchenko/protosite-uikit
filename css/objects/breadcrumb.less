@@ -17,11 +17,14 @@
 @o-breadcrumb-after-background-color: @clr-grey-400;
 @o-breadcrumb-after-border-bottom: 1px solid @clr-white;
 
+@o-breadcrumb-item-font-size: @body-font-size;
 @o-breadcrumb-item-line-height: @unit * 1.5;
 @o-breadcrumb-item-color: @clr-grey-600;
+@o-breadcrumb-item-divider-content: '/';
+@o-breadcrumb-item-divider-margin: 0 .6rem;
 
-@o-breadcrumb-item-current-font-family: @body-font-family-caption;
-@o-breadcrumb-item-current-font-size: @h4-font-size;
+@o-breadcrumb-item-current-font-family: @body-font-family;
+@o-breadcrumb-item-current-font-size: @body-font-size;
 @o-breadcrumb-item-current-font-weight: 400;
 @o-breadcrumb-item-current-color: @body-color;
 
@@ -35,6 +38,7 @@
 	width: inherit;
 	margin: @o-breadcrumb-margin;
 	color: @o-breadcrumb-item-color;
+	font-size: .001px;
 
 	// volumetric bottom border as the default style
 	&::after {
@@ -50,14 +54,13 @@
 .o-breadcrumb__item {
 	display: inline-block;
 	vertical-align: baseline;
-	font-size: @body-font-size;
+	font-size: @o-breadcrumb-item-font-size;
 	line-height: @o-breadcrumb-item-line-height;
 
 	&:not(:last-child)::after {
-		content: '/';
+		content: @o-breadcrumb-item-divider-content;
 		display: inherit;
-		width: @unit;
-		text-align: center;
+		margin: @o-breadcrumb-item-divider-margin;
 	}
 }
 
