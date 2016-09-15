@@ -20,7 +20,6 @@
 // Variables
 // ========================================================================
 
-@c-field-width: 100%;
 @c-field-height: 6rem;
 @c-field-padding-top: @unit;
 @c-field-padding-right: .4rem;
@@ -54,6 +53,7 @@
 @c-field-icon-text-shadow: @c-button-text-shadow;
 
 
+@c-field-input-width: 100%;
 @c-field-input-height: @unit * 1.5;
 @c-field-input-border-bottom: 1px solid @body-color;
 @c-field-input-invalid-border-bottom: 1px solid @clr-red-400;
@@ -68,7 +68,6 @@
 	box-sizing: border-box;
 	cursor: pointer;
 
-	width: @c-field-width;
 	height: @c-field-height;
 	padding-top: @c-field-padding-top;
 	padding-bottom: @c-field-padding-bottom;
@@ -100,7 +99,7 @@
 
 	display: inline-block;
 	background-color: transparent;
-	width: 100%;
+	width: @c-field-input-width;
 	height: @c-field-input-height;
 	box-sizing: border-box;
 

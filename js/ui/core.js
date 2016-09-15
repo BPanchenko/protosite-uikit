@@ -123,7 +123,7 @@
     window.ui = new UiCore;
 
     document.addEventListener("DOMContentLoaded", function(){
-        window.ui.container.el = document.body.getElementsByClassName('o-container')[0];
+        window.ui.container.el = document.body.getElementsByClassName('u-container')[0];
         window.ui.trigger('ready');
         window.addEventListener('resize', _ons.window.resize, false);
         _ons.window.resize();
