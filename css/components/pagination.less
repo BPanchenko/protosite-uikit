@@ -45,12 +45,18 @@
 @c-pagination-text-align: center;
 @c-pagination-line-height: 2.6rem;
 
+@c-pagination-perpage-values-background-color: @clr-white;
+@c-pagination-perpage-values-border-radius: .2rem;
+@c-pagination-perpage-values-box-shadow: @shadow-2dp;
+@c-pagination-perpage-value-padding: .2rem 1.6rem;
+
 
 /* ========================================================================
    Component: `c-pagination`
  ========================================================================== */
 
 .c-pagination {
+	position: relative;
 	line-height: @c-pagination-line-height;
 	font-family: @c-pagination-font-family;
 	text-align: @c-pagination-text-align;
@@ -77,6 +83,10 @@
 .c-pagination__prev::after,
 .c-pagination__next::after,
 .c-pagination__perpage__current::after {
+	display: inline-block;
+	width: 1.6rem;
+	text-align: center;
+
 	font-family: 'Iconic';
 	font-size: 1.1rem;
 	-webkit-font-smoothing: antialiased;
@@ -96,6 +106,10 @@
 .c-pagination__prev,
 .c-pagination__next {
 	font-size: @c-pagination-font-size;
+}
+
+.c-pagination__ellipsis {
+	cursor: default;
 }
 
 /*a*/
@@ -131,8 +145,8 @@
  ========================================================================== */
 
 .c-pagination__perpage {
-	position: relative;
-	float: right;
+	position: absolute;
+	right: 0;
 }
 
 .c-pagination__perpage__current {
@@ -145,14 +159,27 @@
 .c-pagination__perpage__values {
 	position: absolute;
 	bottom: @c-pagination-line-height;
-	left: 0; right: 0;
+	right: 0;
+
+	background-color: @c-pagination-perpage-values-background-color;
+	border-radius: @c-pagination-perpage-values-border-radius;
+	box-shadow: @c-pagination-perpage-values-box-shadow;
+
+	overflow: hidden;
 	text-align: right;
 
 	display: none;
 	opacity: 0;
 }
+
+/*a*/
 .c-pagination__perpage__value {
 	display: block;
+	padding: @c-pagination-perpage-value-padding;
+
+	&:hover {
+		background-color: @clr-grey-50;
+	}
 }
 
 .c-pagination__perpage:hover {
