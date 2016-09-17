@@ -45,6 +45,36 @@
 @c-pagination-text-align: center;
 @c-pagination-line-height: 2.6rem;
 
+// icons
+@c-pagination-glyph-prev: '\e14c';
+@c-pagination-glyph-next: '\e14d';
+@c-pagination-glyph-perpage-select: '\e14b';
+@c-pagination-glyph-perpage-select-hover: '\e14e';
+
+// item (page, prev, next)
+@c-pagination-item-padding: 0 .8rem;
+@c-pagination-item-margin: 0 .4rem;
+@c-pagination-item-background-color: transparent;
+@c-pagination-item-border: none;
+@c-pagination-item-box-shadow: none;
+
+@c-pagination-item-hover-background-color: transparent;
+@c-pagination-item-hover-border: none;
+@c-pagination-item-hover-box-shadow: none;
+@c-pagination-item-hover-text-decoration: underline;
+
+@c-pagination-item-active-background-color: transparent;
+@c-pagination-item-active-border: none;
+@c-pagination-item-active-box-shadow: none;
+@c-pagination-item-active-text-decoration: none;
+
+@c-pagination-item-selected-background-color: @c-pagination-item-active-background-color;
+@c-pagination-item-selected-border: @c-pagination-item-active-border;
+@c-pagination-item-selected-box-shadow: @c-pagination-item-active-box-shadow;
+@c-pagination-item-selected-font-weight: bold;
+@c-pagination-item-selected-text-decoration: @c-pagination-item-active-text-decoration;
+
+// perpage
 @c-pagination-perpage-values-background-color: @clr-white;
 @c-pagination-perpage-values-border-radius: .2rem;
 @c-pagination-perpage-values-box-shadow: @shadow-2dp;
@@ -105,6 +135,7 @@
 .c-pagination__ellipsis,
 .c-pagination__prev,
 .c-pagination__next {
+	overflow: hidden;
 	font-size: @c-pagination-font-size;
 }
 
@@ -112,32 +143,60 @@
 	cursor: default;
 }
 
+.c-pagination__page,
+.c-pagination__prev,
+.c-pagination__next {
+	background-color: @c-pagination-item-background-color;
+	border: @c-pagination-item-border;
+	box-shadow: @c-pagination-item-box-shadow;
+
+	transition-property: background-color, border, box-shadow;
+	transition-timing-function: @easing;
+	transition-duration: 160ms;
+
+	&:hover {
+		background-color: @c-pagination-item-hover-background-color;
+		border: @c-pagination-item-hover-border;
+		box-shadow: @c-pagination-item-hover-box-shadow;
+	}
+	&:active {
+		background-color: @c-pagination-item-active-background-color;
+		border: @c-pagination-item-active-border;
+		box-shadow: @c-pagination-item-active-box-shadow;
+	}
+	&[aria-selected=true] {
+		background-color: @c-pagination-item-selected-background-color;
+		border: @c-pagination-item-selected-border;
+		box-shadow: @c-pagination-item-selected-box-shadow;
+	}
+}
+
 /*a*/
 .c-pagination__page {
-	line-height: inherit;
-	padding: 0 .8rem;
-	margin: 0 .4rem;
+	padding: @c-pagination-item-padding;
+	margin: @c-pagination-item-margin;
 
+	line-height: inherit;
 	text-align: center;
 
 	&:hover {
-		text-decoration: underline;
+		text-decoration: @c-pagination-item-hover-text-decoration;
+	}
+	&:active {
+		text-decoration: @c-pagination-item-active-text-decoration;
 	}
 
 	&[aria-selected=true] {
 		cursor: default;
-		font-weight: bold;
-		&:hover {
-			text-decoration: none;
-		}
+		font-weight: @c-pagination-item-selected-font-weight;
+		text-decoration: @c-pagination-item-selected-text-decoration;
 	}
 }
-
 .c-pagination__prev::after {
-	content: '\e14c';
+	content: @c-pagination-glyph-prev;
 }
 .c-pagination__next::after {
-	content: '\e14d';
+	content: @c-pagination-glyph-next;
 }
 
 
@@ -151,7 +210,7 @@
 
 .c-pagination__perpage__current {
 	&::after {
-		content: '\e14b';
+		content: @c-pagination-glyph-perpage-select;
 		font-size: .8rem;
 	}
 }
@@ -188,7 +247,6 @@
 		opacity: 1;
 	}
 	.c-pagination__perpage__current::after {
-		content: '\e14e';
-		font-size: .8rem;
+		content: @c-pagination-glyph-perpage-select-hover;
 	}
 }
