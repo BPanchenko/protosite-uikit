@@ -104,6 +104,7 @@
 @c-pagination-perpage-value-padding: .2rem 1.6rem;
 
 @c-pagination-perpage-current-hover-color: @link-color-hover;
+@c-pagination-perpage-value-hover-background-color: @clr-grey-50;
 @c-pagination-perpage-value-hover-color: @link-color-hover;
 
 
@@ -116,6 +117,10 @@
 	line-height: @c-pagination-line-height;
 	font-family: @c-pagination-font-family;
 	text-align: @c-pagination-text-align;
+
+	&[aria-disable=true] {
+		display: none;
+	}
 }
 
 
@@ -334,7 +339,7 @@
 	padding: @c-pagination-perpage-value-padding;
 
 	&:hover {
-		background-color: @clr-grey-50;
+		background-color: @c-pagination-perpage-value-hover-background-color;
 		color: @c-pagination-perpage-value-hover-color;
 	}
 }
