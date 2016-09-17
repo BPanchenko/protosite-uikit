@@ -73,6 +73,11 @@
 @c-pagination-prev-hover-border: none;
 @c-pagination-prev-hover-box-shadow: none;
 
+@c-pagination-prev-disable-color: @clr-grey-600;
+@c-pagination-prev-disable-background-color: transparent;
+@c-pagination-prev-disable-border: none;
+@c-pagination-prev-disable-box-shadow: none;
+
 // next
 @c-pagination-next-background-color: transparent;
 @c-pagination-next-border: none;
@@ -81,6 +86,11 @@
 @c-pagination-next-hover-background-color: transparent;
 @c-pagination-next-hover-border: none;
 @c-pagination-next-hover-box-shadow: none;
+
+@c-pagination-next-disable-color: @clr-grey-600;
+@c-pagination-next-disable-background-color: transparent;
+@c-pagination-next-disable-border: none;
+@c-pagination-next-disable-box-shadow: none;
 
 
 // perpage
@@ -222,6 +232,14 @@
 		border: @c-pagination-prev-hover-border;
 		box-shadow: @c-pagination-prev-hover-box-shadow;
 	}
+
+	&[aria-disable=true] {
+		background-color: @c-pagination-prev-disable-background-color;
+		border: @c-pagination-prev-disable-border;
+		box-shadow: @c-pagination-prev-disable-box-shadow;
+		color: @c-pagination-prev-disable-color;
+		cursor: default;
+	}
 }
 .c-pagination__next {
 	background-color: @c-pagination-next-background-color;
@@ -235,6 +253,14 @@
 		background-color: @c-pagination-next-hover-background-color;
 		border: @c-pagination-next-hover-border;
 		box-shadow: @c-pagination-next-hover-box-shadow;
+	}
+
+	&[aria-disable=true] {
+		background-color: @c-pagination-next-disable-background-color;
+		border: @c-pagination-next-disable-border;
+		box-shadow: @c-pagination-next-disable-box-shadow;
+		color: @c-pagination-next-disable-color;
+		cursor: default;
 	}
 }
 
