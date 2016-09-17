@@ -197,7 +197,7 @@
 	transition-timing-function: @easing;
 	transition-duration: 160ms;
 
-	&:hover {
+	&:not([aria-selected=true]):not([aria-disable=true]):hover {
 		color: @c-pagination-item-hover-color;
 	}
 }
@@ -308,7 +308,6 @@
 	}
 
 	&:hover {
-		background-color: @clr-grey-50;
 		color: @c-pagination-perpage-current-hover-color;
 	}
 }
