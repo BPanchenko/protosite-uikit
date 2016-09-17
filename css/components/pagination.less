@@ -46,10 +46,13 @@
 @c-pagination-line-height: 2.6rem;
 
 // icons
-@c-pagination-glyph-prev: '\e14c';
-@c-pagination-glyph-next: '\e14d';
-@c-pagination-glyph-perpage-select: '\e14b';
-@c-pagination-glyph-perpage-select-hover: '\e14e';
+@c-pagination-icon-font-family: 'Iconic';
+@c-pagination-icon-font-size: 1.1rem;
+@c-pagination-icon-prev-glyph: '\e14c';
+@c-pagination-icon-next-glyph: '\e14d';
+@c-pagination-icon-perpage-select-glyph: '\e14b';
+@c-pagination-icon-perpage-select-font-size: .8rem;
+@c-pagination-icon-perpage-select-hover-glyph: '\e14e';
 
 // item (page, prev, next)
 @c-pagination-item-padding: 0 .8rem;
@@ -117,8 +120,8 @@
 	width: 1.6rem;
 	text-align: center;
 
-	font-family: 'Iconic';
-	font-size: 1.1rem;
+	font-family: @c-pagination-icon-font-family;
+	font-size: @c-pagination-icon-font-size;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -192,11 +195,12 @@
 		text-decoration: @c-pagination-item-selected-text-decoration;
 	}
 }
+
 .c-pagination__prev::after {
-	content: @c-pagination-glyph-prev;
+	content: @c-pagination-icon-prev-glyph;
 }
 .c-pagination__next::after {
-	content: @c-pagination-glyph-next;
+	content: @c-pagination-icon-next-glyph;
 }
 
 
@@ -210,8 +214,8 @@
 
 .c-pagination__perpage__current {
 	&::after {
-		content: @c-pagination-glyph-perpage-select;
-		font-size: .8rem;
+		content: @c-pagination-icon-perpage-select-glyph;
+		font-size: @c-pagination-icon-perpage-select-font-size;
 	}
 }
 
@@ -247,6 +251,6 @@
 		opacity: 1;
 	}
 	.c-pagination__perpage__current::after {
-		content: @c-pagination-glyph-perpage-select-hover;
+		content: @c-pagination-icon-perpage-select-hover-glyph;
 	}
 }
