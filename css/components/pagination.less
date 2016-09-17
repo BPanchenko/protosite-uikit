@@ -36,6 +36,9 @@
 @c-pagination-icon-perpage-select-font-size: .8rem;
 @c-pagination-icon-perpage-select-hover-glyph: '\e14e';
 
+// item (page, prev or next)
+@c-pagination-item-border-radius: 0;
+
 // page
 @c-pagination-page-padding: 0 .4rem;
 @c-pagination-page-margin: 0 .2rem;
@@ -115,6 +118,13 @@
 	text-decoration: none;
 }
 
+.c-pagination__page,
+.c-pagination__ellipsis,
+.c-pagination__prev,
+.c-pagination__next {
+	font-size: @c-pagination-font-size;
+}
+
 .c-pagination__prev::after,
 .c-pagination__next::after,
 .c-pagination__perpage__current::after {
@@ -128,6 +138,14 @@
 }
 
 
+/* Element: `c-pagination__ellipsis`
+ ========================================================================== */
+
+.c-pagination__ellipsis {
+	cursor: default;
+}
+
+
 /* Controls of page:
  * `c-pagination__page`, `c-pagination__prev`, `c-pagination__next`
  ========================================================================== */
@@ -137,20 +155,10 @@
 }
 
 .c-pagination__page,
-.c-pagination__ellipsis,
 .c-pagination__prev,
 .c-pagination__next {
+	border-radius: @c-pagination-item-border-radius;
 	overflow: hidden;
-	font-size: @c-pagination-font-size;
-}
-
-.c-pagination__ellipsis {
-	cursor: default;
-}
-
-.c-pagination__page,
-.c-pagination__prev,
-.c-pagination__next {
 	text-align: center;
 	transition-property: background-color, border, box-shadow;
 	transition-timing-function: @easing;
