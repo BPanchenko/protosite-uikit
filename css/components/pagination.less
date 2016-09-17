@@ -18,7 +18,7 @@
 // Variables
 // ========================================================================
 
-@c-pagination-color: @body-color;
+@c-pagination-color: @link-color;
 @c-pagination-font-family: @body-font-family;
 @c-pagination-font-size: @body-font-size;
 @c-pagination-text-align: center;
@@ -28,6 +28,7 @@
 @c-pagination-icon-width: 1.6rem;
 @c-pagination-icon-font-family: 'Iconic';
 @c-pagination-icon-font-size: 1.1rem;
+@c-pagination-item-hover-color: @link-color-hover;
 
 @c-pagination-icon-prev-glyph: '\e14c';
 @c-pagination-icon-next-glyph: '\e14d';
@@ -38,6 +39,7 @@
 @c-pagination-icon-perpage-select-hover-glyph: '\e14e';
 
 // item (page, prev or next)
+@c-pagination-item-min-width: @c-pagination-line-height;
 @c-pagination-item-border-radius: 0;
 
 // page
@@ -99,6 +101,9 @@
 @c-pagination-perpage-values-box-shadow: @shadow-2dp;
 @c-pagination-perpage-value-padding: .2rem 1.6rem;
 
+@c-pagination-perpage-current-hover-color: @link-color-hover;
+@c-pagination-perpage-value-hover-color: @link-color-hover;
+
 
 /* ========================================================================
    Component: `c-pagination`
@@ -126,8 +131,20 @@
 .c-pagination__perpage__value {
 	display: inline-block;
 	width: auto;
+	vertical-align: middle;
 	color: @c-pagination-color;
+	line-height: inherit;
 	text-decoration: none;
+}
+
+.c-pagination__page,
+.c-pagination__next,
+.c-pagination__prev,
+.c-pagination__perpage__current,
+.c-pagination__perpage__value {
+	&:hover {
+		color: @c-pagination-color;
+	}
 }
 
 .c-pagination__page,
@@ -169,12 +186,18 @@
 .c-pagination__page,
 .c-pagination__prev,
 .c-pagination__next {
+	min-width: @c-pagination-item-min-width;
 	border-radius: @c-pagination-item-border-radius;
+	box-sizing: border-box;
 	overflow: hidden;
 	text-align: center;
 	transition-property: background-color, border, box-shadow;
 	transition-timing-function: @easing;
 	transition-duration: 160ms;
+
+	&:hover {
+		color: @c-pagination-item-hover-color;
+	}
 }
 
 /*a*/
@@ -275,9 +298,14 @@
 
 .c-pagination__perpage__current {
 	&::after {
-		width: @c-pagination-icon-perpage-select-width;
 		content: @c-pagination-icon-perpage-select-glyph;
+		width: @c-pagination-icon-perpage-select-width;
 		font-size: @c-pagination-icon-perpage-select-font-size;
+	}
+
+	&:hover {
+		background-color: @clr-grey-50;
+		color: @c-pagination-perpage-current-hover-color;
 	}
 }
 
@@ -304,6 +332,7 @@
 
 	&:hover {
 		background-color: @clr-grey-50;
+		color: @c-pagination-perpage-value-hover-color;
 	}
 }
 
