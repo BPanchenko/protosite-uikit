@@ -63,7 +63,7 @@
 @c-pagination-page-selected-background-color: @c-pagination-page-active-background-color;
 @c-pagination-page-selected-border: @c-pagination-page-active-border;
 @c-pagination-page-selected-box-shadow: @c-pagination-page-active-box-shadow;
-@c-pagination-page-selected-font-weight: bold;
+@c-pagination-page-selected-font-weight: 600;
 @c-pagination-page-selected-text-decoration: @c-pagination-page-active-text-decoration;
 
 // prev
@@ -106,6 +106,9 @@
 @c-pagination-perpage-current-hover-color: @link-color-hover;
 @c-pagination-perpage-value-hover-background-color: @clr-grey-50;
 @c-pagination-perpage-value-hover-color: @link-color-hover;
+@c-pagination-perpage-value-selected-background-color: transparent;
+@c-pagination-perpage-value-selected-color: inherit;
+@c-pagination-perpage-value-selected-font-weight: 600;
 
 
 /* ========================================================================
@@ -257,8 +260,8 @@
 
 	&::after { content: @c-pagination-icon-prev-glyph; }
 
-	&:hover,
-	&:active {
+	&:not([aria-disable=true]):hover,
+	&:not([aria-disable=true]):active {
 		background-color: @c-pagination-prev-hover-background-color;
 		border: @c-pagination-prev-hover-border;
 		box-shadow: @c-pagination-prev-hover-box-shadow;
@@ -338,9 +341,16 @@
 	display: block;
 	padding: @c-pagination-perpage-value-padding;
 
-	&:hover {
+	&:not([aria-selected=true]):hover {
 		background-color: @c-pagination-perpage-value-hover-background-color;
 		color: @c-pagination-perpage-value-hover-color;
+	}
+
+	&[aria-selected=true] {
+		cursor: default;
+		background-color: @c-pagination-perpage-value-selected-background-color;
+		color: @c-pagination-perpage-value-selected-color;
+		font-weight: @c-pagination-perpage-value-selected-font-weight;
 	}
 }
 
