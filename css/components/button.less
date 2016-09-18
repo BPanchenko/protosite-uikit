@@ -44,16 +44,16 @@
 @c-button-background-color: fade(@clr-grey-700, 52%);
 @c-button-background-color-focus: fade(@clr-grey-700, 70%);
 
-@c-button-background-image: url('http://ui.protosite.rocks/img/bgs/subtle_dots.png');
-@c-button-background-image-x2: url('http://ui.protosite.rocks/img/bgs/subtle_dots_@2X.png');
-@c-button-background-size: 27px 15px;
+@c-button-background-image: @s-bg-subtle-dots-bg-image;
+@c-button-background-image-x2: @s-bg-subtle-dots-bg-image-x2;
+@c-button-background-size: @s-bg-subtle-dots-bg-size;
 @c-button-background-blend-mode: overlay;
-@c-button-border-radius: @unit / 4;
+@c-button-border-radius: .2rem;
 
-@c-button-box-shadow: 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.1), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+@c-button-box-shadow: @shadow-2dp;
 @c-button-box-shadow-active: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
 
-@c-button-padding: (@unit / 2) (@unit * 1.618);
+@c-button-padding: .6rem 2.4rem;
 
 @c-button-color: @body-color;
 @c-button-font-family: @body-font-family;
