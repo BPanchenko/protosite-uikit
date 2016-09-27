@@ -3,7 +3,10 @@
 @o-dropbox-target-border-radius: 0;
 @o-dropbox-target-border-width: 0;
 @o-dropbox-target-background-color: @clr-grey-200;
-@o-dropbox-target-box-shadow: inset @shadow-2dp;
+@o-dropbox-target-box-shadow: @inset-shadow-2dp;
+
+@o-dropbox-target-font-size: @body-font-size;
+@o-dropbox-target-after-icon-glyph: '\e174';
 
 @o-dropbox-target-hover-box-shadow: none;
 
@@ -33,8 +36,20 @@
 		border-width: @o-dropbox-target-border-width;
 		box-shadow: @o-dropbox-target-box-shadow;
 
-		&:empty::before {
-			content: attr('data-text');
+		font-size: @o-dropbox-target-font-size;
+
+		&::before {
+			content: @o-dropbox-target-after-icon-glyph;
+			font-size: inherit;
+			font-family: 'Iconic';
+			display: inline-block;
+			speak: none;
+			line-height: 1;
+			vertical-align: baseline;
+			font-weight: normal;
+			font-style: normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 	}
 }
