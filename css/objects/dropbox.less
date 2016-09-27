@@ -1,5 +1,70 @@
 
+@o-dropbox-target-border-color: transparent;
+@o-dropbox-target-border-radius: 0;
+@o-dropbox-target-border-width: 0;
+@o-dropbox-target-background-color: @clr-grey-200;
+@o-dropbox-target-box-shadow: inset @shadow-2dp;
+
+@o-dropbox-target-hover-box-shadow: none;
+
+@o-dropbox-target-placeholder-height: @margin-large;
+
 .o-dropbox {
 	display: block;
 	width: 100%;
 }
+
+
+/* Subobject: `is-hover`
+ ========================================================================== */
+
+.o-dropbox__target {
+	width: inherit;
+
+	.c-placeholder {
+		position: relative;
+		display: block;
+		width: inherit;
+		height: @o-dropbox-target-placeholder-height;
+
+		background-color: @o-dropbox-target-background-color;
+		border-color: @o-dropbox-target-border-color;
+		border-radius: @o-dropbox-target-border-radius;
+		border-width: @o-dropbox-target-border-width;
+		box-shadow: @o-dropbox-target-box-shadow;
+
+		&:empty::before {
+			content: attr('data-text');
+		}
+	}
+}
+
+
+/* State: `is-hover`
+ ========================================================================== */
+
+.o-dropbox__target.is-hover {
+	.c-placeholder {
+		box-shadow: @o-dropbox-target-hover-box-shadow;
+	}
+}
+
+
+//
+
+.o-dropbox__files {
+
+}
+
+	.o-dropbox__file {
+		.u-margin-mini;
+		display: flex;
+
+		.c-thumbnail--mini {
+
+		}
+	}
+
+		.o-dropbox__file__controls {
+
+		}

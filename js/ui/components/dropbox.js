@@ -1,26 +1,33 @@
 ;(function(ui){
 
-    var _ons = {
-        drop: function(e){
+    /** DOM events */
 
+    var _ons = {
+        dragOver: function(e){
+            this.elems.placeholder.classList.add('is-hover');
+            return;
+        },
+        dragLeave: function(e){
+            this.elems.placeholder.classList.remove('is-hover');
             return;
         }
     };
 
-    var DropdownComponent = function (elem, options) {
-        options || (options = {});
+    /** Class component */
 
-        this.el = options.el;
-        _addEventListeners.call(this);
-    }
+    var DropboxComponent = UI.Component.extend({
+        selector: '[ui-dropbox]',
+        events: {
+            'dragover': _ons.dragOver,
+            'dragleave': _ons.dragLeave
+        },
+        constructor: function (elem, options) {
+            options || (options = {});
+            console.assert((this.el = elem) instanceof HTMLElement, "A 'DropboxComponent' element is not HTMLElement");
+            _addEventListeners.call(this);
+        }
+    });
 
-    /** Events */
-
-    function _addEventListeners(){
-
-        return this;
-    }
-
-    /** Files in dropbox */
+    /** Uploaded files */
 
 }(ui));
