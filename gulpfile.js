@@ -58,13 +58,11 @@ gulp.task('js-libs', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('js-ui', function () {
+gulp.task('js-ui-core', function () {
     gulp.src([
-        './js/ui/core.js',
-        './js/ui/components/dialog.js',
-        './js/ui/components/field.js',
-        './js/ui/components/tabs.js',
-        './js/ui/components/tooltip.js'
+        './js/ui/UI.js',
+        './js/ui/core/container.js',
+        './js/ui/core/backdrop.js'
     ])
         .pipe(concat('ui-core.js'))
         .pipe(gulp.dest('./dist/'))
