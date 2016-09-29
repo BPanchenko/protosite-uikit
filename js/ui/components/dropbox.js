@@ -1,4 +1,4 @@
-;(function(ui){
+;(function(UI){
 
     /** DOM events */
 
@@ -13,21 +13,28 @@
         }
     };
 
-    /** Class component */
-
-    var DropboxComponent = UI.Component.extend({
-        selector: '[ui-dropbox]',
-        events: {
-            'dragover': _ons.dragOver,
-            'dragleave': _ons.dragLeave
-        },
-        constructor: function (elem, options) {
-            options || (options = {});
-            console.assert((this.el = elem) instanceof HTMLElement, "A 'DropboxComponent' element is not HTMLElement");
-            _addEventListeners.call(this);
-        }
-    });
-
     /** Uploaded files */
 
-}(ui));
+    /** Class component */
+
+    UI.Component.extend(
+        // protoProps
+        {
+            name: 'Dropbox',
+            events: {
+                'dragover': _ons.dragOver,
+                'dragleave': _ons.dragLeave
+            },
+            initialize: function (elem, options) {
+                options || (options = {});
+                console.assert((this.el = elem) instanceof HTMLElement, "A 'DropboxComponent' element is not HTMLElement");
+
+            }
+        }
+        // staticProps
+        , {
+            selector: '[ui-dropbox]'
+        }
+    );
+
+}(UI));

@@ -3,6 +3,7 @@
     // {object} UI
 
     var UI = window.UI = _.extend({}, Backbone.Events);
+    var _selectorsOfComponents = {};
 
     document.addEventListener("DOMContentLoaded", function(){
         window.UI.trigger('ready');
@@ -12,17 +13,15 @@
     // {class} Component
 
     UI.Component = function (elem, options) {
-        // Backbone.View constructor
+        // equivalent Backbone.View
         this.cid = _.uniqueId('component');
         this.options = options || {};
         this.el = elem;
         this._ensureElement();
-        this.initialize.call(this, options);
-        this.delegateEvents();
+        this.initialize.apply(this, arguments);
 
-        // component references
-        elem['ui' + this.name] = this;
-        this.stack.push(elem);
+        // reference to component on element
+        elem['_ui' + this.name] = this;
     };
 
     UI.Component.extend = function(protoProps, staticProps) {
@@ -50,11 +49,13 @@
         // later.
         child.__super__ = parent.prototype;
 
-        // component elements
-        child.stack = [];
-
         // link to a component class on UI
         UI[protoProps.name] = child;
+
+        // mapping component selector
+        if(staticProps.selector) {
+            _selectorsOfComponents[protoProps.name] = staticProps.selector;
+        }
 
         return child;
     };
