@@ -33,6 +33,7 @@
     "jquery": "^3.1.0",
     "moment": "^2.14.1",
     "momentjs": "^1.1.15",
+    "mutation-summary": "0.0.0",
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4"
   },
