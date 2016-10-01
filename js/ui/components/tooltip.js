@@ -1,4 +1,4 @@
-;(function(ui){
+;(function(UI){
 
     // TODO: уменьшить размер svg до высоты каретки (+ тень)
 
@@ -67,16 +67,23 @@
         return;
     }
 
-    return {
-        _name: 'field',
-        $elements: null,
+    /** Class component */
 
-        init: function() {
-            this.$elements = $('*[data-ui-tooltip]');
-
-            this.$elements.on('mousemove', _onMouseMove);
-            this.$elements.on('mouseleave', _onMouseLeave);
-
+    UI.Component.extend(
+        // selfProps
+        {
+            name: 'Tooltip'
         }
-    };
-}(ui));
+        // staticProps
+        , {
+            $holders: null
+        }
+    );
+
+    UI.dom.on('ready change', function(doc, options){
+        UI.Tooltip.$holders = $('[ui-tooltip]');
+        UI.Tooltip.$holders.on('mousemove', _onMouseMove);
+        UI.Tooltip.$holders.on('mouseleave', _onMouseLeave);
+    });
+
+}(UI));

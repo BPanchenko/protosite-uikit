@@ -1,4 +1,4 @@
-;(function(ui){
+;(function(UI){
 	
 	function _activateView() {
 		if(!this.elems.views.length)
@@ -88,53 +88,47 @@
 		
 		return;
 	}
-	
-	var Tabs = function(el, options) {
-		
-		if(el instanceof HTMLElement)
-			this.el = el;
-		else
-			console.error('Tabs element is not defined.');
-			
-		options = _.extend((options || (options = {})), _.stringToObject(this.el.getAttribute(this.attr_name)));
-		
-		this.elems.indicator = this.el.getElementsByClassName('ui-tabs-indicator')[0];
-		this.elems.links = [].slice.call(this.el.getElementsByClassName('ui-tabs-link'));
-		
-		// definition initial index
-		this.elems.links.forEach((function(_el, _i) {
-			if(_el.dataset.active == 'true')
-				this.i = _i;
-		}).bind(this));
-		
-		if(typeof options.container == 'string') {
-			// this.elems.container = _helpers.findElement(this.el, options.container);
-			this.elems.views = [].slice.call(this.elems.container.children);
-			
-			_setContainerHeight.call(this);
-			_setViewsWidth.call(this);
-			_positioningViews.call(this);
-			ui.win.on('change:width', (function(){
-				_setContainerHeight.call(this);
-				_setViewsWidth.call(this);
-				_positioningViews.call(this);
-			}).bind(this));
-		}
-		
-		this.el.addEventListener('click', _onClickTabs.bind(this), false);
-		
-		_fixIndicator.call(this);
-		_activateView.call(this);
-	}
-	
-	Tabs.prototype = {
-        _name: 'tabs',
-		attr_name: 'data-ui-tabs',
-		el: null,
-		elems: {},
-		i: 0,
-		views_width: 0
-	};
-	
-	return Tabs;
-}(ui));
+
+    /** Class component */
+
+    UI.Component.extend(
+        // selfProps
+        {
+            name: 'Tabs',
+            initialize: function(){
+                this.elems.indicator = this.el.getElementsByClassName('ui-tabs-indicator')[0];
+                this.elems.links = [].slice.call(this.el.getElementsByClassName('ui-tabs-link'));
+
+                // definition initial index
+                this.elems.links.forEach((function(_el, _i) {
+                    if(_el.dataset.active == 'true')
+                        this.i = _i;
+                }).bind(this));
+
+                if(typeof options.container == 'string') {
+                    // this.elems.container = _helpers.findElement(this.el, options.container);
+                    this.elems.views = [].slice.call(this.elems.container.children);
+
+                    _setContainerHeight.call(this);
+                    _setViewsWidth.call(this);
+                    _positioningViews.call(this);
+                    ui.win.on('change:width', (function(){
+                        _setContainerHeight.call(this);
+                        _setViewsWidth.call(this);
+                        _positioningViews.call(this);
+                    }).bind(this));
+                }
+
+                this.el.addEventListener('click', _onClickTabs.bind(this), false);
+
+                _fixIndicator.call(this);
+                _activateView.call(this);
+            }
+        }
+        // staticProps
+        , {
+            selector: '[ui-tabs]'
+        }
+    );
+
+}(UI));

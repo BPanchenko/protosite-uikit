@@ -1,66 +1,49 @@
-;(function(ui){
+(function(UI){
 
-    var _html = '';
+    /** Class component */
 
-    function _createComponent () {
-        var elem = document.createElement('section');
-        elem.classList.add('c-dialog');
-        return elem;
-    }
+    UI.Component.extend(
+        // selfProps
+        {
+            name: 'Dialog',
+            tagName: 'section',
+            className: 'c-dialog',
 
-    //
-    function _onMouseClick(e) {
-        e.preventDefault();
+            initialize: function() {
+                this.listenTo(UI.backdrop, 'click', this.remove);
+            },
 
-        var target = e.currentTarget,
-            elDialog = _createComponent(),
-            options;
-
-        try {
-            options = _.stringToObject(target.getAttribute('data-ui-dialog'));
-        } catch (err) {}
-
-        if(options.tpl) {
-            var template = document.body.querySelector(options.tpl);
-        }
-
-        ui.backdrop.show();
-        document.body.appendChild(elDialog);
-        elDialog.appendChild(template.content.cloneNode(true));
-
-        setTimeout(function() {
-            elDialog.classList.add('is-opened');
-        }, 0);
-
-        ui._components.dialog.stack.push(elDialog);
-
-        return;
-    }
-
-    return {
-        _name: 'dialog',
-        $elements: null,
-        stack: [],
-
-        init: function() {
-            this.$elements = $('*[data-ui-dialog]');
-            this.$elements.on('click', _onMouseClick);
-
-            this.listenTo(ui.backdrop, 'click', this.remove);
+            render: function() {
+                document.body.appendChild(this.el);
+                return this;
+            }
         },
+        // staticProps
+        {
+            $holders: null,
+            stack: [],
+            remove: function() {
+                var last = _.last(UI.Dialog.stack);
 
-        remove: function() {
-            var last = _.last(this.stack);
+                last.remove();
+                last.classList.remove('is-opened');
+                last.classList.add('is-closed');
+                setTimeout(function() {
+                    document.body.removeChild(last);
+                }, 160);
 
-            ui.backdrop.hide();
+                !UI.Dialog.stack.length && UI.backdrop.hide();
 
-            last.classList.remove('is-opened');
-            last.classList.add('is-closed');
-            setTimeout(function() {
-                document.body.removeChild(last);
-            }, 160);
-
-            return this;
+                return this;
+            }
         }
-    };
-}(ui));
+    );
+
+    UI.dom.on('ready change', function(doc, options){
+        console.log('DOM ready or change', options);
+        UI.Dialog.$holders = $('[ui-dialog]');
+        UI.Dialog.$holders.on('click', function(){});
+        (new UI.Dialog(UI.Dialog.$holders[0])).render();
+    });
+
+}(UI));

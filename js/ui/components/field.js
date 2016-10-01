@@ -1,4 +1,4 @@
-;(function(ui){
+;(function(UI){
 
     var checkPattern = _.debounce(function () {
         var $input = $(this),
@@ -66,44 +66,52 @@
         return;
     };
 
-    ui.component({
-        _name: 'field',
-        $elements: null,
-        $buttons: null,
-        $inputs: null,
+    UI.Component.extend(
+        // selfProps
+        {
+            name: 'field',
 
-        init: function() {
-            this.$elements = $('.c-field');
-            this.$buttons = this.$elements.find('.c-field-button');
-            this.$inputs = this.$elements.find('.c-field-input');
+            $elements: null,
+            $buttons: null,
+            $inputs: null,
 
-            this.$inputs.filter('*:not([type=file])')
-                .on('focus', function (e) {
-                    var $container = $(this).parent('.c-field');
-                    $container.length && $container.addClass('is-focused');
-                    return;
-                })
-                .on('blur', function (e) {
-                    var $input = $(this),
-                        $container = $input.parent('.c-field'),
-                        value = $input.val();
-                    $container.removeClass('is-focused');
-                    $container[ !!value ? 'addClass' : 'removeClass']('is-filled');
-                    return;
-                });
+            init: function() {
+                this.$elements = $('.c-field');
+                this.$buttons = this.$elements.find('.c-field-button');
+                this.$inputs = this.$elements.find('.c-field-input');
 
-            // check fields with a pattern
-            this.$inputs.filter('*[pattern]:not([type=email])').on('input', checkPattern);
-            this.$inputs.filter('*[pattern][type=email]').on('change', checkPattern);
+                this.$inputs.filter('*:not([type=file])')
+                    .on('focus', function (e) {
+                        var $container = $(this).parent('.c-field');
+                        $container.length && $container.addClass('is-focused');
+                        return;
+                    })
+                    .on('blur', function (e) {
+                        var $input = $(this),
+                            $container = $input.parent('.c-field'),
+                            value = $input.val();
+                        $container.removeClass('is-focused');
+                        $container[ !!value ? 'addClass' : 'removeClass']('is-filled');
+                        return;
+                    });
 
-            // processing the file field
-            this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
+                // check fields with a pattern
+                this.$inputs.filter('*[pattern]:not([type=email])').on('input', checkPattern);
+                this.$inputs.filter('*[pattern][type=email]').on('change', checkPattern);
 
-            // processing the search field
-            this.$inputs.filter('input[type=search]').on('change input', onChangeFieldSearch);
+                // processing the file field
+                this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
 
-            // click by the field button
-            this.$buttons.on('click', onClickButton);
+                // processing the search field
+                this.$inputs.filter('input[type=search]').on('change input', onChangeFieldSearch);
+
+                // click by the field button
+                this.$buttons.on('click', onClickButton);
+            }
         }
-    });
-}(ui));
+        // staticProps
+        , {
+            selector: '.c-field-box, .c-field'
+        }
+    );
+}(UI));
