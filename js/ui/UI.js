@@ -13,6 +13,8 @@
     // {class} Component
 
     UI.Component = function (elem, options) {
+        console.assert(elem instanceof HTMLElement, "A component element is not HTMLElement");
+
         // equivalent Backbone.View
         this.cid = _.uniqueId('component');
         this.options = options || {};
