@@ -5,11 +5,6 @@
     var UI = window.UI = _.extend({}, Backbone.Events);
     var _selectorsOfComponents = {};
 
-    document.addEventListener("DOMContentLoaded", function(){
-        window.UI.trigger('ready');
-        return;
-    });
-
     // {class} Component
 
     UI.Component = function (elem, options) {

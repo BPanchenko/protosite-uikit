@@ -17,7 +17,7 @@ function cssLintReporter(file) {
     });
 }
 
-gulp.task('css', function () {
+gulp.task('build-css', function () {
     gulp.src('./css/core.less')
         .pipe(less())
 		.pipe(autoprefixer({
@@ -41,7 +41,7 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('js-libs', function () {
+gulp.task('build-js-libs', function () {
     gulp.src([
         './node_modules/underscore/underscore.js',
         './node_modules/underscore.string/dist/underscore.string.js',
@@ -58,11 +58,12 @@ gulp.task('js-libs', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('js-ui-core', function () {
+gulp.task('build-js-ui-core', function () {
     gulp.src([
         './js/ui/UI.js',
+        './js/ui/core/backdrop.js',
         './js/ui/core/container.js',
-        './js/ui/core/backdrop.js'
+        './js/ui/core/dom.js'
     ])
         .pipe(concat('ui-core.js'))
         .pipe(gulp.dest('./dist/'))
@@ -74,4 +75,4 @@ gulp.task('js-ui-core', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('build', ['css', 'js-libs', 'js-ui']);
+gulp.task('build', ['build-css', 'build-js-libs', 'build-js-ui-core']);
