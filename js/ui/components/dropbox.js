@@ -23,14 +23,17 @@
         },
         dragLeave: function(e){
             e.preventDefault();
-            this.el.classList.remove('is-hover');
-            this.elems.placeholder.dataset.text = 'Загрузить файлы';
+            this.reset();
             return;
         },
         drop: function(e){
             e.preventDefault();
             e.dataTransfer && _dropFiles.call(this, e.dataTransfer.files);
+
             this.el.classList.add('is-drop');
+            this.elems.placeholder.dataset.text = 'Файлы загружаются';
+
+            setTimeout(this.reset.bind(this), 1200);
             return;
         }
     };
@@ -51,28 +54,27 @@
                 'click .js-target': _ons.click.target,
                 'change .js-field-file': _ons.change.fieldFile,
                 'dragover': _ons.dragOver,
-                'dragleave': _ons.dragLeave,
-                'drop': _ons.drop
+                'dragleave': _ons.dragLeave
             },
 
             initialize: function(){
                 this.url = this.options.url || UI.Dropbox.url;
-                this.type = this.options.type || UI.Dropbox.type;
             },
 
             render: function(){
-                console.log(this.el);
-                this.el.ondrop = _ons.drop.bind(this);
+                this.el.addEventListener('drop', _ons.drop.bind(this), false);
                 _initElems.call(this);
                 return this;
+            },
+            reset: function(){
+                this.el.classList.remove('is-drop', 'is-hover');
+                this.elems.placeholder.dataset.text = 'Загрузить файлы';
+                return;
             }
         }
         // staticProps
         , {
             selector: '[ui-dropbox]',
-            maxFiles: 5,
-            maxFileSize: 4096 * 1024,
-            type: 'image.*',
             url: 'http://api.protosite.rocks/photos/upload'
         }
     );
@@ -81,11 +83,12 @@
 
     function _dropFiles (fileList) {
         _.each(fileList, function(file){
-            (new FileView({
+            var view = new FileView({
                 file: file,
-                type: this.type,
                 url: this.url
-            })).upload().render();
+            });
+            view.upload().render();
+            this.elems.files.appendChild(view.el);
         }, this);
     }
 
@@ -95,33 +98,37 @@
         return this;
     }
 
-    var errors = {
-        exceededMaxFileSize: 'Файл слишком большой!'
-    };
-
     var FileView = Backbone.View.extend({
         name: 'DropboxFileView',
         tagName: 'section',
         className: 'c-list__item',
-        error: null,
+
         file: null,
-        file_id: 0,
-        isDownloaded: false,
+        model: null,
+
         initialize: function(options){
             this.options = options;
             this.file = options.file;
 
-            this.file.size > UI.Dropbox.maxFileSize && (this.error = 'exceededMaxFileSize');
-            !this.file.type.match(this.options.type) && (this.error = 'wrongType');
+            this.model = new Backbone.Model({
+                src: '',
+                filename: this.file.name,
+                type: this.file.type
+            });
+            console.log(this.model.toJSON());
+            this.listenTo(this.model, 'change', this.render);
         },
 
-        template: function(){
-
-        },
-        render: function(){
-
-            return this;
-        },
+        tpl: '<div class="c-list__column">'
+                + '<figure class="c-thumbnail"><img src="<%= src %>"></figure>'
+             + '</div>'
+             + '<div class="c-list__column">'
+                + '<span><%= filename %></span>'
+                + '<textarea class="c-field js-field-description"></textarea>'
+             + '</div>'
+             + '<div class="c-list__column o-dropbox__controls">'
+                + '<button class="c-button c-button--link"><i class="iconic" data-glyph="trash"></i></button>'
+             + '</div>',
 
         update: function(){
             if(this.error) return this;
@@ -144,11 +151,12 @@
             var xhr = new XMLHttpRequest();
             xhr.upload.addEventListener('progress', _fileUploadProgress, false);
             xhr.onload = function () {
+                var response = JSON.parse(xhr.responseText);
                 if (xhr.status == 200) {
-                    this.isDownloaded = true;
-                    this.file_id = JSON.parse(xhr.responseText).data.id;
-                } else this.error = 'serverError';
-                this.render();
+                    this.model.set(response.data);
+                } else {
+                    this.model.set('error', response.meta);
+                }
             }.bind(this);
             xhr.open('POST', this.options.url, true);
             xhr.send(formData);
@@ -173,7 +181,7 @@
     UI.dom.on('ready change', function(doc, options){
         $('[ui-dropbox]').each(function(){
             if(!this._uiDropbox) {
-                console.log((new UI.Dropbox(this, _.stringToObject(this.getAttribute('ui-dropbox')))).render());
+                (new UI.Dropbox(this, _.stringToObject(this.getAttribute('ui-dropbox')))).render();
             }
         });
     });
