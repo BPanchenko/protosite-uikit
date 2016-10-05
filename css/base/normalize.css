@@ -35,6 +35,14 @@ video {
 	vertical-align: middle;
 }
 
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
 audio:not([controls]) {
 	display: none;
 	height: 0;
@@ -53,13 +61,7 @@ textarea {
     resize: vertical;
 }
 
-img {
-	border: 0;
-}
-
-svg:not(:root) {
-	overflow: hidden;
-}
+label { cursor: pointer; }
 
 fieldset,
 legend {
