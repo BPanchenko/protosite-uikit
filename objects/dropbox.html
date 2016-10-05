@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,19 +11,13 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <link rel="prefetch" href="/index.html">
-    <link rel="prerender" href="/index.html">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic" as="css">
-
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
     <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
 
     <!-- Framework styles -->
     <link rel="stylesheet/less" type="text/css" href="/css/core.less">
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
-    <script async src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     <script src="/dist/ui-libs.js"></script>
     <script src="/dist/ui-core.js"></script>
@@ -54,38 +48,30 @@
     <main role="main">
 
         <div class="u-width-1-2 u-centered">
-            <section class="o-dropbox js-dropbox">
-                <div class="o-dropbox__target">
-                    <input type="file" class="c-field">
-                    <span class="c-placeholder">Для загрузки, перетащите файл сюда.</span>
+            <section class="o-dropbox" ui-dropbox="{ url: 'http://api.protosite.rocks/photos/upload' }">
+                <div class="o-dropbox__target js-target">
+                    <input type="file" class="c-field js-field-file">
+                    <span class="c-placeholder js-placeholder" data-text="Загрузить файлы"></span>
                 </div>
-                <div class="o-dropbox__files">
-                    <section class="o-dropbox__file">
-                        <figure class="c-thumbnail">
-                            <img src="">
-                        </figure>
-                        <div class="o-dropbox__file__data">
-                            <span class="o-dropbox__file-name"></span>
-                            <textarea class="c-field"></textarea>
+                <div class="c-list js-files">
+                    <section class="c-list__item">
+                        <div class="c-list__column">
+                            <figure class="c-thumbnail"><img src=""></figure>
                         </div>
-                        <div class="o-dropbox__file__controls">
+                        <div class="c-list__column">
+                            <span></span>
+                            <textarea class="c-field js-field-description"></textarea>
+                        </div>
+                        <div class="c-list__column o-dropbox__controls">
                             <button class="c-button c-button--link">
                                 <i class="iconic" data-glyph="trash"></i>
                             </button>
                         </div>
+                        <div class="c-progress"><span class="c-progress__bar"></span></div>
                     </section>
                 </div>
             </section>
         </div>
-
-        <script>
-            var elDropbox = document.body.getElementsByClassName('js-dropbox')[0];
-            var dropbox = new UI.Dropbox(elDropbox, {
-                url: 'http://api.protosite.rocks/photos/upload'
-            });
-
-            console.log(dropbox);
-        </script>
     </main>
 
     <footer role="contentinfo" class="u-margin-large-top">
