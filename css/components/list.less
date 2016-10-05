@@ -5,11 +5,12 @@
  * Component:       `c-list`
  * Description:     Defines styles for list items
  *
- * Elements:		`c-list__head`
- *                  `c-list__body`
+ * Elements:		`c-list__body`
+ *                  `c-list__col`
+ *                  `c-list__foot`
+ *                  `c-list__head`
  *                  `c-list__item`
- *                  `c-list__column` (with `s-table`)
- *                  `c-list__footer`
+ *                  `c-list__meta`
  *
  *
  * Markup:
@@ -17,25 +18,31 @@
 <!-- basic list style -->
 <div class="c-list">
 	<section class="c-list__item">
-		<div class="c-list__column">...</div>
-		<div class="c-list__column">...</div>
-		<div class="c-list__column">...</div>
+		<div class="c-list__col">...</div>
+		<div class="c-list__col">...</div>
+		<div class="c-list__col">...</div>
 	</section>
 </div>
 
 <!-- table style -->
-<section class="c-list s-table">
+<section class="c-list">
 	<div class="c-list__head">
-		<h6 class="c-list__column">...</h6>
-		<h6 class="c-list__column">...</h6>
-		<h6 class="c-list__column">...</h6>
+		<h6 class="c-list__col">...</h6>
+		<h6 class="c-list__col">...</h6>
+		<h6 class="c-list__col">...</h6>
 	</div>
 	<div class="c-list__body">
 		<section class="c-list__item>
-			<div class="c-list__column">...</div>
-			<div class="c-list__column">...</div>
-			<div class="c-list__column">...</div>
+			<div class="c-list__col">...</div>
+			<div class="c-list__col">...</div>
+			<div class="c-list__col">...</div>
 		</section>
+	</div>
+	<div class="c-list__meta">
+
+	</div>
+	<div class="c-list__foot">
+
 	</div>
 </section>
  *
@@ -54,24 +61,21 @@
 .c-list {}
 
 	.c-list__head,
-	// .c-list__meta,
+	.c-list__meta,
 	.c-list__body,
-	.c-list__footer,
+	.c-list__foot,
 	.c-list__item,
-	.c-list__column {
+	.c-list__col {
 		box-sizing: border-box;
 	}
 
 	.c-list__item {
+		contain: layout style;
+		position: relative;
 		display: flex;
 		flex-flow: row nowrap;
 	}
 
-		.c-list__column {
+		.c-list__col {
 			color: currentColor;
 		}
-
-
-/* ========================================================================
-   Style: `s-table` (???)
- ========================================================================== */
