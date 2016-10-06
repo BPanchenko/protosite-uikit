@@ -4,11 +4,15 @@
 
 @o-dropbox-placeholder-after-icon-glyph: '\e174';
 
+@o-dropbox-item-padding: .4rem;
 @o-dropbox-item-margin: @margin-mini 0;
 @o-dropbox-item-background-color: @clr-white;
 @o-dropbox-item-border-radius: .2rem;
 @o-dropbox-item-box-shadow: @shadow-2dp;
 
+@o-dropbox-item-column-margin-horizontal: @margin-mini / 2;
+
+@o-dropbox-file-preview-size: 8rem;
 
 @o-dropbox-target-background-color: @clr-grey-200;
 @o-dropbox-target-border: .2rem dashed @clr-grey-400;
@@ -96,6 +100,7 @@
 	.c-list{}
 	.c-list__item {
 		contain: content;
+		padding: @o-dropbox-item-padding;
 		margin: @o-dropbox-item-margin;
 
 		background-color: @o-dropbox-item-background-color;
@@ -104,34 +109,38 @@
 	}
 	.c-list__col {
 		&:nth-child(1) {
-
+			flex: 0 1 auto;
 		}
 		&:nth-child(2) {
-
+			flex: 1 0 auto;
 		}
 		&:nth-child(3) {
 			position: absolute;
 			top: 0;
 			right: 0;
+			flex: none;
 			@media (max-width: @screen-tablet-landscape-max) {
 				position: static;
-				flex: 0 0 0;
+				flex: 0 1 auto;
 			}
 		}
 	}
-}
-
-	.o-dropbox__file {
-		display: flex;
-
-		.c-thumbnail--mini {
-
-		}
+	.c-list__col + .c-list__col {
+		margin-left: @o-dropbox-item-column-margin-horizontal;
 	}
 
-		.o-dropbox__file__controls {
+	.c-progress {
+		flex: none;
 
-		}
+		position: absolute;
+		right: @o-dropbox-item-padding;
+		bottom: @o-dropbox-item-padding;
+		left: @o-dropbox-file-preview-size + @o-dropbox-item-column-margin-horizontal + @o-dropbox-item-padding;
+
+		margin: 0 !important;
+		height: @o-dropbox-item-padding;
+	}
+}
 
 
 /* Component: `c-thumbnail`
@@ -145,8 +154,9 @@
 	box-shadow: none;
 
 	img {
-		max-width: 8rem;
-		max-height: 8rem;
+		width: @o-dropbox-file-preview-size;
+		height: @o-dropbox-file-preview-size;
+		object-fit: cover;
 	}
 }
 
