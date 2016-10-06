@@ -24,19 +24,31 @@
     // @View
 
     _.extend(Backbone.View.prototype, {
-        elems: null,
+        elems: {},
+        tpl: '',
+        template: function(){
+            var data = this.model ? this.model.toJSON(): {};
+            return _.template(this.tpl)(data);
+        },
+        render: function(){
+            this.el.innerHTML = _.result(this, 'template');
+            this._initElems();
+            this.onRender && this.onRender.call(this);
+            return this;
+        },
         _initElems: function() {
-            if(!this.elems) {
-                console.warn("Property `elems` is undefined");
-                return this;
-            }
+            if(_.isEmpty(this.elems)) return this;
 
             if(!(this.el instanceof HTMLElement)) {
                 console.trace("HTML-container is undefined");
                 return this;
             }
 
-            _.each(this.elems, function(selector, key){
+            if(!this.__proto__.selectors) {
+                // cache selectors of elements
+                this.__proto__.selectors = _.clone(this.elems);
+            }
+            _.each(this.selectors, function(selector, key){
                 if(_.isString(selector)) {
                     this.elems[key] = this.el.getElementsByClassName(selector);
                     console.assert(this.elems[key].length, this._name + ", element '" + selector + "' was not found");
