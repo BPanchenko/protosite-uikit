@@ -31,9 +31,16 @@
             return _.template(this.tpl)(data);
         },
         render: function(){
+
+            if(this._isRendered && _.isFunction(this.reRender)) {
+                return this.reRender();
+            }
+
             this.el.innerHTML = _.result(this, 'template');
             this._initElems();
             this.onRender && this.onRender.call(this);
+            this._isRendered = true;
+
             return this;
         },
         _initElems: function() {
