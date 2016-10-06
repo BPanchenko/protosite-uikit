@@ -87,14 +87,14 @@
                 file: file,
                 url: this.url
             });
-            view.upload().render();
             this.elems.files.appendChild(view.el);
+            view.upload().render();
         }, this);
     }
 
     function _fileUploadProgress(e){
         var percent = parseInt(e.loaded / e.total * 100);
-        console.log(percent);
+        this.model.set('progress', percent);
         return this;
     }
 
@@ -110,25 +110,59 @@
             this.options = options;
             this.file = options.file;
 
+            var _temp = this.file.name.split('.'),
+                _extension = _.last(_temp),
+                _filename = this.file.name.replace('.'+_extension, '');
+
             this.model = new Backbone.Model({
                 src: '',
-                filename: this.file.name,
+                progress: 0,
+                extension: _extension,
+                filename: _filename,
                 type: this.file.type
             });
-            console.log(this.model.toJSON());
+
+            if (/image\/.+/.test(this.file.type)) {
+                var reader  = new FileReader();
+                reader.addEventListener("load", function (e) {
+                    this.model.set('src', reader.result);
+                }.bind(this), false);
+                reader.readAsDataURL(this.file);
+            }
+
             this.listenTo(this.model, 'change', this.render);
         },
 
+        elems: {
+            description: 'js-description',
+            filename: 'js-filename',
+            image: 'js-image',
+            progressBar: 'js-progress-bar'
+        },
+
         tpl: '<div class="c-list__column">'
-                + '<figure class="c-thumbnail"><img src="<%= src %>"></figure>'
+                + '<figure class="c-thumbnail"><img src="<%= src %>" class="js-image"></figure>'
              + '</div>'
              + '<div class="c-list__column">'
-                + '<span><%= filename %></span>'
-                + '<textarea class="c-field js-field-description"></textarea>'
+                + '<span class="js-filename"><%= filename %>.<%= extension %></span>'
+                + '<textarea class="c-field js-description"></textarea>'
              + '</div>'
              + '<div class="c-list__column o-dropbox__controls">'
                 + '<button class="c-button c-button--link"><i class="iconic" data-glyph="trash"></i></button>'
-             + '</div>',
+             + '</div>'
+             + '<div class="c-progress"><span class="c-progress__bar js-progress-bar"></span></div>',
+
+        onRender: function(){
+            !this.model.isNew() && (this.el.dataset.id = this.model.id);
+            return;
+        },
+
+        reRender: function(){
+            this.elems.filename.innerHTML = this.model.get('filename') + '.' + this.model.get('extension');
+            this.elems.image.src = this.model.get('src');
+            this.elems.progressBar.style.width = this.model.get('progress') + '%';
+            return this;
+        },
 
         update: function(){
             if(this.error) return this;
@@ -149,7 +183,7 @@
             formData.append('file', this.file, this.file.name);
 
             var xhr = new XMLHttpRequest();
-            xhr.upload.addEventListener('progress', _fileUploadProgress, false);
+            xhr.upload.addEventListener('progress', _fileUploadProgress.bind(this), false);
             xhr.onload = function () {
                 var response = JSON.parse(xhr.responseText);
                 if (xhr.status == 200) {
