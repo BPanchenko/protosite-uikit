@@ -21,13 +21,9 @@
 // ========================================================================
 
 @c-field-box-height: 6rem;
-@c-field-box-padding-top: @unit;
-@c-field-box-padding-right: .4rem;
-@c-field-box-padding-bottom: @unit;
-@c-field-box-padding-left: .4rem;
 
-@c-field-button-width: @c-field-input-height;
-@c-field-button-height: @c-field-input-height;
+@c-field-button-width: @c-field-height;
+@c-field-button-height: @c-field-height;
 
 @c-field-error-font-size: 1.1rem;
 @c-field-error-font-weight: 700;
@@ -35,7 +31,7 @@
 @c-field-error-color: @clr-red-400;
 
 
-@c-field-label-top: @c-field-box-padding-top + .3rem;
+@c-field-label-top: @c-field-padding-top + .3rem;
 @c-field-label-left: 0;
 @c-field-label-font-size: @body-font-size;
 @c-field-label-color: @clr-grey-600;
@@ -48,15 +44,30 @@
 @c-field-label-left-after-icon: @c-field-icon-width;
 
 
-@c-field-icon-width: @c-field-input-height;
-@c-field-icon-height: @c-field-input-height;
+@c-field-icon-width: @c-field-height;
+@c-field-icon-height: @c-field-height;
 @c-field-icon-text-shadow: @c-button-text-shadow;
 
 
-@c-field-input-width: 100%;
-@c-field-input-height: @unit * 1.5;
-@c-field-input-border-bottom: 1px solid @body-color;
-@c-field-input-invalid-border-bottom: 1px solid @clr-red-400;
+@c-field-height: @unit * 1.5;
+@c-field-padding-top: @unit;
+@c-field-padding-right: .4rem;
+@c-field-padding-bottom: @unit;
+@c-field-padding-left: .4rem;
+
+@c-field-background-color: #fdfdfd;
+@c-field-border-color: @clr-grey-500;
+@c-field-border-width: 1px;
+@c-field-border-style: solid;
+@c-field-border-radius: .2rem;
+@c-field-shadow: inset 0 0 .2rem @clr-grey-400, 0 0 0 @clr-blue-400;
+@c-field-outline: none;
+
+@c-field-focused-background-color: @clr-white;
+@c-field-focused-border-color: @clr-blue-400;
+@c-field-focused-box-shadow: inset 0 0 0rem @clr-grey-400, 0 0 .3rem @clr-blue-400;
+@c-field-invalid-background-color: @clr-red-50;
+@c-field-invalid-border-color: 1px solid @clr-red-400;
 
 
 /* Component: `c-field`
@@ -66,13 +77,31 @@
 	-webkit-appearance: none;
 
 	display: inline-block;
-	background-color: transparent;
-	width: @c-field-input-width;
-	height: @c-field-input-height;
+	width: 100%;
+	line-height: @c-field-height;
+
+	padding-left: @c-field-padding-left;
+	padding-right: @c-field-padding-right;
+
+	background-color: @c-field-background-color;
+	border-color: @c-field-border-color;
+	border-width: @c-field-border-width;
+	border-style: @c-field-border-style;
+	border-radius: @c-field-border-radius;
+	box-shadow: @c-field-shadow;
 	box-sizing: border-box;
 
-	border: none;
-	outline: none;
+	outline: @c-field-outline;
+
+	transition-property: background-color, border-color, box-shadow;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
+
+	&:focus {
+		background-color: @c-field-focused-background-color;
+		border-color: @c-field-focused-border-color;
+		box-shadow: @c-field-focused-box-shadow;
+	}
 
 	&[type=file] {
 		opacity: 0;
@@ -80,6 +109,13 @@
 		position: relative;
 		z-index: -1;
 	}
+
+}
+
+.c-field:invalid,
+.is-invalid .c-field {
+	background-color: @c-field-invalid-background-color;
+	border-color: @c-field-invalid-border-color;
 }
 
 
@@ -87,31 +123,15 @@
  ========================================================================== */
 
 .c-field-box {
+	contain: layout style size;
 	display: inline-block;
 	position: relative;
 	box-sizing: border-box;
 	cursor: pointer;
 
-	height: @c-field-box-height;
-	padding-top: @c-field-box-padding-top;
-	padding-bottom: @c-field-box-padding-bottom;
-
-	&::before {
-		content: ' ';
-		display: block;
-		width: inherit;
-		border-bottom: @c-field-input-border-bottom;
-		transform: translate(0, @c-field-input-height);
-
-		transition-property: border-bottom;
-		transition-duration: 160ms;
-		transition-timing-function: @easing;
-	}
-
-	// Invalid state
-	&.is-invalid::before {
-		border-bottom: @c-field-input-invalid-border-bottom;
-	}
+	height: @c-field-height;
+	padding-top: @c-field-padding-top;
+	padding-bottom: @c-field-padding-bottom;
 }
 
 
@@ -121,7 +141,7 @@
 .c-field-label {
 	position: absolute;
 	top: @c-field-label-top;
-	left: @c-field-label-left;
+	left: @c-field-padding-left;
 	font-size: @c-field-label-font-size;
 	color: @c-field-label-color;
 	cursor: pointer;
@@ -148,7 +168,7 @@
 
 .c-field-value {
 	position: absolute;
-	top: @c-field-box-padding-top;
+	top: @c-field-padding-top;
 	left: 0;
 }
 
@@ -160,7 +180,7 @@
 .c-field-icon,
 .c-field-value {
 	position: absolute;
-	top: @c-field-box-padding-top;
+	top: @c-field-padding-top;
 
 	display: inline-block;
 	height: @c-field-icon-height;
@@ -195,7 +215,7 @@
 /*button*/
 .c-field-ctrl {
 	position: absolute;
-	top: @c-field-box-padding-top;
+	top: @c-field-padding-top;
 	right: 0;
 
 	// default component style
