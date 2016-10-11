@@ -52,31 +52,7 @@
 
     <main role="main">
 
-        <section class="c-pagination" ui-pagination="{ total: 100, perPage: [20,50,100], current: 80}">
-            <div class="c-pagination__pages">
-                <a href="#prev" class="c-pagination__prev"></a>
-                <a href="#p=1" class="c-pagination__page" aria-disabled="false">1</a>
-                <span class="c-pagination__ellipsis">&hellip;</span>
-                <a href="#p=77" class="c-pagination__page" aria-selected="false">77</a>
-                <a href="#p=78" class="c-pagination__page" aria-selected="false">78</a>
-                <a href="#p=79" class="c-pagination__page" aria-selected="false">79</a>
-                <a href="#p=80" class="c-pagination__page" aria-selected="true">80</a>
-                <a href="#p=81" class="c-pagination__page" aria-selected="false">81</a>
-                <a href="#p=82" class="c-pagination__page" aria-selected="false">82</a>
-                <a href="#p=83" class="c-pagination__page" aria-selected="false">83</a>
-                <span class="c-pagination__ellipsis">&hellip;</span>
-                <a href="#p=100" class="c-pagination__page" aria-disabled="false">100</a>
-                <a href="#next" class="c-pagination__next"></a>
-            </div>
-            <div class="c-pagination__perpage">
-                <a href="#perpage-open" class="c-pagination__perpage__current">20</a>
-                <div class="c-pagination__perpage__values">
-                    <a href="#perpage=20" class="c-pagination__perpage__value">20</a>
-                    <a href="#perpage=20" class="c-pagination__perpage__value">50</a>
-                    <a href="#perpage=20" class="c-pagination__perpage__value">100</a>
-                </div>
-            </div>
-        </section>
+        <section class="c-pagination" ui-pagination="{ page: 6, items: 1234, itemsOnPage: 20, itemsOnPageValues: [100,50,20] }"></section>
 
     </main>
 
