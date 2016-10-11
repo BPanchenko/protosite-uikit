@@ -27,6 +27,14 @@
                 + '</div>'
             + '</div>';
 
+    var observer = new MutationObserver(function(mutations) {
+        var target = mutations[0].target;
+        var attrs = _.stringToObject(target.getAttribute('ui-pagination'));
+        target._uiPagination.model.set(attrs);
+    });
+
+    var paginationOptions = ['page','items','itemsOnPage','itemsOnPageValues'];
+
     var PaginationModel = Backbone.Model.extend({
         name: 'PaginationModel',
         defaults: {
@@ -42,6 +50,7 @@
     var _hns = {
         model: {
             change: function(model){
+                this.el.setAttribute('ui-pagination', JSON.stringify(this.model.pick(paginationOptions)));
                 this.render();
                 return;
             }
@@ -86,8 +95,13 @@
             },
 
             initialize: function(){
-                this.model = new PaginationModel(_.pick(this.options, 'page','items','itemsOnPage','itemsOnPageValues'));
+                this.model = new PaginationModel(_.pick(this.options, paginationOptions));
                 this.listenTo(this.model, 'change', _hns.model.change);
+
+                observer.observe(this.el, {
+                    attributes: true,
+                    attributeFilter: ['ui-pagination']
+                });
             },
 
             template: function () {
