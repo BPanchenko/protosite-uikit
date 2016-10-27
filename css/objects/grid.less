@@ -4,7 +4,7 @@
  * Object:		Grid
  * Description: Seamless Flexbox grid.
  *
- * Elements:	`u-grid-cell`
+ * Elements:	`o-grid-cell`
  *
  ========================================================================== */
 
@@ -12,21 +12,21 @@
 // Variables
 // ========================================================================
 
-@u-grid-unit: (@unit * 1.5);
+@o-grid-unit: (@unit * 1.5);
 
-@u-grid-margin-horizontal: -(@u-grid-unit / 2);
-@u-grid-cell-padding: 0 (@u-grid-unit / 2) @u-grid-unit;
+@o-grid-margin-horizontal: -(@o-grid-unit / 2);
+@o-grid-cell-padding: 0 (@o-grid-unit / 2) @o-grid-unit;
 
 
 /* ========================================================================
-   Object: `u-grid`
+   Object: `o-grid`
  ========================================================================== */
 
-.u-grid {
+.o-grid {
 	display: flex;
 	flex-flow: row wrap;
-	margin-left: @u-grid-margin-horizontal;
-	margin-right: @u-grid-margin-horizontal;
+	margin-left: @o-grid-margin-horizontal;
+	margin-right: @o-grid-margin-horizontal;
 
 	& > * { flex: 0 0 auto; }
 	& > * > * {
@@ -37,9 +37,9 @@
 		width: 100%;
 	}
 }
-	.u-grid__cell {
+	.o-grid__cell {
 		box-sizing: border-box;
-		padding: @u-grid-cell-padding;
+		padding: @o-grid-cell-padding;
 		display: flex;
 		flex-direction: column;
 		& > * { flex: 1 1 auto; }
