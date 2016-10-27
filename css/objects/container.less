@@ -9,32 +9,32 @@
 // Variables
 // ========================================================================
 
-@u-container-padding:                  (4 * @unit) 0;
+@o-container-padding:                  (4 * @unit) 0;
 
-@u-container-width:                   auto;
-@u-container-width-xdesktop:          129.6rem;
-@u-container-width-desktop:           110.4rem;
-@u-container-width-tablet:			   92.8rem;
-@u-container-width-tablet-portrait:   72rem;
-@u-container-width-handset:		   46.4rem;
-@u-container-width-handset-portrait:  32rem;
+@o-container-width:                   auto;
+@o-container-width-xdesktop:          129.6rem;
+@o-container-width-desktop:           110.4rem;
+@o-container-width-tablet:			   92.8rem;
+@o-container-width-tablet-portrait:   72rem;
+@o-container-width-handset:		   46.4rem;
+@o-container-width-handset-portrait:  32rem;
 
 
 // Definition
 // ========================================================================
 
-.u-container {
+.o-container {
 	display: block;
-	width: @u-container-width;
+	width: @o-container-width;
 	margin: 0 auto;
-	padding: @u-container-padding;
+	padding: @o-container-padding;
 }
-.u-container:before,
-.u-container:after {
+.o-container:before,
+.o-container:after {
 	content: " ";
 	display: table;
 }
-.u-container:after { clear: both; }
+.o-container:after { clear: both; }
 
 
 /* Media queries
@@ -42,30 +42,30 @@
 
 // xdesktop
 @media (min-width: @screen-xdesktop) {
-	.u-container { width: @u-container-width-xdesktop; }
+	.o-container { width: @o-container-width-xdesktop; }
 }
 
 // desktop
 @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
-	.u-container { width: @u-container-width-desktop; }
+	.o-container { width: @o-container-width-desktop; }
 }
 
 // tablet-landscape
 @media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
-	.u-container { width: @u-container-width-tablet; }
+	.o-container { width: @o-container-width-tablet; }
 }
 
 // tablet-portrait
 @media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
-	.u-container { width: @u-container-width-tablet-portrait; }
+	.o-container { width: @o-container-width-tablet-portrait; }
 }
 
 // handset-landscape
 @media (min-width: @screen-handset-landscape) and (max-width: @screen-handset-landscape-max) {
-	.u-container { width: @u-container-width-handset; }
+	.o-container { width: @o-container-width-handset; }
 }
 
 // handset-portrait
 @media (max-width: @screen-handset-portrait-max) {
-    .u-container { width: @u-container-width-handset-portrait; }
+    .o-container { width: @o-container-width-handset-portrait; }
 }

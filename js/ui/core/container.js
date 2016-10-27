@@ -58,7 +58,7 @@
     }, 160);
 
     document.addEventListener("DOMContentLoaded", function(){
-        window.UI.container.el = document.body.getElementsByClassName('u-container')[0];
+        window.UI.container.el = document.body.getElementsByClassName('o-container')[0];
         return;
     });
 
