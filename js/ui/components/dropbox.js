@@ -45,7 +45,7 @@
         {
             name: 'Dropbox',
             tagName: 'section',
-            className: 'o-dropbox',
+            className: 'app-dropbox',
             elems: null,
             type: null,
             url: null,
@@ -119,7 +119,8 @@
                 progress: 0,
                 extension: _extension,
                 filename: _filename,
-                type: this.file.type
+                type: this.file.type,
+                size: this.file.size
             });
 
             if (/image\/.+/.test(this.file.type)) {
@@ -147,7 +148,7 @@
                 + '<span class="js-filename"><%= filename %>.<%= extension %></span>'
                 + '<textarea class="c-field js-description"></textarea>'
              + '</div>'
-             + '<div class="c-list__column o-dropbox__controls">'
+             + '<div class="c-list__column app-dropbox__controls">'
                 + '<button class="c-button c-button--link"><i class="iconic" data-glyph="trash"></i></button>'
              + '</div>'
              + '<div class="c-progress"><span class="c-progress__bar js-progress-bar"></span></div>',

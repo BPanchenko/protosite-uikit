@@ -1,0 +1,196 @@
+
+@app-dropbox-target-height: @space-xl;
+@app-dropbox-target-font-size: @body-font-size;
+
+@app-dropbox-placeholder-after-icon-glyph: '\e174';
+
+@app-dropbox-item-padding: .4rem;
+@app-dropbox-item-margin: @space-s 0;
+@app-dropbox-item-background-color: @clr-white;
+@app-dropbox-item-border-radius: .2rem;
+@app-dropbox-item-box-shadow: @shadow-2dp;
+
+@app-dropbox-item-column-margin-horizontal: @space-s / 2;
+
+@app-dropbox-file-preview-size: 8rem;
+
+@app-dropbox-target-background-color: @clr-grey-200;
+@app-dropbox-target-border: .2rem dashed @clr-grey-400;
+@app-dropbox-target-border-radius: .4rem;
+@app-dropbox-target-box-shadow: none;
+
+@app-dropbox-hover-target-background-color: @clr-blue-50;
+@app-dropbox-hover-target-border: .2rem dashed @clr-blue-300;
+@app-dropbox-hover-target-border-radius: .4rem;
+@app-dropbox-hover-target-box-shadow: none;
+
+@app-dropbox-drop-target-background-color: @clr-green-50;
+@app-dropbox-drop-target-border: .2rem dashed @clr-green-300;
+@app-dropbox-drop-target-border-radius: .4rem;
+@app-dropbox-drop-target-box-shadow: none;
+
+
+/* Object: `app-dropbox`
+ ========================================================================== */
+
+.app-dropbox {
+	contain: layout style;
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+
+/* Subobject: `app-dropbox__target`
+ ========================================================================== */
+
+.app-dropbox__target {
+	width: inherit;
+	height: @app-dropbox-target-height;
+
+	background-color: @app-dropbox-target-background-color;
+	border: @app-dropbox-target-border;
+	border-radius: @app-dropbox-target-border-radius;
+	box-sizing: border-box;
+	box-shadow: @app-dropbox-target-box-shadow;
+	cursor: pointer;
+
+	transition-property: background, border, box-shadow;
+	transition-delay: 80ms;
+	transition-timing-function: @easing;
+
+	.c-field[type=file] { display: none; }
+
+	.c-placeholder {
+		position: relative;
+		display: block;
+		width: inherit;
+		line-height: @app-dropbox-target-height;
+
+		font-size: @app-dropbox-target-font-size;
+		text-align: center;
+
+		&::before {
+			content: @app-dropbox-placeholder-after-icon-glyph;
+			font-size: inherit;
+			font-family: 'Iconic';
+			font-weight: normal;
+			font-style: normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			display: inline-block;
+			speak: none;
+			line-height: 1;
+			vertical-align: text-bottom;
+			margin-right: .4rem;
+		}
+
+		&::after {
+			content: '' attr(data-text) '';
+		}
+	}
+}
+
+
+/* Component: `c-list`
+ ========================================================================== */
+
+.app-dropbox {
+	.c-list{}
+	.c-list__item {
+		contain: content;
+		padding: @app-dropbox-item-padding;
+		margin: @app-dropbox-item-margin;
+
+		background-color: @app-dropbox-item-background-color;
+		border-radius: @app-dropbox-item-border-radius;
+		box-shadow: @app-dropbox-item-box-shadow;
+	}
+	.c-list__col {
+		&:nth-child(1) {
+			flex: 0 1 auto;
+		}
+		&:nth-child(2) {
+			flex: 1 0 auto;
+		}
+		&:nth-child(3) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			flex: none;
+			@media (max-width: @screen-tablet-landscape-max) {
+				position: static;
+				flex: 0 1 auto;
+			}
+		}
+	}
+	.c-list__col + .c-list__col {
+		margin-left: @app-dropbox-item-column-margin-horizontal;
+	}
+
+	.c-progress {
+		flex: none;
+
+		position: absolute;
+		right: @app-dropbox-item-padding;
+		bottom: @app-dropbox-item-padding;
+		left: @app-dropbox-file-preview-size + @app-dropbox-item-column-margin-horizontal + @app-dropbox-item-padding;
+
+		margin: 0 !important;
+		height: @app-dropbox-item-padding;
+	}
+}
+
+
+/* Component: `c-thumbnail`
+ ========================================================================== */
+
+.app-dropbox .c-thumbnail {
+	// reset
+	width: auto;
+	padding: 0;
+	margin: 0;
+	box-shadow: none;
+
+	img {
+		width: @app-dropbox-file-preview-size;
+		height: @app-dropbox-file-preview-size;
+		object-fit: cover;
+	}
+}
+
+
+/* Component: `c-field--description` (field with a photo description)
+ ========================================================================== */
+
+/* textarea */
+.app-dropbox .c-field--description {
+	width: 100%;
+}
+
+
+/* State: `is-hover`
+ ========================================================================== */
+
+.app-dropbox.is-hover {
+	.app-dropbox__target {
+		background-color: @app-dropbox-hover-target-background-color;
+		border: @app-dropbox-hover-target-border;
+		border-radius: @app-dropbox-hover-target-border-radius;
+		box-shadow: @app-dropbox-hover-target-box-shadow;
+	}
+}
+
+
+/* State: `is-drop`
+ ========================================================================== */
+
+.app-dropbox.is-drop {
+	.app-dropbox__target {
+		background-color: @app-dropbox-drop-target-background-color;
+		border: @app-dropbox-drop-target-border;
+		border-radius: @app-dropbox-drop-target-border-radius;
+		box-shadow: @app-dropbox-drop-target-box-shadow;
+	}
+}

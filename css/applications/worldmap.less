@@ -1,0 +1,118 @@
+@import "../settings/variables";
+
+/**
+ * Object:		`app-worldmap`
+ * Description: Style of world map.
+ *
+ * Components:	`c-chart`
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@app-worldmap-width: inherit;
+@app-worldmap-height: 40rem;
+@app-worldmap-container-box-shadow: inset 0 .2rem .2rem 0 rgba(0,0,0,.14), 0 .3rem .1rem -.2rem rgba(0,0,0,.2), 0 .1rem .5rem 0 rgba(0,0,0,.12);
+
+@app-worldmap-city-opacity: 1;
+@app-worldmap-city-outside-fill: fade(@clr-white, 20%);
+@app-worldmap-city-outside-stroke: fade(@clr-white, 20%);
+@app-worldmap-city-outside-stroke-width: 2rem;
+@app-worldmap-city-inside-fill: fade(@clr-white, 80%);
+@app-worldmap-city-inside-stroke: none;
+@app-worldmap-city-inside-box-shadow: 0 0 .8rem rgba(0,0,0,.8);
+
+@app-worldmap__boundary-fill: none;
+@app-worldmap__boundary-stroke: #d7d6d1;
+@app-worldmap__boundary-stroke-width: .1rem;
+
+@app-worldmap__land-fill: #E9E8E3;
+@app-worldmap__land-stroke: @app-worldmap__boundary-stroke;
+@app-worldmap__land-stroke-width: .1rem;
+
+/* ========================================================================
+	Object: `app-worldmap`
+ ========================================================================== */
+
+.app-worldmap {
+	width: @app-worldmap-width;
+	height: @app-worldmap-height;
+
+	/*g*/
+	.c-chart__controls {
+		position: absolute;
+		top: 0; right: 0; bottom: 0;
+		z-index: 6;
+	}
+
+	/* g*/
+	.c-chart__tracker {
+		position: absolute;
+		top: auto;
+		right: 3rem;
+		bottom: 50%;
+		transform: rotate(90deg);
+	}
+
+	/*section*/
+	.c-chart__container {
+		position: relative;
+		width: 92%;
+		height: @app-worldmap-height;
+		overflow: hidden;
+
+		text-align: center;
+		background-color: #D5D5DD;
+		border-radius: .3rem;
+		box-shadow: @app-worldmap-container-box-shadow;
+	}
+
+	/*svg*/
+	.c-chart__svg {
+		position: relative;
+		z-index: 1;
+		transition: transform 160ms @easing;
+	}
+
+	/*g*/
+	.c-chart__marker {
+		opacity: @app-worldmap-city-opacity;
+	}
+	.c-chart__marker-outside {
+		fill: @app-worldmap-city-outside-fill;
+		stroke: @app-worldmap-city-outside-stroke;
+		stroke-width: @app-worldmap-city-outside-stroke-width;
+
+		transform-origin: 50% 50%;
+	}
+
+	.c-chart__marker-inside {
+		fill: @app-worldmap-city-inside-fill;
+		stroke: none;
+		box-shadow: @app-worldmap-city-inside-box-shadow;
+
+		transform-origin: 50% 50%;
+	}
+}
+
+.app-worldmap__boundary {
+	fill: @app-worldmap__boundary-fill;
+	stroke: @app-worldmap__boundary-stroke;
+	stroke-width: @app-worldmap__boundary-stroke-width;
+}
+
+.app-worldmap__land {
+	fill: @app-worldmap__land-fill;
+	stroke: @app-worldmap__land-stroke;
+	stroke-width: @app-worldmap__land-stroke-width;
+}
+
+.app-worldmap__graticule {
+	display: none;
+	fill: none;
+	stroke: #777;
+	stroke-width: .5px;
+	stroke-opacity: .5;
+}
