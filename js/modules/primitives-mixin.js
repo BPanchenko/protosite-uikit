@@ -1,32 +1,36 @@
 
 // (1).ci('cущност|ей|ь|и')
-if (!Number.prototype.ci)
-    Number.prototype.ci = function (c, f) {
+if (!Number.prototype.ci) {
+	Number.prototype.ci = function (c, f) {
 		f || (f = true);
-        c = c.split('|');
-        var n = this.toString().substr(-2), res = f ? this + ' ' : '';
-        return res + c[0] + ((/^[0,2-9]?[1]$/.test(n)) ? c[2] : ((/^[0,2-9]?[2-4]$/.test(n)) ? c[3] : c[1]));
-    }
+		c = c.split('|');
+		var n = this.toString().substr(-2), res = f ? this + ' ' : '';
+		return res + c[0] + ((/^[0,2-9]?[1]$/.test(n)) ? c[2] : ((/^[0,2-9]?[2-4]$/.test(n)) ? c[3] : c[1]));
+	};
+}
 
-if (!Number.prototype.pad)
-    Number.prototype.pad = function (size) {
-        var s = this + "";
-        while (s.length < size) s = "0" + s;
-        return s;
-    }
+if (!Number.prototype.pad) {
+	Number.prototype.pad = function (size) {
+		var s = this + "";
+		while (s.length < size) s = "0" + s;
+		return s;
+	};
+}
 
-if (!Number.prototype.separate)
+if (!Number.prototype.separate) {
 	Number.prototype.separate = function(sep, bits) {
 		var s = sep || '&thinsp;',
 			b = parseInt(bits) || 3,
 			n = this+'';
 		return n.replace(/\d(?=(\d{3})+[^\d])/g, '$&'+sep);
-	}
+	};
+}
 
-if (!Number.prototype.toBoolean)
-    Number.prototype.toBoolean = function () {
-        return !!+this;
-    }
+if (!Number.prototype.toBoolean) {
+	Number.prototype.toBoolean = function () {
+		return !!+this;
+	};
+}
 
 if (!Number.prototype.toWord) {
 	Number.prototype.toWord = function() {
@@ -101,29 +105,8 @@ if (!Number.prototype.toWord) {
 	}
 }
 
-if (!String.prototype.toBoolean)
-    String.prototype.toBoolean = function () {
-        return ['false', '0', ''].indexOf(this.toLowerCase()) === -1;
-    }
-
-if (_) {
-    s && _.mixin(s.exports());
-
-    _.mixin({
-        'objectToQuery': function(obj) {
-            return Object.keys(obj).map(function(key) {
-                return encodeURIComponent(key) + '=' +
-                encodeURIComponent(obj[key]);
-            }).join('&');
-        },
-        'stringToObject': function(string) {
-            string = string.replace(/'/g, '"');
-            string = string.replace(/([a-zA-Z0-9]+):/g, function(match, group, i) {
-                var count = string.substring(0, i).match(/"/g);
-                return (!count || count.length % 2 === 0 ? '"' + group + '":' : group + ':');
-            });
-
-            return JSON.parse(string);
-        }
-    });
+if (!String.prototype.toBoolean) {
+	String.prototype.toBoolean = function () {
+		return ['false', '0', ''].indexOf(this.toLowerCase()) === -1;
+	};
 }

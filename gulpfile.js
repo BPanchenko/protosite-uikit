@@ -43,10 +43,13 @@ gulp.task('build-css', function () {
 
 gulp.task('build-js-libs', function () {
     gulp.src([
+        './js/modules/primitives-mixin.js',
         './node_modules/underscore/underscore.js',
         './node_modules/underscore.string/dist/underscore.string.js',
+        './js/modules/underscore-mixin.js',
         './node_modules/jquery/dist/jquery.js',
         './node_modules/backbone/backbone.js',
+        './js/modules/backbone-addon.js',
         './node_modules/moment/min/moment-with-locales.js'
     ])
         .pipe(concat('ui-libs.js'))
@@ -58,8 +61,6 @@ gulp.task('build-js-libs', function () {
 
 gulp.task('build-js-ui-core', function () {
     gulp.src([
-        './js/common.js',
-        './js/backbone.extend.js',
         './js/ui/UI.js',
         './js/ui/core/backdrop.js',
         './js/ui/core/container.js',
