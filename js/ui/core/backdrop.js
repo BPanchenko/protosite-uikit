@@ -1,4 +1,4 @@
-;(function(UI){
+(function(UI){
 
     UI.backdrop = new (Backbone.View.extend({
         name: 'BackdropView',

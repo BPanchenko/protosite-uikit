@@ -1,4 +1,4 @@
-;(function (Backbone, _) {
+(function (Backbone, _) {
 
     // {object} UI
 

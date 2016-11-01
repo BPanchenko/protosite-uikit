@@ -11,6 +11,12 @@
  * 
  ========================================================================== */
 
+@li-background: var(--svg-square) no-repeat .8rem 1rem;
+@li-background-size: .4rem .4rem;
+@li-margin-vertical: .8rem;
+@li-padding-left: 1.6rem;
+
+@li-nested-margin-vertical: 0;
 
 /* ========================================================================
    Component: Unordered list
@@ -27,22 +33,25 @@ ul {
  */
 
 ul > li {
-	padding-left: 1.7rem;
-	margin-bottom: (@unit / 2);
-	background: url('/vendor/svg/square.svg') no-repeat (@unit / 2) (@unit / 1.6);
-	background-size: (@unit / 4) (@unit / 4);
+	padding-left: @li-padding-left;
+	margin-top: @li-margin-vertical;
+	margin-bottom: @li-margin-vertical;
+	background: @li-background;
+	background-size: @li-background-size;
 }
-ul li:last-child { margin-bottom: 0; }
 
 
 /*
  * Nested list
  */
 
-ul ul {
+ul > li > ul {
     margin: 0;
-    padding-left: @unit;
     list-style: none;
+}
+ul > li > ul > li {
+	margin-top: @li-nested-margin-vertical;
+	margin-bottom: @li-nested-margin-vertical;
 }
 
 
@@ -57,9 +66,15 @@ ol {
 ol > li {
 	background: none;
 	padding-left: 0;
+	margin-top: @li-margin-vertical;
+	margin-bottom: @li-margin-vertical;
 }
 
 // Nested list
-ol ol {
+ol > li > ol {
 	list-style: lower-alpha;
+}
+ol > li > ol > li {
+	margin-top: @li-nested-margin-vertical;
+	margin-bottom: @li-nested-margin-vertical;
 }

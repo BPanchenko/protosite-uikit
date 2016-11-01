@@ -69,12 +69,15 @@
 @c-field-invalid-background-color: @clr-red-50;
 @c-field-invalid-border-color: 1px solid @clr-red-400;
 
+.c-field-box { outline: 1px dashed ; }
 
 /* Component: `c-field`
  ========================================================================== */
 
 .c-field {
 	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
 
 	display: inline-block;
 	width: 100%;
@@ -146,7 +149,9 @@
 	color: @c-field-label-color;
 	cursor: pointer;
 
-	transition: left 160ms @easing, font-size 160ms @easing, color 160ms @easing, top 160ms @easing;
+	transition-property: left, top, font-size, color;
+	transition-duration: 160ms;
+	transition-animation: @easing;
 }
 
 // Modifiers: `is-focused` and `is-filled`
@@ -160,16 +165,6 @@
 
 .c-field.is-focused .c-field-label {
 	color: @c-field-focused-label-color;
-}
-
-
-/* Element: `c-field-value` (the field used for file selection)
- ========================================================================== */
-
-.c-field-value {
-	position: absolute;
-	top: @c-field-padding-top;
-	left: 0;
 }
 
 

@@ -1,19 +1,19 @@
-;(function(UI){
+(function(UI){
 
     var checkPattern = _.debounce(function () {
         var $input = $(this),
-            $container = $input.parents('.c-field').eq(0),
+            $box = $input.parents('.c-field-box').eq(0),
             value = $input.val(),
             pattern = $input.attr('pattern');
 
         if(value) {
-            var reg = new RegExp(pattern);
+            let reg = new RegExp(pattern);
             if(reg.test(value))
-                $container.addClass('is-valid').removeClass('is-invalid');
+                $box.addClass('is-valid').removeClass('is-invalid');
             else
-                $container.addClass('is-invalid').removeClass('is-valid');
+                $box.addClass('is-invalid').removeClass('is-valid');
         } else
-            $container.removeClass('is-valid is-invalid');
+            $box.removeClass('is-valid is-invalid');
 
         return;
     }, 150);
@@ -34,18 +34,18 @@
 
     var onChangeFieldSearch = _.debounce(function (e) {
         var $input = $(this),
-            $container = $input.parent('.c-field'),
+            $box = $input.parents('.c-field-box').eq(0),
             value = $input.val();
 
-        value && $container.removeClass('is-invalid');
+        value && $box.removeClass('is-invalid');
 
         return;
     }, 150);
 
     var onClickButton = function(e) {
         var $this = $(this),
-            $container = $this.parent('.c-field'),
-            $input = $this.siblings('.c-field-input').eq(0),
+            $box = $this.parent('.c-field-box'),
+            $input = $this.siblings('.c-field').eq(0),
             $icon = $this.find('.iconic').eq(0);
 
         // processing the password field
@@ -60,7 +60,8 @@
         // processing the search field
         if($icon.data('glyph') == 'loupe' && !$input.val()) {
             e.preventDefault();
-            $container.addClass('is-invalid');
+            $box.addClass('is-invalid');
+            $input.addClass('is-invalid');
         }
 
         return;
@@ -111,7 +112,18 @@
         }
         // staticProps
         , {
-            selector: '.c-field-box, .c-field'
+            selector: '.c-field'
         }
     );
+
+    /** Init component on elements */
+
+    UI.dom.on('ready change', function(doc, options){
+        var attrName = UI.Pagination.selector.replace(/[\[\]]/g,'');
+        $(UI.Field.selector).each(function(){
+            if(!this._uiField) {
+                console.log((new UI.Field(this, {})).render());
+            }
+        });
+    });
 }(UI));

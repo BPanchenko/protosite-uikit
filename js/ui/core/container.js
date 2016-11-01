@@ -1,4 +1,4 @@
-;(function(UI){
+(function(UI){
 
     // Window
 

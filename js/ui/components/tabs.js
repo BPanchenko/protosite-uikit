@@ -1,4 +1,4 @@
-;(function(UI){
+(function(UI){
 	
 	function _activateView() {
 		if(!this.elems.views.length)
