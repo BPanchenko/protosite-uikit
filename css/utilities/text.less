@@ -13,8 +13,8 @@
 // Variables
 // ========================================================================
 
-@u-text-caption-font-family:                      @body-font-family-caption;
-@u-text-cursive-font-family:                      @body-font-family-cursive;
+@u-text-caption-font-family: @body-font-family-caption;
+@u-text-cursive-font-family: @body-font-family-cursive;
 
 @u-text-color:			@body-color;
 @u-text-muted-color:    #999;
@@ -24,7 +24,7 @@
 @u-text-danger-color:   #d85030;
 @u-text-contrast-color: #fff;
 
-@u-text-large-font-size: @unit;
+@u-text-large-font-size: 1.6rem;
 @u-text-large-line-height: normal;
 
 
@@ -49,20 +49,16 @@
 /* Size modifiers
  ========================================================================== */
 
+.u-text-large {
+	font-size: @u-text-large-font-size;
+	line-height: @u-text-large-line-height;
+}
+
 .u-text-small {
 	font-size: @small-font-size;
 	line-height: @small-line-height;
 }
 
-.u-text-xsmall {
-	font-size: @xsmall-font-size;
-	line-height: @small-line-height;
-}
-
-.u-text-large {
-	font-size: @u-text-large-font-size;
-	line-height: @u-text-large-line-height;
-}
 
 /* Color modifiers
  ========================================================================== */

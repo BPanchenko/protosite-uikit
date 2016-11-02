@@ -33,6 +33,7 @@
 
 @c-article-padding: @unit;
 @c-article-margin: @unit 0 (@unit * 2.5) 0;
+@c-article-max-width: @c-article-lead-max-width + @c-article-panel-padding-right + @c-article-panel-padding-left;
 
 @c-article-header-margin-bottom: 1.6rem;
 @c-article-header-line-height: 4.4rem;
@@ -67,29 +68,27 @@
 @c-article-picture-background-size: cover;
 
 
-@c-article-lead-font-family: "Open Sans",  sans-serif;
+@c-article-lead-font-family: inherit;
 @c-article-lead-font-size: 1.6rem;
 @c-article-lead-font-style: italic;
 @c-article-lead-font-font-weight: 600;
 @c-article-lead-line-height: 2.8rem;
 @c-article-lead-color: @body-color-caption;
 @c-article-lead-max-width: 74rem;
-@c-article-lead-margin-top: 2.1rem; // .8rem
+@c-article-lead-margin-top: 2.1rem;
 @c-article-lead-margin-bottom: 1.9rem;
 
-
 @c-article-paragraph-max-width: 60rem;
-@c-article-paragraph-max-width-xdesktop: 56rem;
-@c-article-panel-paragraph-margin-left: 4rem;
 
-@c-article-paragraph-font-family: "Open Sans", sans-serif;
-@c-article-paragraph-font-size: 1.4rem;
-@c-article-paragraph-font-font-weight: 400;
-@c-article-paragraph-line-height: 2.4rem;
 
 @c-article-paragraph-img-left-margin: .3rem 1.2rem 0 .8rem;
 @c-article-paragraph-img-right-margin: .3rem .8rem 0 1.2rem;
 @c-article-paragraph-img-max-height: 11.8rem;
+
+@c-article-panel-padding-top: @space-m;
+@c-article-panel-padding-right: @space-xl;
+@c-article-panel-padding-bottom: @space-m;
+@c-article-panel-padding-left: @space-l;
 
 
 /* ========================================================================
@@ -97,9 +96,9 @@
  ========================================================================== */
 
 .c-article {
-	display: inline-block;
 	padding: @c-article-padding;
 	margin: @c-article-margin;
+	max-width: @c-article-max-width;
 
 	// Micro clearfix to make articles more robust
 	&::before,
@@ -147,14 +146,9 @@
 	}
 
 	p {
-		display: inline-block;
-		width: @c-article-paragraph-max-width;
+		display: block;
 		vertical-align: text-top;
-
-		font-family: @c-article-paragraph-font-family;
-		font-size: @c-article-paragraph-font-size;
-		font-weight: @c-article-paragraph-font-font-weight;
-		line-height: @c-article-paragraph-line-height;
+		max-width: @c-article-paragraph-max-width;
 
 		figure {
 			display: inline-block;
@@ -214,9 +208,10 @@ p.c-article-lead img {
  ========================================================================== */
 
 .c-article.c-panel {
-	p:not(.c-article-lead) {
-		margin-left: @c-article-panel-paragraph-margin-left;
-	}
+	padding-top: @c-article-panel-padding-top;
+	padding-right: @c-article-panel-padding-right;
+	padding-bottom: @c-article-panel-padding-bottom;
+	padding-left: @c-article-panel-padding-left;
 }
 
 /* Element: `c-article-lead`
@@ -229,7 +224,7 @@ p.c-article-lead {
 	margin-top: @c-article-lead-margin-top;
 	margin-bottom: @c-article-lead-margin-bottom;
 
-	font-family: @c-article-paragraph-font-family;
+	font-family: @c-article-lead-font-family;
 	font-size: @c-article-lead-font-size;
 	font-style: @c-article-lead-font-style;
 	font-weight: @c-article-lead-font-font-weight;
@@ -275,50 +270,5 @@ p.c-article-lead {
 		width: 100%;
 		display: block;
 		clear: both;
-	}
-}
-
-
-/* Media queries
- ========================================================================== */
-
-/* xdesktop and bigger */
-@media (min-width: @screen-xdesktop) {
-	.c-article {
-		p:not(.c-article-lead) {
-			width: @c-article-paragraph-max-width-xdesktop;
-		}
-
-		p:not(.c-article-lead):nth-child(even) + p:not(.c-article-lead):nth-child(odd) {
-			margin-left: @c-article-panel-paragraph-margin-left;
-		}
-	}
-}
-
-/* desktop */
-@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
-
-}
-
-/* tablet-landscape */
-@media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
-
-}
-
-/* tablet-portrait */
-@media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
-	.c-article {
-		p {
-			margin-left: 0 !important;
-		}
-	}
-}
-
-/* handset-landscape and smaller */
-@media (max-width: @screen-handset-landscape-max) {
-	.c-article {
-		p {
-			margin-left: 0 !important;
-		}
 	}
 }

@@ -34,6 +34,7 @@ b, .u-text-semibold { font-weight: 600; }
 b > b, strong, .u-text-bold { font-weight: 700; }
 strong > strong, .u-text-extrabold { font-weight: 800; }
 
+
 /* Size modifiers
  ========================================================================== */
 
@@ -41,11 +42,6 @@ small {
 	font-size: @small-font-size;
 	line-height: @small-line-height;
 }
-small > small {
-	font-size: @xsmall-font-size;
-	line-height: @small-line-height;
-}
-
 
 
 /* Text-level semantics
@@ -65,13 +61,16 @@ code,
 kbd,
 samp { white-space: nowrap; }
 ins {
-	background: #e6ee9c;
-	color: #212121;
+	display: inline-block;
+	margin: 0 -.2rem;
+	padding: 0 .2rem;
+	background-color: @clr-green-100;
+	color: @clr-grey-900;
 	text-decoration: none;
 }
 mark {
-	background: #e6ee9c;
-	color: #424242;
+	background-color: @selection-background-color;
+	color: @selection-color;
 	text-decoration: none;
 }
 i,
@@ -108,47 +107,46 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
 	font-family: @body-font-family-caption;
-	font-weight: 400;
-	text-transform: none;
 	color: @body-color-caption;
 }
-* + h1,
-* + h2,
-* + h3,
-* + h4,
-* + h5,
-* + h6 {
-	margin-top: @unit;
-}
+
 h1,
 .u-h1 {
 	font-size: @h1-font-size;
+	font-weight: @h1-font-weight;
 	line-height: @h1-line-height;
+	margin: @h1-margin;
 	text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
 }
 h2,
 .u-h2 {
 	font-size: @h2-font-size;
+	font-weight: @h2-font-weight;
 	line-height: @h2-line-height;
+	margin: @h2-margin;
 }
 h3,
 .u-h3 {
 	font-size: @h3-font-size;
+	font-weight: @h3-font-weight;
 	line-height: @h3-line-height;
+	margin: @h3-margin;
 }
 h4,
 .u-h4 {
 	font-size: @h4-font-size;
+	font-weight: @h4-font-weight;
 	line-height: @h4-line-height;
+	margin: @h4-margin;
 }
 h5,
 .u-h5 {
 	font-family: @body-font-family;
 	font-size: @h5-font-size;
-	font-weight: 600;
+	font-weight: @h5-font-weight;
 	line-height: @h5-line-height;
+	margin: @h5-margin;
 }
 h6,
 .u-h6 {
@@ -156,6 +154,7 @@ h6,
 	font-size: @h6-font-size;
 	font-weight: @h6-font-weight;
 	line-height: @h6-line-height;
+	margin: @h6-margin;
 }
 
 h1 a,
@@ -165,14 +164,13 @@ h4 a,
 h5 a,
 h6 a { color: @body-color-caption; }
 
-hgroup {
-	line-height: 1.2;
-	display: inline-block;
-	vertical-align: middle;
 
-	h1, h2, h3, h4, h5, h6,
-	.u-h1, .u-h2, .u-h3, .u-h4, .u-h5, .u-h6 {
-		line-height: 1;
-		margin: 0 !important;
-	}
+/* Paragraph
+ ========================================================================== */
+
+p {
+	font-family: inherit;
+	font-size: @paragraph-font-size;
+	font-weight: @paragraph-font-font-weight;
+	line-height: @paragraph-line-height;
 }

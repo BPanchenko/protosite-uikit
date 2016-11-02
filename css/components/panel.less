@@ -16,7 +16,10 @@
 @c-panel-background: white;
 @c-panel-border-radius: .2rem;
 @c-panel-box-shadow: @shadow-3dp;
-@c-panel-padding: @unit;
+@c-panel-padding: @space-m;
+
+@c-panel-head-border-bottom: 1px solid @clr-grey-300;
+@c-panel-head-padding-bottom: @space-s;
 
 
 /* ========================================================================
@@ -32,7 +35,6 @@
 	border-radius: @c-panel-border-radius;
 	box-shadow: @c-panel-box-shadow;
 	box-sizing: border-box;
-	overflow: hidden;
 
 	// Micro clearfix to make articles more robust
 	&::before,
@@ -71,17 +73,14 @@
  ========================================================================== */
 
 .c-panel__head {
-	border-bottom: 1px solid @clr-grey-300;
-	float: left;
+	border-bottom: @c-panel-head-border-bottom;
+	padding-bottom: @c-panel-head-padding-bottom;
 }
 
-	.c-panel__head__hgroup {
-		line-height: 1.2;
-		h1,h2,h3,h4,h5,h6 { margin: 0; }
-	}
-
-.c-panel__controls {
+.c-panel__head__toolbar {
+	display: inline-block;
 	float: right;
+	vertical-align: middle;
 }
 
 
@@ -89,7 +88,6 @@
  ========================================================================== */
 
 .c-panel__body {
-	font-size: @body-font-size;
 
 	// Micro clearfix to make the body panel more robust
 	&::before,
@@ -100,7 +98,7 @@
 	}
 }
 .c-panel__head + .c-panel__body {
-	padding: (@unit / 2) 0 @unit;
+	margin-top: @c-panel-padding;
 }
 
 
