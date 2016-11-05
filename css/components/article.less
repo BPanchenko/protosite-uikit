@@ -83,6 +83,7 @@
 
 @c-article-paragraph-img-left-margin: .3rem 1.2rem 0 .8rem;
 @c-article-paragraph-img-right-margin: .3rem .8rem 0 1.2rem;
+@c-article-paragraph-img-max-width: 19rem;
 @c-article-paragraph-img-max-height: 11.8rem;
 
 @c-article-panel-padding-top: @space-m;
@@ -99,13 +100,6 @@
 	padding: @c-article-padding;
 	margin: @c-article-margin;
 	max-width: @c-article-max-width;
-
-	// Micro clearfix to make articles more robust
-	&::before,
-	&::after {
-		content: "";
-		display: table;
-	}
 
 	header {
 		line-height: @c-article-header-line-height;
@@ -150,6 +144,14 @@
 		vertical-align: text-top;
 		max-width: @c-article-paragraph-max-width;
 
+		// Micro clearfix to make articles more robust
+		&::before,
+		&::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
 		figure {
 			display: inline-block;
 			padding: 0;
@@ -177,12 +179,6 @@
 				clear: both;
 			}
 		}
-
-
-		img {
-
-		}
-
 	}
 }
 
@@ -192,10 +188,24 @@
 
 .c-article p img,
 p.c-article-lead img {
-	float: left;
-	width: auto;
 	max-height: @c-article-paragraph-img-max-height;
-	margin: @c-article-paragraph-img-left-margin;
+}
+
+.c-article p img {
+	display: block;
+	width: auto;
+	margin: 0 auto;
+
+	&[align="left"],
+	&[align="right"] {
+		display: inline-block;
+		max-width: @c-article-paragraph-img-max-width;
+	}
+
+	&[align="left"] {
+		float: left;
+		margin: @c-article-paragraph-img-left-margin;
+	}
 
 	&[align="right"] {
 		float: right;
