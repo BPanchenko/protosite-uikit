@@ -80,6 +80,12 @@ template {
 	color: @selection-color;
 	text-shadow: @selection-text-shadow;
 }
+*[unselectable="on"] {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 
 /* Horizontal rule
