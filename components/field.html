@@ -54,7 +54,7 @@
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
                         <label class="c-field-box">
                             <span class="c-field-label">Текст</span>
-                            <input type="text" class="c-field" role="textbox">
+                            <input type="text" name="text" class="c-field" role="textbox">
                         </label>
                     </div>
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
@@ -71,40 +71,36 @@
                             <span class="c-field-icon">
                                 <i class="iconic" data-glyph="envelope-closed"></i>
                             </span>
-                            <span class="c-field-label">Email</span>
-                            <input type="email" class="c-field" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" role="textbox">
+                            <input type="email" class="c-field" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" role="textbox" placeholder="Адрес вашей электронной почты">
                             <span class="c-field-error">Некорректный e-mail</span>
                         </label>
                     </div>
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
                         <label class="c-field-box">
-                            <span class="c-field-icon">
-                                <i class="iconic" data-glyph="data-transfer-download"></i>
-                            </span>
-                            <span class="c-field-label">Выбрать файл...</span>
-                            <input type="file" class="c-field">
-                            <span class="c-field-value"></span>
+                            <input type="search" name="q" class="c-field" role="textbox" placeholder="Введите поисковый запрос">
+                            <span class="c-field-error">Не указан поисковый запрос</span>
+                            <button type="submit" class="c-field-button">
+                                <span class="iconic" data-glyph="loupe"></span>
+                            </button>
                         </label>
                     </div>
 
                     <!-- row -->
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
-                        <form>
-                            <label class="c-field-box">
-                                <span class="c-field-label">Поиск</span>
-                                <input type="search" name="q" class="c-field" role="textbox">
-                                <span class="c-field-error">Не указан поисковый запрос</span>
-                                <button type="submit" class="c-field-ctrl">
-                                    <span class="iconic" data-glyph="loupe"></span>
-                                </button>
-                            </label>
-                        </form>
+                        <label class="c-field-box">
+                            <span class="c-field-label">Выбрать файл...</span>
+                            <span class="c-field-icon">
+                                <i class="iconic" data-glyph="data-transfer-download"></i>
+                            </span>
+                            <input type="file" class="c-field">
+                            <span class="c-field-value"></span>
+                        </label>
                     </div>
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@handset-landscape">
                         <label class="c-field-box">
                             <span class="c-field-label">Пароль</span>
                             <input type="password" name="password" class="c-field" role="textbox">
-                            <button type="button" class="c-field-ctrl">
+                            <button type="button" class="c-field-button">
                                 <span class="iconic" data-glyph="eye-closed"></span>
                             </button>
                         </label>
@@ -138,9 +134,6 @@
                         <label class="c-field-box">
                             <span class="c-field-label">Поле ввода текста</span>
                             <textarea name="text" class="c-field" role="textbox"></textarea>
-                            <span class="c-field-icon">
-                                <i class="iconic" data-glyph="envelope-closed"></i>
-                            </span>
                         </label>
                     </div>
 
