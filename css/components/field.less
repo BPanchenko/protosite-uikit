@@ -21,32 +21,29 @@
 // ========================================================================
 
 @c-field-height: 2.8rem;
-@c-field-box-padding-top: 1.6rem;
 @c-field-padding-right: .4rem;
-@c-field-box-padding-bottom: 1.6rem;
 @c-field-padding-left: .4rem;
+@c-field-font-size: @body-font-size;
+@c-field-line-height: @body-line-height;
 
 @c-field-background-color: #fdfdfd;
 @c-field-border-color: @clr-grey-500;
-@c-field-border-width: 1px;
+@c-field-border-width: .1rem;
 @c-field-border-style: solid;
 @c-field-border-radius: .2rem;
 @c-field-shadow: inset 0 0 .2rem @clr-grey-400, 0 0 0 @clr-blue-400;
 @c-field-outline: none;
 
-
-@c-field-box-height: 6rem;
-
-@c-field-label-top: @c-field-label-line-height + .2rem;
-@c-field-label-left: @c-field-padding-left + .1rem;
-@c-field-label-font-size: @body-font-size;
-@c-field-label-line-height: @c-field-height;
+@c-field-label-top: @c-field-border-width;
+@c-field-label-left: @c-field-padding-left + @c-field-border-width;
+@c-field-label-font-size: 1.3rem;
+@c-field-label-line-height: 1.8rem;
 @c-field-label-color: @clr-grey-600;
 @c-field-label-left-after-icon: @c-field-icon-width;
 
-@c-field-error-font-size: 1.1rem;
+@c-field-error-font-size: 1rem;
 @c-field-error-font-weight: 700;
-@c-field-error-line-height: 1.2;
+@c-field-error-line-height: 1.4rem;
 @c-field-error-color: @clr-red-400;
 
 @c-field-button-width: @c-field-height;
@@ -68,7 +65,6 @@
 @c-field-invalid-background-color: @clr-red-50;
 @c-field-invalid-border-color: 1px solid @clr-red-400;
 
-.c-field-box { outline: 1px dashed @clr-amber-A700; }
 
 /* Component: `c-field`
  ========================================================================== */
@@ -80,9 +76,12 @@
 
 	display: inline-block;
 	width: 100%;
-	line-height: @c-field-height;
+	height: @c-field-height;
+	line-height: @c-field-line-height;
 
+	padding-top: 0;
 	padding-left: @c-field-padding-left;
+	padding-bottom: 0;
 	padding-right: @c-field-padding-right;
 
 	background-color: @c-field-background-color;
@@ -90,11 +89,12 @@
 	border-width: @c-field-border-width;
 	border-style: @c-field-border-style;
 	border-radius: @c-field-border-radius;
+	outline: @c-field-outline;
 	box-shadow: @c-field-shadow;
 	box-sizing: border-box;
 	cursor: pointer;
 
-	outline: @c-field-outline;
+	font-size: @c-field-font-size;
 
 	transition-property: background-color, border-color, box-shadow;
 	transition-duration: 160ms;
@@ -114,14 +114,19 @@
 	border-color: @c-field-invalid-border-color;
 }
 
+textarea.c-field {
+	min-height: 3 * @c-field-font-size * @c-field-line-height;
+}
 
-/* Parent element: `c-field-box`
+/* Wrapper: `c-field-box`
  ========================================================================== */
 
 .c-field-box {
 	position: relative;
-	display: inline-block;
+	display: block;
 	contain: layout style;
+	font-size: 0.001px;
+	// outline: 1px dashed @clr-amber-A700;
 }
 
 
@@ -130,28 +135,48 @@
 
 .c-field-label {
 	display: inline-block;
-	position: relative;
-	top: @c-field-label-top;
-	left: @c-field-label-left;
+	padding-left: @c-field-padding-left;
 
 	font-size: @c-field-label-font-size;
 	line-height: @c-field-label-line-height;
 
 	color: @c-field-label-color;
+	cursor: pointer;
 
-	transition-property: left, top, font-size, color;
+	transition-property: left, top, font-size, line-height, color;
 	transition-duration: 160ms;
 	transition-animation: @easing;
+
+	// Micro clearfix to make articles more robust
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
+::-webkit-input-placeholder {
+	color: @c-field-label-color;
+}
+::-moz-placeholder {
+	color: @c-field-label-color;
+}
+:-ms-input-placeholder {
+	color: @c-field-label-color;
+}
+
+// Style of label after checkbox or radiobutton
 input[type=checkbox] + .c-field-label,
 input[type=radio] + .c-field-label {
 	position: static;
-	cursor: pointer;
 	transition: none;
 }
 
-// Modifiers: `is-focused` and `is-filled`
+
+/* Modifiers: `is-focused` and `is-filled`
+ ========================================================================== */
+
 .c-field-box.is-filled .c-field-label,
 .c-field-box.is-focused .c-field-label {
 	top: @c-field-focused-label-top;
@@ -165,34 +190,42 @@ input[type=radio] + .c-field-label {
 }
 
 
-/* Elements: `c-field-icon` and `c-field-value`
- * (`c-field-value` is used for the field file selection)
+/* Element: `c-field-icon`
  ========================================================================== */
 
-.c-field-icon,
-.c-field-value {
+.c-field-icon {
 	position: absolute;
-	top: @c-field-box-padding-top;
+	top: 0;
+	left: 0;
+	z-index: 5;
 
 	display: inline-block;
-	height: @c-field-icon-height;
-	line-height: @c-field-icon-height + .3rem;
-}
-
-.c-field-icon {
 	width: @c-field-icon-width;
+	height: @c-field-icon-height;
+	line-height: @c-field-icon-height;
+
+	font-size: 1.6rem;
 	text-align: center;
 	text-shadow: @c-field-icon-text-shadow;
+
+	.iconic {
+		vertical-align: middle;
+	}
+}
+
+.c-field-label + .c-field-icon,
+.c-field-label + .c-field + .c-field-icon {
+	top: @c-field-label-line-height;
 }
 
 .c-field-icon + .c-field-label {
 	left: @c-field-label-left-after-icon;
 }
 
-.c-field-icon + .c-field-input,
-.c-field-icon + .c-field-input + .c-field-value,
-.c-field-icon + .c-field-label + .c-field-input,
-.c-field-icon + .c-field-label + .c-field-input + .c-field-value {
+.c-field-icon + .c-field,
+.c-field-icon + .c-field + .c-field-value,
+.c-field-icon + .c-field-label + .c-field,
+.c-field-icon + .c-field-label + .c-field + .c-field-value {
 	padding-left: @c-field-label-left-after-icon;
 }
 
@@ -201,13 +234,25 @@ input[type=radio] + .c-field-label {
 }
 
 
+/* Element: `c-field-value` (used for the field file selection)
+ ========================================================================== */
+
+.c-field-value {
+	.c-field;
+}
+input[type=file] { opacity: 0; }
+input[type=file] + .c-field-value {
+	position: absolute;
+	left: 0;
+}
+
+
 /* Element: `c-field-button`
  ========================================================================== */
 
 /*button*/
-.c-field-ctrl {
+.c-field-button {
 	position: absolute;
-	top: @c-field-box-padding-top;
 	right: 0;
 
 	// default component style
@@ -218,10 +263,14 @@ input[type=radio] + .c-field-label {
 	border: none;
 	box-shadow: none;
   	padding: 0;
-	min-height: auto;
+	min-height: 0;
 
 	width: @c-field-button-width;
 	height: @c-field-button-height;
+
+	.iconic {
+		vertical-align: middle;
+	}
 }
 
 
@@ -229,7 +278,13 @@ input[type=radio] + .c-field-label {
  ========================================================================== */
 
 .c-field-error {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translateY(100%);
 	display: inline-block;
+	padding-left: @c-field-padding-left;
+
 	font-size: @c-field-error-font-size;
 	font-weight: @c-field-error-font-weight;
 	line-height: @c-field-error-line-height;
@@ -244,4 +299,16 @@ input[type=radio] + .c-field-label {
 .c-field-box.is-invalid .c-field-error,
 .c-field.is-invalid + .c-field-error {
 	opacity: 1;
+}
+
+
+/* Style: `s-floating`
+ ========================================================================== */
+
+.s-floating.c-field-box {
+	.c-field-label {
+		position: absolute;
+		top: @c-field-label-top;
+		left: @c-field-label-left;
+	}
 }
