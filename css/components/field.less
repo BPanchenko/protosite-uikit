@@ -20,13 +20,15 @@
 // Variables
 // ========================================================================
 
-@c-field-height: 2.8rem;
+@c-field-height: 3.2rem;
+@c-field-padding-top: .2rem;
 @c-field-padding-right: .4rem;
+@c-field-padding-bottom: .2rem;
 @c-field-padding-left: .4rem;
 @c-field-font-size: @body-font-size;
 @c-field-line-height: @body-line-height;
 
-@c-field-background-color: #fdfdfd;
+@c-field-background-color: lighten(@clr-grey-50, .5%);
 @c-field-border-color: @clr-grey-500;
 @c-field-border-width: .1rem;
 @c-field-border-style: solid;
@@ -34,16 +36,18 @@
 @c-field-shadow: inset 0 0 .2rem @clr-grey-400, 0 0 0 @clr-blue-400;
 @c-field-outline: none;
 
+@c-field-textarea-min-height: 3 * @c-field-font-size * @c-field-line-height + @c-field-padding-top + @c-field-padding-bottom;
+
 @c-field-label-top: @c-field-border-width;
 @c-field-label-left: @c-field-padding-left + @c-field-border-width;
 @c-field-label-font-size: 1.3rem;
-@c-field-label-line-height: 1.8rem;
+@c-field-label-line-height: 2rem;
 @c-field-label-color: @clr-grey-600;
 @c-field-label-left-after-icon: @c-field-icon-width;
 
-@c-field-error-font-size: 1rem;
-@c-field-error-font-weight: 700;
-@c-field-error-line-height: 1.4rem;
+@c-field-error-font-size: 1.3rem;
+@c-field-error-font-weight: 500;
+@c-field-error-line-height: 1.8rem;
 @c-field-error-color: @clr-red-400;
 
 @c-field-button-width: @c-field-height;
@@ -62,8 +66,9 @@
 @c-field-focused-background-color: @clr-white;
 @c-field-focused-border-color: @clr-blue-400;
 @c-field-focused-box-shadow: inset 0 0 0rem @clr-grey-400, 0 0 .3rem @clr-blue-400;
-@c-field-invalid-background-color: @clr-red-50;
-@c-field-invalid-border-color: 1px solid @clr-red-400;
+@c-field-invalid-background-color: lighten(@clr-red-50, 3%);
+@c-field-invalid-border-color: @clr-red-300;
+@c-field-invalid-box-shadow: inset 0 0 0rem @clr-grey-400, 0 0 .3rem @clr-red-400;
 
 
 /* Component: `c-field`
@@ -79,9 +84,9 @@
 	height: @c-field-height;
 	line-height: @c-field-line-height;
 
-	padding-top: 0;
+	padding-top: @c-field-padding-top;
 	padding-left: @c-field-padding-left;
-	padding-bottom: 0;
+	padding-bottom: @c-field-padding-bottom;
 	padding-right: @c-field-padding-right;
 
 	background-color: @c-field-background-color;
@@ -101,7 +106,6 @@
 	transition-timing-function: @easing;
 
 	&:focus {
-		background-color: @c-field-focused-background-color;
 		border-color: @c-field-focused-border-color;
 		box-shadow: @c-field-focused-box-shadow;
 		cursor: text;
@@ -112,10 +116,17 @@
 .is-invalid .c-field {
 	background-color: @c-field-invalid-background-color;
 	border-color: @c-field-invalid-border-color;
+	&:focus {
+		box-shadow: @c-field-invalid-box-shadow;
+	}
+}
+
+.c-field:focus {
+	background-color: @c-field-focused-background-color;
 }
 
 textarea.c-field {
-	min-height: 3 * @c-field-font-size * @c-field-line-height;
+	min-height: @c-field-textarea-min-height;
 }
 
 /* Wrapper: `c-field-box`
