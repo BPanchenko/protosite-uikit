@@ -44,6 +44,7 @@
 @c-field-label-line-height: 2rem;
 @c-field-label-color: @clr-grey-600;
 @c-field-label-left-after-icon: @c-field-icon-width;
+@c-field-floating-label-font-size: @c-field-font-size;
 
 @c-field-error-font-size: 1.3rem;
 @c-field-error-font-weight: 500;
@@ -60,7 +61,6 @@
 
 @c-field-focused-label-top: 0;
 @c-field-focused-label-left: 0;
-@c-field-focused-label-font-size: 1.1rem;
 @c-field-focused-label-color: @body-color;
 
 @c-field-focused-background-color: @clr-white;
@@ -108,12 +108,15 @@
 	&:focus {
 		border-color: @c-field-focused-border-color;
 		box-shadow: @c-field-focused-box-shadow;
-		cursor: text;
 	}
 }
 
-.c-field:invalid,
-.is-invalid .c-field {
+textarea.c-field {
+	min-height: @c-field-textarea-min-height;
+}
+
+.is-invalid .c-field,
+.c-field:invalid {
 	background-color: @c-field-invalid-background-color;
 	border-color: @c-field-invalid-border-color;
 	&:focus {
@@ -121,12 +124,11 @@
 	}
 }
 
+.is-filled .c-field,
+.is-focused .c-field,
 .c-field:focus {
 	background-color: @c-field-focused-background-color;
-}
-
-textarea.c-field {
-	min-height: @c-field-textarea-min-height;
+	cursor: text;
 }
 
 /* Wrapper: `c-field-box`
@@ -135,8 +137,8 @@ textarea.c-field {
 .c-field-box {
 	position: relative;
 	display: block;
-	contain: layout style;
 	font-size: 0.001px;
+	contain: layout style;
 	// outline: 1px dashed @clr-amber-A700;
 }
 
@@ -192,7 +194,6 @@ input[type=radio] + .c-field-label {
 .c-field-box.is-focused .c-field-label {
 	top: @c-field-focused-label-top;
 	left: @c-field-focused-label-left;
-	font-size: @c-field-focused-label-font-size;
 	cursor: text;
 }
 
@@ -301,9 +302,8 @@ input[type=file] + .c-field-mask {
 	line-height: @c-field-error-line-height;
 	color: @c-field-error-color;
 
-	// opacity: 0;
+	opacity: 0;
 	transition: opacity 160ms @easing;
-	will-change: opacity;
 }
 
 // Invalid state
@@ -321,5 +321,6 @@ input[type=file] + .c-field-mask {
 		position: absolute;
 		top: @c-field-label-top;
 		left: @c-field-label-left;
+		font-size: @c-field-floating-label-font-size;
 	}
 }

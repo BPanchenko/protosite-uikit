@@ -5,17 +5,21 @@
     const cls = Object.create(null, {
         box: { value: 'c-field-box' },
         button: { value: 'c-field-button' },
+        buttonIcon: { value: 'iconic' },
         error: { value: 'c-field-error' },
         field: { value: 'c-field' },
         icon: { value: 'c-field-icon' },
         mask: { value: 'c-field-mask' },
         filled: { value: 'is-filled' },
-        focused: { value: 'is-focused' }
+        focused: { value: 'is-focused' },
+        invalid: { value: 'is-invalid' },
+        valid: { value: 'is-valid' }
     });
 
     const selector = Object.create(null, {
         box: { value: '.'+cls.box },
         button: { value: '.'+cls.button },
+        buttonIcon: { value: '.'+cls.buttonIcon },
         error: { value: '.'+cls.error },
         field: { value: '.'+cls.field },
         icon: { value: '.'+cls.icon },
@@ -43,36 +47,50 @@
         },
         change: {
             value: function(e){
-                let field = e.currentTarget;
-                let box = field.__box;
-                let mask = field.__mask;
+                var field = e.currentTarget;
 
-                let pattern = field.hasAttribute('pattern') ? new RegExp(field.pattern) : null;
+                if(['file', 'email'].indexOf(field.type) == -1 && !field.hasAttribute('pattern')) {
+                    return;
+                }
+
+                let box = field.__box;
                 let value = field.value.trim();
 
-                console.log(e.type, e.currentTarget);
+                if(!value) {
+                    box.classList.remove('is-valid', 'is-invalid');
+                    return;
+                }
+
+                if(field.type == 'file') {
+                    field.__mask.innerHTML = value;
+                    return;
+                }
+
+                let pattern =  field.hasAttribute('pattern') ? new RegExp(field.pattern) : regEmail;
+                checkPattern(pattern, box, value);
 
                 return;
             }
         },
         clickButton: {
             value: function(e){
-                let box = e.currentTarget.__box;
-                let field = e.currentTarget.__field;
-                let icon = e.currentTarget.__icon;
-                let value = field.value.trim();
+                var button = e.currentTarget;
+                var field = button.__field;
 
                 switch(field.type) {
                     case 'password':
+                        let icon = button.__icon;
                         if(icon.dataset.glyph == 'eye-closed') {
                             icon.dataset.glyph = 'eye-open';
-                            icon.setAttribute('type', 'text');
+                            field.setAttribute('type', 'text');
                         } else if(icon.data('glyph') == 'eye-open') {
                             icon.dataset.glyph = 'eye-closed';
-                            icon.setAttribute('type', 'password');
+                            field.setAttribute('type', 'password');
                         }
                         break;
                     case 'search':
+                        let box = field.__box;
+                        let value = field.value.trim();
                         if(!value) box.classList.add(cls.invalid);
                         break;
                 }
@@ -82,54 +100,34 @@
         },
         input: {
             value: function(e){
-                let box = e.currentTarget.__box;
-                console.log(e.type, e.currentTarget);
+                var field = e.currentTarget;
+
+                if(field.hasAttribute('pattern') && field.type != 'email'){
+                    checkPattern(new RegExp(field.pattern), field.__box, field.value.trim());
+                }
+
                 return;
             }
         }
     });
 
-    var checkPattern = _.debounce(function () {
-        var $input = $(this),
-            $box = $input.parents('.c-field-box').eq(0),
-            value = $input.val(),
-            pattern = $input.attr('pattern');
+    function checkPattern(pattern, box, value){
+        if(!value) {
+            box.classList.remove('is-valid', 'is-invalid');
+            return true;
+        }
 
-        if(value) {
-            let reg = new RegExp(pattern);
-            if(reg.test(value))
-                $box.addClass('is-valid').removeClass('is-invalid');
-            else
-                $box.addClass('is-invalid').removeClass('is-valid');
-        } else
-            $box.removeClass('is-valid is-invalid');
+        let isValid = pattern.test(value);
+        if(isValid) {
+            box.classList.add('is-valid');
+            box.classList.remove('is-invalid');
+        } else {
+            box.classList.remove('is-valid');
+            box.classList.add('is-invalid');
+        }
 
-        return;
-    }, 150);
-
-    var onChangeFieldFile = function(e) {
-        var $input = $(this),
-            $container = $input.parent('.c-field'),
-            $value = $container.find('.c-field-value').eq(0),
-            value = $input.val();
-
-        $container[ !!value ? 'addClass' : 'removeClass']('is-filled');
-
-        if ($value.length) $value.text(value);
-        else console.error("Не найден элемент значения для поля выбора файла!", $input);
-
-        return;
-    };
-
-    var onChangeFieldSearch = _.debounce(function (e) {
-        var $input = $(this),
-            $box = $input.parents('.c-field-box').eq(0),
-            value = $input.val();
-
-        value && $box.removeClass('is-invalid');
-
-        return;
-    }, 150);
+        return isValid;
+    }
 
     /*
     // check fields with a pattern
@@ -151,6 +149,7 @@
         elem.addEventListener('focus', ons.focus);
         elem.addEventListener('change', ons.change);
         elem.addEventListener('input', ons.input);
+        elem.addEventListener('paste', ons.change);
 
         if(elem.__button) {
             elem.__button.addEventListener('click', ons.clickButton);
@@ -176,7 +175,7 @@
         field.__button = field.__box.querySelector(selector.button);
         if(field.__button) {
             field.__button.__field = field;
-            field.__button.__icon = field.__button.querySelector(selector.icon);
+            field.__button.__icon = field.__button.querySelector(selector.buttonIcon);
         }
 
         return field;
