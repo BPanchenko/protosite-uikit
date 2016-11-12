@@ -8,7 +8,7 @@
  *                  `c-field-icon`
  *					`c-field-input`
  *                  `c-field-label`
- *                  `c-field-value`
+ *                  `c-field-mask`
  *
  * States:			`is-filled`
  *					`is-focused`
@@ -234,9 +234,9 @@ input[type=radio] + .c-field-label {
 }
 
 .c-field-icon + .c-field,
-.c-field-icon + .c-field + .c-field-value,
+.c-field-icon + .c-field + .c-field-mask,
 .c-field-icon + .c-field-label + .c-field,
-.c-field-icon + .c-field-label + .c-field + .c-field-value {
+.c-field-icon + .c-field-label + .c-field + .c-field-mask {
 	padding-left: @c-field-label-left-after-icon;
 }
 
@@ -245,14 +245,14 @@ input[type=radio] + .c-field-label {
 }
 
 
-/* Element: `c-field-value` (used for the field file selection)
+/* Element: `c-field-mask` (used for the field file selection)
  ========================================================================== */
 
-.c-field-value {
+.c-field-mask {
 	.c-field;
 }
 input[type=file] { opacity: 0; }
-input[type=file] + .c-field-value {
+input[type=file] + .c-field-mask {
 	position: absolute;
 	left: 0;
 }

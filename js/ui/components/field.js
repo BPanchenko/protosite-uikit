@@ -8,7 +8,7 @@
         error: { value: 'c-field-error' },
         field: { value: 'c-field' },
         icon: { value: 'c-field-icon' },
-        value: { value: 'c-field-value' },
+        mask: { value: 'c-field-mask' },
         filled: { value: 'is-filled' },
         focused: { value: 'is-focused' }
     });
@@ -19,7 +19,7 @@
         error: { value: '.'+cls.error },
         field: { value: '.'+cls.field },
         icon: { value: '.'+cls.icon },
-        value: { value: '.'+cls.value },
+        mask: { value: '.'+cls.mask },
         filled: { value: '.'+cls.filled },
         focused: { value: '.'+cls.focused }
     });
@@ -43,8 +43,15 @@
         },
         change: {
             value: function(e){
-                let box = e.currentTarget.__box;
+                let field = e.currentTarget;
+                let box = field.__box;
+                let mask = field.__mask;
+
+                let pattern = field.hasAttribute('pattern') ? new RegExp(field.pattern) : null;
+                let value = field.value.trim();
+
                 console.log(e.type, e.currentTarget);
+
                 return;
             }
         },
@@ -164,6 +171,7 @@
 
         field.__error = field.__box.querySelector(selector.error);
         field.__label = field.__box.querySelector(selector.label);
+        field.__mask = field.__box.querySelector(selector.mask);
 
         field.__button = field.__box.querySelector(selector.button);
         if(field.__button) {
