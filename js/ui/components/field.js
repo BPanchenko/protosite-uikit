@@ -78,21 +78,20 @@
                 var field = button.__field;
 
                 switch(field.type) {
-                    case 'password':
-                        let icon = button.__icon;
-                        if(icon.dataset.glyph == 'eye-closed') {
-                            icon.dataset.glyph = 'eye-open';
-                            field.setAttribute('type', 'text');
-                        } else if(icon.data('glyph') == 'eye-open') {
-                            icon.dataset.glyph = 'eye-closed';
-                            field.setAttribute('type', 'password');
-                        }
-                        break;
                     case 'search':
                         let box = field.__box;
                         let value = field.value.trim();
                         if(!value) box.classList.add(cls.invalid);
                         break;
+                    default:
+                        let icon = button.__icon;
+                        if(icon.dataset.glyph == 'eye-closed') {
+                            icon.dataset.glyph = 'eye-open';
+                            field.setAttribute('type', 'text');
+                        } else if(icon.dataset.glyph == 'eye-open') {
+                            icon.dataset.glyph = 'eye-closed';
+                            field.setAttribute('type', 'password');
+                        }
                 }
 
                 return;
