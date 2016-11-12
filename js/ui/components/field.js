@@ -1,5 +1,87 @@
 (function(UI){
 
+    const regEmail = new RegExp("^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$");
+
+    const cls = Object.create(null, {
+        box: { value: 'c-field-box' },
+        button: { value: 'c-field-button' },
+        error: { value: 'c-field-error' },
+        field: { value: 'c-field' },
+        icon: { value: 'c-field-icon' },
+        value: { value: 'c-field-value' },
+        filled: { value: 'is-filled' },
+        focused: { value: 'is-focused' }
+    });
+
+    const selector = Object.create(null, {
+        box: { value: '.'+cls.box },
+        button: { value: '.'+cls.button },
+        error: { value: '.'+cls.error },
+        field: { value: '.'+cls.field },
+        icon: { value: '.'+cls.icon },
+        value: { value: '.'+cls.value },
+        filled: { value: '.'+cls.filled },
+        focused: { value: '.'+cls.focused }
+    });
+
+    const ons = Object.create(null, {
+        blur: {
+            value: function(e){
+                let box = e.currentTarget.__box;
+                let value = e.currentTarget.value;
+                box && box.classList.remove(cls.focused);
+                box && box.classList[ !!value ? 'add' : 'remove'](cls.filled);
+                return;
+            }
+        },
+        focus: {
+            value: function(e){
+                let box = e.currentTarget.__box;
+                box && box.classList.add(cls.focused);
+                return;
+            }
+        },
+        change: {
+            value: function(e){
+                let box = e.currentTarget.__box;
+                console.log(e.type, e.currentTarget);
+                return;
+            }
+        },
+        clickButton: {
+            value: function(e){
+                let box = e.currentTarget.__box;
+                let field = e.currentTarget.__field;
+                let icon = e.currentTarget.__icon;
+                let value = field.value.trim();
+
+                switch(field.type) {
+                    case 'password':
+                        if(icon.dataset.glyph == 'eye-closed') {
+                            icon.dataset.glyph = 'eye-open';
+                            icon.setAttribute('type', 'text');
+                        } else if(icon.data('glyph') == 'eye-open') {
+                            icon.dataset.glyph = 'eye-closed';
+                            icon.setAttribute('type', 'password');
+                        }
+                        break;
+                    case 'search':
+                        if(!value) box.classList.add(cls.invalid);
+                        break;
+                }
+
+                return;
+            }
+        },
+        input: {
+            value: function(e){
+                let box = e.currentTarget.__box;
+                console.log(e.type, e.currentTarget);
+                return;
+            }
+        }
+    });
+
     var checkPattern = _.debounce(function () {
         var $input = $(this),
             $box = $input.parents('.c-field-box').eq(0),
@@ -42,88 +124,78 @@
         return;
     }, 150);
 
-    var onClickButton = function(e) {
-        var $this = $(this),
-            $box = $this.parent('.c-field-box'),
-            $input = $this.siblings('.c-field').eq(0),
-            $icon = $this.find('.iconic').eq(0);
+    /*
+    // check fields with a pattern
+    this.$inputs.filter('*[pattern]:not([type=email])').on('input', checkPattern);
+    this.$inputs.filter('*[pattern][type=email]').on('change', checkPattern);
 
-        // processing the password field
-        if($icon.data('glyph') == 'eye-closed') {
-            $icon.data('glyph', 'eye-open');
-            $input.attr('type', 'text')
-        } else if($icon.data('glyph') == 'eye-open') {
-            $icon.data('glyph', 'eye-closed');
-            $input.attr('type', 'password')
-        }
+    // processing the file field
+    this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
 
-        // processing the search field
-        if($icon.data('glyph') == 'loupe' && !$input.val()) {
-            e.preventDefault();
-            $box.addClass('is-invalid');
-            $input.addClass('is-invalid');
+    // processing the search field
+    this.$inputs.filter('input[type=search]').on('change input', onChangeFieldSearch);
+    */
+
+    function listenField(elem) {
+        if(elem instanceof Array) elem.forEach(el => listenField(el));
+        if(!(elem instanceof HTMLElement)) return;
+
+        elem.addEventListener('blur', ons.blur);
+        elem.addEventListener('focus', ons.focus);
+        elem.addEventListener('change', ons.change);
+        elem.addEventListener('input', ons.input);
+
+        if(elem.__button) {
+            elem.__button.addEventListener('click', ons.clickButton);
         }
 
         return;
-    };
+    }
 
-    UI.Component.extend(
-        // selfProps
-        {
-            name: 'field',
-
-            $elements: null,
-            $buttons: null,
-            $inputs: null,
-
-            init: function() {
-                this.$elements = $('.c-field');
-                this.$buttons = this.$elements.find('.c-field-button');
-                this.$inputs = this.$elements.find('.c-field-input');
-
-                this.$inputs.filter('*:not([type=file])')
-                    .on('focus', function (e) {
-                        var $container = $(this).parent('.c-field');
-                        $container.length && $container.addClass('is-focused');
-                        return;
-                    })
-                    .on('blur', function (e) {
-                        var $input = $(this),
-                            $container = $input.parent('.c-field'),
-                            value = $input.val();
-                        $container.removeClass('is-focused');
-                        $container[ !!value ? 'addClass' : 'removeClass']('is-filled');
-                        return;
-                    });
-
-                // check fields with a pattern
-                this.$inputs.filter('*[pattern]:not([type=email])').on('input', checkPattern);
-                this.$inputs.filter('*[pattern][type=email]').on('change', checkPattern);
-
-                // processing the file field
-                this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
-
-                // processing the search field
-                this.$inputs.filter('input[type=search]').on('change input', onChangeFieldSearch);
-
-                // click by the field button
-                this.$buttons.on('click', onClickButton);
-            }
+    function initSubElementsOnFields(field) {
+        if(field.hasOwnProperty('__box') || !field.classList.contains(cls.field)) {
+            return field;
         }
-        // staticProps
-        , {
-            selector: '.c-field'
+
+        field.__box = field.parentNode.classList.contains(cls.box) ? field.parentNode : null;
+        if(!field.__box) {
+            return field;
         }
-    );
 
-    /** Init component on elements */
+        field.__error = field.__box.querySelector(selector.error);
+        field.__label = field.__box.querySelector(selector.label);
 
-    UI.dom.on('ready change', function(doc, options){
-        var attrName = UI.Pagination.selector.replace(/[\[\]]/g,'');
-        $(UI.Field.selector).each(function(){
-            if(!this._uiField) {
-                console.log((new UI.Field(this, {})).render());
-            }
-        });
+        field.__button = field.__box.querySelector(selector.button);
+        if(field.__button) {
+            field.__button.__field = field;
+            field.__button.__icon = field.__button.querySelector(selector.icon);
+        }
+
+        return field;
+    }
+
+    function findChildFields(elem) {
+        var result = [];
+        if(elem instanceof HTMLCollection) elem = Array.from(elem);
+        if(elem instanceof Array) elem.forEach(el => { result = result.concat(findChildFields(el)) });
+        if(!(elem instanceof HTMLElement)) return result;
+
+        if(elem.classList.contains(cls.field)) {
+            result.push(initSubElementsOnFields(elem));
+        } else {
+            result = Array.from(elem.querySelectorAll(selector.field), initSubElementsOnFields);
+        }
+        
+        return result;
+    }
+
+    /** add listeners on fields */
+
+    UI.dom.on('ready', function(doc){
+        listenField(findChildFields(doc));
+    });
+    
+    UI.dom.on('change', function(doc, options){
+        options.added.length && listenField(findChildFields(options.added));
     });
 }(UI));
