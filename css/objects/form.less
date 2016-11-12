@@ -10,18 +10,71 @@
  * Modifiers: ``
  * 
  ========================================================================== */
- 
-.o-form { width: 32rem; }
+
+// Variables
+// ========================================================================
+
+@o-form-max-width: 56.8rem;
+
+@o-form-buttons-margin-top: @space-l;
+
+@o-form-row-margin-top: @space-m;
+@o-form-row-box-flex: 1 1 25%;
+@o-form-row-field-margin-left: @space-s;
 
 
-/* Elements: `o-form__buttons`, `o-form__row`
+@o-form-short-max-width: 28rem;
+@o-form-short-buttons-margin-top: @space-m;
+
+
+/* Object: `o-form`
  ========================================================================== */
 
-.o-form__buttons,
-.o-form__row {
-	display: block;
-	width: inherit;
-	font-size: .001px;
+.o-form {
+	width: 100%;
+	max-width: @o-form-max-width;
 }
 
-.o-form__row + .o-form__row { margin-top: @unit; }
+
+/* Sub-object: `o-form__row`
+ ========================================================================== */
+
+.o-form__row {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: row nowrap;
+
+	.c-field-box {
+		flex: @o-form-row-box-flex;
+	}
+	.c-field-box + .c-field-box {
+		margin-left: @o-form-row-field-margin-left;
+	}
+}
+
+.o-form__row + .o-form__row {
+	margin-top: @o-form-row-margin-top;
+}
+
+
+/* Sub-object: `o-form__buttons`
+ ========================================================================== */
+
+.o-form__buttons {
+	text-align: right;
+}
+
+.o-form__row + .o-form__buttons {
+	margin-top: @o-form-buttons-margin-top;
+}
+
+
+/* Style: short form
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.s-short {
+	&.o-form { max-width: @o-form-short-max-width; }
+	.o-form__row + .o-form__buttons {
+		margin-top: @o-form-short-buttons-margin-top;
+	}
+}
