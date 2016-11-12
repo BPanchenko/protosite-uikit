@@ -113,33 +113,21 @@
 
     function checkPattern(pattern, box, value){
         if(!value) {
-            box.classList.remove('is-valid', 'is-invalid');
+            box.classList.remove(cls.valid, cls.invalid);
             return true;
         }
 
         let isValid = pattern.test(value);
         if(isValid) {
-            box.classList.add('is-valid');
-            box.classList.remove('is-invalid');
+            box.classList.add(cls.valid);
+            box.classList.remove(cls.invalid);
         } else {
-            box.classList.remove('is-valid');
-            box.classList.add('is-invalid');
+            box.classList.remove(cls.valid);
+            box.classList.add(cls.invalid);
         }
 
         return isValid;
     }
-
-    /*
-    // check fields with a pattern
-    this.$inputs.filter('*[pattern]:not([type=email])').on('input', checkPattern);
-    this.$inputs.filter('*[pattern][type=email]').on('change', checkPattern);
-
-    // processing the file field
-    this.$inputs.filter('input[type=file]').on('change', onChangeFieldFile);
-
-    // processing the search field
-    this.$inputs.filter('input[type=search]').on('change input', onChangeFieldSearch);
-    */
 
     function listenField(elem) {
         if(elem instanceof Array) elem.forEach(el => listenField(el));
