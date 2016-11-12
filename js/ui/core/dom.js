@@ -2,7 +2,7 @@
 
     var doc = document.documentElement;
 
-    UI.dom = _.extend({}, Backbone.Events);
+    UI.dom = Object.create(Backbone.Events);
 
     UI.dom.observer = new MutationObserver(function(mutations) {
         var options = {
@@ -28,7 +28,7 @@
     });
 
     document.addEventListener("DOMContentLoaded", function(){
-        UI.dom.trigger('ready', doc, {});
+        UI.dom.trigger('ready', doc);
         return;
     });
 
