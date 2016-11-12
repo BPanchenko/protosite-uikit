@@ -76,4 +76,18 @@ gulp.task('build-js-ui-core', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('build', ['build-css', 'build-js-libs', 'build-js-ui-core']);
+gulp.task('build-js-ui-components', function () {
+    gulp.src([
+        './js/ui/components/field.js'
+    ])
+        .pipe(concat('ui-components.js'))
+        .pipe(gulp.dest('./dist/'))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(uglify())
+        .pipe(rename('ui-components.min.js'))
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('build', ['build-css', 'build-js-libs', 'build-js-ui-core', 'build-js-ui-components']);
