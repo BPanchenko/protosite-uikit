@@ -46,9 +46,6 @@
 }
 .u-clearfix:after { clear: both; }
 
-.u-float-left { float: left; }
-.u-float-right { float: right; }
-
 [class*='ui-align-'] {
     display: block;
     margin-bottom: @space-s;
@@ -58,23 +55,80 @@
 /* Positioning
  ========================================================================== */
 
-.u-align-left {
+.u-align-left { text-align: left; }
+.u-align-right { text-align: right; }
+.u-align-center { text-align: center; }
+
+.u-float-left {
     margin-right: @space-s;
     float: left;
 }
 
-.u-align-right {
+.u-float-right {
     margin-left: @space-s;
     float: right;
-}
-
-.u-align-center {
-    text-align: center;
 }
 
 .u-centered {
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: @screen-desktop-max) {
+	.u-align-left\@desktop { .u-align-left; }
+	.u-align-right\@desktop { .u-align-right; }
+	.u-align-center\@desktop { .u-align-center; }
+	.u-float-left\@desktop { .u-float-left; }
+	.u-float-right\@desktop { .u-float-right; }
+	.u-centered\@desktop { .u-centered; }
+}
+@media (max-width: @screen-tablet-landscape-max) {
+	.u-align-left\@tablet,
+	.u-align-left\@tablet-landscape { .u-align-left; }
+	.u-align-right\@tablet,
+	.u-align-right\@tablet-landscape { .u-align-right; }
+	.u-align-center\@tablet,
+	.u-align-center\@tablet-landscape { .u-align-center; }
+
+	.u-float-left\@tablet,
+	.u-float-left\@tablet-landscape { .u-float-left; }
+	.u-float-right\@tablet,
+	.u-float-right\@tablet-landscape { .u-float-right; }
+
+	.u-centered\@tablet,
+	.u-centered\@tablet-landscape { .u-centered; }
+}
+@media (max-width: @screen-tablet-portrait-max) {
+	.u-align-left\@tablet-portrait { .u-align-left; }
+	.u-align-right\@tablet-portrait { .u-align-right; }
+	.u-align-center\@tablet-portrait { .u-align-center; }
+	.u-float-left\@tablet-portrait { .u-float-left; }
+	.u-float-right\@tablet-portrait { .u-float-right; }
+	.u-centered\@tablet-portrait { .u-centered; }
+}
+@media (max-width: @screen-handset-landscape-max) {
+	.u-align-left\@handset,
+	.u-align-left\@handset-landscape { .u-align-left; }
+	.u-align-right\@handset,
+	.u-align-right\@handset-landscape { .u-align-right; }
+	.u-align-center\@handset,
+	.u-align-center\@handset-landscape { .u-align-center; }
+
+	.u-float-left\@handset,
+	.u-float-left\@handset-landscape { .u-float-left; }
+	.u-float-right\@handset,
+	.u-float-right\@handset-landscape { .u-float-right; }
+
+	.u-centered\@handset,
+	.u-centered\@handset-landscape { .u-centered; }
+}
+@media (max-width: @screen-handset-portrait-max) {
+	.u-align-left\@handset-portrait { .u-align-left; }
+	.u-align-right\@handset-portrait { .u-align-right; }
+	.u-align-center\@handset-portrait { .u-align-center; }
+	.u-float-left\@handset-portrait { .u-float-left; }
+	.u-float-right\@handset-portrait { .u-float-right; }
+	.u-centered\@handset-portrait { .u-centered; }
 }
 
 
