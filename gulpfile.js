@@ -50,7 +50,9 @@ gulp.task('build-js-libs', function () {
         './node_modules/jquery/dist/jquery.js',
         './node_modules/backbone/backbone.js',
         './js/modules/backbone-addon.js',
-        './node_modules/moment/min/moment-with-locales.js'
+        './node_modules/moment/min/moment-with-locales.js',
+        './node_modules/form2js/src/form2js',
+        './node_modules/form2js/src/js2form'
     ])
         .pipe(concat('ui-libs.js'))
         .pipe(gulp.dest('./dist/'))
