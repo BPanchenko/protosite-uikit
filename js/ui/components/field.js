@@ -1,6 +1,6 @@
 (function(UI){
 
-    const regEmail = new RegExp("^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$");
+    const regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
 
     const cls = Object.create(null, {
         box: { value: 'c-field-box' },
@@ -137,6 +137,9 @@
         elem.addEventListener('change', ons.change);
         elem.addEventListener('input', ons.input);
         elem.addEventListener('paste', ons.change);
+
+        elem.dispatchEvent(new Event("blur"));
+        elem.dispatchEvent(new Event("change"));
 
         if(elem.__button) {
             elem.__button.addEventListener('click', ons.clickButton);
