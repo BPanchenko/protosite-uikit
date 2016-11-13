@@ -210,58 +210,40 @@
 @media (max-width: @screen-tablet-portrait-max) {
 
 	// Whole
-	.u-width-1-1\@tablet,
 	.u-width-1-1\@tablet-portrait { width: 100%; }
 
 	// Halves
-	.u-width-1-2\@tablet,
-	.u-width-2-4\@tablet,
-	.u-width-3-6\@tablet,
-	.u-width-5-10\@tablet,
 	.u-width-1-2\@tablet-portrait,
 	.u-width-2-4\@tablet-portrait,
 	.u-width-3-6\@tablet-portrait,
 	.u-width-5-10\@tablet-portrait { width: 50%; }
 
 	// Thirds
-	.u-width-1-3,
+	.u-width-1-3\@tablet-portrait,
 	.u-width-2-6\@tablet-portrait { width: 33.333%; }
-	.u-width-2-3,
+	.u-width-2-3\@tablet-portrait,
 	.u-width-4-6\@tablet-portrait { width: 66.666%; }
 
 	// Quarters
-	.u-width-1-4\@tablet,
 	.u-width-1-4\@tablet-portrait { width: 25%; }
-	.u-width-3-4\@tablet,
 	.u-width-3-4\@tablet-portrait { width: 75%; }
 
 	// Fifths
-	.u-width-1-5\@tablet,
-	.u-width-2-10\@tablet-portrait,
-	.u-width-1-5\@tablet,
+	.u-width-1-5\@tablet-portrait,
 	.u-width-2-10\@tablet-portrait { width: 20%; }
-	.u-width-2-5\@tablet,
-	.u-width-4-10\@tablet-portrait,
-	.u-width-2-5\@tablet,
+	.u-width-2-5\@tablet-portrait,
 	.u-width-4-10\@tablet-portrait { width: 40%; }
-	.u-width-3-5\@tablet,
-	.u-width-6-10\@tablet-portrait,
-	.u-width-3-5\@tablet,
+	.u-width-3-5\@tablet-portrait,
 	.u-width-6-10\@tablet-portrait { width: 60%; }
-	.u-width-4-5\@tablet,
-	.u-width-8-10\@tablet-portrait,
-	.u-width-4-5\@tablet,
+	.u-width-4-5\@tablet-portrait,
 	.u-width-8-10\@tablet-portrait { width: 80%; }
 
 	// Sixths
-	.u-width-1-6\@tablet,
-	.u-width-1-6 { width: 16.666%; }
-	.u-width-5-6\@tablet,
-	.u-width-5-6 { width: 83.333%; }
+	.u-width-1-6\@tablet { width: 16.666%; }
+	.u-width-5-6\@tablet { width: 83.333%; }
 
 	// Tenths
 	.generate-u-width-10-tablet-portrait(@i) when (@i < 10) {
-		.u-width-@{i}-10\@tablet,
 		.u-width-@{i}-10\@tablet-portrait { width: percentage(@i * 0.1); }
 		// next iteration
 		.generate-u-width-10-tablet-portrait((@i + 2));
@@ -282,31 +264,50 @@
 @media (max-width: @screen-handset-landscape-max) {
 
 	// Whole
+	.u-width-1-1\@handset,
 	.u-width-1-1\@handset-landscape { width: 100%; }
 
 	// Halves
+	.u-width-1-2\@handset,
+	.u-width-2-4\@handset,
+	.u-width-3-6\@handset,
+	.u-width-5-10\@handset,
 	.u-width-1-2\@handset-landscape,
 	.u-width-2-4\@handset-landscape,
 	.u-width-3-6\@handset-landscape,
 	.u-width-5-10\@handset-landscape { width: 50%; }
 
 	// Thirds
+	.u-width-1-3\@handset,
+	.u-width-2-6\@handset,
 	.u-width-1-3\@handset-landscape,
 	.u-width-2-6\@handset-landscape { width: 33.333%; }
+	.u-width-2-3\@handset,
+	.u-width-4-6\@handset,
 	.u-width-2-3\@handset-landscape,
 	.u-width-4-6\@handset-landscape { width: 66.666%; }
 
 	// Quarters
+	.u-width-1-4\@handset,
 	.u-width-1-4\@handset-landscape { width: 25%; }
+	.u-width-3-4\@handset,
 	.u-width-3-4\@handset-landscape { width: 75%; }
 
 	// Fifths
+	.u-width-1-5\@handset,
+	.u-width-2-10\@handset,
 	.u-width-1-5\@handset-landscape,
 	.u-width-2-10\@handset-landscape { width: 20%; }
+	.u-width-2-5\@handset,
+	.u-width-4-10\@handset,
 	.u-width-2-5\@handset-landscape,
 	.u-width-4-10\@handset-landscape { width: 40%; }
+	.u-width-3-5\@handset,
+	.u-width-6-10\@handset,
 	.u-width-3-5\@handset-landscape,
 	.u-width-6-10\@handset-landscape { width: 60%; }
+	.u-width-4-5\@handset,
+	.u-width-8-10\@handset,
 	.u-width-4-5\@handset-landscape,
 	.u-width-8-10\@handset-landscape { width: 80%; }
 
@@ -315,13 +316,18 @@
 	.u-width-5-6\@handset-landscape { width: 83.333%; }
 
 	// Tenths
+	.u-width-1-10\@handset,
 	.u-width-1-10\@handset-landscape { width: 10%; }
+	.u-width-3-10\@handset,
 	.u-width-3-10\@handset-landscape { width: 30%; }
+	.u-width-7-10\@handset,
 	.u-width-7-10\@handset-landscape { width: 70%; }
+	.u-width-9-10\@handset,
 	.u-width-9-10\@handset-landscape { width: 90%; }
 
 	// 24 columns
 	.generate-u-width-24-handset-landscape(@i) when (@i <= 24) {
+		.u-width-@{i}-24\@handset,
 		.u-width-@{i}-24\@handset-landscape { width: percentage(@i * 100/2400); }
 		// next iteration
 		.generate-u-width-24-handset-landscape((@i + 1));
@@ -333,50 +339,31 @@
 @media (max-width: @screen-handset-portrait-max) {
 
     // Whole
-	.u-width-1-1\@handset,
 	.u-width-1-1\@handset-portrait { width: 100%; }
 
     // Halves
-	.u-width-1-2\@handset,
-	.u-width-2-4\@handset,
-	.u-width-3-6\@handset,
-	.u-width-5-10\@handset,
 	.u-width-1-2\@handset-portrait,
 	.u-width-2-4\@handset-portrait,
 	.u-width-3-6\@handset-portrait,
 	.u-width-5-10\@handset-portrait { width: 50%; }
 
     // Thirds
-	.u-width-1-3\@handset,
-	.u-width-2-6\@handset,
 	.u-width-1-3\@handset-portrait,
 	.u-width-2-6\@handset-portrait { width: 33.333%; }
-	.u-width-2-3\@handset,
-	.u-width-4-6\@handset,
 	.u-width-2-3\@handset-portrait,
 	.u-width-4-6\@handset-portrait { width: 66.666%; }
 
     // Quarters
-	.u-width-1-4\@handset,
 	.u-width-1-4\@handset-portrait { width: 25%; }
-	.u-width-3-4\@handset,
 	.u-width-3-4\@handset-portrait { width: 75%; }
 
     // Fifths
-	.u-width-1-5\@handset,
-	.u-width-2-10\@handset,
 	.u-width-1-5\@handset-portrait,
 	.u-width-2-10\@handset-portrait { width: 20%; }
-	.u-width-2-5\@handset,
-	.u-width-4-10\@handset,
 	.u-width-2-5\@handset-portrait,
 	.u-width-4-10\@handset-portrait { width: 40%; }
-	.u-width-3-5\@handset,
-	.u-width-6-10\@handset,
 	.u-width-3-5\@handset-portrait,
 	.u-width-6-10\@handset-portrait { width: 60%; }
-	.u-width-4-5\@handset,
-	.u-width-8-10\@handset,
 	.u-width-4-5\@handset-portrait,
 	.u-width-8-10\@handset-portrait { width: 80%; }
 
@@ -387,18 +374,13 @@
 	.u-width-5-6\@handset-portrait { width: 83.333%; }
 
     // Tenths
-	.u-width-1-10\@handset,
 	.u-width-1-10\@handset-portrait { width: 10%; }
-	.u-width-3-10\@handset,
 	.u-width-3-10\@handset-portrait { width: 30%; }
-	.u-width-7-10\@handset,
 	.u-width-7-10\@handset-portrait { width: 70%; }
-	.u-width-9-10\@handset,
 	.u-width-9-10\@handset-portrait { width: 90%; }
 
     // 24 columns
 	.generate-u-width-24-handset-portrait(@i) when (@i <= 24) {
-		.u-width-@{i}-24\@handset,
 		.u-width-@{i}-24\@handset-portrait { width: percentage(@i * 100/2400); }
 		// next iteration
 		.generate-u-width-24-handset-portrait((@i + 1));

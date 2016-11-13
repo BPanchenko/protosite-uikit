@@ -33,8 +33,9 @@
             value: function(e){
                 let box = e.currentTarget.__box;
                 let value = e.currentTarget.value;
+                let isEmpty = value && value !='0' && value !='null';
                 box && box.classList.remove(cls.focused);
-                box && box.classList[ !!value ? 'add' : 'remove'](cls.filled);
+                box && box.classList[ isEmpty ? 'add' : 'remove'](cls.filled);
                 return;
             }
         },
