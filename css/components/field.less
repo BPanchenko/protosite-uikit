@@ -28,6 +28,8 @@
 @c-field-font-size: @body-font-size;
 @c-field-line-height: @body-line-height;
 
+@c-field-autofill-background-color: @clr-yellow-50;
+
 @c-field-background-color: lighten(@clr-grey-50, .5%);
 @c-field-border-color: @clr-grey-500;
 @c-field-border-width: .1rem;
@@ -105,6 +107,11 @@
 	transition-duration: 160ms;
 	transition-timing-function: @easing;
 
+	&:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0px 1000px @c-field-autofill-background-color inset;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+
 	&:focus {
 		border-color: @c-field-focused-border-color;
 		box-shadow: @c-field-focused-box-shadow;
@@ -115,8 +122,7 @@ textarea.c-field {
 	min-height: @c-field-textarea-min-height;
 }
 
-.is-invalid .c-field,
-.c-field:invalid {
+.is-invalid .c-field {
 	background-color: @c-field-invalid-background-color;
 	border-color: @c-field-invalid-border-color;
 	&:focus {
