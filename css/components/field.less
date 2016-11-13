@@ -3,14 +3,15 @@
 /**
  * Component:		`c-field`
  *
+ * Wrapper:			`c-field-box`
+ *
  * Elements:		`c-field-button`
  *                  `c-field-error`
  *                  `c-field-icon`
- *					`c-field-input`
  *                  `c-field-label`
  *                  `c-field-mask`
  *
- * States:			`is-filled`
+ * Modifiers:		`is-filled`
  *					`is-focused`
  *					`is-invalid`
  *					`is-valid`
@@ -27,8 +28,6 @@
 @c-field-padding-left: .4rem;
 @c-field-font-size: @body-font-size;
 @c-field-line-height: @body-line-height;
-
-@c-field-autofill-background-color: @clr-yellow-50;
 
 @c-field-background-color: lighten(@clr-grey-50, .5%);
 @c-field-border-color: @clr-grey-500;
@@ -61,9 +60,10 @@
 @c-field-icon-text-shadow: @c-button-text-shadow;
 
 
-@c-field-focused-label-top: 0;
-@c-field-focused-label-left: 0;
-@c-field-focused-label-color: @body-color;
+@c-field-autofill-background-color: @clr-yellow-50;
+
+@c-field-disabled-border-color: @clr-grey-600;
+@c-field-disabled-border-style: dashed;
 
 @c-field-focused-background-color: @clr-white;
 @c-field-focused-border-color: @clr-blue-400;
@@ -72,15 +72,15 @@
 @c-field-invalid-border-color: @clr-red-300;
 @c-field-invalid-box-shadow: inset 0 0 0rem @clr-grey-400, 0 0 .3rem @clr-red-400;
 
+@c-field-focused-label-top: 0;
+@c-field-focused-label-left: 0;
+@c-field-focused-label-color: @body-color;
+
 
 /* Component: `c-field`
  ========================================================================== */
 
 .c-field {
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-			appearance: none;
-
 	display: inline-block;
 	width: 100%;
 	height: @c-field-height;
@@ -112,29 +112,26 @@
 		transition: background-color 5000s ease-in-out 0s;
 	}
 
+	&:disabled {
+		border-color: @c-field-disabled-border-color;
+		border-style: @c-field-disabled-border-style;
+		box-shadow: none;
+	}
+
 	&:focus {
 		border-color: @c-field-focused-border-color;
 		box-shadow: @c-field-focused-box-shadow;
 	}
 }
 
+input.c-field,
+textarea.c-field {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
 textarea.c-field {
 	min-height: @c-field-textarea-min-height;
-}
-
-.is-invalid .c-field {
-	background-color: @c-field-invalid-background-color;
-	border-color: @c-field-invalid-border-color;
-	&:focus {
-		box-shadow: @c-field-invalid-box-shadow;
-	}
-}
-
-.is-filled .c-field,
-.is-focused .c-field,
-.c-field:focus {
-	background-color: @c-field-focused-background-color;
-	cursor: text;
 }
 
 /* Wrapper: `c-field-box`
@@ -188,23 +185,8 @@ textarea.c-field {
 // Style of label after checkbox or radiobutton
 input[type=checkbox] + .c-field-label,
 input[type=radio] + .c-field-label {
-	position: static;
-	transition: none;
-}
-
-
-/* Modifiers: `is-focused` and `is-filled`
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.c-field-box.is-filled .c-field-label,
-.c-field-box.is-focused .c-field-label {
-	top: @c-field-focused-label-top;
-	left: @c-field-focused-label-left;
-	cursor: text;
-}
-
-.c-field-box.is-focused .c-field-label {
-	color: @c-field-focused-label-color;
+	position: static !important;
+	transition: none !important;
 }
 
 
@@ -247,17 +229,15 @@ input[type=radio] + .c-field-label {
 	padding-left: @c-field-label-left-after-icon;
 }
 
-.is-invalid .c-field-icon {
-	color: @c-field-error-color;
-}
-
 
 /* Element: `c-field-mask` (used for the field file selection)
  ========================================================================== */
 
 .c-field-mask {
 	.c-field;
+	.u-text-truncate;
 }
+
 input[type=file] { opacity: 0; }
 input[type=file] + .c-field-mask {
 	position: absolute;
@@ -268,20 +248,18 @@ input[type=file] + .c-field-mask {
 /* Element: `c-field-button`
  ========================================================================== */
 
-/*button*/
 .c-field-button {
-	position: absolute;
-	right: 0;
-
-	// default component style
+	// is button default
 	.c-button;
-
-	// reset component style
+	// reset button style
 	background: transparent;
 	border: none;
 	box-shadow: none;
-  	padding: 0;
+	padding: 0;
 	min-height: 0;
+
+	position: absolute;
+	right: 0;
 
 	width: @c-field-button-width;
 	height: @c-field-button-height;
@@ -312,10 +290,52 @@ input[type=file] + .c-field-mask {
 	transition: opacity 160ms @easing;
 }
 
-// Invalid state
-.c-field-box.is-invalid .c-field-error,
+
+/* Modifier: `is-invalid`
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.is-invalid .c-field {
+	background-color: @c-field-invalid-background-color;
+	border-color: @c-field-invalid-border-color;
+	&:focus {
+		box-shadow: @c-field-invalid-box-shadow;
+	}
+}
+
+.is-invalid .c-field-icon {
+	color: @c-field-error-color;
+}
+
+.is-invalid .c-field-error,
 .c-field.is-invalid + .c-field-error {
 	opacity: 1;
+}
+
+
+/* Modifiers: `is-focused` and `is-filled`
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.is-filled .c-field,
+.is-focused .c-field,
+.c-field:focus {
+	background-color: @c-field-focused-background-color;
+}
+
+.is-filled input.c-field,
+.is-focused input.c-field,
+input.c-field:focus {
+	cursor: text;
+}
+
+.is-filled .c-field-label,
+.is-focused .c-field-label {
+	top: @c-field-focused-label-top;
+	left: @c-field-focused-label-left;
+	cursor: text;
+}
+
+.is-focused .c-field-label {
+	color: @c-field-focused-label-color;
 }
 
 
