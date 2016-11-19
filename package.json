@@ -27,6 +27,7 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.16.0",
     "backbone": "^1.3.3",
+    "cookiesjs": "^1.4.2",
     "form2js": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
