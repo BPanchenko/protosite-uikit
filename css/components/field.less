@@ -171,6 +171,11 @@ input[type=radio].c-field {
 			cursor: pointer;
 		}
 	}
+
+	&:disabled,
+	&:disabled:checked::after {
+		cursor: default;
+	}
 }
 
 input[type=checkbox].c-field:checked::after {
@@ -246,6 +251,9 @@ input[type=radio] + .c-field-label {
 input[type=checkbox]:checked + .c-field-label,
 input[type=radio]:checked + .c-field-label {
 	color: @c-field-focused-label-color;
+}
+input:disabled + .c-field-label {
+	cursor: default;
 }
 
 
