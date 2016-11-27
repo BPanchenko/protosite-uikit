@@ -37,7 +37,17 @@
 @c-field-shadow: inset 0 0 .2rem @clr-grey-400, 0 0 0 @clr-blue-400;
 @c-field-outline: none;
 
+
 @c-field-textarea-min-height: 3 * @c-field-font-size * @c-field-line-height + @c-field-padding-top + @c-field-padding-bottom;
+
+@c-field-checkbox-size: 1.6rem;
+@c-field-checkbox-content: '\e154';
+@c-field-checkbox-font-size: 1.2rem;
+
+@c-field-radio-size: 1.6rem;
+@c-field-radio-content: '\e22d';
+@c-field-radio-font-size: .8rem;
+
 
 @c-field-label-top: @c-field-border-width;
 @c-field-label-left: @c-field-padding-left + @c-field-border-width;
@@ -82,6 +92,7 @@
 
 .c-field {
 	display: inline-block;
+	vertical-align: middle;
 	width: 100%;
 	height: @c-field-height;
 	line-height: @c-field-line-height;
@@ -124,6 +135,9 @@
 	}
 }
 
+/* Style of the specific elements
+ ========================================================================== */
+
 input.c-field,
 textarea.c-field {
 	-webkit-appearance: none;
@@ -132,6 +146,41 @@ textarea.c-field {
 
 textarea.c-field {
 	min-height: @c-field-textarea-min-height;
+}
+
+input[type=checkbox].c-field,
+input[type=radio].c-field {
+	width: @c-field-checkbox-size;
+	height: @c-field-checkbox-size;
+
+	&:checked {
+		background-color: @c-field-focused-background-color;
+		box-shadow: none;
+
+		&::after {
+			content: ' ';
+			font-family: 'Iconic';
+
+			display: inline-block;
+			width: @c-field-checkbox-size - .2rem;
+			line-height: @c-field-checkbox-size - .2rem;
+			vertical-align: top;
+			text-align: center;
+		}
+	}
+}
+
+input[type=checkbox].c-field:checked::after {
+	content: @c-field-checkbox-content;
+	font-size: @c-field-checkbox-font-size;
+}
+
+input[type=radio].c-field {
+	border-radius: 50%;
+	&:checked::after {
+		content: @c-field-radio-content;
+		font-size: @c-field-radio-font-size;
+	}
 }
 
 /* Wrapper: `c-field-box`
@@ -151,6 +200,7 @@ textarea.c-field {
 
 .c-field-label {
 	display: inline-block;
+	vertical-align: middle;
 	padding-left: @c-field-padding-left;
 
 	font-size: @c-field-label-font-size;
@@ -187,6 +237,11 @@ input[type=checkbox] + .c-field-label,
 input[type=radio] + .c-field-label {
 	position: static !important;
 	transition: none !important;
+	padding-right: @space-default;
+}
+input[type=checkbox]:checked + .c-field-label,
+input[type=radio]:checked + .c-field-label {
+	color: @c-field-focused-label-color;
 }
 
 
