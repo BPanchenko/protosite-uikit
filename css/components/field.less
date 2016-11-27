@@ -9,7 +9,6 @@
  *                  `c-field-error`
  *                  `c-field-icon`
  *                  `c-field-label`
- *                  `c-field-mask`
  *
  * Modifiers:		`is-filled`
  *					`is-focused`
@@ -191,6 +190,20 @@ input[type=radio].c-field {
 	}
 }
 
+input[type=file].c-field {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+
+	& + .c-field {
+		position: absolute;
+		left: 0;
+		z-index: 1;
+	}
+}
+
+
 /* Wrapper: `c-field-box`
  ========================================================================== */
 
@@ -290,27 +303,10 @@ input:disabled + .c-field-label {
 }
 
 .c-field-icon + .c-field,
-.c-field-icon + .c-field + .c-field-mask,
 .c-field-icon + .c-field-label + .c-field,
-.c-field-icon + .c-field-label + .c-field + .c-field-mask {
+.c-field-icon + .c-field[type=file] + .c-field {
 	padding-left: @c-field-label-left-after-icon;
 }
-
-
-/* Element: `c-field-mask` (used for the field file selection)
- ========================================================================== */
-
-.c-field-mask {
-	.c-field;
-	.u-text-truncate;
-}
-
-input[type=file] { opacity: 0; }
-input[type=file] + .c-field-mask {
-	position: absolute;
-	left: 0;
-}
-
 
 /* Element: `c-field-button`
  ========================================================================== */
@@ -388,8 +384,8 @@ input[type=file] + .c-field-mask {
 	background-color: @c-field-focused-background-color;
 }
 
-.is-filled input.c-field,
-.is-focused input.c-field,
+.is-filled input:not([type=file]).c-field,
+.is-focused input:not([type=file]).c-field,
 input.c-field:not([type=checkbox]):not([type=radio]):focus {
 	cursor: text;
 }

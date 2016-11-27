@@ -9,7 +9,6 @@
         error: { value: 'c-field-error' },
         field: { value: 'c-field' },
         icon: { value: 'c-field-icon' },
-        mask: { value: 'c-field-mask' },
         filled: { value: 'is-filled' },
         focused: { value: 'is-focused' },
         invalid: { value: 'is-invalid' },
@@ -22,8 +21,8 @@
         buttonIcon: { value: '.'+cls.buttonIcon },
         error: { value: '.'+cls.error },
         field: { value: '.'+cls.field+':not([type=checkbox]):not([type=radio])' },
+        fieldFake: { value: '.js-field-fake' },
         icon: { value: '.'+cls.icon },
-        mask: { value: '.'+cls.mask },
         filled: { value: '.'+cls.filled },
         focused: { value: '.'+cls.focused }
     });
@@ -63,7 +62,7 @@
                 }
 
                 if(field.type == 'file') {
-                    field.__mask.innerHTML = value;
+                    field.__fake.value = value;
                     return;
                 }
 
@@ -161,7 +160,10 @@
 
         field.__error = field.__box.querySelector(selector.error);
         field.__label = field.__box.querySelector(selector.label);
-        field.__mask = field.__box.querySelector(selector.mask);
+
+        if(field.type == 'file') {
+            field.__fake = field.__box.querySelector(selector.fieldFake);
+        }
 
         field.__button = field.__box.querySelector(selector.button);
         if(field.__button) {
