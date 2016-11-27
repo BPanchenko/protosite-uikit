@@ -54,6 +54,7 @@
 @c-field-label-font-size: 1.3rem;
 @c-field-label-line-height: 2rem;
 @c-field-label-color: @clr-grey-600;
+@c-field-label-user-select: none;
 @c-field-label-left-after-icon: @c-field-icon-width;
 @c-field-floating-label-font-size: @c-field-font-size;
 
@@ -210,6 +211,7 @@ input[type=radio].c-field {
 
 	color: @c-field-label-color;
 	cursor: pointer;
+	user-select: @c-field-label-user-select;
 
 	transition-property: left, top, font-size, line-height, color;
 	transition-duration: 160ms;
@@ -388,7 +390,6 @@ input.c-field:not([type=checkbox]):not([type=radio]):focus {
 .is-focused .c-field-label {
 	top: @c-field-focused-label-top;
 	left: @c-field-focused-label-left;
-	cursor: text;
 }
 
 .is-focused .c-field-label {
