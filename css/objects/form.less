@@ -16,6 +16,8 @@
 
 @o-form-max-width: 56.8rem;
 
+@o-form-fieldset-margin-bottom: @space-m;
+
 @o-form-buttons-margin-top: @space-l;
 
 @o-form-row-margin-top: @space-m;
@@ -35,6 +37,20 @@
 	max-width: @o-form-max-width;
 }
 
+/* Style of the specific elements
+ ========================================================================== */
+
+.o-form {
+	fieldset {
+		margin-bottom: @o-form-fieldset-margin-bottom;
+		legend {
+			font-size: 1.3rem;
+			cursor: default;
+			user-select: none;
+			padding-bottom: .2rem;
+		}
+	}
+}
 
 /* Sub-object: `o-form__row`
  ========================================================================== */
