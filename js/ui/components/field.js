@@ -21,7 +21,7 @@
         button: { value: '.'+cls.button },
         buttonIcon: { value: '.'+cls.buttonIcon },
         error: { value: '.'+cls.error },
-        field: { value: '.'+cls.field },
+        field: { value: '.'+cls.field+':not([type=checkbox]):not([type=radio])' },
         icon: { value: '.'+cls.icon },
         mask: { value: '.'+cls.mask },
         filled: { value: '.'+cls.filled },

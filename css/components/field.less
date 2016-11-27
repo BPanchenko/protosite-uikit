@@ -165,7 +165,9 @@ input[type=radio].c-field {
 			width: @c-field-checkbox-size - .2rem;
 			line-height: @c-field-checkbox-size - .2rem;
 			vertical-align: top;
+
 			text-align: center;
+			cursor: pointer;
 		}
 	}
 }
@@ -378,7 +380,7 @@ input[type=file] + .c-field-mask {
 
 .is-filled input.c-field,
 .is-focused input.c-field,
-input.c-field:focus {
+input.c-field:not([type=checkbox]):not([type=radio]):focus {
 	cursor: text;
 }
 
