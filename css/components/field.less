@@ -44,8 +44,8 @@
 @c-field-checkbox-font-size: 1.2rem;
 
 @c-field-radio-size: 1.6rem;
-@c-field-radio-content: '\e22d';
-@c-field-radio-font-size: .8rem;
+@c-field-radio-background: var(--svg-circle) no-repeat center;
+@c-field-radio-background-size: .8rem .8rem;
 
 
 @c-field-label-top: @c-field-border-width;
@@ -159,15 +159,13 @@ input[type=radio].c-field {
 
 		&::after {
 			content: ' ';
-			font-family: 'Iconic';
-
 			display: inline-block;
 			width: @c-field-checkbox-size - .2rem;
+			height: @c-field-checkbox-size - .2rem;
 			line-height: @c-field-checkbox-size - .2rem;
-			vertical-align: top;
 
-			text-align: center;
 			cursor: pointer;
+			vertical-align: top;
 		}
 	}
 
@@ -179,14 +177,16 @@ input[type=radio].c-field {
 
 input[type=checkbox].c-field:checked::after {
 	content: @c-field-checkbox-content;
+	font-family: 'Iconic';
 	font-size: @c-field-checkbox-font-size;
+	text-align: center;
 }
 
 input[type=radio].c-field {
 	border-radius: 50%;
 	&:checked::after {
-		content: @c-field-radio-content;
-		font-size: @c-field-radio-font-size;
+		background: @c-field-radio-background;
+		background-size: @c-field-radio-background-size;
 	}
 }
 
