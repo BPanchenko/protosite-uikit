@@ -1,5 +1,26 @@
 @import "../settings/variables";
 
+/**
+ * Component: `c-tooltip`
+ *
+ * Position modifiers:
+ *   `pos-top`
+ *   `pos-bottom`
+ *   `pos-left`
+ *   `pos-right`
+ *   `pos-left-top`
+ *   `pos-left-bottom`
+ *   `pos-right-top`
+ *   `pos-right-bottom`
+ *   `pos-top-left`
+ *   `pos-top-right`
+ *   `pos-bottom-left`
+ *   `pos-bottom-left`
+ *
+ * Markup:
+ *
+ ========================================================================== */
+
 // Variables
 // ========================================================================
 
@@ -10,7 +31,8 @@
 
 @c-tooltip-background-color: @clr-blue-grey-700;
 
-@c-tooltip-caret-size: 2.4rem;
+@c-tooltip-caret-color: #455A64;
+@c-tooltip-caret-size: 1.2rem;
 
 @c-tooltip-body-color: @clr-grey-50;
 @c-tooltip-body-font-family: @body-font-family;
@@ -33,7 +55,6 @@
 	border-radius: @c-tooltip-border-radius;
 	box-shadow: @c-tooltip-box-shadow;
 
-	padding: @c-tooltip-padding;
 	background-color: @c-tooltip-background-color;
 	text-align: left;
 	line-height: 1;
@@ -48,8 +69,11 @@
 .c-tooltip__body {
 	position: relative;
 	z-index: 3;
+	display: inline-block;
+	padding: @c-tooltip-padding;
 
 	background-color: @c-tooltip-background-color;
+	border-radius: @c-tooltip-border-radius;
 	overflow: hidden;
 
 	color: @c-tooltip-body-color;
@@ -62,84 +86,96 @@
 /* Element: `c-tooltip__caret`
  ========================================================================== */
 
-/*svg*/
 .c-tooltip__caret {
 	position: absolute;
 	z-index: 2;
+
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+
+	display: inline-block;
 	width: @c-tooltip-caret-size;
-	height: @c-tooltip-caret-size + .1rem;
+	height: @c-tooltip-caret-size;
+	background-color: @c-tooltip-caret-color;
+	box-shadow: @c-tooltip-box-shadow;
+	border-radius: .1rem;
 
-	background-color: pink;
-
-	top: auto; right: auto; bottom: auto; left: auto;
-	margin-top: 0; margin-left: 0;
-
-	transition-property: top, right, bottom, left, margin-top, margin-left;
+	transition-property: top, right, bottom, left, margin-left, margin-top;
 	transition-duration: 160ms;
 	transition-timing-function: @easing;
 	transition-delay: 0ms;
-
-	path {
-		fill: #455A64;
-	}
 }
 
-// Position modifiers:
-//   `pos-top`
-//   `pos-bottom`
-//   `pos-left`
-//   `pos-right`
-//   `pos-left-top`
-//   `pos-left-bottom`
-//   `pos-right-top`
-//   `pos-right-bottom`
-//   `pos-top-left`
-//   `pos-top-right`
-//   `pos-bottom-left`
-//   `pos-bottom-left`
+// Positioning
+
 .c-tooltip__caret {
 	&.pos-top {
 		top: -@c-tooltip-caret-size; left: 50%;
 		margin-left: -@c-tooltip-caret-size/2;
+		transform: rotate(45deg);
+		transform-origin: 0 100%;
 	}
 	&.pos-bottom {
 		bottom: -@c-tooltip-caret-size; left: 50%;
 		margin-left: -@c-tooltip-caret-size/2;
+		transform: rotate(-45deg);
+		transform-origin: 0 0;
 	}
 	&.pos-left {
 		top: 50%; left: -@c-tooltip-caret-size;
 		margin-top: -@c-tooltip-caret-size/2;
+		transform: rotate(-45deg);
+		transform-origin: 100% 0;
 	}
 	&.pos-right {
 		top: 50%; right: -@c-tooltip-caret-size;
 		margin-top: -@c-tooltip-caret-size/2;
+		transform: rotate(45deg);
+		transform-origin: 0 0;
 	}
 	&.pos-left-top {
-		top: -3px; left: -@c-tooltip-caret-size;
+		top: 0; left: -@c-tooltip-caret-size;
+		transform: rotate(-45deg);
+		transform-origin: 100% 0;
 	}
 	&.pos-left-bottom {
-		bottom: -3px; left: -@c-tooltip-caret-size;
+		bottom: 0; left: -@c-tooltip-caret-size;
+		transform: rotate(45deg);
+		transform-origin: 100% 100%;
 	}
 	&.pos-right-top {
-		top: -3px; right: -@c-tooltip-caret-size;
+		top: 0; right: -@c-tooltip-caret-size;
+		transform: rotate(45deg);
+		transform-origin: 0 0;
 	}
 	&.pos-right-bottom	{
-		bottom: -3px; right: -@c-tooltip-caret-size;
+		bottom: 0; right: -@c-tooltip-caret-size;
+		transform: rotate(-45deg);
+		transform-origin: 0 100%;
 	}
 	&.pos-top-left {
-		top: -@c-tooltip-caret-size; left: -3px;
+		top: -@c-tooltip-caret-size; left: 0;
+		transform: rotate(45deg);
+		transform-origin: 0 100%;
 	}
 	&.pos-top-right {
-		top: -@c-tooltip-caret-size; right: -3px;
+		top: -@c-tooltip-caret-size; right: 0;
+		transform-origin: 100% 100%;
+		transform: rotate(-45deg);
 	}
 	&.pos-bottom-left	{
-		bottom: -@c-tooltip-caret-size; left: -3px;
+		bottom: -@c-tooltip-caret-size; left: 0;
+		transform: rotate(-45deg);
+		transform-origin: 0 0;
 	}
 	&.pos-bottom-right	{
-		bottom: -@c-tooltip-caret-size; right: -3px;
+		bottom: -@c-tooltip-caret-size; right: 0;
+		transform: rotate(45deg);
+		transform-origin: 100% 0;
 	}
 }
-
 
 /* Control element: `c-tooltip-item`
  ========================================================================== */
