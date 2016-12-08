@@ -132,19 +132,14 @@
                 return this;
             }
         }
-        // staticProps
-        , {
-            selector: '[ui-pagination]'
-        }
     );
 
     /** Init component on elements */
 
     UI.dom.on('ready change', function(doc, options){
-        var attrName = UI.Pagination.selector.replace(/[\[\]]/g,'');
         $(UI.Pagination.selector).each(function(){
-            if(!this._uiPagination) {
-                console.log((new UI.Pagination(this, _.stringToObject(this.getAttribute(attrName)))).render());
+            if(!this[UI.Pagination.link]) {
+                console.log((new UI.Pagination(this, _.stringToObject(this.getAttribute(UI.Pagination.attr)))).render());
             }
         });
     });

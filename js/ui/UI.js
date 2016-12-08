@@ -18,7 +18,7 @@
         this.initialize.apply(this, arguments);
 
         // reference to component on element
-        elem['_ui' + this.name] = this;
+        elem[this.constructor.reference] = this;
     };
 
     UI.Component.extend = function(protoProps, staticProps) {
@@ -35,7 +35,11 @@
         }
 
         // Add static properties to the constructor function, if supplied.
-        _.extend(child, parent, staticProps);
+        _.extend(child, {
+            attr: `ui-${protoProps.name.toLowerCase()}`,
+            reference: `_ui${protoProps.name}`,
+            selector: `*[ui-${protoProps.name.toLowerCase()}]`
+        }, parent, staticProps);
 
         // Set the prototype chain to inherit from `parent`, without calling
         // `parent`'s constructor function and add the prototype properties.
@@ -50,9 +54,7 @@
         UI[protoProps.name] = child;
 
         // mapping component selector
-        if(staticProps.selector) {
-            _selectorsOfComponents[protoProps.name] = staticProps.selector;
-        }
+        _selectorsOfComponents[protoProps.name] = child.selector;
 
         return child;
     };
