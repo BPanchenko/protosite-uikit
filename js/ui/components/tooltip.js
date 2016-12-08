@@ -1,50 +1,74 @@
 (function(UI){
 
+    const cls = Object.create(null, {
+        main: { value: 'c-tooltip' },
+        inside: { value: 'c-tooltip__inside' }
+    });
+
     const tooltip = document.createElement('section');
+    tooltip.classList.add(cls.main);
+    tooltip.innerHTML = `<div class="${cls.inside}"></div>`;
 
-    //
-    function _onMouseMove(e) {
-        var $target = $(this);
+    const _ons = Object.create(null, {
+        mouseenter: {
+            value: function(e){
 
-        document.body.appendChild(tooltip);
+                return;
+            }
+        },
+        mouseleave: {
+            value: function(e){
 
-        body.innerHTML = e.target.getAttribute('data-ui-tooltip');
-        tooltip.style.position = 'fixed';
-        tooltip.style.top = (e.clientY + 24) + 'px';
-        tooltip.style.left = (e.clientX - 12) + 'px';
+                return;
+            }
+        },
+        mousemove: {
+            value: function(e){
 
-        return;
-    }
-
-    //
-    function _onMouseLeave(e) {
-
-        tooltip.style.position = null;
-        tooltip.style.top = null;
-        tooltip.style.left = null;
-
-        document.body.removeChild(tooltip);
-
-        return;
-    }
+                return;
+            }
+        }
+    });
 
     /** Class component */
 
     UI.Component.extend(
         // selfProps
         {
-            name: 'Tooltip'
-        }
-        // staticProps
-        , {
-            selector: '[ui-tooltip]'
+            name: 'Tooltip',
+            defaults: {
+                content: '',
+                position: 'bottom',
+                floating: true
+            },
+            events: {
+                'mouseenter': _ons.mouseenter,
+                'mouseleave': _ons.mouseleave,
+                'mousemove': _ons.mousemove
+            },
+            initialize: function(){
+                if(_.isString(this.options)) this.options = { content: this.options };
+                this.options = _.extend(_.clone(this.defaults), this.options);
+            }
         }
     );
 
-    UI.dom.on('ready change', function(doc, options){
-        UI.Tooltip.$holders = $('[ui-tooltip]');
-        UI.Tooltip.$holders.on('mousemove', _onMouseMove);
-        UI.Tooltip.$holders.on('mouseleave', _onMouseLeave);
+    function _init(elems){
+        _.toArray(elems).forEach(elem => {
+            if(elem.hasAttribute(UI.Tooltip.attr) && !elem[UI.Tooltip.reference]) {
+                new UI.Tooltip(elem, elem.getAttribute(UI.Tooltip.attr));
+            }
+        });
+        return;
+    }
+
+    UI.dom.on('ready', function(doc){
+        let elems = doc.querySelectorAll(UI.Tooltip.selector);
+        _init(elems);
+    });
+
+    UI.dom.on('change', function(doc, options){
+        _init(options.added);
     });
 
 }(UI));
