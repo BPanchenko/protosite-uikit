@@ -54,17 +54,14 @@
     );
 
     function _init(elems){
-        _.toArray(elems).forEach(elem => {
-            if(elem.hasAttribute(UI.Tooltip.attr) && !elem[UI.Tooltip.reference]) {
-                new UI.Tooltip(elem, elem.getAttribute(UI.Tooltip.attr));
-            }
-        });
+        Array.from(elems)
+            .filter(elem => elem.hasAttribute(UI.Tooltip.attr) && !elem[UI.Tooltip.reference])
+            .forEach(elem => new UI.Tooltip(elem, elem.getAttribute(UI.Tooltip.attr)));
         return;
     }
 
     UI.dom.on('ready', function(doc){
-        let elems = doc.querySelectorAll(UI.Tooltip.selector);
-        _init(elems);
+        _init(doc.querySelectorAll(UI.Tooltip.selector));
     });
 
     UI.dom.on('change', function(doc, options){

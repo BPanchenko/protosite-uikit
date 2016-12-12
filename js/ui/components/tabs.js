@@ -125,10 +125,6 @@
                 _activateView.call(this);
             }
         }
-        // staticProps
-        , {
-            selector: '[ui-tabs]'
-        }
     );
 
 }(UI));
