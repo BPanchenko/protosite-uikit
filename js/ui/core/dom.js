@@ -12,8 +12,10 @@
 
         mutations.forEach(function(record){
             if(record.type == 'childList') {
-                options.added = options.added.concat([].slice.call(record.addedNodes));
-                options.removed = options.removed.concat([].slice.call(record.removedNodes));
+                let added = Array.from(record.addedNodes).filter(elem => elem instanceof HTMLElement);
+                let removed = Array.from(record.removedNodes).filter(elem => elem instanceof HTMLElement);
+                options.added = options.added.concat(added);
+                options.removed = options.removed.concat(removed);
             }
         });
 
