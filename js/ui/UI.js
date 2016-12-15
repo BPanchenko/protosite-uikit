@@ -7,12 +7,12 @@
 
     // {class} Component
 
-    UI.Component = function (elem, options) {
+    UI.Component = function (elem, options = {}) {
         console.assert(elem instanceof HTMLElement, "A component element is not HTMLElement");
 
         // equivalent Backbone.View
         this.cid = _.uniqueId('component');
-        this.options = options || {};
+        this.options = options;
         this.el = elem;
         this._ensureElement();
         this.initialize.apply(this, arguments);
@@ -21,21 +21,21 @@
         elem[this.constructor.reference] = this;
     };
 
-    UI.Component.extend = function(protoProps, staticProps) {
+    UI.Component.extend = function(protoProps = {}, staticProps = {}) {
         var parent = this;
         var child;
 
         // The constructor function for the new subclass is either defined by you
         // (the "constructor" property in your `extend` definition), or defaulted
         // by us to simply call the parent constructor.
-        if (protoProps && _.has(protoProps, 'constructor')) {
+        if (protoProps.hasOwnProperty('constructor')) {
             child = protoProps.constructor;
         } else {
             child = function(){ return parent.apply(this, arguments); };
         }
 
         // Add static properties to the constructor function, if supplied.
-        _.extend(child, {
+        Object.assign(child, {
             attr: `ui-${protoProps.name.toLowerCase()}`,
             reference: `_ui${protoProps.name}`,
             selector: `*[ui-${protoProps.name.toLowerCase()}]`
