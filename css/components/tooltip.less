@@ -31,7 +31,7 @@
 
 @c-tooltip-background-color: @clr-blue-grey-700;
 
-@c-tooltip-caret-size: 1rem;
+@c-tooltip-caret-size: .8rem;
 
 @c-tooltip-body-color: @clr-grey-50;
 @c-tooltip-body-font-family: @body-font-family;
@@ -45,8 +45,13 @@
 
 .c-tooltip {
 	display: inline-block;
-	position: absolute;
-	left: 50%; top: 50%;
+	position: fixed;
+	left: 0; top: 0;
+	transform: translate(0,0);
+
+	transition-property: transform;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
 
 	cursor: default;
 	user-select: none;
