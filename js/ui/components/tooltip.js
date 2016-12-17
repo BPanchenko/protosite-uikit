@@ -12,14 +12,55 @@
     ttInside.classList.add(cls.inside);
     tt.appendChild(ttInside);
 
+    var sideRatio = 1.1;
     var rectHolder, rectTT, rectBody;
 
-    var getDataPosition = function() {
+    function correctOnMouse(position, mouseX, mouseY) {
+        var posParts = position.split('-');
 
-        return newPosition;
-    };
+        if(!rectTT.width || !rectTT.height) return position;
 
-    var getTransformStyle = function(position) {
+        if(['top', 'bottom'].indexOf(posParts[0]) != -1 && rectHolder.width > rectTT.width*sideRatio) {
+            let third = rectHolder.width/3;
+            if(mouseX <= rectHolder.left + third) posParts[1] = 'left';
+            else if(mouseX <= rectHolder.left + 2*third) delete posParts[1];
+            else if(mouseX <= rectHolder.right) posParts[1] = 'right';
+            return _.compact(posParts).join('-');
+        }
+
+        if(['left', 'right'].indexOf(posParts[0]) != -1 && rectHolder.height > rectTT.height*sideRatio) {
+            let third = rectHolder.height/3;
+            if(mouseY <= rectHolder.top + third) posParts[1] = 'top';
+            else if(mouseY <= rectHolder.top + 2*third) delete posParts[1];
+            else if(mouseY <= rectHolder.bottom) posParts[1] = 'bottom';
+            return _.compact(posParts).join('-');
+        }
+
+        return position;
+    }
+
+    function correctVisibility(position) {
+        rectTT = tt.getBoundingClientRect();
+        rectBody = document.body.getBoundingClientRect();
+
+        let posParts = position.split('-');
+
+        if (posParts[0] == 'bottom' && rectBody.bottom <= rectTT.bottom)
+            posParts[0] = 'top';
+
+        if (posParts[0] == 'top' && rectTT.top < 0)
+            posParts[0] = 'bottom';
+
+        if (posParts[0] == 'right' && rectBody.right <= rectTT.right)
+            posParts[0] = 'left';
+
+        if (posParts[0] == 'left' && rectTT.left < 0)
+            posParts[0] = 'right';
+
+        return posParts.join('-');
+    }
+
+    function getTransformStyle(position) {
         var x,y, ttStyle = window.getComputedStyle(tt);
 
         var ttMargin = {
@@ -33,7 +74,7 @@
 
         switch (position) {
             case 'top':
-                x = rectHolder.left + rectHolder.width/2 - rectTT.width/2;
+                x = rectHolder.left + rectHolder.width/2 - (rectTT.width + ttMargin.horizontal)/2;
                 y = rectHolder.top - rectTT.height - ttMargin.vertical;
                 break;
             case 'top-left':
@@ -46,7 +87,7 @@
                 break;
             case 'right':
                 x = rectHolder.right + ttMargin.left;
-                y = rectHolder.top + rectHolder.height/2 - rectTT.height/2 - ttMargin.horizontal/2;
+                y = rectHolder.top + rectHolder.height/2 - (rectTT.height + ttMargin.horizontal)/2;
                 break;
             case 'right-top':
                 x = rectHolder.right + ttMargin.left;
@@ -57,7 +98,7 @@
                 y = rectHolder.bottom - rectTT.height - ttMargin.bottom;
                 break;
             case 'bottom':
-                x = rectHolder.left + rectHolder.width/2 - rectTT.width/2;
+                x = rectHolder.left + rectHolder.width/2 - (rectTT.width + ttMargin.horizontal)/2;
                 y = rectHolder.bottom + ttMargin.top;
                 break;
             case 'bottom-left':
@@ -70,7 +111,7 @@
                 break;
             case 'left':
                 x = rectHolder.left - rectTT.width - ttMargin.horizontal;
-                y = rectHolder.top + rectHolder.height/2 - rectTT.height/2 - ttMargin.horizontal/2;
+                y = rectHolder.top + rectHolder.height/2 - (rectTT.height + ttMargin.horizontal)/2;
                 break;
             case 'left-top':
                 x = rectHolder.left - rectTT.width - ttMargin.horizontal;
@@ -83,37 +124,37 @@
         }
 
         return `translate(${Math.round(x)}px,${Math.round(y)}px)`;
-    };
+    }
 
     var positioningTT = _.throttle(function(mouseX = 0, mouseY = 0) {
-        let position = this.options.position;
-
-
-        tt.setAttribute('data-position', position);
-        tt.style.transform = getTransformStyle(position);
-
-        /*
-        var posParts = position.split('-'), newPosition = position;
-        if(rectBody.bottom >= rectTT.bottom) posParts[0] = 'top';
-        if(rectBody.top >= rectTT.top) posParts[0] = 'bottom';
-        if(rectBody.right >= rectTT.right) posParts[1] = 'left';
-        if(rectBody.left >= rectTT.left) posParts[1] = 'right';
-
-        newPosition = posParts.join('-');
-        if(newPosition != position) tt.setAttribute('data-position', newPosition);
-        */
-
-        let promise = new Promise(function(resolve, reject) {
+        let result = new Promise(function(resolve, reject) {
             setTimeout(resolve, parseFloat(window.getComputedStyle(tt).transitionDuration) * 1000);
         });
-        return promise;
+
+        let position = this.options.position;
+        this.position(position);
+
+        let correctedPosition = correctVisibility(position);
+        if (correctedPosition != position) {
+            position = correctedPosition;
+            this.position(position);
+        }
+
+        if(!this.options.floating) return result;
+
+        correctedPosition = correctOnMouse(position, mouseX, mouseY);
+        if(correctedPosition != position) {
+            position = correctedPosition;
+            this.position(position);
+        }
+
+        return result;
     }, 160);
 
     const _ons = Object.create(null, {
         mouseenter: {
             value: function(e){
                 rectHolder = this.el.getBoundingClientRect();
-                rectBody = document.body.getBoundingClientRect();
 
                 ttInside.innerHTML = this.options.content;
                 document.body.appendChild(tt);
@@ -168,6 +209,16 @@
             initialize: function(){
                 if(_.isString(this.options)) this.options = { content: this.options };
                 this.options = Object.assign(_.clone(this.defaults), this.options);
+            },
+
+            position: function(position) {
+                if(!position) return this;
+
+                this.options.position = position;
+                tt.setAttribute('data-position', position);
+                tt.style.transform = getTransformStyle(position);
+
+                return this;
             }
         }
     );
