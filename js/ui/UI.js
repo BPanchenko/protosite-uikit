@@ -8,19 +8,21 @@
     // {class} Component
 
     UI.Component = function (elem, options = '') {
-        console.assert(elem instanceof HTMLElement, "A component element is not HTMLElement");
+        console.assert(elem instanceof Element, "A component element is not Element");
 
         // equivalent Backbone.View
         this.cid = _.uniqueId('component');
         this.el = elem;
         this._ensureElement();
-        this.initialize.apply(this, arguments);
 
         // options is string or object, with an attempt conversion string to object
         try {
             options = _.stringToObject(options);
         } catch(err) {  }
         this.options = options;
+
+        // initialize
+        this.initialize.apply(this, arguments);
 
         // reference to component on element
         elem[this.constructor.reference] = this;
