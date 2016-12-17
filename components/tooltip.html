@@ -160,9 +160,20 @@
                             <div class="c-panel__head">
                                 <h3>Поведение</h3>
                             </div>
-                            <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
-                                <span class="c-tooltip-holder pattern" ui-tooltip="{ content: 'Водогрязеторфопарафинолечение', position: 'right-top' }">
-                                    активный элемент
+                            <div class="c-panel__body u-margin-large-bottom u-text-center">
+                                <span class="c-tooltip-holder u-margin-large-top pattern pattern--horizontal" ui-tooltip="{ content: 'Подсказка<br>на три<br>строки', position: 'bottom' }">
+                                    активный элемент<br>
+                                    с горизонтальной позиционированием подсказки
+                                </span>
+                                <div class="u-clearfix u-margin-large-top"></div>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px">
+                                    <circle fill="#E040FB" cx="10" cy="10" r="10" ui-tooltip="{ content: 'подсказка', position: 'top' }"/>
+                                </svg>
+                                <div class="u-clearfix u-margin-large-top"></div>
+                                <span class="c-tooltip-holder pattern pattern--vertical" ui-tooltip="{ content: 'Подсказка<br>на три<br>строки', position: 'left' }">
+                                    активный элемент<br>
+                                    с вертикальным позиционированием<br>
+                                    подсказки
                                 </span>
                             </div>
                         </section>
