@@ -2,20 +2,25 @@
 
     // {object} UI
 
-    var UI = window.UI = _.extend({}, Backbone.Events);
+    var UI = window.UI = Object.assign({}, Backbone.Events);
     var _selectorsOfComponents = {};
 
     // {class} Component
 
-    UI.Component = function (elem, options = {}) {
+    UI.Component = function (elem, options = '') {
         console.assert(elem instanceof HTMLElement, "A component element is not HTMLElement");
 
         // equivalent Backbone.View
         this.cid = _.uniqueId('component');
-        this.options = options;
         this.el = elem;
         this._ensureElement();
         this.initialize.apply(this, arguments);
+
+        // options is string or object, with an attempt conversion string to object
+        try {
+            options = _.stringToObject(options);
+        } catch(err) {  }
+        this.options = options;
 
         // reference to component on element
         elem[this.constructor.reference] = this;
