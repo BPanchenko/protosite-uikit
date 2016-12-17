@@ -18,72 +18,79 @@
 
         return newPosition;
     };
-    var getTransformStyle = function(position) {
-        var x,y;
-        var scrollTop = document.body.scrollTop;
-        var ttStyle = getComputedStyle(tt);
 
-        var ttMarginTop = parseInt(ttStyle.marginTop),
-            ttMarginLeft = parseInt(ttStyle.marginLeft);
+    var getTransformStyle = function(position) {
+        var x,y, ttStyle = window.getComputedStyle(tt);
+
+        var ttMargin = {
+            top: parseInt(ttStyle.marginTop),
+            right: parseInt(ttStyle.marginRight),
+            bottom: parseInt(ttStyle.marginBottom),
+            left: parseInt(ttStyle.marginLeft)
+        };
+        ttMargin.vertical = ttMargin.top + ttMargin.bottom;
+        ttMargin.horizontal = ttMargin.left + ttMargin.right;
 
         switch (position) {
-            case 'bottom':
-                x = rectHolder.left + (rectHolder.width - rectTT.width)/2;
-                y = rectHolder.bottom + ttMarginTop;
-                break;
             case 'top':
-                x = rectHolder.left + (rectHolder.width - rectTT.width)/2;
-                y = rectHolder.top - rectTT.height - ttMarginTop - scrollTop;
-                break;
-            case 'right':
-                x = rectHolder.right + ttMarginLeft;
-                y = rectHolder.top - rectTT.height/2;
-                break;
-            case 'left':
-
-                break;
-            case 'right-bottom':
-
-                break;
-            case 'right-top':
-
-                break;
-            case 'left-bottom':
-
-                break;
-            case 'left-top':
-
-                break;
-            case 'bottom-right':
-
-                break;
-            case 'bottom-left':
-
-                break;
-            case 'top-right':
-
+                x = rectHolder.left + rectHolder.width/2 - rectTT.width/2;
+                y = rectHolder.top - rectTT.height - ttMargin.vertical;
                 break;
             case 'top-left':
-
+                x = rectHolder.left - ttMargin.left;
+                y = rectHolder.top - rectTT.height - ttMargin.vertical;
+                break;
+            case 'top-right':
+                x = rectHolder.right - rectTT.width - ttMargin.right;
+                y = rectHolder.top - rectTT.height - ttMargin.vertical;
+                break;
+            case 'right':
+                x = rectHolder.right + ttMargin.left;
+                y = rectHolder.top + rectHolder.height/2 - rectTT.height/2 - ttMargin.horizontal/2;
+                break;
+            case 'right-top':
+                x = rectHolder.right + ttMargin.left;
+                y = rectHolder.top - ttMargin.top;
+                break;
+            case 'right-bottom':
+                x = rectHolder.right + ttMargin.left;
+                y = rectHolder.bottom - rectTT.height - ttMargin.bottom;
+                break;
+            case 'bottom':
+                x = rectHolder.left + rectHolder.width/2 - rectTT.width/2;
+                y = rectHolder.bottom + ttMargin.top;
+                break;
+            case 'bottom-left':
+                x = rectHolder.left - ttMargin.left;
+                y = rectHolder.bottom + ttMargin.top;
+                break;
+            case 'bottom-right':
+                x = rectHolder.right - rectTT.width - ttMargin.right;
+                y = rectHolder.bottom + ttMargin.top;
+                break;
+            case 'left':
+                x = rectHolder.left - rectTT.width - ttMargin.horizontal;
+                y = rectHolder.top + rectHolder.height/2 - rectTT.height/2 - ttMargin.horizontal/2;
+                break;
+            case 'left-top':
+                x = rectHolder.left - rectTT.width - ttMargin.horizontal;
+                y = rectHolder.top - ttMargin.top;
+                break;
+            case 'left-bottom':
+                x = rectHolder.left - rectTT.width - ttMargin.horizontal;
+                y = rectHolder.bottom - rectTT.height - ttMargin.bottom;
                 break;
         }
-
-        console.log(position, x, y);
 
         return `translate(${Math.round(x)}px,${Math.round(y)}px)`;
     };
 
     var positioningTT = _.throttle(function(mouseX = 0, mouseY = 0) {
-
-
-        let x = rectHolder.left;
-        let y = rectHolder.top;
         let position = this.options.position;
 
-        y += rectHolder.height;
-        y -= document.body.scrollTop;
+
         tt.setAttribute('data-position', position);
-        rectTT = tt.getBoundingClientRect();
+        tt.style.transform = getTransformStyle(position);
 
         /*
         var posParts = position.split('-'), newPosition = position;
@@ -96,8 +103,10 @@
         if(newPosition != position) tt.setAttribute('data-position', newPosition);
         */
 
-        tt.style.transform = getTransformStyle(position);
-        return;
+        let promise = new Promise(function(resolve, reject) {
+            setTimeout(resolve, parseFloat(window.getComputedStyle(tt).transitionDuration) * 1000);
+        });
+        return promise;
     }, 160);
 
     const _ons = Object.create(null, {
@@ -107,18 +116,21 @@
                 rectBody = document.body.getBoundingClientRect();
 
                 ttInside.innerHTML = this.options.content;
-                positioningTT.call(this);
-                tt.setAttribute('aria-hidden', 'false');
+                document.body.appendChild(tt);
+
+                rectTT = tt.getBoundingClientRect();
+                positioningTT.call(this).then(() => tt.setAttribute('aria-hidden', 'false'));
 
                 this.$el.on('mousemove.delegateEvents' + this.cid, _ons.mousemove.bind(this));
-                document.body.appendChild(tt);
+                $(window).on('scroll.delegateEvents' + this.cid, _ons.mouseleave.bind(this));
                 return;
             }
         },
         mouseleave: {
             value: function(e){
-                tt.setAttribute('aria-hidden', 'true');
                 this.$el.off('mousemove.delegateEvents' + this.cid);
+                $(window).off('scroll.delegateEvents' + this.cid);
+                tt.setAttribute('aria-hidden', 'true');
                 tt.remove();
                 return;
             }
@@ -126,6 +138,12 @@
         mousemove: {
             value: function(e){
                 positioningTT.call(this, e.clientX, e.clientY);
+                return;
+            }
+        },
+        scroll: {
+            value: function(e){
+                positioningTT.call(this);
                 return;
             }
         }
@@ -139,7 +157,7 @@
             name: 'Tooltip',
             defaults: {
                 content: '',
-                position: 'right',
+                position: 'bottom',
                 floating: true
             },
             events: {

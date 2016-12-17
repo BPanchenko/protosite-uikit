@@ -19,6 +19,7 @@
         <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
 
         <link rel="stylesheet/less" type="text/css" href="/css/core.less">
+        <link rel="stylesheet/less" type="text/css" href="/css/pattern.less">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
 
         <script src="/dist/ui-libs.js"></script>
@@ -106,7 +107,7 @@
                                 <br><br>
                                 <!-- caret bottom -->
 
-                                <section class="c-tooltip" data-position="bottom-right" style="position: relative; left: auto;">
+                                <section class="c-tooltip" data-position="bottom-left" style="position: relative; left: auto;">
                                     <div class="c-tooltip__inside">
                                         Содержимое подсказки
                                     </div>
@@ -118,7 +119,7 @@
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="bottom-left" style="position: relative; left: auto;">
+                                <section class="c-tooltip" data-position="bottom-right" style="position: relative; left: auto;">
                                     <div class="c-tooltip__inside">
                                         Электрофотополупроводниковый
                                     </div>
@@ -127,7 +128,7 @@
                                 <br><br>
                                 <!-- caret left -->
 
-                                <section class="c-tooltip" data-position="left-bottom" style="position: relative; left: auto;">
+                                <section class="c-tooltip" data-position="left-top" style="position: relative; left: auto;">
                                     <div class="c-tooltip__inside">
                                         Три строки<br>
                                         содержимого<br>
@@ -143,7 +144,7 @@
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="left-top" style="position: relative; left: auto;">
+                                <section class="c-tooltip" data-position="left-bottom" style="position: relative; left: auto;">
                                     <div class="c-tooltip__inside">
                                         Три строки<br>
                                         содержимого<br>
@@ -160,7 +161,9 @@
                                 <h3>Поведение</h3>
                             </div>
                             <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
-                                <span class="c-tooltip-holder" ui-tooltip="Водогрязеторфопарафинолечение">активный элемент</span>
+                                <span class="c-tooltip-holder pattern" ui-tooltip="{ content: 'Водогрязеторфопарафинолечение', position: 'right-top' }">
+                                    активный элемент
+                                </span>
                             </div>
                         </section>
                     </div>
