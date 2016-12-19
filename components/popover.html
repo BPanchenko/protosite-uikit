@@ -24,7 +24,7 @@
 
         <script src="/dist/ui-libs.js"></script>
         <script src="/dist/ui-core.js"></script>
-        <script src="/js/ui/components/tooltip.js"></script>
+        <script src="/js/ui/components/popover.js"></script>
     </head>
     <body>
         <div class="o-container">
@@ -44,7 +44,7 @@
                             <a href="/" class="">Главная</a>
                         </span>
                 <span class="o-breadcrumb__item">Компоненты</span>
-                <span class="o-breadcrumb__item is-current">Подсказка (tooltip)</span>
+                <span class="o-breadcrumb__item is-current">Всплывающая панель (подсказка)</span>
             </nav>
 
             <main role="main">
@@ -59,20 +59,20 @@
 
                                 <!-- caret top -->
 
-                                <section class="c-tooltip" data-position="top-left" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="top-left" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Содержимое подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="top" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="top" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Содержимое подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="top-right" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="top-right" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Водогрязеторфопарафинолечение
                                     </div>
                                 </section>
@@ -80,24 +80,24 @@
                                 <br><br>
                                 <!-- caret right -->
 
-                                <section class="c-tooltip" data-position="right-top" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="right-top" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Три строки<br>
                                         содержимого<br>
                                         подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="right" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="right" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Три строки<br>
                                         содержимого<br>
                                         подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="right-bottom" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="right-bottom" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Три строки<br>
                                         содержимого<br>
                                         подсказки
@@ -107,20 +107,20 @@
                                 <br><br>
                                 <!-- caret bottom -->
 
-                                <section class="c-tooltip" data-position="bottom-left" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="bottom-left" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Содержимое подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="bottom" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="bottom" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Содержимое подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="bottom-right" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="bottom-right" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Электрофотополупроводниковый
                                     </div>
                                 </section>
@@ -128,24 +128,24 @@
                                 <br><br>
                                 <!-- caret left -->
 
-                                <section class="c-tooltip" data-position="left-top" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="left-top" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Три строки<br>
                                         содержимого<br>
                                         подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="left" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="left" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Три строки<br>
                                         содержимого<br>
                                         подсказки
                                     </div>
                                 </section>
 
-                                <section class="c-tooltip" data-position="left-bottom" style="position: relative; left: auto;">
-                                    <div class="c-tooltip__inside">
+                                <section class="c-popover" data-position="left-bottom" style="position: relative; left: auto;">
+                                    <div class="c-popover__inside">
                                         Три строки<br>
                                         содержимого<br>
                                         подсказки
@@ -161,16 +161,16 @@
                                 <h3>Поведение</h3>
                             </div>
                             <div class="c-panel__body u-margin-large-bottom u-text-center">
-                                <span class="c-tooltip-holder u-margin-large-top pattern pattern--horizontal" ui-tooltip="{ content: 'Подсказка<br>на три<br>строки', position: 'bottom' }">
+                                <span class="c-popover-holder u-margin-large-top pattern pattern--horizontal" ui-popover="{ content: 'Подсказка<br>на три<br>строки', position: 'bottom' }">
                                     активный элемент<br>
                                     с горизонтальным позиционированием подсказки
                                 </span>
                                 <div class="u-clearfix u-margin-large-top"></div>
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px">
-                                    <circle fill="#E040FB" cx="10" cy="10" r="10" ui-tooltip="{ content: 'подсказка', position: 'top' }"/>
+                                    <circle fill="#E040FB" cx="10" cy="10" r="10" ui-popover="{ content: 'подсказка', position: 'top' }"/>
                                 </svg>
                                 <div class="u-clearfix u-margin-large-top"></div>
-                                <span class="c-tooltip-holder pattern pattern--vertical" ui-tooltip="{ content: 'Подсказка<br>на три<br>строки', position: 'left' }">
+                                <span class="c-popover-holder pattern pattern--vertical" ui-popover="{ content: 'Подсказка<br>на три<br>строки', position: 'left' }">
                                     активный элемент<br>
                                     с вертикальным позиционированием<br>
                                     подсказки

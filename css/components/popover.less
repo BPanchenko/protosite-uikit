@@ -1,7 +1,7 @@
 @import "../settings/variables";
 
 /**
- * Component: `c-tooltip`
+ * Component: `c-popover`
  *
  * Position modifiers:
  *   [data-position=top]
@@ -24,26 +24,26 @@
 // Variables
 // ========================================================================
 
-@c-tooltip-border-radius: .2rem;
-@c-tooltip-box-shadow: @shadow-2dp;
+@c-popover-border-radius: .2rem;
+@c-popover-box-shadow: @shadow-2dp;
 
-@c-tooltip-padding: .6rem .8rem;
+@c-popover-padding: .6rem .8rem;
 
-@c-tooltip-background-color: @clr-blue-grey-700;
+@c-popover-background-color: @clr-blue-grey-700;
 
-@c-tooltip-caret-size: .8rem;
+@c-popover-caret-size: .8rem;
 
-@c-tooltip-body-color: @clr-grey-50;
-@c-tooltip-body-font-family: @body-font-family;
-@c-tooltip-body-font-size: 1.3rem;
-@c-tooltip-body-line-height: 1.2;
+@c-popover-body-color: @clr-grey-50;
+@c-popover-body-font-family: @body-font-family;
+@c-popover-body-font-size: 1.3rem;
+@c-popover-body-line-height: 1.2;
 
 
 /* ========================================================================
    Component: Tooltip
  ========================================================================== */
 
-.c-tooltip {
+.c-popover {
 	display: inline-block;
 	position: fixed;
 	left: 0; top: 0;
@@ -56,7 +56,7 @@
 	cursor: default;
 	user-select: none;
 
-	box-shadow: @c-tooltip-box-shadow;
+	box-shadow: @c-popover-box-shadow;
 
 	text-align: left;
 	line-height: 1;
@@ -75,7 +75,7 @@
 /* Subelement: Caret of tooltip
  ========================================================================== */
 
-.c-tooltip::after {
+.c-popover::after {
 	content: '';
 	position: absolute;
 	z-index: 2;
@@ -86,11 +86,11 @@
 	left: auto;
 
 	display: block;
-	width: @c-tooltip-caret-size;
-	height: @c-tooltip-caret-size;
+	width: @c-popover-caret-size;
+	height: @c-popover-caret-size;
 
-	background-color: @c-tooltip-background-color;
-	box-shadow: @c-tooltip-box-shadow;
+	background-color: @c-popover-background-color;
+	box-shadow: @c-popover-box-shadow;
 	border-radius: .1rem;
 
 	margin-top: 0;
@@ -107,86 +107,86 @@
 
 // Positioning
 
-.c-tooltip {
+.c-popover {
 	&[data-position=bottom]::after {
-		top: -@c-tooltip-caret-size/2;
+		top: -@c-popover-caret-size/2;
 		left: 50%;
-		margin-left: -@c-tooltip-caret-size/2;
+		margin-left: -@c-popover-caret-size/2;
 	}
 	&[data-position=top]::after {
-		bottom: -@c-tooltip-caret-size/2;
+		bottom: -@c-popover-caret-size/2;
 		left: 50%;
-		margin-left: -@c-tooltip-caret-size/2;
+		margin-left: -@c-popover-caret-size/2;
 	}
 	&[data-position=right]::after {
 		top: 50%;
-		left: -@c-tooltip-caret-size/2;
-		margin-top: -@c-tooltip-caret-size/2;
+		left: -@c-popover-caret-size/2;
+		margin-top: -@c-popover-caret-size/2;
 	}
 	&[data-position=left]::after {
 		top: 50%;
-		right: -@c-tooltip-caret-size/2;
-		margin-top: -@c-tooltip-caret-size/2;
+		right: -@c-popover-caret-size/2;
+		margin-top: -@c-popover-caret-size/2;
 	}
 	&[data-position=right-top]::after {
-		top: @c-tooltip-caret-size;
-		left: -@c-tooltip-caret-size/2;
+		top: @c-popover-caret-size;
+		left: -@c-popover-caret-size/2;
 	}
 	&[data-position=right-bottom]::after {
-		bottom: @c-tooltip-caret-size;
-		left: -@c-tooltip-caret-size/2;
+		bottom: @c-popover-caret-size;
+		left: -@c-popover-caret-size/2;
 	}
 	&[data-position=left-top]::after {
-		top: @c-tooltip-caret-size;
-		right: -@c-tooltip-caret-size/2;
+		top: @c-popover-caret-size;
+		right: -@c-popover-caret-size/2;
 	}
 	&[data-position=left-bottom]::after {
-		bottom: @c-tooltip-caret-size;
-		right: -@c-tooltip-caret-size/2;
+		bottom: @c-popover-caret-size;
+		right: -@c-popover-caret-size/2;
 	}
 	&[data-position=bottom-left]::after {
-		top: -@c-tooltip-caret-size/2;
-		left: @c-tooltip-caret-size;
+		top: -@c-popover-caret-size/2;
+		left: @c-popover-caret-size;
 	}
 	&[data-position=bottom-right]::after {
-		top: -@c-tooltip-caret-size/2;
-		right: @c-tooltip-caret-size;
+		top: -@c-popover-caret-size/2;
+		right: @c-popover-caret-size;
 	}
 	&[data-position=top-left]::after {
-		bottom: -@c-tooltip-caret-size/2;
-		left: @c-tooltip-caret-size;
+		bottom: -@c-popover-caret-size/2;
+		left: @c-popover-caret-size;
 	}
 	&[data-position=top-right]::after {
-		bottom: -@c-tooltip-caret-size/2;
-		right: @c-tooltip-caret-size;
+		bottom: -@c-popover-caret-size/2;
+		right: @c-popover-caret-size;
 	}
 }
 
 
-/* Element: `c-tooltip__inside`
+/* Element: `c-popover__inside`
  ========================================================================== */
 
-.c-tooltip__inside {
+.c-popover__inside {
 	position: relative;
 	z-index: 3;
 	display: inline-block;
-	padding: @c-tooltip-padding;
+	padding: @c-popover-padding;
 
-	background-color: @c-tooltip-background-color;
-	border-radius: @c-tooltip-border-radius;
+	background-color: @c-popover-background-color;
+	border-radius: @c-popover-border-radius;
 	overflow: hidden;
 
-	color: @c-tooltip-body-color;
-	font-family: @c-tooltip-body-font-family;
-	font-size: @c-tooltip-body-font-size;
-	line-height: @c-tooltip-body-line-height;
+	color: @c-popover-body-color;
+	font-family: @c-popover-body-font-family;
+	font-size: @c-popover-body-font-size;
+	line-height: @c-popover-body-line-height;
 }
 
 
-/* Control element: `c-tooltip-holder`
+/* Control element: `c-popover-holder`
  ========================================================================== */
 
-.c-tooltip-holder {
+.c-popover-holder {
 	display: inline-block;
 	cursor: pointer;
 	border-bottom: 1px dashed @body-color;

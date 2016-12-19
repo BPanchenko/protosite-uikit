@@ -1,16 +1,16 @@
 (function(UI){
 
     const cls = Object.create(null, {
-        main: { value: 'c-tooltip' },
-        inside: { value: 'c-tooltip__inside' }
+        main: { value: 'c-popover' },
+        inside: { value: 'c-popover__inside' }
     });
 
-    const tt = document.createElement('section');
-    const ttInside = document.createElement('div');
-    tt.classList.add(cls.main);
-    tt.setAttribute('aria-hidden', 'true');
-    ttInside.classList.add(cls.inside);
-    tt.appendChild(ttInside);
+    const pop = document.createElement('section');
+    const popInside = document.createElement('div');
+    pop.classList.add(cls.main);
+    pop.setAttribute('aria-hidden', 'true');
+    popInside.classList.add(cls.inside);
+    pop.appendChild(popInside);
 
     var sideRatio = 1.1;
     var rectHolder, rectTT, rectBody;
@@ -40,7 +40,7 @@
     }
 
     function correctVisibility(position) {
-        rectTT = tt.getBoundingClientRect();
+        rectTT = pop.getBoundingClientRect();
         rectBody = document.body.getBoundingClientRect();
 
         let posParts = position.split('-');
@@ -61,65 +61,65 @@
     }
 
     function getTransformStyle(position) {
-        var x,y, ttStyle = window.getComputedStyle(tt);
+        var x,y, popStyle = window.getComputedStyle(pop);
 
-        var ttMargin = {
-            top: parseInt(ttStyle.marginTop),
-            right: parseInt(ttStyle.marginRight),
-            bottom: parseInt(ttStyle.marginBottom),
-            left: parseInt(ttStyle.marginLeft)
+        var popMargin = {
+            top: parseInt(popStyle.marginTop),
+            right: parseInt(popStyle.marginRight),
+            bottom: parseInt(popStyle.marginBottom),
+            left: parseInt(popStyle.marginLeft)
         };
-        ttMargin.vertical = ttMargin.top + ttMargin.bottom;
-        ttMargin.horizontal = ttMargin.left + ttMargin.right;
+        popMargin.vertical = popMargin.top + popMargin.bottom;
+        popMargin.horizontal = popMargin.left + popMargin.right;
 
         switch (position) {
             case 'top':
-                x = rectHolder.left + rectHolder.width/2 - (rectTT.width + ttMargin.horizontal)/2;
-                y = rectHolder.top - rectTT.height - ttMargin.vertical;
+                x = rectHolder.left + rectHolder.width/2 - (rectTT.width + popMargin.horizontal)/2;
+                y = rectHolder.top - rectTT.height - popMargin.vertical;
                 break;
             case 'top-left':
-                x = rectHolder.left - ttMargin.left;
-                y = rectHolder.top - rectTT.height - ttMargin.vertical;
+                x = rectHolder.left - popMargin.left;
+                y = rectHolder.top - rectTT.height - popMargin.vertical;
                 break;
             case 'top-right':
-                x = rectHolder.right - rectTT.width - ttMargin.right;
-                y = rectHolder.top - rectTT.height - ttMargin.vertical;
+                x = rectHolder.right - rectTT.width - popMargin.right;
+                y = rectHolder.top - rectTT.height - popMargin.vertical;
                 break;
             case 'right':
-                x = rectHolder.right + ttMargin.left;
-                y = rectHolder.top + rectHolder.height/2 - (rectTT.height + ttMargin.horizontal)/2;
+                x = rectHolder.right + popMargin.left;
+                y = rectHolder.top + rectHolder.height/2 - (rectTT.height + popMargin.horizontal)/2;
                 break;
             case 'right-top':
-                x = rectHolder.right + ttMargin.left;
-                y = rectHolder.top - ttMargin.top;
+                x = rectHolder.right + popMargin.left;
+                y = rectHolder.top - popMargin.top;
                 break;
             case 'right-bottom':
-                x = rectHolder.right + ttMargin.left;
-                y = rectHolder.bottom - rectTT.height - ttMargin.bottom;
+                x = rectHolder.right + popMargin.left;
+                y = rectHolder.bottom - rectTT.height - popMargin.bottom;
                 break;
             case 'bottom':
-                x = rectHolder.left + rectHolder.width/2 - (rectTT.width + ttMargin.horizontal)/2;
-                y = rectHolder.bottom + ttMargin.top;
+                x = rectHolder.left + rectHolder.width/2 - (rectTT.width + popMargin.horizontal)/2;
+                y = rectHolder.bottom + popMargin.top;
                 break;
             case 'bottom-left':
-                x = rectHolder.left - ttMargin.left;
-                y = rectHolder.bottom + ttMargin.top;
+                x = rectHolder.left - popMargin.left;
+                y = rectHolder.bottom + popMargin.top;
                 break;
             case 'bottom-right':
-                x = rectHolder.right - rectTT.width - ttMargin.right;
-                y = rectHolder.bottom + ttMargin.top;
+                x = rectHolder.right - rectTT.width - popMargin.right;
+                y = rectHolder.bottom + popMargin.top;
                 break;
             case 'left':
-                x = rectHolder.left - rectTT.width - ttMargin.horizontal;
-                y = rectHolder.top + rectHolder.height/2 - (rectTT.height + ttMargin.horizontal)/2;
+                x = rectHolder.left - rectTT.width - popMargin.horizontal;
+                y = rectHolder.top + rectHolder.height/2 - (rectTT.height + popMargin.horizontal)/2;
                 break;
             case 'left-top':
-                x = rectHolder.left - rectTT.width - ttMargin.horizontal;
-                y = rectHolder.top - ttMargin.top;
+                x = rectHolder.left - rectTT.width - popMargin.horizontal;
+                y = rectHolder.top - popMargin.top;
                 break;
             case 'left-bottom':
-                x = rectHolder.left - rectTT.width - ttMargin.horizontal;
-                y = rectHolder.bottom - rectTT.height - ttMargin.bottom;
+                x = rectHolder.left - rectTT.width - popMargin.horizontal;
+                y = rectHolder.bottom - rectTT.height - popMargin.bottom;
                 break;
         }
 
@@ -128,7 +128,7 @@
 
     var positioningTT = _.throttle(function(mouseX = 0, mouseY = 0) {
         let result = new Promise(function(resolve, reject) {
-            setTimeout(resolve, parseFloat(window.getComputedStyle(tt).transitionDuration) * 1000);
+            setTimeout(resolve, parseFloat(window.getComputedStyle(pop).transitionDuration) * 1000);
         });
 
         let position = this.options.position;
@@ -156,11 +156,11 @@
             value: function(e){
                 rectHolder = this.el.getBoundingClientRect();
 
-                ttInside.innerHTML = this.options.content;
-                document.body.appendChild(tt);
+                popInside.innerHTML = this.options.content;
+                document.body.appendChild(pop);
 
-                rectTT = tt.getBoundingClientRect();
-                positioningTT.call(this).then(() => tt.setAttribute('aria-hidden', 'false'));
+                rectTT = pop.getBoundingClientRect();
+                positioningTT.call(this).then(() => pop.setAttribute('aria-hidden', 'false'));
 
                 this.$el.on('mousemove.delegateEvents' + this.cid, _ons.mousemove.bind(this));
                 $(window).on('scroll.delegateEvents' + this.cid, _ons.mouseleave.bind(this));
@@ -171,8 +171,8 @@
             value: function(e){
                 this.$el.off('mousemove.delegateEvents' + this.cid);
                 $(window).off('scroll.delegateEvents' + this.cid);
-                tt.setAttribute('aria-hidden', 'true');
-                tt.remove();
+                pop.setAttribute('aria-hidden', 'true');
+                pop.remove();
                 return;
             }
         },
@@ -195,7 +195,7 @@
     UI.Component.extend(
         // selfProps
         {
-            name: 'Tooltip',
+            name: 'Popover',
             defaults: {
                 content: '',
                 position: 'bottom',
@@ -215,8 +215,8 @@
                 if(!position) return this;
 
                 this.options.position = position;
-                tt.setAttribute('data-position', position);
-                tt.style.transform = getTransformStyle(position);
+                pop.setAttribute('data-position', position);
+                pop.style.transform = getTransformStyle(position);
 
                 return this;
             }
@@ -225,13 +225,13 @@
 
     function _init(elems){
         Array.from(elems)
-            .filter(elem => elem.hasAttribute(UI.Tooltip.attr) && !elem[UI.Tooltip.reference])
-            .forEach(elem => new UI.Tooltip(elem, elem.getAttribute(UI.Tooltip.attr)));
+            .filter(elem => elem.hasAttribute(UI.Popover.attr) && !elem[UI.Popover.reference])
+            .forEach(elem => new UI.Popover(elem, elem.getAttribute(UI.Popover.attr)));
         return;
     }
 
     UI.dom.on('ready', function(doc){
-        _init(doc.querySelectorAll(UI.Tooltip.selector));
+        _init(doc.querySelectorAll(UI.Popover.selector));
     });
 
     UI.dom.on('change', function(doc, options){
