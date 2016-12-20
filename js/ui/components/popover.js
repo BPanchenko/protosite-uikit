@@ -45,7 +45,7 @@
 
         let posParts = position.split('-');
 
-        if (posParts[0] == 'bottom' && rectBody.bottom <= rectTT.bottom)
+        if (posParts[0] == 'bottom' && rectBody.height <= rectTT.bottom)
             posParts[0] = 'top';
 
         if (posParts[0] == 'top' && rectTT.top < 0)
@@ -156,7 +156,7 @@
             value: function(e){
                 rectHolder = this.el.getBoundingClientRect();
 
-                popInside.innerHTML = this.options.content;
+                this.content(this.options.content);
                 document.body.appendChild(pop);
 
                 rectTT = pop.getBoundingClientRect();
@@ -202,13 +202,17 @@
                 floating: true
             },
             events: {
-                'animationend': ev => console.log(ev),
                 'mouseenter': _ons.mouseenter,
                 'mouseleave': _ons.mouseleave
             },
             initialize: function(){
                 if(_.isString(this.options)) this.options = { content: this.options };
                 this.options = Object.assign(_.clone(this.defaults), this.options);
+            },
+
+            content: function(html) {
+                popInside.innerHTML = html;
+                return this;
             },
 
             position: function(position) {
