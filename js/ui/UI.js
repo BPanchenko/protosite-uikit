@@ -1,9 +1,32 @@
 (function (Backbone, _) {
+    var doc = document.documentElement;
+    var Components = [], componentSelectors = [];
 
     // {object} UI
 
     var UI = window.UI = Object.assign({}, Backbone.Events);
-    var _selectorsOfComponents = {};
+
+    // {object} UI.dom
+
+    UI.dom = Object.create(Backbone.Events);
+
+    UI.dom.observer = new MutationObserver(function(mutations) {
+        var options = {
+            added: [],
+            removed: []
+        };
+
+        mutations.forEach(function(record){
+            if(record.type == 'childList') {
+                let added = Array.from(record.addedNodes).filter(elem => elem instanceof HTMLElement);
+                let removed = Array.from(record.removedNodes).filter(elem => elem instanceof HTMLElement);
+                options.added = options.added.concat(added);
+                options.removed = options.removed.concat(removed);
+            }
+        });
+
+        UI.dom.trigger('change', doc, options);
+    });
 
     // {class} Component
 
@@ -59,13 +82,51 @@
 
         // link to a component class on UI
         UI[protoProps.name] = child;
+        Components.push(child);
 
-        // mapping component selector
-        _selectorsOfComponents[protoProps.name] = child.selector;
+        // save component selector
+        componentSelectors.push(child.selector);
 
         return child;
     };
 
     _.extend(UI.Component.prototype, Backbone.View.prototype);
+
+    function initComponentsOnElements (elems) {
+        var componentElems = [];
+        elems = Array.from(elems);
+        Components.forEach(Component => {
+            elems.filter(elem => elem.hasAttribute(Component.attr) && !elem[Component.reference])
+                .forEach(elem => {
+                    new Component(elem, elem.getAttribute(Component.attr));
+                    componentElems.push(elem);
+                });
+        });
+        return componentElems;
+    }
+
+    // DOM events
+
+    UI.dom.on('change', function(doc, options){
+        if(componentSelectors.length) {
+            initComponentsOnElements(options.added);
+        }
+    });
+
+    UI.dom.on('ready', function(doc){
+        UI.dom.observer.observe(doc, {
+            childList: true,
+            subtree: true
+        });
+
+        if(componentSelectors.length) {
+            initComponentsOnElements(doc.querySelectorAll(componentSelectors.join(',')));
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function(){
+        UI.dom.trigger('ready', doc);
+        return;
+    });
 
 }(Backbone, _));

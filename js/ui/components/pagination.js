@@ -144,21 +144,4 @@
         }
     );
 
-    /** Init component on elements */
-
-    function _init(elems){
-        Array.from(elems)
-            .filter(elem => elem.hasAttribute(UI.Pagination.attr) && !elem[UI.Pagination.reference])
-            .forEach(elem => new UI.Pagination(elem, elem.getAttribute(UI.Pagination.attr)));
-        return;
-    }
-
-    UI.dom.on('ready', function(doc){
-        _init(doc.querySelectorAll(UI.Pagination.selector));
-    });
-
-    UI.dom.on('change', function(doc, options){
-        _init(options.added);
-    });
-
 }(UI));

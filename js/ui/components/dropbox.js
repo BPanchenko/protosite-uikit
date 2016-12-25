@@ -59,11 +59,18 @@
 
             initialize: function(){
                 this.url = this.options.url || UI.Dropbox.url;
+                this.render();
             },
 
             render: function(){
                 this.el.addEventListener('drop', _ons.drop.bind(this), false);
-                _initElems.call(this);
+
+                this.elems = {
+                    fieldFile: this.el.getElementsByClassName('js-field-file')[0],
+                    files: this.el.getElementsByClassName('js-files')[0],
+                    placeholder: this.el.getElementsByClassName('js-placeholder')[0]
+                };
+
                 return this;
             },
             reset: function(){
@@ -198,27 +205,6 @@
 
             return this;
         }
-    });
-
-    /** Private helpers */
-
-    function _initElems(){
-        this.elems = {
-            fieldFile: this.el.getElementsByClassName('js-field-file')[0],
-            files: this.el.getElementsByClassName('js-files')[0],
-            placeholder: this.el.getElementsByClassName('js-placeholder')[0]
-        };
-        return this;
-    }
-
-    /** Init component on elements */
-
-    UI.dom.on('ready change', function(doc, options){
-        $('[ui-dropbox]').each(function(){
-            if(!this._uiDropbox) {
-                (new UI.Dropbox(this, _.stringToObject(this.getAttribute('ui-dropbox')))).render();
-            }
-        });
     });
 
 }(UI));

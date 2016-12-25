@@ -9,12 +9,12 @@
             tagName: 'section',
             className: 'c-dialog',
 
-            initialize: function() {
+            initialize: function(el, options) {
                 this.listenTo(UI.backdrop, 'click', this.remove);
             },
 
             render: function() {
-                document.body.appendChild(this.el);
+
                 return this;
             }
         },
@@ -38,12 +38,5 @@
             }
         }
     );
-
-    UI.dom.on('ready change', function(doc, options){
-        console.log('DOM ready or change', options);
-        UI.Dialog.$holders = $('[ui-dialog]');
-        UI.Dialog.$holders.on('click', function(){});
-        (new UI.Dialog(UI.Dialog.$holders[0])).render();
-    });
 
 }(UI));

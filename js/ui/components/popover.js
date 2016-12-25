@@ -205,7 +205,7 @@
                 'mouseenter': _ons.mouseenter,
                 'mouseleave': _ons.mouseleave
             },
-            initialize: function(){
+            initialize: function(el, options){
                 if(_.isString(this.options)) this.options = { content: this.options };
                 this.options = Object.assign(_.clone(this.defaults), this.options);
             },
@@ -226,20 +226,5 @@
             }
         }
     );
-
-    function _init(elems){
-        Array.from(elems)
-            .filter(elem => elem.hasAttribute(UI.Popover.attr) && !elem[UI.Popover.reference])
-            .forEach(elem => new UI.Popover(elem, elem.getAttribute(UI.Popover.attr)));
-        return;
-    }
-
-    UI.dom.on('ready', function(doc){
-        _init(doc.querySelectorAll(UI.Popover.selector));
-    });
-
-    UI.dom.on('change', function(doc, options){
-        _init(options.added);
-    });
 
 }(UI));

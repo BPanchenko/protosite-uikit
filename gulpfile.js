@@ -68,8 +68,7 @@ gulp.task('build-js-ui-core', function () {
     gulp.src([
         './js/ui/UI.js',
         './js/ui/core/backdrop.js',
-        './js/ui/core/container.js',
-        './js/ui/core/dom.js'
+        './js/ui/core/container.js'
     ])
         .pipe(concat('ui-core.js'))
         .pipe(gulp.dest('./dist/'))
