@@ -47,38 +47,42 @@
             </nav>
 
             <main role="main">
-
-                <section class="c-panel s-bg-ps_neutral">
-                    <div class="c-panel__head">
-                        <h3>Внешний вид</h3>
-                    </div>
-                    <div class="c-panel__body [ u-margin-large-top u-margin-large-bottom u-text-center ]">
-                        <section class="c-dialog is-opened" style="width: 50rem; position: relative; transform: translate(-50%, 0); z-index: 10;">
-                            <header class="c-dialog__header">
-                                <h3>Заголовок диалога</h3>
-                            </header>
-                            <div class="c-dialog__body-viewport">
-                                <div class="c-dialog__body">
-                                    Содержимое диалогового окна
-                                </div>
+                <div class="o-grid">
+                    <div class="o-grid__cell u-width-2-3 u-width-1-1@tablet-portrait">
+                        <section class="c-panel s-bg-ps_neutral">
+                            <div class="c-panel__head">
+                                <h3>Внешний вид</h3>
                             </div>
-                            <div class="c-dialog__buttons">
-                                <a href="">нет</a>
-                                <a href="">да</a>
+                            <div class="c-panel__body [ u-margin-large-top u-margin-large-bottom u-text-center ]">
+                                <section class="c-dialog is-opened" style="width: 50rem; position: relative; transform: translate(-50%, 0); z-index: 10;">
+                                    <header class="c-dialog__header">
+                                        <h3>Заголовок диалога</h3>
+                                    </header>
+                                    <div class="c-dialog__body-viewport">
+                                        <div class="c-dialog__body">
+                                            Содержимое диалогового окна
+                                        </div>
+                                    </div>
+                                    <div class="c-dialog__buttons">
+                                        <a href="" class="c-button">нет</a>
+                                        <a href="" class="c-button">да</a>
+                                    </div>
+                                    <footer class="c-dialog__footnote"></footer>
+                                </section>
                             </div>
-                            <footer class="c-dialog__footnote"></footer>
                         </section>
                     </div>
-                </section>
-
-                <section class="c-panel c-panel--clean">
-                    <div class="c-panel__head">
-                        <h3>Поведение</h3>
+                    <div class="o-grid__cell u-width-1-3 u-width-1-1@tablet-portrait">
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Поведение</h3>
+                            </div>
+                            <div class="c-panel__body">
+                                <a href="#" ui-dialog="{ tpl: '.js-tpl-dialog' }">активный элемент</a>
+                            </div>
+                        </section>
                     </div>
-                    <div class="c-panel__body">
-                        <a href="#" ui-dialog="{ tpl: '.js-tpl-dialog' }">активный элемент</a>
-                    </div>
-                </section>
+                </div>
 
             </main>
 
@@ -103,8 +107,8 @@
                 </div>
             </div>
             <div class="c-dialog__buttons">
-                <a href="#" class="js-ctrl-close">нет</a>
-                <a href="#" class="js-ctrl-close">да</a>
+                <a href="#" class="c-button js-ctrl-close">нет</a>
+                <a href="#" class="c-button js-ctrl-close">да</a>
             </div>
         </template>
     </body>
