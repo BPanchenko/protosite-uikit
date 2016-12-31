@@ -1,6 +1,7 @@
 (function(UI){
 
     const regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+    const regPassword = /^\w{8,20}$/;
 
     const cls = Object.create(null, {
         box: { value: 'c-field-box' },
@@ -49,7 +50,7 @@
             value: function(e){
                 var field = e.currentTarget;
 
-                if(['file', 'email'].indexOf(field.type) == -1 && !field.hasAttribute('pattern')) {
+                if(['file', 'email', 'password'].indexOf(field.type) == -1 && !field.hasAttribute('pattern')) {
                     return;
                 }
 
@@ -66,7 +67,11 @@
                     return;
                 }
 
-                let pattern =  field.hasAttribute('pattern') ? new RegExp(field.pattern) : regEmail;
+                let pattern;
+                if(field.hasAttribute('pattern')) pattern = new RegExp(field.pattern);
+                else if(field.type == 'email') pattern = regEmail;
+                else if(field.type == 'password') pattern = regPassword;
+
                 checkPattern(pattern, box, value);
 
                 return;
@@ -101,7 +106,7 @@
             value: function(e){
                 var field = e.currentTarget;
 
-                if(field.hasAttribute('pattern') && field.type != 'email'){
+                if(field.hasAttribute('pattern') && ['email', 'password'].indexOf(field.type) == -1){
                     checkPattern(new RegExp(field.pattern), field.__box, field.value.trim());
                 }
 
