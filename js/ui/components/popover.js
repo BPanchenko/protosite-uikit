@@ -99,15 +99,15 @@
                 break;
             case 'bottom':
                 x = rectHolder.left + rectHolder.width/2 - (rectTT.width + popMargin.horizontal)/2;
-                y = rectHolder.bottom + popMargin.top;
+                y = rectHolder.bottom;
                 break;
             case 'bottom-left':
                 x = rectHolder.left - popMargin.left;
-                y = rectHolder.bottom + popMargin.top;
+                y = rectHolder.bottom;
                 break;
             case 'bottom-right':
                 x = rectHolder.right - rectTT.width - popMargin.right;
-                y = rectHolder.bottom + popMargin.top;
+                y = rectHolder.bottom;
                 break;
             case 'left':
                 x = rectHolder.left - rectTT.width - popMargin.horizontal;

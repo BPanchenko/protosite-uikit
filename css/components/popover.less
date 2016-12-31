@@ -29,7 +29,7 @@
 
 @c-popover-padding: .6rem .8rem;
 
-@c-popover-background-color: @clr-blue-grey-700;
+@c-popover-background-color: @clr-grey-700;
 
 @c-popover-caret-size: .8rem;
 
@@ -48,6 +48,7 @@
 	position: fixed;
 	left: 0; top: 0;
 	transform: translate(0,0);
+	z-index: 200;
 
 	transition-property: transform, opacity;
 	transition-duration: 160ms;
@@ -188,7 +189,7 @@
 
 .c-popover-holder {
 	display: inline-block;
-	cursor: pointer;
-	border-bottom: 1px dashed @body-color;
+	cursor: help;
+	border-bottom: 1px dotted currentColor;
 	background-color: transparent;
 }
