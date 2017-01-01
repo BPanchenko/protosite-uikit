@@ -1,7 +1,7 @@
 (function(UI){
 
     const regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-    const regPassword = /^\w{8,20}$/;
+    const regPassword = /^\w{6,20}$/;
 
     const cls = Object.create(null, {
         box: { value: 'c-field-box' },
