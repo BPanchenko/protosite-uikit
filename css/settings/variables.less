@@ -66,12 +66,12 @@
 @link-transition: color 160ms @easing;
 
 // spaces
-@space-default: 1.6rem;
-@space-xs: .4rem;
-@space-s: .8rem;
-@space-m: 1.6rem;
-@space-l: 3.2rem;
-@space-xl: 6.4rem;
+@space-default: @unit;
+@space-xs: @unit / 4;
+@space-s: @unit / 2;
+@space-m: @unit;
+@space-l: 2 * @unit;
+@space-xl: 4 * @unit;
 
 // other
 @iconic-font-path: '@{host}/vendor/fonts/iconic/';
