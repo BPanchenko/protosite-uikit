@@ -57,6 +57,62 @@
 }
 
 
+/* Avatars
+ ========================================================================== */
+
+.ps-avatar {
+	position: relative;
+	display: inline-block;
+	margin-top: @unit;
+	margin-bottom: 2*@unit;
+	color: @clr-grey-600;
+	vertical-align: bottom;
+
+	&::before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		bottom: -.8rem; left: 50%;
+		transform: translateX(-50%);
+
+		width: 5 * @unit;
+		height: .3rem;
+		border: .1rem solid currentColor;
+		border-top: none;
+	}
+
+	&::after {
+		content: '5x';
+		position: absolute;
+		bottom: -.8rem; left: 50%;
+		transform: translate(-50%, 120%);
+		font-size: 1.3rem;
+		line-height: 1;
+	}
+}
+
+.ps-avatar--xsmall {
+	&::after { content: '1.5x xsmall'; }
+	&::before { width: 1.5 * @unit; }
+}
+.ps-avatar--small {
+	&::after { content: '3x small'; }
+	&::before { width: 3 * @unit; }
+}
+.ps-avatar--medium {
+	&::after { content: '5x medium'; }
+	&::before { width: 5 * @unit; }
+}
+.ps-avatar--large{
+	&::after { content: '8x large'; }
+	&::before { width: 8 * @unit; }
+}
+.ps-avatar--xlarge {
+	&::after { content: '12x xlarge'; }
+	&::before { width: 12 * @unit; }
+}
+
+
 /* Preview colors
  ========================================================================== */
 
@@ -132,6 +188,7 @@
 
 /* Tooltip holder
  ========================================================================== */
+
 .c-popover-holder.pattern {
 	display: inline-block;
 	padding: 2.4rem;
