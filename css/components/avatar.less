@@ -24,6 +24,7 @@
 @c-avatar-default-size: @c-avatar-medium-size;
 
 @c-avatar-box-shadow: @shadow-2dp;
+@c-avatar-box-shadow-inset: @inset-shadow-2dp;
 
 
 /* ========================================================================
@@ -51,6 +52,10 @@
 	margin: 0;
 }
 
+.c-avatar[style*="background"] {
+	box-shadow: @c-avatar-box-shadow-inset;
+}
+
 /*a*/
 .c-avatar__link {
 	display: inline-block;
@@ -69,7 +74,7 @@
 /* Context: `c-panel`
  ========================================================================== */
 
-.c-panel:not(.c-panel--transparent) .c-avatar {
+.c-panel:not(.c-panel--transparent) .c-avatar:not([style*="background"]) {
 	box-shadow: none;
 }
 
