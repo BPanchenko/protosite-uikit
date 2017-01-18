@@ -1,4 +1,8 @@
 (function(UI){
+
+  const defaultOptions = {
+    'animation': 'move' // or show
+  };
 	
 	function _activateView() {
 		if(!this.elems.views.length)
@@ -89,42 +93,48 @@
 		return;
 	}
 
-    /** Class component */
+  /** Class component */
 
-    UI.Component.extend(
-        // selfProps
-        {
-            name: 'Tabs',
-            initialize: function(){
-                this.elems.indicator = this.el.getElementsByClassName('ui-tabs-indicator')[0];
-                this.elems.links = [].slice.call(this.el.getElementsByClassName('ui-tabs-link'));
+  UI.Component.extend(
+    // selfProps
+    {
+      name: 'Tabs',
+      initialize: function(options){
+        /*
+        this.elems.indicator = this.el.getElementsByClassName('ui-tabs-indicator')[0];
+        this.elems.links = [].slice.call(this.el.getElementsByClassName('ui-tabs-link'));
 
-                // definition initial index
-                this.elems.links.forEach((function(_el, _i) {
-                    if(_el.dataset.active == 'true')
-                        this.i = _i;
-                }).bind(this));
+        // definition initial index
+        this.elems.links.forEach((function(_el, _i) {
+          if(_el.dataset.active == 'true') this.i = _i;
+        }).bind(this));
 
-                if(typeof options.container == 'string') {
-                    // this.elems.container = _helpers.findElement(this.el, options.container);
-                    this.elems.views = [].slice.call(this.elems.container.children);
+        if(typeof options.container == 'string') {
+          // this.elems.container = _helpers.findElement(this.el, options.container);
+          this.elems.views = [].slice.call(this.elems.container.children);
 
-                    _setContainerHeight.call(this);
-                    _setViewsWidth.call(this);
-                    _positioningViews.call(this);
-                    ui.win.on('change:width', (function(){
-                        _setContainerHeight.call(this);
-                        _setViewsWidth.call(this);
-                        _positioningViews.call(this);
-                    }).bind(this));
-                }
-
-                this.el.addEventListener('click', _onClickTabs.bind(this), false);
-
-                _fixIndicator.call(this);
-                _activateView.call(this);
-            }
+          _setContainerHeight.call(this);
+          _setViewsWidth.call(this);
+          _positioningViews.call(this);
+          ui.win.on('change:width', (function(){
+            _setContainerHeight.call(this);
+            _setViewsWidth.call(this);
+            _positioningViews.call(this);
+          }).bind(this));
         }
-    );
+
+        this.el.addEventListener('click', _onClickTabs.bind(this), false);
+
+        _fixIndicator.call(this);
+        _activateView.call(this);
+        */
+      },
+      render: function () {
+        console.log(this.name + '.render()');
+
+        return;
+      }
+    }
+  );
 
 }(UI));
