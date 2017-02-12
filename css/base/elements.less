@@ -1,5 +1,9 @@
 @import "../settings/variables";
 
+@body-background-color: @clr-grey-100;
+
+@selection-background-color: @clr-blue-600;
+@selection-text-shadow: none;
 
 /* ========================================================================
    Document style by default
@@ -16,13 +20,13 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: @body-background;
-	font-family: @body-font-family;
-	font-size: @body-font-size;
+	background: @body-background-color;
+	font-family: @font-family-primary;
+	font-size: @font-size-default;
 	font-style: normal;
 	font-weight: 400;
-	line-height: @body-line-height;
-	color: @body-color;
+	line-height: @line-height-default;
+	color: @text-color;
 }
 
 article,

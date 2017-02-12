@@ -6,28 +6,31 @@
 // Global variables
 // ========================================================================
 
-// basic
-@host: 'http://ui.protosite.rocks';
 @easing: cubic-bezier(0.3, 0, 0.2, 1);
+@host: 'http://ui.protosite.rocks';
+@iconic-font-path: '@{host}/vendor/fonts/iconic/';
 @unit: 1.6rem;
 
 // document text style
-@body-background: @clr-grey-100;
-@body-color: @clr-grey-800;
-@body-color-caption: @clr-grey-900;
-@body-font-family: "Open Sans", sans-serif;
-@body-font-family-caption: "PT Serif Caption", serif;
-@body-font-family-cursive: "Marck Script", cursive;
-@body-font-size: 1.4rem;
-@body-line-height: 1.6;
+@font-family-caption: "PT Serif Caption", serif;
+@font-family-primary: "Open Sans", sans-serif;
+@font-family-secondary: "Open Sans", sans-serif;
+@font-family-cursive: "Marck Script", cursive;
 
-@paragraph-font-size: 1.4rem;
-@paragraph-font-font-weight: normal;
-@paragraph-line-height: 2.4rem;
+@font-size-large: 1.6rem;
+@font-size-default: 1.4rem;
+@font-size-small: 1.2rem;
 
-@selection-background-color: @clr-blue-600;
+@line-height-large: normal;
+@line-height-default: 1.6;
+@line-height-small: 1;
+
+// color palette
+@caption-color: @clr-grey-900;
+@link-color: @clr-light-blue-700;
+@link-hover-color: @clr-light-blue-900;
+@text-color: @clr-grey-800;
 @selection-color: @clr-white;
-@selection-text-shadow: none;
 
 // headers
 @h1-font-size: 3.6rem;
@@ -55,14 +58,9 @@
 @h6-line-height: 1.2;
 @h6-margin: @space-xs 0;
 
-@small-font-size: 1.2rem;
-@small-line-height: 1;
-
 // links
-@link-color: @clr-light-blue-700;
-@link-color-hover: @clr-light-blue-900;
 @link-text-decoration: underline;
-@link-text-decoration-hover: none;
+@link-hover-text-decoration: none;
 @link-transition: color 160ms @easing;
 
 // spaces
@@ -72,6 +70,3 @@
 @space-m: @unit;
 @space-l: 2 * @unit;
 @space-xl: 4 * @unit;
-
-// other
-@iconic-font-path: '@{host}/vendor/fonts/iconic/';

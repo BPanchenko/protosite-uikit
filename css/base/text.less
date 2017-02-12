@@ -6,6 +6,10 @@
  *
  * ======================================================================== */
 
+@paragraph-font-size: 1.4rem;
+@paragraph-font-font-weight: normal;
+@paragraph-line-height: 2.4rem;
+
 
 /* Links
  ========================================================================== */
@@ -22,7 +26,7 @@ a:hover,
 .u-link:hover {
 	outline: 0;
 	color: @link-color-hover;
-	text-decoration: @link-text-decoration-hover;
+	text-decoration: @link-hover-text-decoration;
 }
 
 
@@ -39,8 +43,8 @@ strong > strong, .u-text-extrabold { font-weight: 800; }
  ========================================================================== */
 
 small {
-	font-size: @small-font-size;
-	line-height: @small-line-height;
+	font-size: @font-size-small;
+	line-height: @line-height-small;
 }
 
 
@@ -107,8 +111,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: @body-font-family-caption;
-	color: @body-color-caption;
+	font-family: @font-family-caption;
+	color: @caption-color;
 }
 
 h1,
@@ -142,7 +146,7 @@ h4,
 }
 h5,
 .u-h5 {
-	font-family: @body-font-family;
+	font-family: @font-family-primary;
 	font-size: @h5-font-size;
 	font-weight: @h5-font-weight;
 	line-height: @h5-line-height;
@@ -150,7 +154,7 @@ h5,
 }
 h6,
 .u-h6 {
-	font-family: @body-font-family;
+	font-family: @font-family-primary;
 	font-size: @h6-font-size;
 	font-weight: @h6-font-weight;
 	line-height: @h6-line-height;
@@ -162,7 +166,7 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a { color: @body-color-caption; }
+h6 a { color: @caption-color; }
 
 * + h1,
 * + h2,

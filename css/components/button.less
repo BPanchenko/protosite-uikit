@@ -54,9 +54,9 @@
 
 @c-button-padding: .6rem 2.4rem;
 
-@c-button-color: @body-color;
-@c-button-font-family: @body-font-family;
-@c-button-font-size: @body-font-size;
+@c-button-color: @text-color;
+@c-button-font-family: @font-family-primary;
+@c-button-font-size: @font-size-default;
 @c-button-font-weight: 600;
 @c-button-line-height: normal;
 @c-button-text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
@@ -286,7 +286,7 @@
 }
 
 .c-button--link:hover {
-	text-decoration: @link-text-decoration-hover;
+	text-decoration: @link-hover-text-decoration;
 }
 
 .c-button--link:focus,
@@ -338,7 +338,7 @@
 
 .c-button--link:hover {
 	.c-button__text {
-		text-decoration: @link-text-decoration-hover;
+		text-decoration: @link-hover-text-decoration;
 	}
 }
 

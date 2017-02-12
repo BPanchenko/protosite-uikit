@@ -13,10 +13,10 @@
 // Variables
 // ========================================================================
 
-@u-text-caption-font-family: @body-font-family-caption;
-@u-text-cursive-font-family: @body-font-family-cursive;
+@u-text-caption-font-family: @font-family-caption;
+@u-text-cursive-font-family: @font-family-cursive;
 
-@u-text-color:			@body-color;
+@u-text-color:			@text-color;
 @u-text-muted-color:    #999;
 @u-text-primary-color:  #2d7091;
 @u-text-success-color:  @clr-green-A700;
@@ -24,8 +24,8 @@
 @u-text-danger-color:   #d85030;
 @u-text-contrast-color: #fff;
 
-@u-text-large-font-size: 1.6rem;
-@u-text-large-line-height: normal;
+@u-text-large-font-size: @font-size-large;
+@u-text-large-line-height: @line-height-large;
 
 
 // Fonts
@@ -42,7 +42,7 @@
 }
 
 .u-font-primary {
-	font-family: @body-font-family;
+	font-family: @font-family-primary;
 	font-style: normal;
 }
 
@@ -55,8 +55,8 @@
 }
 
 .u-text-small {
-	font-size: @small-font-size;
-	line-height: @small-line-height;
+	font-size: @font-size-small;
+	line-height: @line-height-small;
 }
 
 
