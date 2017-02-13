@@ -192,6 +192,7 @@
 
 	// Tenths
 	.generate-u-width-10-tablet-landscape(@i) when (@i < 10) {
+		.u-width-@{i}-10\@tablet,
 		.u-width-@{i}-10\@tablet-landscape { width: percentage(@i * 0.1); }
 		// next iteration
 		.generate-u-width-10-tablet-landscape((@i + 2));
@@ -200,6 +201,7 @@
 
 	// 24 columns
 	.generate-u-width-24-tablet-landscape(@i) when (@i <= 24) {
+		.u-width-@{i}-24\@tablet,
 		.u-width-@{i}-24\@tablet-landscape { width: percentage(@i * 100/2400); }
 		// next iteration
 		.generate-u-width-24-tablet-landscape((@i + 1));
@@ -253,7 +255,6 @@
 
 	// 24 columns
 	.generate-u-width-24-tablet-portrait(@i) when (@i <= 24) {
-		.u-width-@{i}-24\@tablet,
 		.u-width-@{i}-24\@tablet-portrait { width: percentage(@i * 100/2400); }
 		// next iteration
 		.generate-u-width-24-tablet-portrait((@i + 1));
@@ -313,7 +314,9 @@
 	.u-width-8-10\@handset-landscape { width: 80%; }
 
 	// Sixths
+	.u-width-1-6\@handset,
 	.u-width-1-6\@handset-landscape { width: 16.666%; }
+	.u-width-5-6\@handset,
 	.u-width-5-6\@handset-landscape { width: 83.333%; }
 
 	// Tenths
@@ -369,9 +372,7 @@
 	.u-width-8-10\@handset-portrait { width: 80%; }
 
     // Sixths
-	.u-width-1-6\@handset,
 	.u-width-1-6\@handset-portrait { width: 16.666%; }
-	.u-width-5-6\@handset,
 	.u-width-5-6\@handset-portrait { width: 83.333%; }
 
     // Tenths
