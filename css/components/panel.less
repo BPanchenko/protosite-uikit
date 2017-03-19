@@ -17,7 +17,7 @@
 @c-panel-border-radius: .2rem;
 @c-panel-box-shadow: @shadow-3dp;
 
-@c-panel-head-background-color: fade(@clr-grey-50, 40);
+@c-panel-head-background-color: @clr-grey-50;
 @c-panel-head-border-bottom: 1px solid @clr-grey-300;
 @c-panel-head-padding: @space-m @space-m @space-s;
 @c-panel-body-padding: @space-m;
@@ -107,16 +107,4 @@
 		display: table;
 		clear: both;
 	}
-}
-
-
-/* Modifier: `c-panel--clean`
- ========================================================================== */
-
-.c-panel--clean,
-.c-panel--transparent,
-.c-panel--clean .c-panel__head,
-.c-panel--transparent .c-panel__head {
-	background: transparent;
-	box-shadow: none;
 }
