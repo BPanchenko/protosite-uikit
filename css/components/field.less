@@ -28,7 +28,7 @@
 @c-field-font-size: @font-size-default;
 @c-field-line-height: @line-height-default;
 
-@c-field-background-color: lighten(@clr-grey-50, .5%);
+@c-field-background-color: @clr-grey-50;
 @c-field-border-color: @clr-grey-500;
 @c-field-border-width: .1rem;
 @c-field-border-style: solid;
@@ -239,7 +239,7 @@ input[type=file].c-field {
 
 	transition-property: left, top, font-size, line-height, color;
 	transition-duration: 160ms;
-	transition-animation: @easing;
+	transition-timing-function: @easing;
 
 	// Micro clearfix to make articles more robust
 	&::before,

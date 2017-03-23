@@ -74,7 +74,7 @@
     margin-right: auto;
 }
 
-@media (max-width: @screen-desktop-max) {
+@media @screen-desktop {
 	.u-align-left\@desktop { .u-align-left; }
 	.u-align-right\@desktop { .u-align-right; }
 	.u-align-center\@desktop { .u-align-center; }
@@ -82,7 +82,7 @@
 	.u-float-right\@desktop { .u-float-right; }
 	.u-centered\@desktop { .u-centered; }
 }
-@media (max-width: @screen-tablet-landscape-max) {
+@media @screen-tablet-landscape {
 	.u-align-left\@tablet,
 	.u-align-left\@tablet-landscape { .u-align-left; }
 	.u-align-right\@tablet,
@@ -98,7 +98,7 @@
 	.u-centered\@tablet,
 	.u-centered\@tablet-landscape { .u-centered; }
 }
-@media (max-width: @screen-tablet-portrait-max) {
+@media @screen-tablet-portrait {
 	.u-align-left\@tablet-portrait { .u-align-left; }
 	.u-align-right\@tablet-portrait { .u-align-right; }
 	.u-align-center\@tablet-portrait { .u-align-center; }
@@ -106,7 +106,7 @@
 	.u-float-right\@tablet-portrait { .u-float-right; }
 	.u-centered\@tablet-portrait { .u-centered; }
 }
-@media (max-width: @screen-handset-landscape-max) {
+@media @screen-handset-landscape {
 	.u-align-left\@handset,
 	.u-align-left\@handset-landscape { .u-align-left; }
 	.u-align-right\@handset,
@@ -122,7 +122,7 @@
 	.u-centered\@handset,
 	.u-centered\@handset-landscape { .u-centered; }
 }
-@media (max-width: @screen-handset-portrait-max) {
+@media @screen-handset-portrait {
 	.u-align-left\@handset-portrait { .u-align-left; }
 	.u-align-right\@handset-portrait { .u-align-right; }
 	.u-align-center\@handset-portrait { .u-align-center; }
@@ -235,7 +235,7 @@
  ========================================================================== */
 
 /* xdesktop and bigger */
-@media (min-width: @screen-xdesktop) {
+@media @screen-xdesktop {
     .u-hidden\@xdesktop,
 	.u-visible\@desktop,
 	.u-visible\@tablet,
@@ -247,7 +247,7 @@
 }
 
 /* desktop */
-@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+@media @screen-desktop {
 	.u-hidden\@desktop,
 	.u-visible\@xdesktop,
 	.u-visible\@tablet,
@@ -259,7 +259,7 @@
 }
 
 /* tablet-landscape */
-@media (min-width: @screen-tablet-landscape) and (max-width: @screen-tablet-landscape-max) {
+@media @screen-tablet-landscape {
 	.u-hidden\@tablet,
 	.u-hidden\@tablet-landscape,
 	.u-visible\@xdesktop,
@@ -271,7 +271,7 @@
 }
 
 /* tablet-portrait */
-@media (min-width: @screen-tablet-portrait) and (max-width: @screen-tablet-portrait-max) {
+@media @screen-tablet-portrait {
 	.u-hidden\@tablet,
 	.u-hidden\@tablet-portrait,
 	.u-visible\@xdesktop,
@@ -283,7 +283,7 @@
 }
 
 /* handset-landscape */
-@media (min-width: @screen-handset-landscape) and (max-width: @screen-handset-landscape-max) {
+@media @screen-handset-landscape {
 	.u-hidden\@handset,
 	.u-hidden\@handset-landscape,
 	.u-visible\@xdesktop,
@@ -295,7 +295,7 @@
 }
 
 // handset-portrait and smaller
-@media (max-width: @screen-handset-portrait-max) {
+@media @screen-handset-portrait {
 	.u-hidden\@handset,
 	.u-hidden\@handset-portrait,
 	.u-visible\@xdesktop,
