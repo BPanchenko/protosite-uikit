@@ -14,13 +14,30 @@
 // ========================================================================
 
 @c-panel-background: white;
-@c-panel-border-radius: .2rem;
+@c-panel-border-radius: .3rem;
 @c-panel-box-shadow: @shadow-3dp;
 
-@c-panel-head-background-color: @clr-grey-50;
+@c-panel-head-background-color: @clr-white;
 @c-panel-head-border-bottom: 1px solid @clr-grey-300;
-@c-panel-head-padding: @space-m @space-m @space-s;
-@c-panel-body-padding: @space-m;
+
+@c-panel-padding-left: @space-m;
+@c-panel-padding-right: @space-m;
+@c-panel-head-padding-top: @space-m;
+@c-panel-head-padding-bottom: @space-s;
+@c-panel-body-padding-top: @space-m;
+@c-panel-body-padding-bottom: @space-m;
+
+@c-panel-head-padding:
+		@c-panel-head-padding-top
+		@c-panel-padding-right
+		@c-panel-head-padding-bottom
+		@c-panel-padding-left;
+
+@c-panel-body-padding:
+		@c-panel-body-padding-top
+		@c-panel-padding-right
+		@c-panel-body-padding-bottom
+		@c-panel-padding-left;
 
 
 /* ========================================================================
@@ -73,9 +90,20 @@
  ========================================================================== */
 
 .c-panel__head {
+	position: relative;
 	padding: @c-panel-head-padding;
 	background-color: @c-panel-head-background-color;
-	border-bottom: @c-panel-head-border-bottom;
+	border-top-left-radius: @c-panel-border-radius;
+	border-top-right-radius: @c-panel-border-radius;
+
+	&::after {
+		content: ' ';
+		position: absolute;
+		bottom: 0;
+		left: @c-panel-padding-left;
+		right: @c-panel-padding-right;
+		border-bottom: @c-panel-head-border-bottom;
+	}
 
 	* + h1,
 	* + h2,
