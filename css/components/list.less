@@ -27,9 +27,9 @@
 <!-- table style -->
 <section class="c-list">
 	<div class="c-list__head">
-		<h6 class="c-list__item-property">...</h6>
-		<h6 class="c-list__item-property">...</h6>
-		<h6 class="c-list__item-property">...</h6>
+		<h6 class="c-list__head-property">...</h6>
+		<h6 class="c-list__head-property">...</h6>
+		<h6 class="c-list__head-property">...</h6>
 	</div>
 	<div class="c-list__body">
 		<section class="c-list__item>
@@ -62,6 +62,8 @@
 
 
 @c-list-item-font-size: @font-size-default;
+@c-list-item-margin-top: @space-xs;
+@c-list-item-margin-bottom: @space-xs;
 
 @c-list-item-property-padding: 0 @space-s;
 
@@ -103,8 +105,12 @@
 	color: @c-list-head-color;
 }
 
+.c-list__item {
+	margin-top: @c-list-item-margin-top;
+	margin-bottom: @c-list-item-margin-bottom;
+}
+
 .c-list__item-property {
 	padding: @c-list-item-property-padding;
-
 	font-size: @c-list-item-font-size;
 }
