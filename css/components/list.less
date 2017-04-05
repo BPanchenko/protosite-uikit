@@ -4,10 +4,11 @@
  * Description:     Defines styles for list items
  *
  * Elements:		`c-list__head`
- *                  `c-list__head-property`
+ *                  `c-list__head-box`
  *                  `c-list__body`
  *                  `c-list__item`
- *                  `c-list__item-property`
+ *                  `c-list__item-boxset`
+ *                  `c-list__item-box`
  *                  `c-list__foot`
  *                  `c-list__item`
  *                  `c-list__meta`
@@ -18,24 +19,28 @@
 <!-- basic list style -->
 <div class="c-list">
 	<section class="c-list__item">
-		<div class="c-list__item-property">...</div>
-		<div class="c-list__item-property">...</div>
-		<div class="c-list__item-property">...</div>
+		<div class="c-list__item-box">...</div>
+		<div class="c-list__item-box">...</div>
+		<div class="c-list__item-box">...</div>
 	</section>
 </div>
 
 <!-- table style -->
 <section class="c-list">
 	<div class="c-list__head">
-		<h6 class="c-list__head-property">...</h6>
-		<h6 class="c-list__head-property">...</h6>
-		<h6 class="c-list__head-property">...</h6>
+		<h6 class="c-list__head-box">...</h6>
+		<h6 class="c-list__head-box">...</h6>
+		<h6 class="c-list__head-box">...</h6>
 	</div>
 	<div class="c-list__body">
 		<section class="c-list__item>
-			<div class="c-list__item-property">...</div>
-			<div class="c-list__item-property">...</div>
-			<div class="c-list__item-property">...</div>
+			<div class="c-list__item-box">...</div>
+			<div class="c-list__item-boxset">
+				<div class="c-list__item-box">...</div>
+				<div class="c-list__item-box">...</div>
+				<div class="c-list__item-box">...</div>
+			</div>
+			<div class="c-list__item-box">...</div>
 		</section>
 	</div>
 	<div class="c-list__meta">
@@ -79,7 +84,8 @@
 .c-list__body,
 .c-list__foot,
 .c-list__item,
-.c-list__item-property {
+.c-list__item-box,
+.c-list__item-boxset{
 	box-sizing: border-box;
 }
 
@@ -91,12 +97,17 @@
 	font-size: .001px;
 }
 
-.c-list__head-property,
-.c-list__item-property {
+.c-list__head-box,
+.c-list__item > .c-list__item-box,
+.c-list__item > .c-list__item-boxset {
 	display: inline-block;
 }
 
-.c-list__head-property {
+.c-list__item-boxset > .c-list__item-box {
+	display: block;
+}
+
+.c-list__head-box {
 	padding: @c-list-head-property-padding;
 
 	font-family: @c-list-head-font-family;
@@ -110,7 +121,16 @@
 	margin-bottom: @c-list-item-margin-bottom;
 }
 
-.c-list__item-property {
-	padding: @c-list-item-property-padding;
+.c-list__item-box,
+.c-list__item-boxset {
 	font-size: @c-list-item-font-size;
+}
+
+.c-list__item > .c-list__item-box,
+.c-list__item > .c-list__item-boxset {
+	padding: @c-list-item-property-padding;
+}
+
+.c-list__item-boxset > .c-list__item-box {
+	padding: 0;
 }
