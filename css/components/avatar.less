@@ -16,13 +16,7 @@
 // Variables
 // ========================================================================
 
-@c-avatar-xsmall-size: 1.5 * @unit;
-@c-avatar-small-size: 2.5 * @unit;
-@c-avatar-medium-size: 5 * @unit;
-@c-avatar-large-size: 8 * @unit;
-@c-avatar-xlarge-size: 12 * @unit;
-@c-avatar-default-size: @c-avatar-medium-size;
-
+@c-avatar-size: 5 * @unit;
 @c-avatar-box-shadow: @shadow-2dp;
 @c-avatar-box-shadow-inset: @inset-shadow-2dp;
 
@@ -37,8 +31,8 @@
 	border-radius: 50%;
 	overflow: hidden;
 
-	width: @c-avatar-default-size;
-	height: @c-avatar-default-size;
+	width: @c-avatar-size;
+	height: @c-avatar-size;
 
 	font-size: .001px;
 	text-align: center;
@@ -76,29 +70,4 @@
 
 .c-panel:not(.s-transparent) .c-avatar:not([style*="background"]) {
 	box-shadow: none;
-}
-
-
-/* Size modifiers
- ========================================================================== */
-
-.c-avatar--xsmall {
-	width: @c-avatar-xsmall-size;
-	height: @c-avatar-xsmall-size;
-}
-.c-avatar--small {
-	width: @c-avatar-small-size;
-	height: @c-avatar-small-size;
-}
-.c-avatar--medium {
-	width: @c-avatar-medium-size;
-	height: @c-avatar-medium-size;
-}
-.c-avatar--large {
-	width: @c-avatar-large-size;
-	height: @c-avatar-large-size;
-}
-.c-avatar--xlarge {
-	width: @c-avatar-xlarge-size;
-	height: @c-avatar-xlarge-size;
 }
