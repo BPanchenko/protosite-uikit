@@ -1,13 +1,13 @@
 {
   "name": "protosite.uikit",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "keywords": [],
-  "author": "Boris Panchenko <bp@bp-studio.ru>",
+  "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "contributors": [
     {
       "name": "Boris Panchenko",
-      "email": "bp@bp-studio.ru"
+      "email": "hello@bpanchenko.ru"
     }
   ],
   "main": "./index.html",
