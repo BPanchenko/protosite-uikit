@@ -16,16 +16,13 @@
 // Variables
 // ========================================================================
 
-@c-thumbnail-width: 20rem;
-@c-thumbnail-mini-width: 10rem;
-@c-thumbnail-small-width: 16rem;
-@c-thumbnail-large-width: 40rem;
+@c-thumbnail-width: 24rem;
 
 @c-thumbnail-background-color: @clr-white;
 @c-thumbnail-border-radius: .2rem;
 @c-thumbnail-box-shadow: @shadow-3dp;
 @c-thumbnail-margin-left: @unit;
-@c-thumbnail-padding: .4rem;
+@c-thumbnail-padding: 0;
 
 @c-thumbnail-img-max-width: @c-thumbnail-width - @c-thumbnail-padding * 2;
 
@@ -36,7 +33,7 @@
 
 
 /* ========================================================================
-   Component: Thumbnail
+   Component: `c-thumbnail`
  ========================================================================== */
 
 /*figure*/
@@ -68,7 +65,6 @@
  ========================================================================== */
 
 .c-panel .c-thumbnail {
-
 	/* reset basic style */
 	box-shadow: none;
 }
@@ -78,11 +74,15 @@
  ========================================================================== */
 
 .c-thumbnail__caption {
-	font-size: @c-thumbnail-caption-font-size;
-}
+	position: absolute;
+	left: 0; bottom: 0; right: 0;
+	padding: .4rem .8rem;
 
-.c-thumbnail img + .c-thumbnail__caption {
-	margin-top: @c-thumbnail-caption-margin-top;
+	background-color: rgba(255,255,255,.6);
+
+	font-size: @c-thumbnail-caption-font-size;
+	line-height: 1.2;
+	text-shadow: 0 0 2px white;
 }
 
 
@@ -110,18 +110,4 @@
 	.c-thumbnail__shutter {
 		opacity: 1;
 	}
-}
-
-
-/* Sizes modifiers
- ========================================================================== */
-
-.c-thumbnail--mini {
-	width: @c-thumbnail-mini-width;
-}
-.c-thumbnail--small {
-	width: @c-thumbnail-small-width;
-}
-.c-thumbnail--large {
-	width: @c-thumbnail-large-width;
 }

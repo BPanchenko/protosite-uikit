@@ -1,6 +1,7 @@
 
 
-/* Component Avatar
+/* ========================================================================
+   Component: `c-avatar`
  ========================================================================== */
 
 @c-avatar-xsmall-size: 1.5 * @unit;
@@ -29,5 +30,34 @@
 	&.s-xlarge {
 		width: @c-avatar-xlarge-size;
 		height: @c-avatar-xlarge-size;
+	}
+}
+
+
+/* ========================================================================
+   Component: `c-thumbnail`
+ ========================================================================== */
+
+@c-thumbnail-xsmall-width: 5.5 * @unit;
+@c-thumbnail-small-width: 9 * @unit;
+@c-thumbnail-medium-width: 15 * @unit;
+@c-thumbnail-large-width: 24 * @unit;
+@c-thumbnail-xlarge-width: 36 * @unit;
+
+.c-thumbnail {
+	&.s-xsmall {
+		width: @c-thumbnail-xsmall-width;
+	}
+	&.s-small {
+		width: @c-thumbnail-small-width;
+	}
+	&.s-medium {
+		width: @c-thumbnail-medium-width;
+	}
+	&.s-large {
+		width: @c-thumbnail-large-width;
+	}
+	&.s-xlarge {
+		width: @c-thumbnail-xlarge-width;
 	}
 }
