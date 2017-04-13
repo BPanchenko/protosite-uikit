@@ -62,7 +62,10 @@
 	margin: 0;
 	padding: @c-thumbnail-padding;
 
-	img { max-height: 1.8 * @c-thumbnail-max-width; }
+	img {
+		max-height: 1.8 * @c-thumbnail-max-width;
+		object-fit: cover;
+	}
 }
 
 .c-thumbnail + .c-thumbnail {
@@ -105,7 +108,7 @@
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 	padding: @c-thumbnail-shutter-padding;
-	border-radius: inherit;
+	box-sizing: border-box;
 
 	background-color: @c-thumbnail-shutter-background-color;
 	opacity: 0;
@@ -119,7 +122,7 @@
 }
 
 
-/* State `:hover`
+/* Hover state
  ========================================================================== */
 
 a.c-thumbnail:hover {
@@ -128,5 +131,18 @@ a.c-thumbnail:hover {
 	}
 	.c-thumbnail__shutter {
 		opacity: 1;
+	}
+}
+
+
+/* Square style
+ ========================================================================== */
+
+.s-square.c-thumbnail {
+	img {
+		max-width: none;
+		max-height: none;
+		width: @c-thumbnail-max-width;
+		height: @c-thumbnail-max-width;
 	}
 }
