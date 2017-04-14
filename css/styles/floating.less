@@ -1,0 +1,52 @@
+
+
+/* ========================================================================
+   Tag: `a`
+ ========================================================================== */
+
+a.s-floating {
+	position: relative;
+
+	&,&:hover { text-decoration: none; }
+
+	&::after {
+		content: ' ';
+		display: inline-block;
+		position: absolute;
+		bottom: -.1rem;
+		left: 0;
+		border-bottom: .1rem solid currentColor;
+		width: 0;
+		transition: width .16s @easing;
+	}
+
+	&:hover::after {
+		width: 100%;
+	}
+}
+
+
+/* ========================================================================
+   Component: `c-field-box`
+ ========================================================================== */
+
+@c-field-floating-focused-label-top: @c-field-border-width + @c-field-height
+	- (@c-field-padding-top + @c-field-padding-bottom + 2 * @c-field-border-width);
+@c-field-floating-focused-label-font-size: @c-field-font-size;
+
+.s-floating.c-field-box {
+	.c-field-label {
+		position: relative;
+		top: @c-field-floating-focused-label-top;
+		font-size: @c-field-floating-focused-label-font-size;
+		cursor: pointer;
+		transition-property: top, font-size, color;
+	}
+
+	&.is-focused .c-field-label,
+	&.is-filled .c-field-label {
+		top: 0;
+		font-size: @c-field-label-font-size;
+		cursor: @c-field-label-cursor;
+	}
+}

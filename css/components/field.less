@@ -48,15 +48,12 @@
 @c-field-radio-background-size: .8rem .8rem;
 
 
-@c-field-label-top: @c-field-border-width;
-@c-field-label-left: @c-field-padding-left + @c-field-border-width;
 @c-field-label-font-size: 1.3rem;
 @c-field-label-line-height: 2rem;
 @c-field-label-color: @clr-grey-600;
 @c-field-label-cursor: default;
 @c-field-label-user-select: none;
 @c-field-label-left-after-icon: @c-field-icon-width;
-@c-field-floating-label-font-size: @c-field-font-size;
 
 @c-field-error-font-size: 1.3rem;
 @c-field-error-font-weight: 500;
@@ -230,14 +227,14 @@ input[type=file].c-field {
 	vertical-align: middle;
 	padding-left: @c-field-padding-left;
 
-	font-size: @c-field-label-font-size;
 	line-height: @c-field-label-line-height;
+	font-size: @c-field-label-font-size;
 
 	color: @c-field-label-color;
 	cursor: @c-field-label-cursor;
 	user-select: @c-field-label-user-select;
 
-	transition-property: left, top, font-size, line-height, color;
+	transition-property: color;
 	transition-duration: 160ms;
 	transition-timing-function: @easing;
 
@@ -432,17 +429,4 @@ input.c-field:not([type=checkbox]):not([type=radio]):focus {
 
 .is-focused .c-field-label {
 	color: @c-field-focused-label-color;
-}
-
-
-/* Style: `s-floating`
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.s-floating.c-field-box {
-	.c-field-label {
-		position: absolute;
-		top: @c-field-label-top;
-		left: @c-field-label-left;
-		font-size: @c-field-floating-label-font-size;
-	}
 }
