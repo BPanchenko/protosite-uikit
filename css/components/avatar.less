@@ -44,24 +44,21 @@
 
 	/* reset default styles figure */
 	margin: 0;
+
+	a,
+	img {
+		display: inline-block;
+		width: inherit;
+		height: inherit;
+	}
+
+	img {
+		object-fit: cover;
+	}
 }
 
 .c-avatar[style*="background"] {
 	box-shadow: @c-avatar-box-shadow-inset;
-}
-
-/*a*/
-.c-avatar__link {
-	display: inline-block;
-	width: inherit;
-	height: inherit;
-}
-
-/*img*/
-.c-avatar__image {
-	width: inherit;
-	height: inherit;
-	object-fit: cover;
 }
 
 
