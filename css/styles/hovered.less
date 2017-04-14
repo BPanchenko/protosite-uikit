@@ -1,4 +1,5 @@
 
+@hovered-box-shadow: @shadow-6dp;
 @hovered-row-background-color: @clr-lime-50;
 
 
@@ -22,4 +23,16 @@ table.s-hovered tbody tr {
 
 
 
-.c-panel.s-hovered {}
+.c-panel.s-hovered,
+.c-thumbnail.s-hovered {
+
+	top: 0;
+	transition-property: box-shadow, top;
+	transition-duration: .16s;
+	transition-timing-function: @easing;
+
+	&:hover {
+		box-shadow: @hovered-box-shadow;
+		top: -.2rem;
+	}
+}
