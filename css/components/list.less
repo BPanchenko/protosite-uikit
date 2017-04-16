@@ -63,14 +63,14 @@
 @c-list-head-font-weight: 600;
 @c-list-head-color: @caption-color;
 
-@c-list-head-property-padding: 0 @space-xs;
+@c-list-head-box-padding: 0 @space-xs;
 
 
 @c-list-item-font-size: @font-size-default;
 @c-list-item-margin-top: @space-xs;
 @c-list-item-margin-bottom: @space-xs;
 
-@c-list-item-property-padding: 0 @space-s;
+@c-list-item-box-padding: 0 @space-s;
 
 
 /* ========================================================================
@@ -91,10 +91,19 @@
 
 .c-list__head,
 .c-list__item {
-	display: block;
 	contain: layout style;
+	display: block;
 	position: relative;
 	font-size: .001px;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.c-list__head-box,
+.c-list__item-box {
+	white-space: normal;
 }
 
 .c-list__head-box,
@@ -108,7 +117,7 @@
 }
 
 .c-list__head-box {
-	padding: @c-list-head-property-padding;
+	padding: @c-list-head-box-padding;
 	vertical-align: bottom;
 
 	font-family: @c-list-head-font-family;
@@ -129,7 +138,7 @@
 
 .c-list__item > .c-list__item-box,
 .c-list__item > .c-list__item-boxset {
-	padding: @c-list-item-property-padding;
+	padding: @c-list-item-box-padding;
 	vertical-align: middle;
 }
 
