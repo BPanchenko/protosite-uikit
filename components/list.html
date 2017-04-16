@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, hello@boryan.one">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link rel="prefetch" href="/index.html">
+        <link rel="prerender" href="/index.html">
+
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+
+        <link rel="stylesheet/less" type="text/css" href="/css/core.less">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
+
+        <script src="/dist/ui-libs.js"></script>
+        <script src="/dist/ui-core.js"></script>
+
+        <script src="//fb.me/react-15.0.0.js"></script>
+        <script src="//fb.me/react-dom-15.0.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
+
+        <script type="text/babel" src="../jsx/components/ListComponent.jsx"></script>
+        <script type="text/babel">
+            const mapAttributes = new Map();
+            const listContainer = document.body.querySelector('.js-list-container');
+
+            function createCollection(list) {
+                let collection = new Backbone.Collection(list);
+                return collection;
+            }
+
+            function parseResponse(response) {
+                let attrs = response.meta.attributes;
+                Object.keys(attrs).reduce((m, k) => m.set(k, {
+                    name: attrs[k]
+                }), mapAttributes);
+                return response.data;
+            }
+
+            function renderCollection(collection) {
+                ReactDOM.render( <ListComponent collection={collection} />, listContainer );
+            }
+
+            fetch('/dataset/asteroid-orbits.json')
+                    .then(response => response.json())
+                    .then(parseResponse)
+                    .then(createCollection)
+                    .then(renderCollection)
+                    .catch(console.error);
+
+        </script>
+
+    </head>
+    <body>
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/tooltip.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <hgroup>
+                    <h1>Protosite.UiKit</h1>
+                </hgroup>
+            </header>
+
+            <nav class="o-breadcrumb">
+                        <span class="o-breadcrumb__item">
+                            <a href="/" class="">Главная</a>
+                        </span>
+                <span class="o-breadcrumb__item">Компоненты</span>
+                <span class="o-breadcrumb__item is-current">Список</span>
+            </nav>
+
+            <main role="main">
+                <section class="c-panel">
+                    <div class="c-panel__head">
+                        <h3>Possible Asteroid Impacts with Earth</h3>
+                        <span class="u-text-muted">Name, orbit, and year range for impacts predicted by Sentry system</span>
+                    </div>
+                    <div class="c-panel__body js-list-container"></div>
+                </section>
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <h4 class="u-font-cursive">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2017</h4>
+                </div>
+            </footer>
+        </div>
+
+        <script src="../js/counter.js"></script>
+    </body>
+</html>
