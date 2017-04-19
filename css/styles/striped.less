@@ -6,3 +6,8 @@ table.s-striped tbody tr:nth-of-type(odd),
 .c-list.s-striped .c-list__item:nth-of-type(odd) {
 	background-color: @striped-row-background-color;
 }
+
+// remove the border bottom of the list item
+.c-list.s-striped .c-list__item::after {
+	content: normal;
+}
