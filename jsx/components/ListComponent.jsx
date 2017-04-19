@@ -1,7 +1,15 @@
 const ListComponent = function() {
 
-  const ListHeadComponent = React.createClass({
-    render: function() {
+
+  class ListHeadComponent extends React.Component {
+
+    onClickSort(e) {
+      e.preventDefault();
+      console.log(e);
+      return;
+    }
+
+    render() {
       let Headers = [], key, attr;
 
       for(let entry of this.props.attributes) {
@@ -9,7 +17,7 @@ const ListComponent = function() {
         attr = entry[1];
         Headers.push(
             <div key={key} data-prop={key} className="c-list__head-box">
-              <a href="#sort={key}">{attr.name}</a>
+              <a href="#sort={key}" data-prop={key} onClick={this.onClickSort}>{attr.name}</a>
             </div>
         );
       }
@@ -20,32 +28,38 @@ const ListComponent = function() {
           </div>
       );
     }
-  });
+  };
 
-  const ListItemComponent = React.createClass({
-    render: function() {
-      let keys = this.props.model.keys();
-      let Values = this.props.model.values().map((value,i) =>
-          <div key={keys[i]} data-prop={keys[i]} className="c-list__item-box">{value}</div>
-      );
 
-      return (
-          <section data-id={this.props.model.id} className="c-list__item">
-            {Values}
-          </section>
-      );
-    }
-  });
+  const ListItemComponent = (props) => {
+    let keys = props.model.keys();
+    let Values = props.model.values().map((value,i) =>
+        <div key={keys[i]} data-prop={keys[i]} className="c-list__item-box">{value}</div>
+    );
 
-  const ListComponent = React.createClass({
-    render: function() {
+    return (
+        <section data-id={props.model.id} className="c-list__item">
+          {Values}
+        </section>
+    );
+  };
+
+  ListItemComponent.propTypes = {
+    model: React.PropTypes.instanceOf(Backbone.Model).isRequired
+  };
+
+  class ListComponent extends React.Component {
+    render() {
+      let className = "c-list";
+      if(this.props.styleHovered) className += " s-hovered";
+      if(this.props.styleStriped) className += " s-striped";
 
       let Items = this.props.collection.slice(0, 80).map(model =>
           <ListItemComponent key={model.id} model={model} />
       );
 
       return (
-          <section className="c-list s-hovered s-striped">
+          <section className={className}>
             <ListHeadComponent attributes={mapAttributes} />
             <div className="c-list__body">
               {Items}
@@ -54,7 +68,12 @@ const ListComponent = function() {
           </section>
       );
     }
-  });
+  };
+
+  ListComponent.propTypes = {
+    collection: React.PropTypes.instanceOf(Backbone.Collection).isRequired
+  };
+
 
   return ListComponent;
 }();

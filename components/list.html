@@ -48,7 +48,7 @@
             }
 
             function renderCollection(collection) {
-                ReactDOM.render( <ListComponent collection={collection} />, listContainer );
+                ReactDOM.render( <ListComponent collection={collection} styleHovered />, listContainer );
             }
 
             fetch('/dataset/asteroid-orbits.json')
