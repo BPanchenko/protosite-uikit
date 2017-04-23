@@ -25,15 +25,15 @@
   
   Backbone.Collection = function(models, options) {
     options || (options = {});
-    if (options.meta) this.setMetadata(options.meta);
     if (options.model) this.model = options.model;
     if (options.comparator !== void 0) this.comparator = options.comparator;
     this._reset();
     this.initialize.apply(this, arguments);
+    if (options.meta) this.setMetadata(options.meta);
     if (models) this.reset(models, _.extend({silent: true}, options));
   };
 
-  _.extend(Backbone.View.prototype, {
+  _.extend(Backbone.Collection.prototype, {
     parse: function(response) {
       var list = [];
       if(_.isArray(response)) {
