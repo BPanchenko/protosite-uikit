@@ -21,13 +21,32 @@
         list = response;
       } else {
         _.isArray(response.data) && (list = response.data);
-        _.isObject(response.meta) && this.setMetadata(response.meta);
+        _.isObject(response.meta) && this.setMetadata(response.meta, list);
       }
       return list;
     },
-    setMetadata: function(data) {
+    setMetadata: function(data, list) {
       if(!this.meta) this.meta = new Backbone.Model;
       console.assert(data instanceof Object, "Invalid metadata of collection");
+      
+      // define attribute types by type properties of first model in collection
+      var first = list ? list[0] : this.length ? this.at(0).toJSON() : null;
+      if(data.attributes) {
+        for(var key in data.attributes) {
+          attr = data.attributes[key];
+          if(_.isString(attr)) {
+            var name = attr;
+            attr = { name: name };
+          }
+          if(first) {
+            if(_.isNumber(first[key])) attr.type = "number";
+            if(_.isString(first[key])) attr.type = "string";
+          }
+          data.attributes[key] = attr;
+
+        }
+      }
+      
       return this.meta.set(data);
     }
   });
