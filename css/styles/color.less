@@ -1,14 +1,36 @@
 @import "../settings/variables";
 
-
-/* Style: `s-danger`
- ========================================================================== */
-
 @c-button-danger-background-color: fade(@danger-color, 76%);
 @c-button-danger-background-color-focus: fade(@clr-red-900, 82%);
 @c-button-danger-background-blend-mode: color-burn;
 @c-button-danger-color: @clr-white;
 @c-button-danger-text-shadow: none;
+
+@c-button-primary-background-color: fade(@primary-color, 90%);
+@c-button-primary-background-color-focus: fade(@clr-blue-900, 80%);
+@c-button-primary-background-blend-mode: color-burn;
+@c-button-primary-color: @clr-white;
+@c-button-primary-text-shadow: none;
+
+@c-button-success-background-color: fade(@success-color, 76%);
+@c-button-success-background-color-focus: fade(@clr-green-900, 72%);
+@c-button-success-background-blend-mode: color-burn;
+@c-button-success-color: @clr-white;
+@c-button-success-text-shadow: none;
+
+@c-button-warning-background-color: fade(@warning-color, 76%);
+@c-button-warning-background-color-focus: fade(@clr-orange-900, 78%);
+@c-button-warning-background-blend-mode: color-burn;
+@c-button-warning-color: @clr-white;
+@c-button-warning-text-shadow: none;
+
+
+/* Style: `s-danger`
+ ========================================================================== */
+
+.s-danger {
+	color: @danger-color;
+}
 
 .c-button.s-danger {
 	background-color: @c-button-danger-background-color;
@@ -26,14 +48,20 @@
 }
 
 
+/* Style: `s-muted`
+ ========================================================================== */
+
+.s-muted {
+	color: @muted-color;
+}
+
+
 /* Style: `s-primary`
  ========================================================================== */
 
-@c-button-primary-background-color: fade(@primary-color, 90%);
-@c-button-primary-background-color-focus: fade(@clr-blue-900, 80%);
-@c-button-primary-background-blend-mode: color-burn;
-@c-button-primary-color: @clr-white;
-@c-button-primary-text-shadow: none;
+.s-primary {
+	color: @primary-color;
+}
 
 .c-button.s-primary {
 	background-color: @c-button-primary-background-color;
@@ -54,11 +82,9 @@
 /* Style: `s-success`
  ========================================================================== */
 
-@c-button-success-background-color: fade(@success-color, 76%);
-@c-button-success-background-color-focus: fade(@clr-green-900, 72%);
-@c-button-success-background-blend-mode: color-burn;
-@c-button-success-color: @clr-white;
-@c-button-success-text-shadow: none;
+.s-success {
+	color: @success-color;
+}
 
 .c-button.s-success {
 	background-color: @c-button-success-background-color;
@@ -79,11 +105,9 @@
 /* Style: `s-warning`
  ========================================================================== */
 
-@c-button-warning-background-color: fade(@warning-color, 76%);
-@c-button-warning-background-color-focus: fade(@clr-orange-900, 78%);
-@c-button-warning-background-blend-mode: color-burn;
-@c-button-warning-color: @clr-white;
-@c-button-warning-text-shadow: none;
+.s-warning {
+	color: @warning-color;
+}
 
 .c-button.s-warning {
 	background-color: @c-button-warning-background-color;
