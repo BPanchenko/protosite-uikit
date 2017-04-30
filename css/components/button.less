@@ -1,22 +1,19 @@
 @import "../settings/variables";
 
 /**
- * Component:       `c-button`
- * Description:     Defines styles for buttons
+ * Component:   `c-button`
+ * Description: Defines styles for buttons
  * 
- * Wrappers:		`c-button-group`
- *                  `c-button-dropdown`
+ * Wrappers: `c-button-group`
+ *           `c-button-dropdown`
  * 
- * Modifiers:       `c-button--primary`
- *                  `c-button--secondary`
- *                  `c-button--success`
- *                  `c-button--danger`
- *                  `c-button--link`
- *                  `c-button--mini`
- *                  `c-button--small`
- *                  `c-button--large`
+ * Styles:	`s-primary`
+ *          `s-danger`
+ *          `s-link`
+ *          `s-small`
+ *          `s-large`
  * 
- * States:          `c-button--active` | c-button:active | [aria-checked=true]
+ * States: `c-button--active` | c-button:active | [aria-checked=true]
  * 
  * Markup:
  * 
@@ -60,31 +57,6 @@
 @c-button-font-weight: 600;
 @c-button-line-height: normal;
 @c-button-text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
-
-
-@c-button-danger-background-color: fade(@clr-red-800, 76%);
-@c-button-danger-background-color-focus: fade(@clr-red-900, 82%);
-@c-button-danger-background-blend-mode: color-burn;
-@c-button-danger-color: @clr-white;
-@c-button-danger-text-shadow: none;
-
-@c-button-primary-background-color: fade(@clr-blue-800, 90%);
-@c-button-primary-background-color-focus: fade(@clr-blue-900, 80%);
-@c-button-primary-background-blend-mode: color-burn;
-@c-button-primary-color: @clr-white;
-@c-button-primary-text-shadow: none;
-
-@c-button-success-background-color: fade(@clr-green-800, 76%);
-@c-button-success-background-color-focus: fade(@clr-green-900, 72%);
-@c-button-success-background-blend-mode: color-burn;
-@c-button-success-color: @clr-white;
-@c-button-success-text-shadow: none;
-
-@c-button-warning-background-color: fade(@clr-orange-800, 76%);
-@c-button-warning-background-color-focus: fade(@clr-orange-900, 78%);
-@c-button-warning-background-blend-mode: color-burn;
-@c-button-warning-color: @clr-white;
-@c-button-warning-text-shadow: none;
 
 @c-button_on_panel-box-shadow: inset .1rem .1rem 0 0 rgba(255,255,255,.3), inset -.1rem -.1rem 0 0 rgba(0,0,0,.18);
 
@@ -182,87 +154,6 @@
 	.c-button {
 		box-shadow: @c-button_on_panel-box-shadow;
 	}
-}
-
-
-/* Modifier: `c-button--danger`
- ========================================================================== */
-
-.c-button--danger {
-	background-color: @c-button-danger-background-color;
-	background-blend-mode: @c-button-danger-background-blend-mode;
-	text-shadow: @c-button-danger-text-shadow;
-}
-
-.c-button--danger,
-.c-button--danger:hover {
-	color: @c-button-danger-color;
-}
-
-.c-button--danger:focus,
-.c-panel:not(.s-transparent) .c-button--danger:focus {
-	background-color: @c-button-danger-background-color-focus;
-}
-
-
-/* Modifier: `c-button--primary`
- ========================================================================== */
-
-.c-button--primary,
-.c-button--primary:hover {
-	background-color: @c-button-primary-background-color;
-	background-blend-mode: @c-button-primary-background-blend-mode;
-	text-shadow: @c-button-primary-text-shadow;
-}
-
-.c-button--primary,
-.c-button--primary:hover {
-	color: @c-button-primary-color;
-}
-
-.c-button--primary:focus,
-.c-panel:not(.s-transparent) .c-button--primary:focus {
-	background-color: @c-button-primary-background-color-focus;
-}
-
-
-/* Modifier: `c-button--success`
- ========================================================================== */
-
-.c-button--success {
-	background-color: @c-button-success-background-color;
-	background-blend-mode: @c-button-success-background-blend-mode;
-	text-shadow: @c-button-success-text-shadow;
-}
-
-.c-button--success,
-.c-button--success:hover {
-	color: @c-button-success-color;
-}
-
-.c-button--success:focus,
-.c-panel:not(.s-transparent) .c-button--success:focus {
-	background-color: @c-button-success-background-color-focus;
-}
-
-
-/* Modifier: `c-button--warning`
- ========================================================================== */
-
-.c-button--warning {
-	background-color: @c-button-warning-background-color;
-	background-blend-mode: @c-button-warning-background-blend-mode;
-	text-shadow: @c-button-warning-text-shadow;
-}
-
-.c-button--warning,
-.c-button--warning:hover {
-	color: @c-button-warning-color;
-}
-
-.c-button--warning:focus,
-.c-panel:not(.s-transparent) .c-button--warning:focus {
-	background-color: @c-button-warning-background-color-focus;
 }
 
 
