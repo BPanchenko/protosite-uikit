@@ -1,4 +1,4 @@
-
+@import "../settings/variables";
 
 /* ========================================================================
    Component: `c-avatar`
@@ -30,6 +30,27 @@
 	&.s-xlarge {
 		width: @c-avatar-xlarge-size;
 		height: @c-avatar-xlarge-size;
+	}
+}
+
+/* ========================================================================
+   Component: `c-button`
+ ========================================================================== */
+
+@c-button-small-font-size: @font-size-small;
+@c-button-small-padding: @space-xs @space-m;
+
+@c-button-large-font-size: @font-size-large;
+@c-button-large-padding: @space-m @space-l;
+
+.c-button {
+	&.s-small {
+		font-size: @c-button-small-font-size;
+		padding: @c-button-small-padding;
+	}
+	&.s-large {
+		font-size: @c-button-large-font-size;
+		padding: @c-button-large-padding;
 	}
 }
 

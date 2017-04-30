@@ -52,7 +52,7 @@
 @c-button-box-shadow: @shadow-2dp;
 @c-button-box-shadow-active: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
 
-@c-button-padding: .6rem 2.4rem;
+@c-button-padding: @space-s @space-l;
 
 @c-button-color: @text-color;
 @c-button-font-family: @font-family-primary;
@@ -85,10 +85,6 @@
 @c-button-warning-background-blend-mode: color-burn;
 @c-button-warning-color: @clr-white;
 @c-button-warning-text-shadow: none;
-
-@c-button-small-font-size: 1.3rem;
-@c-button-small-min-height: (@unit * 1.5);
-@c-button-small-padding: (@unit / 3) @unit;
 
 @c-button_on_panel-box-shadow: inset .1rem .1rem 0 0 rgba(255,255,255,.3), inset -.1rem -.1rem 0 0 rgba(0,0,0,.18);
 
@@ -294,16 +290,6 @@
 .c-button--link[aria-checked=true],
 .c-button--link.c-button--active {
 	color: @link-hover-color;
-}
-
-
-/* Size modifier: `c-button--small`
- ========================================================================== */
-
-.c-button--small {
-	font-size: @c-button-small-font-size;
-	min-height: @c-button-small-min-height;
-	padding: @c-button-small-padding;
 }
 
 
