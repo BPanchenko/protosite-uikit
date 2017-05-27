@@ -10,12 +10,16 @@
  * Modifiers: `c-button--link`
  *			  `c-button--icon`
  * 
- * Styles:	`s-primary`
+ * Styles:	`s-bordered`
+ *          `s-clean`
  *          `s-danger`
- *          `s-small`
  *          `s-large`
- * 
- * States: `c-button--active` | c-button:active | [aria-checked=true]
+ *          `s-link`
+ *			`s-primary`
+ *          `s-small`
+ *          `s-warning`
+ *
+ * States: `:active` or `[aria-checked=true]`
  * 
  * Markup:
  * 
@@ -189,42 +193,6 @@
 .c-button__text + .c-button__icon {
 	margin-left: 1.3rem;
 	margin-right: -1rem;
-}
-
-
-/* Modifier: `c-button--link`
- ========================================================================== */
-
-.c-button--link {
-	.c-button;
-	background: transparent !important;
-	text-decoration: @link-text-decoration;
-	transition: @link-transition;
-	box-shadow: none !important;
-	color: @link-hover-color;
-
-	.c-button__icon {
-		text-decoration: none;
-	}
-	.c-button__text {
-		text-decoration: @link-text-decoration;
-	}
-}
-
-.c-button--link:hover {
-	text-decoration: @link-hover-text-decoration;
-
-	.c-button__text {
-		text-decoration: @link-hover-text-decoration;
-	}
-}
-
-.c-button--link:active,
-.c-button--link:hover,
-.c-button--link:focus,
-.c-button--link[aria-checked=true],
-.c-button--link.c-button--active {
-	color: @link-hover-color;
 }
 
 
