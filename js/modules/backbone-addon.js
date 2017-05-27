@@ -26,6 +26,7 @@
       });
     }
   });
+
   var collectionPrototype = Backbone.Collection.prototype;
 
   Backbone.Collection = function(models, options) {
@@ -85,6 +86,8 @@
       return this;
     }
   });
+
+  Backbone.Collection.extend = Backbone.Model.extend;
 
 
   // @View
