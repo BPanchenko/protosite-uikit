@@ -1,0 +1,42 @@
+@import "../settings/variables";
+
+@c-button-link-padding: @space-xs @space-s;
+
+.c-button.s-link {
+	padding: @c-button-link-padding;
+
+	background: transparent !important;
+	text-decoration: @link-text-decoration;
+	transition: @link-transition;
+	box-shadow: none !important;
+	color: @link-hover-color;
+
+	.c-button__icon {
+		margin-left: -.2rem;
+		margin-right: .8rem;
+		text-decoration: none;
+	}
+	.c-button__text {
+		text-decoration: @link-text-decoration;
+	}
+	.c-button__text + .c-button__icon {
+		margin-left: .8rem;
+		margin-right: -.2rem;
+	}
+
+	&:hover {
+		text-decoration: @link-hover-text-decoration;
+
+		.c-button__text {
+			text-decoration: @link-hover-text-decoration;
+		}
+	}
+}
+
+.c-button--link:active,
+.c-button--link:hover,
+.c-button--link:focus,
+.c-button--link[aria-checked=true],
+.c-button--link.c-button--active {
+	color: @link-hover-color;
+}
