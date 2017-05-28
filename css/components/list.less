@@ -4,15 +4,19 @@
  * Component:       `c-list`
  * Description:     Defines styles for list items
  *
- * Elements:		`c-list__head`
- *                  `c-list__head-box`
- *                  `c-list__body`
- *                  `c-list__item`
- *                  `c-list__item-boxset`
- *                  `c-list__item-box`
- *                  `c-list__foot`
- *                  `c-list__item`
- *                  `c-list__meta`
+ * Containers:
+ *				`c-list__head`
+ *              `c-list__body`
+ *              `c-list__item`
+ *              `c-list__foot`
+ *              `c-list__item`
+ *              `c-list__meta`
+ *
+ * Elements:
+ *				`c-list-sort`
+ *				`c-list__head-box`
+ *              `c-list__item-boxset`
+ *              `c-list__item-box`
  *
  *
  * Markup:
@@ -80,7 +84,7 @@
 
 
 /* ========================================================================
-   Component: `c-button`
+   Component: `c-list`
  ========================================================================== */
 
 .c-list {
@@ -166,4 +170,16 @@
 
 .c-list__item-boxset > .c-list__item-box {
 	padding: 0;
+}
+
+
+/* Element: `c-list-sort`
+ ========================================================================== */
+
+.c-list-sort {
+	display: inline-block;
+
+	&::after {
+		content: '';
+	}
 }

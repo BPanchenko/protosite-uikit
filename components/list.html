@@ -24,39 +24,32 @@
 
         <script src="../dist/ui-libs.js"></script>
         <script src="../dist/ui-core.js"></script>
+        <script src="../js/modules/backbone-addon.js"></script>
 
-        <script src="//fb.me/react-15.0.0.js"></script>
-        <script src="//fb.me/react-dom-15.0.0.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.0.0/react.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.0.0/react-dom.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
 
         <script type="text/babel" src="../jsx/components/ListComponent.jsx"></script>
         <script type="text/babel">
-            const mapAttributes = new Map();
             const listContainer = document.body.querySelector('.js-list-container');
+            const collection = new (Backbone.Collection.extend({
+                url: 'http://api.protosite.rocks/asteroids'
+            }));
 
-            function createCollection(list) {
-                let collection = new Backbone.Collection(list);
-                return collection;
-            }
 
-            function parseResponse(response) {
-                let attrs = response.meta.attributes;
-                Object.keys(attrs).reduce((m, k) => m.set(k, {
-                    name: attrs[k]
-                }), mapAttributes);
-                return response.data;
-            }
+            const render = function (container, collection) {
+                ReactDOM.render( <ListComponent collection={collection} isHovered />, container );
+            }.bind(this, listContainer, collection);
 
-            function renderCollection(collection) {
-                ReactDOM.render( <ListComponent collection={collection} styleHovered />, listContainer );
-            }
+            collection.listenTo(collection.state, 'change', render);
+            collection.on('update', render);
+            collection.fetchFields();
+            collection.fetch();
 
-            fetch('/dataset/asteroid-orbits.json')
-                    .then(response => response.json())
-                    .then(parseResponse)
-                    .then(createCollection)
-                    .then(renderCollection)
-                    .catch(console.error);
+            setInterval(function(){
+                collection.state.set('page', collection.state.get('page') + 1);
+            }, 5000);
 
         </script>
 
@@ -86,7 +79,14 @@
                 <section class="c-panel">
                     <div class="c-panel__head">
                         <h3>Possible Asteroid Impacts with Earth</h3>
-                        <span class="u-text-muted">Name, orbit, and year range for impacts predicted by Sentry system</span>
+                        <span class="u-text-muted">
+                            Name, orbit, and year range for impacts predicted by Sentry system
+                        </span>
+                        <div class="c-panel__toolbar">
+                            <a href="https://www.kaggle.com/nasa/asteroid-impacts" class="s-floating" target="_blank">
+                                NASA on kaggle.com <i class="iconic" data-glyph="external-link"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="c-panel__body js-list-container"></div>
                 </section>
