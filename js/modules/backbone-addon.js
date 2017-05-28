@@ -4,22 +4,24 @@
 
   var CollectionStateModel = Backbone.Model.extend({
     defaults: {
+      fields: [],
       page: 1,
-      pageSize: 20,
+      count: 20,
       sort: '-id',
       sortOrder: 'desc',
-      sortProp: 'id',
+      sortKey: 'id',
       total: 0
     },
     initialize: function(){
-      this.on('change:sortProp change:sortOrder', function() {
-        var order = this.get('sortOrder'), prop = this.get('sortProp');
-        if (order == 'desc') prop = '-' + prop;
-        this.set('sort', prop, { silent: true });
+      this.on('change:sortKey change:sortOrder', function() {
+        let order = this.get('sortOrder');
+        let sort = this.get('sortKey');
+        if (order == 'desc') sort = '-' + sort;
+        this.set('sort', sort);
       });
       this.on('change:sort', function(model, sort) {
         var attrs = {
-          sortProp: sort.indexOf('-') === 0 ? sort.substring(1) : sort,
+          sortKey: sort.indexOf('-') === 0 ? sort.substring(1) : sort,
           sortOrder: sort.indexOf('-') === 0 ? 'desc' : 'asc'
         };
         this.set(attrs, { silent: true });
@@ -33,54 +35,45 @@
     options || (options = {});
     if (options.model) this.model = options.model;
     if (options.comparator !== void 0) this.comparator = options.comparator;
-    this._initState();
+    this._initState(options);
     this._reset();
     this.initialize.apply(this, arguments);
-    if (options.meta) this.setMetadata(options.meta);
     if (models) this.reset(models, _.extend({silent: true}, options));
   };
 
   _.extend(Backbone.Collection.prototype, collectionPrototype, {
+    fetch: function(options) {
+      options || (options = {});
+      options.data = _.extend({}, this.state.pick('count', 'sort'), options.data);
+      options.data.offset = (this.state.get('page') - 1) * this.state.get('count');
+      return collectionPrototype.fetch.call(this, options);
+    },
+    fetchFields: function() {
+      let url = _.result(this, 'url');
+      console.assert(url, 'A "url" property or function must be specified');
+      return fetch(url + '/fields')
+          .catch(err => console.error('Failed fetch collection fields', err))
+          .then(response => response.json())
+          .then(json => {
+            this.state.set('fields', json.data);
+            return json.data;
+          });
+    },
     parse: function(response) {
       var list = [];
       if(_.isArray(response)) {
         list = response;
       } else {
         _.isArray(response.data) && (list = response.data);
-        _.isObject(response.meta) && this.setMetadata(response.meta, list);
+        _.isObject(response.meta) && this.state.set(response.meta);
       }
       return list;
     },
-    setMetadata: function(data, list) {
-      if(!this.meta) this.meta = new Backbone.Model;
-      console.assert(data instanceof Object, "Invalid metadata of collection");
-      
-      // define attribute types by type properties of first model in collection
-      var first = list ? list[0] : this.length ? this.at(0).toJSON() : null;
-      if(data.attributes) {
-        for(var key in data.attributes) {
-          attr = data.attributes[key];
-          if(_.isString(attr)) {
-            var name = attr;
-            attr = { name: name };
-          }
-          if(first) {
-            if(_.isNumber(first[key])) attr.type = "number";
-            if(_.isString(first[key])) attr.type = "string";
-          }
-          data.attributes[key] = attr;
-        }
-      }
-      
-      if(_.isNumber(data.total)) this.state.set('total', data.total);
-      
-      return this.meta.set(data);
-    },
-    _initState: function () {
-      this.state = new CollectionStateModel;
+    _initState: function (options = {}) {
+      this.state = new CollectionStateModel(options.state);
       this.listenTo(
           this.state
-          , 'change:page change:pageSize change:sort change:sortOrder change:sortProp'
+          , 'change:page change:count change:sort'
           , _.debounce(this.fetch.bind(this, {}), 160)
       );
       return this;
