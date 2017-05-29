@@ -25,7 +25,33 @@
         <script src="../dist/ui-libs.js"></script>
         <script src="../dist/ui-core.js"></script>
         <script src="../js/modules/backbone-addon.js"></script>
-        <script src="../js/ui/components/list.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.0.0/react.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.0.0/react-dom.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
+
+        <script type="text/babel" src="../jsx/components/ListComponent.jsx"></script>
+        <script type="text/babel">
+            const listContainer = document.body.querySelector('.js-list-container');
+            const collection = new (Backbone.Collection.extend({
+                url: 'http://api.protosite.rocks/asteroids'
+            }));
+
+
+            const render = function (container, collection) {
+                ReactDOM.render( <ListComponent collection={collection} isHovered />, container );
+            }.bind(this, listContainer, collection);
+
+            collection.listenTo(collection.state, 'change', render);
+            collection.on('update', render);
+            collection.fetchFields();
+            collection.fetch();
+
+            setInterval(function(){
+                collection.state.set('page', collection.state.get('page') + 1);
+            }, 5000);
+
+        </script>
 
     </head>
     <body>
@@ -73,26 +99,6 @@
                 </div>
             </footer>
         </div>
-
-
-        <script type="text/javascript">
-            let ellistContainer = document.body.querySelector('.js-list-container');
-            let collection = new (Backbone.Collection.extend({
-                url: 'http://api.protosite.rocks/asteroids'
-            }));
-
-            let list = new UI.List({
-                collection: collection
-            });
-            ellistContainer.appendChild(list.el);
-            list.render();
-
-            console.log(list);
-
-            collection.fetchFields();
-            collection.fetch();
-
-        </script>
 
     </body>
 </html>
