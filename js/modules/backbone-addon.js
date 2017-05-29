@@ -12,20 +12,20 @@
       sortKey: 'id',
       total: 0
     },
-    initialize: function(){
-      this.on('change:sortKey change:sortOrder', function() {
-        let order = this.get('sortOrder');
-        let sort = this.get('sortKey');
-        if (order == 'desc') sort = '-' + sort;
-        this.set('sort', sort);
-      });
-      this.on('change:sort', function(model, sort) {
-        var attrs = {
+    initialize: function() {
+     this.on('change:sortKey change:sortOrder', function() {
+       var order = this.get('sortOrder');
+       var sort = this.get('sortKey');
+       if (order == 'desc') sort = '-' + sort;
+       this.set('sort', sort);
+     });
+     this.on('change:sort', function(model, sort) {
+       var attrs = {
           sortKey: sort.indexOf('-') === 0 ? sort.substring(1) : sort,
           sortOrder: sort.indexOf('-') === 0 ? 'desc' : 'asc'
-        };
-        this.set(attrs, { silent: true });
-      });
+       };
+       this.set(attrs, { silent: true });
+     });
     }
   });
 
@@ -49,14 +49,14 @@
       return collectionPrototype.fetch.call(this, options);
     },
     fetchFields: function() {
-      let url = _.result(this, 'url');
+      var url = _.result(this, 'url');
       console.assert(url, 'A "url" property or function must be specified');
-      return fetch(url + '/fields')
-          .catch(err => console.error('Failed fetch collection fields', err))
-          .then(response => response.json())
-          .then(json => {
-            this.state.set('fields', json.data);
-            return json.data;
+      return $.getJSON(url + '/fields')
+          .done(function(resp) {
+            this.state.set('fields', resp.data);
+          }.bind(this))
+          .fail(function(err) {
+            console.error('Failed fetch collection fields', err);
           });
     },
     parse: function(response) {
@@ -69,7 +69,8 @@
       }
       return list;
     },
-    _initState: function (options = {}) {
+    _initState: function (options) {
+      options || (options = {});
       this.state = new CollectionStateModel(options.state);
       this.listenTo(
           this.state
