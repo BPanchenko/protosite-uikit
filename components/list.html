@@ -92,6 +92,10 @@
             collection.fetchFields();
             collection.fetch();
 
+            setInterval(function(){
+                collection.state.set('page', collection.state.get('page') + 1);
+            }, 5000);
+
         </script>
 
     </body>
