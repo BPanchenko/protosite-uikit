@@ -29,8 +29,8 @@
     },
     parse: function(data) {
       if(data.fields) {
-        for(let key in data.fields) {
-          let field = data.fields[key];
+        for(var key in data.fields) {
+          var field = data.fields[key];
           if(!field.name) field.name = field.comment;
           if(!field.name) field.name = key;
         }
