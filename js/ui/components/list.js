@@ -1,9 +1,12 @@
 (function(UI){
 
+  var sourceViewPrototype = _.clone(Backbone.View.prototype);
+
   Object.assign(Backbone.View.prototype, {
     removeChildren: function() {
-      if(!this.children || !(this.children instanceof Map)) {
-        console.warn("Collection is't a Map");
+      if(!this.children) return this;
+      if(!(this.children instanceof Map)) {
+        console.warn("Children is't a Map");
         return this;
       }
       for(var view of this.children.values()) {
@@ -12,8 +15,11 @@
           view.remove();
         }
       }
-      console.log(this.children);
       return this;
+    },
+    remove: function() {
+      this.removeChildren();
+      return sourceViewPrototype.remove.call(this);
     }
   });
   
@@ -27,32 +33,60 @@
     name: 'ListItemView',
     className: 'c-list__head',
     initialize: function(options) {
+      this.children = new Map();
       this.collection = options.collection;
+      this.listenTo(this.collection.state, 'change:fields change:sort', this.render);
+    },
+    render: function() {
+      let state = this.collection.state.toJSON();
+      let fields = state.fields;
+
+      for(let key in fields) {
+        let elem = document.createElement('div');
+        let field = fields[key];
+
+        let sort, ariaSort = 'none';
+        if(state.sortKey == key) {
+          sort = state.sortOrder == 'asc' ? '-' + key : key;
+          ariaSort = state.sortOrder == 'asc' ? 'ascending' : 'descending';
+        } else {
+          sort = field.short_type == 'numeric' ? '-' + key : key;
+        }
+
+        elem.innerHTML = `<a href="#sort=${sort}" aria-sort="${ariaSort}" class="c-ctrl-sort">${field.name}</a>`;
+        elem.classList.add('c-list__head-box');
+        this.el.appendChild(elem)
+      }
+
+      return this;
     }
   });
   
   var ListBodyView = Backbone.View.extend({
     name: 'ListItemView',
     className: 'c-list__body',
+    
     hns: {
       'request': function() {
         this.el.classList.add('s-loading');
       },
       'sync': function() {
         this.el.classList.remove('s-loading');
-        this.render();
       },
       'update': function() {
         this.render();
       }
     },
+
     initialize: function(options) {
+      this.children = new Map();
       this.collection = options.collection;
       console.assert(this.collection instanceof Backbone.Collection, "Collection is undefined");
       this.listenTo(this.collection, 'request', this.hns.request);
       this.listenTo(this.collection, 'sync', this.hns.sync);
       this.listenTo(this.collection, 'update', this.hns.update);
     },
+
     onRender: function() {
       this.renderChildren();
       return this;
@@ -64,8 +98,6 @@
     },
   
     renderChildren: function() {
-      if(!this.children) this.children = new Map();
-
       this.collection.each(model => {
         if(!this.children.has(model.cid)) {
           let view = new ListItemView({ model });
@@ -74,8 +106,6 @@
           this.children.set(model.cid, view);
         }
       });
-      
-      console.log(this.children);
       return this;
     }
   });
