@@ -26,10 +26,21 @@
        };
        this.set(attrs, { silent: true });
      });
+    },
+    parse: function(data) {
+      if(data.fields) {
+        for(let key in data.fields) {
+          let field = data.fields[key];
+          if(!field.name) field.name = field.comment;
+          if(!field.name) field.name = key;
+        }
+      }
+      console.log(data);
+      return data;
     }
   });
 
-  var collectionPrototype = Backbone.Collection.prototype;
+  var collectionPrototype = _.clone(Backbone.Collection.prototype);
 
   Backbone.Collection = function(models, options) {
     options || (options = {});
@@ -53,7 +64,7 @@
       console.assert(url, 'A "url" property or function must be specified');
       return $.getJSON(url + '/fields')
           .done(function(resp) {
-            this.state.set('fields', resp.data);
+            this.state.set(this.state.parse({ fields: resp.data }));
           }.bind(this))
           .fail(function(err) {
             console.error('Failed fetch collection fields', err);
