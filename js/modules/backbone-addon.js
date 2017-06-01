@@ -71,7 +71,7 @@
     },
     _initState: function (options) {
       options || (options = {});
-      this.state = new CollectionStateModel(options.state);
+      this.state = new CollectionStateModel(this.state);
       this.listenTo(
           this.state
           , 'change:page change:count change:sort'

@@ -78,7 +78,10 @@
         <script type="text/javascript">
             let ellistContainer = document.body.querySelector('.js-list-container');
             let collection = new (Backbone.Collection.extend({
-                url: 'http://api.protosite.rocks/asteroids'
+                url: 'http://api.protosite.rocks/asteroids',
+                state: {
+                    count: 10
+                }
             }));
 
             let list = new UI.List({
