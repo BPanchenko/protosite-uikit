@@ -1,0 +1,82 @@
+@import "../settings/variables";
+
+
+/* ========================================================================
+   Component: `c-ctrl-sort`
+ ========================================================================== */
+
+/*a*/
+.c-ctrl-sort {
+	position: relative;
+	display: inline-block;
+	padding-right: 1.6rem;
+
+	font-size: inherit;
+	line-height: inherit;
+	text-decoration: none;
+
+	color: @muted-color;
+
+	&::before,
+	&::after {
+		position: absolute;
+		right: 0;
+		display: inline-block;
+
+		font-family: 'Iconic';
+		font-size: 1rem;
+		line-height: 1;
+		transform-origin: center;
+		opacity: .2;
+	}
+
+	&::after {
+		content: '\e14f'; // caret-top
+		bottom: 46%;
+	}
+	&::before {
+		content: '\e14c'; // caret-bottom
+		top: 46%;
+	}
+}
+
+
+/* State: hover
+ ========================================================================== */
+
+.c-ctrl-sort:hover {
+	color: @caption-color;
+	&::before,
+	&::after {
+		opacity: .4;
+	}
+}
+
+
+/* State: active
+ ========================================================================== */
+
+.c-ctrl-sort[aria-sort="ascending"],
+.c-ctrl-sort[aria-sort="descending"] {
+	color: @caption-color;
+}
+.c-ctrl-sort[aria-sort="ascending"] {
+	&::before {
+		opacity: 1;
+		transform: translateY(-50%);
+	}
+	&::after {
+		content: '';
+		display: none;
+	}
+}
+.c-ctrl-sort[aria-sort="descending"] {
+	&::before {
+		content: '';
+		display: none;
+	}
+	&::after {
+		opacity: 1;
+		transform: translateY(50%);
+	}
+}
