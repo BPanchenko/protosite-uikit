@@ -49,13 +49,9 @@ gulp.task('build-js-libs', function () {
         './js/modules/underscore-mixin.js',
         './node_modules/jquery/dist/jquery.js',
         './node_modules/backbone/backbone.js',
-        './js/lib/Backbone.Collection.js',
-        './js/lib/Backbone.Events.js',
-        './js/lib/Backbone.View.js',
         './node_modules/cookiesjs/cookies.min.js',
         './node_modules/form2js/src/form2js.js',
         './node_modules/form2js/src/js2form.js',
-
         './node_modules/moment/min/moment.min.js',
         './node_modules/moment/locale/ru.js'
     ])
@@ -68,6 +64,10 @@ gulp.task('build-js-libs', function () {
 
 gulp.task('build-js-ui-core', function () {
     gulp.src([
+        './js/lib/Backbone.Collection.js',
+        './js/lib/Backbone.Events.js',
+        './js/lib/Backbone.View.js',
+        './js/lib/LocationHashModel.js',
         './js/ui/UI.js',
         './js/ui/core/backdrop.js',
         './js/ui/core/container.js'
