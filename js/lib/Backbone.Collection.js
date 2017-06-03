@@ -1,5 +1,7 @@
 (function(Backbone){
 
+  var collectionPrototype = _.clone(Backbone.Collection.prototype);
+
   Backbone.Collection = function(models, options) {
     options || (options = {});
     if (options.model) this.model = options.model;
@@ -12,12 +14,9 @@
 
   Backbone.Collection.extend = Backbone.Model.extend;
 
-  var collectionPrototype = _.clone(Backbone.Collection.prototype);
-
   _.extend(Backbone.Collection.prototype, collectionPrototype, {
-    fetch: function(options) {
-      options || (options = {});
-      options.data = _.extend({}, this.state.pick('count', 'sort'), options.data);
+    fetch: function(options = {}) {
+      options.data = Object.assign({}, this.state.pick('count', 'sort'), options.data);
       options.data.offset = (this.state.get('page') - 1) * this.state.get('count');
       return collectionPrototype.fetch.call(this, options);
     },
@@ -54,7 +53,7 @@
     }
   });
 
-  
+
   var CollectionStateModel = Backbone.Model.extend({
     defaults: {
       fields: [],
