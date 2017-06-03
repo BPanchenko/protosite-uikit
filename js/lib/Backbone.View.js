@@ -1,4 +1,26 @@
 (function(Backbone){
+
+  function defineElements() {
+    var res = {};
+
+    this._selectors || (this._selectors = _.clone(this.elems));
+
+    for (let key in this._selectors) {
+      let selector = this._selectors[key];
+
+      if (_.isElement(selector)) {
+        _elem = selector;
+      } else if (/[\s,*#\.\[]{1}/.test(selector)) {
+        _elem = this.el.querySelector(selector);
+      } else {
+        _elem = this.el.getElementsByClassName(selector)[0];
+      }
+
+      res[key] = _elem;
+    }
+
+    return res;
+  }
   
   _.extend(Backbone.View.prototype, {
     tpl: '',
@@ -6,41 +28,23 @@
       var data = this.model ? this.model.toJSON() : {};
       return _.template(this.tpl)(data);
     },
+
     render: function() {
-      if(this._isRendered && _.isFunction(this.reRender)) {
-        return this.reRender();
-      }
-      
+      this.trigger('before:render:' + this.name, this);
+      this.onBeforeRender && this.onBeforeRender();
+
+      if(this._isRendered && _.isFunction(this.reRender)) return this.reRender();
+
       this.el.innerHTML = _.result(this, 'template');
-      this._initElems();
-      this.onRender && this.onRender.call(this);
+      this.model && (this.el.dataset.id = this.model.id);
+
       this._isRendered = true;
-      
-      return this;
-    },
-    
-    _initElems: function() {
-      if(_.isEmpty(this.elems)) return this;
-      
-      if(!(this.el instanceof HTMLElement)) {
-        console.trace("HTML-container is undefined");
-        return this;
-      }
-      
-      if(!this.__proto__.selectors) {
-        // cache selectors of elements
-        this.__proto__.selectors = _.clone(this.elems);
-      }
-      
-      _.each(this.selectors, function(selector, key){
-        if(_.isString(selector)) {
-          this.elems[key] = this.el.getElementsByClassName(selector);
-          console.assert(this.elems[key].length, this._name + ", element '" + selector + "' was not found");
-          if(this.elems[key].length == 1) this.elems[key] = this.elems[key][0];
-        }
-        return;
-      }, this);
-      
+      this._isAttached = document.documentElement.contains(this.el);
+
+      this.elems = defineElements.call(this);
+
+      this.trigger('render:' + this.name, this);
+      this.onRender && this.onRender.call(this);
       return this;
     }
   });
