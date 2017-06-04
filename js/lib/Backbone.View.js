@@ -1,5 +1,7 @@
 (function(Backbone){
 
+  var sourceViewPrototype = _.clone(Backbone.View.prototype);
+
   function defineElements() {
     var res = {};
 
@@ -22,42 +24,47 @@
     return res;
   }
 
-  Object.defineProperties(Backbone.View.prototype, {
-    'tpl': {
-      value: '',
-      enumerable: false,
-      set: value => console.assert(value instanceof String, "Template is't String"),
-      writable: true
+  Object.assign(Backbone.View.prototype, {
+    tpl: '',
+    template: function() {
+      var data = this.model ? this.model.toJSON() : {};
+      return _.template(this.tpl)(data);
     },
+    render: function() {
+      this.trigger('before:render:' + this.name, this);
+      this.onBeforeRender && this.onBeforeRender();
 
-    'template': {
-      value: function () {
-        var data = this.model ? this.model.toJSON() : {};
-        return _.template(this.tpl)(data);
-      },
-      enumerable: false
+      if(this._isRendered && _.isFunction(this.reRender)) return this.reRender();
+
+      this.el.innerHTML = this.template();
+      this.model && (this.el.dataset.id = this.model.id);
+
+      this._isRendered = true;
+      this._isAttached = document.documentElement.contains(this.el);
+
+      this.elems = defineElements.call(this);
+
+      this.trigger('render:' + this.name, this);
+      this.onRender && this.onRender.call(this);
+      return sourceViewPrototype.render.call(this);
     },
-
-    'render': {
-      value: function () {
-        this.trigger('before:render:' + this.name, this);
-        this.onBeforeRender && this.onBeforeRender();
-
-        if(this._isRendered && _.isFunction(this.reRender)) return this.reRender();
-
-        this.el.innerHTML = _.result(this, 'template');
-        this.model && (this.el.dataset.id = this.model.id);
-
-        this._isRendered = true;
-        this._isAttached = document.documentElement.contains(this.el);
-
-        this.elems = defineElements.call(this);
-
-        this.trigger('render:' + this.name, this);
-        this.onRender && this.onRender.call(this);
+    remove: function() {
+      this.removeChildren();
+      return sourceViewPrototype.remove.call(this);
+    },
+    removeChildren: function() {
+      if(!this.children) return this;
+      if(!(this.children instanceof Map)) {
+        console.warn("Children is't a Map");
         return this;
-      },
-      enumerable: false
+      }
+      for(var view of this.children.values()) {
+        if(!this.collection.get(view.model.cid)) {
+          this.children.delete(view.model.cid);
+          view.remove();
+        }
+      }
+      return this;
     }
   });
     

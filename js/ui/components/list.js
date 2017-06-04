@@ -1,28 +1,5 @@
 (function(UI){
 
-  var sourceViewPrototype = _.clone(Backbone.View.prototype);
-
-  Object.assign(Backbone.View.prototype, {
-    removeChildren: function() {
-      if(!this.children) return this;
-      if(!(this.children instanceof Map)) {
-        console.warn("Children is't a Map");
-        return this;
-      }
-      for(var view of this.children.values()) {
-        if(!this.collection.get(view.model.cid)) {
-          this.children.delete(view.model.cid);
-          view.remove();
-        }
-      }
-      return this;
-    },
-    remove: function() {
-      this.removeChildren();
-      return sourceViewPrototype.remove.call(this);
-    }
-  });
-
   var ListHeadView = Backbone.View.extend({
     name: 'ListHeadView',
     className: 'c-list__head',
@@ -129,11 +106,13 @@
       name: 'List',
       tagName: 'section',
       className: 'c-list',
+
       elems: {
         body: 'js-body',
         foot: 'js-foot',
         head: 'js-head'
       },
+
       tpl: `
         <div class="c-list__head js-head"></div>
         <div class="c-list__body js-body"></div>
@@ -141,9 +120,7 @@
       `,
 
       initialize: function() {
-        // Object.assign(this.options, defaultListOptions, this.options);
         this.collection = this.options.collection;
-        console.log(this.options);
       },
 
       onRender: function() {
@@ -157,6 +134,9 @@
               collection: this.collection
             }, this.options))]
         ]);
+
+        if(this.options.isHovered) this.el.classList.add('s-hovered');
+        if(this.options.isStriped) this.el.classList.add('s-striped');
 
         this.children.get('head').render();
         this.children.get('body').render();
