@@ -83,14 +83,17 @@
                 name: 'AsteroidsCollection',
                 url: 'http://api.protosite.rocks/asteroids',
                 state: {
-                    count: 10
+                    count: 20,
+                    sort: window.location.hashModel.get('sort')
                 }
             }));
 
             // init and render of the list
 
             let list = new UI.List({
-                collection: collection
+                collection: collection,
+                isHovered: true,
+                isStriped: false
             });
             ellistContainer.appendChild(list.el);
             list.render();
@@ -105,6 +108,12 @@
             window.location.hashModel.on('change:sort', function(model, value) {
                 collection.state.set('sort', value);
             });
+
+            //
+
+            setInterval(function(){
+                collection.state.set('page', collection.state.get('page') + 1);
+            }, 5000);
 
         </script>
 
