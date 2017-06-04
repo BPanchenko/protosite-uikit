@@ -1,12 +1,9 @@
 (function(Backbone){
 
-  Object.defineProperties(Backbone.Model.prototype, {
-    'reset': {
-      value: function (options) {
-        this.set(_.result(this, 'defaults'), options);
-        return this;
-      },
-      enumerable: false
+  Object.assign(Backbone.Model.prototype, {
+    reset: function (options = {}) {
+      this.set(_.result(this, 'defaults'), options);
+      return this;
     }
   });
 

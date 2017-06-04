@@ -1,4 +1,8 @@
-(function(Backbone){
+(function(_, Backbone){
+
+  /* ========================================================================
+   Backbone.Collection
+   ========================================================================== */
 
   var collectionPrototype = _.clone(Backbone.Collection.prototype);
 
@@ -14,56 +18,70 @@
 
   Backbone.Collection.extend = Backbone.Model.extend;
 
-  Object.assign(Backbone.Collection.prototype, collectionPrototype);
-  Object.defineProperties(Backbone.Collection.prototype, {
-    'fetch': {
-      value: function (options = {}) {
-        options.data = Object.assign({}, this.state.pick('count', 'sort'), options.data);
-        options.data.offset = (this.state.get('page') - 1) * this.state.get('count');
-        return collectionPrototype.fetch.call(this, options);
-      },
-      enumerable: false
+  Object.assign(Backbone.Collection.prototype, collectionPrototype, {
+    fetch: function (options = {}) {
+      options.data = Object.assign({}, this.state.pick('count', 'sort'), options.data);
+      options.data.offset = (this.state.get('page') - 1) * this.state.get('count');
+      return collectionPrototype.fetch.call(this, options);
     },
-    'fetchFields': {
-      value: function () {
-        var url = _.result(this, 'url');
-        console.assert(url, 'A "url" property or function must be specified');
-        return $.getJSON(url + '/fields')
-            .done(function(resp) {
-              this.state.set(this.state.parse({ fields: resp.data }));
-            }.bind(this))
-            .fail(function(err) {
-              console.error('Failed fetch collection fields', err);
-            });
-      },
-      enumerable: false
+    fetchFields: function () {
+      var url = _.result(this, 'url');
+      console.assert(url, 'A "url" property or function must be specified');
+      return $.getJSON(url + '/fields')
+          .done(function(resp) {
+            this.state.set(this.state.parse({ fields: resp.data }));
+          }.bind(this))
+          .fail(function(err) {
+            console.error('Failed fetch collection fields', err);
+          });
     },
-    'parse': {
-      value: function (response = { data: null, meta: null }) {
-        var list = [];
-        if(_.isArray(response)) {
-          list = response;
-        } else {
-          _.isArray(response.data) && (list = response.data);
-          _.isObject(response.meta) && this.state.set(response.meta);
-        }
-        return list;
-      },
-      enumerable: false
+    parse: function (response = { data: null, meta: null }) {
+      var list = [];
+      if(_.isArray(response)) {
+        list = response;
+      } else {
+        _.isArray(response.data) && (list = response.data);
+        _.isObject(response.meta) && this.state.set(response.meta);
+      }
+      return list;
     },
-    '_initState': {
-      value: function (options = {}) {
-        this.state = new CollectionStateModel(this.state);
-        this.listenTo(
-            this.state
-            , 'change:page change:count change:sort'
-            , _.debounce(() => this.fetch(), 160)
-        );
-        return this;
-      },
-      enumerable: false
+    _initState: function (options = {}) {
+      this.state = new CollectionStateModel(this.state);
+      this.listenTo(
+          this.state
+          , 'change:page change:count change:sort'
+          , _.debounce(() => this.fetch(), 160)
+      );
+      return this;
     }
   });
+
+  /* ========================================================================
+   CollectionStateModel
+   ========================================================================== */
+
+  var hns = {
+    change: {
+      sort: function(model, sort) {
+        var attrs = _.pick(_.result(this, 'defaults'), 'sort', '_sort_key', '_sort_order');
+        if(sort) {
+          attrs = {
+            _sort_key: sort.indexOf('-') === 0 ? sort.substring(1) : sort,
+            _sort_order: sort.indexOf('-') === 0 ? 'descending' : 'ascending'
+          };
+        }
+        this.set(attrs, { silent: true });
+        return;
+      },
+      sortProps: function() {
+        var order = this.get('_sort_order');
+        var sort = this.get('_sort_key');
+        if (order == 'descending') sort = '-' + sort;
+        this.set('sort', sort);
+        return;
+      }
+    }
+  };
 
   var CollectionStateModel = Backbone.Model.extend({
     name: 'CollectionStateModel',
@@ -78,23 +96,10 @@
       sort: '-id',
       total: 0
     },
-    initialize: function() {
-      this.on('change:_sort_key change:_sort_order', function() {
-        var order = this.get('_sort_order');
-        var sort = this.get('_sort_key');
-        if (order == 'descending') sort = '-' + sort;
-        this.set('sort', sort);
-      });
-      this.on('change:sort', function(model, sort) {
-        var attrs = _.pick(_.result(this, 'defaults'), 'sort', '_sort_key', '_sort_order');
-        if(sort) {
-          attrs = {
-            _sort_key: sort.indexOf('-') === 0 ? sort.substring(1) : sort,
-            _sort_order: sort.indexOf('-') === 0 ? 'descending' : 'ascending'
-          };
-        }
-        this.set(attrs, { silent: true });
-      });
+    initialize: function(attrs = {}) {
+      this.on('change:_sort_key change:_sort_order', hns.change.sortProps);
+      this.on('change:sort', hns.change.sort);
+      if(attrs.sort) hns.change.sort.call(this, this, attrs.sort);
     },
     parse: function(data) {
       if(data.fields) {
@@ -107,4 +112,4 @@
     }
   });
 
-}(Backbone));
+}(_, Backbone));
