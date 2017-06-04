@@ -22,22 +22,20 @@
       return sourceViewPrototype.remove.call(this);
     }
   });
-  
-  var tpl_list = `
-    <div class="c-list__head js-head"></div>
-    <div class="c-list__body js-body"></div>
-    <div class="c-list__foot js-foot"></div>
-  `;
 
   var ListHeadView = Backbone.View.extend({
-    name: 'ListItemView',
+    name: 'ListHeadView',
     className: 'c-list__head',
+
     initialize: function(options) {
       this.children = new Map();
       this.collection = options.collection;
       this.listenTo(this.collection.state, 'change:fields change:sort', this.render);
     },
+
     render: function() {
+      this.el.innerHTML = '';
+
       let state = this.collection.state.toJSON();
       let fields = state.fields;
 
@@ -45,17 +43,19 @@
         let elem = document.createElement('div');
         let field = fields[key];
 
-        let sort, ariaSort = 'none';
-        if(state.sortKey == key) {
-          sort = state.sortOrder == 'asc' ? '-' + key : key;
-          ariaSort = state.sortOrder == 'asc' ? 'ascending' : 'descending';
+        let sort = window.location.hashModel.getQuery({ omit: 'sort' });
+        let ariaSort = 'none';
+        if (sort) sort += '&';
+        if (state._sort_key == key) {
+          sort += 'sort=' + (state._sort_order == 'ascending' ? '-' + key : key);
+          ariaSort = state._sort_order;
         } else {
-          sort = field.short_type == 'numeric' ? '-' + key : key;
+          sort += 'sort=' + (field.short_type == 'numeric' ? '-' + key : key);
         }
 
-        elem.innerHTML = `<a href="#sort=${sort}" aria-sort="${ariaSort}" class="c-ctrl-sort">${field.name}</a>`;
+        elem.innerHTML = `<a href="#${sort}" aria-sort="${ariaSort}" class="c-ctrl-sort">${field.name}</a>`;
         elem.classList.add('c-list__head-box');
-        this.el.appendChild(elem)
+        this.el.appendChild(elem);
       }
 
       return this;
@@ -63,7 +63,7 @@
   });
   
   var ListBodyView = Backbone.View.extend({
-    name: 'ListItemView',
+    name: 'ListBodyView',
     className: 'c-list__body',
     
     hns: {
@@ -134,7 +134,11 @@
         foot: 'js-foot',
         head: 'js-head'
       },
-      tpl: tpl_list,
+      tpl: `
+        <div class="c-list__head js-head"></div>
+        <div class="c-list__body js-body"></div>
+        <div class="c-list__foot js-foot"></div>
+      `,
 
       initialize: function() {
         // Object.assign(this.options, defaultListOptions, this.options);
@@ -144,14 +148,14 @@
 
       onRender: function() {
         this.children = new Map([
-            ['head', new ListHeadView({
+            ['head', new ListHeadView(Object.assign({
               el: this.elems.head,
               collection: this.collection
-            })],
-            ['body', new ListBodyView({
+            }, this.options))],
+            ['body', new ListBodyView(Object.assign({
               el: this.elems.body,
               collection: this.collection
-            })]
+            }, this.options))]
         ]);
 
         this.children.get('head').render();

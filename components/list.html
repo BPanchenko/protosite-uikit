@@ -75,13 +75,19 @@
 
 
         <script type="text/javascript">
+
+            // define variables
+
             let ellistContainer = document.body.querySelector('.js-list-container');
             let collection = new (Backbone.Collection.extend({
+                name: 'AsteroidsCollection',
                 url: 'http://api.protosite.rocks/asteroids',
                 state: {
                     count: 10
                 }
             }));
+
+            // init and render of the list
 
             let list = new UI.List({
                 collection: collection
@@ -89,14 +95,16 @@
             ellistContainer.appendChild(list.el);
             list.render();
 
-            console.log(list);
+            // fetch collection
 
             collection.fetchFields();
             collection.fetch();
 
-            setInterval(function(){
-                collection.state.set('page', collection.state.get('page') + 1);
-            }, 5000);
+            // listen on change window.location.hash
+
+            window.location.hashModel.on('change:sort', function(model, value) {
+                collection.state.set('sort', value);
+            });
 
         </script>
 
