@@ -1,6 +1,7 @@
 (function(_, Backbone) {
   
   window.location.hashModel = new (Backbone.Model.extend({
+    name: 'LocationHashModel',
     initialize: function () {
       this.on('change', function (model, options) {
         if (options.fromWindowHash) return;
