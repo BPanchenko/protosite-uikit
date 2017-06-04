@@ -1,4 +1,4 @@
-(function (Backbone, _) {
+(function (_, Backbone) {
   var doc = document.documentElement;
   var Components = [], componentSelectors = [];
 
@@ -90,7 +90,7 @@
     return child;
   };
 
-  _.extend(UI.Component.prototype, Backbone.View.prototype);
+  Object.assign(UI.Component.prototype, Backbone.View.prototype);
 
   function initComponentsOnElements (elems) {
     var componentElems = [];
@@ -125,4 +125,4 @@
     return;
   });
 
-}(Backbone, _));
+}(_, Backbone));
