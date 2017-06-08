@@ -48,5 +48,13 @@ a.s-floating {
 		top: 0;
 		font-size: @c-field-label-font-size;
 		cursor: @c-field-label-cursor;
+		animation: floating-label  0.16s 1 @easing;
 	}
+}
+
+@keyframes floating-label {
+	from { opacity: 1; }
+	30% { opacity: 0; }
+	50% { opacity: 0; }
+	to { opacity: 1; }
 }
