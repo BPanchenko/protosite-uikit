@@ -1,14 +1,22 @@
-(function(_, Backbone) {
-  
-  window.location.hashModel = new (Backbone.Model.extend({
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD (Register as an anonymous module)
+    define(['underscore', 'backbone'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(require('underscore', 'backbone'));
+  } else {
+    // Browser globals
+    window.location.hashModel = new (factory(_, Backbone));
+  }
+}(function (_, Backbone) {
+
+  const LocationHashModel = Backbone.Model.extend({
     name: 'LocationHashModel',
     initialize: function () {
-      this.on('change', function (model, options) {
-        if (options.fromWindowHash) return;
-        var query = _.objectToQuery(this.toJSON());
-        if (getHash() != query) window.location.hash = query;
-        return;
-      });
+      this.on('change', onChangeHashModel);
+      window.addEventListener("hashchange", onChangeHashWindow.bind(this, this), true);
+      onChangeHashWindow(this);
     },
     getQuery: function(options = {}) {
       var attrs;
@@ -16,25 +24,29 @@
       else attrs = this.toJSON();
       return _.objectToQuery(attrs);
     }
-  }));
-
-  window.addEventListener("hashchange", onWindowHashChange, true);
-  onWindowHashChange();
+  });
 
   function getHash() {
     return window.location.hash.substring(1);
   }
 
-  function onWindowHashChange() {
+  function onChangeHashModel(model, options) {
+    if (options.fromHashWindow) return;
+    var query = _.objectToQuery(this.toJSON());
+    if (getHash() != query) window.location.hash = query;
+    return;
+  }
+
+  function onChangeHashWindow(hashModel) {
     var data = _.queryToObject(getHash());
-    var model = window.location.hashModel;
     if (_.isEmpty(data)) {
-      model.clear();
+      hashModel.clear();
     } else {
-      _.difference(model.keys(), _.keys(data)).forEach(key => model.unset(key));
-      model.set(data, { fromWindowHash: true });
+      _.difference(hashModel.keys(), _.keys(data)).forEach(key => hashModel.unset(key));
+      hashModel.set(data, { fromHashWindow: true });
     }
     return;
   }
 
-}(_, Backbone));
+  return LocationHashModel;
+}));
