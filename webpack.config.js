@@ -1,10 +1,24 @@
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: './js/ui-core.js',
-    output: {
-        filename: './dist/--ui-core.js'
+    devtool: 'eval-source-map',
+    context: path.resolve(__dirname),
+    entry: {
+        'ui-core': [
+            'babel-polyfill',
+            './js/ui-core.js'
+        ]
     },
+
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, './dist'),
+        publicPath: '/dist/'
+    },
+
     watch: true,
     plugins: [
         new BrowserSyncPlugin({

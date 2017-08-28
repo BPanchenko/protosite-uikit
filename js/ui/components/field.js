@@ -1,9 +1,9 @@
-(function(UI){
+import UI from '../index';
 
-  const regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-  const regPassword = /^\w{6,20}$/;
+const regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+const regPassword = /^\w{6,20}$/;
 
-  const cls = Object.create(null, {
+const cls = Object.create(null, {
     box: { value: 'c-field-box' },
     button: { value: 'c-field-button' },
     buttonIcon: { value: 'iconic' },
@@ -14,9 +14,9 @@
     focused: { value: 'is-focused' },
     invalid: { value: 'is-invalid' },
     valid: { value: 'is-valid' }
-  });
+});
 
-  const selector = Object.create(null, {
+const selector = Object.create(null, {
     box: { value: '.'+cls.box },
     button: { value: '.'+cls.button },
     buttonIcon: { value: '.'+cls.buttonIcon },
@@ -26,7 +26,7 @@
     icon: { value: '.'+cls.icon },
     filled: { value: '.'+cls.filled },
     focused: { value: '.'+cls.focused }
-  });
+});
 
   const ons = Object.create(null, {
     blur: {
@@ -115,27 +115,27 @@
     }
   });
 
-  function checkPattern(pattern, box, value){
+function checkPattern(pattern, box, value){
     if(!value) {
-      box.classList.remove(cls.valid, cls.invalid);
-      return true;
+        box.classList.remove(cls.valid, cls.invalid);
+        return true;
     }
 
     let isValid = pattern.test(value);
     if(isValid) {
-      box.classList.add(cls.valid);
-      box.classList.remove(cls.invalid);
+        box.classList.add(cls.valid);
+        box.classList.remove(cls.invalid);
     } else {
-      box.classList.remove(cls.valid);
-      box.classList.add(cls.invalid);
+        box.classList.remove(cls.valid);
+        box.classList.add(cls.invalid);
     }
 
     return isValid;
-  }
+}
 
-  function listenField(elem) {
-    if(elem instanceof Array) elem.forEach(el => listenField(el));
-    if(!(elem instanceof HTMLElement)) return;
+function listenField(elem) {
+    if (elem instanceof Array) elem.forEach(el => listenField(el));
+    if (!(elem instanceof HTMLElement)) return;
 
     elem.addEventListener('blur', ons.blur);
     elem.addEventListener('focus', ons.focus);
@@ -146,14 +146,14 @@
     elem.dispatchEvent(new Event("blur"));
     elem.dispatchEvent(new Event("change"));
 
-    if(elem.__button) {
-      elem.__button.addEventListener('click', ons.clickButton);
+    if (elem.__button) {
+        elem.__button.addEventListener('click', ons.clickButton);
     }
 
     return;
-  }
+}
 
-  function initSubElementsOnFields(field) {
+function initSubElementsOnFields(field) {
     if(field.hasOwnProperty('__box') || !field.classList.contains(cls.field)) return field;
 
     field.__box = field.parentNode.classList.contains(cls.box) ? field.parentNode : null;
@@ -163,40 +163,42 @@
     field.__label = field.__box.querySelector(selector.label);
 
     if(field.type == 'file') {
-      field.__fake = field.__box.querySelector(selector.fieldFake);
+        field.__fake = field.__box.querySelector(selector.fieldFake);
     }
 
     field.__button = field.__box.querySelector(selector.button);
-    if(field.__button) {
-      field.__button.__field = field;
-      field.__button.__icon = field.__button.querySelector(selector.buttonIcon);
+    if (field.__button) {
+        field.__button.__field = field;
+        field.__button.__icon = field.__button.querySelector(selector.buttonIcon);
     }
 
     return field;
-  }
+}
 
-  function findChildFields(elem) {
+function findChildFields(elem) {
     var result = [];
+
     if(elem instanceof HTMLCollection) elem = Array.from(elem);
     if(elem instanceof Array) elem.forEach(el => { result = result.concat(findChildFields(el)) });
     if(!(elem instanceof HTMLElement)) return result;
 
     if(elem.classList.contains(cls.field)) {
-      result.push(initSubElementsOnFields(elem));
+        result.push(initSubElementsOnFields(elem));
     } else {
-      result = Array.from(elem.querySelectorAll(selector.field), initSubElementsOnFields);
+        result = Array.from(elem.querySelectorAll(selector.field), initSubElementsOnFields);
     }
 
     return result;
-  }
+}
 
-  /** add listeners on fields */
+/** add listeners on fields */
 
-  UI.dom.on('ready', function(doc){
+UI.dom.on('ready', function(doc){
     listenField(findChildFields(doc));
-  });
+    return;
+});
 
-  UI.dom.on('change', function(doc, options){
+UI.dom.on('change', function(doc, options){
     options.added.length && listenField(findChildFields(options.added));
-  });
-}(UI));
+    return;
+});

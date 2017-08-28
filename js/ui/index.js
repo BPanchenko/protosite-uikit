@@ -1,16 +1,17 @@
-(function (_, Backbone) {
-  var doc = document.documentElement;
-  var Components = [], componentSelectors = [];
+import _ from 'underscore';
+import Backbone from 'backbone';
 
-  // {object} UI
+var doc = document.documentElement;
+var Components = [], componentSelectors = [];
 
-  var UI = window.UI = Object.assign({}, Backbone.Events);
+// {object} UI
 
-  // {object} UI.dom
+var UI = Object.assign({}, Backbone.Events);
 
-  UI.dom = Object.create(Backbone.Events);
+// {object} UI.dom
 
-  UI.dom.observer = new MutationObserver(function(mutations) {
+UI.dom = Object.create(Backbone.Events);
+UI.dom.observer = new MutationObserver(function(mutations) {
     var options = {
         added: [],
         removed: []
@@ -26,11 +27,11 @@
     });
 
     UI.dom.trigger('change', doc, options);
-  });
+});
 
-  // {class} Component
+// {class} Component
 
-  UI.Component = function (elem, options = '') {
+UI.Component = function (elem, options = '') {
     if(arguments.length == 1 && _.isObject(elem) && !_.isElement(elem)) options = elem;
 
     // options is string or object, with an attempt conversion string to object
@@ -49,9 +50,9 @@
 
     // reference to component on element
     this.el[this.constructor.reference] = this;
-  };
+};
 
-  UI.Component.extend = function(protoProps = {}, staticProps = {}) {
+UI.Component.extend = function(protoProps = {}, staticProps = {}) {
     var parent = this;
     var child;
 
@@ -88,41 +89,47 @@
     componentSelectors.push(child.selector);
 
     return child;
-  };
+};
 
-  Object.assign(UI.Component.prototype, Backbone.View.prototype);
+Object.assign(UI.Component.prototype, Backbone.View.prototype);
 
-  function initComponentsOnElements (elems) {
-    var componentElems = [];
-    elems = Array.from(elems);
-    Components.forEach(Component => {
-      elems.filter(elem => elem.hasAttribute(Component.attr) && !elem[Component.reference])
-          .forEach(elem => {
-            new Component(elem, elem.getAttribute(Component.attr));
-            componentElems.push(elem);
-          });
+    function initComponentsOnElements (elems) {
+        var componentElems = [];
+        elems = Array.from(elems);
+
+        Components.forEach(Component => {
+          elems.filter(elem => elem.hasAttribute(Component.attr) && !elem[Component.reference])
+              .forEach(elem => {
+                new Component(elem, elem.getAttribute(Component.attr));
+                componentElems.push(elem);
+              });
+        });
+
+        return componentElems;
+    }
+
+    // DOM events
+
+    UI.dom.on('change', function(doc, options){
+        if(componentSelectors.length) {
+            initComponentsOnElements(options.added);
+        }
     });
-    return componentElems;
-  }
 
-  // DOM events
-
-  UI.dom.on('change', function(doc, options){
-    if(componentSelectors.length) initComponentsOnElements(options.added);
-  });
-
-  UI.dom.on('ready', function(doc){
+    UI.dom.on('ready', function(doc){
     UI.dom.observer.observe(doc, {
         childList: true,
         subtree: true
     });
 
-    if(componentSelectors.length) initComponentsOnElements(doc.querySelectorAll(componentSelectors.join(',')));
-  });
+    if(componentSelectors.length) {
+        initComponentsOnElements(doc.querySelectorAll(componentSelectors.join(',')));
+    }
+});
 
-  document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
     UI.dom.trigger('ready', doc);
     return;
-  });
+});
 
-}(_, Backbone));
+export default UI;
