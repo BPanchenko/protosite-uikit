@@ -19,9 +19,5 @@
   },
   "homepage": "https://github.com/BPanchenko/protosite.uikit#readme",
   "license": "ISC",
-  "preferGlobal": true,
-  "private": false,
-  "analyze": true,
-  "dependencies": {},
-  "devDependencies": {}
+  "private": false
 }
