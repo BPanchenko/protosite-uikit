@@ -1,0 +1,35 @@
+@import "variables";
+
+/* Media queries breakpoints
+ ========================================================================== */
+
+@bp-xdesktop: 1360px;
+@bp-desktop: 1180px;
+@bp-tablet-landscape: 1024px;
+@bp-tablet-portrait: 768px;
+@bp-handset-landscape: 480px;
+@bp-handset-portrait: 240px;
+
+@bp-desktop-max: (@bp-xdesktop - 1);
+@bp-tablet-landscape-max: (@bp-desktop - 1);
+@bp-tablet-portrait-max: (@bp-tablet-landscape - 1);
+@bp-handset-landscape-max: (@bp-tablet-portrait - 1);
+@bp-handset-portrait-max: (@bp-handset-landscape - 1);
+
+@screen-xdesktop: ~"only screen and (min-width: 1360px)";
+
+@screen-desktop: ~"only screen and (min-width: 1180px) and (max-width: 1359px)";
+@screen-desktop-and-smaller: ~"only screen and (max-width: 1359px)";
+
+@screen-tablet: ~"only screen and (min-width: 768px) and (max-width: 1179px)";
+@screen-tablet-and-smaller: ~"only screen and (max-width: 1179px)";
+
+@screen-tablet-landscape: ~"only screen and (min-width: 1024px) and (max-width: 1179px)";
+@screen-tablet-landscape-and-smaller: ~"only screen and (max-width: 1179px)";
+
+@screen-tablet-portrait: ~"only screen and (min-width: 768px) and (max-width: 1023px)";
+@screen-tablet-portrait-and-smaller: ~"only screen and (max-width: 1023px)";
+
+@screen-handset: ~"only screen and (max-width: 767px)";
+@screen-handset-landscape: ~"only screen and (min-width: 480px) and (max-width: 767px)";
+@screen-handset-portrait: ~"only screen and (max-width: 479px)"; // min-width: 240px

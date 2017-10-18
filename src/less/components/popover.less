@@ -1,0 +1,195 @@
+@import "../settings/variables";
+
+/**
+ * Component: `c-popover`
+ *
+ * Position modifiers:
+ *   [data-position=top]
+ *   [data-position=bottom]
+ *   [data-position=left]
+ *   [data-position=right]
+ *   [data-position=left-top]
+ *   [data-position=left-bottom]
+ *   [data-position=right-top]
+ *   [data-position=right-bottom]
+ *   [data-position=top-left]
+ *   [data-position=top-right]
+ *   [data-position=bottom-left]
+ *   [data-position=bottom-left]
+ *
+ * Markup:
+ *
+ ========================================================================== */
+
+// Variables
+// ========================================================================
+
+@c-popover-border-radius: .2rem;
+@c-popover-box-shadow: @shadow-2dp;
+
+@c-popover-padding: .6rem .8rem;
+
+@c-popover-background-color: @clr-grey-700;
+
+@c-popover-caret-size: .8rem;
+
+@c-popover-body-color: @clr-grey-50;
+@c-popover-body-font-family: @font-family-default;
+@c-popover-body-font-size: 1.3rem;
+@c-popover-body-line-height: 1.2;
+
+
+/* ========================================================================
+   Component: Tooltip
+ ========================================================================== */
+
+.c-popover {
+	display: inline-block;
+	position: fixed;
+	left: 0; top: 0;
+	transform: translate(0,0);
+	z-index: 200;
+
+	transition-property: transform, opacity;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
+
+	cursor: default;
+	user-select: none;
+
+	box-shadow: @c-popover-box-shadow;
+
+	text-align: left;
+	line-height: 1;
+	font-size: 0.001px;
+
+	margin: .8rem;
+
+	&[aria-hidden=true] {
+		display: inline-block !important;
+		opacity: 0;
+	}
+	&[aria-hidden=false] { opacity: 1; }
+}
+
+
+/* Subelement: Caret of tooltip
+ ========================================================================== */
+
+.c-popover::after {
+	content: '';
+	position: absolute;
+	z-index: 2;
+
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+
+	display: block;
+	width: @c-popover-caret-size;
+	height: @c-popover-caret-size;
+
+	background-color: @c-popover-background-color;
+	box-shadow: @c-popover-box-shadow;
+	border-radius: .1rem;
+
+	margin-top: 0;
+	margin-left: 0;
+	transform: rotate(45deg);
+	transform-origin: 50% 50%;
+
+	transition-property: top, right, bottom, left, margin-top, margin-left;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
+	transition-delay: 0ms;
+}
+
+
+// Positioning
+
+.c-popover {
+	&[data-position=bottom]::after {
+		top: -@c-popover-caret-size/2;
+		left: 50%;
+		margin-left: -@c-popover-caret-size/2;
+	}
+	&[data-position=top]::after {
+		bottom: -@c-popover-caret-size/2;
+		left: 50%;
+		margin-left: -@c-popover-caret-size/2;
+	}
+	&[data-position=right]::after {
+		top: 50%;
+		left: -@c-popover-caret-size/2;
+		margin-top: -@c-popover-caret-size/2;
+	}
+	&[data-position=left]::after {
+		top: 50%;
+		right: -@c-popover-caret-size/2;
+		margin-top: -@c-popover-caret-size/2;
+	}
+	&[data-position=right-top]::after {
+		top: @c-popover-caret-size;
+		left: -@c-popover-caret-size/2;
+	}
+	&[data-position=right-bottom]::after {
+		bottom: @c-popover-caret-size;
+		left: -@c-popover-caret-size/2;
+	}
+	&[data-position=left-top]::after {
+		top: @c-popover-caret-size;
+		right: -@c-popover-caret-size/2;
+	}
+	&[data-position=left-bottom]::after {
+		bottom: @c-popover-caret-size;
+		right: -@c-popover-caret-size/2;
+	}
+	&[data-position=bottom-left]::after {
+		top: -@c-popover-caret-size/2;
+		left: @c-popover-caret-size;
+	}
+	&[data-position=bottom-right]::after {
+		top: -@c-popover-caret-size/2;
+		right: @c-popover-caret-size;
+	}
+	&[data-position=top-left]::after {
+		bottom: -@c-popover-caret-size/2;
+		left: @c-popover-caret-size;
+	}
+	&[data-position=top-right]::after {
+		bottom: -@c-popover-caret-size/2;
+		right: @c-popover-caret-size;
+	}
+}
+
+
+/* Element: `c-popover__inside`
+ ========================================================================== */
+
+.c-popover__inside {
+	position: relative;
+	z-index: 3;
+	display: inline-block;
+	padding: @c-popover-padding;
+
+	background-color: @c-popover-background-color;
+	border-radius: @c-popover-border-radius;
+	overflow: hidden;
+
+	color: @c-popover-body-color;
+	font-family: @c-popover-body-font-family;
+	font-size: @c-popover-body-font-size;
+	line-height: @c-popover-body-line-height;
+}
+
+
+/* Control element: `c-popover-holder`
+ ========================================================================== */
+
+.c-popover-holder {
+	display: inline-block;
+	cursor: help;
+	border-bottom: 1px dotted currentColor;
+	background-color: transparent;
+}

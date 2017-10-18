@@ -1,0 +1,141 @@
+@import "button";
+
+/**
+ * Component:   `c-dialog`
+ *
+ * Elements:	`c-dialog__head`
+ *				`c-dialog__body`
+ *
+ * State:       `is-closed` (by default)
+ *				`is-opened`
+ *
+ * Markup:
+ *
+ *
+ *
+ ========================================================================== */
+
+// Variables
+// ========================================================================
+
+@c-dialog-min-width: 50rem;
+@c-dialog-min-height: 30rem;
+@c-dialog-background-color: @clr-white;
+@c-dialog-box-shadow: @shadow-8dp;
+@c-dialog-zIndex: 110;
+
+@c-dialog-padding: @unit * 1.5;
+@c-dialog-header-body-margin-top: @unit * 1.25;
+
+@c-dialog-body-max-height: 26.2rem;
+
+@c-dialog-buttons-padding: @unit / 2;
+@c-dialog-button-min-width: @unit * 4;
+@c-dialog-button-height: @unit * 2.25;
+
+
+/* ========================================================================
+   Component: `c-dialog`
+ ========================================================================== */
+
+.c-dialog {
+	contain: content;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	min-width: @c-dialog-min-width;
+	min-height: @c-dialog-min-height;
+	box-sizing: border-box;
+	padding-bottom: @c-dialog-padding;
+
+	background-color: @c-dialog-background-color;
+	box-shadow: @c-dialog-box-shadow;
+
+	// animation
+	transition-property: transform, opacity;
+	transition-duration: 160ms;
+	transition-timing-function: @easing;
+
+	// reset
+	border: none;
+	text-align: left;
+
+	& > *:first-child {
+		padding-top: @c-dialog-padding;
+	}
+}
+
+// state: `is-closed`
+.c-dialog,
+.c-dialog.is-closed {
+	z-index: -1;
+	transform: translate(-50%, -54%);
+	opacity: 0;
+}
+
+// state: `is-opened`
+.c-dialog.is-opened {
+	z-index: @c-dialog-zIndex;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+
+/* Element: `c-dialog__header`
+ ========================================================================== */
+
+.c-dialog__header {
+	padding: 0 @c-dialog-padding;
+}
+
+
+/* Element: `c-dialog__body`
+ ========================================================================== */
+
+.c-dialog__body {
+	padding: 0 @c-dialog-padding;
+}
+
+
+/* Wrapper: `c-dialog__body-viewport`
+ ========================================================================== */
+
+.c-dialog__body-viewport {
+	max-height: @c-dialog-body-max-height;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+// margin between header and content
+// ========================================================================
+.c-dialog__header + .c-dialog__body-wrapper,
+.c-dialog__header + .c-dialog__body {
+	margin-top: @c-dialog-header-body-margin-top;
+}
+
+
+/* Element: `c-dialog__buttons`
+ ========================================================================== */
+
+.c-dialog__buttons {
+	padding: @c-dialog-buttons-padding;
+	margin-top: @c-dialog-padding;
+
+	font-size: .001px;
+	@c-dialog-buttons-line-height: 3.6rem;
+	text-align: right;
+/*
+	a {
+		.c-button;
+		.c-button--link;
+
+		min-width: @c-dialog-button-min-width;
+		height: @c-dialog-button-height;
+		padding-left: .8rem;
+		padding-right: .8rem;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	*/
+}

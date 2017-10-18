@@ -1,0 +1,197 @@
+@import "../settings/variables";
+
+/**
+ * Component:       `c-article`
+ *
+ * Elements:		`c-article-picture`
+ *                  `c-article-lead`
+ *
+ *
+ * Markup:
+ *
+<article class="c-article" role="main">
+	<header>
+		<h6 class="u-text-muted">...</h6>
+		<h1>...</h1>
+		<h4 class="u-text-muted">...</h4>
+	</header>
+	<figure class="c-article-picture">
+		<img src="...">
+	</figure>
+	<p class="c-article-lead">...</p>
+	<p>...</p>
+	<h3>...</h3>
+	<hr>
+	<p>...</p>
+</article>
+ *
+ ========================================================================== */
+
+
+// Variables
+// ========================================================================
+
+@c-article-padding: @unit;
+@c-article-margin: @unit 0 (@unit * 2.5) 0;
+@c-article-max-width: @c-article-lead-max-width + @c-article-panel-padding-right + @c-article-panel-padding-left;
+
+@c-article-header-margin-bottom: 1.6rem;
+@c-article-header-line-height: 4.4rem;
+
+@c-article-h1-font-size: 2.8rem;
+@c-article-h1-line-height: 3.3rem;
+@c-article-h1-margin-top: 1.2rem;
+
+@c-article-h3-font-size: 1.8rem;
+@c-article-h3-line-height: inherit;
+@c-article-h3-margin-top: .6rem;
+
+@c-article-h4-font-size: 1.6rem;
+@c-article-h4-line-height: inherit;
+@c-article-h4-margin-top: .6rem;
+
+@c-article-h6-font-size: 1.3rem;
+@c-article-h6-font-weight: 400;
+@c-article-h6-line-height: inherit;
+
+@c-article-picture-width: 60rem;
+@c-article-picture-padding: 0;
+@c-article-picture-margin: 0 0 0 0;
+@c-article-picture-max-height: 12.6rem;
+@c-article-picture-background-color: @clr-blue-grey-300;
+@c-article-picture-background-size: cover;
+
+
+@c-article-lead-font-family: inherit;
+@c-article-lead-font-size: 1.6rem;
+@c-article-lead-font-style: italic;
+@c-article-lead-font-font-weight: 600;
+@c-article-lead-line-height: 2.8rem;
+@c-article-lead-color: @caption-color;
+@c-article-lead-max-width: 74rem;
+@c-article-lead-margin-top: 2.1rem;
+@c-article-lead-margin-bottom: 1.9rem;
+
+@c-article-panel-padding-top: @space-m;
+@c-article-panel-padding-right: @space-xl;
+@c-article-panel-padding-bottom: @space-m;
+@c-article-panel-padding-left: @space-l;
+
+
+/* ========================================================================
+   Component: `c-article`
+ ========================================================================== */
+
+.c-article {
+	padding: @c-article-padding;
+	margin: @c-article-margin;
+	max-width: @c-article-max-width;
+
+	header {
+		line-height: @c-article-header-line-height;
+		margin-bottom: @c-article-header-margin-bottom;
+
+		h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+		h1 {
+			font-size: @c-article-h1-font-size;
+			line-height: @c-article-h1-line-height;
+			margin: 0;
+		}
+		h3 {
+			font-size: @c-article-h3-font-size;
+			line-height: @c-article-h3-line-height;
+			margin: 0;
+		}
+		h4 {
+			font-size: @c-article-h4-font-size;
+			line-height: @c-article-h4-line-height;
+			margin: 0;
+		}
+		h6 {
+			font-size: @c-article-h6-font-size;
+			font-weight: @c-article-h6-font-weight;
+			line-height: @c-article-h6-line-height;
+			margin: 0;
+		}
+	}
+
+	h1 + hr,
+	h2 + hr,
+	h3 + hr,
+	h4 + hr,
+	h5 + hr,
+	h6 + hr {
+		margin-top: .6rem;
+	}
+}
+
+
+/* Combination of components: `c-article` & `c-panel`
+ ========================================================================== */
+
+.c-article.c-panel {
+	padding-top: @c-article-panel-padding-top;
+	padding-right: @c-article-panel-padding-right;
+	padding-bottom: @c-article-panel-padding-bottom;
+	padding-left: @c-article-panel-padding-left;
+}
+
+/* Element: `c-article-lead`
+ ========================================================================== */
+
+p.c-article-lead {
+	display: block;
+
+	max-width: @c-article-lead-max-width;
+	margin-top: @c-article-lead-margin-top;
+	margin-bottom: @c-article-lead-margin-bottom;
+
+	font-family: @c-article-lead-font-family;
+	font-size: @c-article-lead-font-size;
+	font-style: @c-article-lead-font-style;
+	font-weight: @c-article-lead-font-font-weight;
+	line-height: @c-article-lead-line-height;
+	color: @c-article-lead-color;
+
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
+}
+
+/* Element: `c-article-picture`
+ ========================================================================== */
+
+/*figure*/
+.c-article-picture {
+	display: inline-block;
+	padding: @c-article-picture-padding;
+	margin: @c-article-picture-margin;
+
+	width: 100%;
+	max-width: @c-article-picture-width;
+	max-height: @c-article-picture-max-height;
+
+	background-color: @c-article-picture-background-color;
+	background-size: @c-article-picture-background-size;
+
+	img {
+		float: none;
+		width: 100%;
+		max-height: inherit;
+		margin: 0;
+		object-fit: @c-article-picture-background-size;
+	}
+
+	// Micro clearfix to make the body panel more robust
+	&::before,
+	&::after {
+		content: ' ';
+		position: absolute;
+		width: 100%;
+		display: block;
+		clear: both;
+	}
+}

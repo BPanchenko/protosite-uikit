@@ -1,0 +1,90 @@
+
+/* ========================================================================
+   Global variables
+ ========================================================================== */
+
+@import "breakpoints";
+@import "colors/google-material";
+@import "shadow";
+
+@easing: cubic-bezier(0.3, 0, 0.2, 1);
+@uikit-host: "http://uikit.protosite.rocks";
+@iconic-font-path: "@{uikit-host}/resources/fonts/iconic/";
+@unit: 1.6rem;
+
+
+// Typeface
+// ========================================================================
+
+@fonts-source: "https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Fira+Sans+Condensed|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=cyrillic";
+
+@font-family-default: @font-family-sans;
+@font-family-condensed: "Fira Sans Condensed", sans-serif;
+@font-family-cursive: "Marck Script", cursive;
+@font-family-monospace: "PT Mono", monospace;
+@font-family-sans: "Open Sans", sans-serif;
+@font-family-serif: "PT Serif Caption", serif;
+
+@font-size-default: @font-size-medium;
+@font-size-large: 1.8rem;
+@font-size-medium: 1.4rem;
+@font-size-small: 1.3rem;
+@font-size-xsmall: 1.1rem;
+
+@line-height-default: @line-height-medium;
+@line-height-large: 2.4rem;
+@line-height-medium: 2.4rem;
+@line-height-small: 1.6rem;
+@line-height-xsmall: 1.2rem;
+
+
+// Palette
+// ========================================================================
+
+@caption-color: @clr-grey-900;
+@danger-color: @clr-red-800;
+@link-color: @clr-blue-800;
+@link-hover-color: @clr-blue-900;
+@muted-color: @clr-grey-500;
+@primary-color: @clr-blue-800;
+@selection-color: @clr-white;
+@success-color: @clr-green-800;
+@text-color: @clr-grey-800;
+@warning-color: @clr-orange-800;
+
+
+// Headers
+// ========================================================================
+
+@h1-font: 400 3.6rem/4rem @font-family-serif;
+@h1-margin: @space-s 0;
+@h2-font: 400 2.4rem/2.8rem @font-family-serif;
+@h2-margin: @space-s 0;
+@h3-font: 400 2rem/2.4rem @font-family-serif;
+@h3-margin: @space-xs 0;
+@h4-font: 400 1.8rem/2rem @font-family-serif;
+@h4-margin: @space-m 0 @space-xs;
+
+@h5-font: 600 1.4rem/1.6rem @font-family-sans;
+@h5-margin: @space-s 0;
+@h6-font: 600 1.3rem/1.4rem @font-family-sans;
+@h6-margin: @space-xs 0;
+
+
+// Link
+// ========================================================================
+
+@link-text-decoration: underline;
+@link-hover-text-decoration: none;
+@link-transition: color 160ms @easing;
+
+
+// Spaces
+// ========================================================================
+
+@space-default: @unit;
+@space-xs: @unit / 4;
+@space-s: @unit / 2;
+@space-m: @unit;
+@space-l: 2 * @unit;
+@space-xl: 4 * @unit;
