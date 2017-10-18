@@ -54,12 +54,6 @@
 @c-article-h6-font-weight: 400;
 @c-article-h6-line-height: inherit;
 
-
-@c-article-paragraph-figure-max-width: 30%;
-@c-article-paragraph-figure-background-color: @clr-grey-300;
-@c-article-paragraph-figure-max-height: 18rem;
-@c-article-paragraph-figure-object-fit: contain;
-
 @c-article-picture-width: 60rem;
 @c-article-picture-padding: 0;
 @c-article-picture-margin: 0 0 0 0;
@@ -77,14 +71,6 @@
 @c-article-lead-max-width: 74rem;
 @c-article-lead-margin-top: 2.1rem;
 @c-article-lead-margin-bottom: 1.9rem;
-
-@c-article-paragraph-max-width: 60rem;
-
-
-@c-article-paragraph-img-left-margin: .3rem 1.2rem 0 .8rem;
-@c-article-paragraph-img-right-margin: .3rem .8rem 0 1.2rem;
-@c-article-paragraph-img-max-width: 19rem;
-@c-article-paragraph-img-max-height: 11.8rem;
 
 @c-article-panel-padding-top: @space-m;
 @c-article-panel-padding-right: @space-xl;
@@ -137,79 +123,6 @@
 	h5 + hr,
 	h6 + hr {
 		margin-top: .6rem;
-	}
-
-	p {
-		display: block;
-		vertical-align: text-top;
-		max-width: @c-article-paragraph-max-width;
-
-		// Micro clearfix to make articles more robust
-		&::before,
-		&::after {
-			content: "";
-			display: table;
-			clear: both;
-		}
-
-		figure {
-			display: inline-block;
-			padding: 0;
-			margin: 0;
-
-			max-width: @c-article-paragraph-figure-max-width;
-			max-height: @c-article-paragraph-figure-max-height;
-
-			background-color: @c-article-paragraph-figure-background-color;
-			background-size: @c-article-paragraph-figure-object-fit;
-
-			img {
-				width: 100%;
-				max-height: inherit;
-				object-fit: @c-article-paragraph-figure-object-fit;
-			}
-
-			// Micro clearfix to make the body panel more robust
-			&::before,
-			&::after {
-				content: ' ';
-				position: absolute;
-				width: 100%;
-				display: block;
-				clear: both;
-			}
-		}
-	}
-}
-
-
-/* Images in the paragraphs of article
- ========================================================================== */
-
-.c-article p img,
-p.c-article-lead img {
-	max-height: @c-article-paragraph-img-max-height;
-}
-
-.c-article p img {
-	display: block;
-	width: auto;
-	margin: 0 auto;
-
-	&[align="left"],
-	&[align="right"] {
-		display: inline-block;
-		max-width: @c-article-paragraph-img-max-width;
-	}
-
-	&[align="left"] {
-		float: left;
-		margin: @c-article-paragraph-img-left-margin;
-	}
-
-	&[align="right"] {
-		float: right;
-		margin: @c-article-paragraph-img-right-margin;
 	}
 }
 

@@ -48,7 +48,7 @@
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com/">
         <link rel="preconnect" href="//fonts.googleapis.com/css">
-        <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic" as="css">
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Marck+Script|PT+Serif|Fira+Mono:400,500,700|Fira+Sans+Condensed|Fira+Sans:300,400,400i,500,500i,600,600i,700,700i&subset=cyrillic" as="style">
 
         <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
         <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
@@ -57,6 +57,7 @@
         <link rel="stylesheet/less" type="text/css" href="./css/core.less">
         <link rel="stylesheet/less" type="text/css" href="./css/pattern.less">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
+        <script>less.watch();</script>
 
     </head>
     <body>
@@ -67,9 +68,7 @@
                         <span class="iconic" data-glyph="social-github"></span>
                     </a>
                 </div>
-                <hgroup>
-                    <h1>Protosite.UiKit</h1>
-                </hgroup>
+                <h1>Protosite.UiKit</h1>
             </header>
 
             <hr>
@@ -130,7 +129,7 @@
                 <section id="animations" class="c-panel s-transparent">
                     <div class="c-panel__head">
                         <h3>Анимация</h3>
-                        <h6>Для воспроизведения наведите курсор</h6>
+                        <small>Для воспроизведения наведите курсор</small>
                     </div>
                     <div class="c-panel__body">
                         <a href="javascript:void(0)" class="pattern-animation-fade u-margin">
@@ -145,7 +144,7 @@
                 <section class="c-panel">
                     <div class="c-panel__head">
                         <h3>Адаптивность видимых элементов</h3>
-                        <h6>Измените размер браузера</h6>
+                        <small>Измените размер браузера</small>
                     </div>
                     <div class="c-panel__body">
                         <p>

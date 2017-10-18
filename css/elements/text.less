@@ -6,10 +6,6 @@
  *
  * ======================================================================== */
 
-@paragraph-font-size: 1.4rem;
-@paragraph-font-font-weight: normal;
-@paragraph-line-height: 2.4rem;
-
 
 /* Links
  ========================================================================== */
@@ -34,9 +30,9 @@ a:hover,
  ========================================================================== */
 
 .u-text-light { font-weight: 300; }
-b, .u-text-semibold { font-weight: 600; }
-b > b, strong, .u-text-bold { font-weight: 700; }
-strong > strong, .u-text-extrabold { font-weight: 800; }
+b, .u-text-semibold { font-weight: 500; }
+b > b, strong, .u-text-bold { font-weight: 600; }
+strong > strong, .u-text-extrabold { font-weight: 700; }
 
 
 /* Size modifiers
@@ -58,7 +54,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: "PT Mono", monospace;
+	font-family: @font-family-monospace;
 	font-size: inherit;
 }
 code,
@@ -111,59 +107,33 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: @font-family-caption;
 	color: @caption-color;
 }
 
-h1,
-.u-h1 {
-	font-size: @h1-font-size;
-	font-weight: @h1-font-weight;
-	line-height: @h1-line-height;
+h1 {
+    font: @h1-font;
 	margin: @h1-margin;
 	text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
 }
-h2,
-.u-h2 {
-	font-size: @h2-font-size;
-	font-weight: @h2-font-weight;
-	line-height: @h2-line-height;
+h2 {
+    font: @h2-font;
 	margin: @h2-margin;
 }
-h3,
-.u-h3 {
-	font-size: @h3-font-size;
-	font-weight: @h3-font-weight;
-	line-height: @h3-line-height;
+h3 {
+    font: @h3-font;
 	margin: @h3-margin;
 }
-h4,
-.u-h4 {
-	font-size: @h4-font-size;
-	font-weight: @h4-font-weight;
-	line-height: @h4-line-height;
+h4 {
+    font: @h4-font;
 	margin: @h4-margin;
 }
-h5,
-.u-h5 {
-	font-family: @font-family-primary;
-	font-size: @h5-font-size;
-	font-weight: @h5-font-weight;
-	line-height: @h5-line-height;
+h5 {
+	font: @h5-font;
 	margin: @h5-margin;
 }
-h6,
-.u-h6 {
-	font-family: @font-family-primary;
-	font-size: @h6-font-size;
-	font-weight: @h6-font-weight;
-	line-height: @h6-line-height;
+h6 {
+	font: @h6-font;
 	margin: @h6-margin;
-}
-
-* + h1, * + h2, * + h3, * + h4, * + h5, * + h6
-{
-	margin-top: @space-default;
 }
 
 h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6,
@@ -173,7 +143,7 @@ h4 + h1, h4 + h2, h4 + h3, h4 + h5, h4 + h6,
 h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h6,
 h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5
 {
-	margin-top: 0;
+    margin-top: @space-s;
 }
 
 h1 a,
@@ -182,13 +152,3 @@ h3 a,
 h4 a,
 h5 a,
 h6 a { color: @caption-color; }
-
-/* Paragraph
- ========================================================================== */
-
-p {
-	font-family: inherit;
-	font-size: @paragraph-font-size;
-	font-weight: @paragraph-font-font-weight;
-	line-height: @paragraph-line-height;
-}

@@ -1,0 +1,111 @@
+@import "../settings/variables";
+
+/**
+ * Paragraph style
+ ========================================================================== */
+
+// Variables
+// ========================================================================
+
+@paragraph-font-size: @font-size-medium;
+@paragraph-line-height: @line-height-medium;
+
+@paragraph-max-width: 54.4rem;
+@paragraph-large-max-width: 70.4rem;
+@paragraph-small-max-width: 51.4rem;
+@paragraph-xsmall-max-width: 44.8rem;
+
+@paragraph-figure-max-width: 30%;
+@paragraph-figure-background-color: @clr-grey-300;
+@paragraph-figure-max-height: 18rem;
+@paragraph-figure-object-fit: contain;
+
+@paragraph-img-left-margin: .3rem 1.2rem 0 .8rem;
+@paragraph-img-right-margin: .3rem .8rem 0 1.2rem;
+@paragraph-img-max-width: 19rem;
+@paragraph-img-max-height: 11.8rem;
+
+
+/* ========================================================================
+   Element: Paragraph
+ ========================================================================== */
+
+p {
+    display: block;
+    vertical-align: text-top;
+    max-width: @paragraph-max-width;
+
+    font-family: inherit;
+    font-size: @paragraph-font-size;
+    line-height: @paragraph-line-height;
+
+    // Micro clearfix to make articles more robust
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    figure {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+
+        max-width: @paragraph-figure-max-width;
+        max-height: @paragraph-figure-max-height;
+
+        background-color: @paragraph-figure-background-color;
+        background-size: @paragraph-figure-object-fit;
+
+        img {
+            width: 100%;
+            max-height: inherit;
+            object-fit: @paragraph-figure-object-fit;
+        }
+
+        // Micro clearfix to make the body panel more robust
+        &::before,
+        &::after {
+            content: ' ';
+            position: absolute;
+            width: 100%;
+            display: block;
+            clear: both;
+        }
+    }
+
+    img {
+        display: block;
+        width: auto;
+        margin: 0 auto;
+
+        max-height: @paragraph-img-max-height;
+
+        &[align="left"],
+        &[align="right"] {
+            display: inline-block;
+            max-width: @paragraph-img-max-width;
+        }
+
+        &[align="left"] {
+            float: left;
+            margin: @paragraph-img-left-margin;
+        }
+
+        &[align="right"] {
+            float: right;
+            margin: @paragraph-img-right-margin;
+        }
+    }
+
+    &.u-text-large {
+        max-width: @paragraph-large-max-width;
+    }
+    &.u-text-small {
+        max-width: @paragraph-small-max-width;
+    }
+    &.u-text-xsmall {
+        max-width: @paragraph-xsmall-max-width;
+    }
+}

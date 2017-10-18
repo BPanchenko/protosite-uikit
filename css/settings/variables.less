@@ -1,31 +1,46 @@
+
+/* ========================================================================
+   Global variables
+ ========================================================================== */
+
 @import "breakpoints";
-@import "./colors/google-material";
-// @import "./colors/yeun-open-color";
+@import "colors/google-material";
 @import "shadow";
 
-// Global variables
-// ========================================================================
-
 @easing: cubic-bezier(0.3, 0, 0.2, 1);
-@host: 'http://uikit.protosite.rocks';
-@iconic-font-path: '@{host}/resources/fonts/iconic/';
+@uikit-host: "http://uikit.protosite.rocks";
+@iconic-font-path: "@{uikit-host}/resources/fonts/iconic/";
 @unit: 1.6rem;
 
-// document text style
-@font-family-caption: "PT Serif Caption", serif;
-@font-family-primary: "Open Sans", sans-serif;
-@font-family-secondary: "Open Sans", sans-serif;
+
+// Typeface
+// ========================================================================
+
+@fonts-source: "https://fonts.googleapis.com/css?family=Marck+Script|PT+Serif|Fira+Mono:400,500,700|Fira+Sans+Condensed|Fira+Sans:300,400,400i,500,500i,600,600i,700,700i&subset=cyrillic";
+
+@font-family-default: @font-family-sans;
+@font-family-condensed: "Fira Sans Condensed", sans-serif;
 @font-family-cursive: "Marck Script", cursive;
+@font-family-monospace: "Fira Mono", monospace;
+@font-family-sans: "Fira Sans", sans-serif;
+@font-family-serif: "PT Serif", serif;
 
-@font-size-large: 1.6rem;
-@font-size-default: 1.4rem;
-@font-size-small: 1.2rem;
+@font-size-default: @font-size-medium;
+@font-size-large: 1.8rem;
+@font-size-medium: 1.4rem;
+@font-size-small: 1.3rem;
+@font-size-xsmall: 1.1rem;
 
-@line-height-large: normal;
-@line-height-default: 1.6;
-@line-height-small: 1;
+@line-height-default: @line-height-medium;
+@line-height-large: 2.4rem;
+@line-height-medium: 2.4rem;
+@line-height-small: 1.6rem;
+@line-height-xsmall: 1.2rem;
 
-// color palette
+
+// Palette
+// ========================================================================
+
 @caption-color: @clr-grey-900;
 @danger-color: @clr-red-800;
 @link-color: @clr-blue-800;
@@ -37,38 +52,36 @@
 @text-color: @clr-grey-800;
 @warning-color: @clr-orange-800;
 
-// headers
-@h1-font-size: 3.6rem;
-@h1-font-weight: 400;
-@h1-line-height: 1;
+
+// Headers
+// ========================================================================
+
+@h1-font: 400 3.6rem/4rem @font-family-serif;
 @h1-margin: @space-s 0;
-@h2-font-size: 2.4rem;
-@h2-font-weight: 400;
-@h2-line-height: 1;
+@h2-font: 400 2.4rem/2.8rem @font-family-serif;
 @h2-margin: @space-s 0;
-@h3-font-size: 2rem;
-@h3-font-weight: 400;
-@h3-line-height: 1.2;
+@h3-font: 400 2rem/2.4rem @font-family-serif;
 @h3-margin: @space-xs 0;
-@h4-font-size: 1.5rem;
-@h4-font-weight: 400;
-@h4-line-height: 1.2;
-@h4-margin: @space-xs 0;
-@h5-font-size: 1.4rem;
-@h5-font-weight: 700;
-@h5-line-height: 1.2;
-@h5-margin: @space-xs 0;
-@h6-font-size: 1.2rem;
-@h6-font-weight: 400;
-@h6-line-height: 1.2;
+
+@h4-font: 400 1.8rem/2rem @font-family-sans;
+@h4-margin: @space-m 0 @space-xs;
+@h5-font: 500 1.4rem/1.6rem @font-family-sans;
+@h5-margin: @space-s 0;
+@h6-font: 500 1.3rem/1.4rem @font-family-sans;
 @h6-margin: @space-xs 0;
 
-// links
+
+// Link
+// ========================================================================
+
 @link-text-decoration: underline;
 @link-hover-text-decoration: none;
 @link-transition: color 160ms @easing;
 
-// spaces
+
+// Spaces
+// ========================================================================
+
 @space-default: @unit;
 @space-xs: @unit / 4;
 @space-s: @unit / 2;

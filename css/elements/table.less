@@ -16,19 +16,19 @@
 @table-margin-vertical: @space-default;
 
 @table-cell-padding-vertical: @space-s;
-@table-cell-padding-horizontal: @space-m;
+@table-cell-padding-horizontal: @space-xs;
 
-@table-header-cell-font-family: @font-family-primary;
+@table-header-cell-font-family: @font-family-default;
 @table-header-cell-font-size: @font-size-default;
 @table-header-cell-font-weight: 600;
 @table-header-cell-color: @caption-color;
 
-@table-footer-font-family: @font-family-primary;
+@table-footer-font-family: @font-family-default;
 @table-footer-font-size: @font-size-small;
 @table-footer-font-weight: 300;
 @table-footer-color: @text-color;
 
-@table-caption-font-family: @font-family-primary;
+@table-caption-font-family: @font-family-default;
 @table-caption-font-size: @font-size-default;
 @table-caption-font-weight: 300;
 @table-caption-color: @muted-color;
@@ -104,4 +104,13 @@ table tbody tr.is-active,
 table > tr[aria-selected=true],
 table tbody tr[aria-selected=true] {
 	background-color: @table-row-active-background-color !important;
+}
+
+
+/* Condensed style
+ ========================================================================== */
+
+table.s-condensed th,
+table.s-condensed td {
+    padding: 0;
 }

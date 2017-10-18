@@ -13,9 +13,6 @@
 // Variables
 // ========================================================================
 
-@u-text-caption-font-family: @font-family-caption;
-@u-text-cursive-font-family: @font-family-cursive;
-
 @u-text-color:			@text-color;
 @u-text-muted-color:    @muted-color;
 @u-text-primary-color:  #2d7091;
@@ -23,39 +20,48 @@
 @u-text-warning-color:  #e28327;
 @u-text-danger-color:   #d85030;
 
-@u-text-large-font-size: @font-size-large;
-@u-text-large-line-height: @line-height-large;
-
 
 // Fonts
 // ========================================================================
  
-.u-font-caption {
-	font-family: @u-text-caption-font-family;
-	font-style: normal;
+.u-font-condensed {
+	font-family: @font-family-condensed;
 }
-
 .u-font-cursive {
-	font-family: @u-text-cursive-font-family;
-	font-style: normal;
+	font-family: @font-family-cursive;
 }
-
-.u-font-primary {
-	font-family: @font-family-primary;
-	font-style: normal;
+.u-font-monospace {
+	font-family: @font-family-monospace;
+}
+.u-font-sans {
+	font-family: @font-family-sans;
+}
+.u-font-serif {
+	font-family: @font-family-serif;
 }
 
 /* Size modifiers
  ========================================================================== */
 
-.u-text-large {
-	font-size: @u-text-large-font-size;
-	line-height: @u-text-large-line-height;
+.u-text-default {
+    font-size: @line-height-default;
+    line-height: @line-height-default;
 }
-
+.u-text-large {
+	font-size: @font-size-large;
+	line-height: @line-height-large;
+}
+.u-text-medium {
+	font-size: @font-size-medium;
+	line-height: @line-height-medium;
+}
 .u-text-small {
 	font-size: @font-size-small;
 	line-height: @line-height-small;
+}
+.u-text-xsmall {
+	font-size: @font-size-xsmall;
+	line-height: @line-height-xsmall;
 }
 
 
