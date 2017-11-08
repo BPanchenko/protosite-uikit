@@ -22,6 +22,8 @@
         <link rel="stylesheet/less" type="text/css" href="../src/less/core.less">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
 
+        <script src="../src/js/custom-elements/button.js"></script>
+
     </head>
     <body>
         <div class="o-container">
@@ -48,7 +50,7 @@
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
                         <section class="c-panel">
                             <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
-                                <button type="button" class="c-button">Кнопка</button>
+                                <c-button type="button">Кнопка</c-button>
                             </div>
                         </section>
                     </div>
@@ -122,16 +124,13 @@
                                     Главная
                                 </button>
 
-                                <button type="button" class="c-button iconic s-success u-margin-top@handset-portrait u-margin-left-remove@handset-portrait" data-glyph="check-thin">
+                                <c-button data-glyph="check-thin" s-success class="u-margin-top@handset-portrait u-margin-left-remove@handset-portrait">
                                     Успешная
-                                </button>
+                                </c-button>
 
-                                <button type="button" class="c-button s-danger u-margin-top@tablet u-margin-left-remove@tablet u-margin-small-left@tablet-portrait u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset">
-                                    <span class="c-button__icon">
-                                        <i class="iconic" data-glyph="ban"></i>
-                                    </span>
-                                    <span class="c-button__text">Опасная</span>
-                                </button>
+                                <c-button data-glyph="ban" s-danger class="u-margin-top@tablet u-margin-left-remove@tablet u-margin-small-left@tablet-portrait u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset">
+                                    Опасная
+                                </c-button>
 
                                 <button type="button" class="c-button s-warning u-margin-left-remove@desktop u-margin-top@desktop u-margin-small-left@tablet u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset-portrait">
                                     <span class="c-button__icon">
@@ -203,13 +202,12 @@
 
                     </div>
                 </div>
-
             </main>
 
             <footer role="contentinfo" class="u-margin-large-top">
                 <hr>
                 <div class="u-float-right">
-                    <h4 class="u-font-cursive">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2017</h4>
+                    <span class="u-font-cursive u-text-large">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2017</span>
                 </div>
             </footer>
         </div>
