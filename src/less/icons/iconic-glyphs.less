@@ -32,16 +32,17 @@
 }
 .iconic[data-glyph] {
 	&:before {
+		display: inline-block;
 		position: relative;
 		top: 1px;
-		font-family: 'Iconic';
-		display: inline-block;
-		speak: none;
-		line-height: 1;
 		vertical-align: baseline;
+		font-family: 'Iconic';
+		font-display: block;
 		font-weight: 400;
 		font-style: normal;
 		font-size: 16px;
+		line-height: 1;
+		speak: none;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
