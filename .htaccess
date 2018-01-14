@@ -21,7 +21,6 @@ ErrorDocument 500 /errors/500.html
 <IfModule mod_headers.c>
     Header always set Access-Control-Allow-Origin "*"
     Header always set Access-Control-Allow-Methods "GET"
-    Header set Link "<https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Open+Sans:400,400italic,600,600italic,300,700,800,300italic,800italic,700italic&subset=latin,cyrillic>; rel=preload"
 </IfModule>
 
 php_value date.timezone UTC

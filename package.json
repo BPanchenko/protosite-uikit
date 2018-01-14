@@ -13,7 +13,7 @@
   "main": "./index.html",
   "scripts": {
     "build": "webpack -p --config webpack.config.production.js",
-    "start": "webpack --config webpack.config.js"
+    "dev": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
