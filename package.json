@@ -1,6 +1,6 @@
 {
   "name": "protosite.uikit",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "keywords": [],
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
@@ -10,14 +10,6 @@
       "email": "hello@bpanchenko.ru"
     }
   ],
-<<<<<<< HEAD
-=======
-  "main": "./index.html",
-  "scripts": {
-    "build": "webpack -p --config webpack.config.production.js",
-    "dev": "webpack --config webpack.config.js"
-  },
->>>>>>> remotes/origin/ui-sample
   "repository": {
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
