@@ -1,8 +1,5 @@
 /.idea
 /node_modules
-/css/core.css
-/css/core.min.css
-/examples
 /dist
 /dataset
 /json2db.php

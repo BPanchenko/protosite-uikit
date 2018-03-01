@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         'ui-core': [
             'babel-polyfill',
-            './js/ui-core.js'
+            './src/js/ui-core.js'
         ]
     },
 
