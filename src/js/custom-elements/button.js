@@ -30,15 +30,11 @@
 
     }
 
-    if (customElements) customElements.define('c-button', ButtonElement);
-
-    var root = typeof self == 'object' && self.self === self && self ||
-        typeof global == 'object' && global.global === global && global ||
-        this;
+    if (customElements) {
+        customElements.define('c-button', ButtonElement);
+    }
 
     if (typeof exports != 'undefined' && !exports.nodeType) {
         exports.ButtonElement = ButtonElement;
-    } else {
-        root.ButtonElement = ButtonElement;
     }
 }());

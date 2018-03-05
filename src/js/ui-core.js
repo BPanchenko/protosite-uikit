@@ -1,8 +1,8 @@
 import UI from './ui/index';
-import ButtonElement from './custom-elements/button';
 
 import LocationHashModel from './ui/lib/LocationHashModel';
 
+import './custom-elements/button';
 import './ui/components/popover';
 import './ui/components/field';
 
