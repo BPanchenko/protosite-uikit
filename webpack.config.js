@@ -30,7 +30,7 @@ module.exports = {
                 './index.html',
                 './*/*.html'
             ],
-            server: { baseDir: [''] }
+            server: true
         })
     ]
 };
