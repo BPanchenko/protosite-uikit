@@ -1,15 +1,8 @@
 {
   "name": "protosite.uikit",
-  "version": "1.7.0",
+  "version": "1.7.3",
   "description": "Front-end framework for developing web interfaces using BEMIT",
-  "keywords": [],
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
-  "contributors": [
-    {
-      "name": "Boris Panchenko",
-      "email": "hello@bpanchenko.ru"
-    }
-  ],
   "main": "./index.html",
   "scripts": {
     "build": "webpack -p --config webpack.config.production.js",
@@ -39,19 +32,21 @@
     "css-loader": "^0.28.4",
     "form2js": "^1.0.0",
     "gulp": "^3.9.0",
-    "gulp-cli": "^2.0.1"
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^3.9.0",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.0",
     "gulp-csslint": "^0.3.0",
     "gulp-cssmin": "^0.1.7",
     "gulp-less": "^3.0.5",
     "gulp-rename": "^1.2.2",
-    "gulp-util": "^3.0.7",
     "jquery": "^3.1.0",
+    "less": "^3.0.1",
+    "less-loader": "^4.0.6",
     "moment": "^2.14.1",
     "underscore": "^1.8.3",
     "underscore.string": "^3.3.4",
-    "webpack": "^2.6.1"
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10"
   }
 }
