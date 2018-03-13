@@ -7,16 +7,18 @@ module.exports = {
     devtool: 'eval-source-map',
     context: path.resolve(__dirname),
     entry: {
-        'ui-core': [
-            'babel-polyfill',
-            './src/js/ui-core.js'
-        ]
+        'ui-core': './src/js/ui-core.js'
     },
 
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/'
+    },
+    module: {
+        rules: [
+            { test: /\.vue$/, loader: 'vue' }
+        ]
     },
 
     watch: true,
