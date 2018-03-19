@@ -17,7 +17,7 @@ let plugins = [
     alias({ vue$: 'vue/dist/vue.common.js' }),
     vue({ autoStyles: false, styleToImports: true }),
     less({
-        output: true,
+        insert: false,
         output: './dist/protosite-uikit.css',
         processor: css => postcss([autoprefixer, cssnano]).process(css, { from: undefined }).then(result => result.css)
     }),

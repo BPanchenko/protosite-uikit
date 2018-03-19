@@ -1,3 +1,4 @@
+import '../less/core.less';
 import UI from './ui/index';
 
 import LocationHashModel from './ui/lib/LocationHashModel';
