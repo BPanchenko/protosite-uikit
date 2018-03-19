@@ -130,3 +130,22 @@
 		clear: both;
 	}
 }
+
+
+// Mediaqueries
+// ========================================================================
+
+@media @screen-handset {
+    .c-panel__head {
+        padding: @space-s @space-s @space-xs @space-s;
+
+        &::after {
+            left: @space-s;
+            right: @space-s;
+        }
+    }
+    
+    .c-panel__body {
+        padding: @space-s;
+    }
+}
