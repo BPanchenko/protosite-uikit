@@ -1,10 +1,9 @@
-import '../less/core.less';
-import UI from './ui/index';
+console.time('t');
 
-import LocationHashModel from './ui/lib/LocationHashModel';
+import '../less/core.less';
+import Vue from 'vue';
 
 import './components';
 import './custom-elements/button';
 
-window.LocationHashModel = LocationHashModel;
-window.UI = UI;
+console.timeEnd('t');
