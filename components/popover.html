@@ -23,10 +23,7 @@
         <link rel="stylesheet/less" type="text/css" href="../src/less/pattern.less">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
 
-        <script src="../dist/ui-libs.js"></script>
-        <script src="../dist/ui-core.js"></script>
-        <script src="../src/js/ui/components/popover.js"></script>
-
+        <script type="text/javascript" src="../dist/protosite-uikit.js"></script>
     </head>
     <body>
         <div class="o-container">
@@ -44,7 +41,7 @@
                             <a href="/" class="">Главная</a>
                         </span>
                 <span class="o-breadcrumb__item">Компоненты</span>
-                <span class="o-breadcrumb__item is-current">Всплывающая панель (подсказка)</span>
+                <span class="o-breadcrumb__item is-current">Всплывающая панель</span>
             </nav>
 
             <main role="main">
@@ -161,7 +158,7 @@
                                 <h3>Поведение</h3>
                             </div>
                             <div class="c-panel__body u-margin-large-bottom u-text-center">
-                                <span class="c-popover-holder u-margin-large-top pattern pattern--horizontal" ui-popover="{ content: 'Подсказка<br>на три<br>строки', position: 'bottom' }">
+                                <span class="c-popover-holder u-margin-large-top pattern pattern--horizontal" v-popover="{ content: 'Подсказка<br>на три<br>строки', position: 'bottom' }">
                                     активный элемент<br>
                                     с горизонтальным позиционированием подсказки
                                 </span>
@@ -180,15 +177,6 @@
                     </div>
                 </div>
 
-                <article class="o-article u-margin">
-                    <p class="o-article-lead">
-
-                    </p>
-                    <p>
-
-                    </p>
-                </article>
-
             </main>
 
             <footer role="contentinfo" class="u-margin-large-top">
@@ -198,6 +186,12 @@
                 </div>
             </footer>
         </div>
+
+        <script>
+            new Vue({
+                el: 'main'
+            });
+        </script>
 
     </body>
 </html>
