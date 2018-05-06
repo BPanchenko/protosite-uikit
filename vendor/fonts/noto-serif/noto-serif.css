@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif'), url('noto-serif.woff2') format('woff2'), url('noto-serif.woff') format('woff'), url('noto-serif.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif Italic'), url('noto-serif-italic.woff2') format('woff2'), url('noto-serif-italic.woff') format('woff'), url('noto-serif-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif Bold'), url('noto-serif-bold.woff2') format('woff2'), url('noto-serif-bold.woff') format('woff'), url('noto-serif-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Serif';
+    src: local('Noto Serif Bold Italic'), url('noto-serif-bold-italic.woff2') format('woff2'), url('noto-serif-bold-italic.woff') format('woff'), url('noto-serif-bold-italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}

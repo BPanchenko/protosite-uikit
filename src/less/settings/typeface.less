@@ -2,13 +2,17 @@
 /* Typeface
  ========================================================================== */
 
-@import (inline) "https://fonts.googleapis.com/css?family=Marck+Script|PT+Mono|PT+Serif+Caption|Fira+Sans+Condensed&subset=cyrillic";
+@font-path: "http://uikit.protosite.rocks/vendor/fonts";
 
-@font-family-condensed: "Fira Sans Condensed", sans-serif;
+@import "@{font-path}/marck-script/marck-script.less";
+@import "@{font-path}/noto-mono/noto-mono.less";
+@import "@{font-path}/noto-serif/noto-serif.less";
+
+@font-family-condensed: sans-serif;
 @font-family-cursive: "Marck Script", cursive;
-@font-family-monospace: "PT Mono", monospace;
+@font-family-monospace: "Noto Mono", monospace;
 @font-family-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-@font-family-serif: "PT Serif Caption", serif;
+@font-family-serif: "Noto Serif", serif;
 
 @font-family-default: @font-family-sans;
 @font-family-primary: @font-family-sans;
