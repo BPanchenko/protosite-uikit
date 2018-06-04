@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import '../less/core.less';
 import UI from './ui/index';
 

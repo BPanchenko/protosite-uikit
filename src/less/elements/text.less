@@ -12,35 +12,40 @@
 
 a,
 .u-link {
-	outline: 0;
-	background-color: transparent;
-	color: @link-color;
-	text-decoration: @link-text-decoration;
-	transition: @link-transition;
+    outline: 0;
+    background-color: transparent;
+    color: @link-color;
+    text-decoration: @link-text-decoration;
+    transition: @link-transition;
 }
 a:hover,
 .u-link:hover {
-	outline: 0;
-	color: @link-hover-color;
-	text-decoration: @link-hover-text-decoration;
+    outline: 0;
+    color: @link-hover-color;
+    text-decoration: @link-hover-text-decoration;
 }
 
 
 /* Weight modifiers
  ========================================================================== */
 
-.u-text-light { font-weight: 300; }
-b, .u-text-semibold { font-weight: 500; }
-b > b, strong, .u-text-bold { font-weight: 600; }
-strong > strong, .u-text-extrabold { font-weight: 700; }
+b {
+    font-weight: 500;
+}
+b > b, strong {
+    font-weight: 600;
+}
+strong > strong {
+    font-weight: 700;
+}
 
 
 /* Size modifiers
  ========================================================================== */
 
 small {
-	font-size: @font-size-small;
-	line-height: @line-height-small;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
 }
 
 
@@ -48,53 +53,57 @@ small {
  ========================================================================== */
 
 abbr[title] {
-	border-bottom: 1px dotted;
+    border-bottom: 1px dotted;
 }
 code,
 kbd,
 pre,
 samp {
-	font-family: @font-family-monospace;
-	font-size: inherit;
+    font-family: @font-family-monospace;
+    font-size: inherit;
 }
 code,
 kbd,
-samp { white-space: nowrap; }
+samp {
+    white-space: nowrap;
+}
 ins {
-	display: inline-block;
-	margin: 0 -.2rem;
-	padding: 0 .2rem;
-	background-color: @clr-green-100;
-	color: @clr-grey-900;
-	text-decoration: none;
+    display: inline-block;
+    margin: 0 -.2rem;
+    padding: 0 .2rem;
+    background-color: @clr-green-100;
+    color: @clr-grey-900;
+    text-decoration: none;
 }
 mark {
-	background-color: @selection-background-color;
-	color: @selection-color;
-	text-decoration: none;
+    background-color: @selection-background-color;
+    color: @selection-color;
+    text-decoration: none;
 }
 i,
 em,
 dfn,
-q { font-style: italic; }
+q {
+    font-style: italic;
+}
 
 pre {
-	overflow: auto;
-	white-space: pre-wrap;
+    overflow: auto;
+    white-space: pre-wrap;
 }
 
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 sup {
-	top: -0.5em;
+    top: -0.5em;
 }
 sub {
-	bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 
@@ -107,38 +116,38 @@ h3,
 h4,
 h5,
 h6 {
-	color: @caption-color;
+    color: @caption-color;
 }
 
 h1 {
     font: @h1-font;
-	margin: @h1-margin;
+    margin: @h1-margin;
     text-transform: @h1-text-transform;
-	text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
+    text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
 }
 h2 {
     font: @h2-font;
-	margin: @h2-margin;
+    margin: @h2-margin;
     text-transform: @h2-text-transform;
 }
 h3 {
     font: @h3-font;
-	margin: @h3-margin;
+    margin: @h3-margin;
     text-transform: @h3-text-transform;
 }
 h4 {
     font: @h4-font;
-	margin: @h4-margin;
+    margin: @h4-margin;
     text-transform: @h4-text-transform;
 }
 h5 {
-	font: @h5-font;
-	margin: @h5-margin;
+    font: @h5-font;
+    margin: @h5-margin;
     text-transform: @h5-text-transform;
 }
 h6 {
-	font: @h6-font;
-	margin: @h6-margin;
+    font: @h6-font;
+    margin: @h6-margin;
     text-transform: @h6-text-transform;
 }
 
@@ -157,4 +166,6 @@ h2 a,
 h3 a,
 h4 a,
 h5 a,
-h6 a { color: @caption-color; }
+h6 a {
+    color: @caption-color;
+}

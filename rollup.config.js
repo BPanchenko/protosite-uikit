@@ -1,27 +1,36 @@
+import autoprefixer from 'autoprefixer';
 import fs from 'fs';
-import commonjs from 'rollup-plugin-commonjs'
-import vue from 'rollup-plugin-vue';
+
 import less from 'rollup-plugin-less';
-import serve from 'rollup-plugin-serve';
 import alias from 'rollup-plugin-alias';
-import uglify from 'rollup-plugin-uglify';
+import commonjs from 'rollup-plugin-commonjs'
 import cssnano from 'cssnano';
+import nodeGlobals from 'rollup-plugin-node-globals';
+import nodeResolve from 'rollup-plugin-node-resolve';
+import livereload from 'rollup-plugin-livereload';
 import postcss from 'postcss';
 import replace from 'rollup-plugin-replace';
-import livereload from 'rollup-plugin-livereload';
-import autoprefixer from 'autoprefixer';
+import serve from 'rollup-plugin-serve';
+import uglify from 'rollup-plugin-uglify';
+import vue from 'rollup-plugin-vue';
 
 if (fs.existsSync('./dist/protosite-uikit.js.map')) fs.unlinkSync('./dist/protosite-uikit.js.map');
 
 let plugins = [
     alias({ vue$: 'vue/dist/vue.common.js' }),
-    vue({ autoStyles: false, styleToImports: true }),
     less({
         insert: false,
         output: './dist/protosite-uikit.css',
         processor: css => postcss([autoprefixer, cssnano]).process(css, { from: undefined }).then(result => result.css)
     }),
+    nodeGlobals(),
+    nodeResolve({
+        jsnext: true,
+        main: true,
+        browser: true
+    }),
 	commonjs(),
+    vue({ autoStyles: false, styleToImports: true }),
     process.env.NODE_ENV === 'prod' && replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
     process.env.NODE_ENV === 'prod' && uglify(),
     process.env.NODE_ENV !== 'prod' && process.env.PORT !== undefined && livereload(),
