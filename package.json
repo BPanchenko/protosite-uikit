@@ -1,11 +1,11 @@
 {
   "name": "protosite.uikit",
-  "version": "1.7.4",
+  "version": "1.7.41",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./index.html",
   "scripts": {
-    "start": "rollup -c -w --environment NODE_ENV:dev,PORT:8080",
+    "dev": "rollup -c -w --environment NODE_ENV:dev,PORT:8080",
     "build:dev": "rollup -c -w --environment NODE_ENV:dev",
     "build:prod": "rollup -c --environment NODE_ENV:prod"
   },

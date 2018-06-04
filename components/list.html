@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
 
         <title>Protosite.UiKit</title>
-        <meta name="author" content="Boris Panchenko, hello@boryan.one">
+        <meta name="author" content="Boris Panchenko, hello@bpanchenko.ru">
         <meta name="copyright" content="">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -21,10 +21,6 @@
 
         <link rel="stylesheet/less" type="text/css" href="../src/less/core.less">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
-
-        <script src="../dist/ui-libs.js"></script>
-        <script src="../dist/ui-core.js"></script>
-        <script src="../src/js/ui/components/list.js"></script>
 
     </head>
     <body>
@@ -59,61 +55,52 @@
                             </a>
                         </div>
                     </div>
-                    <div class="c-panel__body js-list-container"></div>
+                    <div class="c-panel__body js-list-container">
+                        <div class="c-list">
+                            <section class="c-list__head">
+                                <div class="c-list__cell">
+                                    <a href="#" class="c-ctrl-sort" aria-sort="descending">id</a>
+                                </div>
+                                <div class="c-list__cell">
+                                    <a href="#" class="c-ctrl-sort" aria-sort="ascending">name</a>
+                                </div>
+                                <div class="c-list__cell">
+                                    <a href="#" class="c-ctrl-sort">class</a>
+                                </div>
+                                <div class="c-list__cell">
+                                    <a href="#" class="c-ctrl-sort">epoch</a>
+                                </div>
+                                <div class="c-list__cell">
+                                    <a href="#" class="c-ctrl-sort">axis</a>
+                                </div>
+                                <div class="c-list__cell">
+                                    <a href="#" class="c-ctrl-sort">eccentricity</a>
+                                </div>
+                            </section>
+                            <div class="c-list__body">
+                                <section class="c-list__item">
+                                    <div class="c-list__cell">15635</div>
+                                    <div class="c-list__cell">(6344 P-L)</div>
+                                    <div class="c-list__cell">Apollo Asteroid (Hazard)</div>
+                                    <div class="c-list__cell">57800</div>
+                                    <div class="c-list__cell">2.8043</div>
+                                    <div class="c-list__cell">0.6672</div>
+                                </section>
+                            </div>
+                            <div class="c-list__meta"></div>
+                            <div class="c-list__foot"></div>
+                        </div>
+                    </div>
                 </section>
             </main>
 
             <footer role="contentinfo" class="u-margin-large-top">
                 <hr>
                 <div class="u-float-right">
-                    <span class="u-font-cursive u-text-large">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2017</span>
+                    <span class="u-font-cursive u-text-large">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&ndash;2018</span>
                 </div>
             </footer>
         </div>
-
-
-        <script type="text/javascript">
-
-            // define variables
-
-            let ellistContainer = document.body.querySelector('.js-list-container');
-            let collection = new (Backbone.Collection.extend({
-                name: 'AsteroidsCollection',
-                url: 'http://api.protosite.rocks/asteroids',
-                state: {
-                    count: 20,
-                    sort: window.location.hashModel.get('sort')
-                }
-            }));
-
-            // init and render of the list
-
-            let list = new UI.List({
-                collection: collection,
-                isHovered: true,
-                isStriped: false
-            });
-            ellistContainer.appendChild(list.el);
-            list.render();
-
-            // fetch collection
-
-            collection.fetchFields();
-            collection.fetch();
-
-            // listen on change window.location.hash
-
-            window.location.hashModel.on('change:sort', function(model, value) {
-                collection.state.set('sort', value);
-            });
-
-            //
-
-            setInterval(function(){
-                collection.state.set('page', collection.state.get('page') + 1);
-            }, 5000);
-
-        </script>
 
     </body>
 </html>
