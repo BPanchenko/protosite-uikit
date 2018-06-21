@@ -76,6 +76,7 @@
 
 @c-field-autofill-background-color: @clr-yellow-50;
 
+@c-field-disabled-background-color: @clr-grey-20;
 @c-field-disabled-border-color: @clr-grey-600;
 @c-field-disabled-border-style: dashed;
 
@@ -129,6 +130,7 @@
     }
 
     &:disabled {
+        background-color: @c-field-disabled-background-color;
         border-color: @c-field-disabled-border-color;
         border-style: @c-field-disabled-border-style;
         box-shadow: none;
