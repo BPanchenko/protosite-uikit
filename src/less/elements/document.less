@@ -5,10 +5,8 @@
 
 @import "../settings/variables";
 
-@body-background-color: @clr-grey-200;
-
+@body-background: #F1F0EE; // @clr-grey-200
 @selection-background-color: @clr-blue-600;
-@selection-text-shadow: none;
 
 html {
 	height: 100%;
@@ -16,7 +14,7 @@ html {
 }
 
 body {
-	background: @body-background-color;
+	background: @body-background;
 	font-family: @font-family-default;
 	font-size: @font-size-default;
 	color: @text-color;
@@ -70,12 +68,12 @@ template {
 ::-moz-selection {
 	background-color: @selection-background-color;
 	color: @selection-color;
-	text-shadow: @selection-text-shadow;
+	text-shadow: none;
 }
 ::selection {
 	background-color: @selection-background-color;
 	color: @selection-color;
-	text-shadow: @selection-text-shadow;
+	text-shadow: none;
 }
 *[unselectable="on"] {
 	-webkit-user-select: none;
