@@ -10,10 +10,12 @@
  *           `c-field-icon`
  *           `c-field-label`
  *
- * Modifiers: `is-filled`
- *            `is-focused`
- *            `is-invalid`
- *            `is-valid`
+ * States: `is-filled`
+ *         `is-focused`
+ *         `is-invalid`
+ *         `is-valid`
+ *
+ * Styles: `s-floating`
  *
  ========================================================================== */
 
@@ -142,7 +144,7 @@
     }
 }
 
-/* Style of the specific elements
+/* Style of the specific base
  ========================================================================== */
 
 input.c-field,
@@ -219,7 +221,7 @@ input[type=file].c-field {
     display: block;
     font-size: 0.001px;
     contain: layout style;
-    // outline: 1px dashed @clr-amber-A700;
+    outline: 0.1rem dashed orangered;
 }
 
 
@@ -386,7 +388,7 @@ input:disabled + .c-field-label {
 }
 
 
-/* Modifier: `is-invalid`
+/* State: `is-invalid`
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .is-invalid .c-field {
@@ -410,7 +412,7 @@ input:disabled + .c-field-label {
 }
 
 
-/* Modifiers: `is-focused` and `is-filled`
+/* States: `is-focused` and `is-filled`
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .is-filled .c-field,
@@ -433,4 +435,70 @@ input.c-field:not([type=checkbox]):not([type=radio]):focus {
 
 .is-focused .c-field-label {
     color: @c-field-focused-label-color;
+}
+
+
+/* ========================================================================
+   Style: `s-floating`
+ ========================================================================== */
+
+@c-field-floating-focused-label-top: @c-field-border-width + @c-field-height
+    - (@c-field-padding-top + @c-field-padding-bottom + 2 * @c-field-border-width);
+
+@c-field-floating-border-bottom-width: 0.2rem;
+@c-field-floating-border-bottom-style: solid;
+@c-field-floating-border-bottom-color: @clr-grey-400;
+
+@c-field-floating-focused-label-font-size: 1.2rem;
+@c-field-floating-focused-label-color: @clr-blue-700;
+@c-field-floating-focused-border-bottom-color: @clr-blue-600;
+@c-field-floating-filled-border-bottom-color: @clr-grey-600;
+
+.s-floating.c-field-box {
+
+    .c-field,
+    .c-field-label {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .c-field {
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+        border-bottom-width: @c-field-floating-border-bottom-width;
+        border-bottom-style: @c-field-floating-border-bottom-style;
+        border-bottom-color: @c-field-floating-border-bottom-color;
+        box-shadow: none;
+    }
+
+    .c-field-label {
+        position: relative;
+        top: @c-field-floating-focused-label-top;
+        font-size: @c-field-label-font-size;
+        cursor: pointer;
+        transition-property: top, font-size, color;
+    }
+
+    &.is-filled .c-field-label,
+    &.is-focused .c-field-label {
+        top: 0;
+        font-size: @c-field-floating-focused-label-font-size;
+        cursor: @c-field-label-cursor;
+    }
+
+    &.is-filled {
+        .c-field {
+            border-bottom-color: @c-field-floating-filled-border-bottom-color;
+        }
+    }
+
+    &.is-focused {
+        .c-field-label {
+            color: @c-field-floating-focused-label-color;
+        }
+        .c-field {
+            border-bottom-color: @c-field-floating-focused-border-bottom-color;
+        }
+    }
 }
