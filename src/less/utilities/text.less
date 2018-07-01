@@ -5,7 +5,7 @@
  * Description:     Collection of useful text utility classes to style your content
  * 
  * Component:       `u-font-*`
- *					`u-text-*`
+ *                    `u-text-*`
  * 
  * ======================================================================== */
 
@@ -13,59 +13,23 @@
 // Variables
 // ========================================================================
 
-@u-text-color:			@text-color;
-@u-text-muted-color:    @muted-color;
-@u-text-primary-color:  #2d7091;
-@u-text-success-color:  @success-color;
-@u-text-warning-color:  #e28327;
-@u-text-danger-color:   #d85030;
+@u-text-color: @text-color;
+@u-text-muted-color: @muted-color;
+@u-text-primary-color: #2d7091;
+@u-text-success-color: @success-color;
+@u-text-warning-color: #e28327;
+@u-text-danger-color: #d85030;
 
 
 // Fonts
 // ========================================================================
  
-.u-font-condensed {
-	font-family: @font-family-condensed;
-}
-.u-font-cursive {
-	font-family: @font-family-cursive;
-}
-.u-font-monospace {
-	font-family: @font-family-monospace;
-}
-.u-font-sans {
-	font-family: @font-family-sans;
-}
-.u-font-serif {
-	font-family: @font-family-serif;
-}
-.u-font-thin {
-    font-weight: 100;
-}
-.u-font-extra-light {
-    font-weight: 200;
-}
-.u-font-light {
-    font-weight: 300;
-}
-.u-font-normal {
-    font-weight: 400;
-}
-.u-font-medium {
-    font-weight: 500;
-}
-.u-font-semi-bold {
-    font-weight: 600;
-}
-.u-font-bold {
-    font-weight: 700;
-}
-.u-font-extra-bold {
-    font-weight: 800;
-}
-.u-font-black {
-    font-weight: 900;
-}
+.u-font-condensed { font-family: @font-family-condensed; }
+.u-font-cursive { font-family: @font-family-cursive; }
+.u-font-monospace { font-family: @font-family-monospace; }
+.u-font-sans { font-family: @font-family-sans; }
+.u-font-serif { font-family: @font-family-serif; }
+
 
 /* Size modifiers
  ========================================================================== */
@@ -75,21 +39,43 @@
     line-height: @line-height-default;
 }
 .u-text-large {
-	font-size: @font-size-large;
-	line-height: @line-height-large;
+    font-size: @font-size-large;
+    line-height: @line-height-large;
 }
 .u-text-medium {
-	font-size: @font-size-medium;
-	line-height: @line-height-medium;
+    font-size: @font-size-medium;
+    line-height: @line-height-medium;
 }
 .u-text-small {
-	font-size: @font-size-small;
-	line-height: @line-height-small;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
 }
 .u-text-xsmall {
-	font-size: @font-size-xsmall;
-	line-height: @line-height-xsmall;
+    font-size: @font-size-xsmall;
+    line-height: @line-height-xsmall;
 }
+
+
+/* Weight modifiers
+ ========================================================================== */
+
+.u-text-thin { font-weight: 100; }
+.u-text-extra-light { font-weight: 200; }
+.u-text-light { font-weight: 300; }
+.u-text-normal { font-weight: 400; }
+.u-text-medium { font-weight: 500; }
+.u-text-semi-bold { font-weight: 600; }
+.u-text-bold { font-weight: 700; }
+.u-text-extra-bold { font-weight: 800; }
+.u-text-black { font-weight: 900; }
+
+
+/* Transform modifiers
+ ========================================================================== */
+
+.u-text-uppercase { text-transform: uppercase !important; }
+.u-text-capitalize { text-transform: capitalize !important; }
+.u-text-lowercase { text-transform: lowercase !important; }
 
 
 /* Color modifiers
@@ -117,56 +103,56 @@
 
 /* xdesktop */
 @media @screen-xdesktop {
-	.u-text-center\@xdesktop { text-align: center !important; }
-	.u-text-left\@xdesktop { text-align: left !important; }
-	.u-text-right\@xdesktop { text-align: right !important; }
+    .u-text-center\@xdesktop { text-align: center !important; }
+    .u-text-left\@xdesktop { text-align: left !important; }
+    .u-text-right\@xdesktop { text-align: right !important; }
 }
 
 /* desktop */
 @media @screen-desktop {
-	.u-text-center\@desktop { text-align: center !important; }
-	.u-text-left\@desktop { text-align: left !important; }
-	.u-text-right\@desktop { text-align: right !important; }
+    .u-text-center\@desktop { text-align: center !important; }
+    .u-text-left\@desktop { text-align: left !important; }
+    .u-text-right\@desktop { text-align: right !important; }
 }
 
 /* tablet-landscape */
 @media @screen-tablet-landscape {
-	.u-text-center\@tablet,
-	.u-text-center\@tablet-landscape { text-align: center !important; }
-	.u-text-left\@tablet,
-	.u-text-left\@tablet-landscape { text-align: left !important; }
-	.u-text-right\@tablet,
-	.u-text-right\@tablet-landscape { text-align: right !important; }
+    .u-text-center\@tablet,
+    .u-text-center\@tablet-landscape { text-align: center !important; }
+    .u-text-left\@tablet,
+    .u-text-left\@tablet-landscape { text-align: left !important; }
+    .u-text-right\@tablet,
+    .u-text-right\@tablet-landscape { text-align: right !important; }
 }
 
 /* tablet-portrait */
 @media @screen-tablet-portrait {
-	.u-text-center\@tablet,
-	.u-text-center\@tablet-portrait { text-align: center !important; }
-	.u-text-left\@tablet,
-	.u-text-left\@tablet-portrait { text-align: left !important; }
-	.u-text-right\@tablet,
-	.u-text-right\@tablet-portrait { text-align: right !important; }
+    .u-text-center\@tablet,
+    .u-text-center\@tablet-portrait { text-align: center !important; }
+    .u-text-left\@tablet,
+    .u-text-left\@tablet-portrait { text-align: left !important; }
+    .u-text-right\@tablet,
+    .u-text-right\@tablet-portrait { text-align: right !important; }
 }
 
 /* handset-landscape */
 @media @screen-handset-landscape {
-	.u-text-center\@handset,
-	.u-text-center\@handset-landscape { text-align: center !important; }
-	.u-text-left\@handset,
-	.u-text-left\@handset-landscape { text-align: left !important; }
-	.u-text-right\@handset,
-	.u-text-right\@handset-landscape { text-align: right !important; }
+    .u-text-center\@handset,
+    .u-text-center\@handset-landscape { text-align: center !important; }
+    .u-text-left\@handset,
+    .u-text-left\@handset-landscape { text-align: left !important; }
+    .u-text-right\@handset,
+    .u-text-right\@handset-landscape { text-align: right !important; }
 }
 
 // handset-portrait
 @media @screen-handset-portrait {
-	.u-text-center\@handset,
-	.u-text-center\@handset-portrait { text-align: center !important; }
-	.u-text-left\@handset,
-	.u-text-left\@handset-portrait { text-align: left !important; }
-	.u-text-right\@handset,
-	.u-text-right\@handset-portrait { text-align: right !important; }
+    .u-text-center\@handset,
+    .u-text-center\@handset-portrait { text-align: center !important; }
+    .u-text-left\@handset,
+    .u-text-left\@handset-portrait { text-align: left !important; }
+    .u-text-right\@handset,
+    .u-text-right\@handset-portrait { text-align: right !important; }
 }
 
 
@@ -181,8 +167,5 @@
 }
 .u-text-break {
     word-wrap: break-word;
-    -webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-		-ms-hyphens: auto;
-    		hyphens: auto;
+    hyphens: auto;
 }
