@@ -1,40 +1,56 @@
+'use strict';
+
 (function() {
 
     class ButtonElement extends HTMLElement {
-
         connectedCallback() {
-            this.render();
-        }
-
-        render() {
-            let text = this.innerText;
-            let html = `<span class="c-button__text">${text}</span>`;
-
-            if (this.hasAttribute('data-glyph')) {
-                let glyph = this.getAttribute('data-glyph');
-                html = `<span class="c-button__icon">
-                                    <i class="iconic" data-glyph="${glyph}"></i>
-                                </span>` + html;
-            }
-
             this.classList.add('c-button');
-            this.hasAttribute('s-danger') && this.classList.add('s-danger');
-            this.hasAttribute('s-primary') && this.classList.add('s-primary');
-            this.hasAttribute('s-success') && this.classList.add('s-success');
-            this.hasAttribute('s-warning') && this.classList.add('s-warning');
-
             if(!this.hasAttribute('type')) this.setAttribute('type', 'button');
 
-            this.innerHTML = html;
+            if (this.dataset.glyph) {
+                this.appendChild(createIconNode(this.dataset.glyph));
+                delete this.dataset.glyph;
+            }
+
+            if (this.dataset.text) {
+                this.appendChild(createTextNode(this.dataset.text));
+                delete this.dataset.text;
+            }
+
+            if (this.dataset.glyphAtRight) {
+                this.appendChild(createIconNode(this.dataset.glyphAtRight));
+                delete this.dataset.glyphAtRight;
+            }
         }
-
     }
 
-    if (customElements) {
-        customElements.define('c-button', ButtonElement);
+    class ButtonGroupElement extends HTMLElement {
+        connectedCallback() {
+            this.classList.add('c-button-group');
+        }
     }
 
-    if (typeof exports != 'undefined' && !exports.nodeType) {
-        exports.ButtonElement = ButtonElement;
+    // Private function's
+
+    function createIconNode(glyph) {
+        let node = document.createElement('span');
+        node.classList.add('c-button__icon');
+        node.innerHTML = `<span class="iconic" data-glyph="${glyph}"></span>`;
+        return node;
     }
+
+    function createTextNode(text) {
+        let node = document.createElement('span');
+        node.classList.add('c-button__text');
+        node.innerText = text;
+        return node;
+    }
+
+    // Define the new element
+
+    if (customElements) customElements.define('c-button', ButtonElement);
+    if (typeof exports != 'undefined' && !exports.nodeType) exports.ButtonElement = ButtonElement;
+
+    if (customElements) customElements.define('c-button-group', ButtonGroupElement);
+    if (typeof exports != 'undefined' && !exports.nodeType) exports.ButtonGroupElement = ButtonGroupElement;
 }());

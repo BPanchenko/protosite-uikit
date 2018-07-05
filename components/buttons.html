@@ -21,9 +21,6 @@
 
         <link rel="stylesheet/less" type="text/css" href="../src/less/core.less">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
-
-        <script src="../src/js/custom-elements/button.js"></script>
-
     </head>
     <body>
         <div class="o-container">
@@ -50,7 +47,7 @@
                     <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
                         <section class="c-panel">
                             <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
-                                <c-button type="button" class="u-text-uppercase">Кнопка</c-button>
+                                <button type="button" class="c-button u-text-uppercase">Кнопка</button>
                             </div>
                         </section>
                     </div>
@@ -88,25 +85,9 @@
                                 <h3>Кнопки без оформления</h3>
                             </div>
                             <div class="c-panel__body">
-
-                                <button type="button" class="c-button s-bordered u-margin-top@tablet-portrait u-margin-top-remove@handset">
-                                    <span class="c-button__text">С рамкой</span>
-                                    <span class="c-button__icon">
-                                        <i class="iconic" data-glyph="caret-bottom"></i>
-                                    </span>
-                                </button>
-
-                                <button type="button" class="c-button s-clean u-margin-top@tablet-portrait u-margin-top-remove@handset">
-                                    Чистая
-                                </button>
-
-                                <button type="button" class="c-button s-link u-margin-top@tablet-portrait u-margin-top-remove@handset">
-                                    <span class="c-button__text">Ссылка</span>
-                                    <span class="c-button__icon">
-                                        <i class="iconic" data-glyph="external-link"></i>
-                                    </span>
-                                </button>
-
+                                <c-button data-text="С рамкой" class="s-bordered u-margin-top@tablet-portrait u-margin-top-remove@handset" data-glyph-at-right="caret-bottom"></c-button>
+                                <c-button data-text="Чистая" class="s-clean u-margin-top@tablet-portrait u-margin-top-remove@handset"></c-button>
+                                <c-button data-text="Ссылка" class="s-link u-margin-top@tablet-portrait u-margin-top-remove@handset" data-glyph-at-right="external-link"></c-button>
                             </div>
                         </section>
 
@@ -119,26 +100,10 @@
                                 <h3>Цветовое кодирование кнопок</h3>
                             </div>
                             <div class="c-panel__body">
-
-                                <button type="button" class="c-button iconic s-primary" data-glyph="arrow-right-angle-top-left-fill-acute">
-                                    Главная
-                                </button>
-
-                                <c-button data-glyph="check-thin" s-success class="u-margin-top@handset-portrait u-margin-left-remove@handset-portrait">
-                                    Успешная
-                                </c-button>
-
-                                <c-button data-glyph="ban" s-danger class="u-margin-top@tablet u-margin-left-remove@tablet u-margin-small-left@tablet-portrait u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset">
-                                    Опасная
-                                </c-button>
-
-                                <button type="button" class="c-button s-warning u-margin-left-remove@desktop u-margin-top@desktop u-margin-small-left@tablet u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset-portrait">
-                                    <span class="c-button__icon">
-                                        <i class="iconic" data-glyph="warning"></i>
-                                    </span>
-                                    <span class="c-button__text">Важная</span>
-                                </button>
-
+                                <c-button data-text="Главная" class="s-primary" data-glyph="arrow-right-angle-top-left-fill-acute"></c-button>
+                                <c-button data-text="Успешная" class="s-success u-margin-top@handset-portrait u-margin-left-remove@handset-portrait" data-glyph="check-thin"></c-button>
+                                <c-button data-text="Опасная" class="s-danger u-margin-top@tablet u-margin-left-remove@tablet u-margin-small-left@tablet-portrait u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset" data-glyph="ban"></c-button>
+                                <c-button data-text="Важная" class="s-warning u-margin-left-remove@desktop u-margin-top@desktop u-margin-small-left@tablet u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset-portrait" data-glyph="warning"></c-button>
                             </div>
                         </section>
 
@@ -151,9 +116,9 @@
                                 <h3>Размеры</h3>
                             </div>
                             <div class="c-panel__body">
-                                <button type="button" class="c-button s-large">Крупная</button>
-                                <button type="button" class="c-button">Средняя</button>
-                                <button type="button" class="c-button s-small">Миниатюрная</button>
+                                <c-button data-text="Крупная" class="s-large"></c-button>
+                                <c-button data-text="Средняя"></c-button>
+                                <c-button data-text="Миниатюрная" class="s-small"></c-button>
                             </div>
                         </section>
 
@@ -163,11 +128,11 @@
                             </div>
                             <div class="c-panel__body">
 
-                                <div class="c-button-group">
-                                    <button type="button" class="c-button">Кнопка</button>
-                                    <button type="button" class="c-button">Кнопка</button>
-                                    <button type="button" class="c-button">Кнопка</button>
-                                </div>
+                                <c-button-group>
+                                    <c-button data-text="Кнопка"></c-button>
+                                    <c-button data-text="Кнопка"></c-button>
+                                    <c-button data-text="Кнопка"></c-button>
+                                </c-button-group>
 
                             </div>
                         </section>
@@ -212,5 +177,6 @@
             </footer>
         </div>
 
+        <script src="../src/js/custom-elements/button.js"></script>
     </body>
 </html>
