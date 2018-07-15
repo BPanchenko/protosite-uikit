@@ -1,72 +1,142 @@
 @import "../settings/variables";
 
-.c-tabs {
-	display: block;
-	position: relative;
-	margin: 0;
-	padding: 0;
-	
-	width: inherit;
-	height: 4.8rem;
-	line-height: 4.8rem;
-	
-	box-sizing: border-box;
+
+// Variables
+// ========================================================================
+
+@c-tabs-justify-content: flex-start;
+@c-tabs-padding: 0 0;
+@c-tabs-transition-duration: 0.1s;
+
+@c-tab-min-width: 9rem;
+@c-tab-padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+@c-tab-max-width: 36rem;
+@c-tab-min-height: 4.8rem;
+@c-tab-space: 0;
+
+@c-tab-font-weight: 600;
+@c-tab-letter-spacing: 0.08rem;
+@c-tab-line-height: 2.4rem;
+@c-tab-text-transform: uppercase;
+
+@c-tab-hover-background-color: @clr-grey-100;
+@c-tab-selected-color: @clr-grey-900;
+@c-tab-unselected-color: @clr-grey-700;
+
+@c-tab-label-after-icon-line-height: 2rem;
+@c-tab-indicator-height: 0.2rem;
+@c-tab-indicator-background-color: @clr-grey-900;
+
+
+/* ========================================================================
+   Component: `c-tab`
+ ========================================================================== */
+
+.c-tab {
+    display: block;
+    padding: @c-tab-padding;
+    box-sizing: border-box;
+    min-width: @c-tab-min-width;
+    max-width: @c-tab-max-width;
+    min-height: @c-tab-min-height;
+    flex: 0 0 auto;
+
+    background-color: transparent;
+    text-align: center;
+    line-height: 1;
+    color: @c-tab-unselected-color;
+    cursor: pointer;
+
+    transition-property: background-color, color;
+    transition-duration: @c-tabs-transition-duration;
+    transition-timing-function: @easing;
+
+    &:hover {
+        background-color: @c-tab-hover-background-color;
+    }
+
+    &[aria-selected=true] {
+        color: @c-tab-selected-color;
+    }
 }
 
-.c-tabs__item {
-	display: inline-block;
-	list-style: none;
-	margin: 0;
-	padding: 0 2.4rem;
-	max-width: 18rem;
-	text-align: center;
-}
-		
-.c-tabs__indicator {
-	display: block;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 0;
-	height: 2px;
-	background-color: #0277BD;
-
-	transition-property: left, right;
-	transition-duration: 0.7s;
-	transition-timing-function: @easing;
+.c-tab + .c-tab {
+    margin-left: @c-tab-space;
 }
 
-.c-tabs__content-wrapper,
-.c-tabs__content {
-	position: relative;
-	width: inherit;
+.c-tab__label,
+.c-tab__icon {
+    display: block;
+    line-height: @c-tab-line-height;
+    vertical-align: middle;
 }
 
-.c-tabs__content-wrapper {
-	overflow: hidden;
+.c-tab__label {
+    font-weight: @c-tab-font-weight;
+    letter-spacing: @c-tab-letter-spacing;
+    text-transform: @c-tab-text-transform;
+    max-width: @c-tab-max-width - extract(@c-tab-padding, 2) - extract(@c-tab-padding, 4);
+    .u-text-truncate;
 }
 
-.c-tabs__content {
-	position: absolute;
-	width: inherit;
-	margin: 0;
-	transform: translateX(0);
-
-	transition-property: opacity, transform;
-	transition-duration: 0.8s;
-	transition-timing-function: @easing;
+.c-tab__icon + .c-tab__label {
+    line-height: @c-tab-label-after-icon-line-height;
 }
 
-.c-tabs__content.is-active {
-	opacity: 1;
-}
-.c-tabs__content.is-left {
-	transform: translateX(-110%);
-}
-.c-tabs__content.is-right {
-	transform: translateX(110%);
+
+/* Wrapper: `c-tabs-container`
+ ========================================================================== */
+
+.c-tabs-container {
+    position: relative;
+    display: flex;
+    justify-content: @c-tabs-justify-content;
+    flex-flow: row nowrap;
+    padding: @c-tabs-padding;
+    contain: layout style;
 }
 
-.s-animation-show .c-tabs__content {
-	opacity: 0;
+
+/* Element: `c-tab-indicator`
+ ========================================================================== */
+        
+.c-tab-indicator {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(0);
+    min-width: @c-tab-min-width;
+    height: @c-tab-indicator-height;
+    background-color: @c-tab-indicator-background-color;
+
+    transition-property: left, width;
+    transition-duration: @c-tabs-transition-duration;
+    transition-timing-function: @easing;
+}
+
+
+/* ========================================================================
+   Supports
+ ========================================================================== */
+
+@supports not (display: flex) {
+
+    .c-tabs-container {
+        display: block;
+        min-height: @c-tab-min-height;
+
+        // Micro clearfix to make articles more robust
+        &::before,
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+
+    .c-tab {
+        display: inline-block;
+        float: left;
+    }
 }
