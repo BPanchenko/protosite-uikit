@@ -26,6 +26,7 @@
 @c-tab-label-after-icon-line-height: 2rem;
 @c-tab-indicator-height: 0.2rem;
 @c-tab-indicator-background-color: @clr-grey-900;
+@c-tabs-hr-border-top: 0.1rem solid @clr-grey-300;
 
 
 /* ========================================================================
@@ -94,6 +95,12 @@
     flex-flow: row nowrap;
     padding: @c-tabs-padding;
     contain: layout style;
+}
+
+.c-tabs-container + hr {
+    margin-top: 0;
+    border-bottom: none;
+    border-top: @c-tabs-hr-border-top;
 }
 
 
