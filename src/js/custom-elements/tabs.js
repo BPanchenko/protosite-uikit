@@ -41,12 +41,12 @@
                 else tab.ariaSelected = false;
             });
 
-            console.log(selectedTab);
-
             // dispatch a change event with the data of the selected tab
-            this.dataset.activeTab = selectedTab.id;
-            this.dataset.activeTabpanel = selectedTab.ariaControls;
-            this.dispatchEvent(new Event("change", { bubbles: true }));
+            if(selectedTab) {
+                this.dataset.activeTab = selectedTab.id;
+                this.dataset.activeTabpanel = selectedTab.ariaControls;
+                this.dispatchEvent(new Event("change", { bubbles: true }));
+            }
 
             this.renderIndicator();
 

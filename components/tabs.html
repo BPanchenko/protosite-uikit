@@ -79,13 +79,62 @@
                         </section>
 
                         <script>
-                            let tabsContainer = document.body.getElementsByTagName('c-tablist')[0];
-                            let tabpanels = document.body.querySelectorAll('*[role=tabpanel]');
-                            tabsContainer.addEventListener('change', e => {
-                                let activeTabpanel = document.getElementById(e.currentTarget.dataset.activeTabpanel);
-                                tabpanels.forEach(tp => tp.setAttribute('aria-hidden', true));
-                                activeTabpanel.setAttribute('aria-hidden', false);
-                            });
+                            {
+                                let container = document.body.querySelectorAll('main[role=main] > section')[0];
+                                let tabsContainer = container.querySelector('c-tablist');
+                                let tabpanels = container.querySelectorAll('*[role=tabpanel]');
+                                tabsContainer.addEventListener('change', e => {
+                                    let activeTabpanel = document.getElementById(e.currentTarget.dataset.activeTabpanel);
+                                    tabpanels.forEach(tp => tp.setAttribute('aria-hidden', true));
+                                    activeTabpanel.setAttribute('aria-hidden', false);
+                                });
+                            }
+                        </script>
+                    </article>
+                </section>
+
+                <section class="u-margin-large-top">
+                    <header>
+                        <h3>Вкладки с иконками на панели</h3>
+                    </header>
+                    <article class="u-margin-top">
+                        <section class="c-panel">
+                            <c-tablist>
+                                <c-tab aria-controls="tabpanel3" id="tab3" data-text="Вкладка #1"></c-tab>
+                                <c-tab aria-controls="tabpanel4" id="tab4" data-text="Вкладка #2"></c-tab>
+                            </c-tablist>
+                            <div class="c-panel__body">
+
+                                <section id="tabpanel3" aria-labelledby="tab3" role="tabpanel" aria-hidden="false">
+                                    <h4 class="u-margin-top-remove">Резкий хорал глазами современников</h4>
+                                    <p>
+                                        Эти слова совершенно справедливы, однако либидо начинает декаданс. Воображение начинает экспрессионизм, это же положение обосновывал Ж.Польти в книге "Тридцать шесть драматических ситуаций". Стиль, следовательно, изящно имитирует феномер "психической мутации", подобный исследовательский подход к проблемам художественной типологии можно обнаружить у К.Фосслера. Энергия либидо, как бы это ни казалось парадоксальным, монотонно начинает резкий художественный идеал. Художественная богема дает первоначальный эйдос.
+                                    </p>
+                                </section>
+
+                                <section id="tabpanel4" aria-labelledby="tab4" role="tabpanel" aria-hidden="true">
+                                    <h4 class="u-margin-top-remove">Почему сложен стиль?</h4>
+                                    <p>
+                                        Героическое продолжает резкий эйдос. Весьма существенно следующее: типическое монотонно диссонирует эпитет. Меланхолик многопланово выстраивает филогенез. Классицизм, согласно традиционным представлениям, просветляет классический реализм.
+                                    </p>
+                                    <p>
+                                        Воображение, как бы это ни казалось парадоксальным, аккумулирует символизм. Хорал сложен. Меланхолик выстраивает невротический онтогенез. Переходное состояние ненаблюдаемо.
+                                    </p>
+                                </section>
+                            </div>
+                        </section>
+
+                        <script>
+                            {
+                                let container = document.body.querySelectorAll('main[role=main] > section')[1];
+                                let tabsContainer = container.querySelector('c-tablist');
+                                let tabpanels = container.querySelectorAll('*[role=tabpanel]');
+                                tabsContainer.addEventListener('change', e => {
+                                    let activeTabpanel = document.getElementById(e.currentTarget.dataset.activeTabpanel);
+                                    tabpanels.forEach(tp => tp.setAttribute('aria-hidden', true));
+                                    activeTabpanel.setAttribute('aria-hidden', false);
+                                });
+                            }
                         </script>
                     </article>
                 </section>
