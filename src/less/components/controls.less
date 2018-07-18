@@ -2,81 +2,68 @@
 
 
 /* ========================================================================
+   Component: `c-ctrl`
+ ========================================================================== */
+
+.c-ctrl {
+    display: inline-block;
+    min-width: 2.2rem;
+    min-height: 2.2rem;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+
+/* ========================================================================
    Component: `c-ctrl-sort`
  ========================================================================== */
 
-/*a*/
+@c-ctrl-sort-color: @clr-grey-400;
+@c-ctrl-sort-hover-color: @clr-grey-800;
+@c-ctrl-sort-active-color: @clr-grey-900;
+@c-ctrl-sort-after-color: transparent;
+@c-ctrl-sort-after-hover-color: @clr-grey-400;
+@c-ctrl-sort-after-active-color: @clr-grey-900;
+
 .c-ctrl-sort {
-	position: relative;
-	display: inline-block;
-	padding-right: 1.6rem;
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: none;
 
-	font-size: inherit;
-	line-height: inherit;
-	text-decoration: none;
+    color: @c-ctrl-sort-color;
+    cursor: pointer;
 
-	color: @muted-color;
-
-	&::before,
-	&::after {
-		position: absolute;
-		right: 0;
-		display: inline-block;
-
-		font-family: 'Iconic';
-		font-size: 1rem;
-		line-height: 1;
-		transform-origin: center;
-		opacity: .2;
-	}
-
-	&::after {
-		content: '\e14f'; // caret-top
-		bottom: 46%;
-	}
-	&::before {
-		content: '\e14c'; // caret-bottom
-		top: 46%;
-	}
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 2.2rem;
+        vertical-align: middle;
+        text-align: center;
+        font-family: 'Iconic';
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1;
+        color: @c-ctrl-sort-after-color;
+        transition: color 0.16s @easing;
+    }
+    &[aria-sort="ascending"]::after {
+        content: '\e246';
+    }
+    &[aria-sort="descending"]::after {
+        content: '\e247';
+    }
 }
-
-
-/* State: hover
- ========================================================================== */
 
 .c-ctrl-sort:hover {
-	color: @caption-color;
-	&::before,
-	&::after {
-		opacity: .4;
-	}
+    color: @c-ctrl-sort-hover-color;
+    &::after {
+        color: @c-ctrl-sort-after-hover-color;
+    }
 }
 
-
-/* State: active
- ========================================================================== */
-
-.c-ctrl-sort[aria-sort="ascending"],
-.c-ctrl-sort[aria-sort="descending"] {
-	color: @caption-color;
-}
-.c-ctrl-sort[aria-sort="ascending"] {
-	&::before {
-		opacity: 1;
-		transform: translateY(-50%);
-	}
-	&::after {
-		content: '';
-		display: none;
-	}
-}
-.c-ctrl-sort[aria-sort="descending"] {
-	&::before {
-		content: '';
-		display: none;
-	}
-	&::after {
-		opacity: 1;
-		transform: translateY(50%);
-	}
+.c-ctrl-sort[aria-selected=true] {
+    color: @c-ctrl-sort-active-color;
+    &::after {
+        color: @c-ctrl-sort-after-active-color;
+    }
 }
