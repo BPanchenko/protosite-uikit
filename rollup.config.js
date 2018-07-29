@@ -2,7 +2,6 @@ import autoprefixer from 'autoprefixer';
 import fs from 'fs';
 
 import less from 'rollup-plugin-less';
-import alias from 'rollup-plugin-alias';
 import commonjs from 'rollup-plugin-commonjs'
 import cssnano from 'cssnano';
 import nodeGlobals from 'rollup-plugin-node-globals';
@@ -12,12 +11,10 @@ import postcss from 'postcss';
 import replace from 'rollup-plugin-replace';
 import serve from 'rollup-plugin-serve';
 import uglify from 'rollup-plugin-uglify';
-import vue from 'rollup-plugin-vue';
 
 if (fs.existsSync('./dist/protosite-uikit.js.map')) fs.unlinkSync('./dist/protosite-uikit.js.map');
 
 let plugins = [
-    alias({ vue$: 'vue/dist/vue.common.js' }),
     less({
         insert: false,
         output: './dist/protosite-uikit.css',
@@ -30,7 +27,6 @@ let plugins = [
         browser: true
     }),
 	commonjs(),
-    vue({ autoStyles: false, styleToImports: true }),
     process.env.NODE_ENV === 'prod' && replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
     process.env.NODE_ENV === 'prod' && uglify(),
     process.env.NODE_ENV !== 'prod' && process.env.PORT !== undefined && livereload(),
