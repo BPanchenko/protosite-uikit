@@ -24,6 +24,7 @@
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "cssnano": "^3.10.0",
+    "eslint": "^5.2.0",
     "less": "^3.8.0",
     "postcss": "^6.0.20",
     "rollup": "^0.57.1",
