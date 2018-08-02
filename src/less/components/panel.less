@@ -13,11 +13,11 @@
 // Variables of the components
 // ========================================================================
 
-@c-panel-background: @clr-grey-20;
-@c-panel-border-radius: .3rem;
-@c-panel-box-shadow: @shadow-3dp;
+@c-panel-background: @clr-white;
+@c-panel-border-radius: 0.2rem;
+@c-panel-box-shadow: @shadow-2dp;
 
-@c-panel-head-border-bottom: 1px solid @clr-grey-400;
+@c-panel-head-body-border-top: 1px solid @clr-grey-400;
 
 @c-panel-padding-left: @space-m;
 @c-panel-padding-right: @space-m;
@@ -94,15 +94,6 @@
 	border-top-left-radius: @c-panel-border-radius;
 	border-top-right-radius: @c-panel-border-radius;
 
-	&::after {
-		content: ' ';
-		position: absolute;
-		bottom: 0;
-		left: @c-panel-padding-left;
-		right: @c-panel-padding-right;
-		border-bottom: @c-panel-head-border-bottom;
-	}
-
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -120,6 +111,7 @@
  ========================================================================== */
 
 .c-panel__body {
+    position: relative;
 	padding: @c-panel-body-padding;
 
 	// Micro clearfix to make the body panel more robust
@@ -129,6 +121,18 @@
 		display: table;
 		clear: both;
 	}
+}
+
+.c-panel__head + .c-panel__body {
+    &::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: @c-panel-padding-left - @space-s;
+        right: @c-panel-padding-right - @space-s;
+        border-top: @c-panel-head-body-border-top;
+    }
 }
 
 

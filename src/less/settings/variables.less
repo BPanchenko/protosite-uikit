@@ -6,7 +6,7 @@
 @import "breakpoints";
 @import "colors/index";
 @import "shadow";
-@import "typeface";
+@import "typography";
 
 @easing: cubic-bezier(0.3, 0, 0.2, 1);
 @unit: 1.6rem;
@@ -27,36 +27,12 @@
 @warning-color: @clr-orange-800;
 
 
-// Headers
-// ========================================================================
-
-@h1-font: 400 3.6rem/4.2rem @font-family-serif;
-@h1-margin: @space-s 0;
-@h1-text-transform: none;
-@h2-font: 400 2.8rem/3.2rem @font-family-serif;
-@h2-margin: @space-s 0;
-@h2-text-transform: none;
-@h3-font: 400 2rem/2.6rem @font-family-serif;
-@h3-margin: @space-xs 0;
-@h3-text-transform: none;
-
-@h4-font: 600 1.8rem/2rem @font-family-sans;
-@h4-margin: @space-m 0 @space-xs;
-@h4-text-transform: none;
-@h5-font: 600 1.4rem/1.6rem @font-family-sans;
-@h5-margin: @space-m 0 @space-xs;
-@h5-text-transform: uppercase;
-@h6-font: 800 1.1rem/1.4rem @font-family-sans;
-@h6-margin: @space-s 0 @space-xs;
-@h6-text-transform: uppercase;
-
-
 // Link
 // ========================================================================
 
 @link-text-decoration: underline;
 @link-hover-text-decoration: none;
-@link-transition: color 160ms @easing;
+@link-transition: color 0.16s @easing;
 
 
 // Spaces
@@ -65,6 +41,6 @@
 @space-default: @unit;
 @space-xs: @unit / 4;
 @space-s: @unit / 2;
-@space-m: @unit;
-@space-l: 2 * @unit;
-@space-xl: 3.5 * @unit;
+@space-m: 1.5 * @unit;
+@space-l: 2.5 * @unit;
+@space-xl: 4.5 * @unit;
