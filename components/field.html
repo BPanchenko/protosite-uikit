@@ -20,9 +20,10 @@
         <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
 
         <link rel="stylesheet/less" type="text/css" href="../src/less/core.less">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
+        <script src="../node_modules/less/dist/less.js" data-env="development"></script>
+        <script>less.watch();</script>
 
-        <script src="../dist/ui-core.js"></script>
+        <script src="../src/js/custom-elements/field.js"></script>
     </head>
     <body style="background-color: #F8F6F7;">
         <div class="o-container">
@@ -52,57 +53,56 @@
                                 <h5>Простые поля ввода</h5>
                             </div>
                             <div class="c-panel__body">
-                                <label class="c-field-box">
-                                    <span class="c-field-label">Текст</span>
-                                    <input type="text" name="text" class="c-field" role="textbox">
-                                </label>
+                                <c-field name="text" data-label="Текст"></c-field>
 
-                                <label class="c-field-box u-margin-top">
-                                    <span class="c-field-label">Список</span>
-                                    <select name="type" class="c-field">
-                                        <option value="0"></option>
-                                        <option value="1">Competitive</option>
-                                        <option value="1">Cascade-forward backprop</option>
-                                        <option value="1">Elman backprop</option>
-                                        <option value="1">Feed-forward backprop</option>
-                                        <option value="1">Time delay backprop</option>
-                                        <option value="1">Generalized regression</option>
-                                        <option value="1">Hopfield</option>
-                                        <option value="1">Linear layer (design)</option>
-                                        <option value="1">Linear layer (train)</option>
-                                        <option value="1">LVQ</option>
-                                        <option value="1">Perceptron</option>
-                                        <option value="1">Probabalistic</option>
-                                        <option value="1">Radial basis (exact fit)</option>
-                                        <option value="1">Radial basis (fewer neurons)</option>
-                                        <option value="1">Self-organizing map</option>
-                                    </select>
-                                </label>
+                                <c-field name="type" class="u-margin-top" type="select" data-label="Список">
+                                    <option value="0"></option>
+                                    <option value="1">Competitive</option>
+                                    <option value="1">Cascade-forward backprop</option>
+                                    <option value="1">Elman backprop</option>
+                                    <option value="1">Feed-forward backprop</option>
+                                    <option value="1">Time delay backprop</option>
+                                    <option value="1">Generalized regression</option>
+                                    <option value="1">Hopfield</option>
+                                    <option value="1">Linear layer (design)</option>
+                                    <option value="1">Linear layer (train)</option>
+                                    <option value="1">LVQ</option>
+                                    <option value="1">Perceptron</option>
+                                    <option value="1">Probabalistic</option>
+                                    <option value="1">Radial basis (exact fit)</option>
+                                    <option value="1">Radial basis (fewer neurons)</option>
+                                    <option value="1">Self-organizing map</option>
+                                </c-field>
 
-                                <label class="c-field-box u-margin-top">
-                                    <span class="c-field-label">Многострочный текст</span>
-                                    <textarea name="text" class="c-field" role="textbox"></textarea>
-                                </label>
+                                <c-field name="multiline" class="u-margin-top" type="textarea" data-label="Многострочный текст"></c-field>
 
                                 <form class="o-form u-margin-top">
-                                    <fieldset>
-                                        <legend>Переключатель</legend>
-                                        <label>
-                                            <input type="radio" class="c-field" name="radiobutton" checked>
-                                            <span class="c-field-label">Кофе</span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" class="c-field" name="radiobutton">
-                                            <span class="c-field-label">Чай</span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" class="c-field" name="radiobutton">
-                                            <span class="c-field-label">Пиво</span>
-                                        </label>
+                                    <fieldset role="radiogroup">
+                                        <legend>Радиокнопка</legend>
+                                        <c-field name="radiobutton"
+                                                 aria-checked="true"
+                                                 data-label="Кофе"
+                                                 data-type="radio">
+                                        </c-field>
+                                        <c-field name="radiobutton"
+                                                 aria-checked="true"
+                                                 data-label="Чай"
+                                                 data-type="radio">
+                                        </c-field>
+                                        <c-field name="radiobutton"
+                                                 aria-checked="true"
+                                                 data-label="Пиво"
+                                                 data-type="radio">
+                                        </c-field>
                                     </fieldset>
+                                    <c-field name="checkbox"
+                                             aria-checked="true"
+                                             data-label="Флажок"
+                                             data-type="checkbox">
+                                    </c-field>
                                     <label>
-                                        <input type="checkbox" class="c-field" name="checkbox" checked>
-                                        <span class="c-field-label">Флажок</span>
+                                        <c-switch name="switcher" off-value="false" on-value="true" off-label="off" on-label="on"></c-switch>
+                                        <span class="c-field-label">Переключатель</span>
                                     </label>
                                 </form>
 
@@ -115,29 +115,11 @@
                                 <h5>Специфичные поля</h5>
                             </div>
                             <div class="c-panel__body">
-                                <label class="c-field-box">
-                                    <span class="c-field-label">Номер</span>
-                                    <input type="text" class="c-field" pattern="^-?\d+\.?\d*$" role="textbox">
-                                    <span class="c-field-error">Ошибка ввода</span>
-                                </label>
-
-                                <label class="c-field-box u-margin-top">
-                                    <span class="c-field-label">Пароль</span>
-                                    <input type="password" name="password" class="c-field" pattern="^\w{6,20}$" role="textbox">
-                                    <button type="button" class="c-field-button">
-                                        <span class="iconic" data-glyph="eye-closed"></span>
-                                    </button>
-                                    <span class="c-field-error">Пароль не соответствует требованиям</span>
-                                    <span class="c-field-info c-popover-holder" ui-popover="{ content: 'Пароль должен иметь длинну от 6 до 20 символов,<br>состоять из букв латинского алфавита или цифр.', position: 'bottom-left' }">Требования безопасности к паролю</span>
-                                </label>
-
-                                <label class="c-field-box u-margin-large-top">
-                                    <span class="c-field-icon">
-                                        <i class="iconic" data-glyph="envelope-closed"></i>
-                                    </span>
-                                    <input type="email" class="c-field" role="textbox" placeholder="Адрес вашей электронной почты">
-                                    <span class="c-field-error">Некорректный e-mail</span>
-                                </label>
+                                <c-field  pattern="^-?\d+\.?\d*$"
+                                          data-error="Ошибка ввода"
+                                          data-label="Номер"
+                                          data-name="text">
+                                </c-field>
 
                                 <label class="c-field-box u-margin-top">
                                     <span class="c-field-label">Прикрепить файл</span>
@@ -148,13 +130,34 @@
                                     <input type="text" name="file_fake" class="c-field js-field-fake" role="textbox">
                                 </label>
 
-                                <label class="c-field-box u-margin-large-top">
-                                    <input type="search" name="q" class="c-field" role="textbox" placeholder="Введите поисковый запрос">
-                                    <span class="c-field-error">Не указан поисковый запрос</span>
-                                    <button type="submit" class="c-field-button">
-                                        <i class="iconic" data-glyph="loupe"></i>
-                                    </button>
-                                </label>
+                                <c-field name="email" type="email"
+                                         class="u-margin-large-top"
+                                         placeholder="Электропочта"
+                                         data-error="Некорректный e-mail"
+                                         data-glyph="envelope-closed">
+                                </c-field>
+
+                                <c-field  name="password" type="password"
+                                          class="u-margin-top"
+                                          placeholder="Пароль"
+                                          data-button-glyph="eye-closed"
+                                          data-error="Пароль не соответствует требованиям"
+                                          data-glyph="key">
+                                    <span class="c-field-info" data-tooltip="Пароль должен иметь длинну от 6 до 20 символов,<br>состоять из букв латинского алфавита или цифр.">
+                                        <i class="iconic" data-glyph="warning"></i>
+                                        Требования безопасности к паролю
+                                    </span>
+                                </c-field>
+
+                                <form>
+                                    <c-field name="q" type="search"
+                                             class="u-margin-large-top"
+                                             placeholder="Поиск..."
+                                             data-button-glyph="loupe"
+                                             data-button-type="submit"
+                                             data-error="Не указан поисковый запрос">
+                                    </c-field>
+                                </form>
 
                             </div>
                         </section>
@@ -165,16 +168,18 @@
                                 <h5>Стилизация</h5>
                             </div>
                             <div class="c-panel__body">
-                                <label class="c-field-box s-floating">
-                                    <span class="c-field-label">Плавающая метка</span>
-                                    <input type="text" name="text" class="c-field" role="textbox">
-                                </label>
+                                <c-field class="s-floating"
+                                         data-label="Плавающая метка"
+                                         data-name="text"
+                                         data-type="text">
+                                </c-field>
 
-                                <label class="c-field-box u-margin-top">
-                                    <span class="c-field-label">Заблокированное поле ввода</span>
-                                    <input type="text" name="text" class="c-field" disabled role="textbox">
-                                </label>
-
+                                <c-field class="u-margin-top"
+                                         aria-disabled="true"
+                                         data-label="Заблокированное поле ввода"
+                                         data-name="text"
+                                         data-type="text">
+                                </c-field>
                             </div>
                         </section>
                     </div>
