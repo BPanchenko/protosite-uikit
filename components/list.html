@@ -20,7 +20,7 @@
         <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
 
         <link rel="stylesheet/less" type="text/css" href="../src/less/core.less">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js" data-env="development"></script>
+        <script src="../node_modules/less/dist/less.js" data-env="development"></script>
 
     </head>
     <body>
@@ -59,22 +59,22 @@
                         <div class="c-list">
                             <section class="c-list__head">
                                 <div class="c-list__cell">
-                                    <a href="#" class="c-ctrl-sort" aria-sort="descending">id</a>
+                                    <a href="#" class="c-ctrl-sort" aria-sort="descending" aria-selected="true">id</a>
                                 </div>
                                 <div class="c-list__cell">
                                     <a href="#" class="c-ctrl-sort" aria-sort="ascending">name</a>
                                 </div>
                                 <div class="c-list__cell">
-                                    <a href="#" class="c-ctrl-sort">class</a>
+                                    <a href="#" class="c-ctrl-sort" aria-sort="ascending">class</a>
                                 </div>
                                 <div class="c-list__cell">
-                                    <a href="#" class="c-ctrl-sort">epoch</a>
+                                    <a href="#" class="c-ctrl-sort" aria-sort="descending">epoch</a>
                                 </div>
                                 <div class="c-list__cell">
-                                    <a href="#" class="c-ctrl-sort">axis</a>
+                                    <a href="#" class="c-ctrl-sort" aria-sort="descending">axis</a>
                                 </div>
                                 <div class="c-list__cell">
-                                    <a href="#" class="c-ctrl-sort">eccentricity</a>
+                                    <a href="#" class="c-ctrl-sort" aria-sort="descending">eccentricity</a>
                                 </div>
                             </section>
                             <div class="c-list__body">
@@ -90,6 +90,35 @@
                             <div class="c-list__meta"></div>
                             <div class="c-list__foot"></div>
                         </div>
+                        <script>
+                            {
+                                let list = document.body.querySelector('.c-list');
+                                let listHead = document.body.querySelector('.c-list__head');
+                                let ctrlSortCollection = list.querySelectorAll('.c-ctrl-sort');
+
+                                function onClickHead(e) {
+                                    e.preventDefault();
+
+                                    let ctrl = e.target;
+                                    let selected = ctrl.getAttribute('aria-selected') == 'true';
+                                    let sort = ctrl.getAttribute('aria-sort');
+
+                                    ctrlSortCollection.forEach(elem => {
+                                        elem != ctrl && elem.setAttribute('aria-selected', false)
+                                    });
+
+                                    if (selected) {
+                                        ctrl.setAttribute('aria-sort', sort == 'ascending' ? 'descending' : 'ascending');
+                                    } else {
+                                        ctrl.setAttribute('aria-selected', true);
+                                    }
+
+                                    return;
+                                }
+
+                                listHead.addEventListener('click', onClickHead, false);
+                            }
+                        </script>
                     </div>
                 </section>
             </main>
