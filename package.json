@@ -4,13 +4,10 @@
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./index.html",
-
   "scripts": {
-    "dev": "rollup -c -w --environment NODE_ENV:dev,PORT:8080",
-    "build:dev": "rollup -c -w --environment NODE_ENV:dev",
-    "build:prod": "rollup -c --environment NODE_ENV:prod"
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
   },
-
   "analyze": true,
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
@@ -20,7 +17,10 @@
     "cssnano": "^3.10.0",
     "eslint": "^5.2.0",
     "less": "^3.8.0",
-    "postcss": "^6.0.20"
+    "postcss": "^6.0.20",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   },
   "eslintConfig": {
     "env": {
@@ -35,7 +35,13 @@
       "no-unused-vars": "warn",
       "constructor-super": "warn",
       "valid-typeof": "warn",
-      "quotes": [2, "single", { "allowTemplateLiterals": true }]
+      "quotes": [
+        2,
+        "single",
+        {
+          "allowTemplateLiterals": true
+        }
+      ]
     }
   },
   "homepage": "https://github.com/BPanchenko/protosite.uikit#readme",
