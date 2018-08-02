@@ -4,23 +4,17 @@
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./index.html",
+
   "scripts": {
     "dev": "rollup -c -w --environment NODE_ENV:dev,PORT:8080",
     "build:dev": "rollup -c -w --environment NODE_ENV:dev",
     "build:prod": "rollup -c --environment NODE_ENV:prod"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BPanchenko/protosite.uikit.git"
-  },
+
+  "analyze": true,
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
   },
-  "homepage": "https://github.com/BPanchenko/protosite.uikit#readme",
-  "license": "ISC",
-  "preferGlobal": true,
-  "private": false,
-  "analyze": true,
   "devDependencies": {
     "autoprefixer": "^8.1.0",
     "cssnano": "^3.10.0",
@@ -37,5 +31,29 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-serve": "^0.4.2",
     "rollup-plugin-uglify": "^3.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "parser": "esprima",
+    "rules": {
+      "no-const-assign": "warn",
+      "no-this-before-super": "warn",
+      "no-unreachable": "warn",
+      "no-unused-vars": "warn",
+      "constructor-super": "warn",
+      "valid-typeof": "warn",
+      "quotes": [2, "single", { "allowTemplateLiterals": true }]
+    }
+  },
+  "homepage": "https://github.com/BPanchenko/protosite.uikit#readme",
+  "license": "ISC",
+  "preferGlobal": true,
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BPanchenko/protosite.uikit.git"
   }
 }
