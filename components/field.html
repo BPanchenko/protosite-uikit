@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, hello@boryan.one">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="theme-color" content="#e0e0e0">
+
+        <link rel="prefetch" href="../index.html">
+        <link rel="prerender" href="../index.html">
+
+        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+
+        <link rel="stylesheet/less" type="text/css" href="../src/less/uikit.less">
+        <script src="../node_modules/less/dist/less.js" data-env="development"></script>
+        <script>less.watch();</script>
+
+        <script src="../src/js/custom-elements/field.js"></script>
+    </head>
+    <body style="background-color: #F8F6F7;">
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/field.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <h1>Protosite.UiKit</h1>
+            </header>
+
+            <nav class="o-breadcrumb">
+                <span class="o-breadcrumb__item">
+                    <a href="/" class="">Главная</a>
+                </span>
+                <span class="o-breadcrumb__item">Компоненты</span>
+                <span class="o-breadcrumb__item is-current">Поле ввода данных</span>
+            </nav>
+
+            <main role="main">
+
+                <div class="o-grid">
+                    <div class="o-grid__cell u-width-1-3 u-width-1-2@tablet u-width-1-1@handset">
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h5>Простые поля ввода</h5>
+                            </div>
+                            <div class="c-panel__body">
+                                <c-field name="text" data-label="Текст"></c-field>
+
+                                <c-field name="type" class="u-margin-top" type="select" data-label="Список">
+                                    <option value="0"></option>
+                                    <option value="1">Competitive</option>
+                                    <option value="1">Cascade-forward backprop</option>
+                                    <option value="1">Elman backprop</option>
+                                    <option value="1">Feed-forward backprop</option>
+                                    <option value="1">Time delay backprop</option>
+                                    <option value="1">Generalized regression</option>
+                                    <option value="1">Hopfield</option>
+                                    <option value="1">Linear layer (design)</option>
+                                    <option value="1">Linear layer (train)</option>
+                                    <option value="1">LVQ</option>
+                                    <option value="1">Perceptron</option>
+                                    <option value="1">Probabalistic</option>
+                                    <option value="1">Radial basis (exact fit)</option>
+                                    <option value="1">Radial basis (fewer neurons)</option>
+                                    <option value="1">Self-organizing map</option>
+                                </c-field>
+
+                                <c-field name="multiline" class="u-margin-top" type="textarea" data-label="Многострочный текст"></c-field>
+
+                                <form class="o-form u-margin-top">
+                                    <fieldset role="radiogroup">
+                                        <legend>Радиокнопка</legend>
+                                        <c-field name="radiobutton"
+                                                 aria-checked="true"
+                                                 data-label="Кофе"
+                                                 data-type="radio">
+                                        </c-field>
+                                        <c-field name="radiobutton"
+                                                 aria-checked="true"
+                                                 data-label="Чай"
+                                                 data-type="radio">
+                                        </c-field>
+                                        <c-field name="radiobutton"
+                                                 aria-checked="true"
+                                                 data-label="Пиво"
+                                                 data-type="radio">
+                                        </c-field>
+                                    </fieldset>
+                                    <c-field name="checkbox"
+                                             aria-checked="true"
+                                             data-label="Флажок"
+                                             data-type="checkbox">
+                                    </c-field>
+                                    <label>
+                                        <c-switch name="switcher" off-value="false" on-value="true" off-label="off" on-label="on"></c-switch>
+                                        <span class="c-field-label">Переключатель</span>
+                                    </label>
+                                </form>
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="o-grid__cell u-width-1-3 u-width-1-2@tablet u-width-1-1@handset">
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h5>Специфичные поля</h5>
+                            </div>
+                            <div class="c-panel__body">
+                                <c-field  pattern="^-?\d+\.?\d*$"
+                                          data-error="Ошибка ввода"
+                                          data-label="Номер"
+                                          data-name="text">
+                                </c-field>
+
+                                <label class="c-field-box u-margin-top">
+                                    <span class="c-field-label">Прикрепить файл</span>
+                                    <span class="c-field-icon">
+                                        <i class="iconic" data-glyph="data-transfer-download"></i>
+                                    </span>
+                                    <input type="file" class="c-field" multiple>
+                                    <input type="text" name="file_fake" class="c-field js-field-fake" role="textbox">
+                                </label>
+
+                                <c-field name="email" type="email"
+                                         class="u-margin-large-top"
+                                         placeholder="Электропочта"
+                                         data-error="Некорректный e-mail"
+                                         data-glyph="envelope-closed">
+                                </c-field>
+
+                                <c-field  name="password" type="password"
+                                          class="u-margin-top"
+                                          placeholder="Пароль"
+                                          data-button-glyph="eye-closed"
+                                          data-error="Пароль не соответствует требованиям"
+                                          data-glyph="key">
+                                    <span class="c-field-info" data-tooltip="Пароль должен иметь длинну от 6 до 20 символов,<br>состоять из букв латинского алфавита или цифр.">
+                                        <i class="iconic" data-glyph="warning"></i>
+                                        Требования безопасности к паролю
+                                    </span>
+                                </c-field>
+
+                                <form>
+                                    <c-field name="q" type="search"
+                                             class="u-margin-large-top"
+                                             placeholder="Поиск..."
+                                             data-button-glyph="loupe"
+                                             data-button-type="submit"
+                                             data-error="Не указан поисковый запрос">
+                                    </c-field>
+                                </form>
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="o-grid__cell u-width-1-3 u-width-1-2@tablet u-width-1-1@handset">
+                        <section class="c-panel s-transparent">
+                            <div class="c-panel__head">
+                                <h5>Стилизация</h5>
+                            </div>
+                            <div class="c-panel__body">
+                                <c-field class="s-floating"
+                                         data-label="Плавающая метка"
+                                         data-name="text"
+                                         data-type="text">
+                                </c-field>
+
+                                <c-field class="u-margin-top"
+                                         aria-disabled="true"
+                                         data-label="Заблокированное поле ввода"
+                                         data-name="text"
+                                         data-type="text">
+                                </c-field>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <span class="u-font-cursive u-text-large">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2017</span>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

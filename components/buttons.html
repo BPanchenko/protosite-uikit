@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+        
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, hello@boryan.one">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="theme-color" content="#e0e0e0">
+
+        <link rel="prefetch" href="../index.html">
+        <link rel="prerender" href="../index.html">
+
+    	<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="apple-touch-startup-image" href="/_res/img/icons/ios/startup.png">
+        <link rel="apple-touch-icon" href="/_res/img/icons/ios/touch-icon-iphone.152x152.png">
+
+        <link rel="stylesheet/less" type="text/css" href="../src/less/uikit.less">
+        <script src="../node_modules/less/dist/less.js" data-env="development"></script>
+
+        <script src="../src/js/main.js" type="module"></script>
+    </head>
+    <body>
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite.uikit/blob/master/components/buttons.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <h1>Protosite.UiKit</h1>
+            </header>
+
+            <nav class="o-breadcrumb">
+                <span class="o-breadcrumb__item">
+                    <a href="/" class="">Главная</a>
+                </span>
+                <span class="o-breadcrumb__item">Компоненты</span>
+                <span class="o-breadcrumb__item is-current">Кнопка</span>
+            </nav>
+
+            <main role="main">
+
+                <div class="o-grid">
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
+                        <section class="c-panel">
+                            <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                                <button type="button" class="c-button u-text-uppercase">Кнопка</button>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
+                        <section class="c-panel s-transparent">
+                            <div class="c-panel__body u-margin-large-top u-margin-large-bottom u-text-center">
+                                <button type="button" class="c-button u-text-uppercase">Кнопка</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <article class="o-article u-margin">
+                    <p class="o-article-lead">
+                        Кнопка - это компонент пользовательского интерфейса реализующий гипертекстовый механизм взаимодействия с пользователем.<br>
+                    </p>
+                    <p>
+                        В отличии от ссылки реакция на действие пользователя приводит к изменению содержимого блока или страницы приложения.<br>
+                        Исключением может являться только лишь кнопка как ссылка, о чем даёт понять её модификатор.
+                    </p>
+                    <p>
+                        В пассивном состоянии поведение кнопки зависит от контекста: по умолчанию кнопка приподнята над базовой поверхностью приложения, но на панели её поверхность совпадает с поверхностью контекста.
+                        <br>
+                        При нажатии кнопка уходит внутрь поверхности контекста.
+                    </p>
+                </article>
+
+
+                <div class="o-grid u-margin-large-top">
+
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
+
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Кнопки без оформления</h3>
+                            </div>
+                            <div class="c-panel__body">
+                                <c-button data-text="С рамкой" class="s-bordered u-margin-top@tablet-portrait u-margin-top-remove@handset" data-glyph-at-right="caret-bottom"></c-button>
+                                <c-button data-text="Чистая" class="s-clean u-margin-top@tablet-portrait u-margin-top-remove@handset"></c-button>
+                                <c-button data-text="Ссылка" class="s-link u-margin-top@tablet-portrait u-margin-top-remove@handset" data-glyph-at-right="external-link"></c-button>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
+
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Цветовое кодирование кнопок</h3>
+                            </div>
+                            <div class="c-panel__body">
+                                <c-button data-text="Главная" class="s-primary" data-glyph="arrow-right-angle-top-left-fill-acute"></c-button>
+                                <c-button data-text="Успешная" class="s-success u-margin-top@handset-portrait u-margin-left-remove@handset-portrait" data-glyph="check-thin"></c-button>
+                                <c-button data-text="Опасная" class="s-danger u-margin-top@tablet u-margin-left-remove@tablet u-margin-small-left@tablet-portrait u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset" data-glyph="ban"></c-button>
+                                <c-button data-text="Важная" class="s-warning u-margin-left-remove@desktop u-margin-top@desktop u-margin-small-left@tablet u-margin-top-remove@tablet-portrait u-margin-top@handset u-margin-left-remove@handset-portrait" data-glyph="warning"></c-button>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
+
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Размеры</h3>
+                            </div>
+                            <div class="c-panel__body">
+                                <c-button data-text="Крупная" class="s-large"></c-button>
+                                <c-button data-text="Средняя"></c-button>
+                                <c-button data-text="Миниатюрная" class="s-small"></c-button>
+                            </div>
+                        </section>
+
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Группа кнопок</h3>
+                            </div>
+                            <div class="c-panel__body">
+
+                                <c-button-group>
+                                    <c-button data-text="Кнопка"></c-button>
+                                    <c-button data-text="Кнопка"></c-button>
+                                    <c-button data-text="Кнопка"></c-button>
+                                </c-button-group>
+
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div class="o-grid__cell u-width-1-2 u-width-1-1@tablet-portrait">
+
+                        <section class="c-panel">
+                            <div class="c-panel__head">
+                                <h3>Графические элементы управления</h3>
+                            </div>
+                            <div class="c-panel__body">
+                                <div class="u-display-inline-block u-text-top">
+                                    <button type="button" class="c-button--icon iconic s-xlarge" data-glyph="lightbulb"></button>
+                                </div>
+                                <div class="u-display-inline-block u-text-top u-margin-left">
+                                    <button type="button" class="c-button--icon iconic s-small s-primary" data-glyph="check-thin"></button>
+                                    <button type="button" class="c-button--icon iconic s-small s-warning" data-glyph="warning"></button>
+                                    <button type="button" class="c-button--icon iconic s-small s-danger" data-glyph="ban"></button>
+                                    <button type="button" class="c-button--icon iconic s-small s-muted" data-glyph="trash"></button>
+                                    <div class="u-clearfix u-margin-small-top"></div>
+                                    <button type="button" class="c-button--icon iconic iconic-flip-horizontal" data-glyph="fullscreen-enter"></button>
+                                    <button type="button" class="c-button--icon iconic" data-glyph="data-transfer-download"></button>
+                                    <button type="button" class="c-button--icon iconic iconic-rotate-90" data-glyph="ellipses"></button>
+                                    <div class="u-clearfix u-margin-small-top"></div>
+                                    <button type="button" class="c-button--icon iconic s-large" data-glyph="bug"></button>
+                                    <button type="button" class="c-button--icon iconic s-large" data-glyph="firefly"></button>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <span class="u-font-cursive u-text-large">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2017</span>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
