@@ -1,14 +1,13 @@
 // Webpack v4
 
+let MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let path = require('path');
 
 let config = {
-    entry: {
-        main: './src/js/main.js'
-    },
+    entry: ['./src/js/uikit.js', './src/less/uikit.less'],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'uikit.js'
     },
     plugins: []
 };
@@ -29,6 +28,39 @@ module.exports = (env, argv) => {
 
     if (inProduction) {
         config.devtool = 'source-map';
+        config.module = {
+            rules: []
+        };
+        config.module.rules.push(
+            {
+                test: /\.less$/,
+                use: [
+                // MiniCssExtractPlugin.loader,
+                {
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader'
+                }, {
+                    loader: 'less-loader',
+                    options: {
+                        relativeUrls: true,
+                        sourceMap: true
+                    }
+                }]
+            },
+            {
+                test: /\.(ttf|eot|otf|woff(2)?)(\?[a-z0-9-]+)?$/,
+                loader: 'null-loader'
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            }
+        );
+        config.plugins.push(new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+        }));
     }
 
     return config;
