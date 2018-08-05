@@ -2,9 +2,10 @@
 
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let path = require('path');
+let webpack = require('webpack');
 
 let config = {
-    entry: ['./src/js/uikit.js', './src/less/uikit.less'],
+    entry: ['./src/js/uikit.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'uikit.js'
@@ -18,16 +19,23 @@ module.exports = (env, argv) => {
 
     if (inDevelopment) {
         config.devServer = {
+            contentBase: __dirname,
             hot: true,
-            inline: false,
+            inline: true,
             open: 'Chrome',
-            publicPath: '/dist/'
+            publicPath: '/dist/',
+            watchContentBase: true,
+            watchOptions: {
+                poll: true
+            }
         };
         config.devtool = 'eval-source-map';
+        config.plugins.push(new webpack.HotModuleReplacementPlugin());
     }
 
     if (inProduction) {
         config.devtool = 'source-map';
+        config.entry.push('./src/less/uikit.less');
         config.module = {
             rules: []
         };
