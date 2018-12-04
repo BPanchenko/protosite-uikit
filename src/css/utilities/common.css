@@ -1,4 +1,4 @@
-@import "../settings/variables";
+@import "../variables/colors.css";
 
 /**
  * Utilities:
@@ -26,15 +26,6 @@
  *    `u-vertical-align-{location}`
  *
  ========================================================================== */
-
-// Variables
-// ========================================================================
-
-@u-border-rounded: .3rem;
-
-@u-link-muted-color:        @clr-blue-grey-500;
-@u-link-muted-hover-color:  @clr-blue-grey-400;
-
 
 /* Clearing
  ========================================================================== */
@@ -202,17 +193,17 @@
  ========================================================================== */
 
 .u-border-circle { border-radius: 50vw; }
-.u-border-rounded { border-radius: @u-border-rounded; }
+.u-border-rounded { border-radius: 0.3rem; }
 
 
 /* Link
  ========================================================================== */
 
 .u-link-muted,
-.u-link-muted a { color: @u-link-muted-color; }
+.u-link-muted a { color: var(--clr-blue-grey-500); }
 
 .u-link-muted:hover,
-.u-link-muted a:hover { color: @u-link-muted-hover-color; }
+.u-link-muted a:hover { color: var(--clr-blue-grey-400); }
 
 .u-link-reset,
 .u-link-reset a,
