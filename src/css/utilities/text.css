@@ -1,58 +1,48 @@
-@import "../settings/variables";
+@import "../variables/palette.css";
+@import "../variables/typography.css";
 
-/**
- * Name:            Text
- * Description:     Collection of useful text utility classes to style your content
- * 
- * Component:       `u-font-*`
- *                    `u-text-*`
- * 
- * ======================================================================== */
-
-
-// Variables
-// ========================================================================
-
-@u-text-color: @text-color;
-@u-text-muted-color: @muted-color;
-@u-text-primary-color: #2d7091;
-@u-text-success-color: @success-color;
-@u-text-warning-color: #e28327;
-@u-text-danger-color: #d85030;
+:root {
+    --u-text-color: var(--text-color);
+    --u-text-muted-color: var(--muted-color);
+    --u-text-primary-color: #2d7091;
+    --u-text-success-color: var(--success-color);
+    --u-text-warning-color: #e28327;
+    --u-text-danger-color: #d85030;
+}
 
 
-// Fonts
-// ========================================================================
+/* Fonts
+ ========================================================================== */
  
-.u-font-condensed { font-family: @font-family-condensed; }
-.u-font-cursive { font-family: @font-family-cursive; }
-.u-font-monospace { font-family: @font-family-monospace; }
-.u-font-sans { font-family: @font-family-sans; }
-.u-font-serif { font-family: @font-family-serif; }
+.u-font-condensed { font-family: var(--font-family-condensed); }
+.u-font-cursive { font-family: var(--font-family-cursive); }
+.u-font-monospace { font-family: var(--font-family-monospace); }
+.u-font-sans { font-family: var(--font-family-sans); }
+.u-font-serif { font-family: var(--font-family-serif); }
 
 
 /* Size modifiers
  ========================================================================== */
 
 .u-text-default {
-    font-size: @line-height-default;
-    line-height: @line-height-default;
+    font-size: var(--line-height-default);
+    line-height: var(--line-height-default);
 }
 .u-text-large {
-    font-size: @font-size-large;
-    line-height: @line-height-large;
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
 }
 .u-text-medium {
-    font-size: @font-size-medium;
-    line-height: @line-height-medium;
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-medium);
 }
 .u-text-small {
-    font-size: @font-size-small;
-    line-height: @line-height-small;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
 }
 .u-text-xsmall {
-    font-size: @font-size-xsmall;
-    line-height: @line-height-xsmall;
+    font-size: var(--font-size-xsmall);
+    line-height: var(--line-height-xsmall);
 }
 
 
@@ -81,12 +71,12 @@
 /* Color modifiers
  ========================================================================== */
 
-.u-text-color { color: @u-text-color; }
-.u-text-muted { color: @u-text-muted-color; }
-.u-text-primary { color: @u-text-primary-color !important; }
-.u-text-success { color: @u-text-success-color !important; }
-.u-text-warning { color: @u-text-warning-color !important; }
-.u-text-danger { color: @u-text-danger-color !important; }
+.u-text-color { color: var(--u-text-color); }
+.u-text-muted { color: var(--u-text-muted-color); }
+.u-text-primary { color: var(--u-text-primary-color) !important; }
+.u-text-success { color: var(--u-text-success-color) !important; }
+.u-text-warning { color: var(--u-text-warning-color) !important; }
+.u-text-danger { color: var(--u-text-danger-color) !important; }
 
 
 /* Alignment modifiers
@@ -145,7 +135,7 @@
     .u-text-right\@handset-landscape { text-align: right !important; }
 }
 
-// handset-portrait
+/* handset-portrait */
 @media @screen-handset-portrait {
     .u-text-center\@handset,
     .u-text-center\@handset-portrait { text-align: center !important; }
@@ -159,7 +149,9 @@
 /* Wrap modifiers
  ========================================================================== */
 
-.u-text-nowrap { white-space: nowrap; }
+.u-text-nowrap {
+    white-space: nowrap;
+}
 .u-text-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
