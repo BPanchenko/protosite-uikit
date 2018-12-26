@@ -3,21 +3,23 @@
    Document style
  ========================================================================== */
 
-@import "../settings/variables";
+@import "../variables/_import.css";
 
-@body-background: @clr-grey-200;
-@selection-background-color: @clr-blue-600;
+:root {
+    --body-background: var(--clr-grey-200;
+    --selection-background-color: var(--clr-blue-600);
+}
 
 html {
-	height: 100%;
-	font-size: 62.5%;
+    height: 100%;
+    font-size: 62.5%;
 }
 
 body {
-	background: @body-background;
-	font-family: @font-family-default;
-	font-size: @font-size-default;
-	color: @text-color;
+    background: var(--body-background);
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-default);
+    color: var(--text-color);
 }
 
 article,
@@ -39,47 +41,47 @@ img,
 svg,
 progress,
 video {
-	display: inline-block;
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
 }
 
 img {
-	border: 0;
+    border: 0;
 }
 
 svg:not(:root) {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 audio:not([controls]) {
-	display: none;
-	height: 0;
+    display: none;
+    height: 0;
 }
 
 template {
-	display: none;
+    display: none;
 }
 
 /* Selection
  ========================================================================== */
 
 ::-moz-selection {
-	background-color: @selection-background-color;
-	color: @selection-color;
-	text-shadow: none;
+    background-color: var(--selection-background-color);
+    color: var(--selection-color);
+    text-shadow: none;
 }
 ::selection {
-	background-color: @selection-background-color;
-	color: @selection-color;
-	text-shadow: none;
+    background-color: var(--selection-background-color);
+    color: var(--selection-color);
+    text-shadow: none;
 }
 *[unselectable="on"] {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -87,14 +89,14 @@ template {
  ========================================================================== */
 
 hr {
-	display: block;
-	box-sizing: content-box;
-	height: 0;
-	border: 0;
-	border-top: 1px solid @clr-grey-400;
-	border-bottom: 1px solid @clr-white;
-	margin: @unit 0;
-	padding: 0;
+    display: block;
+    box-sizing: content-box;
+    height: 0;
+    border: 0;
+    border-top: 1px solid var(--clr-grey-400);
+    border-bottom: 1px solid var(--clr-white);
+    margin: var(--unit) 0;
+    padding: 0;
 }
 h1 + hr,
 h2 + hr,
@@ -102,7 +104,7 @@ h3 + hr,
 h4 + hr,
 h5 + hr,
 h6 + hr {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 
@@ -118,7 +120,7 @@ pre,
 address,
 fieldset,
 figure {
-	margin: 0 0 .3rem 0;
+    margin: 0 0 .3rem 0;
 }
 * + p,
 * + ul,
@@ -129,7 +131,7 @@ figure {
 * + address,
 * + fieldset,
 * + figure {
-	margin-top: (@unit / 2);
+    margin-top: calc(var(--unit) / 2);
 }
 
 
@@ -137,19 +139,19 @@ figure {
  ========================================================================== */
 
 label {
-	cursor: pointer;
-	user-select: none;
+    cursor: pointer;
+    user-select: none;
 }
 
 textarea {
-	resize: vertical;
+    resize: vertical;
 }
 
 fieldset,
 legend {
-	border: 0;
-	margin: 0;
-	padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 button,
@@ -157,65 +159,65 @@ input,
 optgroup,
 select,
 textarea {
-	color: inherit;
-	font: inherit;
-	margin: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
 }
 
 button,
 select {
-	text-transform: none;
+    text-transform: none;
 }
 
 button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
+    -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button[disabled],
 input[disabled] {
-	cursor: default;
+    cursor: default;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 input {
-	line-height: normal;
+    line-height: normal;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-	height: auto;
+    height: auto;
 }
 
 input[type="search"] {
-	-webkit-appearance: textfield;
+    -webkit-appearance: textfield;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 textarea {
-	overflow: auto;
+    overflow: auto;
 }
 
 optgroup {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 
@@ -223,11 +225,11 @@ optgroup {
  ========================================================================== */
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 td,
 th {
-	padding: 0;
+    padding: 0;
 }

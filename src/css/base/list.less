@@ -1,15 +1,19 @@
+
+@import "../variables/images.css";
+
 /**
  * Elements:        ul, ol
  * Description:     Defines styles for ordered and unordered lists
  * 
  ========================================================================== */
 
-@li-background: var(--svg-circle) no-repeat .8rem .5em;
-@li-background-size: .3rem .3rem;
-@li-margin-vertical: .8rem;
-@li-padding-left: 1.6rem;
-
-@li-nested-margin-vertical: 0;
+:root {
+    --li-background: var(--svg-circle) no-repeat .8rem .5em;
+    --li-background-size: .3rem .3rem;
+    --li-margin-vertical: .8rem;
+    --li-padding-left: 1.6rem;
+    --li-nested-margin-vertical: 0;
+}
 
 /* ========================================================================
    Element: Unordered list
@@ -26,11 +30,11 @@ ul {
  */
 
 ul > li {
-	padding-left: @li-padding-left;
-	margin-top: @li-margin-vertical;
-	margin-bottom: @li-margin-vertical;
-	background: @li-background;
-	background-size: @li-background-size;
+	padding-left: var(--li-padding-left);
+	margin-top: var(--li-margin-vertical);
+	margin-bottom: var(--li-margin-vertical);
+	background: var(--li-background);
+	background-size: var(--li-background-size);
 }
 
 
@@ -43,8 +47,8 @@ ul > li > ul {
     list-style: none;
 }
 ul > li > ul > li {
-	margin-top: @li-nested-margin-vertical;
-	margin-bottom: @li-nested-margin-vertical;
+	margin-top: var(--li-nested-margin-vertical);
+	margin-bottom: var(--li-nested-margin-vertical);
 }
 
 
@@ -59,8 +63,8 @@ ol {
 ol > li {
 	background: none;
 	padding-left: 0;
-	margin-top: @li-margin-vertical;
-	margin-bottom: @li-margin-vertical;
+	margin-top: var(--li-margin-vertical);
+	margin-bottom: var(--li-margin-vertical);
 }
 
 // Nested list
@@ -68,6 +72,6 @@ ol > li > ol {
 	list-style: lower-alpha;
 }
 ol > li > ol > li {
-	margin-top: @li-nested-margin-vertical;
-	margin-bottom: @li-nested-margin-vertical;
+	margin-top: var(--li-nested-margin-vertical);
+	margin-bottom: var(--li-nested-margin-vertical);
 }

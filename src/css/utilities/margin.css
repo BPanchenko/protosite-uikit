@@ -60,7 +60,7 @@
 .u-margin-left-remove { margin-left: 0 !important; }
 
 
-@media @screen-desktop-and-smaller {
+@media (--screen-desktop-and-smaller) {
 
 	.u-margin-mini-top\@desktop { margin-top: var(--u-margin-mini) !important; }
 	.u-margin-mini-bottom\@desktop { margin-bottom: var(--u-margin-mini) !important; }
@@ -95,7 +95,7 @@
 }
 
 
-@media @screen-tablet-and-smaller {
+@media (--screen-tablet-and-smaller) {
 
 	.u-margin-mini-top\@tablet { margin-top: var(--u-margin-mini) !important; }
 	.u-margin-mini-bottom\@tablet { margin-bottom: var(--u-margin-mini) !important; }
@@ -130,7 +130,7 @@
 }
 
 
-@media @screen-tablet-portrait-and-smaller {
+@media (--screen-tablet-portrait-and-smaller) {
 
 	.u-margin-mini-top\@tablet-portrait { margin-top: var(--u-margin-mini) !important; }
 	.u-margin-mini-bottom\@tablet-portrait { margin-bottom: var(--u-margin-mini) !important; }
@@ -165,7 +165,7 @@
 }
 
 
-@media @screen-handset {
+@media (--screen-handset) {
 
 	.u-margin-mini-top\@handset { margin-top: var(--u-margin-mini) !important; }
 	.u-margin-mini-bottom\@handset { margin-bottom: var(--u-margin-mini) !important; }
@@ -200,7 +200,7 @@
 }
 
 
-@media @screen-handset-portrait {
+@media (--screen-handset-portrait) {
 
 	.u-margin-mini-top\@handset-portrait { margin-top: var(--u-margin-mini) !important; }
 	.u-margin-mini-bottom\@handset-portrait { margin-bottom: var(--u-margin-mini) !important; }
