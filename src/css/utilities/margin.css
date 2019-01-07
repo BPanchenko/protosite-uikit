@@ -1,4 +1,4 @@
-@import "../variables/space.css";
+@import "../settings/space.css";
 
 :root {
     --u-margin: var(--space-default);

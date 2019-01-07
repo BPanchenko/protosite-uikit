@@ -1,7 +1,7 @@
 
-@import "../variables/breakpoints.css";
-@import "../variables/palette.css";
-@import "../variables/typography.css";
+@import "../settings/breakpoints.css";
+@import "../settings/palette.css";
+@import "../settings/typography.css";
 
 :root {
     --u-text-color: var(--text-color);

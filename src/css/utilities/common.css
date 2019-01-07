@@ -1,5 +1,5 @@
 
-@import "../variables/palette.css";
+@import "../settings/palette.css";
 
 /**
  * Utilities:
@@ -12,6 +12,7 @@
  *    `u-display-inline`
  *    `u-display-inline-block`
  *    `u-float-*`
+ *    `u-height`
  *    `u-hidden`
  *    `u-hidden@{breakpoint}`
  *    `u-visible@{breakpoint}`
@@ -28,45 +29,106 @@
  *
  ========================================================================== */
 
-/* Clearing
+
+/* Align
  ========================================================================== */
 
-.u-clearfix:before,
-.u-clearfix:after {
-    content: " ";
-    display: table;
-}
-.u-clearfix:after {
-    clear: both;
-}
-
-[class*='ui-align-'] {
+[class*='u-align'] {
     display: block;
-    margin-bottom: var(--space-s);
+    margin-bottom: var(--space-default);
 }
 
+* + [class*='u-align'] { margin-top: var(--space-default); }
 
-/* Positioning
- ========================================================================== */
-
-.u-align-left { text-align: left; }
-.u-align-right { text-align: right; }
-.u-align-center { text-align: center; }
-
-.u-float-left {
-    margin-right: var(--space-s);
-    float: left;
-}
-
-.u-float-right {
-    margin-left: var(--space-s);
-    float: right;
-}
-
-.u-centered {
+.u-align-center {
     margin-left: auto;
     margin-right: auto;
 }
+
+.u-align-left {
+    margin-top: 0;
+    margin-right: var(--space-default);
+    float: left;
+}
+
+.u-align-right {
+    margin-top: 0;
+    margin-left: var(--space-default);
+    float: right;
+}
+
+
+/* Clearfix
+ ========================================================================== */
+
+/*
+ * 1. 'table-cell' приченяется к `:: before', потому для 'table' появляется промежуток в 1px, когда он становится элементом flex, только в Webkit
+ * 2. 'table' применяется к `:: after', потому что 'clear' работает только с блочными элементами.
+ * Примечание: "display: block" в сочетании с "overflow: hidden" не работает в Safari
+ */
+
+/* 1 */
+.u-clearfix::before {
+    content: "";
+    display: table-cell;
+}
+
+/* 2 */
+.u-clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Cursor's
+ ========================================================================== */
+
+.u-cursor-auto { cursor: auto; }
+.u-cursor-default { cursor: default; }
+.u-cursor-none { cursor: none; }
+.u-cursor-context-menu { cursor: context-menu; }
+.u-cursor-help { cursor: help; }
+.u-cursor-pointer { cursor: pointer; }
+.u-cursor-progress { cursor: progress; }
+.u-cursor-wait { cursor: wait; }
+.u-cursor-cell { cursor: cell; }
+.u-cursor-crosshair { cursor: crosshair; }
+.u-cursor-text { cursor: text; }
+.u-cursor-vertical-text { cursor: vertical-text; }
+.u-cursor-alias { cursor: alias; }
+.u-cursor-copy { cursor: copy; }
+.u-cursor-move { cursor: move; }
+.u-cursor-no-drop { cursor: no-drop; }
+.u-cursor-not-allowed { cursor: not-allowed; }
+.u-cursor-all-scroll { cursor: all-scroll; }
+.u-cursor-col-resize { cursor: col-resize; }
+.u-cursor-row-resize { cursor: row-resize; }
+.u-cursor-n-resize { cursor: n-resize; }
+.u-cursor-e-resize { cursor: e-resize; }
+.u-cursor-s-resize { cursor: s-resize; }
+.u-cursor-w-resize { cursor: w-resize; }
+.u-cursor-ne-resize { cursor: ne-resize; }
+.u-cursor-nw-resize { cursor: nw-resize; }
+.u-cursor-se-resize { cursor: se-resize; }
+.u-cursor-sw-resize { cursor: sw-resize; }
+.u-cursor-ew-resize { cursor: ew-resize; }
+.u-cursor-ns-resize { cursor: ns-resize; }
+.u-cursor-nesw-resize { cursor: nesw-resize; }
+.u-cursor-nwse-resize { cursor: nwse-resize; }
+.u-cursor-zoom-in { cursor: zoom-in; }
+.u-cursor-zoom-out { cursor: zoom-out; }
+.u-cursor-grab { cursor: grab; }
+.u-cursor-grabbing { cursor: grabbing; }
+
+
+/* Float
+ ========================================================================== */
+
+[class*='u-float-'] { max-width: 100%; } /* Продотвращает переполнение содержимого */
+
+.u-float-left { float: left; }
+.u-float-right { float: right; }
 
 @media (--screen-desktop) {
     .u-align-left\@desktop { .u-align-left; }
@@ -126,46 +188,12 @@
 }
 
 
-/* Cursor's
+/* Height
  ========================================================================== */
 
-.u-cursor-auto { cursor: auto; }
-.u-cursor-default { cursor: default; }
-.u-cursor-none { cursor: none; }
-.u-cursor-context-menu { cursor: context-menu; }
-.u-cursor-help { cursor: help; }
-.u-cursor-pointer { cursor: pointer; }
-.u-cursor-progress { cursor: progress; }
-.u-cursor-wait { cursor: wait; }
-.u-cursor-cell { cursor: cell; }
-.u-cursor-crosshair { cursor: crosshair; }
-.u-cursor-text { cursor: text; }
-.u-cursor-vertical-text { cursor: vertical-text; }
-.u-cursor-alias { cursor: alias; }
-.u-cursor-copy { cursor: copy; }
-.u-cursor-move { cursor: move; }
-.u-cursor-no-drop { cursor: no-drop; }
-.u-cursor-not-allowed { cursor: not-allowed; }
-.u-cursor-all-scroll { cursor: all-scroll; }
-.u-cursor-col-resize { cursor: col-resize; }
-.u-cursor-row-resize { cursor: row-resize; }
-.u-cursor-n-resize { cursor: n-resize; }
-.u-cursor-e-resize { cursor: e-resize; }
-.u-cursor-s-resize { cursor: s-resize; }
-.u-cursor-w-resize { cursor: w-resize; }
-.u-cursor-ne-resize { cursor: ne-resize; }
-.u-cursor-nw-resize { cursor: nw-resize; }
-.u-cursor-se-resize { cursor: se-resize; }
-.u-cursor-sw-resize { cursor: sw-resize; }
-.u-cursor-ew-resize { cursor: ew-resize; }
-.u-cursor-ns-resize { cursor: ns-resize; }
-.u-cursor-nesw-resize { cursor: nesw-resize; }
-.u-cursor-nwse-resize { cursor: nwse-resize; }
-.u-cursor-zoom-in { cursor: zoom-in; }
-.u-cursor-zoom-out { cursor: zoom-out; }
-.u-cursor-grab { cursor: grab; }
-.u-cursor-grabbing { cursor: grabbing; }
-
+[class*='u-height'] { box-sizing: border-box; }
+.u-height-1-1 { height: 100%; }
+.u-height-viewport { height: 100vh; }
 
 
 /* Vertical alignment
@@ -304,20 +332,19 @@
 }
 
 
-/* Remove from the flow and screen readers on any device */
+/* Visibility
+ ========================================================================== */
+
 .u-hidden,
 [aria-hidden=true] {
     display: none !important;
     visibility: hidden !important;
 }
 
-/* Show on hover */
-.u-visible-hover:hover {
-    .u-hidden,
-    [aria-hidden=true] {
-        display: block !important;
-        visibility: visible !important;
-    }
+.u-visible-hover:hover .u-hidden,
+.u-visible-hover:hover [aria-hidden=true] {
+    display: block !important;
+    visibility: visible !important;
 }
 
 .u-visible-hover-inline:hover .u-hidden {
@@ -325,6 +352,18 @@
     visibility: visible !important;
 }
 
+
+/* Overfow
+ ========================================================================== */
+
+.uk-overflow-hidden { overflow: hidden; }
+
+.uk-overflow-auto {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.uk-overflow-auto > :last-child { margin-bottom: 0; }
 
 
 /* Position
