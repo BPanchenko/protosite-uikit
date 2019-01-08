@@ -38,11 +38,10 @@
 @import "utilities/width.css" screen;
 
 @import "./styles/background.css";
-@import "../less/styles/bordered";
-@import "../less/styles/clean";
-@import "../less/styles/color";
-@import "../less/styles/floating";
-@import "../less/styles/hovered";
+@import "./styles/clean.css";
+@import "./styles/color.css";
+@import "./styles/floating.css";
+@import "./styles/hovered.css";
 @import "./styles/loading.css";
 @import "./styles/size.css";
 @import "./styles/striped.css";

@@ -1,0 +1,28 @@
+
+@import "../settings/base.css";
+
+/* ========================================================================
+   Tag: `a`
+ ========================================================================== */
+
+a.s-floating {
+    position: relative;
+}
+
+a.s-floating,
+a.s-floating:hover { text-decoration: none; }
+
+a.s-floating::after {
+    content: ' ';
+    display: inline-block;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    border-bottom: .1rem solid currentColor;
+    width: 0;
+    transition: width .16s var(--easing);
+}
+
+a.s-floating:hover::after {
+    width: 100%;
+}

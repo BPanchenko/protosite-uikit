@@ -1,0 +1,42 @@
+
+@import "../settings/_import.css";
+
+
+/* Component: `c-panel`
+ ========================================================================== */
+
+.c-panel.s-clean {
+	background: transparent;
+	box-shadow: none;
+}
+
+
+/* Component: `c-button`
+ ========================================================================== */
+
+.c-button.s-clean {
+	padding: var(--space-s) var(--space-m);
+	background-color: transparent;
+	background-image: none;
+	box-shadow: none;
+}
+
+.c-button.s-clean:hover {
+    background-color: var(--clr-grey-400);
+}
+.c-button.s-clean:focus {
+    background-color: var(--clr-grey-400);
+}
+.c-button.s-clean:active,
+.c-button.s-clean[aria-checked=true] {
+    background-color: var(--clr-blue-grey-400);
+}
+
+.c-button.s-clean .c-button__icon {
+    margin-left: -.2rem;
+    margin-right: .8rem;
+}
+.c-button.s-clean .c-button__text + .c-button__icon {
+    margin-left: .8rem;
+    margin-right: -.2rem;
+}
