@@ -45,7 +45,7 @@
 @import "../less/styles/hovered";
 @import "../less/styles/link";
 @import "../less/styles/loading";
-@import "../less/styles/size";
-@import "../less/styles/striped";
+@import "./styles/size.css";
+@import "./styles/striped.css";
 
-@import "themes/errordoc";
+@import "./themes/errordoc.css";

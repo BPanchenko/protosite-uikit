@@ -1,14 +1,11 @@
-@import "../settings/variables";
-
-@striped-row-background-color: @clr-blue-grey-50;
+@import "../settings/palette.css";
 
 table.s-striped > tr:nth-of-type(odd),
 table.s-striped tbody tr:nth-of-type(odd),
 .c-list.s-striped .c-list__item:nth-of-type(odd) {
-	background-color: @striped-row-background-color;
+	background-color: var(--clr-blue-grey-50);
 }
 
-// remove the border bottom of the list item
 .c-list.s-striped .c-list__item::after {
 	content: normal;
 }
