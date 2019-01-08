@@ -1,4 +1,5 @@
-@import "../settings/variables";
+
+@import "../settings/_import.css";
 
 /**
  * Component:   `c-button`
@@ -40,47 +41,6 @@
  ========================================================================== */
 
 
-// Variables
-// ========================================================================
-
-@c-button-background-color: fade(@clr-grey-700, 52%);
-@c-button-background-color-focus: fade(@clr-grey-700, 70%);
-
-@c-button-background-image: @s-bg-subtle-dots-bg-image;
-@c-button-background-image-x2: @s-bg-subtle-dots-bg-image-x2;
-@c-button-background-size: @s-bg-subtle-dots-bg-size;
-@c-button-background-blend-mode: overlay;
-@c-button-border-radius: .2rem;
-
-@c-button-box-shadow: @shadow-2dp;
-@c-button-box-shadow-active: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
-
-@c-button-padding: @space-s @space-m;
-
-@c-button-color: @text-color;
-@c-button-font-family: @font-family-sans;
-@c-button-font-size: @font-size-default;
-@c-button-font-weight: 500;
-@c-button-line-height: 1.45;
-@c-button-text-shadow: .1rem .1rem fade(@clr-white, 30%), 0 .1rem fade(@clr-white, 30%);
-
-@c-button_on_panel-box-shadow: inset .1rem .1rem 0 0 rgba(255,255,255,.3), inset -.1rem -.1rem 0 0 rgba(0,0,0,.18);
-
-
-@c-button-icon-padding: @space-s;
-@c-button-icon-color: @clr-grey-700;
-@c-button-icon-color-active: @clr-grey-700;
-@c-button-icon-color-hover: @clr-grey-700;
-@c-button-icon-color-focus: @clr-grey-700;
-
-@c-button-icon-background-color: transparent;
-@c-button-icon-background-color-active: fade(@clr-blue-grey-300, 20%);
-@c-button-icon-background-color-hover: fade(@clr-grey-300, 16%);
-@c-button-icon-background-color-focus: fade(@clr-grey-300, 24%);
-
-@c-button-icon-horizontal-spacing: @space-s;
-
-
 /* ========================================================================
    Component: `c-button`
  ========================================================================== */
@@ -99,48 +59,51 @@
 	text-align: center;
 	text-transform: none;
 	text-decoration: none;
-	text-shadow: @c-button-text-shadow;
+	text-shadow: 0.1rem 0.1rem rgba(255,255,255,0.3), 0 0.1rem rgba(255,255,255,0.3);
 
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
-	padding: @c-button-padding;
+	padding: var(--space-s) var(--space-m);
 
 	cursor: pointer;
-	font-family: @c-button-font-family;
-	font-size: @c-button-font-size;
-	font-weight: @c-button-font-weight;
-	line-height: @c-button-line-height;
+	font-family: var(--font-family-sans);
+	font-size: var(--font-size-default);
+	font-weight: 500;
+	line-height: 1.45;
 
-	background-color: @c-button-background-color;
-	background-image: @c-button-background-image;
-	background-size: @c-button-background-size;
+	background-color: var(--space-s);
+	background-image: var(--img-subtle-dots);
+	background-size: var(--img-subtle-dots-size);
 	background-position: center;
-	background-blend-mode: @c-button-background-blend-mode;
+	background-blend-mode: overlay;
 
-	border-radius: @c-button-border-radius;
-	box-shadow: @c-button-box-shadow;
+	border-radius: 0.2rem;
+	box-shadow: var(--shadow-2dp);
 
-	transition: @link-transition, background-color 160ms @easing;
+	transition: var(--link-transition), background-color 160ms var(--easing);
 	user-select: none;
 }
 
 .c-button,
 .c-button:hover {
-	color: @c-button-color;
+	color: var(--text-color);
 }
 
-.c-button + .c-button { margin-left: (@unit / 2); }
+.c-button + .c-button {
+    margin-left: var(--space-s);
+}
 
 .c-button > span {
 	display: inline-block;
 	vertical-align: middle;
 }
+
 .c-button > .iconic[data-glyph] {
-	margin-right: (@unit / 2);
-	&:before {
-		vertical-align: middle;
-	}
+	margin-right: var(--space-s);
+}
+.c-button > .iconic[data-glyph]::before {
+    vertical-align: middle;
 }
 
 
@@ -151,7 +114,7 @@
 .c-button[aria-checked=true],
 .c-panel:not(.s-transparent) .c-button:active,
 .c-panel:not(.s-transparent) .c-button[aria-checked=true] {
-	box-shadow: @c-button-box-shadow-active;
+	box-shadow: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
 }
 
 
@@ -160,17 +123,15 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-	background-color: @c-button-background-color-focus;
+	background-color: var(--clr-grey-700);
 }
 
 
 /* Context: button on the panel
  ========================================================================== */
 
-.c-panel:not(.s-transparent) {
-	.c-button {
-		box-shadow: @c-button_on_panel-box-shadow;
-	}
+.c-panel:not(.s-transparent) .c-button {
+    box-shadow: inset 0.1rem 0.1rem 0 0 rgba(255,255,255,.3), inset -0.1rem -0.1rem 0 0 rgba(0,0,0,.18);
 }
 
 
@@ -200,23 +161,21 @@
  ========================================================================== */
 
 .c-button--icon {
-	.c-button;
 	background-image: none;
 	box-shadow: none !important;
 
-	padding: @c-button-icon-padding;
-	background-color: @c-button-icon-background-color;
-
-	&:hover {
-		background-color: @c-button-icon-background-color-hover;
-	}
-	&:focus {
-		background-color: @c-button-icon-background-color-focus;
-	}
-	&:active,
-	&[aria-checked=true] {
-		background-color: @c-button-icon-background-color-active;
-	}
+	padding: var(--space-s);
+	background-color: transparent;
+}
+.c-button--icon:hover {
+    background-color: var(--clr-blue-grey-300);
+}
+.c-button--icon:focus {
+    background-color: var(--clr-grey-300);
+}
+.c-button--icon:active,
+.c-button--icon[aria-checked=true] {
+    background-color: var(--clr-grey-300);
 }
 
 .c-button--icon.iconic:before,
@@ -234,7 +193,7 @@
 }
 
 .c-button--icon + .c-button--icon {
-	margin-left: @c-button-icon-horizontal-spacing;
+	margin-left: var(--space-s);
 }
 
 
@@ -244,6 +203,54 @@
 .c-button.iconic:before {
 	margin: 0 1rem 0 -1rem;
 }
+
+
+/* Style: Bordered
+ ========================================================================== */
+
+.c-button.s-bordered,
+.c-panel:not(.s-transparent) .c-button.s-bordered {
+    padding: var(--space-s) var(--space-m);
+
+    background-color: transparent;
+    background-image: none;
+    border-color: var(--clr-grey-500);
+    border-style: solid;
+    border-width: 0.1rem;
+    box-shadow: none;
+
+}
+
+.c-button.s-bordered:hover {
+    background-color: var(--clr-grey-400);
+}
+.c-button.s-bordered:focus {
+    background-color: var(--clr-grey-400);
+}
+.c-button.s-bordered:active,
+.c-button.s-bordered[aria-checked=true] {
+    background-color: var(--clr-blue-grey-400);
+}
+
+
+.c-button.s-bordered .c-button__icon {
+    margin-left: -.2rem;
+    margin-right: .8rem;
+}
+.c-button.s-bordered .c-button__text + .c-button__icon {
+    margin-left: .8rem;
+    margin-right: -.2rem;
+}
+
+
+.c-button.s-bordered.s-danger,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-danger { border-color: var(--danger-color); }
+.c-button.s-bordered.s-success,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-success { border-color: var(--success-color); }
+.c-button.s-bordered.s-primary,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-primary { border-color: var(--primary-color); }
+.c-button.s-bordered.s-warning,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-warning { border-color: var(--warning-color); }
 
 
 /* ========================================================================
@@ -256,28 +263,28 @@
 	position: relative;
 	font-size: .001px;
 	white-space: nowrap;
-
-	.c-button {
-		&:not(:first-child) {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-
-			border-left: 1px solid @clr-grey-200;
-			&:focus { border-left: 1px solid transparent; }
-		}
-		&:not(:last-child) {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-	}
-
-	.c-button + .c-button,
-	.c-button--icon + .c-button--icon,
-	.c-button--link + .c-button--link {
-		margin-left: 0;
-	}
 }
 
+.c-button-group .c-button:not(:first-child) {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+
+	border-left: 1px solid var(--clr-grey-200);
+}
+.c-button-group .c-button:not(:first-child):focus {
+    border-left: 1px solid transparent;
+}
+
+.c-button-group .c-button:not(:last-child) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.c-button-group .c-button + .c-button,
+.c-button-group .c-button--icon + .c-button--icon,
+.c-button-group .c-button--link + .c-button--link {
+    margin-left: 0;
+}
 
 /* Media queries
  ========================================================================== */
@@ -287,6 +294,6 @@
 	   only screen and (min-resolution: 2dppx)
 {
 	.c-button {
-		background-image: @c-button-background-image-x2;
+		background-image: var(--img-subtle-dots-x2);
 	}
 }
