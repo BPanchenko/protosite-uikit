@@ -1,0 +1,38 @@
+
+/* Breakpoints
+ ========================================================================== */
+
+:root {
+    --bp-xdesktop: 1360px;
+    --bp-desktop: 1180px;
+    --bp-tablet-landscape: 1024px;
+    --bp-tablet-portrait: 768px;
+    --bp-handset-landscape: 480px;
+    --bp-handset-portrait: 240px;
+
+    --bp-desktop-max: calc(var(--bp-xdesktop) - 1px);
+    --bp-tablet-landscape-max: calc(var(--bp-desktop) - 1px);
+    --bp-tablet-portrait-max: calc(var(--bp-tablet-landscape) - 1px);
+    --bp-handset-landscape-max: calc(var(--bp-tablet-portrait) - 1px);
+    --bp-handset-portrait-max: calc(var(--bp-handset-landscape) - 1px);
+}
+
+@custom-media --small-device (max-width: var(--smallscreen));
+
+@custom-media --screen-xdesktop (only screen and (min-width: var(--bp-xdesktop)));
+
+@custom-media --screen-desktop (only screen and (min-width: var(--bp-desktop)) and (max-width: var(--bp-desktop-max)));
+@custom-media --screen-desktop-and-smaller (only screen and (max-width: var(--bp-desktop-max)));
+
+@custom-media --screen-tablet (only screen and (min-width: var(--bp-tablet-portrait)) and (max-width: var(--bp-tablet-landscape-max)));
+@custom-media --screen-tablet-and-smaller (only screen and (max-width: var(--bp-tablet-landscape-max)));
+
+@custom-media --screen-tablet-landscape (only screen and (min-width: var(--bp-tablet-landscape)) and (max-width: var(--bp-tablet-landscape-max)));
+@custom-media --screen-tablet-landscape-and-smaller (only screen and (max-width: var(--bp-tablet-landscape-max)));
+
+@custom-media --screen-tablet-portrait (only screen and (min-width: var(--bp-tablet-portrait)) and (max-width: var(--bp-tablet-portrait-max)));
+@custom-media --screen-tablet-portrait-and-smaller (only screen and (max-width: var(--bp-tablet-portrait)));
+
+@custom-media --screen-handset (only screen and (max-width: var(--bp-handset-landscape)));
+@custom-media --screen-handset-landscape (only screen and (min-width: var(--bp-handset-landscape)) and (max-width: var(--bp-handset-landscape-max)));
+@custom-media --screen-handset-portrait (only screen and (max-width: var(--bp-handset-portrait-max)));

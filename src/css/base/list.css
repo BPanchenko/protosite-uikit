@@ -1,0 +1,77 @@
+
+@import "../settings/images.css";
+
+/**
+ * Elements:        ul, ol
+ * Description:     Defines styles for ordered and unordered lists
+ * 
+ ========================================================================== */
+
+:root {
+    --li-background: var(--svg-circle) no-repeat .8rem .5em;
+    --li-background-size: .3rem .3rem;
+    --li-margin-vertical: .8rem;
+    --li-padding-left: 1.6rem;
+    --li-nested-margin-vertical: 0;
+}
+
+/* ========================================================================
+   Element: Unordered list
+ ========================================================================== */
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+
+/*
+ * List item
+ */
+
+ul > li {
+	padding-left: var(--li-padding-left);
+	margin-top: var(--li-margin-vertical);
+	margin-bottom: var(--li-margin-vertical);
+	background: var(--li-background);
+	background-size: var(--li-background-size);
+}
+
+
+/*
+ * Nested list
+ */
+
+ul > li > ul {
+    margin: 0;
+    list-style: none;
+}
+ul > li > ul > li {
+	margin-top: var(--li-nested-margin-vertical);
+	margin-bottom: var(--li-nested-margin-vertical);
+}
+
+
+/* ========================================================================
+   Component: Ordered list
+ ========================================================================== */
+
+ol {
+	list-style: decimal;
+	padding-left: 2.4rem;
+}
+ol > li {
+	background: none;
+	padding-left: 0;
+	margin-top: var(--li-margin-vertical);
+	margin-bottom: var(--li-margin-vertical);
+}
+
+// Nested list
+ol > li > ol {
+	list-style: lower-alpha;
+}
+ol > li > ol > li {
+	margin-top: var(--li-nested-margin-vertical);
+	margin-bottom: var(--li-nested-margin-vertical);
+}

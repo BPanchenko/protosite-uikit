@@ -1,0 +1,444 @@
+
+@import "../settings/breakpoints.css";
+
+
+/* ========================================================================
+   Utility: `u-width-*`
+ ========================================================================== */
+
+[class*='u-width-'] {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Helper */
+.u-width-inherit { width: inherit; }
+
+/* Whole */
+.u-width-1-1 { width: 100%; }
+
+/* Halves */
+.u-width-1-2,
+.u-width-2-4,
+.u-width-3-6,
+.u-width-5-10,
+.u-width-12-24 { width: 50%; }
+
+/* Thirds */
+.u-width-1-3,
+.u-width-2-6,
+.u-width-8-24 { width: 33.333%; }
+.u-width-2-3,
+.u-width-4-6,
+.u-width-16-24 { width: 66.6667%; }
+
+/* Quarters */
+.u-width-1-4,
+.u-width-6-24 { width: 25%; }
+.u-width-3-4,
+.u-width-18-24{ width: 75%; }
+
+/* Fifths */
+.u-width-1-5,
+.u-width-2-10 { width: 20%; }
+.u-width-2-5,
+.u-width-4-10 { width: 40%; }
+.u-width-3-5,
+.u-width-6-10 { width: 60%; }
+.u-width-4-5,
+.u-width-8-10 { width: 80%; }
+
+/* Sixths */
+.u-width-1-6,
+.u-width-4-24 { width: 16.666%; }
+.u-width-5-6,
+.u-width-20-24 { width: 83.333%; }
+
+/* Tenths */
+.u-width-1-10 { width: 10%; }
+.u-width-3-10 { width: 30%; }
+.u-width-7-10 { width: 70%; }
+.u-width-9-10 { width: 90%; }
+
+/* 24 columns */
+.u-width-1-24  { width: 4.16667%; }
+.u-width-2-24  { width: 8.33333%; }
+.u-width-3-24  { width: 12.5%; }
+.u-width-5-24  { width: 20.83333%; }
+.u-width-7-24  { width: 29.16667%; }
+.u-width-9-24  { width: 37.5%; }
+.u-width-10-24 { width: 41.66667%; }
+.u-width-11-24 { width: 45.83333%; }
+.u-width-13-24 { width: 54.16667%; }
+.u-width-14-24 { width: 58.33333%; }
+.u-width-15-24 { width: 62.5%; }
+.u-width-17-24 { width: 70.83333%; }
+.u-width-19-24 { width: 79.16667%; }
+.u-width-21-24 { width: 87.5%; }
+.u-width-22-24 { width: 91.66667%; }
+.u-width-23-24 { width: 95.83333%; }
+
+
+/* Media queries
+ ========================================================================== */
+
+@media (--screen-desktop-and-smaller) {
+    
+    .u-width-1-1\@desktop { width: 100%; }
+
+    /* Halves */
+    .u-width-1-2\@desktop,
+    .u-width-2-4\@desktop,
+    .u-width-3-6\@desktop,
+    .u-width-5-10\@desktop { width: 50%; }
+
+    /* Thirds */
+    .u-width-1-3\@desktop,
+    .u-width-2-6\@desktop { width: 33.333%; }
+    .u-width-2-3\@desktop,
+    .u-width-4-6\@desktop { width: 66.666%; }
+
+    /* Quarters */
+    .u-width-1-4\@desktop { width: 25%; }
+    .u-width-3-4\@desktop { width: 75%; }
+
+    /* Fifths */
+    .u-width-1-5\@desktop,
+    .u-width-2-10\@desktop { width: 20%; }
+    .u-width-2-5\@desktop,
+    .u-width-4-10\@desktop { width: 40%; }
+    .u-width-3-5\@desktop,
+    .u-width-6-10\@desktop { width: 60%; }
+    .u-width-4-5\@desktop,
+    .u-width-8-10\@desktop { width: 80%; }
+
+    /* Sixths */
+    .u-width-1-6\@desktop { width: 16.666%; }
+    .u-width-5-6\@desktop { width: 83.333%; }
+
+    /* Tenths */
+    .generate-u-width-10-desktop(@i) when (@i < 10) {
+        .u-width-@{i}-10\@desktop { width: percentage(@i * 0.1); }
+        /* next iteration */
+        .generate-u-width-10-desktop((@i + 2));
+    }
+    .generate-u-width-10-desktop(1);
+
+    /* 24 columns */
+    .generate-u-width-24-desktop(@i) when (@i <= 24) {
+        .u-width-@{i}-24\@desktop { width: percentage(@i * 100/2400); }
+        /* next iteration */
+        .generate-u-width-24-desktop((@i + 1));
+    }
+    .generate-u-width-24-desktop(1);
+
+}
+
+@media (--screen-tablet-and-smaller) {
+
+    /* Whole */
+    .u-width-1-1\@tablet,
+    .u-width-1-1\@tablet-landscape { width: 100%; }
+
+    /* Halves */
+    .u-width-1-2\@tablet,
+    .u-width-1-2\@tablet-landscape,
+    .u-width-2-4\@tablet,
+    .u-width-2-4\@tablet-landscape,
+    .u-width-3-6\@tablet,
+    .u-width-3-6\@tablet-landscape,
+    .u-width-5-10\@tablet,
+    .u-width-5-10\@tablet-landscape { width: 50%; }
+
+    /* Thirds */
+    .u-width-1-3\@tablet,
+    .u-width-1-3\@tablet-landscape,
+    .u-width-2-6\@tablet,
+    .u-width-2-6\@tablet-landscape { width: 33.333%; }
+    .u-width-2-3\@tablet,
+    .u-width-2-3\@tablet-landscape,
+    .u-width-4-6\@tablet,
+    .u-width-4-6\@tablet-landscape { width: 66.666%; }
+
+    /* Quarters */
+    .u-width-1-4\@tablet,
+    .u-width-1-4\@tablet-landscape { width: 25%; }
+    .u-width-3-4\@tablet,
+    .u-width-3-4\@tablet-landscape { width: 75%; }
+
+    /* Fifths */
+    .u-width-1-5\@tablet,
+    .u-width-1-5\@tablet-landscape,
+    .u-width-2-10\@tablet,
+    .u-width-2-10\@tablet-landscape { width: 20%; }
+    .u-width-2-5\@tablet,
+    .u-width-2-5\@tablet-landscape,
+    .u-width-4-10\@tablet,
+    .u-width-4-10\@tablet-landscape { width: 40%; }
+    .u-width-3-5\@tablet,
+    .u-width-3-5\@tablet-landscape,
+    .u-width-6-10\@tablet,
+    .u-width-6-10\@tablet-landscape { width: 60%; }
+    .u-width-4-5\@tablet,
+    .u-width-4-5\@tablet-landscape,
+    .u-width-8-10\@tablet,
+    .u-width-8-10\@tablet-landscape { width: 80%; }
+
+    /* Sixths */
+    .u-width-1-6\@tablet,
+    .u-width-1-6\@tablet-landscape { width: 16.666%; }
+    .u-width-5-6\@tablet,
+    .u-width-5-6\@tablet-landscape { width: 83.333%; }
+
+    /* Tenths */
+    .generate-u-width-10-tablet-landscape(@i) when (@i < 10) {
+        .u-width-@{i}-10\@tablet,
+        .u-width-@{i}-10\@tablet-landscape { width: percentage(@i * 0.1); }
+        /* next iteration */
+        .generate-u-width-10-tablet-landscape((@i + 2));
+    }
+    .generate-u-width-10-tablet-landscape(1);
+
+    /* 24 columns */
+    .generate-u-width-24-tablet-landscape(@i) when (@i <= 24) {
+        .u-width-@{i}-24\@tablet,
+        .u-width-@{i}-24\@tablet-landscape { width: percentage(@i * 100/2400); }
+        /* next iteration */
+        .generate-u-width-24-tablet-landscape((@i + 1));
+    }
+    .generate-u-width-24-tablet-landscape(1);
+
+}
+
+@media (--screen-tablet-portrait-and-smaller) {
+
+    /* Whole */
+    .u-width-1-1\@tablet-portrait { width: 100%; }
+
+    /* Halves */
+    .u-width-1-2\@tablet-portrait,
+    .u-width-2-4\@tablet-portrait,
+    .u-width-3-6\@tablet-portrait,
+    .u-width-5-10\@tablet-portrait { width: 50%; }
+
+    /* Thirds */
+    .u-width-1-3\@tablet-portrait,
+    .u-width-2-6\@tablet-portrait { width: 33.333%; }
+    .u-width-2-3\@tablet-portrait,
+    .u-width-4-6\@tablet-portrait { width: 66.666%; }
+
+    /* Quarters */
+    .u-width-1-4\@tablet-portrait { width: 25%; }
+    .u-width-3-4\@tablet-portrait { width: 75%; }
+
+    /* Fifths */
+    .u-width-1-5\@tablet-portrait,
+    .u-width-2-10\@tablet-portrait { width: 20%; }
+    .u-width-2-5\@tablet-portrait,
+    .u-width-4-10\@tablet-portrait { width: 40%; }
+    .u-width-3-5\@tablet-portrait,
+    .u-width-6-10\@tablet-portrait { width: 60%; }
+    .u-width-4-5\@tablet-portrait,
+    .u-width-8-10\@tablet-portrait { width: 80%; }
+
+    /* Sixths */
+    .u-width-1-6\@tablet { width: 16.666%; }
+    .u-width-5-6\@tablet { width: 83.333%; }
+
+    /* Tenths */
+    .generate-u-width-10-tablet-portrait(@i) when (@i < 10) {
+        .u-width-@{i}-10\@tablet-portrait { width: percentage(@i * 0.1); }
+        /* next iteration */
+        .generate-u-width-10-tablet-portrait((@i + 2));
+    }
+    .generate-u-width-10-tablet-portrait(1);
+
+    /* 24 columns */
+    .generate-u-width-24-tablet-portrait(@i) when (@i <= 24) {
+        .u-width-@{i}-24\@tablet-portrait { width: percentage(@i * 100/2400); }
+        /* next iteration */
+        .generate-u-width-24-tablet-portrait((@i + 1));
+    }
+    .generate-u-width-24-tablet-portrait(1);
+
+}
+
+@media (--screen-handset) {
+
+    /* Whole */
+    .u-width-1-1\@handset,
+    .u-width-1-1\@handset-landscape { width: 100%; }
+
+    /* Halves */
+    .u-width-1-2\@handset,
+    .u-width-2-4\@handset,
+    .u-width-3-6\@handset,
+    .u-width-5-10\@handset,
+    .u-width-1-2\@handset-landscape,
+    .u-width-2-4\@handset-landscape,
+    .u-width-3-6\@handset-landscape,
+    .u-width-5-10\@handset-landscape { width: 50%; }
+
+    /* Thirds */
+    .u-width-1-3\@handset,
+    .u-width-2-6\@handset,
+    .u-width-1-3\@handset-landscape,
+    .u-width-2-6\@handset-landscape { width: 33.333%; }
+    .u-width-2-3\@handset,
+    .u-width-4-6\@handset,
+    .u-width-2-3\@handset-landscape,
+    .u-width-4-6\@handset-landscape { width: 66.666%; }
+
+    /* Quarters */
+    .u-width-1-4\@handset,
+    .u-width-1-4\@handset-landscape { width: 25%; }
+    .u-width-3-4\@handset,
+    .u-width-3-4\@handset-landscape { width: 75%; }
+
+    /* Fifths */
+    .u-width-1-5\@handset,
+    .u-width-2-10\@handset,
+    .u-width-1-5\@handset-landscape,
+    .u-width-2-10\@handset-landscape { width: 20%; }
+    .u-width-2-5\@handset,
+    .u-width-4-10\@handset,
+    .u-width-2-5\@handset-landscape,
+    .u-width-4-10\@handset-landscape { width: 40%; }
+    .u-width-3-5\@handset,
+    .u-width-6-10\@handset,
+    .u-width-3-5\@handset-landscape,
+    .u-width-6-10\@handset-landscape { width: 60%; }
+    .u-width-4-5\@handset,
+    .u-width-8-10\@handset,
+    .u-width-4-5\@handset-landscape,
+    .u-width-8-10\@handset-landscape { width: 80%; }
+
+    /* Sixths */
+    .u-width-1-6\@handset,
+    .u-width-1-6\@handset-landscape { width: 16.666%; }
+    .u-width-5-6\@handset,
+    .u-width-5-6\@handset-landscape { width: 83.333%; }
+
+    /* Tenths */
+    .u-width-1-10\@handset,
+    .u-width-1-10\@handset-landscape { width: 10%; }
+    .u-width-3-10\@handset,
+    .u-width-3-10\@handset-landscape { width: 30%; }
+    .u-width-7-10\@handset,
+    .u-width-7-10\@handset-landscape { width: 70%; }
+    .u-width-9-10\@handset,
+    .u-width-9-10\@handset-landscape { width: 90%; }
+
+    /* 24 columns */
+    .generate-u-width-24-handset-landscape(@i) when (@i <= 24) {
+        .u-width-@{i}-24\@handset,
+        .u-width-@{i}-24\@handset-landscape { width: percentage(@i * 100/2400); }
+        /* next iteration */
+        .generate-u-width-24-handset-landscape((@i + 1));
+    }
+    .generate-u-width-24-handset-landscape(1);
+
+}
+
+@media (--screen-handset-portrait) {
+
+    /* Whole */
+    .u-width-1-1\@handset-portrait { width: 100%; }
+
+    /* Halves */
+    .u-width-1-2\@handset-portrait,
+    .u-width-2-4\@handset-portrait,
+    .u-width-3-6\@handset-portrait,
+    .u-width-5-10\@handset-portrait { width: 50%; }
+
+    /* Thirds */
+    .u-width-1-3\@handset-portrait,
+    .u-width-2-6\@handset-portrait { width: 33.333%; }
+    .u-width-2-3\@handset-portrait,
+    .u-width-4-6\@handset-portrait { width: 66.666%; }
+
+    /* Quarters */
+    .u-width-1-4\@handset-portrait { width: 25%; }
+    .u-width-3-4\@handset-portrait { width: 75%; }
+
+    /* Fifths */
+    .u-width-1-5\@handset-portrait,
+    .u-width-2-10\@handset-portrait { width: 20%; }
+    .u-width-2-5\@handset-portrait,
+    .u-width-4-10\@handset-portrait { width: 40%; }
+    .u-width-3-5\@handset-portrait,
+    .u-width-6-10\@handset-portrait { width: 60%; }
+    .u-width-4-5\@handset-portrait,
+    .u-width-8-10\@handset-portrait { width: 80%; }
+
+    /* Sixths */
+    .u-width-1-6\@handset-portrait { width: 16.666%; }
+    .u-width-5-6\@handset-portrait { width: 83.333%; }
+
+    /* Tenths */
+    .u-width-1-10\@handset-portrait { width: 10%; }
+    .u-width-3-10\@handset-portrait { width: 30%; }
+    .u-width-7-10\@handset-portrait { width: 70%; }
+    .u-width-9-10\@handset-portrait { width: 90%; }
+
+    /* 24 columns */
+    .generate-u-width-24-handset-portrait(@i) when (@i <= 24) {
+        .u-width-@{i}-24\@handset-portrait { width: percentage(@i * 100/2400); }
+        /* next iteration */
+        .generate-u-width-24-handset-portrait((@i + 1));
+    }
+    .generate-u-width-24-handset-portrait(1);
+}
+
+@media (--screen-xdesktop) {
+
+    /* Whole */
+    .u-width-1-1\@xdesktop { width: 100%; }
+
+    /* Halves */
+    .u-width-1-2\@xdesktop,
+    .u-width-2-4\@xdesktop,
+    .u-width-3-6\@xdesktop,
+    .u-width-5-10\@xdesktop { width: 50%; }
+
+    /* Thirds */
+    .u-width-1-3\@xdesktop,
+    .u-width-2-6\@xdesktop { width: 33.333%; }
+    .u-width-2-3\@xdesktop,
+    .u-width-4-6\@xdesktop { width: 66.666%; }
+
+    /* Quarters */
+    .u-width-1-4\@xdesktop { width: 25%; }
+    .u-width-3-4\@xdesktop { width: 75%; }
+
+    /* Fifths */
+    .u-width-1-5\@xdesktop,
+    .u-width-2-10\@xdesktop { width: 20%; }
+    .u-width-2-5\@xdesktop,
+    .u-width-4-10\@xdesktop { width: 40%; }
+    .u-width-3-5\@xdesktop,
+    .u-width-6-10\@xdesktop { width: 60%; }
+    .u-width-4-5\@xdesktop,
+    .u-width-8-10\@xdesktop { width: 80%; }
+
+    /* Sixths */
+    .u-width-1-6\@xdesktop { width: 16.666%; }
+    .u-width-5-6\@xdesktop { width: 83.333%; }
+
+    /* Tenths */
+    .generate-u-width-10-xdesktop(@i) when (@i < 10) {
+        .u-width-@{i}-10\@xdesktop { width: percentage(@i * 0.1); }
+        /* next iteration */
+        .generate-u-width-10-xdesktop((@i + 2));
+    }
+    .generate-u-width-10-xdesktop(1);
+
+    /* 24 columns */
+    .generate-u-width-24-xdesktop(@i) when (@i <= 24) {
+        .u-width-@{i}-24\@xdesktop { width: percentage(@i * 100/2400); }
+        /* next iteration */
+        .generate-u-width-24-xdesktop((@i + 1));
+    }
+    .generate-u-width-24-xdesktop(1);
+
+}

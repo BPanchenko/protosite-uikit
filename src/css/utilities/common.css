@@ -1,4 +1,5 @@
-@import "../variables/palette.css";
+
+@import "../settings/palette.css";
 
 /**
  * Utilities:
@@ -11,6 +12,7 @@
  *    `u-display-inline`
  *    `u-display-inline-block`
  *    `u-float-*`
+ *    `u-height`
  *    `u-hidden`
  *    `u-hidden@{breakpoint}`
  *    `u-visible@{breakpoint}`
@@ -27,99 +29,55 @@
  *
  ========================================================================== */
 
-/* Clearing
+
+/* Align
  ========================================================================== */
 
-.u-clearfix:before,
-.u-clearfix:after {
-    content: " ";
-    display: table;
-}
-.u-clearfix:after { clear: both; }
-
-[class*='ui-align-'] {
+[class*='u-align'] {
     display: block;
-    margin-bottom: @space-s;
+    margin-bottom: var(--space-default);
 }
 
+* + [class*='u-align'] { margin-top: var(--space-default); }
 
-/* Positioning
- ========================================================================== */
-
-.u-align-left { text-align: left; }
-.u-align-right { text-align: right; }
-.u-align-center { text-align: center; }
-
-.u-float-left {
-    margin-right: @space-s;
-    float: left;
-}
-
-.u-float-right {
-    margin-left: @space-s;
-    float: right;
-}
-
-.u-centered {
+.u-align-center {
     margin-left: auto;
     margin-right: auto;
 }
 
-@media @screen-desktop {
-	.u-align-left\@desktop { .u-align-left; }
-	.u-align-right\@desktop { .u-align-right; }
-	.u-align-center\@desktop { .u-align-center; }
-	.u-float-left\@desktop { .u-float-left; }
-	.u-float-right\@desktop { .u-float-right; }
-	.u-centered\@desktop { .u-centered; }
+.u-align-left {
+    margin-top: 0;
+    margin-right: var(--space-default);
+    float: left;
 }
-@media @screen-tablet-landscape {
-	.u-align-left\@tablet,
-	.u-align-left\@tablet-landscape { .u-align-left; }
-	.u-align-right\@tablet,
-	.u-align-right\@tablet-landscape { .u-align-right; }
-	.u-align-center\@tablet,
-	.u-align-center\@tablet-landscape { .u-align-center; }
 
-	.u-float-left\@tablet,
-	.u-float-left\@tablet-landscape { .u-float-left; }
-	.u-float-right\@tablet,
-	.u-float-right\@tablet-landscape { .u-float-right; }
-
-	.u-centered\@tablet,
-	.u-centered\@tablet-landscape { .u-centered; }
+.u-align-right {
+    margin-top: 0;
+    margin-left: var(--space-default);
+    float: right;
 }
-@media @screen-tablet-portrait {
-	.u-align-left\@tablet-portrait { .u-align-left; }
-	.u-align-right\@tablet-portrait { .u-align-right; }
-	.u-align-center\@tablet-portrait { .u-align-center; }
-	.u-float-left\@tablet-portrait { .u-float-left; }
-	.u-float-right\@tablet-portrait { .u-float-right; }
-	.u-centered\@tablet-portrait { .u-centered; }
-}
-@media @screen-handset-landscape {
-	.u-align-left\@handset,
-	.u-align-left\@handset-landscape { .u-align-left; }
-	.u-align-right\@handset,
-	.u-align-right\@handset-landscape { .u-align-right; }
-	.u-align-center\@handset,
-	.u-align-center\@handset-landscape { .u-align-center; }
 
-	.u-float-left\@handset,
-	.u-float-left\@handset-landscape { .u-float-left; }
-	.u-float-right\@handset,
-	.u-float-right\@handset-landscape { .u-float-right; }
 
-	.u-centered\@handset,
-	.u-centered\@handset-landscape { .u-centered; }
+/* Clearfix
+ ========================================================================== */
+
+/*
+ * 1. 'table-cell' приченяется к `:: before', потому для 'table' появляется промежуток в 1px, когда он становится элементом flex, только в Webkit
+ * 2. 'table' применяется к `:: after', потому что 'clear' работает только с блочными элементами.
+ * Примечание: "display: block" в сочетании с "overflow: hidden" не работает в Safari
+ */
+
+/* 1 */
+.u-clearfix::before {
+    content: "";
+    display: table-cell;
 }
-@media @screen-handset-portrait {
-	.u-align-left\@handset-portrait { .u-align-left; }
-	.u-align-right\@handset-portrait { .u-align-right; }
-	.u-align-center\@handset-portrait { .u-align-center; }
-	.u-float-left\@handset-portrait { .u-float-left; }
-	.u-float-right\@handset-portrait { .u-float-right; }
-	.u-centered\@handset-portrait { .u-centered; }
+
+/* 2 */
+.u-clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 
@@ -164,6 +122,79 @@
 .u-cursor-grabbing { cursor: grabbing; }
 
 
+/* Float
+ ========================================================================== */
+
+[class*='u-float-'] { max-width: 100%; } /* Продотвращает переполнение содержимого */
+
+.u-float-left { float: left; }
+.u-float-right { float: right; }
+
+@media (--screen-desktop) {
+    .u-align-left\@desktop { .u-align-left; }
+    .u-align-right\@desktop { .u-align-right; }
+    .u-align-center\@desktop { .u-align-center; }
+    .u-float-left\@desktop { .u-float-left; }
+    .u-float-right\@desktop { .u-float-right; }
+    .u-centered\@desktop { .u-centered; }
+}
+@media (--screen-tablet-landscape) {
+    .u-align-left\@tablet,
+    .u-align-left\@tablet-landscape { .u-align-left; }
+    .u-align-right\@tablet,
+    .u-align-right\@tablet-landscape { .u-align-right; }
+    .u-align-center\@tablet,
+    .u-align-center\@tablet-landscape { .u-align-center; }
+
+    .u-float-left\@tablet,
+    .u-float-left\@tablet-landscape { .u-float-left; }
+    .u-float-right\@tablet,
+    .u-float-right\@tablet-landscape { .u-float-right; }
+
+    .u-centered\@tablet,
+    .u-centered\@tablet-landscape { .u-centered; }
+}
+@media (--screen-tablet-portrait) {
+    .u-align-left\@tablet-portrait { .u-align-left; }
+    .u-align-right\@tablet-portrait { .u-align-right; }
+    .u-align-center\@tablet-portrait { .u-align-center; }
+    .u-float-left\@tablet-portrait { .u-float-left; }
+    .u-float-right\@tablet-portrait { .u-float-right; }
+    .u-centered\@tablet-portrait { .u-centered; }
+}
+@media (--screen-handset-landscape) {
+    .u-align-left\@handset,
+    .u-align-left\@handset-landscape { .u-align-left; }
+    .u-align-right\@handset,
+    .u-align-right\@handset-landscape { .u-align-right; }
+    .u-align-center\@handset,
+    .u-align-center\@handset-landscape { .u-align-center; }
+
+    .u-float-left\@handset,
+    .u-float-left\@handset-landscape { .u-float-left; }
+    .u-float-right\@handset,
+    .u-float-right\@handset-landscape { .u-float-right; }
+
+    .u-centered\@handset,
+    .u-centered\@handset-landscape { .u-centered; }
+}
+@media (--screen-handset-portrait) {
+    .u-align-left\@handset-portrait { .u-align-left; }
+    .u-align-right\@handset-portrait { .u-align-right; }
+    .u-align-center\@handset-portrait { .u-align-center; }
+    .u-float-left\@handset-portrait { .u-float-left; }
+    .u-float-right\@handset-portrait { .u-float-right; }
+    .u-centered\@handset-portrait { .u-centered; }
+}
+
+
+/* Height
+ ========================================================================== */
+
+[class*='u-height'] { box-sizing: border-box; }
+.u-height-1-1 { height: 100%; }
+.u-height-viewport { height: 100vh; }
+
 
 /* Vertical alignment
  ========================================================================== */
@@ -203,7 +234,9 @@
 .u-link-muted a { color: var(--clr-blue-grey-500); }
 
 .u-link-muted:hover,
-.u-link-muted a:hover { color: var(--clr-blue-grey-400); }
+.u-link-muted a:hover {
+    color: var(--clr-blue-grey-400);
+}
 
 .u-link-reset,
 .u-link-reset a,
@@ -225,101 +258,93 @@
 /* Visibility
  ========================================================================== */
 
-/* xdesktop and bigger */
-@media @screen-xdesktop {
+@media (--screen-xdesktop) {
     .u-hidden\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
     .u-visible\@tablet-portrait,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait { display: none !important; }
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
 }
 
-/* desktop */
-@media @screen-desktop {
-	.u-hidden\@desktop,
-	.u-visible\@xdesktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait { display: none !important; }
+@media (--screen-desktop) {
+    .u-hidden\@desktop,
+    .u-visible\@xdesktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
 }
 
-/* tablet-landscape */
-@media @screen-tablet-landscape {
-	.u-hidden\@tablet,
-	.u-hidden\@tablet-landscape,
-	.u-visible\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait { display: none !important; }
+@media (--screen-tablet-landscape) {
+    .u-hidden\@tablet,
+    .u-hidden\@tablet-landscape,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
 }
 
-/* tablet-portrait */
-@media @screen-tablet-portrait {
-	.u-hidden\@tablet,
-	.u-hidden\@tablet-portrait,
-	.u-visible\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet-landscape,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait { display: none !important; }
+@media (--screen-tablet-portrait) {
+    .u-hidden\@tablet,
+    .u-hidden\@tablet-portrait,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet-landscape,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
 }
 
-/* handset-landscape */
-@media @screen-handset-landscape {
-	.u-hidden\@handset,
-	.u-hidden\@handset-landscape,
-	.u-visible\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset-portrait { display: none !important; }
+@media (--screen-handset-landscape) {
+    .u-hidden\@handset,
+    .u-hidden\@handset-landscape,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset-portrait { display: none !important; }
 }
 
-// handset-portrait and smaller
-@media @screen-handset-portrait {
-	.u-hidden\@handset,
-	.u-hidden\@handset-portrait,
-	.u-visible\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset-landscape { display: none !important; }
+@media (--screen-handset-portrait) {
+    .u-hidden\@handset,
+    .u-hidden\@handset-portrait,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset-landscape { display: none !important; }
 }
 
-// hide elements when printing
 @media print {
-	.u-hidden\@print {
-		display: none !important;
-		visibility: hidden !important;
-	}
+    .u-hidden\@print {
+        display: none !important;
+        visibility: hidden !important;
+    }
 }
 
 
-/* Remove from the flow and screen readers on any device */
+/* Visibility
+ ========================================================================== */
+
 .u-hidden,
 [aria-hidden=true] {
     display: none !important;
     visibility: hidden !important;
 }
 
-/* Show on hover */
-.u-visible-hover:hover {
-    .u-hidden,
-    [aria-hidden=true] {
-		display: block !important;
-		visibility: visible !important;
-    }
+.u-visible-hover:hover .u-hidden,
+.u-visible-hover:hover [aria-hidden=true] {
+    display: block !important;
+    visibility: visible !important;
 }
 
 .u-visible-hover-inline:hover .u-hidden {
@@ -327,6 +352,18 @@
     visibility: visible !important;
 }
 
+
+/* Overfow
+ ========================================================================== */
+
+.uk-overflow-hidden { overflow: hidden; }
+
+.uk-overflow-auto {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.uk-overflow-auto > :last-child { margin-bottom: 0; }
 
 
 /* Position

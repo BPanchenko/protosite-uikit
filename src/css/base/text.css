@@ -1,0 +1,171 @@
+
+@import "../settings/_import.css";
+
+/**
+ * Name:            Text elements
+ * Description:     Defining styles for formatting text
+ *
+ * ======================================================================== */
+
+
+/* Links
+ ========================================================================== */
+
+a,
+.u-link {
+    outline: 0;
+    background-color: transparent;
+    color: var(--link-color);
+    text-decoration: var(--link-text-decoration);
+    transition: var(--link-transition);
+}
+a:hover,
+.u-link:hover {
+    outline: 0;
+    color: var(--link-hover-color);
+    text-decoration: var(--link-hover-text-decoration);
+}
+
+
+/* Weight modifiers
+ ========================================================================== */
+
+b {
+    font-weight: 500;
+}
+b > b, strong {
+    font-weight: 600;
+}
+strong > strong {
+    font-weight: 700;
+}
+
+
+/* Size modifiers
+ ========================================================================== */
+
+small {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+}
+
+
+/* Text-level semantics
+ ========================================================================== */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: var(--font-family-monospace);
+    font-size: inherit;
+}
+code,
+kbd,
+samp {
+    white-space: nowrap;
+}
+ins {
+    display: inline-block;
+    margin: 0 -.2rem;
+    padding: 0 .2rem;
+    background-color: var(--clr-green-100);
+    color: var(--clr-grey-900);
+    text-decoration: none;
+}
+mark {
+    background-color: var(--selection-background-color);
+    color: var(--selection-color);
+    text-decoration: none;
+}
+i,
+em,
+dfn,
+q {
+    font-style: italic;
+}
+
+pre {
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+
+
+/* Headings
+ ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--caption-color);
+}
+
+h1 {
+    font: var(--h1-font);
+    margin: var(--h1-margin);
+    text-transform: var(--h1-text-transform);
+}
+h2 {
+    font: var(--h2-font);
+    margin: var(--h2-margin);
+    text-transform: var(--h2-text-transform);
+}
+h3 {
+    font: var(--h3-font);
+    margin: var(--h3-margin);
+    text-transform: var(--h3-text-transform);
+}
+h4 {
+    font: var(--h4-font);
+    margin: var(--h4-margin);
+    text-transform: var(--h4-text-transform);
+}
+h5 {
+    font: var(--h5-font);
+    margin: var(--h5-margin);
+    text-transform: var(--h5-text-transform);
+}
+h6 {
+    font: var(--h6-font);
+    margin: var(--h6-margin);
+    text-transform: var(--h6-text-transform);
+}
+
+h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6,
+h2 + h1, h2 + h3, h2 + h4, h2 + h5, h2 + h6,
+h3 + h1, h3 + h2, h3 + h4, h3 + h5, h3 + h6,
+h4 + h1, h4 + h2, h4 + h3, h4 + h5, h4 + h6,
+h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h6,
+h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5
+{
+    margin-top: var(--space-s);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: var(--caption-color);
+}

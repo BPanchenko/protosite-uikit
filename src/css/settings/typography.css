@@ -1,0 +1,57 @@
+
+/* Typeface
+ ======================================================================== */
+
+@import "http://uikit.protosite.rocks/resources/fonts/marck-script/marck-script.css";
+@import "http://uikit.protosite.rocks/resources/fonts/pt-serif-caption/pt-serif-caption.css";
+@import "http://uikit.protosite.rocks/resources/fonts/pt-sans-narrow/pt-sans-narrow.css";
+
+:root {
+    --font-family-condensed: "PT Sans Narrow", sans-serif;
+    --font-family-cursive: "Marck Script", cursive;
+    --font-family-monospace: monospace;
+    --font-family-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-serif: "PT Serif Caption", serif;
+
+    --font-family-default: var(--font-family-sans);
+    --font-family-primary: var(--font-family-sans);
+    --font-family-secondary: var(--font-family-sans);
+
+    --font-size-default: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-medium: 1.4rem;
+    --font-size-small: 1.3rem;
+    --font-size-xsmall: 1.1rem;
+
+    --line-height-default: 2.4rem;
+    --line-height-large: 2.4rem;
+    --line-height-medium: 2.4rem;
+    --line-height-small: 1.6rem;
+    --line-height-xsmall: 1.2rem;
+}
+
+
+/* Headings
+ ======================================================================== */
+
+:root {
+    --h1-font: 400 3.6rem/4rem var(--font-family-serif);
+    --h1-margin: var(--space-s) 0;
+    --h1-text-transform: none;
+    --h2-font: 400 2.8rem/3.2rem var(--font-family-serif);
+    --h2-margin: var(--space-s) 0;
+    --h2-text-transform: none;
+    --h3-font: 400 2rem/2.4rem var(--font-family-serif);
+    --h3-margin: var(--space-xs) 0;
+    --h3-text-transform: none;
+
+    --h4-font: 500 1.6rem/1.8rem var(--font-family-sans);
+    --h4-margin: var(--space-m) 0 var(--space-xs);
+    --h4-text-transform: none;
+    --h5-font: 500 1.4rem/1.6rem var(--font-family-sans);
+    --h5-margin: var(--space-m) 0 var(--space-xs);
+    --h5-text-transform: uppercase;
+    --h6-font: 700 1.2rem/1.6rem var(--font-family-sans);
+    --h6-margin: var(--space-s) 0 var(--space-xs);
+    --h6-text-transform: uppercase;
+}
