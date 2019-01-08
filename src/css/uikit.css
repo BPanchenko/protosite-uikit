@@ -43,8 +43,7 @@
 @import "../less/styles/color";
 @import "../less/styles/floating";
 @import "../less/styles/hovered";
-@import "../less/styles/link";
-@import "../less/styles/loading";
+@import "./styles/loading.css";
 @import "./styles/size.css";
 @import "./styles/striped.css";
 
