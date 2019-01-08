@@ -15,7 +15,6 @@
  *          `s-clean`
  *          `s-danger`
  *          `s-large`
- *          `s-link`
  *			`s-primary`
  *          `s-small`
  *          `s-warning`
@@ -201,7 +200,51 @@
  ========================================================================== */
 
 .c-button.iconic:before {
-	margin: 0 1rem 0 -1rem;
+    margin: 0 1rem 0 -1rem;
+}
+
+
+/* Modifier: `c-button--link`
+ ========================================================================== */
+
+.c-button--link {
+    padding: var(--space-xs) var(--space-s);
+
+    background: transparent !important;
+    text-decoration: var(--link-text-decoration);
+    transition: var(--link-transition);
+    box-shadow: none !important;
+    color: var(--link-hover-color);
+}
+
+.c-button--link .c-button__icon {
+    margin-left: -.2rem;
+    margin-right: .8rem;
+    text-decoration: none;
+}
+
+.c-button--link .c-button__text {
+    text-decoration: var(--link-text-decoration);
+}
+
+.c-button--link .c-button__text + .c-button__icon {
+    margin-left: .8rem;
+    margin-right: -.2rem;
+}
+
+.c-button--link:hover {
+    text-decoration: var(--link-hover-text-decoration);
+}
+.c-button--link:hover .c-button__text {
+    text-decoration: var(--link-hover-text-decoration);
+}
+
+.c-button--link:active,
+.c-button--link:hover,
+.c-button--link:focus,
+.c-button--link[aria-checked=true],
+.c-button--link.c-button--active {
+    color: var(--link-hover-color);
 }
 
 
