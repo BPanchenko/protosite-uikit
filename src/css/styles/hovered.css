@@ -1,11 +1,5 @@
-@import "../settings/variables";
 
-// Variables
-// ========================================================================
-
-@hovered-box-shadow: @shadow-6dp;
-@hovered-row-background-color: @clr-lime-50;
-
+@import "../settings/_import.css";
 
 /* ========================================================================
    The table element and the list component
@@ -14,14 +8,15 @@
 table.s-hovered > tr,
 table.s-hovered tbody tr,
 .c-list.s-hovered .c-list__item {
-
 	transition-property: background-color;
-	transition-duration: .16s;
-	transition-timing-function: @easing;
+	transition-duration: 0.16s;
+	transition-timing-function: var(--easing);
+}
 
-	&:hover {
-		background-color: @hovered-row-background-color !important;
-	}
+table.s-hovered > tr:hover,
+table.s-hovered tbody tr:hover,
+.c-list.s-hovered .c-list__item:hover {
+	background-color: var(--clr-lime-50) !important;
 }
 
 
@@ -31,14 +26,14 @@ table.s-hovered tbody tr,
 
 .c-panel.s-hovered,
 .c-thumbnail.s-hovered {
-
 	top: 0;
 	transition-property: box-shadow, top;
-	transition-duration: .16s;
-	transition-timing-function: @easing;
+	transition-duration: 0.16s;
+	transition-timing-function: var(--easing);
+}
 
-	&:hover {
-		box-shadow: @hovered-box-shadow;
-		top: -.2rem;
-	}
+.c-panel.s-hovered:hover,
+.c-thumbnail.s-hovered:hover  {
+    box-shadow: var(--shadow-6dp);
+    top: -0.2rem;
 }
