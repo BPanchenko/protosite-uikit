@@ -37,7 +37,7 @@
 @import "utilities/text.css";
 @import "utilities/width.css" screen;
 
-@import "../less/styles/background";
+@import "./styles/background.css";
 @import "../less/styles/bordered";
 @import "../less/styles/clean";
 @import "../less/styles/color";

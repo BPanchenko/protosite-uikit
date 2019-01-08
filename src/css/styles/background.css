@@ -1,0 +1,36 @@
+
+@import "../settings/images.css";
+
+/* ========================================================================
+   Background styles
+ ========================================================================== */
+
+.s-bg-ps_neutral {
+    background-image: var(--img-ps-neutral);
+    background-size: var(--img-ps-neutral-size);
+    background-position: center;
+}
+
+.s-bg-square {
+    background-image: var(--img-square);
+    background-size: var(--img-square-size);
+    background-position: center;
+}
+
+.s-bg-subtle_dots {
+    background-image: var(--img-subtle-dots);
+    background-size: var(--img-subtle-dots-size);
+    background-position: center;
+}
+
+/* Media queries
+ ========================================================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx)
+{
+    .s-bg-ps_neutral { background-image: var(--img-ps-neutral-x2); }
+    .s-bg-square { background-image: var(--img-square-x2); }
+    .s-bg-subtle_dots { background-image: var(--img-subtle-dots-x2); }
+}
