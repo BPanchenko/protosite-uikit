@@ -1,14 +1,14 @@
 
-@import "settings/images.css";
-@import "settings/palette.css";
+@import "./settings/images.css";
+@import "./settings/palette.css";
 
 
-@import "base/document.css";
-@import "base/list.css";
-@import "base/paragraph.css";
-@import "base/table.css";
-@import "base/text.css";
-@import "icons/iconic-glyphs.css";
+@import "./base/document.css";
+@import "./base/list.css";
+@import "./base/paragraph.css";
+@import "./base/table.css";
+@import "./base/text.css";
+@import "./icons/iconic-glyphs.css";
 
 @import "../less/objects/article";
 @import "../less/components/avatar";
@@ -16,7 +16,7 @@
 @import "../less/components/dialog";
 @import "../less/components/controls";
 @import "../less/components/list";
-@import "../less/components/button";
+@import "./components/button.css";
 @import "../less/components/chart";
 @import "../less/components/field";
 @import "../less/components/panel";
