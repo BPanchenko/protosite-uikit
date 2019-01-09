@@ -14,8 +14,9 @@
 @import "./components/backdrop.css";
 @import "./components/badge.css";
 @import "./components/button.css";
+@import "./components/chart.css";
+@import "./components/controls.css";
 @import "../less/components/dialog";
-@import "../less/components/controls";
 @import "../less/components/list";
 @import "../less/components/chart";
 @import "../less/components/field";
