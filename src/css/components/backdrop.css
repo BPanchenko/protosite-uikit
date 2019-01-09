@@ -1,0 +1,16 @@
+
+@import "../settings/_import.css";
+
+.c-backdrop {
+    contain: strict;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--clr-grey-800);
+
+    opacity: 0.2;
+    transition: opacity 160ms var(--easing);
+}
