@@ -20,10 +20,6 @@
  *
  ========================================================================== */
 
-
-// Variables
-// ========================================================================
-
 :root {
     --c-chart-color: var(--clr-grey-800);
     --c-chart-stroke-width: 0.2rem;
@@ -44,62 +40,48 @@
     Element: `c-chart__axis`
  ========================================================================== */
 
-/*g*/.c-chart__axis {
-    /*g*/
-    .tick {
-        line { stroke: var(--c-chart-color); }
-        text { color: var(--c-chart-color); }
-    }
-}
+.c-chart__axis .tick line { stroke: var(--c-chart-color); }
+.c-chart__axis .tick text { color: var(--c-chart-color); }
 
 
 /* ========================================================================
     Element: `c-chart__graph`
  ========================================================================== */
 
-/*g*/
-.c-chart__graph {
-
-     /*path*/
-    .line {
+/*path*/
+.c-chart__graph .line {
         stroke: var(--c-chart-color);
         stroke-width: var(--c-chart-stroke-width);
         stroke-linecap: round;
         fill: none;
     }
 
-    /*g*/
-    .point {
 
-        /*circle*/
-        .dot {
-            stroke: var(--clr-grey-800);
-            stroke-width: var(--c-chart-stroke-width);
-            fill: var(--c-chart-color);
+/*circle*/
+.c-chart__graph .point .dot {
+    stroke: var(--clr-grey-800);
+    stroke-width: var(--c-chart-stroke-width);
+    fill: var(--c-chart-color);
 
-            transition-property: stroke, fill;
-            transition-duration: 0.16s;
-            transition-timing-function: var(--easing);
-        }
+    transition-property: stroke, fill;
+    transition-duration: 0.16s;
+    transition-timing-function: var(--easing);
+}
 
-        /*circle*/
-        .handle {
-            stroke-width: 0;
-            fill: transparent;
-        }
+/*circle*/
+.c-chart__graph .point .handle {
+    stroke-width: 0;
+    fill: transparent;
+}
 
-        &--hovered {
-            cursor: pointer;
+.c-chart__graph .point--hovered {
+    cursor: pointer;
+}
 
-            &:hover {
-                .dot {
-                    stroke: var(--clr-grey-800);
-                    fill: var(--clr-grey-800);
-                }
-            }
-        }
-    }
- }
+.c-chart__graph .point--hovered:hover .dot {
+    stroke: var(--clr-grey-800);
+    fill: var(--clr-grey-800);
+}
 
 /* ========================================================================
  Element: `c-chart__loader`
