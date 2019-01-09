@@ -1,0 +1,66 @@
+
+@import "../settings/base.css";
+
+/**
+ * Component:       `c-avatar`
+ * Description:     User Avatar
+ *
+ * Modifiers:       `c-avatar--xsmall`
+ *                    `c-avatar--small`
+ *                    `c-avatar--medium` (size by default)
+ *                    `c-avatar--large`
+ *                    `c-avatar--xlarge`
+ *
+ ========================================================================== */
+
+:root {
+    --c-avatar-size: calc(5 * var(--unit));
+}
+
+/* ========================================================================
+   Component: `c-avatar`
+ ========================================================================== */
+
+.c-avatar {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+
+    width: var(--c-avatar-size);
+    height: var(--c-avatar-size);
+
+    font-size: .001px;
+    text-align: center;
+    vertical-align: middle;
+
+    box-shadow: var(--shadow-2dp);
+    background-size: cover;
+    user-select: none;
+
+    /* reset default styles figure */
+    margin: 0;
+}
+
+.c-avatar a,
+.c-avatar img {
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+}
+
+.c-avatar img {
+    object-fit: cover;
+}
+
+/* picture on background */
+.c-avatar[style*="background"] {
+    box-shadow: var(--inset-shadow-2dp);
+}
+
+
+/* Context: `c-panel`
+ ========================================================================== */
+
+.c-panel:not(.s-transparent) .c-avatar:not([style*="background"]) {
+    box-shadow: none;
+}

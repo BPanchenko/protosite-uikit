@@ -10,13 +10,13 @@
 @import "./base/text.css";
 @import "./icons/iconic-glyphs.css";
 
-@import "../less/objects/article";
-@import "../less/components/avatar";
-@import "../less/components/backdrop";
+@import "./components/avatar.css";
+@import "./components/backdrop.css";
+@import "./components/badge.css";
+@import "./components/button.css";
 @import "../less/components/dialog";
 @import "../less/components/controls";
 @import "../less/components/list";
-@import "./components/button.css";
 @import "../less/components/chart";
 @import "../less/components/field";
 @import "../less/components/panel";
@@ -26,6 +26,7 @@
 @import "../less/components/tabs";
 @import "../less/components/thumbnail";
 
+@import "../less/objects/article";
 @import "../less/objects/breadcrumb";
 @import "../less/objects/container";
 @import "../less/objects/form";
