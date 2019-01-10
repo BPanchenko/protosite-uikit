@@ -19,8 +19,8 @@
 @import "./components/dialog.css";
 @import "./components/list.css";
 @import "./components/field.css";
-@import "../less/components/pagination";
-@import "../less/components/panel";
+@import "./components/pagination.css";
+@import "./components/panel.css";
 @import "../less/components/popover";
 @import "../less/components/progress";
 @import "../less/components/tabs";
