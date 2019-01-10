@@ -17,10 +17,10 @@
 @import "./components/chart.css";
 @import "./components/controls.css";
 @import "./components/dialog.css";
-@import "../less/components/list";
+@import "./components/list.css";
 @import "./components/field.css";
-@import "../less/components/panel";
 @import "../less/components/pagination";
+@import "../less/components/panel";
 @import "../less/components/popover";
 @import "../less/components/progress";
 @import "../less/components/tabs";
