@@ -1,0 +1,119 @@
+
+@import "../settings/_import.css";
+
+/**
+ * Component:       `c-list`
+ * Description:     Defines styles for list items
+ *
+ * Containers: `c-list__head`
+ *             `c-list__body`
+ *             `c-list__item`
+ *             `c-list__foot`
+ *             `c-list__item`
+ *             `c-list__meta`
+ *
+ *
+ * Markup:
+ *
+<!-- basic list style -->
+<div class="c-list">
+    <section class="c-list__item">
+        <div class="c-list__cell">...</div>
+        <div class="c-list__cell">...</div>
+        <div class="c-list__cell">...</div>
+    </section>
+</div>
+
+<!-- table style -->
+<section class="c-list">
+    <div class="c-list__head">
+        <h6 class="c-list__cell">...</h6>
+        <h6 class="c-list__cell">...</h6>
+        <h6 class="c-list__cell">...</h6>
+    </div>
+    <div class="c-list__body">
+        <section class="c-list__item>
+            <div class="c-list__cell">...</div>
+            <div class="c-list__cell">
+                <div class="c-list__cell">...</div>
+                <div class="c-list__cell">...</div>
+                <div class="c-list__cell">...</div>
+            </div>
+            <div class="c-list__cell">...</div>
+        </section>
+    </div>
+    <div class="c-list__meta"></div>
+    <div class="c-list__foot"></div>
+</section>
+ *
+ ========================================================================== */
+
+.c-list {
+    overflow-x: auto;
+}
+
+.c-list__head,
+.c-list__meta,
+.c-list__body,
+.c-list__foot,
+.c-list__item,
+.c-list__cell {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.c-list__head,
+.c-list__item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    contain: layout style;
+}
+
+.c-list__cell {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.c-list__head {
+    padding: 0 0 var(--space-xxs);
+    margin-bottom: var(--space-xs);
+    border-bottom: 0.2rem solid var(--clr-grey-300);
+    line-height: 4rem;
+}
+
+.c-list__head .c-list__cell {
+    padding: 0 var(--space-xs);
+
+    line-height: inherit;
+    font-family: var(--font-family-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--caption-color);
+}
+
+.c-list__item {
+    margin-bottom: calc(var(--space-xs) + 0.1rem);
+
+    border-bottom-color: var(--clr-grey-300);
+    border-bottom-width: 0.1rem;
+    border-bottom-style: solid;
+}
+
+.c-list__item .c-list__cell {
+    display: inline-block;
+    white-space: normal;
+    font-size: var(--font-size-default);
+}
+
+.c-list__item > .c-list__cell {
+    padding: 0 var(--space-s);
+    vertical-align: middle;
+}
+
+.c-list__item > .c-list__cell > .c-list__cell {
+    display: block;
+    padding: 0;
+}
