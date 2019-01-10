@@ -16,12 +16,11 @@
 @import "./components/button.css";
 @import "./components/chart.css";
 @import "./components/controls.css";
-@import "../less/components/dialog";
-@import "../less/components/list";
-@import "../less/components/chart";
-@import "../less/components/field";
-@import "../less/components/panel";
-@import "../less/components/pagination";
+@import "./components/dialog.css";
+@import "./components/list.css";
+@import "./components/field.css";
+@import "./components/pagination.css";
+@import "./components/panel.css";
 @import "../less/components/popover";
 @import "../less/components/progress";
 @import "../less/components/tabs";
