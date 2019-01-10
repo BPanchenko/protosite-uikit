@@ -16,10 +16,9 @@
 @import "./components/button.css";
 @import "./components/chart.css";
 @import "./components/controls.css";
-@import "../less/components/dialog";
+@import "./components/dialog.css";
 @import "../less/components/list";
-@import "../less/components/chart";
-@import "../less/components/field";
+@import "./components/field.css";
 @import "../less/components/panel";
 @import "../less/components/pagination";
 @import "../less/components/popover";
