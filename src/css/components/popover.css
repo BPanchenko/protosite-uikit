@@ -1,0 +1,184 @@
+
+@import "../settings/_import.css";
+
+/**
+ * Component: `c-popover`
+ *
+ * Position modifiers:
+ *   [data-position=top]
+ *   [data-position=bottom]
+ *   [data-position=left]
+ *   [data-position=right]
+ *   [data-position=left-top]
+ *   [data-position=left-bottom]
+ *   [data-position=right-top]
+ *   [data-position=right-bottom]
+ *   [data-position=top-left]
+ *   [data-position=top-right]
+ *   [data-position=bottom-left]
+ *   [data-position=bottom-left]
+ *
+ ========================================================================== */
+
+:root {
+    --c-popover-background-color: var(--clr-grey-700);
+    --c-popover-body-color: var(--clr-grey-50);
+    --c-popover-box-shadow: var(--shadow-2dp);
+}
+
+
+/* ========================================================================
+   Component: Tooltip
+ ========================================================================== */
+
+.c-popover {
+    display: inline-block;
+    position: fixed;
+    left: 0; top: 0;
+    transform: translate(0,0);
+    z-index: 200;
+
+    transition-property: transform, opacity;
+    transition-duration: 160ms;
+    transition-timing-function: var(--easing);
+
+    cursor: default;
+    user-select: none;
+
+    box-shadow: var(--c-popover-box-shadow);
+
+    text-align: left;
+    line-height: 1;
+    font-size: 0.001px;
+
+    margin: .8rem;
+}
+
+.c-popover[aria-hidden=true] {
+    display: inline-block !important;
+    opacity: 0;
+}
+
+.c-popover[aria-hidden=false] {
+    opacity: 1;
+}
+
+
+/* Subelement: Caret of tooltip
+ ========================================================================== */
+
+.c-popover::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    display: block;
+    width: 0.8rem;;
+    height: 0.8rem;;
+
+    background-color: var(--c-popover-background-color);
+    box-shadow: var(--c-popover-box-shadow);
+    border-radius: .1rem;
+
+    margin-top: 0;
+    margin-left: 0;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;
+
+    transition-property: top, right, bottom, left, margin-top, margin-left;
+    transition-duration: 160ms;
+    transition-timing-function: var(--easing);
+    transition-delay: 0ms;
+}
+
+
+/* Positioning */
+
+.c-popover[data-position=bottom]::after {
+    top: -0.4rem;
+    left: 50%;
+    margin-left: -0.4rem;
+}
+.c-popover[data-position=top]::after {
+    bottom: -0.4rem;
+    left: 50%;
+    margin-left: -0.4rem;
+}
+.c-popover[data-position=right]::after {
+    top: 50%;
+    left: -0.4rem;
+    margin-top: -0.4rem;
+}
+.c-popover[data-position=left]::after {
+    top: 50%;
+    right: -0.4rem;
+    margin-top: -0.4rem;
+}
+.c-popover[data-position=right-top]::after {
+    top: 0.8rem;
+    left: -0.4rem;
+}
+.c-popover[data-position=right-bottom]::after {
+    bottom: 0.8rem;
+    left: -0.4rem;
+}
+.c-popover[data-position=left-top]::after {
+    top: 0.8rem;
+    right: -0.4rem;
+}
+.c-popover[data-position=left-bottom]::after {
+    bottom: 0.8rem;
+    right: -0.4rem;
+}
+.c-popover[data-position=bottom-left]::after {
+    top: -0.4rem;
+    left: 0.8rem;
+}
+.c-popover[data-position=bottom-right]::after {
+    top: -0.4rem;
+    right: 0.8rem;
+}
+.c-popover[data-position=top-left]::after {
+    bottom: -0.4rem;
+    left: 0.8rem;
+}
+.c-popover[data-position=top-right]::after {
+    bottom: -0.4rem;
+    right: 0.8rem;
+}
+
+
+/* Element: `c-popover__inside`
+ ========================================================================== */
+
+.c-popover__inside {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    padding: 0.6rem 0.8rem;;
+
+    background-color: var(--c-popover-background-color);
+    border-radius: 0.2rem;
+    overflow: hidden;
+
+    color: var(--c-popover-body-color);
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-default);
+}
+
+
+/* Control element: `c-popover-holder`
+ ========================================================================== */
+
+.c-popover-holder {
+    display: inline-block;
+    cursor: help;
+    border-bottom: 1px dotted currentColor;
+    background-color: transparent;
+}

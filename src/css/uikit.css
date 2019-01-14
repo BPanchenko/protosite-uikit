@@ -21,10 +21,10 @@
 @import "./components/field.css";
 @import "./components/pagination.css";
 @import "./components/panel.css";
-@import "../less/components/popover";
-@import "../less/components/progress";
-@import "../less/components/tabs";
-@import "../less/components/thumbnail";
+@import "./components/popover.css";
+@import "./components/progress.css";
+@import "./components/tabs.css";
+@import "./components/thumbnail.css";
 
 @import "../less/objects/article";
 @import "../less/objects/breadcrumb";
