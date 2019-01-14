@@ -1,0 +1,124 @@
+
+@import "../settings/_import.css";
+
+/**
+ * Name:            Thumbnail
+ * Description:     Defines styles for the picture preview
+ * 
+ * Component:       `c-thumbnail`
+ * 
+ * Modifiers:       `c-thumbnail--mini`
+ *					`c-thumbnail--small`
+ *					`c-thumbnail--large`
+ * 
+ ========================================================================== */
+
+:root {
+    --c-thumbnail-max-width: 19.2rem;
+}
+
+/*figure*/
+.c-thumbnail {
+	contain: content;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	max-width: var(--c-thumbnail-max-width);
+
+	vertical-align: bottom;
+
+	background-color: var(--clr-white);
+	border-radius: 0.2rem;
+	box-shadow: var(--shadow-3dp);
+	box-sizing: border-box;
+
+	margin: 0;
+	padding: 0;
+}
+
+.c-thumbnail img {
+    max-height: 36rem;
+    object-fit: cover;
+}
+
+.c-thumbnail + .c-thumbnail {
+	margin-left: var(--space-default);
+}
+
+
+/* Combination of components: `o-article` and `c-panel`
+ ========================================================================== */
+
+.c-panel .c-thumbnail {
+	/* reset basic style */
+	box-shadow: none;
+}
+
+
+/* Element: `c-thumbnail__caption`
+ ========================================================================== */
+
+.c-thumbnail__caption {
+	position: absolute;
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	padding: 0.4rem 0.8rem;
+	box-sizing: border-box;
+
+	background-color: transparent;
+
+	color: var(--clr-white);
+	font-size: 1.3rem;
+	font-weight: 600;
+	line-height: 1.2;
+	text-shadow: var(--text-shadow);
+}
+
+
+/* Element: `c-thumbnail__shutter`
+ ========================================================================== */
+
+.c-thumbnail__shutter {
+	position: absolute;
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	padding: 0.4rem 0.8rem;
+	box-sizing: border-box;
+
+	background-color: transparent;
+	opacity: 0;
+	transition: opacity 0.16s var(--easing);
+
+	font-size: 1.3rem;
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--clr-white);
+	text-shadow: var(--text-shadow);
+}
+
+
+/* Hover state
+ ========================================================================== */
+
+
+a.c-thumbnail:hover  img {
+    filter: grayscale(100%);
+}
+a.c-thumbnail:hover  .c-thumbnail__shutter {
+    opacity: 1;
+}
+
+
+/* Square style
+ ========================================================================== */
+
+.s-square.c-thumbnail img {
+    max-width: none;
+    max-height: none;
+    width: var(--c-thumbnail-max-width);
+    height: var(--c-thumbnail-max-width);
+}

@@ -1,0 +1,146 @@
+
+@import "../settings/_import.css";
+
+
+/* ========================================================================
+   Component: `c-tab`
+ ========================================================================== */
+
+.c-tab {
+    display: block;
+    padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+    box-sizing: border-box;
+    min-width: 9rem;
+    max-width: 36rem;
+    min-height: 36rem;
+    flex: 0 0 auto;
+
+    background-color: transparent;
+    text-align: center;
+    line-height: 1;
+    color: var(--clr-grey-700);
+    cursor: pointer;
+
+    transition-property: background-color, color;
+    transition-duration: 0.1s;
+    transition-timing-function: var(--easing);
+}
+
+.c-tab:hover {
+    background-color: var(--clr-grey-100);
+}
+
+.c-tab[aria-selected=true] {
+    color: var(--clr-grey-900);
+    cursor: default;
+}
+.c-tab[aria-selected=true]:hover {
+    background-color: transparent;
+}
+
+.c-tab + .c-tab {
+    /* margin-left: 0.8rem; */
+}
+
+.c-tab__label,
+.c-tab__icon {
+    display: block;
+    line-height: 2.4rem;
+    vertical-align: middle;
+}
+
+.c-tab__label {
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    max-width: 36rem;
+
+    /* u-text-truncate */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c-tab__icon + .c-tab__label {
+    line-height: 2rem;
+}
+
+
+/* Wrapper: `c-tabs-container`
+ ========================================================================== */
+
+.c-tabs-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    padding: 0;
+    contain: layout style;
+}
+
+.c-tabs-container + hr {
+    margin-top: 0;
+    border-bottom: none;
+    border-top: 0.1rem solid var(--clr-grey-300);
+}
+
+
+/* Element: `c-tab-indicator`
+ ========================================================================== */
+        
+.c-tab-indicator {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(0);
+    min-width: 36rem;
+    height: 0.2rem;
+    background-color: var(--clr-grey-900);
+
+    transition-property: left, width;
+    transition-duration: 0.1s;
+    transition-timing-function: var(--easing);
+}
+
+
+/* ========================================================================
+   Supports
+ ========================================================================== */
+
+@supports not (display: flex) {
+    .c-tabs-container {
+        display: block;
+        min-height: 4.8rem;
+    }
+
+    .c-tabs-container::before,
+    .c-tabs-container::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .c-tab {
+        display: inline-block;
+        float: left;
+    }
+}
+
+
+/* ========================================================================
+   Context: tablist on the panel
+ ========================================================================== */
+
+.c-panel .c-tabs-container {
+    padding: 0;
+}
+
+.c-panel .c-tabs-container::after {
+    content: ' ';
+    position: absolute;
+    bottom: -0.1rem;
+    left: 0;
+    right: 0;
+    border-bottom: 0.1rem solid var(--clr-grey-400);
+}
