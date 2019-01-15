@@ -1,0 +1,47 @@
+
+@import "../settings/_import.css";
+
+/**
+ * Object:		Breadcrumbs
+ * Description: Indicate the current page's location within a navigational hierarchy.
+ *
+ * Elements:	`o-breadcrumb__item`
+ *
+ ========================================================================== */
+
+.o-breadcrumb {
+	display: block;
+	width: inherit;
+	margin: 1.6rem 0 3.2rem;
+	color: var(--clr-grey-600);
+	font-size: 0.001px;
+}
+
+.o-breadcrumb::after {
+    content: ' ';
+    display: block;
+    width: inherit;
+    height: 1px;
+    background-color: var(--clr-grey-400);
+    border-bottom: 0.1rem solid var(--clr-white);
+}
+
+.o-breadcrumb__item {
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+}
+
+.o-breadcrumb__item:not(:last-child)::after {
+    content: '/';
+    display: inherit;
+    margin: 0 0.6rem;
+}
+
+.o-breadcrumb__item.is-current {
+	font-family: var(--font-family-primary);
+	font-size: var(--font-size-default);
+	font-weight: 500;
+	color: var(--clr-grey-800);
+}

@@ -27,10 +27,10 @@
 @import "./components/thumbnail.css";
 
 @import "../less/objects/article";
-@import "../less/objects/breadcrumb";
-@import "../less/objects/container";
+@import "./objects/breadcrumb.css";
+@import "./objects/container.css";
 @import "../less/objects/form";
-@import "../less/objects/grid";
+@import "./objects/grid.css";
 
 @import "utilities/common.css";
 @import "utilities/flex.css" screen;

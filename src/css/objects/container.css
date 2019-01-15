@@ -1,0 +1,49 @@
+
+@import "../settings/breakpoints.css";
+
+/* ========================================================================
+   Object: Container
+ ========================================================================== */
+
+.o-container {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    padding: 4rem 0 6.4rem;
+}
+.o-container::before,
+.o-container::after {
+    content: " ";
+    display: table;
+}
+.o-container::after {
+    clear: both;
+}
+
+
+/* Media queries
+ ========================================================================== */
+
+@media (--screen-xdesktop) {
+    .o-container { width: 1304px; }
+}
+
+@media (--screen-desktop) {
+    .o-container { width: 1112px; }
+}
+
+@media (--screen-tablet-landscape) {
+    .o-container { width: 920px; }
+}
+
+@media (--screen-tablet-portrait) {
+    .o-container { width: 720px; }
+}
+
+@media (--screen-handset-landscape) {
+    .o-container { width: 464px; }
+}
+
+@media (--screen-handset-portrait) {
+    .o-container { width: 320px; }
+}
