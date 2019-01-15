@@ -27,7 +27,7 @@
 @import "./components/thumbnail.css";
 
 @import "../less/objects/article";
-@import "../less/objects/breadcrumb";
+@import "./objects/breadcrumb.css";
 @import "./objects/container.css";
 @import "../less/objects/form";
 @import "./objects/grid.css";
