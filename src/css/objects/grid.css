@@ -1,16 +1,16 @@
 /**
- * Object:		Grid
+ * Object: Grid
  * Description: Seamless Flexbox grid.
  *
- * Elements:	`o-grid-cell`
+ * Elements: `o-grid-cell`
  *
  ========================================================================== */
 
 .o-grid {
-	display: flex;
-	flex-flow: row wrap;
-	margin-left: -0.8rem;
-	margin-right: -0.8rem;
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
 }
 
 .o-grid > * {
@@ -26,11 +26,11 @@
 }
 
 .o-grid__cell {
-	contain: layout style;
-	box-sizing: border-box;
-	padding: 0 0.8rem 1.6rem;
-	display: flex;
-	flex-direction: column;
+    contain: layout style;
+    box-sizing: border-box;
+    padding: 0 0.8rem 1.6rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .o-grid__cell > .o-grid__cell {
