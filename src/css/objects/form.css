@@ -1,0 +1,94 @@
+
+@import "../settings/space.css";
+
+/**
+ * Object: Form
+ * 
+ * Elements: `o-form__title`
+ *           `o-form__row`
+ *           `o-form__buttons`
+ *
+ * Modifiers: ``
+ * 
+ ========================================================================== */
+
+.o-form {
+    width: 100%;
+    max-width: 56.8rem;
+}
+
+.o-form fieldset {
+    margin-bottom: var(--space-m);
+}
+
+.o-form fieldset legend {
+    font-size: 1.3rem;
+    cursor: default;
+    user-select: none;
+    padding-bottom: .2rem;
+}
+
+
+/* Sub-object: `o-form__head`
+ ========================================================================== */
+
+.o-form__head {
+    padding-bottom: var(--space-s);
+}
+
+.o-form__head * + h1,
+.o-form__head * + h2,
+.o-form__head * + h3,
+.o-form__head * + h4,
+.o-form__head * + h5,
+.o-form__head * + h6 {
+    margin-top: 0;
+}
+
+
+/* Sub-object: `o-form__row`
+ ========================================================================== */
+
+.o-form__row {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+.o-form__row .c-field-box {
+    flex: 1 1 25%;
+}
+
+.o-form__row .c-field-box + .c-field-box {
+    margin-left: var(--space-s);
+}
+
+.o-form__row + .o-form__row {
+    margin-top: var(--space-m);
+}
+
+
+/* Sub-object: `o-form__buttons`
+ ========================================================================== */
+
+.o-form__buttons {
+    text-align: right;
+}
+
+.o-form__body + .o-form__buttons,
+.o-form__row + .o-form__buttons {
+    margin-top: var(--space-l);
+}
+
+
+/* Style: short form
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.s-short.o-form {
+    max-width: 28rem;
+}
+
+.s-short .o-form__body + .o-form__buttons,
+.s-short .o-form__row + .o-form__buttons {
+    margin-top: var(--space-m);
+}

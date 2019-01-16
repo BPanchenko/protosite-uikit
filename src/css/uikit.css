@@ -26,17 +26,17 @@
 @import "./components/tabs.css";
 @import "./components/thumbnail.css";
 
-@import "../less/objects/article";
+@import "./objects/article.css";
 @import "./objects/breadcrumb.css";
 @import "./objects/container.css";
-@import "../less/objects/form";
+@import "./objects/form.css";
 @import "./objects/grid.css";
 
-@import "utilities/common.css";
-@import "utilities/flex.css" screen;
-@import "utilities/margin.css";
-@import "utilities/text.css";
-@import "utilities/width.css" screen;
+@import "./utilities/common.css";
+@import "./utilities/flex.css" screen;
+@import "./utilities/margin.css";
+@import "./utilities/text.css";
+@import "./utilities/width.css" screen;
 
 @import "./styles/background.css";
 @import "./styles/clean.css";

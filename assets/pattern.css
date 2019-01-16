@@ -1,9 +1,5 @@
-@import "settings/variables";
 
-/**
- * Defines styles only for patterns Protosite.UiKit
- ========================================================================== */
-
+@import "../src/css/uikit.css";
 
 /* Animation
  ========================================================================== */
@@ -13,7 +9,7 @@
 	display: block;
 	line-height: 5.2rem;
 	text-align: center;
-	background-color: @clr-white;
+	background-color: var(--clr-white);
 	cursor: default;
 }
 .pattern-animation-fade,
@@ -29,7 +25,7 @@
 }
 
 .pattern-animation-fade {
-	transition: all .3s @easing;
+	transition: all .3s var(--easing);
 }
 .pattern-animation-fade:hover {
 	color: white;
@@ -46,11 +42,11 @@
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 	margin-left: 0;
-	transition: all .8s @easing;
+	transition: all .8s var(--easing);
 	
 	width: 1.6rem;
 	line-height: inherit;
-	background-color: @clr-grey-800;
+	background-color: var(--clr-grey-800);
 }
 .pattern-animation-movement:hover::after {
 	left: 100%;
@@ -64,54 +60,48 @@
 .ps-avatar {
 	position: relative;
 	display: inline-block;
-	margin-top: @unit;
-	margin-bottom: 2*@unit;
-	color: @clr-grey-600;
+	margin-top: var(--unit);
+	margin-bottom: calc(2 * var(--unit));
+	color: var(--clr-grey-600);
 	vertical-align: bottom;
-
-	&::before {
-		content: ' ';
-		display: block;
-		position: absolute;
-		bottom: -.8rem; left: 50%;
-		transform: translateX(-50%);
-
-		width: 5 * @unit;
-		height: .3rem;
-		border: .1rem solid currentColor;
-		border-top: none;
-	}
-
-	&::after {
-		content: '5x';
-		position: absolute;
-		bottom: -.8rem; left: 50%;
-		transform: translate(-50%, 120%);
-		font-size: 1.3rem;
-		line-height: 1;
-	}
 }
 
-.ps-avatar--xsmall {
-	&::after { content: '1.5x xsmall'; }
-	&::before { width: 1.5 * @unit; }
+.ps-avatar::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    bottom: -.8rem; left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(5 * var(--unit));
+    height: .3rem;
+    border: .1rem solid currentColor;
+    border-top: none;
 }
-.ps-avatar--small {
-	&::after { content: '3x small'; }
-	&::before { width: 3 * @unit; }
+
+.ps-avatar::after {
+    content: '5x';
+    position: absolute;
+    bottom: -.8rem; left: 50%;
+    transform: translate(-50%, 120%);
+    font-size: 1.3rem;
+    line-height: 1;
 }
-.ps-avatar--medium {
-	&::after { content: '5x medium'; }
-	&::before { width: 5 * @unit; }
-}
-.ps-avatar--large{
-	&::after { content: '8x large'; }
-	&::before { width: 8 * @unit; }
-}
-.ps-avatar--xlarge {
-	&::after { content: '12x xlarge'; }
-	&::before { width: 12 * @unit; }
-}
+
+.ps-avatar--xsmall::after { content: '1.5x xsmall'; }
+.ps-avatar--xsmall::before { width: calc(1.5 * var(--unit)); }
+
+.ps-avatar--small::after { content: '3x small'; }
+.ps-avatar--small::before { width: calc(3 * var(--unit)); }
+
+.ps-avatar--medium::after { content: '5x medium'; }
+.ps-avatar--medium::before { width: calc(5 * var(--unit)); }
+
+.ps-avatar--large::after { content: '8x large'; }
+.ps-avatar--large::before { width: calc(8 * var(--unit)); }
+
+.ps-avatar--xlarge::after { content: '12x xlarge'; }
+.ps-avatar--xlarge::before { width: calc(12 * var(--unit)); }
 
 
 /* Preview colors
@@ -121,7 +111,7 @@
     width: 12.1rem; line-height: 2.4rem;
     display: inline-block;
     vertical-align: bottom;
-    padding: @space-xs @space-xs 0;
+    padding: var(--space-xs) var(--space-xs) 0;
 }
 
 
@@ -137,52 +127,52 @@
 .pattern.u-visible\@handset-landscape,
 .pattern.u-visible\@handset-portrait {
    display: inline-block !important;
-   color: @clr-grey-400;
+   color: var(--clr-grey-400);
 }
 
 /* xdesktop */
-@media @screen-xdesktop {
+@media (--screen-xdesktop) {
 	.u-visible\@xdesktop {
-		color: @text-color !important;
+		color: var(--text-color) !important;
     }
 }
 
 /* desktop */
-@media @screen-desktop {
+@media (--screen-desktop) {
     .u-visible\@desktop {
-		color: @text-color !important;
+		color: var(--text-color) !important;
     }
 }
 
 /* tablet-landscape */
-@media @screen-tablet-landscape {
+@media (--screen-tablet-landscape) {
 	.u-visible\@tablet,
 	.u-visible\@tablet-landscape {
-		color: @text-color !important;
+		color: var(--text-color) !important;
     }
 }
 
 /* tablet-portrait */
-@media @screen-tablet-portrait {
+@media (--screen-tablet-portrait) {
 	.u-visible\@tablet,
 	.u-visible\@tablet-portrait {
-		color: @text-color !important;
+		color: var(--text-color) !important;
     }
 }
 
 /* handset-landscape */
-@media @screen-handset-landscape {
+@media (--screen-handset-landscape) {
 	.u-visible\@handset,
 	.u-visible\@handset-landscape {
-		color: @text-color !important;
+		color: var(--text-color) !important;
 	}
 }
 
 /* handset-landscape */
-@media @screen-handset-portrait {
+@media (--screen-handset-portrait) {
 	.u-visible\@handset,
 	.u-visible\@handset-portrait {
-		color: @text-color !important;
+		color: var(--text-color) !important;
 	}
 }
 
@@ -194,13 +184,13 @@
 	display: inline-block;
 	padding: 2.4rem;
 	border: none;
-	outline: 1px dashed @clr-purple-A200;
+	outline: 1px dashed var(--clr-purple-A200);
+}
 
-	&.pattern--horizontal {
-		padding: 2.4rem 6.4rem;
-	}
+.c-popover-holder.pattern.pattern--horizontal {
+    padding: 2.4rem 6.4rem;
+}
 
-	&.pattern--vertical {
-		padding: 6.4rem 2.4rem;
-	}
+.c-popover-holder.pattern.pattern--vertical {
+    padding: 6.4rem 2.4rem;
 }
