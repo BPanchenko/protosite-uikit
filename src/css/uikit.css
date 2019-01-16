@@ -26,7 +26,7 @@
 @import "./components/tabs.css";
 @import "./components/thumbnail.css";
 
-@import "../less/objects/article";
+@import "./objects/article.css";
 @import "./objects/breadcrumb.css";
 @import "./objects/container.css";
 @import "../less/objects/form";
