@@ -67,7 +67,6 @@ ol > li {
 	margin-bottom: var(--li-margin-vertical);
 }
 
-// Nested list
 ol > li > ol {
 	list-style: lower-alpha;
 }
