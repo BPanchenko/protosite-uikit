@@ -121,8 +121,8 @@
     display: block;
     position: absolute;
     top: 0;
-    left: var(--c-panel-padding-left) - var(--space-s);
-    right: var(--c-panel-padding-right) - var(--space-s);
+    left: calc(var(--c-panel-padding-left) - var(--space-s));
+    right: calc(var(--c-panel-padding-right) - var(--space-s));
     border-top: 1px solid var(--clr-grey-400);
 }
 
