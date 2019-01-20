@@ -4,15 +4,34 @@
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./index.html",
-  "scripts": {},
+  "scripts": {
+    "dev": "webpack-dev-server --mode development",
+    "dev-postcss": "postcss src/css/protosite-uikit.css --base src/css --dir dist -o protosite-uikit.css -w",
+    "build": "webpack --mode production",
+    "build-gulp": "gulp build-css"
+  },
   "analyze": true,
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
   },
   "devDependencies": {
-    "eslint": "^5.2.0",
-    "postcss": "^6.0.20",
-    "postcss-media-variables": "^2.0.1"
+    "autoprefixer": "^9.4.5",
+    "css-loader": "^2.1.0",
+    "cssnano": "^4.1.8",
+    "eslint": "^5.12.1",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "postcss": "^7.0.13",
+    "postcss-cli": "^6.1.1",
+    "postcss-custom-media": "^7.0.7",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "style-loader": "^0.23.1",
+    "sugarss": "^2.0.0",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "eslintConfig": {
     "env": {
@@ -44,5 +63,7 @@
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^6.6.0"
+  }
 }

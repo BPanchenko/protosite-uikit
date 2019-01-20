@@ -22,8 +22,8 @@
 
 :root {
     --c-field-font-family: inherit;
-    --c-field-font-size: --font-size-default;
-    --c-field-line-height: --line-height-default;
+    --c-field-font-size: var(--font-size-default);
+    --c-field-line-height: var(--line-height-default);
 
     --c-field-height: 3.2rem;
     --c-field-padding-top: 0.2rem;
