@@ -129,7 +129,7 @@
 
 .u-float-left { float: left; }
 .u-float-right { float: right; }
-
+/*
 @media (--screen-desktop) {
     .u-align-left\@desktop { .u-align-left; }
     .u-align-right\@desktop { .u-align-right; }
@@ -186,7 +186,7 @@
     .u-float-right\@handset-portrait { .u-float-right; }
     .u-centered\@handset-portrait { .u-centered; }
 }
-
+*/
 
 /* Height
  ========================================================================== */

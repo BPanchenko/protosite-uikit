@@ -117,21 +117,24 @@
     .u-width-5-6\@desktop { width: 83.333%; }
 
     /* Tenths */
+    /*
     .generate-u-width-10-desktop(@i) when (@i < 10) {
         .u-width-@{i}-10\@desktop { width: percentage(@i * 0.1); }
-        /* next iteration */
+
         .generate-u-width-10-desktop((@i + 2));
     }
     .generate-u-width-10-desktop(1);
+    */
 
     /* 24 columns */
+    /*
     .generate-u-width-24-desktop(@i) when (@i <= 24) {
         .u-width-@{i}-24\@desktop { width: percentage(@i * 100/2400); }
-        /* next iteration */
+
         .generate-u-width-24-desktop((@i + 1));
     }
     .generate-u-width-24-desktop(1);
-
+    */
 }
 
 @media (--screen-tablet-and-smaller) {
@@ -191,23 +194,26 @@
     .u-width-5-6\@tablet-landscape { width: 83.333%; }
 
     /* Tenths */
+    /*
     .generate-u-width-10-tablet-landscape(@i) when (@i < 10) {
         .u-width-@{i}-10\@tablet,
         .u-width-@{i}-10\@tablet-landscape { width: percentage(@i * 0.1); }
-        /* next iteration */
+
         .generate-u-width-10-tablet-landscape((@i + 2));
     }
     .generate-u-width-10-tablet-landscape(1);
+    */
 
     /* 24 columns */
+    /*
     .generate-u-width-24-tablet-landscape(@i) when (@i <= 24) {
         .u-width-@{i}-24\@tablet,
         .u-width-@{i}-24\@tablet-landscape { width: percentage(@i * 100/2400); }
-        /* next iteration */
+
         .generate-u-width-24-tablet-landscape((@i + 1));
     }
     .generate-u-width-24-tablet-landscape(1);
-
+    */
 }
 
 @media (--screen-tablet-portrait-and-smaller) {
@@ -246,21 +252,24 @@
     .u-width-5-6\@tablet { width: 83.333%; }
 
     /* Tenths */
+    /*
     .generate-u-width-10-tablet-portrait(@i) when (@i < 10) {
         .u-width-@{i}-10\@tablet-portrait { width: percentage(@i * 0.1); }
-        /* next iteration */
+
         .generate-u-width-10-tablet-portrait((@i + 2));
     }
     .generate-u-width-10-tablet-portrait(1);
+    */
 
     /* 24 columns */
+    /*
     .generate-u-width-24-tablet-portrait(@i) when (@i <= 24) {
         .u-width-@{i}-24\@tablet-portrait { width: percentage(@i * 100/2400); }
-        /* next iteration */
+
         .generate-u-width-24-tablet-portrait((@i + 1));
     }
     .generate-u-width-24-tablet-portrait(1);
-
+    */
 }
 
 @media (--screen-handset) {
@@ -330,14 +339,15 @@
     .u-width-9-10\@handset-landscape { width: 90%; }
 
     /* 24 columns */
+    /*
     .generate-u-width-24-handset-landscape(@i) when (@i <= 24) {
         .u-width-@{i}-24\@handset,
         .u-width-@{i}-24\@handset-landscape { width: percentage(@i * 100/2400); }
-        /* next iteration */
+
         .generate-u-width-24-handset-landscape((@i + 1));
     }
     .generate-u-width-24-handset-landscape(1);
-
+    */
 }
 
 @media (--screen-handset-portrait) {
@@ -382,12 +392,14 @@
     .u-width-9-10\@handset-portrait { width: 90%; }
 
     /* 24 columns */
+    /*
     .generate-u-width-24-handset-portrait(@i) when (@i <= 24) {
         .u-width-@{i}-24\@handset-portrait { width: percentage(@i * 100/2400); }
-        /* next iteration */
+
         .generate-u-width-24-handset-portrait((@i + 1));
     }
     .generate-u-width-24-handset-portrait(1);
+    */
 }
 
 @media (--screen-xdesktop) {
@@ -426,19 +438,22 @@
     .u-width-5-6\@xdesktop { width: 83.333%; }
 
     /* Tenths */
+    /*
     .generate-u-width-10-xdesktop(@i) when (@i < 10) {
         .u-width-@{i}-10\@xdesktop { width: percentage(@i * 0.1); }
-        /* next iteration */
+
         .generate-u-width-10-xdesktop((@i + 2));
     }
     .generate-u-width-10-xdesktop(1);
+    */
 
     /* 24 columns */
+    /*
     .generate-u-width-24-xdesktop(@i) when (@i <= 24) {
         .u-width-@{i}-24\@xdesktop { width: percentage(@i * 100/2400); }
-        /* next iteration */
+
         .generate-u-width-24-xdesktop((@i + 1));
     }
     .generate-u-width-24-xdesktop(1);
-
+    */
 }
