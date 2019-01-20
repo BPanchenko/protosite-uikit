@@ -10,9 +10,15 @@
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
   },
   "devDependencies": {
-    "eslint": "^5.2.0",
-    "postcss": "^6.0.20",
-    "postcss-media-variables": "^2.0.1"
+    "autoprefixer": "^9.4.5",
+    "cssnano": "^4.1.8",
+    "eslint": "^5.12.1",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "postcss": "^7.0.13",
+    "postcss-preset-env": "^6.5.0",
+    "sugarss": "^2.0.0",
+    "webpack": "^4.28.4"
   },
   "eslintConfig": {
     "env": {
@@ -44,5 +50,7 @@
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^6.6.0"
+  }
 }
