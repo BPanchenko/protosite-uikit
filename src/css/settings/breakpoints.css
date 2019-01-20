@@ -17,22 +17,20 @@
     --bp-handset-portrait-max: calc(var(--bp-handset-landscape) - 1px);
 }
 
-@custom-media --small-device (max-width: var(--smallscreen));
+@custom-media --screen-xdesktop (min-width: 1360px);
 
-@custom-media --screen-xdesktop (only screen and (min-width: var(--bp-xdesktop)));
+@custom-media --screen-desktop (only screen and (min-width: 1180px) and (max-width: 1359px));
+@custom-media --screen-desktop-and-smaller (only screen and (max-width: 1359px));
 
-@custom-media --screen-desktop (only screen and (min-width: var(--bp-desktop)) and (max-width: var(--bp-desktop-max)));
-@custom-media --screen-desktop-and-smaller (only screen and (max-width: var(--bp-desktop-max)));
+@custom-media --screen-tablet (only screen and (min-width: 768px) and (max-width: 1179px));
+@custom-media --screen-tablet-and-smaller (only screen and (max-width: 1179px));
 
-@custom-media --screen-tablet (only screen and (min-width: var(--bp-tablet-portrait)) and (max-width: var(--bp-tablet-landscape-max)));
-@custom-media --screen-tablet-and-smaller (only screen and (max-width: var(--bp-tablet-landscape-max)));
+@custom-media --screen-tablet-landscape (only screen and (min-width: 1024px) and (max-width: 1179px));
+@custom-media --screen-tablet-landscape-and-smaller (only screen and (max-width: 1179px));
 
-@custom-media --screen-tablet-landscape (only screen and (min-width: var(--bp-tablet-landscape)) and (max-width: var(--bp-tablet-landscape-max)));
-@custom-media --screen-tablet-landscape-and-smaller (only screen and (max-width: var(--bp-tablet-landscape-max)));
+@custom-media --screen-tablet-portrait (only screen and (min-width: 768px) and (max-width: 1023px));
+@custom-media --screen-tablet-portrait-and-smaller (only screen and (max-width: 768px));
 
-@custom-media --screen-tablet-portrait (only screen and (min-width: var(--bp-tablet-portrait)) and (max-width: var(--bp-tablet-portrait-max)));
-@custom-media --screen-tablet-portrait-and-smaller (only screen and (max-width: var(--bp-tablet-portrait)));
-
-@custom-media --screen-handset (only screen and (max-width: var(--bp-handset-landscape)));
-@custom-media --screen-handset-landscape (only screen and (min-width: var(--bp-handset-landscape)) and (max-width: var(--bp-handset-landscape-max)));
-@custom-media --screen-handset-portrait (only screen and (max-width: var(--bp-handset-portrait-max)));
+@custom-media --screen-handset (only screen and (max-width: 480px));
+@custom-media --screen-handset-landscape (only screen and (min-width: 480px) and (max-width: 467px));
+@custom-media --screen-handset-portrait (only screen and (max-width: 479px));
