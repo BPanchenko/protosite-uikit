@@ -9,8 +9,7 @@
 p {
     display: block;
     vertical-align: text-top;
-    max-width: 54.4rem;
-
+    max-width: 80ch;
     font-family: inherit;
     font-size: var(--font-size-medium);
     line-height: var(--line-height-medium);
