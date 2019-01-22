@@ -1,4 +1,4 @@
-<a href="http://ui.protosite.rocks" target="_blank">ui.protosite.rocks</a>
+<a href="http://uikit.protosite.rocks" target="_blank">uikit.protosite.rocks</a>
 <hr>
 <p>
     Front-end фреймворк описывающий вид и взаимодействие базовых компонент пользовательского интерфейса.
