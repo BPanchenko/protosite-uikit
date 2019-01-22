@@ -1,36 +1,22 @@
 
-/* Breakpoints
+/* ========================================================================
+   Breakpoints
  ========================================================================== */
 
-:root {
-    --bp-xdesktop: 1360px;
-    --bp-desktop: 1180px;
-    --bp-tablet-landscape: 1024px;
-    --bp-tablet-portrait: 768px;
-    --bp-handset-landscape: 480px;
-    --bp-handset-portrait: 240px;
+@custom-media --screen-xdesktop (width >= 1360px);
 
-    --bp-desktop-max: calc(var(--bp-xdesktop) - 1px);
-    --bp-tablet-landscape-max: calc(var(--bp-desktop) - 1px);
-    --bp-tablet-portrait-max: calc(var(--bp-tablet-landscape) - 1px);
-    --bp-handset-landscape-max: calc(var(--bp-tablet-portrait) - 1px);
-    --bp-handset-portrait-max: calc(var(--bp-handset-landscape) - 1px);
-}
+@custom-media --screen-desktop (1180px <= width < 1360px);
+@custom-media --screen-desktop-and-smaller (width < 1360px);
 
-@custom-media --screen-xdesktop (min-width: 1360px);
+@custom-media --screen-tablet (768px <= width < 1180px);
+@custom-media --screen-tablet-and-smaller (width < 1180px);
 
-@custom-media --screen-desktop (only screen and (min-width: 1180px) and (max-width: 1359px));
-@custom-media --screen-desktop-and-smaller (only screen and (max-width: 1359px));
+@custom-media --screen-tablet-landscape (1024px <= width < 1180px);
+@custom-media --screen-tablet-landscape-and-smaller (width < 1180px);
 
-@custom-media --screen-tablet (only screen and (min-width: 768px) and (max-width: 1179px));
-@custom-media --screen-tablet-and-smaller (only screen and (max-width: 1179px));
+@custom-media --screen-tablet-portrait (768px <= width < 1024px);
+@custom-media --screen-tablet-portrait-and-smaller (width < 1024px);
 
-@custom-media --screen-tablet-landscape (only screen and (min-width: 1024px) and (max-width: 1179px));
-@custom-media --screen-tablet-landscape-and-smaller (only screen and (max-width: 1179px));
-
-@custom-media --screen-tablet-portrait (only screen and (min-width: 768px) and (max-width: 1023px));
-@custom-media --screen-tablet-portrait-and-smaller (only screen and (max-width: 768px));
-
-@custom-media --screen-handset (only screen and (max-width: 480px));
-@custom-media --screen-handset-landscape (only screen and (min-width: 480px) and (max-width: 467px));
-@custom-media --screen-handset-portrait (only screen and (max-width: 479px));
+@custom-media --screen-handset (width < 768px);
+@custom-media --screen-handset-landscape (480px <= width < 768px);
+@custom-media --screen-handset-portrait (width < 480px);

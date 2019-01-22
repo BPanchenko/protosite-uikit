@@ -4,16 +4,15 @@ const postcssImport = require('postcss-import');
 const gulp = require('gulp');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const sugarss = require('sugarss');
 
 gulp.task('build-css', function () {
     let plugins = [
-        autoprefixer({ browsers: ['last 1 version'] }),
-        cssnano(),
+        autoprefixer({ browsers: ['> 5%'] }),
+        postcssImport(),
         postcssPresetEnv({ stage: 0 }),
-        postcssImport()
+        cssnano()
     ];
     return gulp.src('./src/css/protosite-uikit.css')
-        .pipe(postcss(plugins, { parser: sugarss }))
+        .pipe(postcss(plugins, { parser: false }))
         .pipe(gulp.dest('./dist'));
 });

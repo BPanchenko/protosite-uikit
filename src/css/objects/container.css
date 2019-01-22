@@ -25,23 +25,23 @@
  ========================================================================== */
 
 @media (--screen-xdesktop) {
-    .o-container { width: 1304px; }
+    .o-container { width: 130.4rem; }
 }
 
 @media (--screen-desktop) {
-    .o-container { width: 1112px; }
+    .o-container { width: 111.2rem; }
 }
 
 @media (--screen-tablet-landscape) {
-    .o-container { width: 920px; }
+    .o-container { width: 92rem; }
 }
 
 @media (--screen-tablet-portrait) {
-    .o-container { width: 720px; }
+    .o-container { width: 72rem; }
 }
 
 @media (--screen-handset-landscape) {
-    .o-container { width: 464px; }
+    .o-container { width: 46.4rem; }
 }
 
 @media (--screen-handset-portrait) {
