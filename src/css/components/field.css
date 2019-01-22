@@ -393,7 +393,7 @@ input:disabled + .c-field-label {
 
 .is-filled input:not([type=file]).c-field,
 .is-focused input:not([type=file]).c-field,
-input.c-field:not([type=checkbox]):not([type=radio]):focus {
+input.c-field:not([type=checkbox], [type=radio]):focus {
     cursor: text;
 }
 

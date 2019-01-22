@@ -1,6 +1,8 @@
 
 @import "./base.css";
-@import "./palette.css";
+@import "./breakpoints.css";
 @import "./images.css";
+@import "./palette.css";
+@import "./shadow.css";
 @import "./space.css";
 @import "./typography.css";

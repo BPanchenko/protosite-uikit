@@ -120,7 +120,7 @@
 
 .c-pagination__page,
 .c-pagination__prev,
-.c-pagination__next:not([aria-selected=true]):not([aria-disable=true]):hover {
+.c-pagination__next:not([aria-selected=true], [aria-disable=true]):hover {
     color: var(--c-pagination-hover-color);
 }
 

@@ -10,19 +10,19 @@
 	color: var(--danger-color);
 }
 
-.c-button.s-danger:not(.s-clean):not(.s-bordered) {
+.c-button.s-danger:not(.s-clean, .s-bordered) {
 	background-color: var(--danger-color);
 	background-blend-mode: color-burn;
 	text-shadow: none;
 }
 
-.c-button.s-danger:not(.s-clean):not(.s-bordered),
-.c-button.s-danger:not(.s-clean):not(.s-bordered):hover {
+.c-button.s-danger:not(.s-clean, .s-bordered),
+.c-button.s-danger:not(.s-clean, .s-bordered):hover {
     color: var(--clr-white);
 }
 
-.c-button.s-danger:not(.s-clean):not(.s-bordered):focus,
-.c-panel:not(.s-transparent) .c-button.s-danger:not(.s-clean):not(.s-bordered):focus {
+.c-button.s-danger:not(.s-clean, .s-bordered):focus,
+.c-panel:not(.s-transparent) .c-button.s-danger:not(.s-clean, .s-bordered):focus {
     background-color: var(--clr-red-900);
 }
 
@@ -44,19 +44,19 @@
 	color: var(--primary-color);
 }
 
-.c-button.s-primary:not(.s-clean):not(.s-bordered) {
+.c-button.s-primary:not(.s-clean, .s-bordered) {
 	background-color: var(--primary-color);
 	background-blend-mode: color-burn;
 	text-shadow: none;
 }
 
-.c-button.s-primary:not(.s-clean):not(.s-bordered),
-.c-button.s-primary:not(.s-clean):not(.s-bordered):hover {
+.c-button.s-primary:not(.s-clean, .s-bordered),
+.c-button.s-primary:not(.s-clean, .s-bordered):hover {
     color: var(--clr-white);
 }
 
-.c-button.s-primary:not(.s-clean):not(.s-bordered):focus,
-.c-panel:not(.s-transparent) .c-button.s-primary:not(.s-clean):not(.s-bordered):focus {
+.c-button.s-primary:not(.s-clean, .s-bordered):focus,
+.c-panel:not(.s-transparent) .c-button.s-primary:not(.s-clean, .s-bordered):focus {
     background-color: var(--clr-blue-900);
 }
 
@@ -69,19 +69,19 @@
 	color: var(--success-color);
 }
 
-.c-button.s-success:not(.s-clean):not(.s-bordered) {
+.c-button.s-success:not(.s-clean, .s-bordered) {
 	background-color: var(--success-color);
 	background-blend-mode: color-burn;
 	text-shadow: none;
 }
 
-.c-button.s-success:not(.s-clean):not(.s-bordered),
-.c-button.s-success:not(.s-clean):not(.s-bordered):hover {
+.c-button.s-success:not(.s-clean, .s-bordered),
+.c-button.s-success:not(.s-clean, .s-bordered):hover {
     color: var(--clr-white);
 }
 
-.c-button.s-success:not(.s-clean):not(.s-bordered):focus,
-.c-panel:not(.s-transparent) .c-button.s-success:not(.s-clean):not(.s-bordered):focus {
+.c-button.s-success:not(.s-clean, .s-bordered):focus,
+.c-panel:not(.s-transparent) .c-button.s-success:not(.s-clean, .s-bordered):focus {
     background-color: var(--clr-green-900);
 }
 
@@ -94,19 +94,19 @@
 	color: var(--warning-color);
 }
 
-.c-button.s-warning:not(.s-clean):not(.s-bordered) {
+.c-button.s-warning:not(.s-clean, .s-bordered) {
 	background-color: var(--warning-color);
 	background-blend-mode: color-burn;
 	text-shadow: none;
 }
 
-.c-button.s-warning:not(.s-clean):not(.s-bordered),
-.c-button.s-warning:not(.s-clean):not(.s-bordered):hover {
+.c-button.s-warning:not(.s-clean, .s-bordered),
+.c-button.s-warning:not(.s-clean, .s-bordered):hover {
     color: var(--clr-white);
 }
 
-.c-button.s-warning:not(.s-clean):not(.s-bordered):focus,
-.c-panel:not(.s-transparent) .c-button.s-warning:not(.s-clean):not(.s-bordered):focus {
+.c-button.s-warning:not(.s-clean, .s-bordered):focus,
+.c-panel:not(.s-transparent) .c-button.s-warning:not(.s-clean, .s-bordered):focus {
     background-color: var(--clr-orange-900);
 }
 
