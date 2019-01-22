@@ -1,10 +1,8 @@
 module.exports = {
+    parser: false,
     plugins: {
         'postcss-import': {},
-        'postcss-custom-media': {},
-        'postcss-preset-env': {},
-        'cssnano': {
-            'preset': 'default'
-        }
+        'postcss-preset-env': { stage: 0 },
+        'cssnano': {}
     }
 };
