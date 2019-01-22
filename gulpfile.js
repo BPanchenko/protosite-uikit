@@ -7,10 +7,10 @@ const cssnano = require('cssnano');
 
 gulp.task('build-css', function () {
     let plugins = [
-        autoprefixer({ browsers: ['last 1 version'] }),
-        cssnano(),
+        autoprefixer({ browsers: ['> 5%'] }),
         postcssPresetEnv({ stage: 0 }),
-        postcssImport()
+        postcssImport(),
+        cssnano()
     ];
     return gulp.src('./src/css/protosite-uikit.css')
         .pipe(postcss(plugins, { parser: false }))
