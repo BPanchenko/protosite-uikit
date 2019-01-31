@@ -6,7 +6,7 @@ const webpack = require('webpack');
 let config = {
     entry: ['./src/js/uikit.js'],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: 'protosite-uikit.js'
     },
     module: {
@@ -16,7 +16,7 @@ let config = {
                 use: [
                     'style-loader',
                     { loader: 'css-loader', options: { importLoaders: 1 } },
-                    'postcss-loader'
+                    { loader: 'postcss-loader', options: { config: { path: './.config' } } }
                 ]
             }
         ]
@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
 
     if (inDevelopment) {
         config.devServer = {
-            contentBase: __dirname,
+            contentBase: path.resolve(__dirname, '../'),
             hot: true,
             inline: true,
             open: 'Chrome',
