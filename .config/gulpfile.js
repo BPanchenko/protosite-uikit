@@ -12,7 +12,7 @@ gulp.task('build-css', function () {
         postcssPresetEnv({ stage: 0 }),
         cssnano()
     ];
-    return gulp.src('./src/css/protosite-uikit.css')
+    return gulp.src('../src/css/protosite-uikit.css')
         .pipe(postcss(plugins, { parser: false }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('../dist'));
 });

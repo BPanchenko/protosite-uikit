@@ -1,14 +1,15 @@
 {
   "name": "protosite.uikit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
-  "main": "./index.html",
+  "main": "./dist/protosite-uikit.js",
+  "style": "./dist/protosite-uikit.css",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev": "webpack-dev-server --mode development --config .config/webpack.config.js",
     "dev-postcss": "postcss src/css/protosite-uikit.css --base src/css --dir dist -o protosite-uikit.css -w",
-    "build": "webpack --mode production",
-    "build-gulp": "gulp build-css"
+    "build": "webpack --mode production --config .config/webpack.config.js",
+    "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js"
   },
   "analyze": true,
   "bugs": {

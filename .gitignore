@@ -1,0 +1,6 @@
+/.idea
+/node_modules
+/dataset
+/json2db.php
+/package-lock.json
+/yarn.lock
