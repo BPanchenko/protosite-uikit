@@ -2,9 +2,7 @@
 /* Typeface
  ======================================================================== */
 
-@import "http://uikit.protosite.rocks/resources/fonts/marck-script/marck-script.css";
-@import "http://uikit.protosite.rocks/resources/fonts/pt-serif-caption/pt-serif-caption.css";
-@import "http://uikit.protosite.rocks/resources/fonts/pt-sans-narrow/pt-sans-narrow.css";
+@import url("https://fonts.googleapis.com/css?family=Marck+Script|PT+Sans:400,400i,700|PT+Serif+Caption&subset=cyrillic-ext");
 
 :root {
     --font-family-condensed: "PT Sans Narrow", sans-serif;
