@@ -4,6 +4,14 @@
 
 /* ========================================================================
    Component: `c-tab`
+   
+   Markup:
+   
+   <c-tablist>
+       <c-tab aria-controls="tabpanel3" id="tab3" data-text="Tab A"></c-tab>
+       <c-tab aria-controls="tabpanel4" id="tab4" data-text="Tab B"></c-tab>
+   </c-tablist>
+   
  ========================================================================== */
 
 .c-tab {
@@ -11,8 +19,6 @@
     padding: 1.2rem 1.6rem 1.2rem 1.6rem;
     box-sizing: border-box;
     min-width: 9rem;
-    max-width: 36rem;
-    min-height: 36rem;
     flex: 0 0 auto;
 
     background-color: transparent;
@@ -94,11 +100,10 @@
     left: 0;
     bottom: 0;
     transform: translateX(0);
-    min-width: 36rem;
     height: 0.2rem;
     background-color: var(--clr-grey-900);
 
-    transition-property: left, width;
+    transition-property: left, transform, width;
     transition-duration: 0.1s;
     transition-timing-function: var(--easing);
 }

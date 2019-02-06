@@ -12,6 +12,7 @@
     min-height: 2.2rem;
     vertical-align: middle;
     line-height: 1;
+	font-size: var(--font-size-medium);
 }
 
 
@@ -20,7 +21,7 @@
  ========================================================================== */
 
 .c-ctrl-sort {
-    font-size: inherit;
+    font-size: --font-size-medium;
     line-height: inherit;
     text-decoration: none;
 
@@ -60,4 +61,20 @@
 }
 .c-ctrl-sort[aria-selected=true]::after {
     color: var(--clr-grey-900);
+}
+
+
+/* ========================================================================
+   Wrapper: `c-ctrl-group`
+ ========================================================================== */
+
+.c-ctrl-group {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0.001px;
+	white-space: nowrap;
+}
+
+.c-ctrl-group .c-ctrl + .c-ctrl {
+	margin-left: var(--space-xs);
 }
