@@ -10,9 +10,11 @@
     display: inline-block;
     min-width: 2.2rem;
     min-height: 2.2rem;
+    padding: 0 0.2rem;
+    line-height: 2.2rem;
     vertical-align: middle;
-    line-height: 1;
 	font-size: var(--font-size-medium);
+	text-align: center;
 }
 
 
