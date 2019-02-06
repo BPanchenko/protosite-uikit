@@ -6,7 +6,7 @@
 @import "../settings/_import.css";
 
 :root {
-    --body-background: var(--clr-grey-200);
+    --body-background-color: var(--clr-grey-200);
     --selection-background-color: var(--clr-blue-600);
 }
 
@@ -16,11 +16,11 @@ html {
 }
 
 body {
-    background: var(--body-background);
+	margin: 0;
+    background-color: var(--body-background-color);
     font-family: var(--font-family-default);
     font-size: var(--font-size-default);
     color: var(--text-color);
-	margin: 0;
 }
 
 article,
