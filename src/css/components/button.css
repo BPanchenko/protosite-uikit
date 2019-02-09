@@ -63,15 +63,15 @@
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
-	padding: var(--space-s) var(--space-m);
+	padding: var(--space-sm) var(--space-md);
 
 	cursor: pointer;
-	font-family: var(--font-family-secondary);
-	font-size: var(--font-size-default);
+	font-family: var(--font-secondary);
+	font-size: var(--text-base-size);
 	font-weight: 500;
 	line-height: 1.45;
 
-	background-color: var(--space-s);
+	background-color: var(--space-sm);
 	background-image: var(--img-subtle-dots);
 	background-size: var(--img-subtle-dots-size);
 	background-position: center;
@@ -90,7 +90,7 @@
 }
 
 .c-button + .c-button {
-    margin-left: var(--space-s);
+    margin-left: var(--space-sm);
 }
 
 .c-button > span {
@@ -99,7 +99,7 @@
 }
 
 .c-button > .iconic[data-glyph] {
-	margin-right: var(--space-s);
+	margin-right: var(--space-sm);
 }
 .c-button > .iconic[data-glyph]::before {
     vertical-align: middle;
@@ -163,7 +163,7 @@
 	background-image: none;
 	box-shadow: none !important;
 
-	padding: var(--space-s);
+	padding: var(--space-sm);
 	background-color: transparent;
 }
 .c-button--icon:hover {
@@ -192,7 +192,7 @@
 }
 
 .c-button--icon + .c-button--icon {
-	margin-left: var(--space-s);
+	margin-left: var(--space-sm);
 }
 
 
@@ -208,7 +208,7 @@
  ========================================================================== */
 
 .c-button--link {
-    padding: var(--space-xs) var(--space-s);
+    padding: var(--space-xs) var(--space-sm);
 
     background: transparent !important;
     text-decoration: var(--link-text-decoration);
@@ -253,7 +253,7 @@
 
 .c-button.s-bordered,
 .c-panel:not(.s-transparent) .c-button.s-bordered {
-    padding: var(--space-s) var(--space-m);
+    padding: var(--space-sm) var(--space-md);
 
     background-color: transparent;
     background-image: none;

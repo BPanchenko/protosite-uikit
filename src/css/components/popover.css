@@ -167,8 +167,8 @@
     overflow: hidden;
 
     color: var(--c-popover-body-color);
-    font-family: var(--font-family-default);
-    font-size: var(--font-size-default);
+    font-family: var(--font-default);
+    font-size: var(--text-base-size);
     line-height: var(--line-height-default);
 }
 

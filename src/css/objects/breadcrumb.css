@@ -40,8 +40,8 @@
 }
 
 .o-breadcrumb__item.is-current {
-	font-family: var(--font-family-primary);
-	font-size: var(--font-size-default);
+	font-family: var(--font-primary);
+	font-size: var(--text-base-size);
 	font-weight: 500;
 	color: var(--clr-grey-800);
 }

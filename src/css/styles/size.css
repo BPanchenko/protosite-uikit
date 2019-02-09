@@ -45,14 +45,14 @@
 }
 
 .c-button.s-small {
-    font-size: var(--font-size-small);
+    font-size: var(--text-sm);
     line-height: 1.4;
-    padding: var(--space-xs) var(--space-s);
+    padding: var(--space-xs) var(--space-sm);
 }
 .c-button.s-large {
-    font-size: var(--font-size-large);
+    font-size: var(--text-lg);
     line-height: 1.5;
-    padding: var(--space-s) var(--space-l);
+    padding: var(--space-sm) var(--space-lg);
 }
 
 .c-button--icon.s-small {
@@ -63,7 +63,7 @@
 }
 
 .c-button--icon.s-large {
-    padding: var(--space-s);
+    padding: var(--space-sm);
 }
 .c-button--icon.s-large:empty::before {
     width: var(--c-button-icon-large-side);
@@ -75,7 +75,7 @@
 }
 
 .c-button--icon.s-xlarge {
-    padding: var(--space-s);
+    padding: var(--space-sm);
 }
 .c-button--icon.s-xlarge:empty::before {
     width: var(--c-button-icon-xlarge-side);
@@ -87,7 +87,7 @@
 }
 
 .c-button--icon.s-xlarge + .c-button--icon.s-xlarge {
-    margin-left: var(--space-m);
+    margin-left: var(--space-md);
 }
 
 
@@ -157,8 +157,8 @@
 }
 .c-thumbnail.s-xlarge .c-thumbnail__caption {
     padding: .6rem .8rem;
-    font-size: var(--font-size-large);
-    line-height: var(--line-height-large);
+    font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
 }
 
 /* Style: square thumbnail

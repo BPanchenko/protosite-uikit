@@ -16,8 +16,8 @@
  ========================================================================== */
 
 :root {
-    --c-pagination-font-family: --font-family-primary;
-    --c-pagination-font-size: --font-size-default;
+    --c-pagination-font-family: --font-primary;
+    --c-pagination-font-size: --text-base-size;
     --c-pagination-line-height: 2.6rem;
 
     --c-pagination-color: --link-color;

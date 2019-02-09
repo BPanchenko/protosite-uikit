@@ -86,10 +86,10 @@
  ========================================================================== */
 
 .o-article.c-panel {
-    padding-top: var(--space-m);
+    padding-top: var(--space-md);
     padding-right: var(--space-xl);
-    padding-bottom: var(--space-m);
-    padding-left: var(--space-l);
+    padding-bottom: var(--space-md);
+    padding-left: var(--space-lg);
 }
 
 

@@ -21,11 +21,11 @@ table + table {
  ========================================================================== */
 
 table th {
-	padding: var(--space-s) var(--space-xs);
+	padding: var(--space-sm) var(--space-xs);
 	text-align: left;
 	vertical-align: bottom;
-	font-family: var(--font-family-primary);
-	font-size: var(--font-size-default);
+	font-family: var(--font-primary);
+	font-size: var(--text-base-size);
 	font-weight: 600;
 	color: var(--caption-color);
 }
@@ -35,7 +35,7 @@ table th {
  ========================================================================== */
 
 table td {
-	padding: var(--space-s) var(--space-xs);
+	padding: var(--space-sm) var(--space-xs);
 	vertical-align: top;
 }
 
@@ -44,8 +44,8 @@ table td {
  ========================================================================== */
 
 table tfoot {
-	font-family: var(--font-family-primary);
-	font-size: var(--font-size-small);
+	font-family: var(--font-primary);
+	font-size: var(--text-sm);
 	font-weight: 300;
 	color: var(--text-color);
 }
@@ -56,8 +56,8 @@ table tfoot {
 
 table caption {
 	text-align: left;
-	font-family: var(--font-family-primary);
-	font-size: var(--font-size-default);
+	font-family: var(--font-primary);
+	font-size: var(--text-base-size);
 	font-weight: 300;
 	color: var(--muted-color);
 }

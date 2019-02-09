@@ -3,8 +3,8 @@
 :root {
     --u-margin: var(--space-default);
     --u-margin-mini: var(--space-xs);
-    --u-margin-small: var(--space-s);
-    --u-margin-large: var(--space-l);
+    --u-margin-small: var(--space-sm);
+    --u-margin-large: var(--space-lg);
     --u-margin-xlarge: var(--space-xl);
 }
 

@@ -22,7 +22,7 @@
 
 :root {
     --c-field-font-family: inherit;
-    --c-field-font-size: var(--font-size-default);
+    --c-field-font-size: var(--text-base-size);
     --c-field-line-height: var(--line-height-default);
 
     --c-field-height: 3.2rem;
@@ -210,7 +210,7 @@ input[type=checkbox] + .c-field-label,
 input[type=radio] + .c-field-label {
     position: static !important;
     transition: none !important;
-    padding-left: var(--space-s);
+    padding-left: var(--space-sm);
     padding-right: var(--space-default);
     font-size: var(--c-field-font-size);
     cursor: pointer;
@@ -284,8 +284,8 @@ input:disabled + .c-field-label {
     box-sizing: border-box;
 
     cursor: pointer;
-    font-family: var(--font-family-sans);
-    font-size: var(--font-size-default);
+    font-family: var(--font-sans);
+    font-size: var(--text-base-size);
     font-weight: 500;
     line-height: 1.45;
 
