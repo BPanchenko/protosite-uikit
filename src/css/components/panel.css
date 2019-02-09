@@ -11,12 +11,12 @@
  ========================================================================== */
 
 :root {
-    --c-panel-padding-left: var(--space-m);
-    --c-panel-padding-right: var(--space-m);
-    --c-panel-head-padding-top: var(--space-m);
-    --c-panel-head-padding-bottom: var(--space-s);
-    --c-panel-body-padding-top: var(--space-m);
-    --c-panel-body-padding-bottom: var(--space-m);
+    --c-panel-padding-left: var(--space-md);
+    --c-panel-padding-right: var(--space-md);
+    --c-panel-head-padding-top: var(--space-md);
+    --c-panel-head-padding-bottom: var(--space-sm);
+    --c-panel-body-padding-top: var(--space-md);
+    --c-panel-body-padding-bottom: var(--space-md);
 
     --c-panel-border-radius: 0.2rem;
 }
@@ -121,8 +121,8 @@
     display: block;
     position: absolute;
     top: 0;
-    left: calc(var(--c-panel-padding-left) - var(--space-s));
-    right: calc(var(--c-panel-padding-right) - var(--space-s));
+    left: calc(var(--c-panel-padding-left) - var(--space-sm));
+    right: calc(var(--c-panel-padding-right) - var(--space-sm));
     border-top: 1px solid var(--clr-grey-400);
 }
 
@@ -132,14 +132,14 @@
 
 @media (--screen-handset) {
     .c-panel__head {
-        padding: var(--space-s) var(--space-s) var(--space-xs) var(--space-s);
+        padding: var(--space-sm) var(--space-sm) var(--space-xs) var(--space-sm);
     }
     .c-panel__head::after {
-        left: var(--space-s);
-        right: var(--space-s);
+        left: var(--space-sm);
+        right: var(--space-sm);
     }
     
     .c-panel__body {
-        padding: var(--space-s);
+        padding: var(--space-sm);
     }
 }

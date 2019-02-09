@@ -16,11 +16,11 @@
 /* Fonts
  ========================================================================== */
  
-.u-font-condensed { font-family: var(--font-family-condensed); }
-.u-font-cursive { font-family: var(--font-family-cursive); }
-.u-font-monospace { font-family: var(--font-family-monospace); }
-.u-font-sans { font-family: var(--font-family-sans); }
-.u-font-serif { font-family: var(--font-family-serif); }
+.u-font-condensed { font-family: var(--font-condensed); }
+.u-font-cursive { font-family: var(--font-cursive); }
+.u-font-monospace { font-family: var(--font-monospace); }
+.u-font-sans { font-family: var(--font-sans); }
+.u-font-serif { font-family: var(--font-serif); }
 
 
 /* Size modifiers
@@ -31,20 +31,20 @@
     line-height: var(--line-height-default);
 }
 .u-text-large {
-    font-size: var(--font-size-large);
-    line-height: var(--line-height-large);
+    font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
 }
 .u-text-medium {
-    font-size: var(--font-size-medium);
-    line-height: var(--line-height-medium);
+    font-size: var(--text-md);
+    line-height: var(--line-height-md);
 }
 .u-text-small {
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
+    font-size: var(--text-sm);
+    line-height: var(--line-height-sm);
 }
 .u-text-xsmall {
-    font-size: var(--font-size-xsmall);
-    line-height: var(--line-height-xsmall);
+    font-size: var(--text-xs);
+    line-height: var(--line-height-xs);
 }
 
 

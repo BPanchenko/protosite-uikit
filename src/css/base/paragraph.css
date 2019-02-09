@@ -11,8 +11,8 @@ p {
     vertical-align: text-top;
     max-width: 80ch;
     font-family: inherit;
-    font-size: var(--font-size-medium);
-    line-height: var(--line-height-medium);
+    font-size: var(--text-sm);
+    line-height: var(--line-height-md);
 }
 
 

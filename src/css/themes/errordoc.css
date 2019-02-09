@@ -9,6 +9,6 @@
 
 @media (--screen-tablet-and-smaller) {
     .t-errordoc .o-container {
-        margin: 0 var(--space-l);
+        margin: 0 var(--space-lg);
     }
 }

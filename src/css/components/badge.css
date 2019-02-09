@@ -20,11 +20,11 @@
     vertical-align: middle;
     
     cursor: default;
-    background-image: radial-gradient(1rem 1rem, farthest-side, #D3D3D3, #FFFFFF);
+    background-image: radial-gradient(farthest-side, #D3D3D3, #FFFFFF);
     border: .1rem solid #E0E0E0;
 }
 .c-panel:not(.s-transparent) .c-badge {
-    background-image: radial-gradient(1rem 1rem, farthest-side, #E0E0E0, #FFFFFF);
+    background-image: radial-gradient(farthest-side, #E0E0E0, #FFFFFF);
     border: 0.1rem solid #EEEEEE;
 }
 

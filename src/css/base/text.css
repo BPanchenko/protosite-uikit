@@ -45,8 +45,8 @@ strong > strong {
  ========================================================================== */
 
 small {
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
+    font-size: var(--text-sm);
+    line-height: var(--line-height-sm);
 }
 
 
@@ -60,7 +60,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: var(--font-family-monospace);
+    font-family: var(--font-monospace);
     font-size: inherit;
 }
 code,
@@ -158,7 +158,7 @@ h4 + h1, h4 + h2, h4 + h3, h4 + h5, h4 + h6,
 h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h6,
 h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5
 {
-    margin-top: var(--space-s);
+    margin-top: var(--space-sm);
 }
 
 h1 a,

@@ -87,7 +87,7 @@
     padding: 0 var(--space-xs);
 
     line-height: inherit;
-    font-family: var(--font-family-primary);
+    font-family: var(--font-primary);
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -105,11 +105,11 @@
 .c-list__item .c-list__cell {
     display: inline-block;
     white-space: normal;
-    font-size: var(--font-size-default);
+    font-size: var(--text-base-size);
 }
 
 .c-list__item > .c-list__cell {
-    padding: 0 var(--space-s);
+    padding: 0 var(--space-sm);
     vertical-align: middle;
 }
 

@@ -15,7 +15,7 @@
  ========================================================================== */
 
 .c-button.s-clean {
-	padding: var(--space-s) var(--space-m);
+	padding: var(--space-sm) var(--space-md);
 	background-color: transparent;
 	background-image: none;
 	box-shadow: none;

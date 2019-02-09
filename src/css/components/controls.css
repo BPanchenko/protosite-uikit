@@ -13,7 +13,7 @@
     padding: 0 0.2rem;
     line-height: 2.2rem;
     vertical-align: middle;
-	font-size: var(--font-size-medium);
+	font-size: var(--text-sm);
 	text-align: center;
 }
 
@@ -23,7 +23,7 @@
  ========================================================================== */
 
 .c-ctrl-sort {
-    font-size: --font-size-medium;
+    font-size: --text-sm;
     line-height: inherit;
     text-decoration: none;
 

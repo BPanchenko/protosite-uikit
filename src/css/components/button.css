@@ -63,24 +63,19 @@
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
-	padding: var(--space-s) var(--space-m);
+	padding: var(--space-sm) var(--space-md);
 
 	cursor: pointer;
-	font-family: var(--font-family-secondary);
-	font-size: var(--font-size-default);
+	font-family: var(--font-secondary);
+	font-size: var(--text-base-size);
 	font-weight: 500;
 	line-height: 1.45;
 
-	background-color: var(--space-s);
-	background-image: var(--img-subtle-dots);
-	background-size: var(--img-subtle-dots-size);
-	background-position: center;
-	background-blend-mode: overlay;
-
+	background-color: var(--clr-grey-200);
 	border-radius: 0.2rem;
 	box-shadow: var(--shadow-2dp);
 
-	transition: var(--link-transition), background-color 160ms var(--easing);
+	transition: var(--link-transition), background-color 0.16s var(--easing);
 	user-select: none;
 }
 
@@ -90,7 +85,7 @@
 }
 
 .c-button + .c-button {
-    margin-left: var(--space-s);
+    margin-left: var(--space-sm);
 }
 
 .c-button > span {
@@ -99,7 +94,7 @@
 }
 
 .c-button > .iconic[data-glyph] {
-	margin-right: var(--space-s);
+	margin-right: var(--space-sm);
 }
 .c-button > .iconic[data-glyph]::before {
     vertical-align: middle;
@@ -122,7 +117,7 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-	background-color: var(--clr-grey-700);
+	background-color: var(--clr-grey-300);
 }
 
 
@@ -163,7 +158,7 @@
 	background-image: none;
 	box-shadow: none !important;
 
-	padding: var(--space-s);
+	padding: var(--space-sm);
 	background-color: transparent;
 }
 .c-button--icon:hover {
@@ -192,7 +187,7 @@
 }
 
 .c-button--icon + .c-button--icon {
-	margin-left: var(--space-s);
+	margin-left: var(--space-sm);
 }
 
 
@@ -208,7 +203,7 @@
  ========================================================================== */
 
 .c-button--link {
-    padding: var(--space-xs) var(--space-s);
+    padding: var(--space-xs) var(--space-sm);
 
     background: transparent !important;
     text-decoration: var(--link-text-decoration);
@@ -253,7 +248,7 @@
 
 .c-button.s-bordered,
 .c-panel:not(.s-transparent) .c-button.s-bordered {
-    padding: var(--space-s) var(--space-m);
+    padding: var(--space-sm) var(--space-md);
 
     background-color: transparent;
     background-image: none;
@@ -327,16 +322,4 @@
 .c-button-group .c-button--icon + .c-button--icon,
 .c-button-group .c-button--link + .c-button--link {
     margin-left: 0;
-}
-
-/* Media queries
- ========================================================================== */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-	   only screen and (min-resolution: 192dpi),
-	   only screen and (min-resolution: 2dppx)
-{
-	.c-button {
-		background-image: var(--img-subtle-dots-x2);
-	}
 }

@@ -18,7 +18,7 @@
 }
 
 .o-form fieldset {
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-md);
 }
 
 .o-form fieldset legend {
@@ -33,7 +33,7 @@
  ========================================================================== */
 
 .o-form__head {
-    padding-bottom: var(--space-s);
+    padding-bottom: var(--space-sm);
 }
 
 .o-form__head * + h1,
@@ -60,11 +60,11 @@
 }
 
 .o-form__row .c-field-box + .c-field-box {
-    margin-left: var(--space-s);
+    margin-left: var(--space-sm);
 }
 
 .o-form__row + .o-form__row {
-    margin-top: var(--space-m);
+    margin-top: var(--space-md);
 }
 
 
@@ -77,7 +77,7 @@
 
 .o-form__body + .o-form__buttons,
 .o-form__row + .o-form__buttons {
-    margin-top: var(--space-l);
+    margin-top: var(--space-lg);
 }
 
 
@@ -90,5 +90,5 @@
 
 .s-short .o-form__body + .o-form__buttons,
 .s-short .o-form__row + .o-form__buttons {
-    margin-top: var(--space-m);
+    margin-top: var(--space-md);
 }

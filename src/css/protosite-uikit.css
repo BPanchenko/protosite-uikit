@@ -38,7 +38,6 @@
 @import "./utilities/text.css";
 @import "./utilities/width.css" screen;
 
-@import "./styles/background.css";
 @import "./styles/clean.css";
 @import "./styles/color.css";
 @import "./styles/floating.css";

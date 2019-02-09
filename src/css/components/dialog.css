@@ -13,7 +13,7 @@
  ========================================================================== */
 
 :root {
-    --c-dialog-padding: var(--space-m);
+    --c-dialog-padding: var(--space-md);
 }
 
 
@@ -95,7 +95,7 @@
  ========================================================================== */
 
 .c-dialog__buttons {
-	padding: var(--space-s) var(--c-dialog-padding);
+	padding: var(--space-sm) var(--c-dialog-padding);
 	margin-top: var(--c-dialog-padding);
 
 	font-size: 0.001px;

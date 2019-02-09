@@ -5,27 +5,30 @@
 @import url("https://fonts.googleapis.com/css?family=Marck+Script|PT+Sans:400,400i,700|PT+Serif+Caption&subset=cyrillic-ext");
 
 :root {
-    --font-family-condensed: "PT Sans Narrow", sans-serif;
-    --font-family-cursive: "Marck Script", cursive;
-    --font-family-monospace: monospace;
-    --font-family-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-family-serif: "PT Serif Caption", serif;
+    --font-condensed: "PT Sans Narrow", sans-serif;
+    --font-cursive: "Marck Script", cursive;
+    --font-monospace: monospace;
+    --font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: "PT Serif Caption", serif;
 
-    --font-family-default: var(--font-family-sans);
-    --font-family-primary: var(--font-family-sans);
-    --font-family-secondary: var(--font-family-sans);
+    --font-default: var(--font-sans);
+    --font-primary: var(--font-sans);
+    --font-secondary: var(--font-sans);
 
-    --font-size-default: 1.6rem;
-    --font-size-large: 1.8rem;
-    --font-size-medium: 1.4rem;
-    --font-size-small: 1.3rem;
-    --font-size-xsmall: 1.1rem;
+	--text-base-size: 1.6rem;
+    --text-xs: 1.1rem;
+    --text-sm: 1.4rem;
+    --text-md: 1.8rem;
+    --text-lg: 2rem;
+    --text-xl: 2.8rem;
+    --text-xxl: 3.6rem;
+    --text-xxxl: 4.8rem;
 
     --line-height-default: 2.4rem;
-    --line-height-large: 2.4rem;
-    --line-height-medium: 2.4rem;
-    --line-height-small: 1.6rem;
-    --line-height-xsmall: 1.2rem;
+    --line-height-lg: 2.4rem;
+    --line-height-md: 2.4rem;
+    --line-height-sm: 2.4rem;
+    --line-height-xs: 1.2rem;
 }
 
 
@@ -33,23 +36,23 @@
  ======================================================================== */
 
 :root {
-    --h1-font: 400 3.6rem/4rem var(--font-family-serif);
-    --h1-margin: var(--space-s) 0;
+    --h1-font: 400 3.6rem/4rem var(--font-serif);
+    --h1-margin: var(--space-sm) 0;
     --h1-text-transform: none;
-    --h2-font: 400 2.8rem/3.2rem var(--font-family-serif);
-    --h2-margin: var(--space-s) 0;
+    --h2-font: 400 2.8rem/3.2rem var(--font-serif);
+    --h2-margin: var(--space-sm) 0;
     --h2-text-transform: none;
-    --h3-font: 400 2rem/2.4rem var(--font-family-serif);
+    --h3-font: 400 2rem/2.4rem var(--font-serif);
     --h3-margin: var(--space-xs) 0;
     --h3-text-transform: none;
 
-    --h4-font: 500 1.6rem/1.8rem var(--font-family-sans);
-    --h4-margin: var(--space-m) 0 var(--space-xs);
+    --h4-font: 500 1.6rem/1.8rem var(--font-sans);
+    --h4-margin: var(--space-md) 0 var(--space-xs);
     --h4-text-transform: none;
-    --h5-font: 500 1.4rem/1.6rem var(--font-family-sans);
-    --h5-margin: var(--space-m) 0 var(--space-xs);
+    --h5-font: 500 1.4rem/1.6rem var(--font-sans);
+    --h5-margin: var(--space-md) 0 var(--space-xs);
     --h5-text-transform: uppercase;
-    --h6-font: 700 1.2rem/1.6rem var(--font-family-sans);
-    --h6-margin: var(--space-s) 0 var(--space-xs);
+    --h6-font: 700 1.2rem/1.6rem var(--font-sans);
+    --h6-margin: var(--space-sm) 0 var(--space-xs);
     --h6-text-transform: uppercase;
 }

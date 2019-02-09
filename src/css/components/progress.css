@@ -7,7 +7,7 @@
 
 .c-progress {
     height: 1.4rem;
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-md);
     background-color: var(--clr-grey-100);
     border-radius: 0.2rem;
     box-sizing: border-box;
@@ -15,7 +15,7 @@
     line-height: 1.4rem;
 }
 
-* + .c-progress { margin-top: var(--space-m); }
+* + .c-progress { margin-top: var(--space-md); }
 
 
 /* Sub-element: `c-progress__bar`
