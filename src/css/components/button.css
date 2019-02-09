@@ -71,16 +71,11 @@
 	font-weight: 500;
 	line-height: 1.45;
 
-	background-color: var(--space-sm);
-	background-image: var(--img-subtle-dots);
-	background-size: var(--img-subtle-dots-size);
-	background-position: center;
-	background-blend-mode: overlay;
-
+	background-color: var(--clr-grey-200);
 	border-radius: 0.2rem;
 	box-shadow: var(--shadow-2dp);
 
-	transition: var(--link-transition), background-color 160ms var(--easing);
+	transition: var(--link-transition), background-color 0.16s var(--easing);
 	user-select: none;
 }
 
@@ -122,7 +117,7 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-	background-color: var(--clr-grey-700);
+	background-color: var(--clr-grey-300);
 }
 
 
@@ -327,16 +322,4 @@
 .c-button-group .c-button--icon + .c-button--icon,
 .c-button-group .c-button--link + .c-button--link {
     margin-left: 0;
-}
-
-/* Media queries
- ========================================================================== */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-	   only screen and (min-resolution: 192dpi),
-	   only screen and (min-resolution: 2dppx)
-{
-	.c-button {
-		background-image: var(--img-subtle-dots-x2);
-	}
 }
