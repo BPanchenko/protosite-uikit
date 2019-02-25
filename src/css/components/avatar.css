@@ -13,8 +13,14 @@
  *
  ========================================================================== */
 
-:root {
-    --c-avatar-size: calc(5 * var(--unit));
+.c-avatar {
+    --base-size: calc(5 * var(--unit));
+
+    --size-xs: 2.4rem;
+    --size-sm: 4rem;
+    --size-md: 8rem;
+    --size-lg: 12.8rem;
+    --size-xl: 19.2rem;
 }
 
 /* ========================================================================
@@ -26,8 +32,8 @@
     border-radius: 50%;
     overflow: hidden;
 
-    width: var(--c-avatar-size);
-    height: var(--c-avatar-size);
+    width: var(--base-size);
+    height: var(--base-size);
 
     font-size: .001px;
     text-align: center;
@@ -55,6 +61,39 @@
 /* picture on background */
 .c-avatar[style*="background"] {
     box-shadow: var(--inset-shadow-2dp);
+}
+
+
+/* Modifiers: `c-avatar--sm`
+ ========================================================================== */
+
+.c-avatar--xs {
+    --size-xs: 2.4rem;
+    --size-sm: 4rem;
+    --size-md: 8rem;
+    --size-lg: 12.8rem;
+    --size-xl: 19.2rem;
+}
+
+.c-avatar--xs {
+    width: var(--size-xs);
+    height: var(--size-xs);
+}
+.c-avatar--sm {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
+.c-avatar--md {
+    width: var(--size-md);
+    height: var(--size-md);
+}
+.c-avatar--lg {
+    width: var(--size-lg);
+    height: var(--size-lg);
+}
+.c-avatar--xl {
+    width: var(--size-xl);
+    height: var(--size-xl);
 }
 
 
