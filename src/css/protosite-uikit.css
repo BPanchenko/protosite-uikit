@@ -1,6 +1,5 @@
 
-@import "./settings/images.css";
-@import "./settings/palette.css";
+@import "./settings/_import.css";
 
 
 @import "./base/document.css";

@@ -1,7 +1,6 @@
 console.time('t');
 
-import '../css/protosite-uikit.css';
-
+import './custom-elements/avatar.js';
 import './custom-elements/button.js';
 import './custom-elements/field.js';
 import './custom-elements/tabs.js';

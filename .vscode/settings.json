@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.host": "127.0.0.1",
+    "liveServer.settings.port": 6464,
+    "liveServer.settings.file": "index.html",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+		"src/css/**"
+    ]
+}

@@ -16,7 +16,7 @@
 
 .c-tab {
     display: block;
-    padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+    padding: var(--space-sm) var(--space-default) var(--space-sm) var(--space-default);
     box-sizing: border-box;
     min-width: 9rem;
     flex: 0 0 auto;
