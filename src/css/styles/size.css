@@ -2,38 +2,6 @@
 @import "../settings/base.css";
 @import "../settings/space.css";
 
-/* ========================================================================
-   Component: `c-avatar`
- ========================================================================== */
-
-:root {
-	--c-avatar-xsmall-size: 2.4rem;
-    --c-avatar-small-size: 4rem;
-    --c-avatar-medium-size: 8rem;
-    --c-avatar-large-size: 12.8rem;
-    --c-avatar-xlarge-size: 19.2rem;
-}
-
-.c-avatar.s-xsmall {
-    width: var(--c-avatar-xsmall-size);
-    height: var(--c-avatar-xsmall-size);
-}
-.c-avatar.s-small {
-    width: var(--c-avatar-small-size);
-    height: var(--c-avatar-small-size);
-}
-.c-avatar.s-medium {
-    width: var(--c-avatar-medium-size);
-    height: var(--c-avatar-medium-size);
-}
-.c-avatar.s-large {
-    width: var(--c-avatar-large-size);
-    height: var(--c-avatar-large-size);
-}
-.c-avatar.s-xlarge {
-    width: var(--c-avatar-xlarge-size);
-    height: var(--c-avatar-xlarge-size);
-}
 
 /* ========================================================================
    Component: `c-button`
