@@ -175,6 +175,31 @@
 }
 
 
+/* List
+ ========================================================================== */
+
+.c-list.s-example .c-ctrl-sort {
+	color: var(--clr-grey-400);
+}
+
+.c-list.s-example .c-ctrl-sort::after {
+    color: transparent;
+    transition: color 0.16s var(--easing);
+}
+
+.c-list.s-example .c-ctrl-sort:hover {
+    color: var(--clr-grey-800);
+}
+.c-list.s-example .c-ctrl-sort:hover::after {
+    color: var(--clr-grey-400);
+}
+
+.c-list.s-example .c-ctrl-sort[aria-selected=true],
+.c-list.s-example .c-ctrl-sort[aria-selected=true]::after {
+    color: var(--clr-grey-900);
+}
+
+
 /* Tooltip holder
  ========================================================================== */
 
