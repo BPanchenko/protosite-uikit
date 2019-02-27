@@ -11,40 +11,36 @@
 
 .c-badge {
     display: inline-block;
-    border-radius: 50vw;
-    line-height: 3.2rem;
-    
-    padding: .4rem;
-    font: 600 1.4rem 'Open Sans';
-    overflow: hidden;
     vertical-align: middle;
+    border-radius: 50vw;
+    
+    padding: var(--space-xxs) var(--space-xs);
+    font-size: var(--text-xs);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     
     cursor: default;
-    background-image: radial-gradient(farthest-side, #D3D3D3, #FFFFFF);
-    border: .1rem solid #E0E0E0;
+    background-color: var(--clr-grey-600);
+    color: var(--clr-white);
 }
-.c-panel:not(.s-transparent) .c-badge {
-    background-image: radial-gradient(farthest-side, #E0E0E0, #FFFFFF);
-    border: 0.1rem solid #EEEEEE;
-}
-
-.c-badge-str {
-    display: inline-block;
-    border-radius: 50vw;
-    line-height: 1em;
-    
-    padding: .8rem;
-    background-color: white;
-    box-shadow: inset 0 0 0.1rem 0.1rem rgba(255,255,255,.6);
-    color: #424242;
-    letter-spacing: 0.1rem;
-    
-}
-a.c-badge:hover .c-badge-str {
-    color: rgb(2,119,189);
-}
-
 
 
 /* Color modifiers
  ========================================================================== */
+
+.c-badge--primary {
+    background-color: var(--primary-color);
+}
+.c-badge--info {
+    background-color: var(--clr-cyan-800);
+}
+.c-badge--success {
+    background-color: var(--success-color);
+}
+.c-badge--warning {
+    background-color: var(--warning-color);
+}
+.c-badge--danger {
+    background-color: var(--danger-color);
+}

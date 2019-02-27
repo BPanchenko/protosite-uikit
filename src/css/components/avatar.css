@@ -5,11 +5,18 @@
  * Component:       `c-avatar`
  * Description:     User Avatar
  *
- * Modifiers:       `c-avatar--xsmall`
- *                    `c-avatar--small`
- *                    `c-avatar--medium` (size by default)
- *                    `c-avatar--large`
- *                    `c-avatar--xlarge`
+ * Modifiers:       `c-avatar--xs`
+ *                  `c-avatar--sm`
+ *                  `c-avatar--md`
+ *                  `c-avatar--lg`
+ *                  `c-avatar--xl`
+ *
+ * Markup: 
+ *   <figure class="c-avatar c-avatar--md">
+ *      <a href="..." class="c-avatar__link" target="_blank">
+ *          <img src="..." class="c-avatar__image">
+ *      </a>
+ *   </figure>
  *
  ========================================================================== */
 
@@ -39,7 +46,6 @@
     text-align: center;
     vertical-align: middle;
 
-    box-shadow: var(--shadow-2dp);
     background-size: cover;
     user-select: none;
 
@@ -47,8 +53,7 @@
     margin: 0;
 }
 
-.c-avatar a,
-.c-avatar img {
+.c-avatar :matches(a, img) {
     display: inline-block;
     width: inherit;
     height: inherit;
@@ -61,6 +66,37 @@
 /* picture on background */
 .c-avatar[style*="background"] {
     box-shadow: var(--inset-shadow-2dp);
+}
+
+
+/* State: `:empty`
+ ========================================================================== */
+
+.c-avatar:not([style*="background"]):empty {
+    background-color: var(--clr-grey-300);
+    border: 0.1rem solid var(--clr-grey-400);
+}
+
+.c-avatar:not([style*="background"]):empty::before,
+.c-avatar:not([style*="background"]):empty::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    display: inline-block;
+    height: 40%;
+    width: 0.1rem;
+    background-color: var(--clr-grey-400);
+    
+    content: ' ';
+}
+
+.c-avatar:not([style*="background"]):empty::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.c-avatar:not([style*="background"]):empty::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 

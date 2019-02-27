@@ -13,56 +13,8 @@
     padding: 0 0.2rem;
     line-height: 2.2rem;
     vertical-align: middle;
-	font-size: var(--text-sm);
+	font-size: inherit;
 	text-align: center;
-}
-
-
-/* ========================================================================
-   Component: `c-ctrl-sort`
- ========================================================================== */
-
-.c-ctrl-sort {
-    font-size: --text-sm;
-    line-height: inherit;
-    text-decoration: none;
-
-    color: var(--clr-grey-400);
-    cursor: pointer;
-}
-
-.c-ctrl-sort::after {
-    content: '';
-    display: inline-block;
-    width: 2.2rem;
-    vertical-align: middle;
-    text-align: center;
-    font-family: 'Iconic';
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: 1;
-    color: transparent;
-    transition: color 0.16s var(--easing);
-}
-.c-ctrl-sort[aria-sort="ascending"]::after {
-    content: '\e246';
-}
-.c-ctrl-sort[aria-sort="descending"]::after {
-    content: '\e247';
-}
-
-.c-ctrl-sort:hover {
-    color: var(--clr-grey-800);
-}
-.c-ctrl-sort:hover::after {
-    color: var(--clr-grey-400);
-}
-
-.c-ctrl-sort[aria-selected=true] {
-    color: var(--clr-grey-900);
-}
-.c-ctrl-sort[aria-selected=true]::after {
-    color: var(--clr-grey-900);
 }
 
 
@@ -77,6 +29,41 @@
 	white-space: nowrap;
 }
 
+.c-ctrl-group .c-ctrl {
+    font-size: var(--text-sm);
+}
+
 .c-ctrl-group .c-ctrl + .c-ctrl {
 	margin-left: var(--space-xs);
+}
+
+
+/* ========================================================================
+   Component: `c-ctrl-sort`
+ ========================================================================== */
+
+.c-ctrl-sort {
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.c-ctrl-sort::after {
+    content: '';
+    display: inline-block;
+    width: 2.2rem;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Iconic';
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1;
+    color: inherit;
+}
+.c-ctrl-sort[aria-sort="ascending"]::after {
+    content: '\e246';
+}
+.c-ctrl-sort[aria-sort="descending"]::after {
+    content: '\e247';
 }

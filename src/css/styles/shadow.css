@@ -1,0 +1,32 @@
+
+.s-shadow {
+    box-shadow: var(--shadow);
+}
+
+.s-shadow-2dp {
+    box-shadow: var(--shadow-2dp);
+}
+
+.s-shadow-3dp {
+    box-shadow: var(--shadow-3dp);
+}
+
+.s-shadow-4dp {
+    box-shadow: var(--shadow-4dp);
+}
+
+.s-shadow-6dp {
+    box-shadow: var(--shadow-6dp);
+}
+
+.s-shadow-8dp {
+    box-shadow: var(--shadow-8dp);
+}
+
+.s-shadow-16dp {
+    box-shadow: var(--shadow-16dp);
+}
+
+.s-shadow-24dp {
+    box-shadow: var(--shadow-24dp);
+}
