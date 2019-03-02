@@ -200,6 +200,23 @@
 }
 
 
+/* Thumbnail
+ ========================================================================== */
+
+a.c-thumbnail.s-example:hover  img {
+    filter: grayscale(100%);
+}
+a.c-thumbnail.s-example .c-thumbnail__shutter {
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.16s var(--easing);
+}
+a.c-thumbnail.s-example:hover .c-thumbnail__shutter {
+    opacity: 1;
+}
+
+
+
 /* Tooltip holder
  ========================================================================== */
 
