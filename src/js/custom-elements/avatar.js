@@ -26,6 +26,7 @@
 
     class AvatarElement extends HTMLElement {
         connectedCallback() {
+            this._children = Array.from(this.children);
             this.render().cleanup();
         }
 
@@ -69,6 +70,10 @@
                 this._figure.classList.add(`s-shadow-${shadow}`);
             } else if (shadow && shadow != 'inset') {
                 console.warn("Shadow can take values '2dp', '3dp', '4dp', '6dp', '8dp', '16dp' or '24dp'");
+            }
+
+            if (this._children.length) {
+                this._children.forEach(child => this._figure.appendChild(child));
             }
 
             return this;
