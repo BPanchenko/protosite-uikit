@@ -291,6 +291,59 @@
 .c-panel:not(.s-transparent) .c-button.s-bordered.s-warning { border-color: var(--warning-color); }
 
 
+/* Modifiers: `c-button--[xs,sm,md,lg,xl]`
+ ========================================================================== */
+
+.c-button {
+    --icon-size-lg: 4rem;
+    --icon-size-xl: 16rem;
+}
+
+.c-button--sm {
+    font-size: var(--text-sm);
+    line-height: 1.4;
+    padding: var(--space-xs) var(--space-sm);
+}
+.c-button--sm.c-button--icon {
+    padding: var(--space-xs);
+}
+.c-button--sm.c-button--icon + .c-button--sm.c-button--icon {
+    margin-left: var(--space-xs);
+}
+
+.c-button--lg {
+    font-size: var(--text-lg);
+    line-height: 1.5;
+    padding: var(--space-sm) var(--space-lg);
+}
+.c-button--lg.c-button--icon {
+    padding: var(--space-sm);
+}
+.c-button--lg.c-button--icon:empty::before {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+}
+.c-button--lg.c-button--icon::before {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.c-button--xl.c-button--icon {
+    padding: var(--space-sm);
+}
+.c-button--xl.c-button--icon:empty::before {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
+}
+.c-button--xl.c-button--icon::before {
+    font-size: 128px;
+    font-weight: 800;
+}
+.c-button--xl.c-button--icon + .c-button--xl.c-button--icon {
+    margin-left: var(--space-md);
+}
+
+
 /* ========================================================================
    Wrapper: `c-button-group`
  ========================================================================== */
