@@ -117,7 +117,7 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-	background-color: var(--clr-grey-300);
+	background-color: var(--clr-grey-200);
 }
 
 
@@ -162,14 +162,12 @@
 	background-color: transparent;
 }
 .c-button--icon:hover {
-    background-color: var(--clr-blue-grey-300);
+    background-color: var(--clr-blue-grey-50);
 }
-.c-button--icon:focus {
-    background-color: var(--clr-grey-300);
-}
+.c-button--icon:focus,
 .c-button--icon:active,
 .c-button--icon[aria-checked=true] {
-    background-color: var(--clr-grey-300);
+    background-color: var(--clr-grey-200);
 }
 
 .c-button--icon.iconic:before,
@@ -195,7 +193,7 @@
  ========================================================================== */
 
 .c-button.iconic:before {
-    margin: 0 1rem 0 -1rem;
+    /* margin: 0 1rem 0 -1rem; */
 }
 
 
@@ -243,11 +241,11 @@
 }
 
 
-/* Style: Bordered
+/* Modifier: `c-button--bordered`
  ========================================================================== */
 
-.c-button.s-bordered,
-.c-panel:not(.s-transparent) .c-button.s-bordered {
+.c-button--bordered,
+.c-panel:not(.s-transparent) .c-button--bordered {
     padding: var(--space-sm) var(--space-md);
 
     background-color: transparent;
@@ -259,36 +257,36 @@
 
 }
 
-.c-button.s-bordered:hover {
+.c-button--bordered:hover {
     background-color: var(--clr-grey-400);
 }
-.c-button.s-bordered:focus {
+.c-button--bordered:focus {
     background-color: var(--clr-grey-400);
 }
-.c-button.s-bordered:active,
-.c-button.s-bordered[aria-checked=true] {
+.c-button--bordered:active,
+.c-button--bordered[aria-checked=true] {
     background-color: var(--clr-blue-grey-400);
 }
 
 
-.c-button.s-bordered .c-button__icon {
+.c-button--bordered .c-button__icon {
     margin-left: -.2rem;
     margin-right: .8rem;
 }
-.c-button.s-bordered .c-button__text + .c-button__icon {
+.c-button--bordered .c-button__text + .c-button__icon {
     margin-left: .8rem;
     margin-right: -.2rem;
 }
 
 
-.c-button.s-bordered.s-danger,
-.c-panel:not(.s-transparent) .c-button.s-bordered.s-danger { border-color: var(--danger-color); }
-.c-button.s-bordered.s-success,
-.c-panel:not(.s-transparent) .c-button.s-bordered.s-success { border-color: var(--success-color); }
-.c-button.s-bordered.s-primary,
-.c-panel:not(.s-transparent) .c-button.s-bordered.s-primary { border-color: var(--primary-color); }
-.c-button.s-bordered.s-warning,
-.c-panel:not(.s-transparent) .c-button.s-bordered.s-warning { border-color: var(--warning-color); }
+.c-button--bordered.s-danger,
+.c-panel:not(.s-transparent) .c-button--bordered.s-danger { border-color: var(--danger-color); }
+.c-button--bordered.s-success,
+.c-panel:not(.s-transparent) .c-button--bordered.s-success { border-color: var(--success-color); }
+.c-button--bordered.s-primary,
+.c-panel:not(.s-transparent) .c-button--bordered.s-primary { border-color: var(--primary-color); }
+.c-button--bordered.s-warning,
+.c-panel:not(.s-transparent) .c-button--bordered.s-warning { border-color: var(--warning-color); }
 
 
 /* Modifiers: `c-button--[xs,sm,md,lg,xl]`
