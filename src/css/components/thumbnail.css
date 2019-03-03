@@ -16,12 +16,12 @@
  ========================================================================== */
 
 .c-thumbnail {
-    --size-default: 19.2rem;
-	--size-xs: calc(3.5 * var(--unit));
-	--size-sm: calc(5.5 * var(--unit));
-	--size-md: calc(12 * var(--unit));
-	--size-lg: calc(16 * var(--unit));
-	--size-xl: calc(24 * var(--unit));
+    --base-size: 15.2rem;
+	--size-xs: calc(3.5 * var(--unit)); /* 5.6rem */
+	--size-sm: calc(5.5 * var(--unit)); /* 8.8rem */
+	--size-md: calc(12 * var(--unit));  /* 19.2rem */
+	--size-lg: calc(16 * var(--unit));  /* 25.6rem */
+	--size-xl: calc(24 * var(--unit));  /* 38.4rem */
 }
 
 .c-thumbnail {
@@ -29,13 +29,12 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    max-width: var(--size-default);
+    max-width: var(--base-size);
 
     vertical-align: bottom;
 
     background-color: var(--clr-white);
     border-radius: 0.2rem;
-    box-shadow: var(--shadow-3dp);
     box-sizing: border-box;
 
     margin: 0;
@@ -103,12 +102,50 @@
 }
 
 
+/* State: `:empty`
+ ========================================================================== */
+
+.c-thumbnail:empty {
+    position: relative;
+    width: var(--base-size);
+    height: var(--base-size);
+    background-color: var(--clr-grey-300);
+    border: 0.1rem solid var(--clr-grey-400);
+}
+
+.c-thumbnail:empty::before,
+.c-thumbnail:empty::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    display: inline-block;
+    height: 40%;
+    width: 0.1rem;
+    background-color: var(--clr-grey-400);
+    
+    content: ' ';
+}
+
+.c-thumbnail:empty::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.c-thumbnail:empty::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
 /* ========================================================================
    Modifiers: `c-thumbnail--[xs,sm,md,lg,xl]`
  ========================================================================== */
 
 .c-thumbnail--xs {
     max-width: var(--size-xs);
+}
+.c-thumbnail--xs:empty {
+    width: var(--size-xs);
+    height: var(--size-xs);
 }
 .c-thumbnail--xs img {
     max-height: calc(1.8 * var(--size-xs));
@@ -125,12 +162,20 @@
 .c-thumbnail--sm {
     max-width: var(--size-sm);
 }
+.c-thumbnail--sm:empty {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
 .c-thumbnail--sm img {
     max-height: calc(1.8 * var(--size-sm));
 }
 
 .c-thumbnail--md {
     max-width: var(--size-md);
+}
+.c-thumbnail--md:empty {
+    width: var(--size-md);
+    height: var(--size-md);
 }
 .c-thumbnail--md img {
     max-height: calc(1.8 * var(--size-md));
@@ -139,12 +184,20 @@
 .c-thumbnail--lg {
     max-width: var(--size-lg);
 }
+.c-thumbnail--lg:empty {
+    width: var(--size-lg);
+    height: var(--size-lg);
+}
 .c-thumbnail--lg img {
     max-height: calc(1.8 * var(--size-lg));
 }
 
 .c-thumbnail--xl {
     max-width: var(--size-xl);
+}
+.c-thumbnail--xl:empty {
+    width: var(--size-xl);
+    height: var(--size-xl);
 }
 .c-thumbnail--xl img {
     max-height: calc(1.8 * var(--size-xl));
@@ -162,27 +215,27 @@
 .c-thumbnail--square img {
     max-width: none;
     max-height: none;
-    width: var(--size-default);
-    height: var(--size-default);
+    width: var(--base-size);
+    height: var(--base-size);
 }
 
-.c-thumbnail--square.c-thumbnail--xsmall img {
+.c-thumbnail--square.c-thumbnail--xs img {
     width: var(--size-xs);
     height: var(--size-xs);
 }
-.c-thumbnail--square.s-small img {
+.c-thumbnail--square.c-thumbnail--sm img {
     width: var(--size-sm);
     height: var(--size-sm);
 }
-.c-thumbnail--square.s-medium img {
+.c-thumbnail--square.c-thumbnail--md img {
     width: var(--size-md);
     height: var(--size-md);
 }
-.c-thumbnail--square.s-large img {
+.c-thumbnail--square.c-thumbnail--lg img {
     width: var(--size-lg);
     height: var(--size-lg);
 }
-.c-thumbnail--square.s-xlarge img {
+.c-thumbnail--square.c-thumbnail--xl img {
     width: var(--size-xl);
     height: var(--size-xl);
 }
