@@ -1,5 +1,5 @@
 {
-    "liveServer.settings.host": "127.0.0.1",
+    "liveServer.settings.host": "localhost",
     "liveServer.settings.port": 6464,
     "liveServer.settings.file": "index.html",
     "liveServer.settings.CustomBrowser": "chrome",

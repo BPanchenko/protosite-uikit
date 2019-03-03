@@ -73,6 +73,7 @@
  ========================================================================== */
 
 .c-avatar:not([style*="background"]):empty {
+	position: relative;
     background-color: var(--clr-grey-300);
     border: 0.1rem solid var(--clr-grey-400);
 }

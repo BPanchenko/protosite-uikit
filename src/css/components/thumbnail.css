@@ -7,33 +7,38 @@
  * 
  * Component:       `c-thumbnail`
  * 
- * Modifiers:       `c-thumbnail--mini`
- *					`c-thumbnail--small`
- *					`c-thumbnail--large`
+ * Modifiers:       `c-thumbnail--xs`
+ *                  `c-thumbnail--sm`
+ *                  `c-thumbnail--md`
+ *                  `c-thumbnail--lg`
+ *                  `c-thumbnail--xl`
  * 
  ========================================================================== */
 
-:root {
-    --c-thumbnail-max-width: 19.2rem;
+.c-thumbnail {
+    --base-size: 15.2rem;
+	--size-xs: calc(3.5 * var(--unit)); /* 5.6rem */
+	--size-sm: calc(5.5 * var(--unit)); /* 8.8rem */
+	--size-md: calc(12 * var(--unit));  /* 19.2rem */
+	--size-lg: calc(16 * var(--unit));  /* 25.6rem */
+	--size-xl: calc(24 * var(--unit));  /* 38.4rem */
 }
 
-/*figure*/
 .c-thumbnail {
-	contain: content;
-	position: relative;
-	display: inline-block;
-	overflow: hidden;
-	max-width: var(--c-thumbnail-max-width);
+    contain: content;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    max-width: var(--base-size);
 
-	vertical-align: bottom;
+    vertical-align: bottom;
 
-	background-color: var(--clr-white);
-	border-radius: 0.2rem;
-	box-shadow: var(--shadow-3dp);
-	box-sizing: border-box;
+    background-color: var(--clr-white);
+    border-radius: 0.2rem;
+    box-sizing: border-box;
 
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .c-thumbnail img {
@@ -42,7 +47,7 @@
 }
 
 .c-thumbnail + .c-thumbnail {
-	margin-left: var(--space-default);
+    margin-left: var(--space-default);
 }
 
 
@@ -50,8 +55,8 @@
  ========================================================================== */
 
 .c-panel .c-thumbnail {
-	/* reset basic style */
-	box-shadow: none;
+    /* reset basic style */
+    box-shadow: none;
 }
 
 
@@ -59,21 +64,21 @@
  ========================================================================== */
 
 .c-thumbnail__caption {
-	position: absolute;
-	top: 0;
+    position: absolute;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-	padding: 0.4rem 0.8rem;
-	box-sizing: border-box;
+    padding: 0.4rem 0.8rem;
+    box-sizing: border-box;
 
-	background-color: transparent;
+    background-color: transparent;
 
-	color: var(--clr-white);
-	font-size: 1.3rem;
-	font-weight: 600;
-	line-height: 1.2;
-	text-shadow: var(--text-shadow);
+    color: var(--clr-white);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-shadow: var(--text-shadow);
 }
 
 
@@ -81,44 +86,156 @@
  ========================================================================== */
 
 .c-thumbnail__shutter {
-	position: absolute;
-	top: 0;
+    position: absolute;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-	padding: 0.4rem 0.8rem;
-	box-sizing: border-box;
+    padding: 0.4rem 0.8rem;
+    box-sizing: border-box;
 
-	background-color: transparent;
-	opacity: 0;
-	transition: opacity 0.16s var(--easing);
-
-	font-size: 1.3rem;
-	font-weight: 500;
-	line-height: 1.2;
-	color: var(--clr-white);
-	text-shadow: var(--text-shadow);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--clr-white);
+    text-shadow: var(--text-shadow);
 }
 
 
-/* Hover state
+/* State: `:empty`
  ========================================================================== */
 
-
-a.c-thumbnail:hover  img {
-    filter: grayscale(100%);
+.c-thumbnail:empty {
+    position: relative;
+    width: var(--base-size);
+    height: var(--base-size);
+    background-color: var(--clr-grey-300);
+    border: 0.1rem solid var(--clr-grey-400);
 }
-a.c-thumbnail:hover  .c-thumbnail__shutter {
-    opacity: 1;
+
+.c-thumbnail:empty::before,
+.c-thumbnail:empty::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    display: inline-block;
+    height: 40%;
+    width: 0.1rem;
+    background-color: var(--clr-grey-400);
+    
+    content: ' ';
+}
+
+.c-thumbnail:empty::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.c-thumbnail:empty::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 
-/* Square style
+/* ========================================================================
+   Modifiers: `c-thumbnail--[xs,sm,md,lg,xl]`
  ========================================================================== */
 
-.s-square.c-thumbnail img {
+.c-thumbnail--xs {
+    max-width: var(--size-xs);
+}
+.c-thumbnail--xs:empty {
+    width: var(--size-xs);
+    height: var(--size-xs);
+}
+.c-thumbnail--xs img {
+    max-height: calc(1.8 * var(--size-xs));
+}
+.c-thumbnail--xs .c-thumbnail__caption {
+    padding: 0.2rem 0.4rem;
+    max-height: 2.4rem;
+    overflow: hidden;
+
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.c-thumbnail--sm {
+    max-width: var(--size-sm);
+}
+.c-thumbnail--sm:empty {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
+.c-thumbnail--sm img {
+    max-height: calc(1.8 * var(--size-sm));
+}
+
+.c-thumbnail--md {
+    max-width: var(--size-md);
+}
+.c-thumbnail--md:empty {
+    width: var(--size-md);
+    height: var(--size-md);
+}
+.c-thumbnail--md img {
+    max-height: calc(1.8 * var(--size-md));
+}
+
+.c-thumbnail--lg {
+    max-width: var(--size-lg);
+}
+.c-thumbnail--lg:empty {
+    width: var(--size-lg);
+    height: var(--size-lg);
+}
+.c-thumbnail--lg img {
+    max-height: calc(1.8 * var(--size-lg));
+}
+
+.c-thumbnail--xl {
+    max-width: var(--size-xl);
+}
+.c-thumbnail--xl:empty {
+    width: var(--size-xl);
+    height: var(--size-xl);
+}
+.c-thumbnail--xl img {
+    max-height: calc(1.8 * var(--size-xl));
+}
+.c-thumbnail--xl .c-thumbnail__caption {
+    padding: 0.6rem 0.8rem;
+    font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
+}
+
+
+/* Modifier: `c-thumbnail--square`
+ ========================================================================== */
+
+.c-thumbnail--square img {
     max-width: none;
     max-height: none;
-    width: var(--c-thumbnail-max-width);
-    height: var(--c-thumbnail-max-width);
+    width: var(--base-size);
+    height: var(--base-size);
+}
+
+.c-thumbnail--square.c-thumbnail--xs img {
+    width: var(--size-xs);
+    height: var(--size-xs);
+}
+.c-thumbnail--square.c-thumbnail--sm img {
+    width: var(--size-sm);
+    height: var(--size-sm);
+}
+.c-thumbnail--square.c-thumbnail--md img {
+    width: var(--size-md);
+    height: var(--size-md);
+}
+.c-thumbnail--square.c-thumbnail--lg img {
+    width: var(--size-lg);
+    height: var(--size-lg);
+}
+.c-thumbnail--square.c-thumbnail--xl img {
+    width: var(--size-xl);
+    height: var(--size-xl);
 }
