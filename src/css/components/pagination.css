@@ -16,10 +16,7 @@
  ========================================================================== */
 
 :root {
-    --c-pagination-font-family: --font-primary;
-    --c-pagination-font-size: --text-base-size;
-    --c-pagination-line-height: 2.6rem;
-
+    --c-pagination-height: 2.6rem;
     --c-pagination-color: --link-color;
     --c-pagination-hover-color: --link-hover-color;
 }
@@ -31,8 +28,8 @@
 .c-pagination {
     contain: layout style;
     position: relative;
-    line-height: 2.6rem;
-    font-family: var(--c-pagination-font-family);
+    line-height: var(--c-pagination-height);
+    font-family: var(--font-primary);
     text-align: center;
 }
 
@@ -73,7 +70,7 @@
 .c-pagination__ellipsis,
 .c-pagination__prev,
 .c-pagination__next {
-    font-size: var(--c-pagination-font-size);
+    font-size: var(--text-base-size);
 }
 
 .c-pagination__prev::after,
@@ -108,7 +105,7 @@
 .c-pagination__page,
 .c-pagination__prev,
 .c-pagination__next {
-    min-width: var(--c-pagination-line-height);
+    min-width: var(--c-pagination-height);
     border-radius: 0;
     box-sizing: border-box;
     overflow: hidden;
@@ -216,7 +213,7 @@
 
 .c-pagination__perpage__values {
     position: absolute;
-    bottom: var(--c-pagination-line-height);
+    bottom: var(--c-pagination-height);
     right: 0;
 
     background-color: var(--clr-white);

@@ -18,8 +18,8 @@
         <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
 
         <link rel="stylesheet" type="text/css" href="../dist/protosite-uikit.css">
-
-        <script src="./dist/protosite-uikit.js"></script>
+        <link rel="stylesheet" type="text/css" href="../assets/pattern.css">
+        <script src="../src/js/uikit.js" type="module"></script>
 
     </head>
     <body>
@@ -34,17 +34,51 @@
             </header>
 
             <nav class="o-breadcrumb">
-                        <span class="o-breadcrumb__item">
-                            <a href="/" class="">Главная</a>
-                        </span>
+                <span class="o-breadcrumb__item">
+                    <a href="/" class="">Главная</a>
+                </span>
                 <span class="o-breadcrumb__item">Компоненты</span>
                 <span class="o-breadcrumb__item is-current">Порядковая нумерация страниц</span>
             </nav>
 
             <main role="main">
+                <p><br><br><br><br><br><br><br></p>
 
-                <section class="c-pagination" ui-pagination="{ page: 6, items: 1234, itemsOnPage: 20, itemsOnPageValues: [100,50,20] }"></section>
+                <div class="u-width-8-10" style="margin: 0 auto;">
+                    <hr>
+                    <c-pagination data-page="7"></c-pagination>
 
+                    <section class="c-pagination" ui-pagination="{ page: 7, items: 1234, itemsOnPage: 20, itemsOnPageValues: [100,50,20] }"></section>
+            
+                    <section class="c-pagination">
+                        <div class="c-pagination__pages">
+                            <a class="c-pagination__prev" href="#prev" data-page="6" aria-disabled="false"></a>
+                            <a class="c-pagination__page" href="#p=1" data-page="1">1</a>
+                            <span class="c-pagination__ellipsis">&hellip;</span>
+                            <a class="c-pagination__page" href="#p=4" data-page="4" aria-selected="false">4</a>
+                            <a class="c-pagination__page" href="#p=5" data-page="5" aria-selected="false">5</a>
+                            <a class="c-pagination__page" href="#p=6" data-page="6" aria-selected="false">6</a>
+                            <a class="c-pagination__page" href="#p=7" data-page="7" aria-selected="true">7</a>
+                            <a class="c-pagination__page" href="#p=8" data-page="8" aria-selected="false">8</a>
+                            <a class="c-pagination__page" href="#p=9" data-page="9" aria-selected="false">9</a>
+                            <a class="c-pagination__page" href="#p=10" data-page="10" aria-selected="false">10</a>
+                            <span class="c-pagination__ellipsis">&hellip;</span>
+                            <a class="c-pagination__page" href="#p=124" data-page="124">124</a>
+                            <a class="c-pagination__next" href="#next" data-page="7" aria-disabled="false"></a>
+                        </div>
+                        <div class="c-pagination__perpage">
+                            <a href="#select-per-page" class="c-pagination__perpage__current">20</a>
+                            <div class="c-pagination__perpage__values">
+                                <a href="#p=1&itemsOnPage=100" data-items_on_page="100" class="c-pagination__perpage__value" aria-selected="false">100</a>
+                                <a href="#p=1&itemsOnPage=50" data-items_on_page="50" class="c-pagination__perpage__value" aria-selected="false">50</a>
+                                <a href="#p=1&itemsOnPage=20" data-items_on_page="20" class="c-pagination__perpage__value" aria-selected="false">20</a>
+                            </div>
+                        </div>
+                    </section>
+                    <hr>
+                </div>
+
+                <p><br><br><br><br><br><br><br></p>
             </main>
 
             <footer role="contentinfo" class="u-margin-large-top">
