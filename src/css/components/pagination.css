@@ -3,38 +3,24 @@
 
 /**
  * Component:       `c-pagination`
- * Description:     Defines styles for buttons
  *
- * Sub-component:    `c-pagination__perpage`
- *
- * Elements:        `c-pagination__page`
+ * Elements:        `c-pagination__ellipsis`
+ *                  `c-pagination__page`
  *                  `c-pagination__prev`
  *                  `c-pagination__next`
- *                  `c-pagination__perpage__current`
- *                  `c-pagination__perpage__value`
  *
- ========================================================================== */
-
-:root {
-    --c-pagination-height: 2.6rem;
-    --c-pagination-color: --link-color;
-    --c-pagination-hover-color: --link-hover-color;
-}
-
-/* ========================================================================
-   Component: `c-pagination`
  ========================================================================== */
 
 .c-pagination {
+    --height: 2.6rem;
+    --color: var(--link-color);
+    --hover-color: var(--link-hover-color);
+
     contain: layout style;
     position: relative;
-    line-height: var(--c-pagination-height);
+    line-height: var(--height);
     font-family: var(--font-primary);
     text-align: center;
-}
-
-.c-pagination[aria-disable=true] {
-    display: none;
 }
 
 
@@ -42,28 +28,21 @@
  ========================================================================== */
 
 .c-pagination__ellipsis,
-.c-pagination__pages,
 .c-pagination__page,
 .c-pagination__next,
-.c-pagination__prev,
-.c-pagination__perpage,
-.c-pagination__perpage__current,
-.c-pagination__perpage__values,
-.c-pagination__perpage__value {
+.c-pagination__prev {
     display: inline-block;
     width: auto;
     vertical-align: middle;
-    color: var(--c-pagination-color);
+    color: var(--color);
     line-height: inherit;
     text-decoration: none;
 }
 
 .c-pagination__page:hover,
 .c-pagination__next:hover,
-.c-pagination__prev:hover,
-.c-pagination__perpage__current:hover,
-.c-pagination__perpage__value:hover {
-    color: var(--c-pagination-color);
+.c-pagination__prev:hover {
+    color: var(--hover-color);
 }
 
 .c-pagination__page,
@@ -74,8 +53,7 @@
 }
 
 .c-pagination__prev::after,
-.c-pagination__next::after,
-.c-pagination__perpage__current::after {
+.c-pagination__next::after {
     display: inline-block;
     text-align: center;
 
@@ -97,10 +75,6 @@
 /* Controls of page:
  * `c-pagination__page`, `c-pagination__prev`, `c-pagination__next`
  ========================================================================== */
-
-.c-pagination__pages {
-    font-size: 0.001px;
-}
 
 .c-pagination__page,
 .c-pagination__prev,
@@ -190,65 +164,4 @@
     box-shadow: none;
     color: var(--clr-grey-600);
     cursor: default;
-}
-
-
-/* Sub-component: `c-pagination__perpage`
- ========================================================================== */
-
-.c-pagination__perpage {
-    position: absolute;
-    right: 0;
-}
-
-.c-pagination__perpage__current::after {
-    content: '\e14c';
-    width: 1.2rem;
-    font-size: 0.8rem;
-}
-
-.c-pagination__perpage__current:hover {
-    color: var(--c-pagination-hover-color);
-}
-
-.c-pagination__perpage__values {
-    position: absolute;
-    bottom: var(--c-pagination-height);
-    right: 0;
-
-    background-color: var(--clr-white);
-    border-radius: 0.2rem;
-    box-shadow: var(--shadow-2dp);
-
-    overflow: hidden;
-    text-align: right;
-
-    display: none;
-    opacity: 0;
-}
-
-.c-pagination__perpage__value {
-    display: block;
-    padding: 0.2rem 1.6rem;
-}
-
-.c-pagination__perpage__value:not([aria-selected=true]):hover {
-    background-color: var(--clr-grey-50);
-    color: var(--c-pagination-hover-color);
-}
-
-.c-pagination__perpage__value[aria-selected=true] {
-    cursor: default;
-    background-color: transparent;
-    color: inherit;
-    font-weight: 600;
-}
-
-.c-pagination__perpage:hover .c-pagination__perpage__values {
-    display: block;
-    opacity: 1;
-}
-
-.c-pagination__perpage:hover .c-pagination__perpage__current::after {
-    content: '\e14f';
 }
