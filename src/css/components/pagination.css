@@ -12,19 +12,22 @@
  ========================================================================== */
 
 .c-pagination {
-    --height: 2.6rem;
+    --size: 2.4rem;
     --color: var(--link-color);
     --hover-color: var(--link-hover-color);
 
-    contain: layout style;
+    contain: content;
+    display: block;
     position: relative;
-    line-height: var(--height);
+    line-height: var(--size);
     font-family: var(--font-primary);
+    font-size: var(--text-base-size);
     text-align: center;
+    color: var(--color);
 }
 
 
-/* Common styles
+/* Common
  ========================================================================== */
 
 .c-pagination__ellipsis,
@@ -32,11 +35,25 @@
 .c-pagination__next,
 .c-pagination__prev {
     display: inline-block;
-    width: auto;
     vertical-align: middle;
-    color: var(--color);
-    line-height: inherit;
+    color: currentColor;
     text-decoration: none;
+}
+
+.c-pagination__ellipsis[aria-disabled=true],
+.c-pagination__page[aria-disabled=true],
+.c-pagination__next[aria-disabled=true],
+.c-pagination__prev[aria-disabled=true] {
+    display: none;
+    visibility: hidden;
+}
+
+.c-pagination__page,
+.c-pagination__prev,
+.c-pagination__next {
+    min-width: var(--size);
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .c-pagination__page:hover,
@@ -45,123 +62,46 @@
     color: var(--hover-color);
 }
 
-.c-pagination__page,
 .c-pagination__ellipsis,
-.c-pagination__prev,
-.c-pagination__next {
-    font-size: var(--text-base-size);
+.c-pagination__next,
+.c-pagination__prev {
+    margin: 0 0.4rem;
 }
+
+
+/* Specific
+ ========================================================================== */
+
+.c-pagination__page {
+    padding: 0 0.4rem;
+    margin: 0 0.2rem;
+}
+
+.c-pagination__page:not([aria-selected=true]):hover {
+    text-decoration: underline;
+}
+
+.c-pagination__page[aria-selected=true] {
+    cursor: default;
+    font-weight: 600;
+}
+
+
+/* Icons
+ ========================================================================== */
 
 .c-pagination__prev::after,
 .c-pagination__next::after {
-    display: inline-block;
-    text-align: center;
-
+    line-height: 1;
     font-family: 'Iconic';
     font-size: 1.1rem;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
-
-/* Element: `c-pagination__ellipsis`
- ========================================================================== */
-
-.c-pagination__ellipsis {
-    cursor: default;
+.c-pagination__prev::after {
+    content: '\e14d';
 }
-
-
-/* Controls of page:
- * `c-pagination__page`, `c-pagination__prev`, `c-pagination__next`
- ========================================================================== */
-
-.c-pagination__page,
-.c-pagination__prev,
-.c-pagination__next {
-    min-width: var(--c-pagination-height);
-    border-radius: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    text-align: center;
-    transition-property: background-color, border, box-shadow;
-    transition-timing-function: var(--easing);
-    transition-duration: 0.16s;
-}
-
-.c-pagination__page,
-.c-pagination__prev,
-.c-pagination__next:not([aria-selected=true], [aria-disable=true]):hover {
-    color: var(--c-pagination-hover-color);
-}
-
-.c-pagination__page {
-    padding: 0 0.4rem;
-    margin: 0 0.2rem;
-
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-
-    line-height: inherit;
-    text-align: center;
-}
-
-.c-pagination__page:hover {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-decoration: underline;
-}
-
-.c-pagination__page:active {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-decoration: none;
-}
-
-.c-pagination__page[aria-selected=true] {
-    cursor: default;
-
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.c-pagination__prev::after,
 .c-pagination__next::after {
-    width: 1.6rem;
-}
-
-.c-pagination__prev::after { content: '\e14d'; }
-.c-pagination__next::after { content: '\e14e'; }
-
-.c-pagination__prev,
-.c-pagination__next {
-    margin: 0 0.2rem;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-.c-pagination__prev:not([aria-disable=true]):hover,
-.c-pagination__prev:not([aria-disable=true]):active,
-.c-pagination__next:not([aria-disable=true]):hover,
-.c-pagination__next:not([aria-disable=true]):active {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-.c-pagination__prev[aria-disable=true],
-.c-pagination__next[aria-disable=true] {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    color: var(--clr-grey-600);
-    cursor: default;
+    content: '\e14e';
 }
