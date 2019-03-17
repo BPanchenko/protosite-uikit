@@ -72,7 +72,7 @@
                 <a class="c-pagination__next" href="#page=${next}" data-page="${next}" aria-disabled="${next == pages}"></a>
             `;
 
-            this.innerHTML = html;
+            this.innerHTML = html.replace(/[\s]{2,}/g, '');
             return this;
         }
 
