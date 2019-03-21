@@ -9,6 +9,7 @@
  *    `u-clearfix`
  *    `u-cursor-*`
  *    `u-display-block`
+ *    `u-display-flow-root`
  *    `u-display-inline`
  *    `u-display-inline-block`
  *    `u-float-*`
@@ -251,6 +252,7 @@
  ========================================================================== */
 
 .u-display-block { display: block !important; }
+.u-display-flow-root { display: flow-root !important; }
 .u-display-inline { display: inline !important; }
 .u-display-inline-block { display: inline-block !important; }
 
