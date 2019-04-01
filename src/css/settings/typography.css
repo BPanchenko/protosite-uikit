@@ -17,8 +17,8 @@
 
 	--text-base-size: 1.6rem;
     --text-xs: 1.1rem;
-    --text-sm: 1.4rem;
-    --text-md: 1.8rem;
+    --text-sm: 1.3rem;
+    --text-md: 1.4rem;
     --text-lg: 2rem;
     --text-xl: 2.8rem;
     --text-xxl: 3.6rem;
@@ -27,7 +27,7 @@
     --line-height-default: 2.4rem;
     --line-height-lg: 2.4rem;
     --line-height-md: 2.4rem;
-    --line-height-sm: 2.4rem;
+    --line-height-sm: 1.2;
     --line-height-xs: 1.2rem;
 }
 

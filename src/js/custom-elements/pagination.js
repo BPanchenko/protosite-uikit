@@ -26,15 +26,21 @@
 
 (function() {
 
+    /* Constants
+     ========================================================================== */
+
     const attrs = ['data-displayed', 'data-current', 'data-pagesize', 'data-total'];
 
     const CLS = Object.create(null, {
-        'main': { value: 'c-pagination' },
-        'ellipsis': { value: 'c-pagination__ellipsis' },
-        'next': { value: 'c-pagination__next' },
-        'page': { value: 'c-pagination__page' },
-        'prev': { value: 'c-pagination__prev' }
+        main: { value: 'c-pagination' },
+        ellipsis: { value: 'c-pagination__ellipsis' },
+        next: { value: 'c-pagination__next' },
+        page: { value: 'c-pagination__page' },
+        prev: { value: 'c-pagination__prev' }
     });
+
+    /* Element Class
+     ========================================================================== */
 
     class PaginationElement extends HTMLElement {
         connectedCallback() {
@@ -133,6 +139,9 @@
         }
     }
 
+    /* Private
+     ========================================================================== */
+
     function onClick(evt) {
         evt.preventDefault();
         if (evt.target.dataset.hasOwnProperty('page')) {
@@ -141,7 +150,8 @@
         return;
     }
 
-    // Define the new element
+    /* Define the new element
+     ========================================================================== */
 
     if (customElements) customElements.define('c-pagination', PaginationElement);
     if (typeof exports != 'undefined' && !exports.nodeType) exports.PaginationElement = PaginationElement;
