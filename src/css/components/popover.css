@@ -26,32 +26,21 @@
 
     display: inline-block;
     position: fixed;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     transform: translate(0,0);
     z-index: 200;
+    margin: var(--space-default);
+    box-shadow: var(--shadow);
 
-    transition-property: transform, opacity;
-    transition-duration: 160ms;
+    transition-property: opacity, transform;
+    transition-duration: 1s;
     transition-timing-function: var(--easing);
 
     cursor: default;
     user-select: none;
-
-    box-shadow: var(--shadow);
-
     line-height: 1;
     font-size: 0.001px;
-
-    margin: var(--space-default);
-}
-
-.c-popover[aria-hidden=true] {
-    display: inline-block !important;
-    opacity: 0;
-}
-
-.c-popover[aria-hidden=false] {
-    opacity: 1;
 }
 
 
@@ -69,8 +58,8 @@
     left: auto;
 
     display: block;
-    width: 0.8rem;;
-    height: 0.8rem;;
+    width: 0.8rem;
+    height: 0.8rem;
 
     background-color: var(--background-color);
     box-shadow: var(--shadow);
@@ -81,10 +70,10 @@
     transform: rotate(45deg);
     transform-origin: 50% 50%;
 
-    transition-property: top, right, bottom, left, margin-top, margin-left;
-    transition-duration: 160ms;
+    transition-property: top, right, bottom, left, margin-top, margin-left, opacity;
+    transition-duration: 0.16s;
     transition-timing-function: var(--easing);
-    transition-delay: 0ms;
+    transition-delay: 0;
 }
 
 
@@ -144,7 +133,7 @@
 }
 
 
-/* Element: `c-popover__inside`
+/* Element: `c-popover__body`
  ========================================================================== */
 
 .c-popover__body {
@@ -165,12 +154,31 @@
 }
 
 
-/* Control element: `c-popover-holder`
+/* Visibility States
  ========================================================================== */
 
-.c-popover-holder {
+.c-popover:matches(.is-visible, .is-hidden) {
+    animation-duration: 0.24s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.c-popover.is-visible {
+    animation-name: popoverShow;
     display: inline-block;
-    cursor: help;
-    border-bottom: 1px dotted currentColor;
-    background-color: transparent;
+    visibility: visible;
+}
+.c-popover.is-hidden {
+    animation-name: popoverHide;
+    display: none;
+    visibility: hidden;
+}
+
+@keyframes popoverShow {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes popoverHide {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
