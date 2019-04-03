@@ -153,6 +153,22 @@
     line-height: var(--line-height-sm);
 }
 
+/* text-crop (http://text-crop.eightshapes.com) */
+
+.c-popover__body::before,
+.c-popover__body::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+}
+.c-popover__body::before {
+    margin-bottom: -0.2em;
+}
+.c-popover__body::after {
+    margin-top: 0;
+}
+
 
 /* Visibility States
  ========================================================================== */
