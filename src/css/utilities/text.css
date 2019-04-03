@@ -27,22 +27,26 @@
  ========================================================================== */
 
 .u-text-default {
-    font-size: var(--line-height-default);
+    font-size: var(--text-base-size);
     line-height: var(--line-height-default);
 }
-.u-text-large {
+.u-text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--line-height-lg);
+}
+.u-text-lg {
     font-size: var(--text-lg);
     line-height: var(--line-height-lg);
 }
-.u-text-medium {
+.u-text-md {
     font-size: var(--text-md);
     line-height: var(--line-height-md);
 }
-.u-text-small {
+.u-text-sm {
     font-size: var(--text-sm);
     line-height: var(--line-height-sm);
 }
-.u-text-xsmall {
+.u-text-xs {
     font-size: var(--text-xs);
     line-height: var(--line-height-xs);
 }
