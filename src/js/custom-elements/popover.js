@@ -19,6 +19,9 @@
         show: { value: 'is-visible' },
         hide: { value: 'is-hidden' }
     });
+
+    const DEFAULT_POSITION = 'top';
+    const DEFAULT_TRIGGER = 'hover';
     
     /* Element Class
      ========================================================================== */
@@ -38,7 +41,6 @@
             this._innerHTML = this.innerHTML;
             this.innerHTML = '';
             this.classList.add(CLS.main);
-            if (!this.dataset.position) this.dataset.position = 'bottom';
 
             this._body = createBody.call(this);
             this.hide();
@@ -62,16 +64,52 @@
             this.classList.remove(CLS.show);
             return this;
         }
+        toggle() {
+            if (this.classList.contains(CLS.show)) {
+                this.hide();
+            } else {
+                this.show();
+            }
+            return this;
+        }
+
+        get position() {
+            return this.dataset.position || (this.position = DEFAULT_POSITION);
+        }
+        set position(v) {
+            this.dataset.position = v;
+        }
+
+        get trigger() {
+            return (this.dataset.trigger || DEFAULT_TRIGGER).split(/[\s,]/g);
+        }
+        set trigger(v) {
+            this.dataset.trigger = v.toString();
+        }
     }
     
     /* Private
      ========================================================================== */
 
     function addEventListeners() {
-        this.__onEnterControl = () => this.show().placement();
-        this.__onLeaveControl = () => this.hide();
-        this._control.addEventListener('mouseenter', this.__onEnterControl);
-        this._control.addEventListener('mouseleave', this.__onLeaveControl);
+        this.__onShow = (e) => { e.preventDefault(); this.show().placement(); };
+        this.__onHide = (e) => { e.preventDefault(); this.hide(); };
+        this.__onToggle = (e) => { e.preventDefault(); this.toggle(); };
+
+        if (~this.trigger.indexOf('hover')) {
+            this._control.addEventListener('mouseenter', this.__onShow);
+            this._control.addEventListener('mouseleave', this.__onHide);
+        }
+
+        if (~this.trigger.indexOf('focus')) {
+            this._control.addEventListener('focus', this.__onShow);
+            this._control.addEventListener('blur', this.__onHide);
+        }
+
+        if (~this.trigger.indexOf('click')) {
+            this._control.addEventListener('click', this.__onToggle);
+        }
+        
         return this;
     }
 
@@ -96,7 +134,6 @@
         let ctrlRect = this._control.getBoundingClientRect();
         let rect = this.getBoundingClientRect();
         let style = window.getComputedStyle(this);
-        let position = this.dataset.position;
     
         var offset = {
             top: parseInt(style.marginTop),
@@ -107,7 +144,7 @@
         offset.vertical = offset.top + offset.bottom;
         offset.horizontal = offset.left + offset.right;
     
-        switch (position) {
+        switch (this.position) {
             case 'top':
                 x = ctrlRect.left + ctrlRect.width/2 - (rect.width + offset.horizontal)/2;
                 y = ctrlRect.top - rect.height - offset.vertical;
