@@ -157,7 +157,7 @@
                             <div class="c-panel__body u-margin-large-bottom u-text-center">
 
                                 <div class="u-display-flow u-margin-lg">
-                                    <span class="c-popover-holder u-margin-large-top pattern pattern--horizontal">
+                                    <span class="c-popover-holder u-margin-large-top pattern pattern--horizontal" aria-controls="poHorizontal">
                                         активный элемент<br>
                                         с горизонтальным позиционированием подсказки
                                     </span>
@@ -172,7 +172,7 @@
                                 </div>
                                 
                                 <div class="u-display-flow u-margin-lg">
-                                    <a href="#sort" class="c-ctrl-popover" aria-controls="po1">
+                                    <a href="#sort" class="c-ctrl-popover" aria-controls="poSort">
                                         <span>сортировка</span>
                                     </a>
                                 </div>
@@ -192,10 +192,16 @@
             </footer>
         </div>
 
-        <c-popover data-trigger="hover click" id="po1">
-            Содержимое<br>
-            всплывающей панели<br>
-            на три строки.
+        <c-popover data-trigger="hover focus" id="poHorizontal">
+            Три строки<br>
+            содержимого<br>
+            подсказки
+        </c-popover>
+
+        <c-popover class="s-linkset" data-position="bottom-right" data-trigger="click" id="poSort">
+            <a href="#">по дате</a>
+            <a href="#">по алфавиту</a>
+            <a href="#">по сумме</a>
         </c-popover>
     </body>
 </html>

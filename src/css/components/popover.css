@@ -33,7 +33,7 @@
     margin: var(--space-default);
     box-shadow: var(--shadow);
 
-    transition-property: opacity, transform;
+    transition-property: opacity;
     transition-duration: 1s;
     transition-timing-function: var(--easing);
 
@@ -197,4 +197,20 @@
 @keyframes popoverHide {
     from { opacity: 1; }
     to { opacity: 0; }
+}
+
+
+/* Style: `s-linkset`
+ ========================================================================== */
+
+.c-popover.s-linkset {
+    --background-color: var(--clr-white);
+}
+
+.c-popover.s-linkset a {
+    display: block;
+    line-height: 1.2;
+    word-break: break-word;
+    padding: 0 var(--space-sm);
+    margin: var(--space-xs) 0;
 }
