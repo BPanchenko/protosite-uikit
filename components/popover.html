@@ -164,7 +164,7 @@
                                 </div>
                                 
                                 <div class="u-display-flow u-margin-lg">
-                                    <span class="c-popover-holder pattern pattern--vertical">
+                                    <span class="c-popover-holder pattern pattern--vertical" aria-controls="poVertical">
                                         активный элемент<br>
                                         с вертикальным позиционированием<br>
                                         подсказки
@@ -193,6 +193,10 @@
         </div>
 
         <c-popover data-trigger="hover focus" id="poHorizontal">
+            Содержимое подсказки
+        </c-popover>
+
+        <c-popover data-trigger="hover focus" data-position="left" id="poVertical">
             Три строки<br>
             содержимого<br>
             подсказки
