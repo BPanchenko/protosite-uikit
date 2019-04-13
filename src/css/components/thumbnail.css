@@ -105,16 +105,20 @@
 /* State: `:empty`
  ========================================================================== */
 
-.c-thumbnail:empty {
+.c-thumbnail:empty,
+.c-thumbnail .c-thumbnail__link:empty {
     position: relative;
     width: var(--base-size);
     height: var(--base-size);
     background-color: var(--clr-grey-300);
     border: 0.1rem solid var(--clr-grey-400);
+	box-sizing: border-box;
 }
 
 .c-thumbnail:empty::before,
-.c-thumbnail:empty::after {
+.c-thumbnail:empty::after,
+.c-thumbnail .c-thumbnail__link:empty::after,
+.c-thumbnail .c-thumbnail__link:empty::before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -127,11 +131,13 @@
     content: ' ';
 }
 
-.c-thumbnail:empty::before {
+.c-thumbnail:empty::before,
+.c-thumbnail .c-thumbnail__link:empty::before {
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.c-thumbnail:empty::after {
+.c-thumbnail:empty::after,
+.c-thumbnail .c-thumbnail__link:empty::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 

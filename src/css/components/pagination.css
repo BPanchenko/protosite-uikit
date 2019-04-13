@@ -3,255 +3,105 @@
 
 /**
  * Component:       `c-pagination`
- * Description:     Defines styles for buttons
  *
- * Sub-component:    `c-pagination__perpage`
- *
- * Elements:        `c-pagination__page`
+ * Elements:        `c-pagination__ellipsis`
+ *                  `c-pagination__page`
  *                  `c-pagination__prev`
  *                  `c-pagination__next`
- *                  `c-pagination__perpage__current`
- *                  `c-pagination__perpage__value`
  *
- ========================================================================== */
-
-:root {
-    --c-pagination-font-family: --font-primary;
-    --c-pagination-font-size: --text-base-size;
-    --c-pagination-line-height: 2.6rem;
-
-    --c-pagination-color: --link-color;
-    --c-pagination-hover-color: --link-hover-color;
-}
-
-/* ========================================================================
-   Component: `c-pagination`
  ========================================================================== */
 
 .c-pagination {
-    contain: layout style;
+    --size: 2.4rem;
+    --color: var(--link-color);
+    --hover-color: var(--link-hover-color);
+
+    contain: content;
+    display: block;
     position: relative;
-    line-height: 2.6rem;
-    font-family: var(--c-pagination-font-family);
+    line-height: var(--size);
+    font-family: var(--font-primary);
+    font-size: var(--text-base-size);
     text-align: center;
-}
-
-.c-pagination[aria-disable=true] {
-    display: none;
+    color: var(--color);
 }
 
 
-/* Common styles
+/* Common
  ========================================================================== */
 
 .c-pagination__ellipsis,
-.c-pagination__pages,
 .c-pagination__page,
 .c-pagination__next,
-.c-pagination__prev,
-.c-pagination__perpage,
-.c-pagination__perpage__current,
-.c-pagination__perpage__values,
-.c-pagination__perpage__value {
+.c-pagination__prev {
     display: inline-block;
-    width: auto;
     vertical-align: middle;
-    color: var(--c-pagination-color);
-    line-height: inherit;
+    color: currentColor;
     text-decoration: none;
+}
+
+.c-pagination__ellipsis[aria-disabled=true],
+.c-pagination__page[aria-disabled=true],
+.c-pagination__next[aria-disabled=true],
+.c-pagination__prev[aria-disabled=true] {
+    display: none;
+    visibility: hidden;
+}
+
+.c-pagination__page,
+.c-pagination__prev,
+.c-pagination__next {
+    min-width: var(--size);
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .c-pagination__page:hover,
 .c-pagination__next:hover,
-.c-pagination__prev:hover,
-.c-pagination__perpage__current:hover,
-.c-pagination__perpage__value:hover {
-    color: var(--c-pagination-color);
+.c-pagination__prev:hover {
+    color: var(--hover-color);
 }
 
-.c-pagination__page,
 .c-pagination__ellipsis,
-.c-pagination__prev,
-.c-pagination__next {
-    font-size: var(--c-pagination-font-size);
+.c-pagination__next,
+.c-pagination__prev {
+    margin: 0 0.4rem;
 }
+
+
+/* Specific
+ ========================================================================== */
+
+.c-pagination__page {
+    padding: 0 0.4rem;
+    margin: 0 0.2rem;
+}
+
+.c-pagination__page:not([aria-selected=true]):hover {
+    text-decoration: underline;
+}
+
+.c-pagination__page[aria-selected=true] {
+    cursor: default;
+    font-weight: 600;
+}
+
+
+/* Icons
+ ========================================================================== */
 
 .c-pagination__prev::after,
-.c-pagination__next::after,
-.c-pagination__perpage__current::after {
-    display: inline-block;
-    text-align: center;
-
+.c-pagination__next::after {
+    line-height: 1;
     font-family: 'Iconic';
     font-size: 1.1rem;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
-
-/* Element: `c-pagination__ellipsis`
- ========================================================================== */
-
-.c-pagination__ellipsis {
-    cursor: default;
+.c-pagination__prev::after {
+    content: '\e14d';
 }
-
-
-/* Controls of page:
- * `c-pagination__page`, `c-pagination__prev`, `c-pagination__next`
- ========================================================================== */
-
-.c-pagination__pages {
-    font-size: 0.001px;
-}
-
-.c-pagination__page,
-.c-pagination__prev,
-.c-pagination__next {
-    min-width: var(--c-pagination-line-height);
-    border-radius: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    text-align: center;
-    transition-property: background-color, border, box-shadow;
-    transition-timing-function: var(--easing);
-    transition-duration: 0.16s;
-}
-
-.c-pagination__page,
-.c-pagination__prev,
-.c-pagination__next:not([aria-selected=true], [aria-disable=true]):hover {
-    color: var(--c-pagination-hover-color);
-}
-
-.c-pagination__page {
-    padding: 0 0.4rem;
-    margin: 0 0.2rem;
-
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-
-    line-height: inherit;
-    text-align: center;
-}
-
-.c-pagination__page:hover {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-decoration: underline;
-}
-
-.c-pagination__page:active {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-decoration: none;
-}
-
-.c-pagination__page[aria-selected=true] {
-    cursor: default;
-
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.c-pagination__prev::after,
 .c-pagination__next::after {
-    width: 1.6rem;
-}
-
-.c-pagination__prev::after { content: '\e14d'; }
-.c-pagination__next::after { content: '\e14e'; }
-
-.c-pagination__prev,
-.c-pagination__next {
-    margin: 0 0.2rem;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-.c-pagination__prev:not([aria-disable=true]):hover,
-.c-pagination__prev:not([aria-disable=true]):active,
-.c-pagination__next:not([aria-disable=true]):hover,
-.c-pagination__next:not([aria-disable=true]):active {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-.c-pagination__prev[aria-disable=true],
-.c-pagination__next[aria-disable=true] {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    color: var(--clr-grey-600);
-    cursor: default;
-}
-
-
-/* Sub-component: `c-pagination__perpage`
- ========================================================================== */
-
-.c-pagination__perpage {
-    position: absolute;
-    right: 0;
-}
-
-.c-pagination__perpage__current::after {
-    content: '\e14c';
-    width: 1.2rem;
-    font-size: 0.8rem;
-}
-
-.c-pagination__perpage__current:hover {
-    color: var(--c-pagination-hover-color);
-}
-
-.c-pagination__perpage__values {
-    position: absolute;
-    bottom: var(--c-pagination-line-height);
-    right: 0;
-
-    background-color: var(--clr-white);
-    border-radius: 0.2rem;
-    box-shadow: var(--shadow-2dp);
-
-    overflow: hidden;
-    text-align: right;
-
-    display: none;
-    opacity: 0;
-}
-
-.c-pagination__perpage__value {
-    display: block;
-    padding: 0.2rem 1.6rem;
-}
-
-.c-pagination__perpage__value:not([aria-selected=true]):hover {
-    background-color: var(--clr-grey-50);
-    color: var(--c-pagination-hover-color);
-}
-
-.c-pagination__perpage__value[aria-selected=true] {
-    cursor: default;
-    background-color: transparent;
-    color: inherit;
-    font-weight: 600;
-}
-
-.c-pagination__perpage:hover .c-pagination__perpage__values {
-    display: block;
-    opacity: 1;
-}
-
-.c-pagination__perpage:hover .c-pagination__perpage__current::after {
-    content: '\e14f';
+    content: '\e14e';
 }

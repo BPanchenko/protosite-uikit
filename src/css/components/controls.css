@@ -67,3 +67,21 @@
 .c-ctrl-sort[aria-sort="descending"]::after {
     content: '\e247';
 }
+
+
+/* ========================================================================
+   Component: `c-ctrl-popover`
+ ========================================================================== */
+
+.c-ctrl-popover {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.c-ctrl-popover::after {
+    content: ' ';
+    display: block;
+    position: relative;
+    top: -0.1em;
+    border-bottom: 0.1rem dashed currentColor;
+}

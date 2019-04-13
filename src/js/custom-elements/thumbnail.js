@@ -13,6 +13,9 @@
 
 (function() {
 
+    /* Constants
+     ========================================================================== */
+
     const CLS = Object.create(null, {
         'main': { value: 'c-thumbnail' },
 
@@ -26,6 +29,9 @@
         'lg': { value: 'c-thumbnail--lg' },
         'xl': { value: 'c-thumbnail--xl' }
     });
+
+    /* Element Class
+     ========================================================================== */
 
     class AvatarElement extends HTMLElement {
         connectedCallback() {
@@ -42,7 +48,7 @@
             if (~['xs','sm','md','lg','xl'].indexOf(size)) {
                 this.classList.add(CLS[size]);
             } else if (size) {
-                console.warn("Size can take values 'xs', 'sm', 'md', 'lg' or 'xl'");
+                console.warn('Size can take values "xs", "sm", "md", "lg" or "xl"');
             }
 
             let container = this;
@@ -88,8 +94,9 @@
             return this;
         }
     }
-
-    // Define the new element
+    
+    /* Define the new element
+     ========================================================================== */
 
     if (customElements) customElements.define('c-thumbnail', AvatarElement);
     if (typeof exports != 'undefined' && !exports.nodeType) exports.AvatarElement = AvatarElement;
