@@ -96,12 +96,18 @@
         }
 
         get floating() {
-            return this.dataset.floating == 'true' || DEFAULT_FLOATING;
+            let floating = this.dataset.floating;
+            if (!~['true','false'].indexOf(floating)) {
+                floating = this.dataset.floating = DEFAULT_FLOATING;
+            }
+            return floating;
         }
 
         get position() {
             let pos = this.dataset.position;
-            if (isInvalidPosition(pos)) pos = this.position = DEFAULT_POSITION;
+            if (isInvalidPosition(pos)) {
+                pos = this.position = DEFAULT_POSITION;
+            }
             if (!this.__position) this.__position = pos; // starting value
             return pos;
         }

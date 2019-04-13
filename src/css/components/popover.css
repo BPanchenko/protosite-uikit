@@ -33,7 +33,7 @@
     margin: var(--space-default);
     box-shadow: var(--shadow);
 
-    transition-property: opacity, transform;
+    transition-property: opacity;
     transition-duration: 0.16s;
     transition-timing-function: var(--easing);
 
@@ -41,6 +41,10 @@
     user-select: none;
     line-height: 1;
     font-size: 0.001px;
+}
+
+.c-popover[data-floating=true] {
+    transition-property: opacity, transform;
 }
 
 
