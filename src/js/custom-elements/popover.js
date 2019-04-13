@@ -82,7 +82,7 @@
         hide() {
             this.classList.add(CLS.hide);
             this.classList.remove(CLS.show);
-            this.position = this.__position; // reset the position to original state
+            if (this.__position) this.position = this.__position; // reset the position to original state
             return this;
         }
         toggle() {
@@ -90,6 +90,7 @@
                 this.hide();
             } else {
                 this.show();
+                this.placement();
             }
             return this;
         }
@@ -134,7 +135,9 @@
         if (~this.trigger.indexOf('hover')) {
             this._control.addEventListener('mouseenter', this.__onShow);
             this._control.addEventListener('mouseleave', this.__onHide);
-            this._control.addEventListener('mousemove', this.__onMove);
+            if (this.floating) {
+                this._control.addEventListener('mousemove', this.__onMove);
+            }
         }
 
         if (~this.trigger.indexOf('focus')) {
@@ -208,13 +211,14 @@
         let ctrlRect = this._control.getBoundingClientRect();
         let rect = this.getBoundingClientRect();
         let style = window.getComputedStyle(this);
-    
-        var offset = {
+
+        let offset = {
             top: parseInt(style.marginTop),
             right: parseInt(style.marginRight),
             bottom: parseInt(style.marginBottom),
             left: parseInt(style.marginLeft)
         };
+
         offset.vertical = offset.top + offset.bottom;
         offset.horizontal = offset.left + offset.right;
     
@@ -294,12 +298,14 @@
     /* Hide all popovers when scrolling a window
      ========================================================================== */
     
-    window.addEventListener('scroll', () => {
-        Array.from(document.getElementsByTagName('c-popover')).forEach(elem => {
+    function hideAllPopovers() {
+        Array.from(document.querySelectorAll('c-popover.is-visible')).forEach(elem => {
             elem.classList.add('is-hidden');
             elem.classList.remove('is-visible');
         })
-    });
+    }
+
+    window.addEventListener('scroll', hideAllPopovers, false);
     
     /* Define the new element
      ========================================================================== */
