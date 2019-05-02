@@ -259,7 +259,7 @@ input:disabled + .c-field-label {
 .c-field-icon + .c-field,
 .c-field-icon + .c-field-label + .c-field,
 .c-field-icon + .c-field[type=file] + .c-field {
-    padding-left: var(--c-field-height);
+    padding-left: var(--c-field-height) !important;
 }
 
 /* Element: `c-field-button`
@@ -272,6 +272,7 @@ input:disabled + .c-field-label {
     -webkit-appearance: none;
     -moz-appearance: none;
 
+    background-color: transparent;
     border: none;
     outline: none;
     text-align: center;
@@ -428,12 +429,16 @@ input.c-field:not([type=checkbox], [type=radio]):focus {
     box-shadow: none;
 }
 
+.s-floating.c-field-box .c-field-icon {
+    top: 2rem;
+}
+
 .s-floating.c-field-box .c-field-label {
     position: relative;
-    top: calc(var(--c-field-height) + 0.1rem - (var(--c-field-padding-top) + var(--c-field-padding-bottom) + 0.2rem));
+    top: 2.7rem;
     font-size: 1.3rem;
     cursor: pointer;
-    transition-property: top, font-size, color;
+    transition-property: top, left, font-size, color;
 }
 
 .s-floating.c-field-box.is-filled .c-field-label,
