@@ -1,13 +1,26 @@
 
 @import "../settings/breakpoints.css";
 
+/* Variables
+ ========================================================================== */
+
+.o-container {
+    --base-width: auto;
+    --width-xdesktop: 130.4rem;
+    --width-desktop: 111.2rem;
+    --width-tablet-landscape: 92rem;
+    --width-tablet-portrait: 72rem;
+    --width-handset-landscape: 46.4rem;
+    --width-handset-portrait: 32rem;
+}
+
 /* ========================================================================
    Object: Container
  ========================================================================== */
 
 .o-container {
     display: block;
-    width: auto;
+    width: var(--base-width);
     margin: 0 auto;
     padding: 4rem 0 6.4rem;
 }
@@ -25,25 +38,25 @@
  ========================================================================== */
 
 @media (--screen-xdesktop) {
-    .o-container { width: 130.4rem; }
+    .o-container { width: var(--width-xdesktop); }
 }
 
 @media (--screen-desktop) {
-    .o-container { width: 111.2rem; }
+    .o-container { width: var(--width-desktop); }
 }
 
 @media (--screen-tablet-landscape) {
-    .o-container { width: 92rem; }
+    .o-container { width: var(--width-tablet-landscape); }
 }
 
 @media (--screen-tablet-portrait) {
-    .o-container { width: 72rem; }
+    .o-container { width: var(--width-tablet-portrait); }
 }
 
 @media (--screen-handset-landscape) {
-    .o-container { width: 46.4rem; }
+    .o-container { width: var(--width-handset-landscape); }
 }
 
 @media (--screen-handset-portrait) {
-    .o-container { width: 320px; }
+    .o-container { width: var(--width-handset-portrait); }
 }
