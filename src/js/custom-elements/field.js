@@ -166,8 +166,8 @@
             return ~['radio', 'checkbox'].indexOf(this.type);
         }
         render() {
-            if (this.label && !this.isCheckable()) this._label = this.renderLabel(this.label);
             if (this.glyph) this._icon = this.renderIcon(this.glyph);
+            if (this.label && !this.isCheckable()) this._label = this.renderLabel(this.label);
 
             this._field = this.renderField();
 
