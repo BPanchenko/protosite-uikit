@@ -15,21 +15,14 @@
  ========================================================================== */
 
 .c-button.s-clean {
-	padding: var(--space-sm) var(--space-md);
-	background-color: transparent;
-	background-image: none;
+    --bgcolor: transparent;
+    --hover-bgcolor: var(--clr-blue-grey-50);
 	box-shadow: none;
 }
 
-.c-button.s-clean:hover {
-    background-color: var(--clr-grey-400);
-}
-.c-button.s-clean:focus {
-    background-color: var(--clr-grey-400);
-}
 .c-button.s-clean:active,
 .c-button.s-clean[aria-checked=true] {
-    background-color: var(--clr-blue-grey-400);
+    background-color: var(--hover-bgcolor);
 }
 
 .c-button.s-clean .c-button__icon {
