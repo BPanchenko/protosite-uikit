@@ -1,6 +1,7 @@
 /.idea
 /node_modules
 /dataset
+/resources/fonts
 /json2db.php
 /package-lock.json
 /yarn.lock

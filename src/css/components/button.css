@@ -39,15 +39,21 @@
  * 
  ========================================================================== */
 
+.c-button {
+    --height: 3.2rem;
+    --padding-horizontal: var(--space-md);
+    --padding-vertical: 0;
+    --font-size: var(--text-md);
+    
+    --bgcolor: var(--clr-grey-300);
+    --focus-bgcolor: var(--clr-grey-350);
+    --hover-bgcolor: var(--clr-grey-320);
+}
+
 
 /* ========================================================================
    Component: `c-button`
  ========================================================================== */
- 
-.c-button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
 
 .c-button {
 	-webkit-appearance: none;
@@ -56,23 +62,20 @@
 	border: none;
 	outline: none;
 	text-align: center;
-	text-transform: none;
-	text-decoration: none;
-	text-shadow: 0.1rem 0.1rem rgba(255,255,255,0.3), 0 0.1rem rgba(255,255,255,0.3);
 
-	display: inline-block;
-	vertical-align: middle;
+    display: inline-block;
+    line-height: var(--height);
 	box-sizing: border-box;
-	padding: var(--space-sm) var(--space-md);
+	padding: var(--padding-vertical) var(--padding-horizontal);
+	vertical-align: middle;
 
 	cursor: pointer;
 	font-family: var(--font-secondary);
-	font-size: var(--text-base-size);
+	font-size: var(--font-size);
 	font-weight: 500;
-	line-height: 1.45;
 
-	background-color: var(--clr-grey-200);
-	border-radius: 0.2rem;
+	background-color: var(--bgcolor);
+	border-radius: 0.3rem;
 	box-shadow: var(--shadow-2dp);
 
 	transition: var(--link-transition), background-color 0.16s var(--easing);
@@ -84,13 +87,12 @@
 	color: var(--text-color);
 }
 
-.c-button + .c-button {
-    margin-left: var(--space-sm);
+.c-button:hover {
+    background-color: var(--hover-bgcolor);
 }
 
-.c-button > span {
-	display: inline-block;
-	vertical-align: middle;
+.c-button + .c-button {
+    margin-left: var(--space-sm);
 }
 
 .c-button > .iconic[data-glyph] {
@@ -98,6 +100,11 @@
 }
 .c-button > .iconic[data-glyph]::before {
     vertical-align: middle;
+}
+ 
+.c-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
 }
 
 
@@ -108,7 +115,7 @@
 .c-button[aria-checked=true],
 .c-panel:not(.s-transparent) .c-button:active,
 .c-panel:not(.s-transparent) .c-button[aria-checked=true] {
-	box-shadow: inset 0 .1rem .2rem 0 rgba(0,0,0,.14), inset 0 .1rem .5rem 0 rgba(0,0,0,.12);
+	box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
 }
 
 
@@ -117,7 +124,7 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-	background-color: var(--clr-grey-200);
+	background-color: var(--focus-bgcolor);
 }
 
 
@@ -125,7 +132,7 @@
  ========================================================================== */
 
 .c-panel:not(.s-transparent) .c-button {
-    box-shadow: inset 0.1rem 0.1rem 0 0 rgba(255,255,255,.3), inset -0.1rem -0.1rem 0 0 rgba(0,0,0,.18);
+    box-shadow: none;
 }
 
 
@@ -136,11 +143,10 @@
 .c-button__icon,
 .c-button__text {
 	display: inline-block;
-	vertical-align: middle;
-	float: left;
+    vertical-align: baseline;
+    line-height: 1;
 }
 .c-button__icon {
-	line-height: 1.3;
 	margin-left: -1rem;
 	margin-right: 1.3rem;
 }
@@ -150,19 +156,38 @@
 	margin-right: -1rem;
 }
 
+/* text-crop */
+
+.c-button__text::before,
+.c-button__text::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+}
+.c-button__text::before {
+    margin-bottom: -0.2em;
+}
+.c-button__text::after {
+    margin-top: 0;
+}
+
 
 /* Modifier: `c-button--icon`
  ========================================================================== */
 
 .c-button--icon {
-	background-image: none;
-	box-shadow: none !important;
+    --icon-size: 2rem;
+    --bgcolor: transparent;
+    --hover-bgcolor: var(--clr-blue-grey-50);
+}
 
-	padding: var(--space-sm);
-	background-color: transparent;
+.c-button--icon {
+	box-shadow: none !important;
+	padding: 0 var(--space-sm);
 }
 .c-button--icon:hover {
-    background-color: var(--clr-blue-grey-50);
+    background-color: var(--hover-bgcolor);
 }
 .c-button--icon:focus,
 .c-button--icon:active,
@@ -180,8 +205,8 @@
 }
 
 .c-button--icon.iconic:empty:before {
-	width: 2rem;
-	height: 2rem;
+	width: var(--icon-size);
+	height: var(--icon-size);
 }
 
 .c-button--icon + .c-button--icon {
@@ -189,119 +214,100 @@
 }
 
 
-/* Button combined with icon
+/* Style: `c-button--link`
  ========================================================================== */
 
-.c-button.iconic:before {
-    /* margin: 0 1rem 0 -1rem; */
-}
+.c-button.s-link {
+    --padding-horizontal: var(--space-sm);
+    --bgcolor: transparent;
+    --hover-bgcolor: transparent;
 
-
-/* Modifier: `c-button--link`
- ========================================================================== */
-
-.c-button--link {
-    padding: var(--space-xs) var(--space-sm);
-
-    background: transparent !important;
     text-decoration: var(--link-text-decoration);
     transition: var(--link-transition);
     box-shadow: none !important;
     color: var(--link-hover-color);
 }
 
-.c-button--link .c-button__icon {
+.c-button.s-link .c-button__icon {
     margin-left: -.2rem;
     margin-right: .8rem;
     text-decoration: none;
 }
 
-.c-button--link .c-button__text {
+.c-button.s-link .c-button__text {
     text-decoration: var(--link-text-decoration);
 }
 
-.c-button--link .c-button__text + .c-button__icon {
+.c-button.s-link .c-button__text + .c-button__icon {
     margin-left: .8rem;
     margin-right: -.2rem;
 }
 
-.c-button--link:hover {
+.c-button.s-link:hover {
     text-decoration: var(--link-hover-text-decoration);
 }
-.c-button--link:hover .c-button__text {
+.c-button.s-link:hover .c-button__text {
     text-decoration: var(--link-hover-text-decoration);
 }
 
-.c-button--link:active,
-.c-button--link:hover,
-.c-button--link:focus,
-.c-button--link[aria-checked=true],
-.c-button--link.c-button--active {
+.c-button.s-link:active,
+.c-button.s-link:hover,
+.c-button.s-link:focus,
+.c-button.s-link[aria-checked=true],
+.c-button.s-link.c-button--active {
     color: var(--link-hover-color);
 }
 
 
-/* Modifier: `c-button--bordered`
+/* Style: `s-bordered`
  ========================================================================== */
 
-.c-button--bordered,
-.c-panel:not(.s-transparent) .c-button--bordered {
-    padding: var(--space-sm) var(--space-md);
+.c-button.s-bordered,
+.c-panel:not(.s-transparent) .c-button.s-bordered {
+    --bgcolor: transparent;
+    --hover-bgcolor: transparent;
 
-    background-color: transparent;
-    background-image: none;
-    border-color: var(--clr-grey-500);
+    border-color: var(--clr-grey-600);
     border-style: solid;
     border-width: 0.1rem;
     box-shadow: none;
-
 }
 
-.c-button--bordered:hover {
-    background-color: var(--clr-grey-400);
-}
-.c-button--bordered:focus {
-    background-color: var(--clr-grey-400);
-}
-.c-button--bordered:active,
-.c-button--bordered[aria-checked=true] {
+.c-button.s-bordered:active,
+.c-button.s-bordered[aria-checked=true] {
     background-color: var(--clr-blue-grey-400);
 }
 
 
-.c-button--bordered .c-button__icon {
+.c-button.s-bordered .c-button__icon {
     margin-left: -.2rem;
     margin-right: .8rem;
 }
-.c-button--bordered .c-button__text + .c-button__icon {
+.c-button.s-bordered .c-button__text + .c-button__icon {
     margin-left: .8rem;
     margin-right: -.2rem;
 }
 
 
-.c-button--bordered.s-danger,
-.c-panel:not(.s-transparent) .c-button--bordered.s-danger { border-color: var(--danger-color); }
-.c-button--bordered.s-success,
-.c-panel:not(.s-transparent) .c-button--bordered.s-success { border-color: var(--success-color); }
-.c-button--bordered.s-primary,
-.c-panel:not(.s-transparent) .c-button--bordered.s-primary { border-color: var(--primary-color); }
-.c-button--bordered.s-warning,
-.c-panel:not(.s-transparent) .c-button--bordered.s-warning { border-color: var(--warning-color); }
+.c-button.s-bordered.s-danger,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-danger { border-color: var(--danger-color); }
+.c-button.s-bordered.s-success,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-success { border-color: var(--success-color); }
+.c-button.s-bordered.s-primary,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-primary { border-color: var(--primary-color); }
+.c-button.s-bordered.s-warning,
+.c-panel:not(.s-transparent) .c-button.s-bordered.s-warning { border-color: var(--warning-color); }
 
 
-/* Modifiers: `c-button--[xs,sm,md,lg,xl]`
+/* Modifiers: `c-button--[sm,lg,xl]`
  ========================================================================== */
 
-.c-button {
-    --icon-size-lg: 4rem;
-    --icon-size-xl: 16rem;
+.c-button--sm {
+    --height: 1.6rem;
+    --padding-horizontal: var(--space-sm);
+    --font-size: var(--text-xs);
 }
 
-.c-button--sm {
-    font-size: var(--text-sm);
-    line-height: 1.4;
-    padding: var(--space-xs) var(--space-sm);
-}
 .c-button--sm.c-button--icon {
     padding: var(--space-xs);
 }
@@ -310,28 +316,27 @@
 }
 
 .c-button--lg {
-    font-size: var(--text-lg);
-    line-height: 1.5;
-    padding: var(--space-sm) var(--space-lg);
+    --height: 4rem;
+    --padding-horizontal: var(--space-lg);
+    --font-size: var(--text-lg);
 }
 .c-button--lg.c-button--icon {
+    --icon-size: 4rem;
     padding: var(--space-sm);
-}
-.c-button--lg.c-button--icon:empty::before {
-    width: var(--icon-size-lg);
-    height: var(--icon-size-lg);
 }
 .c-button--lg.c-button--icon::before {
     font-size: 32px;
     font-weight: 500;
 }
 
+.c-button--xl {
+    --icon-size: 16rem;
+    --height: 5.6rem;
+    --padding-horizontal: var(--space-lg);
+    --font-size: var(--text-xl);
+}
 .c-button--xl.c-button--icon {
     padding: var(--space-sm);
-}
-.c-button--xl.c-button--icon:empty::before {
-    width: var(--icon-size-xl);
-    height: var(--icon-size-xl);
 }
 .c-button--xl.c-button--icon::before {
     font-size: 128px;
@@ -347,11 +352,8 @@
  ========================================================================== */
 
 .c-button-group {
-	display: inline-block;
+	display: inline-flex;
 	vertical-align: middle;
-	position: relative;
-	font-size: .001px;
-	white-space: nowrap;
 }
 
 .c-button-group .c-button:not(:first-child) {
@@ -371,6 +373,6 @@
 
 .c-button-group .c-button + .c-button,
 .c-button-group .c-button--icon + .c-button--icon,
-.c-button-group .c-button--link + .c-button--link {
+.c-button-group .c-button.s-link + .c-button.s-link {
     margin-left: 0;
 }

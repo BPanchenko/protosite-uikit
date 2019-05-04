@@ -2,25 +2,50 @@
 
 (function() {
 
+    /* Constants
+     ========================================================================== */
+
+    const CLS = Object.create(null, {
+        'main': { value: 'c-button' },
+
+        'sm': { value: 'c-button--sm' },
+        'lg': { value: 'c-button--lg' },
+        'xl': { value: 'c-button--xl' }
+    });
+
+    /* Element Class
+     ========================================================================== */
+
     class ButtonElement extends HTMLElement {
         connectedCallback() {
-            this.classList.add('c-button');
+            this.render().cleanup();
+        }
+
+        render() {
+            let { glyph, glyphAtRight, size, text } = this.dataset;
+
+            this.classList.add(CLS.main);
+
             if(!this.hasAttribute('type')) this.setAttribute('type', 'button');
+            
+            if (glyph) this.appendChild(createIconNode(glyph));
+            if (glyphAtRight) this.appendChild(createIconNode(glyphAtRight));
+            if (text) this.appendChild(createTextNode(text));
 
-            if (this.dataset.glyph) {
-                this.appendChild(createIconNode(this.dataset.glyph));
-                delete this.dataset.glyph;
+            if (~['sm','lg','xl'].indexOf(size)) {
+                this.classList.add(CLS[size]);
+            } else if (size) {
+                console.warn('Size can take values "xs", "sm", "md", "lg" or "xl"');
             }
 
-            if (this.dataset.text) {
-                this.appendChild(createTextNode(this.dataset.text));
-                delete this.dataset.text;
-            }
+            return this;
+        }
 
-            if (this.dataset.glyphAtRight) {
-                this.appendChild(createIconNode(this.dataset.glyphAtRight));
-                delete this.dataset.glyphAtRight;
-            }
+        cleanup() {
+            this.removeAttribute('data-glyph');
+            this.removeAttribute('data-glyph-at-right');
+            this.removeAttribute('data-size');
+            this.removeAttribute('data-text');
         }
     }
 

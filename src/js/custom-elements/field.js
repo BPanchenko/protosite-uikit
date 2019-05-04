@@ -75,9 +75,11 @@
                 case 'password':
                 case 'text':
                     if(this.buttonGlyph === 'eye-closed') {
+                        e.preventDefault();
                         this.buttonGlyph = 'eye-open';
                         this.type = 'text';
                     } else if(this.buttonGlyph === 'eye-open') {
+                        e.preventDefault();
                         this.buttonGlyph = 'eye-closed';
                         this.type = 'password';
                     }
