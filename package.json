@@ -7,7 +7,7 @@
   "style": "./dist/protosite-uikit.css",
   "scripts": {
     "dev": "webpack-dev-server --mode development --config .config/webpack.config.js",
-    "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config --output ./dist/protosite-uikit.css --watch",
+    "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./dist/protosite-uikit.css --watch",
     "build": "webpack --mode production --config .config/webpack.config.js",
     "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js"
   },
@@ -24,6 +24,8 @@
     "gulp-postcss": "^8.0.0",
     "postcss": "^7.0.13",
     "postcss-cli": "^6.1.1",
+    "postcss-color-function": "^4.1.0",
+    "postcss-custom-properties": "^8.0.10",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0",
