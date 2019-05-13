@@ -2,6 +2,7 @@
 
 :root {
     --u-margin: var(--space-default);
+    --u-margin-xxs: var(--space-xxs);
     --u-margin-xs: var(--space-xs);
     --u-margin-sm: var(--space-sm);
     --u-margin-lg: var(--space-lg);
@@ -15,6 +16,15 @@
 .u-margin-bottom { margin-bottom: var(--u-margin) !important; }
 .u-margin-left { margin-left: var(--u-margin) !important; }
 .u-margin-right { margin-right: var(--u-margin) !important; }
+
+
+.u-margin-xxs { margin-bottom: var(--u-margin-xxs); }
+* + .u-margin-xxs { margin-top: var(--u-margin-xxs); }
+
+.u-margin-xxs-top { margin-top: var(--u-margin-xxs) !important; }
+.u-margin-xxs-bottom { margin-bottom: var(--u-margin-xxs) !important; }
+.u-margin-xxs-left { margin-left: var(--u-margin-xxs) !important; }
+.u-margin-xxs-right { margin-right: var(--u-margin-xxs) !important; }
 
 
 .u-margin-xs { margin-bottom: var(--u-margin-xs); }
