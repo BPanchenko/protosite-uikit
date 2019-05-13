@@ -43,7 +43,10 @@
     --height: 3.2rem;
     --padding-horizontal: var(--space-md);
     --padding-vertical: 0;
+	
     --font-size: var(--text-md);
+	--color: var(--text-color);
+	--hover-color: var(--text-color);
     
     --bgcolor: var(--clr-grey-300);
     --focus-bgcolor: var(--clr-grey-350);
@@ -82,13 +85,12 @@
 	user-select: none;
 }
 
-.c-button,
-.c-button:hover {
-	color: var(--text-color);
+.c-button {
+	color: var(--color);
 }
-
 .c-button:hover {
-    background-color: var(--hover-bgcolor);
+	background-color: var(--hover-bgcolor);
+	color: var(--hover-color);
 }
 
 .c-button + .c-button {
@@ -219,13 +221,14 @@
 
 .c-button.s-link {
     --padding-horizontal: var(--space-sm);
+    --color: var(--link-color);
+    --hover-color: var(--link-hover-color);
     --bgcolor: transparent;
     --hover-bgcolor: transparent;
 
     text-decoration: var(--link-text-decoration);
     transition: var(--link-transition);
     box-shadow: none !important;
-    color: var(--link-hover-color);
 }
 
 .c-button.s-link .c-button__icon {
@@ -255,7 +258,7 @@
 .c-button.s-link:focus,
 .c-button.s-link[aria-checked=true],
 .c-button.s-link.c-button--active {
-    color: var(--link-hover-color);
+    color: var(--hover-color);
 }
 
 
