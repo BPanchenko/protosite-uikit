@@ -72,6 +72,11 @@
 
 @media (--screen-desktop-and-smaller) {
 
+	.u-margin-xxs-top\@desktop { margin-top: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-bottom\@desktop { margin-bottom: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-left\@desktop { margin-left: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-right\@desktop { margin-right: var(--u-margin-xxs) !important; }
+
 	.u-margin-xs-top\@desktop { margin-top: var(--u-margin-xs) !important; }
 	.u-margin-xs-bottom\@desktop { margin-bottom: var(--u-margin-xs) !important; }
 	.u-margin-xs-left\@desktop { margin-left: var(--u-margin-xs) !important; }
@@ -106,6 +111,11 @@
 
 
 @media (--screen-tablet-and-smaller) {
+
+	.u-margin-xxs-top\@tablet { margin-top: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-bottom\@tablet { margin-bottom: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-left\@tablet { margin-left: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-right\@tablet { margin-right: var(--u-margin-xxs) !important; }
 
 	.u-margin-xs-top\@tablet { margin-top: var(--u-margin-xs) !important; }
 	.u-margin-xs-bottom\@tablet { margin-bottom: var(--u-margin-xs) !important; }
@@ -142,6 +152,11 @@
 
 @media (--screen-tablet-portrait-and-smaller) {
 
+	.u-margin-xxs-top\@tablet-portrait { margin-top: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-bottom\@tablet-portrait { margin-bottom: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-left\@tablet-portrait { margin-left: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-right\@tablet-portrait { margin-right: var(--u-margin-xxs) !important; }
+
 	.u-margin-xs-top\@tablet-portrait { margin-top: var(--u-margin-xs) !important; }
 	.u-margin-xs-bottom\@tablet-portrait { margin-bottom: var(--u-margin-xs) !important; }
 	.u-margin-xs-left\@tablet-portrait { margin-left: var(--u-margin-xs) !important; }
@@ -177,6 +192,11 @@
 
 @media (--screen-handset) {
 
+	.u-margin-xxs-top\@handset { margin-top: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-bottom\@handset { margin-bottom: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-left\@handset { margin-left: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-right\@handset { margin-right: var(--u-margin-xxs) !important; }
+
 	.u-margin-xs-top\@handset { margin-top: var(--u-margin-xs) !important; }
 	.u-margin-xs-bottom\@handset { margin-bottom: var(--u-margin-xs) !important; }
 	.u-margin-xs-left\@handset { margin-left: var(--u-margin-xs) !important; }
@@ -211,6 +231,11 @@
 
 
 @media (--screen-handset-portrait) {
+
+	.u-margin-xxs-top\@handset-portrait { margin-top: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-bottom\@handset-portrait { margin-bottom: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-left\@handset-portrait { margin-left: var(--u-margin-xxs) !important; }
+	.u-margin-xxs-right\@handset-portrait { margin-right: var(--u-margin-xxs) !important; }
 
 	.u-margin-xs-top\@handset-portrait { margin-top: var(--u-margin-xs) !important; }
 	.u-margin-xs-bottom\@handset-portrait { margin-bottom: var(--u-margin-xs) !important; }
