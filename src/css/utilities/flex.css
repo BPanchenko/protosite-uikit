@@ -25,6 +25,7 @@
 .u-flex-stretch { align-items: stretch; }
 .u-flex-top { align-items: flex-start; }
 .u-flex-middle { align-items: center; }
+.u-flex-baseline { align-items: baseline; }
 .u-flex-bottom { align-items: flex-end; }
 
 
