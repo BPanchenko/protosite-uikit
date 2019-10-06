@@ -1,6 +1,6 @@
 {
   "name": "protosite.uikit",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./dist/protosite-uikit.js",
@@ -12,6 +12,11 @@
     "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js"
   },
   "analyze": true,
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "not ie < 9"
+  ],
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
   },
@@ -63,8 +68,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
-  },
-  "dependencies": {
-    "npm": "^6.6.0"
   }
 }
