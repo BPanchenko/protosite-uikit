@@ -1,4 +1,45 @@
 
+/* ========================================================================
+   Layered box-shadows
+ ========================================================================== */
+
+:root {
+    --shadow-sharp: 0 1px 1px rgba(0,0,0,0.25), 
+                    0 2px 2px rgba(0,0,0,0.20), 
+                    0 4px 4px rgba(0,0,0,0.15), 
+                    0 8px 8px rgba(0,0,0,0.10),
+                    0 16px 16px rgba(0,0,0,0.05);
+      
+    --shadow-diffuse: 0 1px 1px rgba(0,0,0,0.08), 
+                    0 2px 2px rgba(0,0,0,0.12), 
+                    0 4px 4px rgba(0,0,0,0.16), 
+                    0 8px 8px rgba(0,0,0,0.20);
+      
+    --shadow-dreamy: 0 1px 2px rgba(0,0,0,0.07), 
+                    0 2px 4px rgba(0,0,0,0.07), 
+                    0 4px 8px rgba(0,0,0,0.07), 
+                    0 8px 16px rgba(0,0,0,0.07),
+                    0 16px 32px rgba(0,0,0,0.07), 
+                    0 32px 64px rgba(0,0,0,0.07);
+    
+    --shadow-shorter: 0 1px 1px rgba(0,0,0,0.11), 
+                    0 2px 2px rgba(0,0,0,0.11), 
+                    0 4px 4px rgba(0,0,0,0.11), 
+                    0 6px 8px rgba(0,0,0,0.11),
+                    0 8px 16px rgba(0,0,0,0.11);
+      
+    --shadow-longer: 0 2px 1px rgba(0,0,0,0.09), 
+                    0 4px 2px rgba(0,0,0,0.09), 
+                    0 8px 4px rgba(0,0,0,0.09), 
+                    0 16px 8px rgba(0,0,0,0.09),
+                    0 32px 16px rgba(0,0,0,0.09);
+}
+
+
+/* ========================================================================
+   Google Material Design Shadow
+ ========================================================================== */
+
 :root {
     --shadow-key-umbra-opacity: 0.2;
     --shadow-key-penumbra-opacity: 0.14;

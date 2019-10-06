@@ -1,4 +1,34 @@
 
+
+/* ========================================================================
+   Layered box-shadows
+ ========================================================================== */
+
+.s-shadow-sharp {
+    box-shadow: var(--shadow-sharp);
+}
+  
+.s-shadow-diffuse {
+    box-shadow: var(--shadow-diffuse);
+}
+  
+.s-shadow-dreamy {
+    box-shadow: var(--shadow-dreamy);
+}
+
+.s-shadow-shorter {
+    box-shadow: var(--shadow-shorter);
+}
+  
+.s-shadow-longer {
+    box-shadow: var(--shadow-longer);
+}
+
+
+/* ========================================================================
+   Google Material Design Shadow
+ ========================================================================== */
+
 .s-shadow {
     box-shadow: var(--shadow);
 }
