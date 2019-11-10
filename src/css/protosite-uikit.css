@@ -1,14 +1,22 @@
 
+/* Settings */
+
 @import "./settings/_import.css";
 
+/* Iconography */
 
 @import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
+
+/* Base document style (todo: critical.css) */
 
 @import "./base/document.css";
 @import "./base/list.css";
 @import "./base/paragraph.css";
 @import "./base/table.css";
 @import "./base/text.css";
+
+
+/* Components */
 
 @import "./components/avatar.css";
 @import "./components/backdrop.css";
@@ -26,17 +34,23 @@
 @import "./components/tabs.css";
 @import "./components/thumbnail.css";
 
+/* Objects */
+
 @import "./objects/article.css";
 @import "./objects/breadcrumb.css";
 @import "./objects/container.css";
 @import "./objects/form.css";
 @import "./objects/grid.css";
 
+/* Utilities */
+
 @import "./utilities/common.css";
 @import "./utilities/flex.css" screen;
 @import "./utilities/margin.css";
 @import "./utilities/text.css";
 @import "./utilities/width.css" screen;
+
+/* Cosmetic styles */
 
 @import "./styles/clean.css";
 @import "./styles/color.css";
@@ -45,5 +59,7 @@
 @import "./styles/loading.css";
 @import "./styles/shadow.css";
 @import "./styles/striped.css";
+
+/* Themes */
 
 @import "./themes/errordoc.css";
