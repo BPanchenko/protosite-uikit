@@ -2,12 +2,13 @@
 @import "./settings/_import.css";
 
 
+@import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
+
 @import "./base/document.css";
 @import "./base/list.css";
 @import "./base/paragraph.css";
 @import "./base/table.css";
 @import "./base/text.css";
-@import "./icons/iconic-glyphs.css";
 
 @import "./components/avatar.css";
 @import "./components/backdrop.css";
