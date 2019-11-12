@@ -13,21 +13,11 @@
 }
 
 
-/* Fonts
- ========================================================================== */
- 
-.u-font-condensed { font-family: var(--font-condensed); }
-.u-font-cursive { font-family: var(--font-cursive); }
-.u-font-monospace { font-family: var(--font-monospace); }
-.u-font-sans { font-family: var(--font-sans); }
-.u-font-serif { font-family: var(--font-serif); }
-
-
 /* Size modifiers
  ========================================================================== */
 
 .u-text-default {
-    font-size: var(--text-base-size);
+    font-size: var(--text-default-size);
     line-height: var(--line-height-default);
 }
 .u-text-xl {
