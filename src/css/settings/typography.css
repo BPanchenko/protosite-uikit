@@ -2,20 +2,14 @@
 /* Typeface
  ======================================================================== */
 
-@import url("https://fonts.googleapis.com/css?family=Marck+Script|PT+Sans:400,400i,700|PT+Serif+Caption&subset=cyrillic-ext");
+ @import url("http://assets.protosite.rocks/fonts/gilroy/stylesheet.css");
+ @import url("http://assets.protosite.rocks/fonts/pt-root-ui/stylesheet.css");
 
 :root {
-    --font-condensed: "PT Sans Narrow", sans-serif;
-    --font-cursive: "Marck Script", cursive;
-    --font-monospace: monospace;
-    --font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-serif: "PT Serif Caption", serif;
+    --font-primary: 'PT Root UI Web', sans-serif;
+    --font-secondary: 'Gilroy', sans-serif;
 
-    --font-default: var(--font-sans);
-    --font-primary: var(--font-sans);
-    --font-secondary: var(--font-sans);
-
-	--text-base-size: 1.6rem;
+	--text-default-size: 1.6rem;
     --text-xs: 1.1rem;
     --text-sm: 1.3rem;
     --text-md: 1.4rem;
@@ -36,23 +30,23 @@
  ======================================================================== */
 
 :root {
-    --h1-font: 400 3.6rem/4rem var(--font-serif);
+    --h1-font: 400 3.6rem/4rem var(--font-secondary);
     --h1-margin: var(--space-sm) 0;
     --h1-text-transform: none;
-    --h2-font: 400 2.8rem/3.2rem var(--font-serif);
+    --h2-font: 400 2.8rem/3.2rem var(--font-secondary);
     --h2-margin: var(--space-sm) 0;
     --h2-text-transform: none;
-    --h3-font: 400 2rem/2.4rem var(--font-serif);
+    --h3-font: 400 2rem/2.4rem var(--font-secondary);
     --h3-margin: var(--space-xs) 0;
     --h3-text-transform: none;
 
-    --h4-font: 500 1.6rem/1.8rem var(--font-sans);
+    --h4-font: 600 1.6rem/1.8rem var(--font-secondary);
     --h4-margin: var(--space-md) 0 var(--space-xs);
     --h4-text-transform: none;
-    --h5-font: 500 1.4rem/1.6rem var(--font-sans);
+    --h5-font: 600 1.4rem/1.6rem var(--font-secondary);
     --h5-margin: var(--space-md) 0 var(--space-xs);
     --h5-text-transform: uppercase;
-    --h6-font: 700 1.2rem/1.6rem var(--font-sans);
+    --h6-font: 600 1.2rem/1.6rem var(--font-secondary);
     --h6-margin: var(--space-sm) 0 var(--space-xs);
     --h6-text-transform: uppercase;
 }

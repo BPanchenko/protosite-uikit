@@ -21,8 +21,8 @@
  ========================================================================== */
 
 :root {
-    --c-field-font-family: inherit;
-    --c-field-font-size: var(--text-base-size);
+    --c-field-font-family: var(--font-primary);
+    --c-field-font-size: var(--text-default-size);
     --c-field-line-height: var(--line-height-default);
 
     --c-field-height: 3.2rem;
@@ -285,8 +285,8 @@ input:disabled + .c-field-label {
     box-sizing: border-box;
 
     cursor: pointer;
-    font-family: var(--font-sans);
-    font-size: var(--text-base-size);
+    font-family: var(--font-primary);
+    font-size: var(--text-default-size);
     font-weight: 500;
     line-height: 1.45;
 

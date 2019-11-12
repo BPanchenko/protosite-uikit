@@ -21,7 +21,7 @@
     position: relative;
     line-height: var(--size);
     font-family: var(--font-primary);
-    font-size: var(--text-base-size);
+    font-size: var(--text-default-size);
     text-align: center;
     color: var(--color);
 }

@@ -105,7 +105,7 @@
 .c-list__item .c-list__cell {
     display: inline-block;
     white-space: normal;
-    font-size: var(--text-base-size);
+    font-size: var(--text-default-size);
 }
 
 .c-list__item > .c-list__cell {
