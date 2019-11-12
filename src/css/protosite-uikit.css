@@ -44,7 +44,7 @@
 
 /* Utilities */
 
-@import "./utilities/common.css";
+@import "./utilities/_common.css";
 @import "./utilities/flex.css" screen;
 @import "./utilities/margin.css";
 @import "./utilities/text.css";
@@ -52,11 +52,11 @@
 
 /* Cosmetic styles */
 
+@import "./styles/_common.css";
 @import "./styles/clean.css";
 @import "./styles/color.css";
 @import "./styles/floating.css";
 @import "./styles/hovered.css";
-@import "./styles/loading.css";
 @import "./styles/shadow.css";
 @import "./styles/striped.css";
 
