@@ -25,7 +25,7 @@ table th {
 	text-align: left;
 	vertical-align: bottom;
 	font-family: var(--font-primary);
-	font-size: var(--text-default-size);
+	font-size: var(--text-md);
 	font-weight: 600;
 	color: var(--caption-color);
 }
@@ -57,7 +57,7 @@ table tfoot {
 table caption {
 	text-align: left;
 	font-family: var(--font-primary);
-	font-size: var(--text-default-size);
+	font-size: var(--text-md);
 	font-weight: 300;
 	color: var(--muted-color);
 }

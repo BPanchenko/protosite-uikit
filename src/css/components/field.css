@@ -22,7 +22,7 @@
 
 :root {
     --c-field-font-family: var(--font-primary);
-    --c-field-font-size: var(--text-default-size);
+    --c-field-font-size: var(--text-md);
     --c-field-line-height: var(--line-height-default);
 
     --c-field-height: 3.2rem;
@@ -286,7 +286,7 @@ input:disabled + .c-field-label {
 
     cursor: pointer;
     font-family: var(--font-primary);
-    font-size: var(--text-default-size);
+    font-size: var(--text-md);
     font-weight: 500;
     line-height: 1.45;
 

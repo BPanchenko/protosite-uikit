@@ -17,7 +17,7 @@
  ========================================================================== */
 
 .u-text-default {
-    font-size: var(--text-default-size);
+    font-size: var(--text-md);
     line-height: var(--line-height-default);
 }
 .u-text-xl {

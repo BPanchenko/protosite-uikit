@@ -41,7 +41,7 @@
 
 .o-breadcrumb__item.is-current {
 	font-family: var(--font-primary);
-	font-size: var(--text-default-size);
+	font-size: var(--text-md);
 	font-weight: 500;
 	color: var(--clr-grey-800);
 }
