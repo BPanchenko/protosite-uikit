@@ -151,7 +151,7 @@
     overflow: hidden;
 	
     color: var(--clr-grey-50);
-    font-family: var(--font-default);
+    font-family: var(--font-primary);
     font-size: var(--text-sm);
     line-height: var(--line-height-sm);
 }
