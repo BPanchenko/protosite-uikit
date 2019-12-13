@@ -59,7 +59,3 @@
 @import "./styles/hovered.css";
 @import "./styles/shadow.css";
 @import "./styles/striped.css";
-
-/* Themes */
-
-@import "./themes/errordoc.css";
