@@ -13,6 +13,7 @@
 @import "./base/list.css";
 @import "./base/paragraph.css";
 @import "./base/table.css";
+@import "./base/headings.css";
 @import "./base/text.css";
 
 
@@ -59,7 +60,3 @@
 @import "./styles/hovered.css";
 @import "./styles/shadow.css";
 @import "./styles/striped.css";
-
-/* Themes */
-
-@import "./themes/errordoc.css";

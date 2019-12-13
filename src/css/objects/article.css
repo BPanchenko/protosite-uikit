@@ -2,50 +2,19 @@
 @import "../settings/_import.css";
 
 /**
- * Component:       `o-article`
+ * Object: Article
  *
- * Elements:        `o-article-picture`
- *                  `o-article-lead`
- *
- *
- * Markup:
- *
-<article class="o-article" role="main">
-    <header>
-        <h6 class="u-text-muted">...</h6>
-        <h1>...</h1>
-        <h4 class="u-text-muted">...</h4>
-    </header>
-    <figure class="o-article-picture">
-        <img src="...">
-    </figure>
-    <p class="o-article-lead">...</p>
-    <p>...</p>
-    <h3>...</h3>
-    <hr>
-    <p>...</p>
-</article>
+ * elements: `o-article__picture`
+ *           `o-article__head`
+ *           `o-article__lead`
  *
  ============================================================================ */
-
-
-/* Typeface
- ============================================================================ */
-
-@import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
-
-.o-article {
-    --font-primary: 'Vollkorn', serif;
-    --font-secondary: 'Vollkorn SC', serif;
-}
-
 
 /* Component
  ============================================================================ */
 
 .o-article {
-    padding: 1.6rem;
-    margin: 1.6rem 0 4rem 0;
+    max-width: 86rem;
 }
 
 .o-article header {
@@ -133,10 +102,10 @@
 }
 
 
-/* Element: `o-article-picture`
+/* Element: `o-article__picture`
  ========================================================================== */
 
-.o-article-picture {
+.o-article__picture {
     display: inline-block;
     padding: 0;
     margin: 0;
@@ -150,8 +119,8 @@
 }
 
 /* Micro clearfix to make the body panel more robust */
-.o-article-picture::before,
-.o-article-picture::after {
+.o-article__picture::before,
+.o-article__picture::after {
     content: ' ';
     position: absolute;
     width: 100%;
@@ -159,7 +128,7 @@
     clear: both;
 }
 
-.o-article-picture img {
+.o-article__picture img {
     float: none;
     width: 100%;
     max-height: inherit;
