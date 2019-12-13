@@ -10,24 +10,11 @@
  *
  ============================================================================ */
 
-
-/* Typeface
- ============================================================================ */
-
-@import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
-
-.o-article {
-    --font-primary: 'Vollkorn', serif;
-    --font-secondary: 'Vollkorn SC', serif;
-}
-
-
 /* Component
  ============================================================================ */
 
 .o-article {
-    padding: 1.6rem;
-    margin: 1.6rem 0 4rem 0;
+    max-width: 86rem;
 }
 
 .o-article header {
