@@ -10,7 +10,7 @@ p {
     display: block;
     vertical-align: text-top;
     max-width: 80ch;
-    font-family: inherit;
+    font-family: var(--font-primary);
     font-size: var(--text-sm);
     line-height: var(--line-height-md);
 }
