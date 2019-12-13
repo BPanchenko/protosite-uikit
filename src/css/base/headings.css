@@ -1,0 +1,62 @@
+
+/* Headings
+ ========================================================================== */
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     color: var(--caption-color);
+ }
+ 
+ h1 {
+     font: var(--h1-font);
+     margin: var(--h1-margin);
+     text-transform: var(--h1-text-transform);
+ }
+ h2 {
+     font: var(--h2-font);
+     margin: var(--h2-margin);
+     text-transform: var(--h2-text-transform);
+ }
+ h3 {
+     font: var(--h3-font);
+     margin: var(--h3-margin);
+     text-transform: var(--h3-text-transform);
+ }
+ h4 {
+     font: var(--h4-font);
+     margin: var(--h4-margin);
+     text-transform: var(--h4-text-transform);
+ }
+ h5 {
+     font: var(--h5-font);
+     margin: var(--h5-margin);
+     text-transform: var(--h5-text-transform);
+ }
+ h6 {
+     font: var(--h6-font);
+     margin: var(--h6-margin);
+     text-transform: var(--h6-text-transform);
+ }
+ 
+ h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6,
+ h2 + h1, h2 + h3, h2 + h4, h2 + h5, h2 + h6,
+ h3 + h1, h3 + h2, h3 + h4, h3 + h5, h3 + h6,
+ h4 + h1, h4 + h2, h4 + h3, h4 + h5, h4 + h6,
+ h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h6,
+ h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5
+ {
+     margin-top: var(--space-sm);
+ }
+ 
+ h1 a,
+ h2 a,
+ h3 a,
+ h4 a,
+ h5 a,
+ h6 a {
+     color: var(--caption-color);
+ }
