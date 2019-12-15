@@ -3,8 +3,15 @@ const postcssPresetEnv = require('postcss-preset-env');
 const postcssImport = require('postcss-import');
 const gulp = require('gulp');
 const autoprefixer = require('autoprefixer');
+const clean = require('gulp-clean');
 const cssnano = require('cssnano');
 const rename = require("gulp-rename");
+
+gulp.task('clean', function () {
+    return gulp.src('../assets/uikit*.css')
+        .pipe(clean({force: true}))
+        .pipe(gulp.dest('assets'));
+});
 
 let postcss_plugins = [
     autoprefixer({ browsers: ['> 5%'] }),
@@ -27,4 +34,4 @@ gulp.task('css-uikit', function () {
         .pipe(gulp.dest('../assets'));
 });
 
-gulp.task('build-css', gulp.series(gulp.parallel('css-theme-article', 'css-uikit')));
+gulp.task('build-css', gulp.series('clean', gulp.parallel('css-theme-article', 'css-uikit')));
