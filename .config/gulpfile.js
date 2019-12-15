@@ -7,11 +7,15 @@ const clean = require('gulp-clean');
 const cssnano = require('cssnano');
 const rename = require("gulp-rename");
 
+// CLEAN
+
 gulp.task('clean', function () {
     return gulp.src('../assets/uikit*.css')
         .pipe(clean({force: true}))
         .pipe(gulp.dest('assets'));
 });
+
+// CSS
 
 let postcss_plugins = [
     autoprefixer({ browsers: ['> 5%'] }),
@@ -33,5 +37,7 @@ gulp.task('css-uikit', function () {
         .pipe(rename('uikit.css'))
         .pipe(gulp.dest('../assets'));
 });
+
+// FINISH
 
 gulp.task('build-css', gulp.series('clean', gulp.parallel('css-theme-article', 'css-uikit')));
