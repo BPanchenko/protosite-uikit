@@ -4,7 +4,7 @@
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./dist/protosite-uikit.js",
-  "style": "./dist/protosite-uikit.css",
+  "style": "./assets/uikit.css",
   "scripts": {
     "dev": "webpack-dev-server --mode development --config .config/webpack.config.js",
     "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./dist/protosite-uikit.css --watch",
