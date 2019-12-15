@@ -7,9 +7,9 @@
   "style": "./assets/uikit.css",
   "scripts": {
     "dev": "webpack-dev-server --mode development --config .config/webpack.config.js",
-    "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./dist/protosite-uikit.css --watch",
     "build": "webpack --mode production --config .config/webpack.config.js",
-    "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js"
+    "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js",
+    "postcss-watch": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
   },
   "analyze": true,
   "browserslist": [
@@ -35,6 +35,7 @@
     "postcss-custom-properties": "^8.0.11",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.41.2",
