@@ -12,7 +12,7 @@ const rename = require("gulp-rename");
 gulp.task('clean', function () {
     return gulp.src('../assets/uikit*.css')
         .pipe(clean({force: true}))
-        .pipe(gulp.dest('assets'));
+        .pipe(gulp.dest('../assets'));
 });
 
 // CSS
