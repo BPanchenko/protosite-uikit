@@ -2,25 +2,34 @@
 /**
  * Theme: Article
  ============================================================================ */
-
-body.t-article {
-    background-color: white;
-}
-
-/* Typeface of the article object
- ============================================================================ */
-
+ 
 @import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
 
-.t-article .o-article {
+.t-article {
     --font-primary: 'Vollkorn', serif;
     --font-secondary: 'Vollkorn SC', serif;
 }
 
-/* Article object
- ============================================================================ */
+.t-article {
+    background-color: white;
+}
+
+
+/* ========================================================================
+   Object: Article
+ ========================================================================== */
 
 .t-article .o-article {
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Combination of components: `o-article` & `c-panel`
+ ========================================================================== */
+
+.t-article .o-article.c-panel {
+    padding-top: var(--space-md);
+    padding-right: var(--space-xl);
+    padding-bottom: var(--space-md);
+    padding-left: var(--space-lg);
 }
