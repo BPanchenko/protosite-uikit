@@ -12,11 +12,6 @@
     "postcss-watch": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
   },
   "analyze": true,
-  "browserslist": [
-    ">1%",
-    "last 4 versions",
-    "not ie < 9"
-  ],
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
   },
