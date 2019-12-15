@@ -22,58 +22,12 @@
     margin-bottom: 1.6rem;
 }
 
-.o-article header h1,
-.o-article header h2,
-.o-article header h3,
-.o-article header h4,
-.o-article header h5,
-.o-article header h6 {
+.o-article header :matches(h1, h2, h3, h4, h5, h6) {
     margin: 0;
 }
 
-.o-article header h1 {
-    font-size: 2.8rem;
-    line-height: 3.3rem;
-    margin: 1.2rem 0 0;
-}
-
-.o-article header h3 {
-    font-size: 1.8rem;
-    line-height: inherit;
-    margin: 0.6rem 0 0;
-}
-
-.o-article header h4 {
-    font-size: 1.6rem;
-    line-height: inherit;
-    margin: 0.6rem 0 0;
-}
-
-.o-article header h6 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: inherit;
-    margin: 0;
-}
-
-.o-article h1 + hr,
-.o-article h2 + hr,
-.o-article h3 + hr,
-.o-article h4 + hr,
-.o-article h5 + hr,
-.o-article h6 + hr {
+.o-article :matches(h1, h2, h3, h4, h5, h6) + hr {
     margin-top: 0.6rem;
-}
-
-
-/* Combination of components: `o-article` & `c-panel`
- ========================================================================== */
-
-.o-article.c-panel {
-    padding-top: var(--space-md);
-    padding-right: var(--space-xl);
-    padding-bottom: var(--space-md);
-    padding-left: var(--space-lg);
 }
 
 
