@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const clean = require('gulp-clean');
 const cssnano = require('cssnano');
 const rename = require("gulp-rename");
+const webpack = require('webpack-stream');
 
 // CLEAN
 
@@ -18,7 +19,7 @@ gulp.task('clean', function () {
 // CSS
 
 let postcss_plugins = [
-    autoprefixer({ browsers: ['> 5%'] }),
+    autoprefixer(),
     postcssImport(),
     postcssPresetEnv({ stage: 0 }),
     cssnano()
@@ -38,6 +39,21 @@ gulp.task('css-uikit', function () {
         .pipe(gulp.dest('../assets'));
 });
 
+// JS
+
+gulp.task('build-js', function () {
+    return gulp.src('../src/js/uikit.js')
+        .pipe(webpack({
+            output: {
+                filename: 'uikit.js',
+            },
+            mode: 'production',
+            devtool: 'source-map'
+        }))
+        .pipe(gulp.dest('../assets'));
+});
+
 // FINISH
 
 gulp.task('build-css', gulp.series('clean', gulp.parallel('css-theme-article', 'css-uikit')));
+gulp.task('default', gulp.parallel('build-css', 'build-js'));

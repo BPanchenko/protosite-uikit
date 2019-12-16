@@ -35,10 +35,9 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "style-loader": "^0.23.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-stream": "^5.2.1"
   },
   "eslintConfig": {
     "env": {
@@ -70,5 +69,7 @@
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0"
+  }
 }
