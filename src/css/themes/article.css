@@ -6,11 +6,6 @@
 @import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
 
 .t-article {
-    --font-primary: 'Vollkorn', serif;
-    --font-secondary: 'Vollkorn SC', serif;
-}
-
-.t-article {
     background-color: white;
 }
 
@@ -18,6 +13,11 @@
 /* ========================================================================
    Object: Article
  ========================================================================== */
+
+.t-article .o-article {
+    --font-primary: 'Vollkorn', serif;
+    --font-secondary: 'Vollkorn SC', serif;
+}
 
 .t-article .o-article {
     margin-left: auto;
