@@ -15,19 +15,14 @@
 
 .o-article {
     max-width: 86rem;
-}
 
-.o-article header {
-    line-height: 4.4rem;
-    margin-bottom: 1.6rem;
-}
+    :matches(h1, h2, h3, h4, h5, h6) {
+        margin: 0;
 
-.o-article header :matches(h1, h2, h3, h4, h5, h6) {
-    margin: 0;
-}
-
-.o-article :matches(h1, h2, h3, h4, h5, h6) + hr {
-    margin-top: 0.6rem;
+        &  + hr {
+            margin-top: var(--space-sm);
+        }
+    }
 }
 
 

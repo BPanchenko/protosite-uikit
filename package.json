@@ -1,21 +1,19 @@
 {
   "name": "protosite.uikit",
-  "version": "2.4.2-assets",
+  "version": "2.4.3-assets",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./dist/protosite-uikit.js",
   "style": "./assets/uikit.css",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --config .config/webpack.config.js",
-    "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./dist/protosite-uikit.css --watch",
-    "build": "webpack --mode production --config .config/webpack.config.js",
-    "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js"
+    "build": "gulp --gulpfile .config/gulpfile.js",
+    "postcss-watch": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
   },
   "analyze": true,
   "browserslist": [
-    ">1%",
-    "last 4 versions",
-    "not ie < 9"
+    "last 2 version",
+    "> 1%",
+    "IE 10"
   ],
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
@@ -35,11 +33,11 @@
     "postcss-custom-properties": "^8.0.11",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "style-loader": "^0.23.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-stream": "^5.2.1"
   },
   "eslintConfig": {
     "env": {
@@ -71,5 +69,7 @@
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0"
+  }
 }
