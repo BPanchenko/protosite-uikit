@@ -1,1 +1,1 @@
-body.t-article{background-color:#fff}.t-article .o-article{--font-primary:"Vollkorn",serif;--font-secondary:"Vollkorn SC",serif;margin-left:auto;margin-right:auto}
+@import url("https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap");.t-article{--font-primary:"Vollkorn",serif;--font-secondary:"Vollkorn SC",serif;background-color:#fff}.t-article .o-article{margin-left:auto;margin-right:auto}.t-article .o-article.c-panel{padding:var(--space-md) var(--space-xl) var(--space-md) var(--space-lg)}
