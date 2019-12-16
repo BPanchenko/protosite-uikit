@@ -7,7 +7,7 @@
   "style": "./assets/uikit.css",
   "scripts": {
     "dev": "webpack-dev-server --mode development --config .config/webpack.config.js",
-    "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./dist/protosite-uikit.css --watch",
+    "dev-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch",
     "build": "webpack --mode production --config .config/webpack.config.js",
     "build-gulp": "gulp build-css --gulpfile .config/gulpfile.js"
   },
