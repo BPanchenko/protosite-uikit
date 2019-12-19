@@ -4,7 +4,6 @@
 
 	src: url('/resources/fonts/iconic/iconic-sm.eot');
 	src: url('/resources/fonts/iconic/iconic-sm.eot?#iconic-sm') format('embedded-opentype'),
-         url('/resources/fonts/iconic/iconic-sm.woff') format('woff'),
          url('/resources/fonts/iconic/iconic-sm.ttf') format('truetype'),
          url('/resources/fonts/iconic/iconic-sm.otf') format('opentype'),
          url('/resources/fonts/iconic/iconic-sm.svg#iconic-sm') format('svg');
@@ -17,7 +16,6 @@
 
 	src: url('/resources/fonts/iconic/iconic-md.eot');
 	src: url('/resources/fonts/iconic/iconic-md.eot?#iconic-md') format('embedded-opentype'),
-         url('/resources/fonts/iconic/iconic-md.woff') format('woff'),
          url('/resources/fonts/iconic/iconic-md.ttf') format('truetype'),
          url('/resources/fonts/iconic/iconic-md.otf') format('opentype'),
          url('/resources/fonts/iconic/iconic-md.svg#iconic-md') format('svg');
@@ -30,7 +28,6 @@
     
 	src: url('/resources/fonts/iconic/iconic-lg.eot');
 	src: url('/resources/fonts/iconic/iconic-lg.eot?#iconic-lg') format('embedded-opentype'),
-         url('/resources/fonts/iconic/iconic-lg.woff') format('woff'),
          url('/resources/fonts/iconic/iconic-lg.ttf') format('truetype'),
          url('/resources/fonts/iconic/iconic-lg.otf') format('opentype'),
          url('/resources/fonts/iconic/iconic-lg.svg#iconic-lg') format('svg');
