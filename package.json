@@ -1,6 +1,6 @@
 {
   "name": "protosite.uikit",
-  "version": "2.4.3-assets",
+  "version": "2.4.4-assets",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./dist/protosite-uikit.js",
