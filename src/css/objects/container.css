@@ -21,8 +21,7 @@
 .o-container {
     display: block;
     width: var(--base-width);
-    margin: 0 auto;
-    padding: 4rem 0 6.4rem;
+    margin: 4rem auto 6.4rem;
 }
 .o-container::before,
 .o-container::after {

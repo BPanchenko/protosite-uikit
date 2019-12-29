@@ -1,13 +1,13 @@
 {
   "name": "protosite.uikit",
-  "version": "2.4.3-assets",
+  "version": "2.4.4-assets",
   "description": "Front-end framework for developing web interfaces using BEMIT",
   "author": "Boris Panchenko <hello@bpanchenko.ru>",
   "main": "./dist/protosite-uikit.js",
   "style": "./assets/uikit.css",
   "scripts": {
     "build": "gulp --gulpfile .config/gulpfile.js",
-    "postcss-watch": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
+    "watch": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
   },
   "analyze": true,
   "browserslist": [
@@ -35,7 +35,8 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"    "webpack-stream": "^5.2.1"
+    "webpack-cli": "^3.3.10",
+    "webpack-stream": "^5.2.1"
   },
   "eslintConfig": {
     "env": {
@@ -66,5 +67,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/BPanchenko/protosite.uikit.git"
-  },
+  }
 }

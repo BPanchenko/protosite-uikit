@@ -1,6 +1,7 @@
 /.config
 /.idea
-/.vscode
+/.vscode/ftp-kr.json
+/.vscode/ftp-kr.sync.cache.json
 /node_modules
 /json2db.php
 /package-lock.json
