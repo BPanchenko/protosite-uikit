@@ -1,0 +1,132 @@
+@import "../settings/breakpoints.css";
+
+/**
+ * Utilities:
+ *    `[aria-hidden=true]`
+ *    `u-hidden`
+ *    `u-hidden@{breakpoint}`
+ *    `u-visible@{breakpoint}`
+ *    `u-visible-hover`
+ *    `u-visible-hover-inline`
+ *
+ ========================================================================== */
+
+.u-hidden,
+[aria-hidden=true] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.u-invisible { visibility: hidden !important; }
+
+@media (--screen-xdesktop) {
+    .u-hidden\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
+}
+
+@media (--screen-desktop) {
+    .u-hidden\@desktop,
+    .u-visible\@xdesktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
+}
+
+@media (--screen-tablet-landscape) {
+    .u-hidden\@tablet,
+    .u-hidden\@tablet-landscape,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
+}
+
+@media (--screen-tablet-portrait) {
+    .u-hidden\@tablet,
+    .u-hidden\@tablet-portrait,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet-landscape,
+    .u-visible\@handset,
+    .u-visible\@handset-landscape,
+    .u-visible\@handset-portrait { display: none !important; }
+}
+
+@media (--screen-handset-landscape) {
+    .u-hidden\@handset,
+    .u-hidden\@handset-landscape,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset-portrait { display: none !important; }
+}
+
+@media (--screen-handset-portrait) {
+    .u-hidden\@handset,
+    .u-hidden\@handset-portrait,
+    .u-visible\@xdesktop,
+    .u-visible\@desktop,
+    .u-visible\@tablet,
+    .u-visible\@tablet-landscape,
+    .u-visible\@tablet-portrait,
+    .u-visible\@handset-landscape { display: none !important; }
+}
+
+@media print {
+    .u-hidden\@print {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+
+/* Toggle (Hover + Focus)
+ ========================================================================== */
+
+.u-visible-toggle:not(:hover):not(:focus) .u-hidden-hover:not(:focus-within) {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+.uk-visible-toggle:not(:hover):not(:focus) .uk-invisible-hover:not(:focus-within) {
+    opacity: 0 !important;
+}
+
+.u-visible-toggle {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.u-visible-toggle:focus {
+    outline: none;
+}
+
+
+/* Touch
+ ========================================================================== */
+
+@media (pointer: coarse) {
+    .u-hidden-touch { display: none !important; }
+}
+
+.u-hidden-notouch { display: none !important; }
+
+@media (pointer: coarse) {
+    .u-hidden-notouch { display: block !important; }
+}

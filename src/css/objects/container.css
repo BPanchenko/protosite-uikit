@@ -5,13 +5,7 @@
  ========================================================================== */
 
 .o-container {
-    --base-width: auto;
-    --width-xdesktop: 130.4rem;
-    --width-desktop: 111.2rem;
-    --width-tablet-landscape: 92rem;
-    --width-tablet-portrait: 72rem;
-    --width-handset-landscape: 46.4rem;
-    --width-handset-portrait: 32rem;
+    --width: 100%;
 }
 
 /* ========================================================================
@@ -20,7 +14,8 @@
 
 .o-container {
     display: block;
-    width: var(--base-width);
+    width: 100%;
+    max-width: var(-width);
     margin: 4rem auto 6.4rem;
 }
 .o-container::before,
@@ -37,25 +32,37 @@
  ========================================================================== */
 
 @media (--screen-xdesktop) {
-    .o-container { width: var(--width-xdesktop); }
+    .o-container {
+        --width: 130.4rem;
+    }
 }
 
 @media (--screen-desktop) {
-    .o-container { width: var(--width-desktop); }
+    .o-container {
+        --width: 111.2rem;
+    }
 }
 
 @media (--screen-tablet-landscape) {
-    .o-container { width: var(--width-tablet-landscape); }
+    .o-container {
+        --width: 92rem;
+    }
 }
 
 @media (--screen-tablet-portrait) {
-    .o-container { width: var(--width-tablet-portrait); }
+    .o-container {
+        --width: 72rem;
+    }
 }
 
 @media (--screen-handset-landscape) {
-    .o-container { width: var(--width-handset-landscape); }
+    .o-container {
+        --width: 46.4rem;
+    }
 }
 
 @media (--screen-handset-portrait) {
-    .o-container { width: var(--width-handset-portrait); }
+    .o-container {
+        --width: 32rem;
+    }
 }
