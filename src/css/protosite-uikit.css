@@ -49,6 +49,7 @@
 @import "./utilities/flex.css" screen;
 @import "./utilities/margin.css";
 @import "./utilities/text.css";
+@import "./utilities/visibility.css";
 @import "./utilities/width.css" screen;
 
 /* Cosmetic styles */

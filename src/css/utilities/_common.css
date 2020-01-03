@@ -1,4 +1,4 @@
-
+@import "../settings/breakpoints.css";
 @import "../settings/palette.css";
 
 /**
@@ -255,104 +255,6 @@
 .u-display-flow-root { display: flow-root !important; }
 .u-display-inline { display: inline !important; }
 .u-display-inline-block { display: inline-block !important; }
-
-
-/* Visibility
- ========================================================================== */
-
-@media (--screen-xdesktop) {
-    .u-hidden\@xdesktop,
-    .u-visible\@desktop,
-    .u-visible\@tablet,
-    .u-visible\@tablet-landscape,
-    .u-visible\@tablet-portrait,
-    .u-visible\@handset,
-    .u-visible\@handset-landscape,
-    .u-visible\@handset-portrait { display: none !important; }
-}
-
-@media (--screen-desktop) {
-    .u-hidden\@desktop,
-    .u-visible\@xdesktop,
-    .u-visible\@tablet,
-    .u-visible\@tablet-landscape,
-    .u-visible\@tablet-portrait,
-    .u-visible\@handset,
-    .u-visible\@handset-landscape,
-    .u-visible\@handset-portrait { display: none !important; }
-}
-
-@media (--screen-tablet-landscape) {
-    .u-hidden\@tablet,
-    .u-hidden\@tablet-landscape,
-    .u-visible\@xdesktop,
-    .u-visible\@desktop,
-    .u-visible\@tablet-portrait,
-    .u-visible\@handset,
-    .u-visible\@handset-landscape,
-    .u-visible\@handset-portrait { display: none !important; }
-}
-
-@media (--screen-tablet-portrait) {
-    .u-hidden\@tablet,
-    .u-hidden\@tablet-portrait,
-    .u-visible\@xdesktop,
-    .u-visible\@desktop,
-    .u-visible\@tablet-landscape,
-    .u-visible\@handset,
-    .u-visible\@handset-landscape,
-    .u-visible\@handset-portrait { display: none !important; }
-}
-
-@media (--screen-handset-landscape) {
-    .u-hidden\@handset,
-    .u-hidden\@handset-landscape,
-    .u-visible\@xdesktop,
-    .u-visible\@desktop,
-    .u-visible\@tablet,
-    .u-visible\@tablet-landscape,
-    .u-visible\@tablet-portrait,
-    .u-visible\@handset-portrait { display: none !important; }
-}
-
-@media (--screen-handset-portrait) {
-    .u-hidden\@handset,
-    .u-hidden\@handset-portrait,
-    .u-visible\@xdesktop,
-    .u-visible\@desktop,
-    .u-visible\@tablet,
-    .u-visible\@tablet-landscape,
-    .u-visible\@tablet-portrait,
-    .u-visible\@handset-landscape { display: none !important; }
-}
-
-@media print {
-    .u-hidden\@print {
-        display: none !important;
-        visibility: hidden !important;
-    }
-}
-
-
-/* Visibility
- ========================================================================== */
-
-.u-hidden,
-[aria-hidden=true] {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-.u-visible-hover:hover .u-hidden,
-.u-visible-hover:hover [aria-hidden=true] {
-    display: block !important;
-    visibility: visible !important;
-}
-
-.u-visible-hover-inline:hover .u-hidden {
-    display: inline-block !important;
-    visibility: visible !important;
-}
 
 
 /* Overfow
