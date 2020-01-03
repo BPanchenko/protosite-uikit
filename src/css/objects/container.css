@@ -15,7 +15,7 @@
 .o-container {
     display: block;
     width: 100%;
-    max-width: var(-width);
+    max-width: var(--width);
     margin: 4rem auto 6.4rem;
 }
 .o-container::before,
