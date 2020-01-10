@@ -310,7 +310,10 @@
             else this.dataset.type = val;
         }
         get value() {
-            let val = this._field.value.trim();
+            let val;
+            if (this._field) val = this._field.value.trim();
+            else if (this.dataset.value) val = this.dataset.value.trim();
+            else if (this.type == 'text') val = this.innerHTML.trim();
             return val;
         }
     }
