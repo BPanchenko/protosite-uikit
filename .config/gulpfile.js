@@ -56,7 +56,7 @@ gulp.task('build-js', function () {
 
 // WATCH
 
-gulp.task('watch', function () {
+gulp.task('watch-js', function () {
     gulp.watch([
         '../src/js/*.js',
         '../src/js/*/*.js'

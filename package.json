@@ -7,8 +7,8 @@
   "style": "./assets/uikit.css",
   "scripts": {
     "build": "gulp --gulpfile .config/gulpfile.js",
-    "watch": "gulp watch --gulpfile .config/gulpfile.js",
-    "watch-postcss": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
+    "watch-js": "gulp watch --gulpfile .config/gulpfile.js",
+    "watch-css": "postcss ./src/css/protosite-uikit.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
   },
   "analyze": true,
   "browserslist": [
