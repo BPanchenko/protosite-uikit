@@ -25,8 +25,9 @@
 
         connectedCallback() {
             this._children = Array.from(this.children);
+            this._defaultValue = this.dataset.value;
             this.classList.add(FIELD_CLS.box);
-
+            
             this.render().cleanup();
 
             this.addEventListener('click', e => this.focus());
@@ -161,6 +162,7 @@
             this.removeAttribute('data-name');
             this.removeAttribute('data-pattern');
             this.removeAttribute('data-type');
+            this.removeAttribute('data-value');
             this.removeAttribute('placeholder');
             return this;
         }
@@ -208,7 +210,8 @@
                 name: this.name,
                 pattern: this.pattern,
                 placeholder: this.placeholder,
-                type: this.type
+                type: this.type,
+                value: this._defaultValue
             });
             this.appendChild(elem);
             return elem;
@@ -310,10 +313,7 @@
             else this.dataset.type = val;
         }
         get value() {
-            let val;
-            if (this._field) val = this._field.value.trim();
-            else if (this.dataset.value) val = this.dataset.value.trim();
-            else if (this.type == 'text') val = this.innerHTML.trim();
+            let val = this._field.value.trim();
             return val;
         }
     }
@@ -321,7 +321,7 @@
     // Private function's
 
     function createField(options = {}) {
-        let { children, name, pattern, placeholder, type = 'text' } = options;
+        let { children, name, pattern, placeholder, type = 'text', value } = options;
         let node;
         switch (type) {
             case 'select':
@@ -339,11 +339,12 @@
                 node = document.createElement('input');
                 node.setAttribute('role', type === 'text' ? 'textbox' : type);
                 node.setAttribute('type', type);
+                pattern && node.setAttribute('name', pattern);
+                placeholder && node.setAttribute('placeholder', placeholder);
+                value && node.setAttribute('value', value);
         }
         node.classList.add('c-field');
         name && node.setAttribute('name', name);
-        pattern && node.setAttribute('name', pattern);
-        placeholder && node.setAttribute('placeholder', placeholder);
         return node;
     }
 
@@ -359,6 +360,10 @@
         node.classList.add(cls);
         if (text) node.innerText = text;
         return node;
+    }
+
+    function stripTags(str) {
+        return (''+str).replace(/<\/?[^>]+>/g, '');
     }
 
     // Define the new element's
