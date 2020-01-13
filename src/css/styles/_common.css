@@ -3,22 +3,12 @@
 /* Fonts
  ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
-
 .s-cursive {
-    --font-primary: "Marck Script", cursive;
+    --font-primary: var(--font-cursive);
 }
 
 .s-monospace {
-    --font-primary: monospace;
-}
-
-.s-primary {
-    --font-primary: "PT Root UI Web", sans-serif;
-}
-
-.s-secondary {
-    --font-primary: var(--font-secondary);
+    --font-primary: var(--font-monospace);
 }
 
 
