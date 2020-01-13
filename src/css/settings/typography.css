@@ -4,8 +4,15 @@
 
  @import url("http://assets.protosite.rocks/fonts/gilroy/stylesheet.css");
  @import url("http://assets.protosite.rocks/fonts/pt-root-ui/stylesheet.css");
+ @import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
 
 :root {
+    --font-cursive: "Marck Script", cursive;
+    --font-fantasy: fantasy;
+    --font-monospace: monospace;
+    --font-serif: serif;
+    --font-sans-serif: sans-serif;
+
     --font-primary: 'PT Root UI Web', sans-serif;
     --font-secondary: 'Gilroy', sans-serif;
     
