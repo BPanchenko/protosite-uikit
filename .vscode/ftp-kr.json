@@ -1,0 +1,23 @@
+{
+    "host": "ftp.bp.nichost.ru",
+    "username": "bp_uikit",
+    "password": "cu30eGjfeP",
+    "remotePath": "",
+    "protocol": "ftp",
+    "port": 21,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        "/.config",
+        "/.idea",
+        "/.vscode",
+        "/node_modules",
+        ".git",
+        ".gitignore",
+        "package.json",
+        "package-lock.json",
+        "README.md"
+    ]
+}
