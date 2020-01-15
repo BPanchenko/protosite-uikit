@@ -12,10 +12,10 @@
         <meta name="keywords" content="">
         <meta name="theme-color" content="#e0e0e0">
 
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
         <link rel="prefetch" href="../index.html">
         <link rel="prerender" href="../index.html">
-
-        <link href="../favicon.ico" rel="shortcut icon" type="image/x-icon">
 
         <link href="../assets/uikit.css" rel="stylesheet" type="text/css">
 		<link href="../assets/uikit-theme-article.css" rel="stylesheet" type="text/css">
@@ -23,7 +23,7 @@
 		
 
     </head>
-    <body class="t-article">
+    <body class="t-article" itemscope itemtype="http://schema.org/WebPage">
         <div class="o-container">
             <header role="banner">
                 <div class="u-float-right">
@@ -34,12 +34,21 @@
                 <h1>Protosite.UiKit</h1>
             </header>
 
-            <nav class="o-breadcrumb">
-                <span class="o-breadcrumb__item">
-                    <a href="/" class="">Главная</a>
+            <nav class="o-breadcrumb" itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <span class="o-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/">
+                        <span itemprop="name">Главная</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
                 </span>
-                <span class="o-breadcrumb__item">Компоненты</span>
-                <span class="o-breadcrumb__item is-current">Статья</span>
+                <span class="o-breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">Объекты</span>
+                    <meta itemprop="position" content="2" />
+                </span>
+                <span class="o-breadcrumb__item is-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <span itemprop="name">Статья</span>
+                    <meta itemprop="position" content="3" />
+                </span>
             </nav>
 
             <article class="o-article">
