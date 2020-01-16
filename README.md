@@ -1,9 +1,7 @@
 <a href="http://uikit.protosite.rocks" target="_blank">uikit.protosite.rocks</a>
 <hr>
-<p>
-    Дизайн-система базовых компонент пользовательского интерфейса.
-</p>
-<h4>Дирректории</h4>
+    
+<h2>Директории CSS</h2>
 <dl>
     <dt><code>base</code>:</dt>
     <dd>Стилизация элементов без классов;</dd>
