@@ -1,7 +1,7 @@
 <a href="http://uikit.protosite.rocks" target="_blank">uikit.protosite.rocks</a>
 <hr>
     
-<h2>Директории CSS</h2>
+<h2>Описание директорий <q>SRC/CSS</q></h2>
 <dl>
     <dt><code>base</code>:</dt>
     <dd>Стилизация элементов без классов;</dd>
