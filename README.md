@@ -1,11 +1,7 @@
 <a href="http://uikit.protosite.rocks" target="_blank">uikit.protosite.rocks</a>
 <hr>
 <p>
-    Front-end фреймворк описывающий вид и взаимодействие базовых компонент пользовательского интерфейса.
-    <br>
-    Внешний стиль описан по методологии <abbr><a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT</a></abbr> с использованием пространств имен.
-    <br>
-    Компоненты и их взаимодействие с пользователем описано оболочкой <acronym>UI</acronym>, доступной из глобальной области видимости <code>window</code>.
+    Дизайн-система базовых компонент пользовательского интерфейса.
 </p>
 <h4>Дирректории</h4>
 <dl>
