@@ -34,7 +34,7 @@ gulp.task('css-theme-article', function () {
 });
 
 gulp.task('css-uikit', function () {
-    return gulp.src('../src/css/protosite-uikit.css')
+    return gulp.src('../src/css/main.css')
         .pipe(postcss(postcss_plugins, { parser: false }))
         .pipe(rename('uikit.css'))
         .pipe(gulp.dest('../assets'));
