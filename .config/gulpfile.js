@@ -1,10 +1,7 @@
 const postcss = require('gulp-postcss');
-const postcssPresetEnv = require('postcss-preset-env');
-const postcssImport = require('postcss-import');
+const postcssrc = require('postcss-load-config');
 const gulp = require('gulp');
-const autoprefixer = require('autoprefixer');
 const clean = require('gulp-clean');
-const cssnano = require('cssnano');
 const log = require('fancy-log');
 const rename = require("gulp-rename");
 const webpack = require('webpack-stream');
@@ -12,32 +9,31 @@ const webpack = require('webpack-stream');
 // CLEAN
 
 gulp.task('clean', function () {
-    return gulp.src('../assets/uikit*.css')
-        .pipe(clean({force: true}))
-        .pipe(gulp.dest('../assets'));
+    return gulp.src([
+            '../assets/critical*.css',
+            '../assets/uikit*.css'
+        ])
+        .pipe(clean({force: true}));
 });
 
 // CSS
 
-let postcss_plugins = [
-    autoprefixer(),
-    postcssImport(),
-    postcssPresetEnv({ stage: 0 }),
-    cssnano()
-];
-
 gulp.task('css-theme-article', function () {
-    return gulp.src('../src/css/themes/article.css')
-        .pipe(postcss(postcss_plugins, { parser: false }))
-        .pipe(rename('uikit-theme-article.css'))
-        .pipe(gulp.dest('../assets'));
+    return postcssrc().then(config =>
+        gulp.src('../src/css/themes/article.css')
+            .pipe(postcss(config.plugins, config.options))
+            .pipe(rename('uikit-theme-article.css'))
+            .pipe(gulp.dest('../assets'))
+    );
 });
 
 gulp.task('css-uikit', function () {
-    return gulp.src('../src/css/main.css')
-        .pipe(postcss(postcss_plugins, { parser: false }))
-        .pipe(rename('uikit.css'))
-        .pipe(gulp.dest('../assets'));
+    return postcssrc().then(config =>
+        gulp.src('../src/css/main.css')
+            .pipe(postcss(config.plugins, config.options))
+            .pipe(rename('uikit.css'))
+            .pipe(gulp.dest('../assets'))
+    );
 });
 
 // JS
