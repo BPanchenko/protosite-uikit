@@ -12,6 +12,10 @@
     "watch:css": "postcss ./src/css/main.css --config ./.config/postcss.config.js --output ./assets/uikit.css --watch"
   },
   "analyze": true,
+  "browserslist": [
+    "last 4 versions",
+    "IE 10"
+  ],
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite.uikit/issues"
   },
