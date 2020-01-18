@@ -7,7 +7,7 @@
 
 @import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
 
-/* Base document style (todo: critical.css) */
+/* Base document style */
 
 @import "./base/document.css";
 @import "./base/list.css";
