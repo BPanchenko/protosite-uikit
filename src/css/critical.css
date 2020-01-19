@@ -1,2 +1,7 @@
 @import "./base/document.css";
 @import "./base/headings.css";
+@import "./base/list.css";
+@import "./base/paragraph.css";
+@import "./base/table.css";
+@import "./base/text.css";
+@import "./objects/container.css";
