@@ -60,7 +60,7 @@ code,
 kbd,
 pre,
 samp {
-    --font-primary: var(--font-monospace);
+    font-family: var(--font-monospace, monospace);
     font-size: inherit;
 }
 code,

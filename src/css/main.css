@@ -1,8 +1,4 @@
 
-/* Settings */
-
-@import "./settings/_import.css";
-
 /* Iconography */
 
 @import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
@@ -10,12 +6,11 @@
 /* Base document style */
 
 @import "./base/document.css";
+@import "./base/headings.css";
 @import "./base/list.css";
 @import "./base/paragraph.css";
 @import "./base/table.css";
-@import "./base/headings.css";
 @import "./base/text.css";
-
 
 /* Components */
 

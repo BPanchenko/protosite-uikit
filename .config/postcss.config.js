@@ -8,11 +8,6 @@ module.exports = {
             'stage': 0
         },
         'autoprefixer': {},
-        'postcss-critical-css': {
-            'outputPath': '../assets',
-            'minify': true,
-            'preserve': false
-        },
         'cssnano': {}
     }
 }

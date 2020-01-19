@@ -18,6 +18,14 @@ gulp.task('clean', function () {
 
 // CSS
 
+gulp.task('css-critical', function () {
+    return postcssrc().then(config =>
+        gulp.src('../src/css/critical.css')
+            .pipe(postcss(config.plugins, config.options))
+            .pipe(gulp.dest('../assets'))
+    );
+});
+
 gulp.task('css-theme-article', function () {
     return postcssrc().then(config =>
         gulp.src('../src/css/themes/article.css')
@@ -64,5 +72,14 @@ gulp.task('watch-js', function () {
 
 // FINISH
 
-gulp.task('build-css', gulp.series('clean', gulp.parallel('css-theme-article', 'css-uikit')));
+gulp.task('build-css',
+    gulp.series('clean',
+        gulp.parallel(
+            'css-critical',
+            'css-theme-article',
+            'css-uikit'
+        )
+    )
+);
+
 gulp.task('default', gulp.parallel('build-css', 'build-js'));
