@@ -61,7 +61,7 @@ kbd,
 pre,
 samp {
     font-family: var(--font-monospace, monospace);
-    font-size: inherit;
+    font-size: 1.3rem;
 }
 code,
 kbd,
@@ -70,8 +70,8 @@ samp {
 }
 ins {
     display: inline-block;
-    margin: 0 -.2rem;
-    padding: 0 .2rem;
+    margin: 0 -0.2rem;
+    padding: 0 0.2rem;
     background-color: var(--clr-green-100);
     color: var(--clr-grey-900);
     text-decoration: none;
@@ -89,13 +89,14 @@ q {
 }
 
 pre {
+    line-height: 1.2;
     overflow: auto;
     white-space: pre-wrap;
 }
 
 sub,
 sup {
-    font-size: 75%;
+    font-size: 1.1rem;
     line-height: 0;
     position: relative;
     vertical-align: baseline;

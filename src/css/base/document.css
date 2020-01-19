@@ -5,11 +5,6 @@ Document style
 
 @import "../settings/_import.css";
 
-:root {
---body-background-color: var(--clr-grey-200);
---selection-background-color: var(--clr-blue-600);
-}
-
 html {
     height: 100%;
     font-size: 62.5%;
@@ -17,7 +12,7 @@ html {
 
 body {
     margin: 0;
-    background-color: var(--body-background-color);
+    background-color: var(--clr-grey-200);
     font-family: var(--font-primary);
     font-size: var(--text-md);
     color: var(--text-color);
@@ -68,13 +63,18 @@ template {
 /* Selection
     ========================================================================== */
 
+:root {
+    --selection-color: var(--clr-white);
+	--selection-bg-color: var(--clr-blue-600);
+}
+
 ::-moz-selection {
-    background-color: var(--selection-background-color);
+    background-color: var(--selection-bg-color);
     color: var(--selection-color);
     text-shadow: none;
 }
 ::selection {
-    background-color: var(--selection-background-color);
+    background-color: var(--selection-bg-color);
     color: var(--selection-color);
     text-shadow: none;
 }
@@ -97,12 +97,8 @@ hr {
     margin: var(--unit) 0;
     padding: 0;
 }
-h1 + hr,
-h2 + hr,
-h3 + hr,
-h4 + hr,
-h5 + hr,
-h6 + hr {
+
+:matches(h1,h2,h3,h4,h5,h6) + hr {
     margin-top: 0;
 }
 
