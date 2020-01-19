@@ -7,7 +7,7 @@
  * 
  ========================================================================== */
 
-:root {
+ul {
     --li-background: var(--svg-circle) no-repeat .8rem .5em;
     --li-background-size: .3rem .3rem;
     --li-margin-vertical: .8rem;
