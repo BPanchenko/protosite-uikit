@@ -4,11 +4,11 @@
  ========================================================================== */
 
 .s-cursive {
-    --font-primary: var(--font-cursive);
+    font-family: var(--font-cursive);
 }
 
 .s-monospace {
-    --font-primary: var(--font-monospace);
+    font-family: var(--font-monospace);
 }
 
 
