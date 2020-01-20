@@ -6,8 +6,8 @@
  ========================================================================== */
 
 .c-panel.s-clean {
-	background: transparent;
-	box-shadow: none;
+    background: transparent;
+    box-shadow: none;
 }
 
 
@@ -17,7 +17,9 @@
 .c-button.s-clean {
     --bgcolor: transparent;
     --hover-bgcolor: var(--clr-blue-grey-50);
-	box-shadow: none;
+    --color: var(--text-color);
+    --hover-color: var(--text-color);
+    box-shadow: none;
 }
 
 .c-button.s-clean:active,

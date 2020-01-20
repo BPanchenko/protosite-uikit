@@ -9,13 +9,13 @@
  *           `c-button-dropdown`
  *
  * Modifiers: `c-button--link`
- *			  `c-button--icon`
+ *            `c-button--icon`
  * 
- * Styles:	`s-bordered`
+ * Styles:  `s-bordered`
  *          `s-clean`
  *          `s-danger`
  *          `s-large`
- *			`s-primary`
+ *          `s-primary`
  *          `s-small`
  *          `s-warning`
  *
@@ -43,14 +43,15 @@
     --height: 3.2rem;
     --padding-horizontal: var(--space-md);
     --padding-vertical: 0;
-	
+
     --font-size: var(--text-md);
-	--color: var(--text-color);
-	--hover-color: var(--text-color);
+    --font-weight: 500;
+    --color: var(--clr-white);
+    --hover-color: var(--clr-white);
     
-    --bgcolor: var(--clr-grey-300);
-    --focus-bgcolor: var(--clr-grey-350);
-    --hover-bgcolor: var(--clr-grey-320);
+    --bgcolor: var(--clr-blue-grey-400);
+    --focus-bgcolor: var(--clr-blue-grey-600);
+    --hover-bgcolor: var(--clr-blue-grey-500);
 }
 
 
@@ -59,38 +60,39 @@
  ========================================================================== */
 
 .c-button {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
-	border: none;
-	outline: none;
-	text-align: center;
+    border: none;
+    outline: none;
+    text-align: center;
 
     display: inline-block;
     line-height: var(--height);
-	box-sizing: border-box;
-	padding: var(--padding-vertical) var(--padding-horizontal);
-	vertical-align: middle;
+    box-sizing: border-box;
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    vertical-align: middle;
 
-	cursor: pointer;
-	font-family: var(--font-secondary);
-	font-size: var(--font-size);
-	font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
 
-	background-color: var(--bgcolor);
-	border-radius: 0.3rem;
-	box-shadow: var(--shadow-2dp);
+    background-color: var(--bgcolor);
+    border-radius: 0.3rem;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+                0 2px 2px rgba(0,0,0,0.11);
 
-	transition: var(--link-transition), background-color 0.16s var(--easing);
-	user-select: none;
+    transition: var(--link-transition), background-color 0.16s var(--easing);
+    user-select: none;
 }
 
 .c-button {
-	color: var(--color);
+    color: var(--color);
 }
 .c-button:hover {
-	background-color: var(--hover-bgcolor);
-	color: var(--hover-color);
+    background-color: var(--hover-bgcolor);
+    color: var(--hover-color);
 }
 
 .c-button + .c-button {
@@ -98,7 +100,7 @@
 }
 
 .c-button > .iconic[data-glyph] {
-	margin-right: var(--space-sm);
+    margin-right: var(--space-sm);
 }
 .c-button > .iconic[data-glyph]::before {
     vertical-align: middle;
@@ -114,10 +116,8 @@
  ========================================================================== */
 
 .c-button:active,
-.c-button[aria-checked=true],
-.c-panel:not(.s-transparent) .c-button:active,
-.c-panel:not(.s-transparent) .c-button[aria-checked=true] {
-	box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
+.c-button[aria-checked=true] {
+    box-shadow: none;
 }
 
 
@@ -126,15 +126,22 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-	background-color: var(--focus-bgcolor);
+    background-color: var(--focus-bgcolor);
 }
 
 
 /* Context: button on the panel
  ========================================================================== */
 
-.c-panel:not(.s-transparent) .c-button {
-    box-shadow: none;
+.c-panel:not(.s-transparent) {
+    .c-button {
+        box-shadow: none;
+    }
+
+    .c-button:active,
+    .c-button[aria-checked=true] {
+        box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
+    }
 }
 
 
@@ -144,18 +151,18 @@
 
 .c-button__icon,
 .c-button__text {
-	display: inline-block;
+    display: inline-block;
     vertical-align: baseline;
     line-height: 1;
 }
 .c-button__icon {
-	margin-left: -1rem;
-	margin-right: 1.3rem;
+    margin-left: -1rem;
+    margin-right: 1.3rem;
 }
 
 .c-button__text + .c-button__icon {
-	margin-left: 1.3rem;
-	margin-right: -1rem;
+    margin-left: 1.3rem;
+    margin-right: -1rem;
 }
 
 /* text-crop */
@@ -182,11 +189,13 @@
     --icon-size: 2rem;
     --bgcolor: transparent;
     --hover-bgcolor: var(--clr-blue-grey-50);
+    --color: var(--text-color);
+    --hover-color: var(--text-color);
 }
 
 .c-button--icon {
-	box-shadow: none !important;
-	padding: 0 var(--space-sm);
+    box-shadow: none !important;
+    padding: 0 var(--space-sm);
 }
 .c-button--icon:hover {
     background-color: var(--hover-bgcolor);
@@ -199,20 +208,20 @@
 
 .c-button--icon.iconic:before,
 .c-button.iconic:before {
-	position: static;
-	line-height: 1.2;
-	text-align: center;
-	vertical-align: bottom;
-	transform-origin: center;
+    position: static;
+    line-height: 1.2;
+    text-align: center;
+    vertical-align: bottom;
+    transform-origin: center;
 }
 
 .c-button--icon.iconic:empty:before {
-	width: var(--icon-size);
-	height: var(--icon-size);
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
 
 .c-button--icon + .c-button--icon {
-	margin-left: var(--space-sm);
+    margin-left: var(--space-sm);
 }
 
 
@@ -269,6 +278,8 @@
 .c-panel:not(.s-transparent) .c-button.s-bordered {
     --bgcolor: transparent;
     --hover-bgcolor: transparent;
+    --color: var(--text-color);
+    --hover-color: var(--text-color);
 
     border-color: var(--clr-grey-600);
     border-style: solid;
@@ -355,23 +366,23 @@
  ========================================================================== */
 
 .c-button-group {
-	display: inline-flex;
-	vertical-align: middle;
+    display: inline-flex;
+    vertical-align: middle;
 }
 
 .c-button-group .c-button:not(:first-child) {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 
-	border-left: 1px solid var(--clr-grey-200);
+    border-left: 1px solid var(--clr-grey-200);
 }
 .c-button-group .c-button:not(:first-child):focus {
     border-left: 1px solid transparent;
 }
 
 .c-button-group .c-button:not(:last-child) {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .c-button-group .c-button + .c-button,
