@@ -4,6 +4,9 @@ module.exports = {
         'postcss-import': {},
         'postcss-nested': {},
         'postcss-custom-properties': {},
+        'postcss-color-function': {
+            'preserveCustomProps': true
+        },
         'postcss-preset-env': {
             'stage': 0
         },
