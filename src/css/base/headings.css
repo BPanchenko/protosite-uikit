@@ -1,6 +1,8 @@
+@import "../settings/space.css";
 
-/* Headings
- ========================================================================== */
+/* ========================================================================
+    Headings
+========================================================================== */
 
 h1,
 h2,
@@ -8,55 +10,53 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--caption-color);
+    font-family: var(--font-secondary, system-ui);
+    margin: 0;
+    color: var(--caption-color, black);
 }
  
 h1 {
-    font: var(--h1-font);
-    margin: var(--h1-margin);
-    text-transform: var(--h1-text-transform);
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 4rem;
 }
+
 h2 {
-    font: var(--h2-font);
-    margin: var(--h2-margin);
-    text-transform: var(--h2-text-transform);
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 3.2rem;
 }
+
 h3 {
-    font: var(--h3-font);
-    margin: var(--h3-margin);
-    text-transform: var(--h3-text-transform);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.4rem;
 }
+
 h4 {
-    font: var(--h4-font);
-    margin: var(--h4-margin);
-    text-transform: var(--h4-text-transform);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.8rem;
 }
+
 h5 {
-    font: var(--h5-font);
-    margin: var(--h5-margin);
-    text-transform: var(--h5-text-transform);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    text-transform: uppercase;
 }
+
 h6 {
-    font: var(--h6-font);
-    margin: var(--h6-margin);
-    text-transform: var(--h6-text-transform);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    text-transform: uppercase;
 }
 
-h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6,
-h2 + h1, h2 + h3, h2 + h4, h2 + h5, h2 + h6,
-h3 + h1, h3 + h2, h3 + h4, h3 + h5, h3 + h6,
-h4 + h1, h4 + h2, h4 + h3, h4 + h5, h4 + h6,
-h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h6,
-h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5
-{
-    margin-top: var(--space-sm);
+* + :matches(h1, h2, h3, h4, h5, h6) {
+    margin-top: var(--space-md, 16px);
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-    color: var(--caption-color);
+:matches(h1, h2, h3, h4, h5, h6) a {
+    color: var(--caption-color, black);
 }

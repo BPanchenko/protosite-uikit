@@ -1,6 +1,6 @@
 (function() {
 
-    const FIELD_CLS = Object.create(null, {
+    const CLS = Object.create(null, {
         box: { value: 'c-field-box' },
         button: { value: 'c-field-button' },
         buttonIcon: { value: 'iconic' },
@@ -26,7 +26,7 @@
         connectedCallback() {
             this._children = Array.from(this.children);
             this._defaultValue = this.dataset.value;
-            this.classList.add(FIELD_CLS.box);
+            this.classList.add(CLS.box);
             
             this.render().cleanup();
 
@@ -44,7 +44,7 @@
 
         blur() {
             this.isFilled();
-            this.classList.remove(FIELD_CLS.focused);
+            this.classList.remove(CLS.focused);
             return this;
         }
         change() {
@@ -88,9 +88,9 @@
                 case 'search':
                     if (!this.value) {
                         e.preventDefault();
-                        this.classList.add(FIELD_CLS.invalid);
+                        this.classList.add(CLS.invalid);
                     } else {
-                        this.classList.remove(FIELD_CLS.invalid);
+                        this.classList.remove(CLS.invalid);
                     }
                     break;
             }
@@ -98,7 +98,7 @@
         }
         focus() {
             if(this.disabled) return false;
-            this.classList.add(FIELD_CLS.focused);
+            this.classList.add(CLS.focused);
 
             this._field.focus();
 
@@ -117,7 +117,7 @@
         isFilled() {
             let val = this.value;
             let is = !!val && val!=='0' && val!=='null';
-            this.classList[ is ? 'add' : 'remove'](FIELD_CLS.filled);
+            this.classList[ is ? 'add' : 'remove'](CLS.filled);
             return is;
         }
 
@@ -128,7 +128,7 @@
             // is exists value and pattern
 
             if (!val || !ptr) {
-                this.classList.remove(FIELD_CLS.invalid, FIELD_CLS.valid);
+                this.classList.remove(CLS.invalid, CLS.valid);
                 return null;
             }
 
@@ -138,11 +138,11 @@
             let is = reg.test(val);
 
             if (is) {
-                this.classList.add(FIELD_CLS.valid);
-                this.classList.remove(FIELD_CLS.invalid);
+                this.classList.add(CLS.valid);
+                this.classList.remove(CLS.invalid);
             } else {
-                this.classList.add(FIELD_CLS.invalid);
-                this.classList.remove(FIELD_CLS.valid);
+                this.classList.add(CLS.invalid);
+                this.classList.remove(CLS.valid);
             }
 
             return is;
@@ -188,8 +188,8 @@
 
         renderButton(options) {
             let { glyph, text, type = 'button' } = options;
-            let btn = createTag('button', FIELD_CLS.button);
-            let inner = createTag('span', glyph ? FIELD_CLS.buttonIcon : '');
+            let btn = createTag('button', CLS.button);
+            let inner = createTag('span', glyph ? CLS.buttonIcon : '');
             btn.type = type;
             if (glyph) inner.dataset.glyph = glyph;
             if (text) inner.innerText = text;
@@ -199,7 +199,7 @@
         }
 
         renderError(text) {
-            let elem = createTag('span', FIELD_CLS.error, text);
+            let elem = createTag('span', CLS.error, text);
             this.appendChild(elem);
             return elem;
         }
@@ -224,13 +224,13 @@
         }
 
         renderInfo(text) {
-            let elem = createTag('span', FIELD_CLS.info, text);
+            let elem = createTag('span', CLS.info, text);
             this.appendChild(elem);
             return elem;
         }
 
         renderLabel(text) {
-            let elem = createTag('span', FIELD_CLS.label, text);
+            let elem = createTag('span', CLS.label, text);
             this.appendChild(elem);
             return elem;
         }
@@ -350,7 +350,7 @@
 
     function createIcon(glyph) {
         let node = document.createElement('span');
-        node.classList.add(FIELD_CLS.icon);
+        node.classList.add(CLS.icon);
         node.innerHTML = `<span class="iconic" data-glyph="${glyph}"></span>`;
         return node;
     }

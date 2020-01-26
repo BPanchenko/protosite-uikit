@@ -1,17 +1,11 @@
 
-@import "../settings/images.css";
+/* ========================================================================
+    Ordered and Unordered lists
+========================================================================== */
 
-/**
- * Elements:        ul, ol
- * Description:     Defines styles for ordered and unordered lists
- * 
- ========================================================================== */
-
+ol,
 ul {
-    --li-background: var(--svg-circle) no-repeat .8rem .5em;
-    --li-background-size: .3rem .3rem;
-    --li-margin-vertical: .8rem;
-    --li-padding-left: 1.6rem;
+    --li-margin-vertical: 0.8rem;
     --li-nested-margin-vertical: 0;
 }
 
@@ -24,23 +18,17 @@ ul {
 	list-style: none;
 }
 
-
-/*
- * List item
- */
-
 ul > li {
-	padding-left: var(--li-padding-left);
+	padding-left: 0.5rem;
 	margin-top: var(--li-margin-vertical);
 	margin-bottom: var(--li-margin-vertical);
-	background: var(--li-background);
-	background-size: var(--li-background-size);
+
+	&::before {
+		content: '•';
+		display: inline-block;
+		margin-right: 0.8rem;
+	}
 }
-
-
-/*
- * Nested list
- */
 
 ul > li > ul {
     margin: 0;
@@ -60,6 +48,7 @@ ol {
 	list-style: decimal;
 	padding-left: 2.4rem;
 }
+
 ol > li {
 	background: none;
 	padding-left: 0;
@@ -70,7 +59,18 @@ ol > li {
 ol > li > ol {
 	list-style: lower-alpha;
 }
+
 ol > li > ol > li {
 	margin-top: var(--li-nested-margin-vertical);
 	margin-bottom: var(--li-nested-margin-vertical);
 }
+
+/* Remove list styles on ul, ol elements with a class attribute
+ ========================================================================== */
+
+ol[class],
+ul[class] {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+} 

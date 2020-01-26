@@ -8,7 +8,6 @@
 
 p {
     display: block;
-    vertical-align: text-top;
     max-width: 80ch;
     font-family: var(--font-primary);
     font-size: var(--text-sm);
@@ -29,60 +28,62 @@ p figure {
 
     background-color: var(--clr-grey-300);
     background-size: contain;
-}
 
-p figure::before,
-p figure::after {
-    content: ' ';
-    position: absolute;
-    width: 100%;
-    display: block;
-    clear: both;
-}
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        display: block;
+        clear: both;
+    }
 
-p figure img {
-    width: 100%;
-    max-height: inherit;
-    object-fit: contain;
+    img {
+        width: 100%;
+        max-height: inherit;
+        object-fit: contain;
+    }
 }
 
 
 /* Image inside the paragraph
  ========================================================================== */
 
-p img {
-    display: block;
-    width: auto;
-    max-height: 11.8rem;
-    margin: 0 auto;
-}
-
-p img[align="left"],
-p img[align="right"] {
-    display: inline-block;
-    max-width: 19rem;
-}
-
-p img[align="left"] {
-    float: left;
-    margin: 0.3rem 1.2rem 0 .8rem;
-}
-
-p img[align="right"] {
-    float: right;
-    margin: 0.3rem 0.8rem 0 1.2rem;
+p {
+    img {
+        display: block;
+        width: auto;
+        max-height: 11.8rem;
+        margin: 0 auto;
+    }
+    
+    img[align="left"],
+    img[align="right"] {
+        display: inline-block;
+        max-width: 19rem;
+    }
+    
+    img[align="left"] {
+        float: left;
+        margin: 0.3rem 1.2rem 0 .8rem;
+    }
+    
+    img[align="right"] {
+        float: right;
+        margin: 0.3rem 0.8rem 0 1.2rem;
+    }
 }
 
 
 /* Various paragraph sizes
  ========================================================================== */
 
-p.u-text-large {
-    max-width: 70.4rem;
+p.u-text-lg {
+    max-width: 80ch;
 }
-p.u-text-small {
+p.u-text-sm {
     max-width: 51.4rem;
 }
-p.u-text-xsmall {
+p.u-text-xs {
     max-width: 44.8rem;
 }
