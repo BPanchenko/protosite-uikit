@@ -5,6 +5,7 @@
 
     const CLS = Object.create(null, {
         'main': { value: 'c-button' },
+        'text': { value: 'c-button__text' },
 
         'sm': { value: 'c-button--sm' },
         'lg': { value: 'c-button--lg' },
@@ -15,6 +16,14 @@
      ========================================================================== */
 
     class ButtonElement extends HTMLElement {
+        constructor() {
+            super();
+            this.__html = this.innerHTML;
+            this.__text = this.textContent;
+            this.innerHTML = '';
+            this.attachShadow({mode: 'open'});
+        }
+
         connectedCallback() {
             this.render().cleanup()
         }
@@ -22,13 +31,17 @@
         render() {
             let { glyph, glyphAtRight, size, text, type } = this.dataset
             
-            this.classList.add(CLS.main)
+            this._button = createTag('button', CLS.main)
+            this._button.classList.add(CLS.main)
+            if (this.__html) this._button.innerHTML = this.__html
+            if (this.__text) this._button.appendChild(createTag('span', CLS.text, this.__text))
+
+            this.shadowRoot.appendChild(this._button)
 
             if(!this.hasAttribute('type')) this.setAttribute('type', type || 'button')
             
             if (glyph) this.appendChild(createIconNode(glyph))
             if (glyphAtRight) this.appendChild(createIconNode(glyphAtRight))
-            if (text) this.appendChild(createTextNode(text))
 
             if (~['sm','lg','xl'].indexOf(size)) {
                 this.classList.add(CLS[size])
@@ -40,10 +53,9 @@
         }
 
         cleanup() {
-            this.removeAttribute('data-glyph')
-            this.removeAttribute('data-glyph-at-right')
-            this.removeAttribute('data-size')
-            this.removeAttribute('data-text')
+            Object.keys(this.dataset).forEach(prop => delete this.dataset[prop])
+            delete this.__html
+            delete this.__text
         }
     }
 
@@ -62,10 +74,10 @@
         return node
     }
 
-    function createTextNode(text) {
-        let node = document.createElement('span')
-        node.classList.add('c-button__text')
-        node.innerText = text
+    function createTag(tagName, cls, text) {
+        let node = document.createElement(tagName)
+        node.classList.add(cls)
+        if (text) node.innerText = text
         return node
     }
 

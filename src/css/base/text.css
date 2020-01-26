@@ -11,19 +11,25 @@
 /* Links
  ========================================================================== */
 
-a,
+a:not([class]),
 .u-link {
     outline: 0;
     background-color: transparent;
     color: var(--link-color);
     text-decoration: var(--link-text-decoration);
     transition: var(--link-transition);
+    text-decoration-skip-ink: auto;
 }
-a:hover,
+
+a:not([class]):hover,
 .u-link:hover {
     outline: 0;
     color: var(--link-hover-color);
     text-decoration: var(--link-hover-text-decoration);
+}
+
+.u-link {
+    cursor: pointer;
 }
 
 

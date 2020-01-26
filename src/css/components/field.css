@@ -32,6 +32,8 @@
     --c-field-padding-left: 0.4rem;
 
     --c-field-label-color: var(--clr-grey-600);
+
+    --svg-circle: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCI+DQo8Y2lyY2xlIGZpbGw9IiM0MjQyNDIiIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIvPg0KPC9zdmc+DQo=');
 }
 
 

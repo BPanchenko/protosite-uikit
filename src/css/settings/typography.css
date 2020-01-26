@@ -26,34 +26,8 @@
     --text-xxxl: 4.8rem;
 
     --line-height-default: 1.6;
-    --line-height-lg: 1.2;
-    --line-height-md: 1.6;
-    --line-height-sm: 1.2;
     --line-height-xs: 1.1;
-}
-
-
-/* Headings
- ======================================================================== */
-
-:root {
-    --h1-font: 700 3.6rem/4rem var(--font-secondary);
-    --h1-margin: var(--space-sm) 0;
-    --h1-text-transform: none;
-    --h2-font: 600 2.8rem/3.2rem var(--font-secondary);
-    --h2-margin: var(--space-sm) 0;
-    --h2-text-transform: none;
-    --h3-font: 600 2rem/2.4rem var(--font-secondary);
-    --h3-margin: var(--space-xs) 0;
-    --h3-text-transform: none;
-
-    --h4-font: 600 1.6rem/1.8rem var(--font-secondary);
-    --h4-margin: var(--space-md) 0 var(--space-xs);
-    --h4-text-transform: none;
-    --h5-font: 500 1.4rem/1.6rem var(--font-secondary);
-    --h5-margin: var(--space-md) 0 var(--space-xs);
-    --h5-text-transform: uppercase;
-    --h6-font: 600 1.1rem/1.6rem var(--font-secondary);
-    --h6-margin: var(--space-sm) 0 var(--space-xs);
-    --h6-text-transform: uppercase;
+    --line-height-sm: 1.2;
+    --line-height-md: 1.6;
+    --line-height-lg: 1.2;
 }

@@ -1,9 +1,9 @@
+@import "../settings/palette.css";
+@import "../settings/typography.css";
 
 /* ========================================================================
-Document style
-========================================================================== */
-
-@import "../settings/_import.css";
+    Document style
+ ========================================================================== */
 
 html {
     height: 100%;
@@ -11,11 +11,25 @@ html {
 }
 
 body {
+    min-height: 100vh;
     margin: 0;
     background-color: var(--clr-grey-200);
     font-family: var(--font-primary);
-    font-size: var(--text-md);
+    font-size: var(--text-md, 14px);
+    line-height: 1.2;
     color: var(--text-color);
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+article > * + * {
+    margin-top: 1em;
 }
 
 article,
@@ -44,6 +58,8 @@ video {
 }
 
 img {
+    max-width: 100%;
+    display: block;
     border: 0;
 }
 
@@ -61,7 +77,7 @@ template {
 }
 
 /* Selection
-    ========================================================================== */
+ ========================================================================== */
 
 :root {
     --selection-color: var(--clr-white);
@@ -84,17 +100,17 @@ template {
 
 
 /* Horizontal rule
-    ========================================================================== */
+ ========================================================================== */
 
 hr {
     display: block;
     box-sizing: content-box;
     height: 0;
     border: 0;
-    color: var(--clr-grey-400);
+    color: var(--clr-grey-400, currentColor);
     border-top: 1px solid currentColor;
-    border-bottom: 1px solid var(--clr-white);
-    margin: var(--unit) 0;
+    border-bottom: 1px solid var(--clr-white, white);
+    margin: var(--unit, 16px) 0;
     padding: 0;
 }
 
@@ -104,19 +120,22 @@ hr {
 
 
 /* Block base
-    ========================================================================== */
+ ========================================================================== */
 
 p,
 ul,
 ol,
 dl,
+dd,
 blockquote,
 pre,
 address,
 fieldset,
-figure {
-    margin: 0 0 .3rem 0;
+figure,
+figcaption {
+    margin: 0;
 }
+
 * + p,
 * + ul,
 * + ol,
@@ -126,12 +145,12 @@ figure {
 * + address,
 * + fieldset,
 * + figure {
-    margin-top: calc(var(--unit) / 2);
+    margin-top: var(--space-xs, 8px);
 }
 
 
 /* Forms
-    ========================================================================== */
+ ========================================================================== */
 
 label {
     cursor: pointer;
@@ -217,7 +236,7 @@ optgroup {
 
 
 /* Tables
-    ========================================================================== */
+ ========================================================================== */
 
 table {
     border-collapse: collapse;
