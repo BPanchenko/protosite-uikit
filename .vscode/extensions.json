@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "bierner.markdown-mermaid",
+        "codezombiech.gitignore",
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "github.vscode-pull-request-github",
+        "redhat.vscode-yaml",
+        "redhat.vscode-xml",
+        "ritwickdey.liveserver",
+        "samverschueren.final-newline"
+    ]
+}
