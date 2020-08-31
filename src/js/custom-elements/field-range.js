@@ -95,8 +95,8 @@ function _createStyle() {
 
       background-color: transparent;
       border-color: #448AFF;
-      border-width: 1px;
       border-style: solid;
+      border-width: .1rem;
       border-radius: .4rem;
     }
     
@@ -107,6 +107,23 @@ function _createStyle() {
 
     input.${CLS.component}[type=range] {
       -webkit-appearance: none;
+      position: relative;
+      width: 100%;
+      border: none;
+      outline: none;
+      margin: 0;
+    }
+
+    input.${CLS.component}[type=range]::after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom-color: #000000;
+      border-bottom-style: solid;
+      border-bottom-width: .1rem;
     }
 
     input.${CLS.component}[type=range]::-webkit-slider-runnable-track {
@@ -114,7 +131,6 @@ function _createStyle() {
 
       display: block;
       width: 100%;
-      max-width: none;
       height: 1.6rem;
       background-color: #3071a9;
       border: none;
@@ -129,8 +145,6 @@ function _createStyle() {
     input.${CLS.component}[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       
-      display: inline-block;
-      vertical-align: bottom;
       bottom: 1.6rem;
       width: 1.6rem;
       height: 1.6rem;
