@@ -62,6 +62,7 @@ small {
 abbr[title] {
     border-bottom: 1px dotted;
 }
+
 code,
 kbd,
 pre,
@@ -69,11 +70,7 @@ samp {
     font-family: var(--font-monospace, monospace);
     font-size: 1.3rem;
 }
-code,
-kbd,
-samp {
-    white-space: nowrap;
-}
+
 ins {
     display: inline-block;
     margin: 0 -0.2rem;
@@ -82,11 +79,13 @@ ins {
     color: var(--clr-grey-900);
     text-decoration: none;
 }
+
 mark {
     background-color: var(--selection-background-color);
     color: var(--selection-color);
     text-decoration: none;
 }
+
 i,
 em,
 dfn,

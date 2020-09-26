@@ -1,0 +1,12 @@
+{
+    "editor.tabSize": 2,
+    "editor.detectIndentation": true,
+    "liveServer.settings.host": "local.uikit",
+    "liveServer.settings.port": 81,
+    "liveServer.settings.file": "index.html",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+		"src/css/**"
+    ]
+}
