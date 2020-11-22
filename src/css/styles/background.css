@@ -1,0 +1,10 @@
+
+.s-bg-red {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
+}
+
+.s-bg-pink {
+  background-color: var(--clr-pink);
+  color: var(--clr-white);
+}
