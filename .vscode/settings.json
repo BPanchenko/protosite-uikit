@@ -1,5 +1,20 @@
 {
-    "editor.tabSize": 2,
+    "[css]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[js]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[json]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
     "editor.detectIndentation": true,
     "liveServer.settings.host": "local.uikit",
     "liveServer.settings.port": 81,
