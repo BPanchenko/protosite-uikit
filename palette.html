@@ -19,6 +19,8 @@
 
         <link rel="stylesheet" type="text/css" href="../assets/uikit.css">
 
+        <script type="module" src="./src/js/palette.js"></script>
+
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div class="o-container">
@@ -47,18 +49,15 @@
             <main role="main">
 
                 <!-- a grid indicating the width of cells -->
-                <div class="o-grid">
-                  <div class="o-grid-row">
-                    <div class="o-grid__cell u-width-1-7 s-bg-red">
-                      red
+                <div class="js-palette-container"></div>
+                <div class="o-grid"></div>
+                <template class="js-tmp-color">
+                    <div class="o-grid-row js-container">
+                        <div class="o-grid__cell u-width-1-7">
+                            <h3 class="js-name"></h3>
+                        </div>
                     </div>
-                  </div>
-                  <div class="o-grid-row">
-                    <div class="o-grid__cell u-width-1-7 s-bg-pink">
-                      pink
-                    </div>
-                  </div>
-                </div>
+                </template>
 
             </main>
 
