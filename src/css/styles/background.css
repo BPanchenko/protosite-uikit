@@ -1,5 +1,5 @@
 
-.s-bg-red {
+ .s-bg-red {
   background-color: var(--clr-red);
   color: var(--clr-white);
 }
@@ -7,4 +7,99 @@
 .s-bg-pink {
   background-color: var(--clr-pink);
   color: var(--clr-white);
+}
+
+.s-bg-purple {
+  background-color: var(--clr-purple);
+  color: var(--clr-white);
+}
+
+.s-bg-violet {
+  background-color: var(--clr-violet);
+  color: var(--clr-white);
+}
+
+.s-bg-indigo {
+  background-color: var(--clr-indigo);
+  color: var(--clr-white);
+}
+
+.s-bg-blue {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+}
+
+.s-bg-light-blue {
+  background-color: var(--clr-light-blue);
+  color: var(--clr-white);
+}
+
+.s-bg-cyan {
+  background-color: var(--clr-cyan);
+  color: var(--clr-white);
+}
+
+.s-bg-teal {
+  background-color: var(--clr-teal);
+  color: var(--clr-white);
+}
+
+.s-bg-green {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+}
+
+.s-bg-light-green {
+  background-color: var(--clr-light-green);
+  color: var(--clr-white);
+}
+
+.s-bg-lime {
+  background-color: var(--clr-lime);
+  color: var(--clr-white);
+}
+
+.s-bg-yellow {
+  background-color: var(--clr-yellow);
+  color: var(--clr-white);
+}
+
+.s-bg-amber {
+  background-color: var(--clr-amber);
+  color: var(--clr-white);
+}
+
+.s-bg-orange {
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+}
+
+.s-bg-deep-orange {
+  background-color: var(--clr-deep-orange);
+  color: var(--clr-white);
+}
+
+.s-bg-brown {
+  background-color: var(--clr-brown);
+  color: var(--clr-white);
+}
+
+.s-bg-grey {
+  background-color: var(--clr-grey);
+  color: var(--clr-white);
+}
+
+.s-bg-blue-grey {
+  background-color: var(--clr-blue-grey);
+  color: var(--clr-white);
+}
+
+.s-bg-black {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+}
+
+.s-bg-white {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
 }
