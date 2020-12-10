@@ -68,12 +68,10 @@
       let content = document.importNode(TPL_COLOR.content, true)
 
       this.__name = content.querySelector('.js-name')
-      this.__tone = content.querySelector('.js-tone')
+      this.__name.textContent = this.dataset.name
 
       this.appendChild(content)
       this.classList.add(`s-bg-${this.dataset.key}`, 'u-flex', 'u-margin')
-
-      this.__name.textContent = this.dataset.name
 
       console.log(this)
     }
