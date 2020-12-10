@@ -71,11 +71,9 @@
       this.__tone = content.querySelector('.js-tone')
 
       this.appendChild(content)
-      this.classList.add('u-flex', 'u-margin')
+      this.classList.add(`s-bg-${this.dataset.key}`, 'u-flex', 'u-margin')
 
       this.__name.textContent = this.dataset.name
-      this.__name.classList.add('c-panel', 's-transparent')
-      this.__tone.classList.add(`s-bg-${this.dataset.key}`)
 
       console.log(this)
     }
