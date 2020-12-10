@@ -28,7 +28,7 @@
   ])
   
   const TPL_COLOR = document.querySelector('.js-tmp-color')
-  
+
 
   /* Palette View
    ========================================================================== */
@@ -81,7 +81,7 @@
     }
 
     createTones() {
-
+      // TODO: create list of tone elements
     }
   }
 
