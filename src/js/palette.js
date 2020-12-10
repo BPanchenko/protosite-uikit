@@ -27,21 +27,32 @@
     ['white', 'White']
   ])
   
-
+  const TPL_COLOR = document.querySelector('.js-tmp-color')
+  
 
   /* Palette View
    ========================================================================== */
 
   class PaletteView {
     constructor(container) {
-      if (container instanceof String) container = document.querySelector(container)
-      console.assert(container instanceof HTMLElement, 'Wrong palette container!')
+      this.container = container instanceof String ? document.querySelector(container) : container
+      console.assert(this.container instanceof HTMLElement, 'Wrong palette container!')
 
       this.render();
     }
 
     render() {
-      console.log('render()', COLORS);
+      COLORS.forEach((name, key, colors) => {
+        console.log(name, key)
+        this.container.appendChild(this.createColorElement(name, key))
+      })
+    }
+
+    createColorElement(name, key) {
+      let elem = document.createElement('c-color')
+      elem.dataset.name = name
+      elem.dataset.key = key
+      return elem
     }
   }
 
@@ -50,10 +61,26 @@
   
   class ColorElement extends HTMLElement {
     constructor() {
-      super();
+      super()
     }
 
-    render() {
+    connectedCallback() {
+      let content = document.importNode(TPL_COLOR.content, true)
+
+      this.__name = content.querySelector('.js-name')
+      this.__tone = content.querySelector('.js-tone')
+
+      this.appendChild(content)
+      this.classList.add('u-flex', 'u-margin')
+
+      this.__name.textContent = this.dataset.name
+      this.__name.classList.add('c-panel', 's-transparent')
+      this.__tone.classList.add(`s-bg-${this.dataset.key}`)
+
+      console.log(this)
+    }
+
+    createTones() {
 
     }
   }
