@@ -1,11 +1,8 @@
 
-class COLORS extends Map {
-  static get [Symbol.species]() { return Map; }
-}
+import * as renderSquare from './pics/square.js'
 
-class PALETTE extends COLORS {
-  static get [Symbol.species]() { return Map; }
-}
+// Utilities
+// ==========================================================================
 
 function createItemElement(item) {
   let content = document.importNode(TPL.content, true)
@@ -20,14 +17,43 @@ function createItemElement(item) {
   return (item.elem = elem)
 }
 
-const RENDER = function () {
-
+const RENDER = function (colorCompositionElement) {
+  console.log('RENDER =>', COLORS)
+  COLORS.forEach (color =>  {
+    console.log(color)
+  })
 }
+
+// Class of Custom Element
+// ==========================================================================
 
 class ColorCompositionTemplate extends HTMLElement {
-
+  constructor() {
+    super()
+    let shadow = this.attachShadow({mode: 'open'})
+    console.log(this, shadow)
+  }
+  connectedCallback() {
+    console.log('Custom square element added to page.');
+    updateStyle(this);
+  }
 }
 
-export default {
-  ColorCompositionTemplate
+// @Private
+// ==========================================================================
+
+function updateStyle(elem) {
+  const shadow = elem.shadowRoot;
+  shadow.querySelector('style').textContent = `
+    div {
+      width: ${elem.getAttribute('l')}px;
+      height: ${elem.getAttribute('l')}px;
+      background-color: ${elem.getAttribute('c')};
+    }
+  `;
+}
+
+export {
+  ColorCompositionTemplate,
+  RENDER
 }
