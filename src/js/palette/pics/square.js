@@ -1,4 +1,4 @@
 
-export default function (...args) {
-    console.log('renderSquare()', args)
+export default function () {
+  renderer.render(scene,camera)
 }

@@ -1,49 +1,43 @@
 
-import * as renderSquare from './pics/square.js'
+import {
+  COLORS,
+  PALETTE
+} from './settings.js'
+
+import {
+  getPicture,
+  renderSquare
+} from './pics/_import.js'
 
 // Utilities
 // ==========================================================================
 
-function createItemElement(item) {
-  let content = document.importNode(TPL.content, true)
-  content.querySelector('.js-title').innerHTML = item.title
-  content.querySelector('.js-description').innerHTML = item.description
-  content.querySelector('.js-text').innerHTML = item.text
-
-  let elem = document.createElement('div')
-  elem.classList.add('c-list__item', 'o-fallacy-container')
-  elem.appendChild(content)
-
-  return (item.elem = elem)
-}
-
-const RENDER = function (colorCompositionElement) {
-  console.log('RENDER =>', COLORS)
-  COLORS.forEach (color =>  {
-    console.log(color)
-  })
+function RENDER (container) {
+  renderSquare()
 }
 
 // Class of Custom Element
 // ==========================================================================
 
 class ColorCompositionTemplate extends HTMLElement {
-  constructor() {
-    super()
+  constructor(options) {
+    super(options)
     let shadow = this.attachShadow({mode: 'open'})
-    console.log(this, shadow)
+    console.log(options, shadow)
   }
+
   connectedCallback() {
     console.log('Custom square element added to page.');
     updateStyle(this);
   }
+
 }
 
 // @Private
 // ==========================================================================
 
-function updateStyle(elem) {
-  const shadow = elem.shadowRoot;
+function updateStyle (elem) {
+  const shadow = elem.shadowRoot
   shadow.querySelector('style').textContent = `
     div {
       width: ${elem.getAttribute('l')}px;
@@ -55,5 +49,6 @@ function updateStyle(elem) {
 
 export {
   ColorCompositionTemplate,
-  RENDER
+  RENDER,
+  PALETTE
 }
