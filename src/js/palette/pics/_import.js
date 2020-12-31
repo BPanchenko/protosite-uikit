@@ -1,7 +1,7 @@
-import * as getPicture from './getPicture.js'
-import * as renderSquare from './square.js'
+import getPicture from './getPicture.js'
+import renderSquare from './square.js'
 
-export default {
+export {
     getPicture,
     renderSquare
 }
