@@ -1,11 +1,13 @@
 
-let cash = {}
+let cash = new Map
 let svg = document.createElement('svg')
 
+console.log('getPicture(), svg =>', svg)
 
-export default function (color, renderFunction) {
-    if (!cash.hasOwnPropetry(renderFunction.__cid)) {
+export default function (renderFunction) {
+    if (!cash.has(renderFunction)) {
         // TODO
+        cash.set(renderFunction, svg)
     }
-    return cash[renderFunction.__cid]
+    return cash.get(renderFunction)
 }
