@@ -21,15 +21,12 @@
         <link rel="stylesheet" type="text/css" href="./src/css/themes/page-palette.css">
 
         <script type="module">
-            import {
-                ColorCompositionTemplate,
-                RENDER
-            } from "./src/js/palette/color-composition-template.js"
+            import { ColorCompositionTemplate } from "./src/js/palette/color-composition-template.js"
             
-            document.addEventListener("DOMContentLoaded", async event => {
-                let listContainer = document.querySelector('.js-list')
-                let palette = new ColorCompositionTemplate()
-
+            document.addEventListener("DOMContentLoaded", event => {
+                let container = document.getElementById('color-composition-template')
+                let palette = new ColorCompositionTemplate(container)
+                window.addEventListener('resize', event => palette.update())
             })
         </script>
 
