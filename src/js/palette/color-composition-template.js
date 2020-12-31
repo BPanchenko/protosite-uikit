@@ -1,7 +1,10 @@
 
 import {
+  COLORS,
   PALETTE
 } from './settings.js'
+
+console.log(COLORS)
 
 import {
   getPicture,
