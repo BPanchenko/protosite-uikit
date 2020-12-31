@@ -1,6 +1,5 @@
 
 import {
-  COLORS,
   PALETTE
 } from './settings.js'
 
@@ -20,17 +19,17 @@ function RENDER (container) {
 // ==========================================================================
 
 class ColorCompositionTemplate extends HTMLElement {
-  constructor(options) {
-    super(options)
-    let shadow = this.attachShadow({mode: 'open'})
-    console.log(options, shadow)
+  constructor() {
+    super()
   }
 
   connectedCallback() {
-    console.log('Custom square element added to page.');
-    updateStyle(this);
+    console.log('Custom square element added to page.')
   }
 
+  static get observedAttributes() {
+    return ['data-width', 'data-height']
+  }
 }
 
 // @Private

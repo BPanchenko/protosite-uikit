@@ -22,12 +22,22 @@
 
         <script type="module">
             import { ColorCompositionTemplate } from "./src/js/palette/color-composition-template.js"
-            
-            document.addEventListener("DOMContentLoaded", event => {
-                let container = document.getElementById('color-composition-template')
-                let palette = new ColorCompositionTemplate(container)
-                window.addEventListener('resize', event => palette.update())
+
+            let mainElement
+            let paletteElement
+
+            function setPaletteWidth (value = mainElement.clientWidth) {
+                paletteElement.dataset.width = value
+            }
+
+            document.addEventListener('DOMContentLoaded', event => {
+                mainElement = document.querySelector('main')
+                paletteElement = document.querySelector('c-palette')
+                setPaletteWidth()
             })
+
+            window.customElements.define('c-palette', ColorCompositionTemplate)
+            window.addEventListener('resize', event => setPaletteWidth())
         </script>
 
     </head>
@@ -43,7 +53,7 @@
             </header>
 
             <main role="main">
-                <div id="color-composition-template"></div>
+                <c-palette></c-palette>
             </main>
 
             <footer role="contentinfo" class="u-margin-large-top">
