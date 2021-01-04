@@ -128,13 +128,19 @@ COLORS.forEach((value, key, map) => {
 
 const PALETTE = new Map(COLORS)
 
-PALETTE.set('text', {
-  name: 'Text Color',
-  hex: '333333'
+PALETTE.set('brand', {
+  name: 'Brand',
+  hex: COLORS.get('blue').hex
 })
+
 PALETTE.set('link', {
-  name: 'Link Color',
+  name: 'Link',
   hex: '1565C0'
+})
+
+PALETTE.set('text', {
+  name: 'Text',
+  hex: '333333'
 })
 
 export {
