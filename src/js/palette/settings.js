@@ -6,97 +6,97 @@ const COLORS = new Map([
   [
     'red', {
       name: 'Red',
-      hex: ''
+      hex: 'f44336'
     }
   ], [
     'pink', {
       name: 'Pink',
-      hex: ''
+      hex: 'e91e63'
     }
   ], [
     'purple', {
       name: 'Purple',
-      hex: ''
+      hex: '9c27b0'
     }
   ], [
     'violet', {
       name: 'Violet (Deep Purple)',
-      hex: ''
+      hex: '673ab7'
     }
   ], [
     'indigo', {
       name: 'Indigo',
-      hex: ''
+      hex: '3f51b5'
     }
   ], [
     'blue', {
       name: 'Blue',
-      hex: ''
+      hex: '2196f3'
     }
   ], [
     'light-blue', {
       name: 'Light Blue',
-      hex: ''
+      hex: '03a9f4'
     }
   ], [
     'cyan', {
       name: 'Cyan',
-      hex: ''
+      hex: '00bcd4'
     }
   ], [
     'teal', {
       name: 'Teal',
-      hex: ''
+      hex: '009688'
     }
   ], [
     'green', {
       name: 'Green',
-      hex: ''
+      hex: '4caf50'
     }
   ], [
     'light-green', {
       name: 'Light Green',
-      hex: ''
+      hex: '8bc34a'
     }
   ], [
     'lime', {
       name: 'Lime',
-      hex: ''
+      hex: 'cddc39'
     }
   ], [
     'yellow', {
       name: 'Yellow',
-      hex: ''
+      hex: 'ffeb3b'
     }
   ], [
     'amber', {
       name: 'Amber',
-      hex: ''
+      hex: 'ffc107'
     }
   ], [
     'orange', {
       name: 'Orange',
-      hex: ''
+      hex: 'ff9800'
     }
   ], [
     'deep-orange', {
       name: 'Deep Orange',
-      hex: ''
+      hex: 'ff5722'
     }
   ], [
     'brown', {
       name: 'Brown',
-      hex: ''
+      hex: '795548'
     }
   ], [
     'grey', {
       name: 'Grey',
-      hex: ''
+      hex: '9e9e9e'
     }
   ], [
     'blue-grey', {
       name: 'Blue Grey',
-      hex: ''
+      hex: '607d8b'
     }
   ], [
     'green-grey', {
