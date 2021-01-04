@@ -1,9 +1,12 @@
-import { PALETTE } from '../settings.js'
-import { THREE } from '../library.js'
+import {
+  THREE,
+  parseColors
+} from '../library.js'
 
 export default function ({ colors }) {
-  colors.forEach((color, index) => colors[index] = PALETTE.get(color))
-  
+  colors = parseColors(colors)
+  console.assert(colors.length === 3, `Wrong amount of colors: ${JSON.stringify(colors)}`)
+
   return function (scene) {
 
   }
