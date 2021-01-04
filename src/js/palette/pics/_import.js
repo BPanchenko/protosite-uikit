@@ -1,7 +1,7 @@
 import getPicture from './getPicture.js'
-import renderSquare from './square.js'
+import renderNineCircles from './renderNineCircles.js'
 
 export {
     getPicture,
-    renderSquare
+    renderNineCircles
 }
