@@ -1,9 +1,3 @@
-
-import {
-  COLORS,
-  PALETTE
-} from './settings.js'
-
 import {
   getPicture,
   renderNineCircles
@@ -20,11 +14,7 @@ class ColorCompositionTemplate extends HTMLElement {
   connectedCallback() {
     this.appendChild(getPicture({
       render: renderNineCircles({
-        colors: new Set([
-          PALETTE.get('green-grey'),
-          PALETTE.get('yellow'),
-          PALETTE.get('red')
-        ])
+        colors: ['green-grey', 'yellow', 'red']
       })
     }))
   }
