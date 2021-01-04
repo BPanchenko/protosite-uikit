@@ -1,5 +1,8 @@
 import { THREE } from '../library.js'
 
-export default function (scene) {
+export default function ({ colors }) {
   
+  return function (scene) {
+
+  }
 }
