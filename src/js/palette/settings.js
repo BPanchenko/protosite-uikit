@@ -99,6 +99,11 @@ const COLORS = new Map([
       hex: ''
     }
   ], [
+    'green-grey', {
+      name: 'Green Grey',
+      hex: '5e7d75'
+    }
+  ], [
     'black', {
       name: 'Black',
       hex: '000000'
