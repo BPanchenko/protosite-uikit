@@ -1,13 +1,24 @@
+import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.module.min.js'
 
-let cash = new Map
-let svg = document.createElement('svg')
+export default function ({
+    render,
+    width = 200,
+    height = 200
+}) {
 
-console.log('getPicture(), svg =>', svg)
+  const scene = new THREE.Scene()
+  scene.background = new THREE.Color(0xFDF6E5)
 
-export default function (renderFunction) {
-    if (!cash.has(renderFunction)) {
-        // TODO
-        cash.set(renderFunction, svg)
-    }
-    return cash.get(renderFunction)
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1)
+  camera.position.set(0, 0, 10)
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+
+  renderer.setClearColor(new THREE.Color(0xEEEEEE))
+  renderer.setSize(width, height)
+  renderer.shadowMap.enabled = true
+
+  scene.add(camera)
+
+  return renderer.domElement
 }

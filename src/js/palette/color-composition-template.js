@@ -4,19 +4,10 @@ import {
   PALETTE
 } from './settings.js'
 
-console.log(COLORS)
-
 import {
   getPicture,
-  renderSquare
+  renderNineCircles
 } from './pics/_import.js'
-
-// Utilities
-// ==========================================================================
-
-function RENDER (container) {
-  renderSquare()
-}
 
 // Class of Custom Element
 // ==========================================================================
@@ -27,30 +18,30 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('Custom square element added to page.')
+    this.appendChild(getPicture({
+      render: renderNineCircles({
+        colors: new Set([
+          PALETTE.get('green-grey'),
+          PALETTE.get('yellow'),
+          PALETTE.get('red')
+        ])
+      })
+    }))
+  }
+
+  disconnectedCallback() {
+    console.log('Custom square element removed from page.');
   }
 
   static get observedAttributes() {
     return ['data-width', 'data-height']
   }
-}
 
-// @Private
-// ==========================================================================
-
-function updateStyle (elem) {
-  const shadow = elem.shadowRoot
-  shadow.querySelector('style').textContent = `
-    div {
-      width: ${elem.getAttribute('l')}px;
-      height: ${elem.getAttribute('l')}px;
-      background-color: ${elem.getAttribute('c')};
-    }
-  `;
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log('Custom square element attributes changed.', name, oldValue, newValue);
+  }
 }
 
 export {
-  ColorCompositionTemplate,
-  RENDER,
-  PALETTE
+  ColorCompositionTemplate
 }
