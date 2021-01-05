@@ -1,6 +1,7 @@
 import {
   getPicture,
-  renderNineCircles
+  renderNineCircles,
+  renderTwoSemicircles
 } from './pics/_import.js'
 
 // Class of Custom Element
@@ -12,6 +13,13 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+    
+    this.appendChild(getPicture({
+      render: renderTwoSemicircles({
+        colors: ['orange', 'pink', 'blue-grey']
+      })
+    }))
+    
     this.appendChild(getPicture({
       render: renderNineCircles({
         colors: ['green-grey', 'yellow', 'red']
