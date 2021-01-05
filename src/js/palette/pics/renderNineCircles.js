@@ -21,7 +21,7 @@ function background (color) {
 
   const mesh = new THREE.Mesh(shape, material)
   mesh.renderOrder = 1
-  console.log(mesh)
+  
   return mesh
 }
 

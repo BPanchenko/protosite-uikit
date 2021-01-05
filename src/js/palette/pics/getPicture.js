@@ -23,6 +23,7 @@ export default function ({
 
   scene.add(camera)
   render(scene)
+  renderer.render(scene, camera)
 
   return renderer.domElement
 }
