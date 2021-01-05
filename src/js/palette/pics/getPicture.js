@@ -23,6 +23,8 @@ export default function ({
 
   scene.add(camera)
   render(scene)
+  
+  camera.updateProjectionMatrix()
   renderer.render(scene, camera)
 
   return renderer.domElement
