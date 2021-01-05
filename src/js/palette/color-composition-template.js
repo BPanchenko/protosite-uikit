@@ -28,7 +28,8 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log('Custom square element attributes changed.', name, oldValue, newValue);
+    if(oldValue === newValue) return null
+    console.log('Custom square element attributes changed.', name, oldValue, newValue)
   }
 }
 
