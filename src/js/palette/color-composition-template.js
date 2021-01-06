@@ -16,14 +16,14 @@ class ColorCompositionTemplate extends HTMLElement {
   connectedCallback() {
     
     this.appendChild(getPicture({
-      render: renderColumns({
-        colors: ['teal', 'amber']
+      render: renderTwoSemicircles({
+        colors: ['orange', 'pink', 'blue-grey']
       })
     }))
     
     this.appendChild(getPicture({
-      render: renderTwoSemicircles({
-        colors: ['orange', 'pink', 'blue-grey']
+      render: renderColumns({
+        colors: ['teal', 'amber']
       })
     }))
 
