@@ -19,7 +19,6 @@ function square (color) {
   )
 
   let mesh = new THREE.Mesh(shape, material)
-  mesh.renderOrder = 1
 
   return mesh
 }
@@ -32,7 +31,6 @@ function circle (color, x, y, radius = 0.1) {
   let mesh = new THREE.Mesh(geometry, material)
   mesh.matrix.setPosition(x, y, 0)
   mesh.matrixAutoUpdate = false
-  mesh.renderOrder = 2
 
   return mesh
 }
