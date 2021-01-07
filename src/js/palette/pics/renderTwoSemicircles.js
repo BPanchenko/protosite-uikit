@@ -1,5 +1,4 @@
 import {
-  THREE,
   circle,
   parseColors,
   square

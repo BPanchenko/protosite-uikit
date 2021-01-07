@@ -1,6 +1,5 @@
 import {
   THREE,
-  circle,
   parseColors,
   square
 } from '../library.js'
