@@ -5,7 +5,15 @@ import { PALETTE } from './settings.js'
 
 let parseColors = list => _.compact(list.map(item => PALETTE.has(item) ? PALETTE.get(item) : null))
 
-function square (color, x1 = -1, y1 = 1, x2 = 1, y2 = -1) {
+function lineFromShape(shape, color)  {
+  let points = shape.getPoints()
+  let geometry = new THREE.BufferGeometry().setFromPoints(points)
+  let material = new THREE.LineBasicMaterial({ color: `#${color.hex}` })
+  let line = new THREE.Line(geometry, material)
+  return line
+}
+
+function square(color, x1 = -1, y1 = 1, x2 = 1, y2 = -1) {
   let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
 
   let shape = new THREE.ShapeGeometry(
@@ -23,7 +31,7 @@ function square (color, x1 = -1, y1 = 1, x2 = 1, y2 = -1) {
   return mesh
 }
 
-function circle (color, x, y, radius = 0.1) {
+function circle(color, x, y, radius = 0.1) {
   let segments = 64
   let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
   let geometry = new THREE.CircleGeometry(radius, segments)
@@ -40,6 +48,7 @@ export {
   PALETTE,
   THREE,
   circle,
+  lineFromShape,
   square,
   parseColors
 }
