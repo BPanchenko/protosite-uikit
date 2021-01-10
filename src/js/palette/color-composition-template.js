@@ -1,8 +1,11 @@
 import {
   getPicture,
+
   renderColumns,
+  renderFrontSight,
   renderNineCircles,
   renderTwoSemicircles
+  
 } from './pics/_import.js'
 
 // Class of Custom Element
@@ -14,6 +17,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+    
+    this.appendChild(getPicture({
+      render: renderFrontSight({
+        colors: ['deep-orange', 'white', 'purple']
+      })
+    }))
     
     this.appendChild(getPicture({
       render: renderTwoSemicircles({
