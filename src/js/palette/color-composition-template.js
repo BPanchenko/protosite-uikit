@@ -2,6 +2,7 @@ import {
   getPicture,
 
   renderColumns,
+  renderFilm,
   renderFrontSight,
   renderNineCircles,
   renderTwoSemicircles
@@ -17,6 +18,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+    
+    this.appendChild(getPicture({
+      render: renderFilm({
+        colors: ['cyan', 'brown', 'light-green', 'violet']
+      })
+    }))
     
     this.appendChild(getPicture({
       render: renderFrontSight({
