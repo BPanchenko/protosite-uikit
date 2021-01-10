@@ -3,6 +3,7 @@ import renderColumns from './renderColumns.js'
 import renderFilm from './renderFilm.js'
 import renderFrontSight from './renderFrontSight.js'
 import renderNineCircles from './renderNineCircles.js'
+import renderRecord from './renderRecord.js'
 import renderTwoSemicircles from './renderTwoSemicircles.js'
 
 export {
@@ -11,5 +12,6 @@ export {
     renderFilm,
     renderFrontSight,
     renderNineCircles,
+    renderRecord,
     renderTwoSemicircles
 }

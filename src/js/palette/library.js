@@ -5,10 +5,15 @@ import { PALETTE } from './settings.js'
 
 let parseColors = list => _.compact(list.map(item => PALETTE.has(item) ? PALETTE.get(item) : null))
 
-function lineFromShape(shape, color)  {
+function lineFromShape(shape, color, { linewidth = 1, linecap = 'round', linejoin =  'round' } = {})  {
   let points = shape.getPoints()
   let geometry = new THREE.BufferGeometry().setFromPoints(points)
-  let material = new THREE.LineBasicMaterial({ color: `#${color.hex}` })
+  let material = new THREE.LineBasicMaterial({
+    color: `#${color.hex}`,
+    linewidth,
+    linecap,
+    linejoin
+  })
   let line = new THREE.Line(geometry, material)
   return line
 }

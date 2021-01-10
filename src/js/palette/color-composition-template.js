@@ -5,6 +5,7 @@ import {
   renderFilm,
   renderFrontSight,
   renderNineCircles,
+  renderRecord,
   renderTwoSemicircles
   
 } from './pics/_import.js'
@@ -20,8 +21,14 @@ class ColorCompositionTemplate extends HTMLElement {
   connectedCallback() {
     
     this.appendChild(getPicture({
+      render: renderRecord({
+        colors: ['grey', 'cyan', 'lime']
+      })
+    }))
+    
+    this.appendChild(getPicture({
       render: renderFilm({
-        colors: ['cyan', 'brown', 'light-green', 'violet']
+        colors: ['indigo', 'violet', 'light-green', 'light-blue']
       })
     }))
     
