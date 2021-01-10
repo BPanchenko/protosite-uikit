@@ -4,6 +4,7 @@ import {
   renderColumns,
   renderFilm,
   renderFrontSight,
+  renderQuarterCircle,
   renderNineCircles,
   renderRecord,
   renderSquares,
@@ -22,6 +23,12 @@ class ColorCompositionTemplate extends HTMLElement {
   connectedCallback() {
     
     this.appendChild(getPicture({
+      render: renderQuarterCircle({
+        colors: ['indigo', 'violet', 'amber']
+      })
+    }))
+    
+    this.appendChild(getPicture({
       render: renderSquares({
         colors: ['white', 'blue', 'green']
       })
@@ -35,7 +42,7 @@ class ColorCompositionTemplate extends HTMLElement {
     
     this.appendChild(getPicture({
       render: renderFilm({
-        colors: ['indigo', 'violet', 'light-green', 'light-blue']
+        colors: ['brown', 'black', 'light-green', 'light-blue']
       })
     }))
     
