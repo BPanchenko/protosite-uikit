@@ -6,6 +6,9 @@ import { PALETTE } from './settings.js'
 let parseColors = list => _.compact(list.map(item => PALETTE.has(item) ? PALETTE.get(item) : null))
 
 function lineFromShape(shape, color, { linewidth = 1, linecap = 'round', linejoin =  'round' } = {})  {
+  
+  shape.autoClose = true
+
   let points = shape.getPoints()
   let geometry = new THREE.BufferGeometry().setFromPoints(points)
   let material = new THREE.LineBasicMaterial({
@@ -14,7 +17,9 @@ function lineFromShape(shape, color, { linewidth = 1, linecap = 'round', linejoi
     linecap,
     linejoin
   })
+
   let line = new THREE.Line(geometry, material)
+
   return line
 }
 
@@ -48,12 +53,21 @@ function circle(color, x, y, radius = 0.1) {
   return mesh
 }
 
+function triangle(color, x1, y1, x2, y2, x3, y3) {
+  let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
+  let shape = new THREE.Shape().moveTo(x1, y1).lineTo(x2, y2).lineTo(x3, y3).lineTo(x1, y1)
+  let geometry = new THREE.ShapeBufferGeometry( shape )
+  let mesh = new THREE.Mesh(geometry, material)
+  return mesh
+}
+
 export {
   _,
   PALETTE,
   THREE,
   circle,
   lineFromShape,
+  parseColors,
   square,
-  parseColors
+  triangle
 }

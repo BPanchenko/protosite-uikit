@@ -6,6 +6,7 @@ import {
   renderFrontSight,
   renderNineCircles,
   renderRecord,
+  renderSquares,
   renderTwoSemicircles
   
 } from './pics/_import.js'
@@ -19,6 +20,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+    
+    this.appendChild(getPicture({
+      render: renderSquares({
+        colors: ['white', 'blue', 'green']
+      })
+    }))
     
     this.appendChild(getPicture({
       render: renderRecord({
