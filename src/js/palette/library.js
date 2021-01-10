@@ -5,16 +5,16 @@ import { PALETTE } from './settings.js'
 
 let parseColors = list => _.compact(list.map(item => PALETTE.has(item) ? PALETTE.get(item) : null))
 
-function square (color) {
+function square (color, x1 = -1, y1 = 1, x2 = 1, y2 = -1) {
   let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
 
   let shape = new THREE.ShapeGeometry(
     new THREE.Shape([
-      new THREE.Vector2(-1, 1),
-      new THREE.Vector2(1, 1),
-      new THREE.Vector2(1, -1),
-      new THREE.Vector2(-1, -1),
-      new THREE.Vector2(-1, 1)
+      new THREE.Vector2(x1, y1),
+      new THREE.Vector2(x2, y1),
+      new THREE.Vector2(x2, y2),
+      new THREE.Vector2(x1, y2),
+      new THREE.Vector2(x1, y1)
     ])
   )
 
