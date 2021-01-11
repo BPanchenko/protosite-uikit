@@ -27,7 +27,7 @@ export default function ({
   camera.updateProjectionMatrix()
   renderer.render(scene, camera)
 
-  renderer.domElement.style.float = 'left'
+  renderer.domElement.classList.add('c-picture')
 
   return renderer.domElement
 }

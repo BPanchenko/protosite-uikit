@@ -1,4 +1,8 @@
 
-body.t-page-pallete {
+.t-palette {
   background-color: #f6f1e2;
+}
+
+.o-palette .c-picture {
+  float: left;
 }
