@@ -27,6 +27,7 @@ export default function ({
   camera.updateProjectionMatrix()
   renderer.render(scene, camera)
 
+  renderer.domElement.removeAttribute('style')
   renderer.domElement.classList.add('c-picture')
 
   return renderer.domElement
