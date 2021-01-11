@@ -5,6 +5,18 @@ import { PALETTE } from './settings.js'
 
 let parseColors = list => _.compact(list.map(item => PALETTE.has(item) ? PALETTE.get(item) : null))
 
+function circle(color, x, y, radius = 0.1) {
+  let segments = 64
+  let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
+  let geometry = new THREE.CircleGeometry(radius, segments)
+
+  let mesh = new THREE.Mesh(geometry, material)
+  mesh.matrix.setPosition(x, y, 0)
+  mesh.matrixAutoUpdate = false
+
+  return mesh
+}
+
 function lineFromShape(shape, color, { linewidth = 1, linecap = 'round', linejoin =  'round' } = {})  {
   
   shape.autoClose = true
@@ -21,6 +33,14 @@ function lineFromShape(shape, color, { linewidth = 1, linecap = 'round', linejoi
   let line = new THREE.Line(geometry, material)
 
   return line
+}
+
+function meshFromShape(shape, color)  {
+  shape.autoClose = true
+  let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
+  let geometry = new THREE.ShapeBufferGeometry(shape)
+  let mesh = new THREE.Mesh(geometry, material)
+  return mesh
 }
 
 function square(color, x1 = -1, y1 = 1, x2 = 1, y2 = -1) {
@@ -41,18 +61,6 @@ function square(color, x1 = -1, y1 = 1, x2 = 1, y2 = -1) {
   return mesh
 }
 
-function circle(color, x, y, radius = 0.1) {
-  let segments = 64
-  let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
-  let geometry = new THREE.CircleGeometry(radius, segments)
-
-  let mesh = new THREE.Mesh(geometry, material)
-  mesh.matrix.setPosition(x, y, 0)
-  mesh.matrixAutoUpdate = false
-
-  return mesh
-}
-
 function triangle(color, x1, y1, x2, y2, x3, y3) {
   let material = new THREE.MeshBasicMaterial({ color: `#${color.hex}` })
   let shape = new THREE.Shape().moveTo(x1, y1).lineTo(x2, y2).lineTo(x3, y3).lineTo(x1, y1)
@@ -67,6 +75,7 @@ export {
   THREE,
   circle,
   lineFromShape,
+  meshFromShape,
   parseColors,
   square,
   triangle

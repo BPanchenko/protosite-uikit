@@ -9,6 +9,7 @@ import {
   renderNineCircles,
   renderPyramid,
   renderRecord,
+  renderSemicircleAndTwoQuarters,
   renderSquares,
   renderSixRings,
   renderTwoSemicircles
@@ -26,8 +27,8 @@ class ColorCompositionTemplate extends HTMLElement {
   connectedCallback() {
 
     this.appendChild(getPicture({
-      render: renderDiscCover({
-        colors: ['yellow', 'deep-orange', 'green-grey', 'cyan']
+      render: renderSemicircleAndTwoQuarters({
+        colors: ['indigo', 'green', 'cyan', 'lime']
       })
     }))
 
@@ -48,7 +49,7 @@ class ColorCompositionTemplate extends HTMLElement {
         colors: ['orange', 'lime', 'blue-grey', 'pink']
       })
     }))
-    
+
     this.appendChild(getPicture({
       render: renderQuarterCircle({
         colors: ['indigo', 'violet', 'amber']
@@ -88,6 +89,12 @@ class ColorCompositionTemplate extends HTMLElement {
     this.appendChild(getPicture({
       render: renderColumns({
         colors: ['teal', 'amber']
+      })
+    }))
+
+    this.appendChild(getPicture({
+      render: renderDiscCover({
+        colors: ['yellow', 'deep-orange', 'green-grey', 'cyan']
       })
     }))
 
