@@ -22,6 +22,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+
+    this.appendChild(getPicture({
+      render: renderNineCircles({
+        colors: ['teal', 'light-green', 'light-green']
+      })
+    }))
     
     this.appendChild(getPicture({
       render: renderPyramid({
