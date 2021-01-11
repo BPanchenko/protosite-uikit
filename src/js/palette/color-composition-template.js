@@ -2,6 +2,7 @@ import {
   getPicture,
 
   renderColumns,
+  renderDiscCover,
   renderFilm,
   renderFrontSight,
   renderQuarterCircle,
@@ -23,6 +24,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+
+    this.appendChild(getPicture({
+      render: renderDiscCover({
+        colors: ['yellow', 'deep-orange', 'green-grey', 'cyan']
+      })
+    }))
 
     this.appendChild(getPicture({
       render: renderSixRings({
