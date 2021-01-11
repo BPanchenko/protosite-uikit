@@ -7,6 +7,7 @@ import renderNineCircles from './renderNineCircles.js'
 import renderPyramid from './renderPyramid.js'
 import renderRecord from './renderRecord.js'
 import renderSquares from './renderSquares.js'
+import renderSixRings from './renderSixRings.js'
 import renderTwoSemicircles from './renderTwoSemicircles.js'
 
 export {
@@ -19,5 +20,6 @@ export {
   renderPyramid,
   renderRecord,
   renderSquares,
+  renderSixRings,
   renderTwoSemicircles
 }

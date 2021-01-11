@@ -9,6 +9,7 @@ import {
   renderPyramid,
   renderRecord,
   renderSquares,
+  renderSixRings,
   renderTwoSemicircles
   
 } from './pics/_import.js'
@@ -22,6 +23,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+
+    this.appendChild(getPicture({
+      render: renderSixRings({
+        colors: ['light-blue', 'amber', 'purple', 'white']
+      })
+    }))
 
     this.appendChild(getPicture({
       render: renderNineCircles({
