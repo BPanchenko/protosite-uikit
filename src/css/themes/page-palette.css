@@ -1,8 +1,14 @@
 
 .t-palette {
-  background-color: #f6f1e2;
+    background-color: #f6f1e2;
 }
 
-.o-palette .c-picture {
-  float: left;
+.t-palette .o-palette {
+    display: block;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+}
+
+.t-palette .o-palette .c-picture {
+    display: inline-block;
 }
