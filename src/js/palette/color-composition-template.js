@@ -1,6 +1,7 @@
 import {
   getPicture,
 
+  renderCircleInSquare,
   renderColumns,
   renderDiscCover,
   renderFilm,
@@ -25,6 +26,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+
+    this.appendChild(getPicture({
+      render: renderCircleInSquare({
+        colors: ['blue', 'red', 'yellow']
+      })
+    }))
 
     this.appendChild(getPicture({
       render: renderSemicircleAndTwoQuarters({

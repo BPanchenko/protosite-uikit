@@ -1,4 +1,5 @@
 import getPicture from './getPicture.js'
+import renderCircleInSquare from './renderCircleInSquare.js'
 import renderColumns from './renderColumns.js'
 import renderDiscCover from './renderDiscCover.js'
 import renderFilm from './renderFilm.js'
@@ -14,6 +15,7 @@ import renderTwoSemicircles from './renderTwoSemicircles.js'
 
 export {
   getPicture,
+  renderCircleInSquare,
   renderColumns,
   renderDiscCover,
   renderFilm,
