@@ -1,7 +1,6 @@
 import {
   parseColors,
-  triangle,
-  square
+  triangle
 } from '../library.js'
 
 export default function ({ colors }) {
