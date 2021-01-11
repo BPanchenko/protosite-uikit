@@ -12,6 +12,7 @@ import {
   renderRecord,
   renderSemicircleAndTwoQuarters,
   renderSquares,
+  renderSixCircles,
   renderSixRings,
   renderTwoSemicircles
   
@@ -26,6 +27,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+
+    this.appendChild(getPicture({
+      render: renderSixCircles({
+        colors: ['green-grey', 'green', 'violet']
+      })
+    }))
 
     this.appendChild(getPicture({
       render: renderCircleInSquare({
