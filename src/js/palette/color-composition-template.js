@@ -6,6 +6,7 @@ import {
   renderFrontSight,
   renderQuarterCircle,
   renderNineCircles,
+  renderPyramid,
   renderRecord,
   renderSquares,
   renderTwoSemicircles
@@ -21,6 +22,12 @@ class ColorCompositionTemplate extends HTMLElement {
   }
 
   connectedCallback() {
+    
+    this.appendChild(getPicture({
+      render: renderPyramid({
+        colors: ['orange', 'lime', 'blue-grey', 'pink']
+      })
+    }))
     
     this.appendChild(getPicture({
       render: renderQuarterCircle({
