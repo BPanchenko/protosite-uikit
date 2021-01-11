@@ -14,7 +14,7 @@ import {
     return function (scene) {
       scene.add(square(colors[0]))
 
-      let shape = new THREE.Shape().moveTo(0, 0).arc(0, 0, RADIUS, 0, Math.PI * 2)
+      let shape = new THREE.Shape().arc(0, 0, RADIUS, 0, Math.PI * 2)
       scene.add(lineFromShape(shape, colors[1]))
 
       scene.add(square(colors[2], 0, 1, 1, 0))
