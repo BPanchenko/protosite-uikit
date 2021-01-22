@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimal-ui">
+
+        <title>Protosite.UiKit</title>
+        <meta name="author" content="Boris Panchenko, http://bpanchenko.ru">
+        <meta name="copyright" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="theme-color" content="#e0e0e0">
+
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        
+        <link rel="prerender" href="../index.html">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+        <link rel="stylesheet" type="text/css" href="./assets/uikit.css">
+        <link rel="stylesheet" type="text/css" href="./src/css/themes/page-palette.css">
+
+        <script type="module">
+            import { ColorCompositionTemplate } from "./src/js/palette/color-composition-template.js"
+
+            let mainElement
+            let paletteElement
+
+            function setPaletteWidth (value = mainElement.clientWidth) {
+                paletteElement.dataset.width = value
+            }
+
+            document.addEventListener('DOMContentLoaded', event => {
+                mainElement = document.querySelector('main')
+                paletteElement = document.querySelector('c-palette')
+                setPaletteWidth()
+            })
+
+            window.customElements.define('c-palette', ColorCompositionTemplate)
+            window.addEventListener('resize', event => setPaletteWidth())
+        </script>
+
+    </head>
+    <body class="t-palette" itemscope itemtype="http://schema.org/WebPage">
+        <div class="o-container">
+            <header role="banner">
+                <div class="u-float-right">
+                    <a href="https://github.com/BPanchenko/protosite-uikit/blob/development/palette.html" target="_blank">
+                        <span class="iconic" data-glyph="social-github"></span>
+                    </a>
+                </div>
+                <h1>Цветовое решение проекта</h1>
+            </header>
+
+            <main role="main">
+                <c-palette class="o-palette"></c-palette>
+            </main>
+
+            <footer role="contentinfo" class="u-margin-large-top">
+                <hr>
+                <div class="u-float-right">
+                    <span class="s-cursive u-text-large">&copy; <a href="http://bpanchenko.ru" class="s-floating u-text-color">Boris Panchenko</a>, 2015&mdash;2021</span>
+                </div>
+            </footer>
+        </div>
+        <div class="u-clearfix"></div>
+    </body>
+</html>

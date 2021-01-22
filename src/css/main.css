@@ -36,7 +36,6 @@
 @import "./objects/breadcrumb.css";
 @import "./objects/container.css";
 @import "./objects/form.css";
-@import "./objects/grid.css";
 
 /* Utilities */
 
@@ -50,6 +49,7 @@
 /* Cosmetic styles */
 
 @import "./styles/_common.css";
+@import "./styles/background.css";
 @import "./styles/clean.css";
 @import "./styles/color.css";
 @import "./styles/floating.css";
