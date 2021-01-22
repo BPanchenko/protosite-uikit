@@ -1,3 +1,5 @@
+/.vscode/ftp-kr.json
 /node_modules
 /package-lock.json
-/.vscode/ftp-kr.json
+/.htaccess
+/favicon.ico
