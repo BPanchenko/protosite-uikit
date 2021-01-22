@@ -1,9 +1,3 @@
-/.idea
 /node_modules
-/json2db.php
 /package-lock.json
-/yarn.lock
-/.vscode/ftp-kr.sync.cache.json
 /.vscode/ftp-kr.json
-/.vscode/ftp-kr.diff.uikit.css
-/.vscode/ftp-kr.diff.uikit.js
