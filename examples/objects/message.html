@@ -51,10 +51,16 @@
                 </span>
             </nav>
 
-            <section class="c-list__item o-message o-message--from s-bigger">
+            <section itemscope itemtype="https://schema.org/Message" class="c-list__item o-message o-message--from s-bigger">
+                <meta />
                 <c-avatar>
-                <span class="o-message__author-name">Фамилия Имя Отчество</span>
-                <time class="o-message__created-time">1 января 1970 года в 1 час 1 минуту и 1 секунду</time>
+                <span itemscope itemprop="sender" itemtype="https://schema.org/Person" class="o-message__author-name">
+                    <meta itemprop="name" content="Firstname Lastname" />
+                    Имя Отчество Фамилия
+                </span>
+                <time itemprop="datePublished" content="1970-01-01 01:01:01" class="o-message__created-time">
+                    1 января 1970 года в 1 час 1 минуту и 1 секунду
+                </time>
                 <p class="o-message__text">
                     Аксиология, по определению, использует этикет.<br>Пародия использует сокращенный психологический параллелизм.<br>Культовый образ начинает онтологический статус искусства.
                 </p>
