@@ -26,6 +26,35 @@
     });
 
     class AvatarElement extends HTMLElement {
+
+        static get observedAttributes() {
+            return ['data-shadow', 'data-size']
+        }
+        
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (oldValue === newValue) return null;
+
+            switch (name) {
+                case 'data-size':
+                    if (!~['xs','sm','md','lg','xl'].indexOf(newValue)) {
+                        console.warn("Size can take values 'xs', 'sm', 'md', 'lg' or 'xl'");
+                        return null;
+                    }
+                    this._container.classList.remove(oldValue)
+                    this._container.classList.add(newValue)
+                    break;
+                
+                case 'data-shadow':
+                    if (!~['2dp','3dp','4dp','6dp','8dp','16dp','24dp'].indexOf(newValue)) {
+                        console.warn("Shadow can take values '2dp', '3dp', '4dp', '6dp', '8dp', '16dp' or '24dp'");
+                        return null;
+                    }
+                    this._container.classList.remove(`s-shadow-${oldValue}`);
+                    this._container.classList.add(`s-shadow-${newValue}`);
+                    break;
+            }
+        }
+
         connectedCallback() {
             this._children = Array.from(this.children);
             this.render().cleanup();
@@ -83,8 +112,6 @@
         cleanup() {
             this.removeAttribute('data-src');
             this.removeAttribute('data-href');
-            this.removeAttribute('data-size');
-            this.removeAttribute('data-shadow');
             this.removeAttribute('data-target');
             return this;
         }
