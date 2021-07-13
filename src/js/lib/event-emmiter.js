@@ -54,8 +54,10 @@ export default class EventEmmiter {
     }
 
     trigger(event, ...args) {
-        let events = BUS.get(this)
-        events.has(event) && events.get(event).forEach(callback => callback(...args))
+        if (BUS.has(this)) {
+            let events = BUS.get(this)
+            events.has(event) && events.get(event).forEach(callback => callback(...args))
+        }
         return this
     }
 }
