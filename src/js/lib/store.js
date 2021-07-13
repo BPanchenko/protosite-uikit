@@ -1,4 +1,4 @@
-import PubSub from './pub-sub.js';
+import EventEmmiter from './event-emmiter.js';
 
 export default class Store {
     constructor(params) {
@@ -12,8 +12,8 @@ export default class Store {
         // A status enum to set during actions and mutations
         self.status = 'resting';
 
-        // Attach our PubSub module as an `events` element
-        self.events = new PubSub();
+        // Attach our EventEmmiter module as an `events` element
+        self.events = new EventEmmiter();
 
         // Look in the passed params object for actions and mutations
         // that might have been passed in
@@ -38,7 +38,7 @@ export default class Store {
                 console.log(`stateChange: ${key}: ${value}`);
 
                 // Publish the change event for the components that are listening
-                self.events.publish('stateChange', self.state);
+                self.events.trigger('stateChange', self.state);
 
                 // Give the user a little telling off if they set a value directly
                 if(self.status !== 'mutation') {
