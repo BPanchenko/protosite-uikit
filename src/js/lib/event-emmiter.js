@@ -60,4 +60,10 @@ export default class EventEmmiter {
         }
         return this
     }
+
+    static extend(obj) {
+        const { on, off, trigger } = EventEmmiter.prototype
+        Object.assign(obj, { on, off, trigger })
+        return obj
+    }
 }
