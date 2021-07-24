@@ -4,11 +4,11 @@ export default class EventEmmiter {
 
     on(...args) {
         let obj, name, callback
-
+        
         if (
             args.length === 2 &&
-            args[0] instanceof String &&
-            args[1] instanceof Function
+            typeof args[0] === 'string' &&
+            typeof args[1] === 'function'
         ) {
             obj = this
             name = args[0]
@@ -16,9 +16,9 @@ export default class EventEmmiter {
 
         } else if (
             args.length === 3 &&
-            args[0] instanceof Object &&
-            args[1] instanceof String &&
-            args[2] instanceof Function
+            typeof args[0] === 'object' &&
+            typeof args[1] === 'string' &&
+            typeof args[2] === 'function'
         ) {
             obj = args[0]
             name = args[1]
