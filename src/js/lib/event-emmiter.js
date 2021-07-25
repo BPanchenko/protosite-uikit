@@ -34,7 +34,7 @@ export default class EventEmmiter {
 
         if (!handlers) events.set(name, handlers = new Set)
 
-        handlers.add(callback)
+        handlers.add(callback.bind(obj))
 
         return this
     }
