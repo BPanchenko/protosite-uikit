@@ -56,7 +56,18 @@ export default class EventEmmiter {
     trigger(event, ...args) {
         if (BUS.has(this)) {
             let events = BUS.get(this)
-            events.has(event) && events.get(event).forEach(callback => callback(...args))
+            events.has(event) && events.get(event).forEach(callback => {
+                if (window.debug) {
+                    console.log(
+                        `%cevent %c"${event}"%c: `,
+                        'color: grey;',
+                        'color: black; font-weight: bold',
+                        'color: grey; font-weight: normal',
+                        ...args
+                    )
+                }
+                callback(...args)
+            })
         }
         return this
     }
