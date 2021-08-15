@@ -23,9 +23,7 @@ function decomposeArguments(args) {
         callback = args[2]
         
     } else console.error('Wrong Parameters')
-
-    console.log(obj, name, callback)
-
+	
     return { obj, name, callback }
 }
 
