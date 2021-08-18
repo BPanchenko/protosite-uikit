@@ -9,6 +9,7 @@
         "redhat.vscode-yaml",
         "redhat.vscode-xml",
         "ritwickdey.liveserver",
-        "samverschueren.final-newline"
+        "samverschueren.final-newline",
+        "zengxingxin.sort-js-object-keys"
     ]
 }
