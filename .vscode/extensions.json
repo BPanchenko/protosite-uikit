@@ -4,12 +4,12 @@
         "codezombiech.gitignore",
         "davidanson.vscode-markdownlint",
         "esbenp.prettier-vscode",
-        "jzarzoso.break-from-comma",
         "github.vscode-pull-request-github",
-        "redhat.vscode-yaml",
+        "jzarzoso.break-from-comma",
         "redhat.vscode-xml",
+        "redhat.vscode-yaml",
         "ritwickdey.liveserver",
         "samverschueren.final-newline",
-        "zengxingxin.sort-js-object-keys"
+        "tyriar.sort-lines"
     ]
 }
