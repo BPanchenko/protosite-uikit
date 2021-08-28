@@ -21,7 +21,7 @@
  ========================================================================== */
 
 .c-avatar {
-    --base-size: calc(5 * var(--unit));
+    --size: calc(5 * var(--unit));
 
     --size-xs: 2.4rem;
     --size-sm: 4rem;
@@ -39,8 +39,8 @@
     border-radius: 50%;
     overflow: hidden;
 
-    width: var(--base-size);
-    height: var(--base-size);
+    width: var(--size);
+    height: var(--size);
 
     font-size: .001px;
     text-align: center;
@@ -107,36 +107,23 @@
 }
 
 
-/* Modifiers: `c-avatar--sm`
+/* Modifiers: Sizes
  ========================================================================== */
 
-.c-avatar--xs {
-    --size-xs: 2.4rem;
-    --size-sm: 4rem;
-    --size-md: 8rem;
-    --size-lg: 12.8rem;
-    --size-xl: 19.2rem;
-}
-
-.c-avatar--xs {
-    width: var(--size-xs);
-    height: var(--size-xs);
+ .c-avatar--xs {
+    --size: var(--size-xs);
 }
 .c-avatar--sm {
-    width: var(--size-sm);
-    height: var(--size-sm);
+    --size: var(--size-sm);
 }
 .c-avatar--md {
-    width: var(--size-md);
-    height: var(--size-md);
+    --size: var(--size-md);
 }
 .c-avatar--lg {
-    width: var(--size-lg);
-    height: var(--size-lg);
+    --size: var(--size-lg);
 }
 .c-avatar--xl {
-    width: var(--size-xl);
-    height: var(--size-xl);
+    --size: var(--size-xl);
 }
 
 
