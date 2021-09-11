@@ -1,5 +1,6 @@
 {
     "recommendations": [
+        "amatiasq.sort-imports",
         "bierner.markdown-mermaid",
         "codezombiech.gitignore",
         "davidanson.vscode-markdownlint",
@@ -10,6 +11,7 @@
         "redhat.vscode-yaml",
         "ritwickdey.liveserver",
         "samverschueren.final-newline",
-        "tyriar.sort-lines"
+        "tyriar.sort-lines",
+        "zengxingxin.sort-js-object-keys"
     ]
 }
