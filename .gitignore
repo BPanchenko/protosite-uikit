@@ -1,6 +1,5 @@
 /node_modules
 /package-lock.json
-/.htaccess
 /favicon.ico
 /.vscode/ftp-kr.json
 /.vscode/ftp-kr.sync.cache.json
