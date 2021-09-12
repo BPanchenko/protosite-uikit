@@ -35,6 +35,15 @@ gulp.task('css-theme-article', function () {
     );
 });
 
+gulp.task('css-theme-errordoc', function () {
+    return postcssrc().then(config =>
+        gulp.src('../src/css/themes/errordoc.css')
+            .pipe(postcss(config.plugins, config.options))
+            .pipe(rename('uikit-theme-errordoc.css'))
+            .pipe(gulp.dest('../assets'))
+    );
+});
+
 gulp.task('css-uikit', function () {
     return postcssrc().then(config =>
         gulp.src('../src/css/main.css')
@@ -77,6 +86,7 @@ gulp.task('build-css',
         gulp.parallel(
             'css-critical',
             'css-theme-article',
+            'css-theme-errordoc',
             'css-uikit'
         )
     )
