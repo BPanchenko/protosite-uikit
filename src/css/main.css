@@ -3,9 +3,9 @@
 
 @import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
 
-/* Base document style */
+/* Document */
 
-@import "./base/document.css";
+@import "./base/_main.css";
 @import "./base/headings.css";
 @import "./base/list.css";
 @import "./base/paragraph.css";
@@ -39,16 +39,14 @@
 
 /* Utilities */
 
-@import "./utilities/_common.css";
-@import "./utilities/flex.css" screen;
+@import "./utilities/_main.css";
 @import "./utilities/margin.css";
 @import "./utilities/text.css";
 @import "./utilities/visibility.css";
-@import "./utilities/width.css" screen;
 
 /* Cosmetic styles */
 
-@import "./styles/_common.css";
+@import "./styles/_main.css";
 @import "./styles/background.css";
 @import "./styles/clean.css";
 @import "./styles/color.css";
