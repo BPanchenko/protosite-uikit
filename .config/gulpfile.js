@@ -4,17 +4,6 @@ const gulp = require('gulp');
 const clean = require('gulp-clean');
 const log = require('fancy-log');
 const rename = require("gulp-rename");
-const webpack = require('webpack-stream');
-
-// CLEAN
-
-gulp.task('clean', function () {
-    return gulp.src([
-            '../assets/critical*.css',
-            '../assets/uikit*.css'
-        ])
-        .pipe(clean({force: true}));
-});
 
 // CSS
 
@@ -53,21 +42,7 @@ gulp.task('css-uikit', function () {
     );
 });
 
-// JS
-
-gulp.task('build-js', function () {
-    return gulp.src('../src/js/uikit.js')
-        .pipe(webpack({
-            output: {
-                filename: 'uikit.js',
-            },
-            mode: 'production',
-            devtool: 'source-map'
-        }))
-        .pipe(gulp.dest('../assets'));
-});
-
-// WATCH
+// Watching
 
 gulp.task('watch-js', function () {
     gulp.watch([
@@ -79,7 +54,15 @@ gulp.task('watch-js', function () {
     });
 });
 
-// FINISH
+// Grouped tasks
+
+gulp.task('clean', function () {
+    return gulp.src([
+            '../assets/critical*.css',
+            '../assets/uikit*.css'
+        ])
+        .pipe(clean({force: true}));
+});
 
 gulp.task('build-css',
     gulp.series('clean',
@@ -92,4 +75,4 @@ gulp.task('build-css',
     )
 );
 
-gulp.task('default', gulp.parallel('build-css', 'build-js'));
+gulp.task('default', gulp.parallel('build-css', 'js-uikit'));
