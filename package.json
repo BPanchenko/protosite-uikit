@@ -1,23 +1,37 @@
 {
-  "name": "protosite.uikit",
-  "version": "2.5.4",
-  "description": "Front-end framework for developing web interfaces using BEMIT",
-  "author": "Boris Panchenko <hello@bpanchenko.ru>",
-  "main": "./assets/uikit.js",
-  "style": "./assets/uikit.css",
+  "name": "protosite-uikit",
+  "description": "CSS framework for developing web interfaces using BEMIT",
+  "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
+  "main": "./dist/main.css",
   "scripts": {
-    "build": "gulp --gulpfile .config/gulpfile.js"
+    "build": "postcss ./css/main.css > ./dist/main.css --config .config/postcss.config.js"
   },
   "analyze": true,
   "bugs": {
-    "url": "https://github.com/BPanchenko/protosite.uikit/issues"
+    "url": "https://github.com/BPanchenko/protosite-uikit/issues"
   },
-  "homepage": "https://github.com/BPanchenko/protosite.uikit#readme",
-  "license": "ISC",
   "preferGlobal": true,
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/BPanchenko/protosite.uikit.git"
-  }
+    "url": "https://github.com/BPanchenko/protosite-uikit.git"
+  },
+  "devDependencies": {
+    "cssnano": "5.0.14",
+    "cssnano-preset-default": "^5.1.11",
+    "postcss": "8.4.5",
+    "postcss-cli": "9.1.0",
+    "postcss-color-mod-function": "3.0.3",
+    "postcss-custom-properties": "12.0.2",
+    "postcss-import": "14.0.2",
+    "postcss-nested": "5.0.6",
+    "postcss-preset-env": "7.2.0"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Boris Panchenko",
+    "email": "boris.v.panchenko@gmail.com",
+    "url": "http://bp-studio.ru"
+  },
+  "version": "3.0.0"
 }

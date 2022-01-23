@@ -1,16 +1,10 @@
 module.exports = {
     parser: false,
-    plugins: {
-        'postcss-import': {},
-        'postcss-nested': {},
-        'postcss-custom-properties': {},
-        'postcss-color-function': {
-            'preserveCustomProps': true
-        },
-        'postcss-preset-env': {
-            'stage': 0
-        },
-        'autoprefixer': {},
-        'cssnano': {}
-    }
+    plugins: [
+        require("cssnano"),
+        require("postcss-import"),
+        require("postcss-nested"),
+        require("postcss-custom-properties"),
+        require("postcss-color-mod-function")
+    ]
 }
