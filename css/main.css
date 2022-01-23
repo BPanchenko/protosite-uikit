@@ -5,12 +5,12 @@
 
 /* Document */
 
-@import "./base/_main.css";
-@import "./base/headings.css";
-@import "./base/list.css";
-@import "./base/paragraph.css";
-@import "./base/table.css";
-@import "./base/text.css";
+@import "./document/_main.css";
+@import "./document/headings.css";
+@import "./document/list.css";
+@import "./document/paragraph.css";
+@import "./document/table.css";
+@import "./document/text.css";
 
 /* Components */
 
