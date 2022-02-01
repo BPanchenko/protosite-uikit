@@ -4,9 +4,9 @@
 
 	src: url('/resources/fonts/iconic/iconic-sm.eot');
 	src: url('/resources/fonts/iconic/iconic-sm.eot?#iconic-sm') format('embedded-opentype'),
-         url('/resources/fonts/iconic/iconic-sm.ttf') format('truetype'),
-         url('/resources/fonts/iconic/iconic-sm.otf') format('opentype'),
-         url('/resources/fonts/iconic/iconic-sm.svg#iconic-sm') format('svg');
+		 url('/resources/fonts/iconic/iconic-sm.ttf') format('truetype'),
+		 url('/resources/fonts/iconic/iconic-sm.otf') format('opentype'),
+		 url('/resources/fonts/iconic/iconic-sm.svg#iconic-sm') format('svg');
 
 	font-weight: 400;
 	font-style: normal;
@@ -16,23 +16,23 @@
 
 	src: url('/resources/fonts/iconic/iconic-md.eot');
 	src: url('/resources/fonts/iconic/iconic-md.eot?#iconic-md') format('embedded-opentype'),
-         url('/resources/fonts/iconic/iconic-md.ttf') format('truetype'),
-         url('/resources/fonts/iconic/iconic-md.otf') format('opentype'),
-         url('/resources/fonts/iconic/iconic-md.svg#iconic-md') format('svg');
+		 url('/resources/fonts/iconic/iconic-md.ttf') format('truetype'),
+		 url('/resources/fonts/iconic/iconic-md.otf') format('opentype'),
+		 url('/resources/fonts/iconic/iconic-md.svg#iconic-md') format('svg');
 
 	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Iconic';
-    
+	
 	src: url('/resources/fonts/iconic/iconic-lg.eot');
 	src: url('/resources/fonts/iconic/iconic-lg.eot?#iconic-lg') format('embedded-opentype'),
-         url('/resources/fonts/iconic/iconic-lg.ttf') format('truetype'),
-         url('/resources/fonts/iconic/iconic-lg.otf') format('opentype'),
-         url('/resources/fonts/iconic/iconic-lg.svg#iconic-lg') format('svg');
+		 url('/resources/fonts/iconic/iconic-lg.ttf') format('truetype'),
+		 url('/resources/fonts/iconic/iconic-lg.otf') format('opentype'),
+		 url('/resources/fonts/iconic/iconic-lg.svg#iconic-lg') format('svg');
 	
-    font-weight: 800;
+	font-weight: 800;
 	font-style: normal;
 }
 
@@ -46,25 +46,25 @@
 }
 
 .iconic[data-glyph]::before {
-    display: inline-block;
-    position: relative;
-    top: 1px;
-    vertical-align: baseline;
-    font-family: 'Iconic';
-    font-display: block;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 1;
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	vertical-align: baseline;
+	font-family: 'Iconic';
+	font-display: block;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .iconic[data-glyph]:empty::before {
-    width: 1em;
-    text-align: center;
-    box-sizing: content-box;
+	width: 1em;
+	text-align: center;
+	box-sizing: content-box;
 }
 
 .iconic[data-glyph].iconic-sm::before,
@@ -73,80 +73,80 @@
 .iconic[data-glyph].iconic-icon-sm::before,
 .iconic[data-glyph].iconic-icon-md::before,
 .iconic[data-glyph].iconic-icon-lg::before {
-    font-style: normal;
+	font-style: normal;
 }
 
 .iconic[data-glyph].iconic-sm::before {
-    font-weight: 400;
-    font-size: 16px;
+	font-weight: 400;
+	font-size: 16px;
 }
 
 .iconic[data-glyph].iconic-md::before {
-    font-weight: 500;
-    font-size: 32px;
+	font-weight: 500;
+	font-size: 32px;
 }
 
 .iconic[data-glyph].iconic-lg::before {
-    font-weight: 800;
-    font-size: 128px;
+	font-weight: 800;
+	font-size: 128px;
 }
 
 .iconic[data-glyph].iconic-icon-sm::before {
-    font-weight: 400;
+	font-weight: 400;
 }
 
 .iconic[data-glyph].iconic-icon-md::before {
-    font-weight: 500;
+	font-weight: 500;
 }
 
 .iconic[data-glyph].iconic-icon-lg::before {
-    font-weight: 800;
+	font-weight: 800;
 }
 
 .iconic[data-glyph].iconic-size-sm::before {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 .iconic[data-glyph].iconic-size-md::before {
-    font-size: 32px;
+	font-size: 32px;
 }
 
 .iconic[data-glyph].iconic-size-lg::before {
-    font-size: 128px;
+	font-size: 128px;
 }
 
 .iconic[data-glyph].iconic-align-left::before {
-    text-align: left;
+	text-align: left;
 }
 .iconic[data-glyph].iconic-align-right::before {
-    text-align: right;
+	text-align: right;
 }
 .iconic[data-glyph].iconic-align-center::before {
-    text-align: center;
+	text-align: center;
 }
 
 .iconic[data-glyph].iconic-flip-horizontal::before {
-    -webkit-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
 }
 
 .iconic[data-glyph].iconic-flip-vertical::before {
-    -webkit-transform: scale(1, -1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(1, -1);
+	-webkit-transform: scale(1, -1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(1, -1);
 }
 
 .iconic[data-glyph].iconic-flip-horizontal-vertical::before {
-    -webkit-transform: scale(-1, -1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, -1);
+	-webkit-transform: scale(-1, -1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, -1);
 }
 
 .iconic[data-glyph].iconic-rotate-90::before {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform:  rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform:  rotate(90deg);
 }
 
 

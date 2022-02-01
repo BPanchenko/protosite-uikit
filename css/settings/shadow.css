@@ -4,35 +4,35 @@
  ========================================================================== */
 
 :root {
-    --shadow-sharp: 0 1px 1px rgba(0,0,0,0.25), 
-                    0 2px 2px rgba(0,0,0,0.20), 
-                    0 4px 4px rgba(0,0,0,0.15), 
-                    0 8px 8px rgba(0,0,0,0.10),
-                    0 16px 16px rgba(0,0,0,0.05);
-      
-    --shadow-diffuse: 0 1px 1px rgba(0,0,0,0.08), 
-                    0 2px 2px rgba(0,0,0,0.12), 
-                    0 4px 4px rgba(0,0,0,0.16), 
-                    0 8px 8px rgba(0,0,0,0.20);
-      
-    --shadow-dreamy: 0 1px 2px rgba(0,0,0,0.07), 
-                    0 2px 4px rgba(0,0,0,0.07), 
-                    0 4px 8px rgba(0,0,0,0.07), 
-                    0 8px 16px rgba(0,0,0,0.07),
-                    0 16px 32px rgba(0,0,0,0.07), 
-                    0 32px 64px rgba(0,0,0,0.07);
-    
-    --shadow-shorter: 0 1px 1px rgba(0,0,0,0.11), 
-                    0 2px 2px rgba(0,0,0,0.11), 
-                    0 4px 4px rgba(0,0,0,0.11), 
-                    0 6px 8px rgba(0,0,0,0.11),
-                    0 8px 16px rgba(0,0,0,0.11);
-      
-    --shadow-longer: 0 2px 1px rgba(0,0,0,0.09), 
-                    0 4px 2px rgba(0,0,0,0.09), 
-                    0 8px 4px rgba(0,0,0,0.09), 
-                    0 16px 8px rgba(0,0,0,0.09),
-                    0 32px 16px rgba(0,0,0,0.09);
+	--shadow-sharp: 0 1px 1px rgba(0,0,0,0.25), 
+					0 2px 2px rgba(0,0,0,0.20), 
+					0 4px 4px rgba(0,0,0,0.15), 
+					0 8px 8px rgba(0,0,0,0.10),
+					0 16px 16px rgba(0,0,0,0.05);
+	  
+	--shadow-diffuse: 0 1px 1px rgba(0,0,0,0.08), 
+					0 2px 2px rgba(0,0,0,0.12), 
+					0 4px 4px rgba(0,0,0,0.16), 
+					0 8px 8px rgba(0,0,0,0.20);
+	  
+	--shadow-dreamy: 0 1px 2px rgba(0,0,0,0.07), 
+					0 2px 4px rgba(0,0,0,0.07), 
+					0 4px 8px rgba(0,0,0,0.07), 
+					0 8px 16px rgba(0,0,0,0.07),
+					0 16px 32px rgba(0,0,0,0.07), 
+					0 32px 64px rgba(0,0,0,0.07);
+	
+	--shadow-shorter: 0 1px 1px rgba(0,0,0,0.11), 
+					0 2px 2px rgba(0,0,0,0.11), 
+					0 4px 4px rgba(0,0,0,0.11), 
+					0 6px 8px rgba(0,0,0,0.11),
+					0 8px 16px rgba(0,0,0,0.11);
+	  
+	--shadow-longer: 0 2px 1px rgba(0,0,0,0.09), 
+					0 4px 2px rgba(0,0,0,0.09), 
+					0 8px 4px rgba(0,0,0,0.09), 
+					0 16px 8px rgba(0,0,0,0.09),
+					0 32px 16px rgba(0,0,0,0.09);
 }
 
 
@@ -41,44 +41,44 @@
  ========================================================================== */
 
 :root {
-    --shadow-key-umbra-opacity: 0.2;
-    --shadow-key-penumbra-opacity: 0.14;
-    --shadow-ambient-shadow-opacity: 0.12;
+	--shadow-key-umbra-opacity: 0.2;
+	--shadow-key-penumbra-opacity: 0.14;
+	--shadow-ambient-shadow-opacity: 0.12;
 
-    --shadow: var(--shadow-4dp);
+	--shadow: var(--shadow-4dp);
 
-    --shadow-2dp: 0 2px 2px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0 3px 1px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity)),
-    0 1px 5px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity));
+	--shadow-2dp: 0 2px 2px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+				  0 3px 1px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity)),
+				  0 1px 5px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity));
 
-    --shadow-3dp: 0 3px 4px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0 3px 3px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity)),
-    0 1px 8px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity));
+	--shadow-3dp: 0 3px 4px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+				  0 3px 3px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity)),
+				  0 1px 8px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity));
 
-    --shadow-4dp: 0 4px 5px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0 1px 10px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
-    0 2px 4px -1px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+	--shadow-4dp: 0 4px 5px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+				  0 1px 10px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
+				  0 2px 4px -1px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
 
-    --shadow-6dp: 0 6px 10px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0 1px 18px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
-    0 3px 5px -1px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+	--shadow-6dp: 0 6px 10px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+				  0 1px 18px 0 rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
+				  0 3px 5px -1px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
 
-    --shadow-8dp: 0 8px 10px 1px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0 3px 14px 2px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
-    0 5px 5px -3px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+	--shadow-8dp: 0 8px 10px 1px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+				  0 3px 14px 2px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
+				  0 5px 5px -3px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
 
-    --shadow-16dp: 0 16px 24px 2px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0  6px 30px 5px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
-    0  8px 10px -5px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+	--shadow-16dp: 0 16px 24px 2px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+	0  6px 30px 5px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
+	0  8px 10px -5px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
 
-    --shadow-24dp: 0  9px 46px  8px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    0 11px 15px -7px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
-    0 24px 38px  3px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+	--shadow-24dp: 0  9px 46px  8px rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+				   0 11px 15px -7px rgba(0, 0, 0, var(--shadow-ambient-shadow-opacity)),
+				   0 24px 38px  3px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
 
-    --focus-shadow: 0 0 8px rgba(0,0,0,.18), 0 8px 16px rgba(0,0,0,.36);
+	--focus-shadow: 0 0 8px rgba(0,0,0,.18), 0 8px 16px rgba(0,0,0,.36);
 
-    --inset-shadow-2dp: inset 0 1px 2px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
-    inset 0 3px 1px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
+	--inset-shadow-2dp: inset 0 1px 2px 0 rgba(0, 0, 0, var(--shadow-key-penumbra-opacity)),
+						inset 0 3px 1px -2px rgba(0, 0, 0, var(--shadow-key-umbra-opacity));
 
-    --text-shadow: 0 0 1px rgba(0,0,0,.6), 0 1px 2px rgba(0,0,0,.6);
+	--text-shadow: 0 0 1px rgba(0,0,0,.6), 0 1px 2px rgba(0,0,0,.6);
 }

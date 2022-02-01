@@ -13,7 +13,7 @@ table {
 }
 
 table + table {
-    margin-top: var(--space-default);
+	margin-top: var(--space-default);
 }
 
 
@@ -79,5 +79,5 @@ table tbody tr[aria-selected=true] {
 
 table.s-condensed th,
 table.s-condensed td {
-    padding: 0;
+	padding: 0;
 }

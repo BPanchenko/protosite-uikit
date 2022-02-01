@@ -2,8 +2,8 @@
 @import "../settings/_import.css";
 
 /**
- * Name:            Text elements
- * Description:     Defining styles for formatting text
+ * Name: Text elements
+ * Description:	Defining styles for formatting text
  *
  * ======================================================================== */
 
@@ -13,23 +13,23 @@
 
 a:not([class]),
 .u-link {
-    outline: 0;
-    background-color: transparent;
-    color: var(--link-color);
-    text-decoration: var(--link-text-decoration);
-    transition: var(--link-transition);
-    text-decoration-skip-ink: auto;
+	outline: 0;
+	background-color: transparent;
+	color: var(--link-color);
+	text-decoration: var(--link-text-decoration);
+	transition: var(--link-transition);
+	text-decoration-skip-ink: auto;
 }
 
 a:not([class]):hover,
 .u-link:hover {
-    outline: 0;
-    color: var(--link-hover-color);
-    text-decoration: var(--link-hover-text-decoration);
+	outline: 0;
+	color: var(--link-hover-color);
+	text-decoration: var(--link-hover-text-decoration);
 }
 
 .u-link {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 
@@ -37,13 +37,13 @@ a:not([class]):hover,
  ========================================================================== */
 
 b {
-    font-weight: 500;
+	font-weight: 500;
 }
 b > b, strong {
-    font-weight: 600;
+	font-weight: 600;
 }
 strong > strong {
-    font-weight: 700;
+	font-weight: 700;
 }
 
 
@@ -51,8 +51,8 @@ strong > strong {
  ========================================================================== */
 
 small {
-    font-size: var(--text-sm);
-    line-height: var(--line-height-sm);
+	font-size: var(--text-sm);
+	line-height: var(--line-height-sm);
 }
 
 
@@ -60,55 +60,55 @@ small {
  ========================================================================== */
 
 abbr[title] {
-    border-bottom: 1px dotted;
+	border-bottom: 1px dotted;
 }
 
 code,
 kbd,
 pre,
 samp {
-    font-family: var(--font-monospace, monospace);
-    font-size: 1.3rem;
+	font-family: var(--font-monospace, monospace);
+	font-size: 1.3rem;
 }
 
 ins {
-    display: inline-block;
-    margin: 0 -0.2rem;
-    padding: 0 0.2rem;
-    background-color: var(--clr-green-100);
-    color: var(--clr-grey-900);
-    text-decoration: none;
+	display: inline-block;
+	margin: 0 -0.2rem;
+	padding: 0 0.2rem;
+	background-color: var(--clr-green-100);
+	color: var(--clr-grey-900);
+	text-decoration: none;
 }
 
 mark {
-    background-color: var(--selection-background-color);
-    color: var(--selection-color);
-    text-decoration: none;
+	background-color: var(--selection-background-color);
+	color: var(--selection-color);
+	text-decoration: none;
 }
 
 i,
 em,
 dfn,
 q {
-    font-style: italic;
+	font-style: italic;
 }
 
 pre {
-    line-height: 1.2;
-    overflow: auto;
-    white-space: pre-wrap;
+	line-height: 1.2;
+	overflow: auto;
+	white-space: pre-wrap;
 }
 
 sub,
 sup {
-    font-size: 1.1rem;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+	font-size: 1.1rem;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 sup {
-    top: -0.5em;
+	top: -0.5em;
 }
 sub {
-    bottom: -0.25em;
+	bottom: -0.25em;
 }

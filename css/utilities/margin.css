@@ -1,14 +1,14 @@
 @import "../settings/space.css";
 
 :root {
-    --u-margin: var(--space-default);
-    --u-margin-xxs: var(--space-xxs);
-    --u-margin-xs: var(--space-xs);
-    --u-margin-sm: var(--space-sm);
-    --u-margin-md: var(--space-md);
-    --u-margin-lg: var(--space-lg);
-    --u-margin-xl: var(--space-xl);
-    --u-margin-xxl: var(--space-xxl);
+	--u-margin: var(--space-default);
+	--u-margin-xxs: var(--space-xxs);
+	--u-margin-xs: var(--space-xs);
+	--u-margin-sm: var(--space-sm);
+	--u-margin-md: var(--space-md);
+	--u-margin-lg: var(--space-lg);
+	--u-margin-xl: var(--space-xl);
+	--u-margin-xxl: var(--space-xxl);
 }
 
 .u-margin { margin-bottom: var(--u-margin); }

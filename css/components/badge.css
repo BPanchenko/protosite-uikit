@@ -2,27 +2,27 @@
 @import "../settings/_import.css";
 
 /**
- * Component:       `c-badge`
- * Description:     Defines styles for badges
+ * Component:	   `c-badge`
+ * Description:	 Defines styles for badges
  * 
- * Modifiers:       `c-badge--*colors*`
+ * Modifiers:	   `c-badge--*colors*`
  * 
  ========================================================================== */
 
 .c-badge {
-    display: inline-block;
-    vertical-align: middle;
-    border-radius: 50vw;
-    
-    padding: var(--space-xxs) var(--space-xs);
-    font-size: var(--text-xs);
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    
-    cursor: default;
-    background-color: var(--clr-grey-600);
-    color: var(--clr-white);
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 50vw;
+	
+	padding: var(--space-xxs) var(--space-xs);
+	font-size: var(--text-xs);
+	line-height: 1.1;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	
+	cursor: default;
+	background-color: var(--clr-grey-600);
+	color: var(--clr-white);
 }
 
 
@@ -30,17 +30,17 @@
  ========================================================================== */
 
 .c-badge--primary {
-    background-color: var(--primary-color);
+	background-color: var(--primary-color);
 }
 .c-badge--info {
-    background-color: var(--clr-cyan-800);
+	background-color: var(--clr-cyan-800);
 }
 .c-badge--success {
-    background-color: var(--success-color);
+	background-color: var(--success-color);
 }
 .c-badge--warning {
-    background-color: var(--warning-color);
+	background-color: var(--warning-color);
 }
 .c-badge--danger {
-    background-color: var(--danger-color);
+	background-color: var(--danger-color);
 }

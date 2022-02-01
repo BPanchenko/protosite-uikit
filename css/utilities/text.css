@@ -4,12 +4,12 @@
 @import "../settings/typography.css";
 
 :root {
-    --u-text-color: var(--text-color);
-    --u-text-muted-color: var(--muted-color);
-    --u-text-primary-color: #2d7091;
-    --u-text-success-color: var(--success-color);
-    --u-text-warning-color: #e28327;
-    --u-text-danger-color: #d85030;
+	--u-text-color: var(--text-color);
+	--u-text-muted-color: var(--muted-color);
+	--u-text-primary-color: #2d7091;
+	--u-text-success-color: var(--success-color);
+	--u-text-warning-color: #e28327;
+	--u-text-danger-color: #d85030;
 }
 
 
@@ -17,28 +17,28 @@
  ========================================================================== */
 
 .u-text-default {
-    font-size: var(--text-md);
-    line-height: var(--line-height-default);
+	font-size: var(--text-md);
+	line-height: var(--line-height-default);
 }
 .u-text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--line-height-lg);
+	font-size: var(--text-xl);
+	line-height: var(--line-height-lg);
 }
 .u-text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--line-height-lg);
+	font-size: var(--text-lg);
+	line-height: var(--line-height-lg);
 }
 .u-text-md {
-    font-size: var(--text-md);
-    line-height: var(--line-height-md);
+	font-size: var(--text-md);
+	line-height: var(--line-height-md);
 }
 .u-text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--line-height-sm);
+	font-size: var(--text-sm);
+	line-height: var(--line-height-sm);
 }
 .u-text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--line-height-xs);
+	font-size: var(--text-xs);
+	line-height: var(--line-height-xs);
 }
 
 
@@ -89,56 +89,56 @@
 
 /* xdesktop */
 @media (--screen-xdesktop) {
-    .u-text-center\@xdesktop { text-align: center !important; }
-    .u-text-left\@xdesktop { text-align: left !important; }
-    .u-text-right\@xdesktop { text-align: right !important; }
+	.u-text-center\@xdesktop { text-align: center !important; }
+	.u-text-left\@xdesktop { text-align: left !important; }
+	.u-text-right\@xdesktop { text-align: right !important; }
 }
 
 /* desktop */
 @media (--screen-desktop) {
-    .u-text-center\@desktop { text-align: center !important; }
-    .u-text-left\@desktop { text-align: left !important; }
-    .u-text-right\@desktop { text-align: right !important; }
+	.u-text-center\@desktop { text-align: center !important; }
+	.u-text-left\@desktop { text-align: left !important; }
+	.u-text-right\@desktop { text-align: right !important; }
 }
 
 /* tablet-landscape */
 @media (--screen-tablet-landscape) {
-    .u-text-center\@tablet,
-    .u-text-center\@tablet-landscape { text-align: center !important; }
-    .u-text-left\@tablet,
-    .u-text-left\@tablet-landscape { text-align: left !important; }
-    .u-text-right\@tablet,
-    .u-text-right\@tablet-landscape { text-align: right !important; }
+	.u-text-center\@tablet,
+	.u-text-center\@tablet-landscape { text-align: center !important; }
+	.u-text-left\@tablet,
+	.u-text-left\@tablet-landscape { text-align: left !important; }
+	.u-text-right\@tablet,
+	.u-text-right\@tablet-landscape { text-align: right !important; }
 }
 
 /* tablet-portrait */
 @media (--screen-tablet-portrait) {
-    .u-text-center\@tablet,
-    .u-text-center\@tablet-portrait { text-align: center !important; }
-    .u-text-left\@tablet,
-    .u-text-left\@tablet-portrait { text-align: left !important; }
-    .u-text-right\@tablet,
-    .u-text-right\@tablet-portrait { text-align: right !important; }
+	.u-text-center\@tablet,
+	.u-text-center\@tablet-portrait { text-align: center !important; }
+	.u-text-left\@tablet,
+	.u-text-left\@tablet-portrait { text-align: left !important; }
+	.u-text-right\@tablet,
+	.u-text-right\@tablet-portrait { text-align: right !important; }
 }
 
 /* handset-landscape */
 @media (--screen-handset-landscape) {
-    .u-text-center\@handset,
-    .u-text-center\@handset-landscape { text-align: center !important; }
-    .u-text-left\@handset,
-    .u-text-left\@handset-landscape { text-align: left !important; }
-    .u-text-right\@handset,
-    .u-text-right\@handset-landscape { text-align: right !important; }
+	.u-text-center\@handset,
+	.u-text-center\@handset-landscape { text-align: center !important; }
+	.u-text-left\@handset,
+	.u-text-left\@handset-landscape { text-align: left !important; }
+	.u-text-right\@handset,
+	.u-text-right\@handset-landscape { text-align: right !important; }
 }
 
 /* handset-portrait */
 @media (--screen-handset-portrait) {
-    .u-text-center\@handset,
-    .u-text-center\@handset-portrait { text-align: center !important; }
-    .u-text-left\@handset,
-    .u-text-left\@handset-portrait { text-align: left !important; }
-    .u-text-right\@handset,
-    .u-text-right\@handset-portrait { text-align: right !important; }
+	.u-text-center\@handset,
+	.u-text-center\@handset-portrait { text-align: center !important; }
+	.u-text-left\@handset,
+	.u-text-left\@handset-portrait { text-align: left !important; }
+	.u-text-right\@handset,
+	.u-text-right\@handset-portrait { text-align: right !important; }
 }
 
 
@@ -146,14 +146,14 @@
  ========================================================================== */
 
 .u-text-nowrap {
-    white-space: nowrap;
+	white-space: nowrap;
 }
 .u-text-truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .u-text-break {
-    word-wrap: break-word;
-    hyphens: auto;
+	word-wrap: break-word;
+	hyphens: auto;
 }

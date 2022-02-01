@@ -34,6 +34,6 @@ table.s-hovered tbody tr:hover,
 
 .c-panel.s-hovered:hover,
 .c-thumbnail.s-hovered:hover  {
-    box-shadow: var(--shadow-6dp);
-    top: -0.2rem;
+	box-shadow: var(--shadow-6dp);
+	top: -0.2rem;
 }

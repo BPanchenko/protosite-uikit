@@ -3,72 +3,71 @@
 
 
 /* ========================================================================
-   Component: `c-tab`
-   
-   Markup:
-   
-   <c-tablist>
-       <c-tab aria-controls="tabpanel3" id="tab3" data-text="Tab A"></c-tab>
-       <c-tab aria-controls="tabpanel4" id="tab4" data-text="Tab B"></c-tab>
-   </c-tablist>
-   
+	Component: `c-tab`
+
+	Markup:
+
+	<c-tablist>
+		<c-tab aria-controls="tabpanel3" id="tab3" data-text="Tab A"></c-tab>
+		<c-tab aria-controls="tabpanel4" id="tab4" data-text="Tab B"></c-tab>
+	</c-tablist>
  ========================================================================== */
 
 .c-tab {
-    display: block;
-    padding: var(--space-sm) var(--space-default) var(--space-sm) var(--space-default);
-    box-sizing: border-box;
-    min-width: 9rem;
-    flex: 0 0 auto;
+	display: block;
+	padding: var(--space-sm) var(--space-default) var(--space-sm) var(--space-default);
+	box-sizing: border-box;
+	min-width: 9rem;
+	flex: 0 0 auto;
 
-    background-color: transparent;
-    text-align: center;
-    line-height: 1;
-    color: var(--clr-grey-700);
-    cursor: pointer;
+	background-color: transparent;
+	text-align: center;
+	line-height: 1;
+	color: var(--clr-grey-700);
+	cursor: pointer;
 
-    transition-property: background-color, color;
-    transition-duration: 0.1s;
-    transition-timing-function: var(--easing);
+	transition-property: background-color, color;
+	transition-duration: 0.1s;
+	transition-timing-function: var(--easing);
 }
 
 .c-tab:hover {
-    background-color: var(--clr-grey-100);
+	background-color: var(--clr-grey-100);
 }
 
 .c-tab[aria-selected=true] {
-    color: var(--clr-grey-900);
-    cursor: default;
+	color: var(--clr-grey-900);
+	cursor: default;
 }
 .c-tab[aria-selected=true]:hover {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 .c-tab + .c-tab {
-    /* margin-left: 0.8rem; */
+	margin-left: var(--space-xxxs);
 }
 
 .c-tab__label,
 .c-tab__icon {
-    display: block;
-    line-height: 2.4rem;
-    vertical-align: middle;
+	display: block;
+	line-height: 2.4rem;
+	vertical-align: middle;
 }
 
 .c-tab__label {
-    font-weight: 600;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    max-width: 36rem;
+	font-weight: 600;
+	letter-spacing: 0.08rem;
+	text-transform: uppercase;
+	max-width: 36rem;
 
-    /* u-text-truncate */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	/* u-text-truncate */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .c-tab__icon + .c-tab__label {
-    line-height: 2rem;
+	line-height: 2rem;
 }
 
 
@@ -76,36 +75,36 @@
  ========================================================================== */
 
 .c-tabs-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: row nowrap;
-    padding: 0;
-    contain: layout style;
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	flex-flow: row nowrap;
+	padding: 0;
+	contain: layout style;
 }
 
 .c-tabs-container + hr {
-    margin-top: 0;
-    border-bottom: none;
-    border-top: 0.1rem solid var(--clr-grey-300);
+	margin-top: 0;
+	border-bottom: none;
+	border-top: 0.1rem solid var(--clr-grey-300);
 }
 
 
 /* Element: `c-tab-indicator`
  ========================================================================== */
-        
+		
 .c-tab-indicator {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: translateX(0);
-    height: 0.2rem;
-    background-color: var(--clr-grey-900);
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translateX(0);
+	height: 0.2rem;
+	background-color: var(--clr-grey-900);
 
-    transition-property: left, transform, width;
-    transition-duration: 0.1s;
-    transition-timing-function: var(--easing);
+	transition-property: left, transform, width;
+	transition-duration: 0.1s;
+	transition-timing-function: var(--easing);
 }
 
 
@@ -114,22 +113,22 @@
  ========================================================================== */
 
 @supports not (display: flex) {
-    .c-tabs-container {
-        display: block;
-        min-height: 4.8rem;
-    }
+	.c-tabs-container {
+		display: block;
+		min-height: 4.8rem;
+	}
 
-    .c-tabs-container::before,
-    .c-tabs-container::after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+	.c-tabs-container::before,
+	.c-tabs-container::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 
-    .c-tab {
-        display: inline-block;
-        float: left;
-    }
+	.c-tab {
+		display: inline-block;
+		float: left;
+	}
 }
 
 
@@ -138,14 +137,14 @@
  ========================================================================== */
 
 .c-panel .c-tabs-container {
-    padding: 0;
+	padding: 0;
 }
 
 .c-panel .c-tabs-container::after {
-    content: ' ';
-    position: absolute;
-    bottom: -0.1rem;
-    left: 0;
-    right: 0;
-    border-bottom: 0.1rem solid var(--clr-grey-400);
+	content: ' ';
+	position: absolute;
+	bottom: -0.1rem;
+	left: 0;
+	right: 0;
+	border-bottom: 0.1rem solid var(--clr-grey-400);
 }

@@ -5,26 +5,24 @@
  ========================================================================== */
 
 .o-container {
-    --width: 100%;
+	--width: 100%;
 }
 
 /* ========================================================================
-   Object: Container
+	Object: Container
  ========================================================================== */
 
 .o-container {
-    display: block;
-    width: 100%;
-    max-width: var(--width);
-    margin: 4rem auto 6.4rem;
+	display: block;
+	width: 100%;
+	max-width: var(--width);
+	margin: 4rem auto 6.4rem;
 }
-.o-container::before,
+
 .o-container::after {
-    content: " ";
-    display: table;
-}
-.o-container::after {
-    clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 
@@ -32,37 +30,37 @@
  ========================================================================== */
 
 @media (--screen-xdesktop) {
-    .o-container {
-        --width: 130.4rem;
-    }
+	.o-container {
+		--width: 130.4rem;
+	}
 }
 
 @media (--screen-desktop) {
-    .o-container {
-        --width: 111.2rem;
-    }
+	.o-container {
+		--width: 111.2rem;
+	}
 }
 
 @media (--screen-tablet-landscape) {
-    .o-container {
-        --width: 92rem;
-    }
+	.o-container {
+		--width: 92rem;
+	}
 }
 
 @media (--screen-tablet-portrait) {
-    .o-container {
-        --width: 72rem;
-    }
+	.o-container {
+		--width: 72rem;
+	}
 }
 
 @media (--screen-handset-landscape) {
-    .o-container {
-        --width: 46.4rem;
-    }
+	.o-container {
+		--width: 46.4rem;
+	}
 }
 
 @media (--screen-handset-portrait) {
-    .o-container {
-        --width: 32rem;
-    }
+	.o-container {
+		--width: 32rem;
+	}
 }

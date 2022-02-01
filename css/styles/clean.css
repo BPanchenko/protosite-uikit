@@ -6,8 +6,8 @@
  ========================================================================== */
 
 .c-panel.s-clean {
-    background: transparent;
-    box-shadow: none;
+	background: transparent;
+	box-shadow: none;
 }
 
 
@@ -15,23 +15,23 @@
  ========================================================================== */
 
 .c-button.s-clean {
-    --bgcolor: transparent;
-    --hover-bgcolor: var(--clr-blue-grey-50);
-    --color: var(--text-color);
-    --hover-color: var(--text-color);
-    box-shadow: none;
+	--bgcolor: transparent;
+	--hover-bgcolor: var(--clr-blue-grey-50);
+	--color: var(--text-color);
+	--hover-color: var(--text-color);
+	box-shadow: none;
 }
 
 .c-button.s-clean:active,
 .c-button.s-clean[aria-checked=true] {
-    background-color: var(--hover-bgcolor);
+	background-color: var(--hover-bgcolor);
 }
 
 .c-button.s-clean .c-button__icon {
-    margin-left: -.2rem;
-    margin-right: .8rem;
+	margin-left: -.2rem;
+	margin-right: .8rem;
 }
 .c-button.s-clean .c-button__text + .c-button__icon {
-    margin-left: .8rem;
-    margin-right: -.2rem;
+	margin-left: .8rem;
+	margin-right: -.2rem;
 }

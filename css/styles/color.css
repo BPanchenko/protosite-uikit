@@ -18,12 +18,12 @@
 
 .c-button.s-danger:not(.s-clean, .s-bordered),
 .c-button.s-danger:not(.s-clean, .s-bordered):hover {
-    color: var(--clr-white);
+	color: var(--clr-white);
 }
 
 .c-button.s-danger:not(.s-clean, .s-bordered):focus,
 .c-panel:not(.s-transparent) .c-button.s-danger:not(.s-clean, .s-bordered):focus {
-    background-color: var(--clr-red-900);
+	background-color: var(--clr-red-900);
 }
 
 
@@ -52,12 +52,12 @@
 
 .c-button.s-primary:not(.s-clean, .s-bordered),
 .c-button.s-primary:not(.s-clean, .s-bordered):hover {
-    color: var(--clr-white);
+	color: var(--clr-white);
 }
 
 .c-button.s-primary:not(.s-clean, .s-bordered):focus,
 .c-panel:not(.s-transparent) .c-button.s-primary:not(.s-clean, .s-bordered):focus {
-    background-color: var(--clr-blue-900);
+	background-color: var(--clr-blue-900);
 }
 
 
@@ -77,12 +77,12 @@
 
 .c-button.s-success:not(.s-clean, .s-bordered),
 .c-button.s-success:not(.s-clean, .s-bordered):hover {
-    color: var(--clr-white);
+	color: var(--clr-white);
 }
 
 .c-button.s-success:not(.s-clean, .s-bordered):focus,
 .c-panel:not(.s-transparent) .c-button.s-success:not(.s-clean, .s-bordered):focus {
-    background-color: var(--clr-green-900);
+	background-color: var(--clr-green-900);
 }
 
 
@@ -102,12 +102,12 @@
 
 .c-button.s-warning:not(.s-clean, .s-bordered),
 .c-button.s-warning:not(.s-clean, .s-bordered):hover {
-    color: var(--clr-white);
+	color: var(--clr-white);
 }
 
 .c-button.s-warning:not(.s-clean, .s-bordered):focus,
 .c-panel:not(.s-transparent) .c-button.s-warning:not(.s-clean, .s-bordered):focus {
-    background-color: var(--clr-orange-900);
+	background-color: var(--clr-orange-900);
 }
 
 

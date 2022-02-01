@@ -2,42 +2,42 @@
 @import "../settings/_import.css";
 
 /**
- * Component:    Chart
+ * Component:	Chart
  * Description: Style of charts made using the "D3.js" library.
  *
- * Components:    `c-chart`
- *                `app-worldmap`
+ * Components:	`c-chart`
+ *				`app-worldmap`
  *
- * Elements:    `c-chart__axis`
- *                `c-chart__graph`
- *                `c-chart__legend`
+ * Elements:	`c-chart__axis`
+ *				`c-chart__graph`
+ *				`c-chart__legend`
  *
  * Modifiers:   `c-chart--area`
- *                `c-chart--bar`
- *                `c-chart--bubbles`
- *                `c-chart--line`
- *                `c-chart--line`
+ *				`c-chart--bar`
+ *				`c-chart--bubbles`
+ *				`c-chart--line`
+ *				`c-chart--line`
  *
  ========================================================================== */
 
 :root {
-    --c-chart-color: var(--clr-grey-800);
-    --c-chart-stroke-width: 0.2rem;
+	--c-chart-color: var(--clr-grey-800);
+	--c-chart-stroke-width: 0.2rem;
 }
 
 /* ========================================================================
-    Component: `c-chart`
+	Component: `c-chart`
  ========================================================================== */
 
 .c-chart,
 .c-chart__canvas {
-    position: relative;
-    user-select: none;
+	position: relative;
+	user-select: none;
 }
 
 
 /* ========================================================================
-    Element: `c-chart__axis`
+	Element: `c-chart__axis`
  ========================================================================== */
 
 .c-chart__axis .tick line { stroke: var(--c-chart-color); }
@@ -45,49 +45,50 @@
 
 
 /* ========================================================================
-    Element: `c-chart__graph`
+	Element: `c-chart__graph`
  ========================================================================== */
 
 /*path*/
 .c-chart__graph .line {
-        stroke: var(--c-chart-color);
-        stroke-width: var(--c-chart-stroke-width);
-        stroke-linecap: round;
-        fill: none;
-    }
+	stroke: var(--c-chart-color);
+	stroke-width: var(--c-chart-stroke-width);
+	stroke-linecap: round;
+	fill: none;
+}
 
 
 /*circle*/
 .c-chart__graph .point .dot {
-    stroke: var(--clr-grey-800);
-    stroke-width: var(--c-chart-stroke-width);
-    fill: var(--c-chart-color);
+	stroke: var(--clr-grey-800);
+	stroke-width: var(--c-chart-stroke-width);
+	fill: var(--c-chart-color);
 
-    transition-property: stroke, fill;
-    transition-duration: 0.16s;
-    transition-timing-function: var(--easing);
+	transition-property: stroke, fill;
+	transition-duration: 0.16s;
+	transition-timing-function: var(--easing);
 }
 
 /*circle*/
 .c-chart__graph .point .handle {
-    stroke-width: 0;
-    fill: transparent;
+	stroke-width: 0;
+	fill: transparent;
 }
 
 .c-chart__graph .point--hovered {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .c-chart__graph .point--hovered:hover .dot {
-    stroke: var(--clr-grey-800);
-    fill: var(--clr-grey-800);
+	stroke: var(--clr-grey-800);
+	fill: var(--clr-grey-800);
 }
 
 /* ========================================================================
  Element: `c-chart__loader`
  ========================================================================== */
 
-/*g*/.c-chart__loader {
+/*g*/
+.c-chart__loader {
 
 }
 
@@ -95,7 +96,8 @@
  Element: `c-chart__tracker`
  ========================================================================== */
 
-/*g*/.c-chart__tracker {
+/*g*/
+.c-chart__tracker {
 
 }
 
@@ -105,5 +107,5 @@
 
 /*g*/
 .c-chart__controls {
-    position: relative;
+	position: relative;
 }

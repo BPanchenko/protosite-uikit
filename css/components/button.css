@@ -6,18 +6,18 @@
  * Description: Defines styles for buttons
  * 
  * Wrappers: `c-button-group`
- *           `c-button-dropdown`
+ *		   `c-button-dropdown`
  *
  * Modifiers: `c-button--link`
- *            `c-button--icon`
+ *			`c-button--icon`
  * 
  * Styles:  `s-bordered`
- *          `s-clean`
- *          `s-danger`
- *          `s-large`
- *          `s-primary`
- *          `s-small`
- *          `s-warning`
+ *		  `s-clean`
+ *		  `s-danger`
+ *		  `s-large`
+ *		  `s-primary`
+ *		  `s-small`
+ *		  `s-warning`
  *
  * States: `:active` or `[aria-checked=true]`
  * 
@@ -25,33 +25,33 @@
  * 
  * <!-- c-button-group -->
  * <div class="c-button-group">
- *     <button class="c-button"></button>
- *     <button class="c-button"></button>
+ *	 <button class="c-button"></button>
+ *	 <button class="c-button"></button>
  * </div>
  * 
  * <!-- c-button-dropdown -->
  * <div class="c-button-dropdown" data-ui-dropdown>
- *     <button class="c-button"></button>
- *     <ul class="c-dropdown">
- *         <li><a href=""></a></li>
- *     </ul>
+ *	 <button class="c-button"></button>
+ *	 <ul class="c-dropdown">
+ *		 <li><a href=""></a></li>
+ *	 </ul>
  * </div>
  * 
  ========================================================================== */
 
 .c-button {
-    --height: 3.2rem;
-    --padding-horizontal: var(--space-md);
-    --padding-vertical: 0;
+	--height: 3.2rem;
+	--padding-horizontal: var(--space-md);
+	--padding-vertical: 0;
 
-    --font-size: var(--text-md);
-    --font-weight: 500;
-    --color: var(--clr-white);
-    --hover-color: var(--clr-white);
-    
-    --bgcolor: var(--clr-blue-grey-400);
-    --focus-bgcolor: var(--clr-blue-grey-600);
-    --hover-bgcolor: var(--clr-blue-grey-500);
+	--font-size: var(--text-md);
+	--font-weight: 500;
+	--color: var(--clr-white);
+	--hover-color: var(--clr-white);
+	
+	--bgcolor: var(--clr-blue-grey-400);
+	--focus-bgcolor: var(--clr-blue-grey-600);
+	--hover-bgcolor: var(--clr-blue-grey-500);
 }
 
 
@@ -60,55 +60,55 @@
  ========================================================================== */
 
 .c-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 
-    border: none;
-    outline: none;
-    text-align: center;
+	border: none;
+	outline: none;
+	text-align: center;
 
-    display: inline-block;
-    line-height: var(--height);
-    box-sizing: border-box;
-    padding: var(--padding-vertical) var(--padding-horizontal);
-    vertical-align: middle;
+	display: inline-block;
+	line-height: var(--height);
+	box-sizing: border-box;
+	padding: var(--padding-vertical) var(--padding-horizontal);
+	vertical-align: middle;
 
-    cursor: pointer;
-    font-family: var(--font-primary);
-    font-size: var(--font-size);
-    font-weight: var(--font-weight);
+	cursor: pointer;
+	font-family: var(--font-primary);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 
-    background-color: var(--bgcolor);
-    border-radius: 0.3rem;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-                0 2px 2px rgba(0,0,0,0.11);
+	background-color: var(--bgcolor);
+	border-radius: 0.3rem;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+				0 2px 2px rgba(0,0,0,0.11);
 
-    transition: var(--link-transition), background-color 0.16s var(--easing);
-    user-select: none;
+	transition: var(--link-transition), background-color 0.16s var(--easing);
+	user-select: none;
 }
 
 .c-button {
-    color: var(--color);
+	color: var(--color);
 }
 .c-button:hover {
-    background-color: var(--hover-bgcolor);
-    color: var(--hover-color);
+	background-color: var(--hover-bgcolor);
+	color: var(--hover-color);
 }
 
 .c-button + .c-button {
-    margin-left: var(--space-sm);
+	margin-left: var(--space-sm);
 }
 
 .c-button > .iconic[data-glyph] {
-    margin-right: var(--space-sm);
+	margin-right: var(--space-sm);
 }
 .c-button > .iconic[data-glyph]::before {
-    vertical-align: middle;
+	vertical-align: middle;
 }
  
 .c-button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+	border: 0;
+	padding: 0;
 }
 
 
@@ -117,7 +117,7 @@
 
 .c-button:active,
 .c-button[aria-checked=true] {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 
@@ -126,7 +126,7 @@
 
 .c-button:focus,
 .c-panel:not(.s-transparent) .c-button:focus {
-    background-color: var(--focus-bgcolor);
+	background-color: var(--focus-bgcolor);
 }
 
 
@@ -134,14 +134,14 @@
  ========================================================================== */
 
 .c-panel:not(.s-transparent) {
-    .c-button {
-        box-shadow: none;
-    }
+	.c-button {
+		box-shadow: none;
+	}
 
-    .c-button:active,
-    .c-button[aria-checked=true] {
-        box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
-    }
+	.c-button:active,
+	.c-button[aria-checked=true] {
+		box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
+	}
 }
 
 
@@ -151,34 +151,34 @@
 
 .c-button__icon,
 .c-button__text {
-    display: inline-block;
-    vertical-align: baseline;
-    line-height: 1;
+	display: inline-block;
+	vertical-align: baseline;
+	line-height: 1;
 }
 .c-button__icon {
-    margin-left: -1rem;
-    margin-right: 1.3rem;
+	margin-left: -1rem;
+	margin-right: 1.3rem;
 }
 
 .c-button__text + .c-button__icon {
-    margin-left: 1.3rem;
-    margin-right: -1rem;
+	margin-left: 1.3rem;
+	margin-right: -1rem;
 }
 
 /* text-crop */
 
 .c-button__text::before,
 .c-button__text::after {
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
 }
 .c-button__text::before {
-    margin-bottom: -0.2em;
+	margin-bottom: -0.2em;
 }
 .c-button__text::after {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 
@@ -186,42 +186,42 @@
  ========================================================================== */
 
 .c-button--icon {
-    --icon-size: 2rem;
-    --bgcolor: transparent;
-    --hover-bgcolor: var(--clr-blue-grey-50);
-    --color: var(--text-color);
-    --hover-color: var(--text-color);
+	--icon-size: 2rem;
+	--bgcolor: transparent;
+	--hover-bgcolor: var(--clr-blue-grey-50);
+	--color: var(--text-color);
+	--hover-color: var(--text-color);
 }
 
 .c-button--icon {
-    box-shadow: none !important;
-    padding: 0 var(--space-sm);
+	box-shadow: none !important;
+	padding: 0 var(--space-sm);
 }
 .c-button--icon:hover {
-    background-color: var(--hover-bgcolor);
+	background-color: var(--hover-bgcolor);
 }
 .c-button--icon:focus,
 .c-button--icon:active,
 .c-button--icon[aria-checked=true] {
-    background-color: var(--clr-grey-200);
+	background-color: var(--clr-grey-200);
 }
 
 .c-button--icon.iconic:before,
 .c-button.iconic:before {
-    position: static;
-    line-height: 1.2;
-    text-align: center;
-    vertical-align: bottom;
-    transform-origin: center;
+	position: static;
+	line-height: 1.2;
+	text-align: center;
+	vertical-align: bottom;
+	transform-origin: center;
 }
 
 .c-button--icon.iconic:empty:before {
-    width: var(--icon-size);
-    height: var(--icon-size);
+	width: var(--icon-size);
+	height: var(--icon-size);
 }
 
 .c-button--icon + .c-button--icon {
-    margin-left: var(--space-sm);
+	margin-left: var(--space-sm);
 }
 
 
@@ -229,37 +229,37 @@
  ========================================================================== */
 
 .c-button.s-link {
-    --padding-horizontal: var(--space-sm);
-    --color: var(--link-color);
-    --hover-color: var(--link-hover-color);
-    --bgcolor: transparent;
-    --hover-bgcolor: transparent;
+	--padding-horizontal: var(--space-sm);
+	--color: var(--link-color);
+	--hover-color: var(--link-hover-color);
+	--bgcolor: transparent;
+	--hover-bgcolor: transparent;
 
-    text-decoration: var(--link-text-decoration);
-    transition: var(--link-transition);
-    box-shadow: none !important;
+	text-decoration: var(--link-text-decoration);
+	transition: var(--link-transition);
+	box-shadow: none !important;
 }
 
 .c-button.s-link .c-button__icon {
-    margin-left: -.2rem;
-    margin-right: .8rem;
-    text-decoration: none;
+	margin-left: -.2rem;
+	margin-right: .8rem;
+	text-decoration: none;
 }
 
 .c-button.s-link .c-button__text {
-    text-decoration: var(--link-text-decoration);
+	text-decoration: var(--link-text-decoration);
 }
 
 .c-button.s-link .c-button__text + .c-button__icon {
-    margin-left: .8rem;
-    margin-right: -.2rem;
+	margin-left: .8rem;
+	margin-right: -.2rem;
 }
 
 .c-button.s-link:hover {
-    text-decoration: var(--link-hover-text-decoration);
+	text-decoration: var(--link-hover-text-decoration);
 }
 .c-button.s-link:hover .c-button__text {
-    text-decoration: var(--link-hover-text-decoration);
+	text-decoration: var(--link-hover-text-decoration);
 }
 
 .c-button.s-link:active,
@@ -267,7 +267,7 @@
 .c-button.s-link:focus,
 .c-button.s-link[aria-checked=true],
 .c-button.s-link.c-button--active {
-    color: var(--hover-color);
+	color: var(--hover-color);
 }
 
 
@@ -276,30 +276,30 @@
 
 .c-button.s-bordered,
 .c-panel:not(.s-transparent) .c-button.s-bordered {
-    --bgcolor: transparent;
-    --hover-bgcolor: transparent;
-    --color: var(--text-color);
-    --hover-color: var(--text-color);
+	--bgcolor: transparent;
+	--hover-bgcolor: transparent;
+	--color: var(--text-color);
+	--hover-color: var(--text-color);
 
-    border-color: var(--clr-grey-600);
-    border-style: solid;
-    border-width: 0.1rem;
-    box-shadow: none;
+	border-color: var(--clr-grey-600);
+	border-style: solid;
+	border-width: 0.1rem;
+	box-shadow: none;
 }
 
 .c-button.s-bordered:active,
 .c-button.s-bordered[aria-checked=true] {
-    background-color: var(--clr-blue-grey-400);
+	background-color: var(--clr-blue-grey-400);
 }
 
 
 .c-button.s-bordered .c-button__icon {
-    margin-left: -.2rem;
-    margin-right: .8rem;
+	margin-left: -.2rem;
+	margin-right: .8rem;
 }
 .c-button.s-bordered .c-button__text + .c-button__icon {
-    margin-left: .8rem;
-    margin-right: -.2rem;
+	margin-left: .8rem;
+	margin-right: -.2rem;
 }
 
 
@@ -317,47 +317,47 @@
  ========================================================================== */
 
 .c-button--sm {
-    --height: 1.6rem;
-    --padding-horizontal: var(--space-sm);
-    --font-size: var(--text-xs);
+	--height: 1.6rem;
+	--padding-horizontal: var(--space-sm);
+	--font-size: var(--text-xs);
 }
 
 .c-button--sm.c-button--icon {
-    padding: var(--space-xs);
+	padding: var(--space-xs);
 }
 .c-button--sm.c-button--icon + .c-button--sm.c-button--icon {
-    margin-left: var(--space-xs);
+	margin-left: var(--space-xs);
 }
 
 .c-button--lg {
-    --height: 4rem;
-    --padding-horizontal: var(--space-lg);
-    --font-size: var(--text-lg);
+	--height: 4rem;
+	--padding-horizontal: var(--space-lg);
+	--font-size: var(--text-lg);
 }
 .c-button--lg.c-button--icon {
-    --icon-size: 4rem;
-    padding: var(--space-sm);
+	--icon-size: 4rem;
+	padding: var(--space-sm);
 }
 .c-button--lg.c-button--icon::before {
-    font-size: 32px;
-    font-weight: 500;
+	font-size: 32px;
+	font-weight: 500;
 }
 
 .c-button--xl {
-    --icon-size: 16rem;
-    --height: 5.6rem;
-    --padding-horizontal: var(--space-lg);
-    --font-size: var(--text-xl);
+	--icon-size: 16rem;
+	--height: 5.6rem;
+	--padding-horizontal: var(--space-lg);
+	--font-size: var(--text-xl);
 }
 .c-button--xl.c-button--icon {
-    padding: var(--space-sm);
+	padding: var(--space-sm);
 }
 .c-button--xl.c-button--icon::before {
-    font-size: 128px;
-    font-weight: 800;
+	font-size: 128px;
+	font-weight: 800;
 }
 .c-button--xl.c-button--icon + .c-button--xl.c-button--icon {
-    margin-left: var(--space-md);
+	margin-left: var(--space-md);
 }
 
 
@@ -366,27 +366,27 @@
  ========================================================================== */
 
 .c-button-group {
-    display: inline-flex;
-    vertical-align: middle;
+	display: inline-flex;
+	vertical-align: middle;
 }
 
 .c-button-group .c-button:not(:first-child) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 
-    border-left: 1px solid var(--clr-grey-200);
+	border-left: 1px solid var(--clr-grey-200);
 }
 .c-button-group .c-button:not(:first-child):focus {
-    border-left: 1px solid transparent;
+	border-left: 1px solid transparent;
 }
 
 .c-button-group .c-button:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .c-button-group .c-button + .c-button,
 .c-button-group .c-button--icon + .c-button--icon,
 .c-button-group .c-button.s-link + .c-button.s-link {
-    margin-left: 0;
+	margin-left: 0;
 }

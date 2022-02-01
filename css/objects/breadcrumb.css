@@ -2,7 +2,7 @@
 @import "../settings/_import.css";
 
 /**
- * Object:		Breadcrumbs
+ * Object:		Breadcrumb
  * Description: Indicate the current page's location within a navigational hierarchy.
  *
  * Elements:	`o-breadcrumb__item`
@@ -18,12 +18,12 @@
 }
 
 .o-breadcrumb::after {
-    content: ' ';
-    display: block;
-    width: inherit;
-    height: 1px;
-    background-color: var(--clr-grey-400);
-    border-bottom: 0.1rem solid var(--clr-white);
+	content: ' ';
+	display: block;
+	width: inherit;
+	height: 1px;
+	background-color: var(--clr-grey-400);
+	border-bottom: 0.1rem solid var(--clr-white);
 }
 
 .o-breadcrumb__item {
@@ -34,9 +34,9 @@
 }
 
 .o-breadcrumb__item:not(:last-child)::after {
-    content: '/';
-    display: inherit;
-    margin: 0 0.6rem;
+	content: '/';
+	display: inherit;
+	margin: 0 0.6rem;
 }
 
 .o-breadcrumb__item.is-current {

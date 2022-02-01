@@ -7,11 +7,11 @@
  ========================================================================== */
 
 p {
-    display: block;
-    max-width: 80ch;
-    font-family: var(--font-primary);
-    font-size: var(--text-sm);
-    line-height: var(--line-height-md);
+	display: block;
+	max-width: 80ch;
+	font-family: var(--font-primary);
+	font-size: var(--text-sm);
+	line-height: var(--line-height-md);
 }
 
 
@@ -19,30 +19,30 @@ p {
  ========================================================================== */
 
 p figure {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
 
-    max-width: 30vw;
-    max-height: 18rem;
+	max-width: 30vw;
+	max-height: 18rem;
 
-    background-color: var(--clr-grey-300);
-    background-size: contain;
+	background-color: var(--clr-grey-300);
+	background-size: contain;
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        display: block;
-        clear: both;
-    }
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		display: block;
+		clear: both;
+	}
 
-    img {
-        width: 100%;
-        max-height: inherit;
-        object-fit: contain;
-    }
+	img {
+		width: 100%;
+		max-height: inherit;
+		object-fit: contain;
+	}
 }
 
 
@@ -50,28 +50,28 @@ p figure {
  ========================================================================== */
 
 p {
-    img {
-        display: block;
-        width: auto;
-        max-height: 11.8rem;
-        margin: 0 auto;
-    }
-    
-    img[align="left"],
-    img[align="right"] {
-        display: inline-block;
-        max-width: 19rem;
-    }
-    
-    img[align="left"] {
-        float: left;
-        margin: 0.3rem 1.2rem 0 .8rem;
-    }
-    
-    img[align="right"] {
-        float: right;
-        margin: 0.3rem 0.8rem 0 1.2rem;
-    }
+	img {
+		display: block;
+		width: auto;
+		max-height: 11.8rem;
+		margin: 0 auto;
+	}
+	
+	img[align="left"],
+	img[align="right"] {
+		display: inline-block;
+		max-width: 19rem;
+	}
+	
+	img[align="left"] {
+		float: left;
+		margin: 0.3rem 1.2rem 0 .8rem;
+	}
+	
+	img[align="right"] {
+		float: right;
+		margin: 0.3rem 0.8rem 0 1.2rem;
+	}
 }
 
 
@@ -79,11 +79,11 @@ p {
  ========================================================================== */
 
 p.u-text-lg {
-    max-width: 80ch;
+	max-width: 80ch;
 }
 p.u-text-sm {
-    max-width: 51.4rem;
+	max-width: 51.4rem;
 }
 p.u-text-xs {
-    max-width: 44.8rem;
+	max-width: 44.8rem;
 }

@@ -2,21 +2,21 @@
 @import "../settings/_import.css";
 
 /**
- * Name:            Thumbnail
- * Description:     Defines styles for the picture preview
+ * Name: Thumbnail
+ * Description: Defines styles for the picture preview
  * 
- * Component:       `c-thumbnail`
+ * Component: `c-thumbnail`
  * 
- * Modifiers:       `c-thumbnail--xs`
- *                  `c-thumbnail--sm`
- *                  `c-thumbnail--md`
- *                  `c-thumbnail--lg`
- *                  `c-thumbnail--xl`
+ * Modifiers:	`c-thumbnail--xs`
+ *				`c-thumbnail--sm`
+ *				`c-thumbnail--md`
+ *				`c-thumbnail--lg`
+ *				`c-thumbnail--xl`
  * 
  ========================================================================== */
 
 .c-thumbnail {
-    --base-size: 15.2rem;
+	--base-size: 15.2rem;
 	--size-xs: calc(3.5 * var(--unit)); /* 5.6rem */
 	--size-sm: calc(5.5 * var(--unit)); /* 8.8rem */
 	--size-md: calc(12 * var(--unit));  /* 19.2rem */
@@ -25,29 +25,29 @@
 }
 
 .c-thumbnail {
-    contain: content;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    max-width: var(--base-size);
+	contain: content;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	max-width: var(--base-size);
 
-    vertical-align: bottom;
+	vertical-align: bottom;
 
-    background-color: var(--clr-white);
-    border-radius: 0.2rem;
-    box-sizing: border-box;
+	background-color: var(--clr-white);
+	border-radius: 0.2rem;
+	box-sizing: border-box;
 
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .c-thumbnail img {
-    max-height: 36rem;
-    object-fit: cover;
+	max-height: 36rem;
+	object-fit: cover;
 }
 
 .c-thumbnail + .c-thumbnail {
-    margin-left: var(--space-default);
+	margin-left: var(--space-default);
 }
 
 
@@ -55,8 +55,8 @@
  ========================================================================== */
 
 .c-panel .c-thumbnail {
-    /* reset basic style */
-    box-shadow: none;
+	/* reset basic style */
+	box-shadow: none;
 }
 
 
@@ -64,21 +64,21 @@
  ========================================================================== */
 
 .c-thumbnail__caption {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0.4rem 0.8rem;
-    box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0.4rem 0.8rem;
+	box-sizing: border-box;
 
-    background-color: transparent;
+	background-color: transparent;
 
-    color: var(--clr-white);
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.2;
-    text-shadow: var(--text-shadow);
+	color: var(--clr-white);
+	font-size: 1.3rem;
+	font-weight: 600;
+	line-height: 1.2;
+	text-shadow: var(--text-shadow);
 }
 
 
@@ -86,19 +86,19 @@
  ========================================================================== */
 
 .c-thumbnail__shutter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0.4rem 0.8rem;
-    box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0.4rem 0.8rem;
+	box-sizing: border-box;
 
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--clr-white);
-    text-shadow: var(--text-shadow);
+	font-size: 1.3rem;
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--clr-white);
+	text-shadow: var(--text-shadow);
 }
 
 
@@ -107,11 +107,11 @@
 
 .c-thumbnail:empty,
 .c-thumbnail .c-thumbnail__link:empty {
-    position: relative;
-    width: var(--base-size);
-    height: var(--base-size);
-    background-color: var(--clr-grey-300);
-    border: 0.1rem solid var(--clr-grey-400);
+	position: relative;
+	width: var(--base-size);
+	height: var(--base-size);
+	background-color: var(--clr-grey-300);
+	border: 0.1rem solid var(--clr-grey-400);
 	box-sizing: border-box;
 }
 
@@ -119,26 +119,26 @@
 .c-thumbnail:empty::after,
 .c-thumbnail .c-thumbnail__link:empty::after,
 .c-thumbnail .c-thumbnail__link:empty::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    
-    display: inline-block;
-    height: 40%;
-    width: 0.1rem;
-    background-color: var(--clr-grey-400);
-    
-    content: ' ';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	display: inline-block;
+	height: 40%;
+	width: 0.1rem;
+	background-color: var(--clr-grey-400);
+	
+	content: ' ';
 }
 
 .c-thumbnail:empty::before,
 .c-thumbnail .c-thumbnail__link:empty::before {
-    transform: translate(-50%, -50%) rotate(45deg);
+	transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .c-thumbnail:empty::after,
 .c-thumbnail .c-thumbnail__link:empty::after {
-    transform: translate(-50%, -50%) rotate(-45deg);
+	transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 
@@ -147,71 +147,71 @@
  ========================================================================== */
 
 .c-thumbnail--xs {
-    max-width: var(--size-xs);
+	max-width: var(--size-xs);
 }
 .c-thumbnail--xs:empty {
-    width: var(--size-xs);
-    height: var(--size-xs);
+	width: var(--size-xs);
+	height: var(--size-xs);
 }
 .c-thumbnail--xs img {
-    max-height: calc(1.8 * var(--size-xs));
+	max-height: calc(1.8 * var(--size-xs));
 }
 .c-thumbnail--xs .c-thumbnail__caption {
-    padding: 0.2rem 0.4rem;
-    max-height: 2.4rem;
-    overflow: hidden;
+	padding: 0.2rem 0.4rem;
+	max-height: 2.4rem;
+	overflow: hidden;
 
-    font-size: 1rem;
-    line-height: 1;
+	font-size: 1rem;
+	line-height: 1;
 }
 
 .c-thumbnail--sm {
-    max-width: var(--size-sm);
+	max-width: var(--size-sm);
 }
 .c-thumbnail--sm:empty {
-    width: var(--size-sm);
-    height: var(--size-sm);
+	width: var(--size-sm);
+	height: var(--size-sm);
 }
 .c-thumbnail--sm img {
-    max-height: calc(1.8 * var(--size-sm));
+	max-height: calc(1.8 * var(--size-sm));
 }
 
 .c-thumbnail--md {
-    max-width: var(--size-md);
+	max-width: var(--size-md);
 }
 .c-thumbnail--md:empty {
-    width: var(--size-md);
-    height: var(--size-md);
+	width: var(--size-md);
+	height: var(--size-md);
 }
 .c-thumbnail--md img {
-    max-height: calc(1.8 * var(--size-md));
+	max-height: calc(1.8 * var(--size-md));
 }
 
 .c-thumbnail--lg {
-    max-width: var(--size-lg);
+	max-width: var(--size-lg);
 }
 .c-thumbnail--lg:empty {
-    width: var(--size-lg);
-    height: var(--size-lg);
+	width: var(--size-lg);
+	height: var(--size-lg);
 }
 .c-thumbnail--lg img {
-    max-height: calc(1.8 * var(--size-lg));
+	max-height: calc(1.8 * var(--size-lg));
 }
 
 .c-thumbnail--xl {
-    max-width: var(--size-xl);
+	max-width: var(--size-xl);
 }
 .c-thumbnail--xl:empty {
-    width: var(--size-xl);
-    height: var(--size-xl);
+	width: var(--size-xl);
+	height: var(--size-xl);
 }
 .c-thumbnail--xl img {
-    max-height: calc(1.8 * var(--size-xl));
+	max-height: calc(1.8 * var(--size-xl));
 }
 .c-thumbnail--xl .c-thumbnail__caption {
-    padding: 0.6rem 0.8rem;
-    font-size: var(--text-lg);
-    line-height: var(--line-height-lg);
+	padding: 0.6rem 0.8rem;
+	font-size: var(--text-lg);
+	line-height: var(--line-height-lg);
 }
 
 
@@ -219,29 +219,29 @@
  ========================================================================== */
 
 .c-thumbnail--square img {
-    max-width: none;
-    max-height: none;
-    width: var(--base-size);
-    height: var(--base-size);
+	max-width: none;
+	max-height: none;
+	width: var(--base-size);
+	height: var(--base-size);
 }
 
 .c-thumbnail--square.c-thumbnail--xs img {
-    width: var(--size-xs);
-    height: var(--size-xs);
+	width: var(--size-xs);
+	height: var(--size-xs);
 }
 .c-thumbnail--square.c-thumbnail--sm img {
-    width: var(--size-sm);
-    height: var(--size-sm);
+	width: var(--size-sm);
+	height: var(--size-sm);
 }
 .c-thumbnail--square.c-thumbnail--md img {
-    width: var(--size-md);
-    height: var(--size-md);
+	width: var(--size-md);
+	height: var(--size-md);
 }
 .c-thumbnail--square.c-thumbnail--lg img {
-    width: var(--size-lg);
-    height: var(--size-lg);
+	width: var(--size-lg);
+	height: var(--size-lg);
 }
 .c-thumbnail--square.c-thumbnail--xl img {
-    width: var(--size-xl);
-    height: var(--size-xl);
+	width: var(--size-xl);
+	height: var(--size-xl);
 }

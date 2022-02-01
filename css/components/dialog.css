@@ -7,13 +7,13 @@
  * Elements:	`c-dialog__head`
  *				`c-dialog__body`
  *
- * State:       `is-closed` (by default)
+ * State:		`is-closed` (by default)
  *				`is-opened`
  *
  ========================================================================== */
 
 :root {
-    --c-dialog-padding: var(--space-md);
+	--c-dialog-padding: var(--space-md);
 }
 
 
@@ -44,7 +44,7 @@
 	text-align: left;
 }
 .c-dialog > *:first-child {
-    padding-top: var(--c-dialog-padding);
+	padding-top: var(--c-dialog-padding);
 }
 
 .c-dialog,

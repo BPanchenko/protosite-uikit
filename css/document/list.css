@@ -1,12 +1,12 @@
 
 /* ========================================================================
-    Ordered and Unordered lists
+	Ordered and Unordered lists
 ========================================================================== */
 
 ol,
 ul {
-    --li-margin-vertical: 0.8rem;
-    --li-nested-margin-vertical: 0;
+	--li-margin-vertical: 0.8rem;
+	--li-nested-margin-vertical: 0;
 }
 
 /* ========================================================================
@@ -31,8 +31,8 @@ ul > li {
 }
 
 ul > li > ul {
-    margin: 0;
-    list-style: none;
+	margin: 0;
+	list-style: none;
 }
 ul > li > ul > li {
 	margin-top: var(--li-nested-margin-vertical);

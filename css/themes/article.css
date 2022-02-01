@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
 
 .t-article {
-    background-color: white;
+	background-color: white;
 }
 
 
@@ -15,21 +15,21 @@
  ========================================================================== */
 
 .t-article .o-article {
-    --font-primary: 'Vollkorn', serif;
-    --font-secondary: 'Vollkorn SC', serif;
+	--font-primary: 'Vollkorn', serif;
+	--font-secondary: 'Vollkorn SC', serif;
 }
 
 .t-article .o-article {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Combination of components: `o-article` & `c-panel`
  ========================================================================== */
 
 .t-article .o-article.c-panel {
-    padding-top: var(--space-md);
-    padding-right: var(--space-xl);
-    padding-bottom: var(--space-md);
-    padding-left: var(--space-lg);
+	padding-top: var(--space-md);
+	padding-right: var(--space-xl);
+	padding-bottom: var(--space-md);
+	padding-left: var(--space-lg);
 }
