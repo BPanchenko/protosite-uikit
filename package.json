@@ -1,5 +1,5 @@
 {
-  "name": "protosite-uikit",
+  "name": "@bpanchenko/uikit",
   "description": "CSS framework for developing web interfaces using BEMIT",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
   "main": "./dist/main.css",
@@ -32,7 +32,7 @@
   "author": {
     "name": "Boris Panchenko",
     "email": "boris.v.panchenko@gmail.com",
-    "url": "http://bp-studio.ru"
+    "url": "http://bpanchenko.ru"
   },
   "version": "3.0.0"
 }
