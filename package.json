@@ -9,7 +9,9 @@
   "scripts": {
     "build": "npm-run-all --parallel build-critical build-main",
     "build-main": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js",
-    "build-critical": "postcss ./src/critical.css > ./dist/critical.css --config .config/postcss.config.js"
+    "build-critical": "postcss ./src/critical.css > ./dist/critical.css --config .config/postcss.config.js",
+		"start": "npm run watch",
+    "watch": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js --watch --verbose"
   },
   "analyze": true,
   "bugs": {
