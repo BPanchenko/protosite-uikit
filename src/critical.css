@@ -1,10 +1,9 @@
-@import "./base/document.css";
-@import "./base/headings.css";
-@import "./base/list.css";
-@import "./base/paragraph.css";
-@import "./base/table.css";
-@import "./base/text.css";
+@import "./document/_main.css";
+@import "./document/headings.css";
+@import "./document/paragraph.css";
+@import "./document/text.css";
 @import "./objects/container.css";
 @import "./styles/color.css";
-@import "./utilities/_common.css";
-@import "./utilities/margin.css";
+@import "./styles/background.css";
+@import "./utilities/_main.css";
+@import "./utilities/visibility.css";
