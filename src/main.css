@@ -40,6 +40,7 @@
 /* Utilities */
 
 @import "./utilities/_main.css";
+@import "./utilities/grid.css";
 @import "./utilities/margin.css";
 @import "./utilities/text.css";
 @import "./utilities/visibility.css";
