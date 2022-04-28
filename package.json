@@ -10,7 +10,7 @@
     "build": "npm-run-all --parallel build-critical build-main",
     "build-main": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js",
     "build-critical": "postcss ./src/critical.css > ./dist/critical.css --config .config/postcss.config.js",
-		"start": "npm run watch",
+    "start": "npm run watch",
     "watch": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js --watch --verbose"
   },
   "analyze": true,
@@ -29,13 +29,13 @@
     "npm-run-all": "4.1.5",
     "postcss": "8.4.5",
     "postcss-cli": "9.1.0",
-    "postcss-color-mod-function": "3.0.3",
+    "postcss-color-function": "4.1.0",
     "postcss-custom-media": "8.0.0",
     "postcss-custom-properties": "12.0.2",
     "postcss-import": "14.0.2",
     "postcss-nested": "5.0.6",
     "postcss-preset-env": "7.2.0",
-    "protosite-palette": "^1.0.3"
+    "protosite-palette": "1.0.3"
   },
   "license": "ISC",
   "author": {
