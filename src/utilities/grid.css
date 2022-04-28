@@ -21,6 +21,7 @@
 	bottom: 0;
 	left: 0;
 	z-index: 80;
+	overflow: hidden;
 
 	outline: 1px dotted var(--color);
 
@@ -43,6 +44,11 @@
 		height: 100%;
 	
 		border-right: 1px dotted var(--color);
+
+		&.s-axis {
+			border-left: 1px dotted white;
+			border-right: 1px dotted black;
+		}
 	}
 	
 	.guide--vertical .line {
@@ -55,6 +61,11 @@
 		height: 0.1rem;
 	
 		border-top: 1px dotted var(--color);
+
+		&.s-axis {
+			border-top: 1px dotted white;
+			border-bottom: 1px dotted black;
+		}
 	}
 
 	.sizes {
