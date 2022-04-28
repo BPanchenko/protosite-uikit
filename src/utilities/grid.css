@@ -5,6 +5,7 @@
 
 .u-grid {
 	--color: var(--clr-blue);
+	--border-color: color(#FF0000 blackness(25%));
 }
 
 .u-grid,
@@ -23,7 +24,7 @@
 	z-index: 80;
 	overflow: hidden;
 
-	outline: 1px dotted var(--color);
+	outline: 1px dotted var(--border-color);
 
 	.guide--horizontal,
 	.guide--vertical {
@@ -31,7 +32,6 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		opacity: 0.3;
 	}
 	
 	.guide--horizontal .line {
@@ -44,10 +44,12 @@
 		height: 100%;
 	
 		border-right: 1px dotted var(--color);
+		opacity: 0.3;
 
 		&.s-axis {
 			border-left: 1px dotted white;
 			border-right: 1px dotted black;
+			opacity: 0.5;
 		}
 	}
 	
@@ -61,10 +63,12 @@
 		height: 0.1rem;
 	
 		border-top: 1px dotted var(--color);
+		opacity: 0.3;
 
 		&.s-axis {
 			border-top: 1px dotted white;
 			border-bottom: 1px dotted black;
+			opacity: 0.5;
 		}
 	}
 
