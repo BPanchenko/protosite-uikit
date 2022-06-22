@@ -3,20 +3,20 @@
    Breakpoints
  ========================================================================== */
 
-@custom-media --screen-xdesktop (width >= 1360px);
+@custom-media --screen-xdesktop screen and (min-width: 1366px);
 
-@custom-media --screen-desktop (1180px <= width < 1360px);
-@custom-media --screen-desktop-and-smaller (width < 1360px);
+@custom-media --screen-desktop screen and (min-width: 1180px) and (max-width: 1366px);
+@custom-media --screen-desktop-and-smaller screen and (max-width: 1366px);
 
-@custom-media --screen-tablet (768px <= width < 1180px);
-@custom-media --screen-tablet-and-smaller (width < 1180px);
+@custom-media --screen-tablet screen and (min-width: 768px) and (max-width: 1180px);
+@custom-media --screen-tablet-and-smaller screen and (max-width: 1180px);
 
-@custom-media --screen-tablet-landscape (1024px <= width < 1180px);
-@custom-media --screen-tablet-landscape-and-smaller (width < 1180px);
+@custom-media --screen-tablet-landscape (--screen-tablet) and (orientation: landscape);
+@custom-media --screen-tablet-landscape-and-smaller (--screen-tablet-and-smaller) and (orientation: landscape);
 
-@custom-media --screen-tablet-portrait (768px <= width < 1024px);
-@custom-media --screen-tablet-portrait-and-smaller (width < 1024px);
+@custom-media --screen-tablet-portrait (--screen-tablet) and (orientation: portrait);
+@custom-media --screen-tablet-portrait-and-smaller (--screen-tablet-and-smaller) and (orientation: portrait);
 
-@custom-media --screen-handset (width < 768px);
-@custom-media --screen-handset-landscape (480px <= width < 768px);
-@custom-media --screen-handset-portrait (width < 480px);
+@custom-media --screen-handset screen and (max-width: 768px);
+@custom-media --screen-handset-landscape (--screen-handset) and (orientation: landscape);
+@custom-media --screen-handset-portrait (--screen-handset) and (orientation: portrait);
