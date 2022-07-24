@@ -3,7 +3,7 @@
 ### Установка пакета
 
 ```bash
-npm install --save-dev @bpanchenko/uikit
+npm i @bpanchenko/uikit --save-dev
 ```
 
 ## Директории CSS
