@@ -1,15 +1,11 @@
 {
   "name": "@bpanchenko/uikit",
+  "version": "3.1.1",
   "description": "CSS framework for developing web interfaces using BEMIT",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
   "main": "dist/main.css",
-  "files": [
-    "dist/critical.css"
-  ],
   "scripts": {
-    "build": "npm-run-all --parallel build-critical build-main",
-    "build-main": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js",
-    "build-critical": "postcss ./src/critical.css > ./dist/critical.css --config .config/postcss.config.js",
+    "build": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js",
     "start": "npm run watch",
     "watch": "postcss ./src/main.css > ./dist/main.css --config .config/postcss.config.js --watch --verbose"
   },
@@ -42,6 +38,5 @@
     "name": "Boris Panchenko",
     "email": "boris.v.panchenko@gmail.com",
     "url": "http://bpanchenko.ru"
-  },
-  "version": "3.0.1"
+  }
 }
