@@ -1,5 +1,11 @@
 # Описание
 
+### Установка пакета
+
+```bash
+npm install --save-dev @bpanchenko/uikit
+```
+
 ## Директории CSS
 
 #### `base`
