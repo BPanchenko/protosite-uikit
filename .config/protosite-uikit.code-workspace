@@ -1,0 +1,33 @@
+{
+	"extensions": {
+		"recommendations": [
+			"csstools.postcss",
+			"amatiasq.sort-imports",
+			"bierner.markdown-mermaid",
+			"codezombiech.gitignore",
+			"davidanson.vscode-markdownlint",
+			"esbenp.prettier-vscode",
+			"github.vscode-pull-request-github",
+			"jzarzoso.break-from-comma",
+			"redhat.vscode-xml",
+			"redhat.vscode-yaml",
+			"ritwickdey.liveserver",
+			"samverschueren.final-newline",
+			"tyriar.sort-lines",
+			"zengxingxin.sort-js-object-keys",
+		]
+	},
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+    "settings": {
+		"editor.detectIndentation": false,
+		"editor.insertSpaces": false,
+		"editor.tabSize": 4,
+		"[json]": {
+			"editor.tabSize": 2
+		}
+	}
+}
