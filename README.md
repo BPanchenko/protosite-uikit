@@ -6,7 +6,13 @@
 npm i @bpanchenko/uikit --save-dev
 ```
 
-## Директории CSS
+### Файл сборки
+
+```bash
+http://assets.protosite.rocks/uikit/main.css
+```
+
+## Директории
 
 #### `base`
 Стилизация предопределённых HTML-элементов по умолчанию;
