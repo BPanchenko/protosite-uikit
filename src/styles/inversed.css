@@ -12,7 +12,7 @@ a.s-inversed {
 	Text
  ========================================================================== */
 
-.s-inversed {
+.s-inversed:not(a) {
 	--clr-text: #ffffff;
 	--clr-secondary-text: rgba(255,255,255,0.7);
 	--clr-icons: #ffffff;
