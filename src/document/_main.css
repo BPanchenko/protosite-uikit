@@ -79,19 +79,14 @@ template {
 /* Selection
  ========================================================================== */
 
-:root {
-	--selection-color: var(--clr-white);
-	--selection-bg-color: var(--clr-blue-600);
-}
-
 ::-moz-selection {
-	background-color: var(--selection-bg-color);
-	color: var(--selection-color);
+	color: var(--clr-selection, currentColor);
+	background-color: var(--clr-selection-bg, transparent);
 	text-shadow: none;
 }
 ::selection {
-	background-color: var(--selection-bg-color);
-	color: var(--selection-color);
+	color: var(--clr-selection, currentColor);
+	background-color: var(--clr-selection-bg, transparent);
 	text-shadow: none;
 }
 *[unselectable="on"] {

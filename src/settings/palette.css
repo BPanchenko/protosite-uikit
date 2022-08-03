@@ -1,10 +1,13 @@
 @import "protosite-palette/assets/colors.css";
 
 :root {
-	--clr-text: rgba(0,0,0,0.87);
-	--clr-secondary-text: rgba(0,0,0,0.54);
-	--clr-icons: rgba(0,0,0,0.54);
 	--clr-disabled: rgba(0,0,0,0.26);
-	--clr-hint-text: rgba(0,0,0,0.26);
 	--clr-dividers: rgba(0,0,0,0.12);
+	--clr-highlighted-text: currentColor;
+	--clr-hint-text: rgba(0,0,0,0.26);
+	--clr-icons: rgba(0,0,0,0.54);
+	--clr-secondary-text: rgba(0,0,0,0.54);
+	--clr-selection-bg: var(--clr-blue-600);
+	--clr-selection: var(--clr-white);
+	--clr-text: rgba(0,0,0,0.87);
 }
