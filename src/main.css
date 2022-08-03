@@ -52,6 +52,7 @@
 @import "./styles/clean.css";
 @import "./styles/color.css";
 @import "./styles/floating.css";
+@import "./styles/highlighted.css";
 @import "./styles/hovered.css";
 @import "./styles/inversed.css";
 @import "./styles/shadow.css";
