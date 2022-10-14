@@ -1,14 +1,14 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "3.4.7",
+  "version": "3.4.8",
   "description": "CSS framework for developing web interfaces",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
   "main": "main.css",
   "scripts": {
-    "build": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.js",
+    "build": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.cjs",
     "start": "npm run watch",
-    "watch": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.js --watch --verbose"
+    "watch": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.cjs --watch --verbose"
   },
   "analyze": true,
   "bugs": {
