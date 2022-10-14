@@ -1,10 +1,19 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "3.4.8",
+  "version": "3.4.9",
   "description": "CSS framework for developing web interfaces",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
   "main": "main.css",
+	"files": [
+		"components/*",
+		"document/*",
+		"objects/*",
+		"settings/*",
+		"styles/*",
+		"themes/*",
+		"utilities/*"
+	],
   "scripts": {
     "build": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.cjs",
     "start": "npm run watch",
