@@ -6,7 +6,7 @@
  * Description: Reusable content areas.
  *
  * Elements:	`c-panel__head`
- *				`c-panel__controls`
+ *				`c-panel__toolbar`
  *
  ========================================================================== */
 
@@ -43,7 +43,7 @@
 	clear: both;
 }
 
-.c-panel + .c-panel {
+.c-panel:not([aria-hidden=true]) + .c-panel {
    margin-top: var(--unit);
 }
 
@@ -53,7 +53,7 @@
  
 .c-panel + .c-panel-divider {
 	position: relative;
-	margin-top: var(--unit) !important;
+	margin-top: var(--space-md);
 }
 
 .c-panel + .c-panel-divider::after {
@@ -63,7 +63,7 @@
 	top: -0.1rem;
 	left: 0;
 	right: 0;
-	border-top: .1rem solid var(--clr-grey-800);
+	border-top: 0.1rem solid var(--clr-grey-800);
 }
 
 
