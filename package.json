@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "3.4.9",
+  "version": "3.4.10",
   "description": "CSS framework for developing web interfaces",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
