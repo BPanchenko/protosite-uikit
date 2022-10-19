@@ -1,4 +1,12 @@
-
+@import "./background.css";
+@import "./clean.css";
+@import "./color.css";
+@import "./floating.css";
+@import "./highlighted.css";
+@import "./hovered.css";
+@import "./inversed.css";
+@import "./shadow.css";
+@import "./striped.css";
 
 /* Fonts
  ========================================================================== */

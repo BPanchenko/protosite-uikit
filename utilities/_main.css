@@ -1,6 +1,11 @@
 @import "../settings/breakpoints.css";
 @import "../settings/palette.css";
 
+@import "./grid.css";
+@import "./margin.css";
+@import "./text.css";
+@import "./visibility.css";
+
 /**
  * Utilities:
  *	`u-align-*`

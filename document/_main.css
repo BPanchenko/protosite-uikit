@@ -1,6 +1,12 @@
 @import "../settings/palette.css";
 @import "../settings/typography.css";
 
+@import "./headings.css";
+@import "./list.css";
+@import "./paragraph.css";
+@import "./table.css";
+@import "./text.css";
+
 /* ========================================================================
 	Document style
  ========================================================================== */
