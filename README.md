@@ -13,7 +13,6 @@ http://assets.protosite.rocks/uikit/main.css
 http://assets.protosite.rocks/uikit/components.css
 http://assets.protosite.rocks/uikit/document.css
 http://assets.protosite.rocks/uikit/objects.css
-http://assets.protosite.rocks/uikit/main.css
 http://assets.protosite.rocks/uikit/styles.css
 http://assets.protosite.rocks/uikit/utilities.css
 http://assets.protosite.rocks/uikit/theme-article.css
