@@ -1,5 +1,6 @@
-
-@import "../settings/_import.css";
+@import "../settings/colors.css";
+@import "../settings/shadow.css";
+@import "../settings/space.css";
 
 /**
  * Component:	Panel
@@ -44,7 +45,7 @@
 }
 
 .c-panel:not([aria-hidden=true]) + .c-panel {
-   margin-top: var(--unit);
+   margin-top: var(--space);
 }
 
 

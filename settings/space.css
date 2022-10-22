@@ -1,6 +1,7 @@
+@import "./main.css";
 
 :root {
-	--space-default: var(--unit);
+	--space: var(--unit);
 
 	--space-xxxs:  calc(0.25 * var(--unit));  /* 0.2rem */
 	--space-xxs:  calc(0.25 * var(--unit));  /* 0.4rem */

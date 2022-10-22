@@ -1,5 +1,5 @@
 @import "../settings/breakpoints.css";
-@import "../settings/palette.css";
+@import "../settings/colors.css";
 
 @import "./grid.css";
 @import "./margin.css";
@@ -41,10 +41,10 @@
 
 [class*='u-align'] {
 	display: block;
-	margin-bottom: var(--space-default);
+	margin-bottom: var(--space);
 }
 
-* + [class*='u-align'] { margin-top: var(--space-default); }
+* + [class*='u-align'] { margin-top: var(--space); }
 
 .u-align-center {
 	margin-left: auto;
@@ -53,13 +53,13 @@
 
 .u-align-left {
 	margin-top: 0;
-	margin-right: var(--space-default);
+	margin-right: var(--space);
 	float: left;
 }
 
 .u-align-right {
 	margin-top: 0;
-	margin-left: var(--space-default);
+	margin-left: var(--space);
 	float: right;
 }
 

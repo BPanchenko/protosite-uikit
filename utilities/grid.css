@@ -1,3 +1,8 @@
+@import "../settings/colors.css";
+@import "../settings/main.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
+
 
 /* ========================================================================
 	Grid utility

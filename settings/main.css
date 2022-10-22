@@ -1,0 +1,10 @@
+@import "./colors.css";
+
+:root {
+	--easing: cubic-bezier(0.3, 0, 0.2, 1);
+	--unit: 1.6rem;
+	
+	--link-text-decoration: underline;
+	--link-hover-text-decoration: none;
+	--link-transition: color 0.16s var(--easing);
+}

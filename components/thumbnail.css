@@ -1,5 +1,9 @@
+@import "../settings/colors.css";
+@import "../settings/main.css";
+@import "../settings/shadow.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
 
-@import "../settings/_import.css";
 
 /**
  * Name: Thumbnail
@@ -47,7 +51,7 @@
 }
 
 .c-thumbnail + .c-thumbnail {
-	margin-left: var(--space-default);
+	margin-left: var(--space);
 }
 
 

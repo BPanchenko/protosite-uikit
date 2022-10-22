@@ -1,5 +1,6 @@
-
-@import "../settings/_import.css";
+@import "../settings/colors.css";
+@import "../settings/main.css";
+@import "../settings/shadow.css";
 
 /* ========================================================================
    The table element and the list component

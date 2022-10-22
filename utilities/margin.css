@@ -1,7 +1,7 @@
 @import "../settings/space.css";
 
 :root {
-	--u-margin: var(--space-default);
+	--u-margin: var(--space);
 	--u-margin-xxs: var(--space-xxs);
 	--u-margin-xs: var(--space-xs);
 	--u-margin-sm: var(--space-sm);

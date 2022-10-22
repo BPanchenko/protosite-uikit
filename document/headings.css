@@ -1,4 +1,6 @@
+@import "../settings/colors.css";
 @import "../settings/space.css";
+@import "../settings/typography.css";
 
 /* ========================================================================
 	Headings
@@ -10,9 +12,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-secondary, system-ui);
+	font-family: var(--font-secondary);
 	margin: 0;
-	color: var(--caption-color, black);
+	color: var(--caption-color);
 }
  
 h1 {
@@ -54,9 +56,9 @@ h6 {
 }
 
 * + :matches(h1, h2, h3, h4, h5, h6) {
-	margin-top: var(--space-md, 16px);
+	margin-top: var(--space-md);
 }
 
 :matches(h1, h2, h3, h4, h5, h6) a {
-	color: var(--caption-color, black);
+	color: var(--caption-color);
 }

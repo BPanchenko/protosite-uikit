@@ -1,9 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
+@import "../settings/space.css";
+
+
 /**
  * Theme: Article
  ============================================================================ */
- 
-@import url('https://fonts.googleapis.com/css?family=Vollkorn|Vollkorn+SC&display=swap');
 
 .t-article {
 	background-color: white;

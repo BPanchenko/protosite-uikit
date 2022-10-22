@@ -1,5 +1,8 @@
-
-@import "../settings/_import.css";
+@import "../settings/colors.css";
+@import "../settings/main.css";
+@import "../settings/shadow.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
 
 /**
  * Component:   `c-dialog`
@@ -87,7 +90,7 @@
 
 .c-dialog__header + .c-dialog__body-wrapper,
 .c-dialog__header + .c-dialog__body {
-	margin-top: var(--space-default);
+	margin-top: var(--space);
 }
 
 

@@ -1,4 +1,5 @@
-@import "../settings/palette.css";
+@import "../settings/colors.css";
+@import "../settings/main.css";
 @import "../settings/typography.css";
 
 @import "./headings.css";

@@ -10,4 +10,14 @@
 	--clr-selection-bg: var(--clr-blue-600);
 	--clr-selection: var(--clr-white);
 	--clr-text: rgba(0,0,0,0.87);
+	
+	--caption-color: var(--clr-grey-900);
+	--danger-color: var(--clr-red-800);
+	--link-color: var(--clr-blue-800);
+	--link-hover-color: var(--clr-blue-900);
+	--muted-color: var(--clr-grey-500);
+	--primary-color: var(--clr-blue-800);
+	--success-color: var(--clr-green-800);
+	--text-color: var(--clr-grey-800);
+	--warning-color: var(--clr-orange-800);
 }

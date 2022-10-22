@@ -1,5 +1,7 @@
-
-@import "../settings/_import.css";
+@import "../settings/colors.css";
+@import "../settings/main.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
 
 /**
  * Component:	`c-field`
@@ -213,7 +215,7 @@ input[type=radio] + .c-field-label {
 	position: static !important;
 	transition: none !important;
 	padding-left: var(--space-sm);
-	padding-right: var(--space-default);
+	padding-right: var(--space);
 	font-size: var(--c-field-font-size);
 	cursor: pointer;
 }

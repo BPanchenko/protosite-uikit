@@ -1,5 +1,6 @@
-
-@import "../settings/_import.css";
+@import "../settings/colors.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
 
 /**
  * Component:	   `c-list`
