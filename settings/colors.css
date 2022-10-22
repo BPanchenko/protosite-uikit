@@ -1,4 +1,4 @@
-@import "protosite-palette/assets/colors.css";
+@import "protosite-palette/assets/palette.css";
 
 :root {
 	--clr-disabled: rgba(0,0,0,0.26);
