@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "3.4.10",
+  "version": "3.5.11",
   "description": "CSS framework for developing web interfaces",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
   "type": "module",
@@ -15,9 +15,15 @@
     "utilities/*"
   ],
   "scripts": {
-    "build": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.cjs",
-    "start": "npm run watch",
-    "watch": "postcss ./main.css > ./assets/main.css --config .config/postcss.config.cjs --watch --verbose"
+    "build": "run-s main document components styles utilities objects theme-article theme-errordoc",
+    "components": "postcss ./components/main.css > ./assets/components.css --config ./.config/postcss.config.cjs --verbose",
+    "document": "postcss ./document/main.css > ./assets/document.css --config ./.config/postcss.config.cjs --verbose",
+    "objects": "postcss ./objects/main.css > ./assets/objects.css --config ./.config/postcss.config.cjs --verbose",
+    "main": "postcss ./main.css > ./assets/main.css --config ./.config/postcss.config.cjs --verbose",
+    "styles": "postcss ./styles/main.css > ./assets/styles.css --config ./.config/postcss.config.cjs --verbose",
+    "utilities": "postcss ./utilities/main.css > ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
+    "theme-article": "postcss ./themes/article.css > ./assets/theme-article.css --config ./.config/postcss.config.cjs --verbose",
+    "theme-errordoc": "postcss ./themes/errordoc.css > ./assets/theme-errordoc.css --config ./.config/postcss.config.cjs --verbose"
   },
   "analyze": true,
   "bugs": {
@@ -32,6 +38,7 @@
   "devDependencies": {
     "cssnano": "5.1.13",
     "cssnano-preset-default": "5.2.12",
+    "npm-run-all": "4.1.5",
     "postcss": "8.4.18",
     "postcss-cli": "10.0.0",
     "postcss-color-function": "4.1.0",
@@ -42,7 +49,7 @@
     "postcss-preset-env": "7.8.2",
     "protosite-palette": "2.9.14"
   },
-	"license": "ISC",
+  "license": "ISC",
   "author": {
     "name": "Boris Panchenko",
     "email": "boris.v.panchenko@mail.ru",
