@@ -1,5 +1,4 @@
-@import "../settings/colors.css";
-@import "../settings/main.css";
+@import "../settings/document.css";
 @import "../settings/typography.css";
 
 @import "./headings.css";
@@ -20,7 +19,7 @@ html {
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--clr-grey-200);
+	background-color: var(--bg-color);
 	font-family: var(--font-primary);
 	font-size: var(--text-md, 14px);
 	line-height: 1.2;

@@ -1,6 +1,15 @@
 @import "protosite-palette/assets/palette.css";
 
 :root {
+	--clr-black: --clr-grey-900;
+	--clr-white: white;
+}
+
+
+/* --Depricated
+
+:root {
+
 	--clr-disabled: rgba(0,0,0,0.26);
 	--clr-dividers: rgba(0,0,0,0.12);
 	--clr-highlighted-text: currentColor;
@@ -13,11 +22,11 @@
 	
 	--caption-color: var(--clr-grey-900);
 	--danger-color: var(--clr-red-800);
-	--link-color: var(--clr-blue-800);
-	--link-hover-color: var(--clr-blue-900);
+	--text-color: var(--clr-black, black);
 	--muted-color: var(--clr-grey-500);
 	--primary-color: var(--clr-blue-800);
 	--success-color: var(--clr-green-800);
-	--text-color: var(--clr-grey-800);
 	--warning-color: var(--clr-orange-800);
 }
+
+*/
