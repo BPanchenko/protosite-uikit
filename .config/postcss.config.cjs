@@ -3,6 +3,7 @@ module.exports = {
         require("cssnano"),
         require("postcss-import"),
         require("postcss-nested"),
-        require("postcss-custom-media")
+        require("postcss-custom-media"),
+        require("@csstools/postcss-color-function")
     ]
 }
