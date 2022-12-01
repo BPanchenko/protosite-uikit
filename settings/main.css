@@ -1,6 +1,8 @@
-@import "./colors.css";
+@import "protosite-palette/assets/palette.css";
 
 :root {
+	--clr-black: --clr-grey-900;
+	--clr-white: #ffffff;
 	--easing: cubic-bezier(0.3, 0, 0.2, 1);
 	--unit: 1.6rem;
 }

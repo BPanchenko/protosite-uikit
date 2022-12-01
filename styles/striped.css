@@ -1,4 +1,4 @@
-@import "../settings/colors.css";
+@import "../settings/document.css";
 
 table.s-striped > tr:nth-of-type(odd),
 table.s-striped tbody tr:nth-of-type(odd),
