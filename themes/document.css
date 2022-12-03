@@ -2,13 +2,13 @@
 @import "../settings/breakpoints.css";
 @import "../settings/space.css";
 
-.t-errordoc .o-container {
+.t-document .o-container {
 	width: auto;
 	max-width: 92rem;
 }
 
 @media (--screen-tablet-and-smaller) {
-	.t-errordoc .o-container {
+	.t-document .o-container {
 		margin: 0 var(--space-lg);
 	}
 }
