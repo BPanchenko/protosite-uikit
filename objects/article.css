@@ -1,6 +1,8 @@
 @import url("http://assets.protosite.rocks/fonts/pt-astra-sans/stylesheet.css");
 @import url("http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css");
+
 @import "../settings/document.css";
+@import "../settings/space.css";
 
 article,
 .o-article {
@@ -18,8 +20,7 @@ Components:
 
 ============================================================================ */
 
-article,
-.o-article {
+:where(article, .o-article) {
 	text-rendering: geometricPrecision;
 
 	:matches(h1, h2, h3, h4, h5, h6) {
@@ -28,6 +29,10 @@ article,
 		& + hr {
 			margin-top: var(--space-sm);
 		}
+	}
+
+	& > * + * {
+		margin-top: var(--space);
 	}
 }
 

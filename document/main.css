@@ -9,7 +9,7 @@
 
 /* ========================================================================
 	Document
- ========================================================================== */
+=========================================================================== */
 
 html {
 	height: 100%;
@@ -26,14 +26,8 @@ body {
 	scroll-behavior: smooth;
 }
 
-*,
-*::before,
-*::after {
+:where(*, *::before, *::after) {
 	box-sizing: border-box;
-}
-
-article > * + * {
-	margin-top: 1em;
 }
 
 article,
@@ -135,16 +129,18 @@ figcaption {
 	margin: 0;
 }
 
-* + p,
-* + ul,
-* + ol,
-* + dl,
-* + blockquote,
-* + pre,
-* + address,
-* + fieldset,
-* + figure {
-	margin-top: var(--space-xs, 8px);
+* + :where(
+	p,
+	ul,
+	ol,
+	dl,
+	blockquote,
+	pre,
+	address,
+	fieldset,
+	figure
+) {
+	margin-top: var(--space-xs);
 }
 
 
