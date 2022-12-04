@@ -1,14 +1,14 @@
 @import "./main.css";
 
 :root {
-	--space: var(--unit);
-
-	--space-xxxs:  calc(0.25 * var(--unit));  /* 0.2rem */
-	--space-xxs:  calc(0.25 * var(--unit));  /* 0.4rem */
-	--space-xs:   calc(0.5 * var(--unit));  /* 0.8rem */
-	--space-sm:   calc(0.75 * var(--unit)); /* 1.2rem */
-	--space-md:   calc(1.5 * var(--unit)); /* 2.4rem */
-	--space-lg:   calc(2.5 * var(--unit));	/* 4rem */
-	--space-xl:   calc(3.25 * var(--unit)); /* 5.2rem */
-	--space-xxl:  calc(5.25 * var(--unit)); /* 8.4rem */
+	--space:	  1--unit;
+	
+	--space-xxxs: 0.25--unit;
+	--space-xxs:  0.25--unit;
+	--space-xs:   0.5--unit;
+	--space-sm:   0.75--unit;
+	--space-md:   1.5--unit;
+	--space-lg:   2.5--unit;
+	--space-xl:   3.25--unit;
+	--space-xxl:  5.25--unit;
 }
