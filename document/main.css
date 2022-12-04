@@ -19,8 +19,8 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--bg-color);
-	font-family: var(--font-primary);
-	font-size: var(--text-md, 14px);
+	font-family: var(--font-sans);
+	font-size: var(--text-md);
 	line-height: 1.2;
 	color: var(--text-color);
 	scroll-behavior: smooth;
