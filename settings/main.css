@@ -6,3 +6,7 @@
 	--easing: cubic-bezier(0.3, 0, 0.2, 1);
 	--unit: 1.6rem;
 }
+
+html {
+	font-size: 62.5%;
+}
