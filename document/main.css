@@ -19,7 +19,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--bg-color);
-	font-family: var(--font-sans);
+	font-family: var(--font);
 	font-size: var(--text-md);
 	line-height: 1.2;
 	color: var(--text-color);

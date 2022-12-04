@@ -15,6 +15,8 @@
 	--text-font: "PT Astra Serif", serif;
 	--ui-font: "PT Root UI", system-ui;
 
+	--font: --font-sans;
+
 	--text-xs: 1.1rem;
 	--text-sm: 1.4rem;
 	--text-md: 1.6rem;
