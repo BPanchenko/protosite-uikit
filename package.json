@@ -36,6 +36,7 @@
     "url": "https://github.com/BPanchenko/protosite-uikit.git"
   },
   "devDependencies": {
+    "@csstools/custom-units": "0.1.1",
     "@csstools/postcss-color-function": "1.1.1",
     "cssnano": "5.1.14",
     "cssnano-preset-default": "5.2.13",
