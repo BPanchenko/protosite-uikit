@@ -2,18 +2,21 @@
 
 body {
 	--bg-color: --clr-blue-grey-50;
-	
+
 	--caption-color: var(--clr-grey-900);
 	--danger-color: var(--clr-red-800);
-	--link-color: var(--clr-blue-800);
-	--link-hover-color: var(--clr-blue-900);
 	--muted-color: var(--clr-grey-500);
 	--primary-color: var(--clr-blue-800);
 	--success-color: var(--clr-green-800);
-	--text-color: var(--clr-black, black);
 	--warning-color: var(--clr-orange-800);
-	
-	--link-text-decoration: underline;
+
+	--link-color: var(--clr-blue-800);
+	--link-hover-color: var(--clr-blue-900);
 	--link-hover-text-decoration: none;
-	--link-transition: color 0.16s var(--easing);
+	--link-text-decoration: underline;
+
+	--text-color: color(var(--clr-black, black) a(0.87));
+	--text-font: var(--font-sans, system-ui);
+	--text-line: var(--line-height-md, 1.4);
+	--text-size: var(--text-md, 16px);
 }

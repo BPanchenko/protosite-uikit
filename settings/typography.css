@@ -1,6 +1,5 @@
 @import url("http://assets.protosite.rocks/fonts/jetbrains-mono/stylesheet.css");
 @import url("http://assets.protosite.rocks/fonts/marck-script/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css");
 @import url("http://assets.protosite.rocks/fonts/pt-root-ui/stylesheet.css");
 @import url("http://assets.protosite.rocks/fonts/pt-sans-caption/stylesheet.css");
 @import url("http://assets.protosite.rocks/fonts/pt-sans/stylesheet.css");
@@ -8,14 +7,11 @@
 
 :root {
 	--caption-font: "PT Sans Caption", sans-serif;
-	--code-font: "JetBrains Mono", monospace;
-	--cursive-font: "Marck Script", cursive;
+	--font-monospace: "JetBrains Mono", monospace;
+	--font-cursive: "Marck Script", cursive;
 	--font-sans: "PT Sans", sans-serif;
-	--font-serif: "PT Serif", sans-serif;
-	--text-font: "PT Astra Serif", serif;
+	--font-serif: "PT Serif", serif;
 	--ui-font: "PT Root UI", system-ui;
-
-	--font: --font-sans;
 
 	--text-xs: 1.1rem;
 	--text-sm: 1.4rem;
@@ -25,9 +21,8 @@
 	--text-xxl: 3.6rem;
 	--text-xxxl: 4.8rem;
 
-	--line-height-default: 1.6;
 	--line-height-xs: 1.1;
 	--line-height-sm: 1.2;
-	--line-height-md: 1.6;
+	--line-height-md: 1.4;
 	--line-height-lg: 1.2;
 }

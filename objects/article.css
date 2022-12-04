@@ -1,9 +1,11 @@
 @import url("http://assets.protosite.rocks/fonts/pt-astra-sans/stylesheet.css");
+@import url("http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css");
 @import "../settings/document.css";
 
 article,
 .o-article {
 	--caption-font: "PT Astra Sans", sans-serif;
+	--text-font: "PT Astra Serif", serif;
 }
 
 /*
