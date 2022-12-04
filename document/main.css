@@ -8,12 +8,11 @@
 @import "./text.css";
 
 /* ========================================================================
-	Document style
+	Document
  ========================================================================== */
 
 html {
 	height: 100%;
-	font-size: 62.5%;
 }
 
 body {
@@ -25,7 +24,6 @@ body {
 	line-height: 1.2;
 	color: var(--text-color);
 	scroll-behavior: smooth;
-	text-rendering: var(--text-rendering, optimizeSpeed);
 }
 
 *,
