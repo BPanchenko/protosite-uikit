@@ -26,6 +26,9 @@
 		"editor.detectIndentation": false,
 		"editor.insertSpaces": false,
 		"editor.tabSize": 4,
+		"emmet.includeLanguages": {
+			"postcss": "css"
+		},
 		"[json]": {
 			"editor.tabSize": 2
 		}
