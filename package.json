@@ -1,11 +1,12 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "3.6.18",
+  "version": "3.7.18",
   "description": "CSS framework for developing web interfaces",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
   "type": "module",
   "main": "main.css",
   "files": [
+		".config/postcss.config.cjs",
     "components/*",
     "document/*",
     "objects/*",
