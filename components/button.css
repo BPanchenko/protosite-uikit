@@ -82,8 +82,10 @@
 	border-radius: 0.3rem;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
 				0 2px 2px rgba(0,0,0,0.11);
-
-	transition: var(--link-transition), background-color 0.16s var(--easing);
+	
+	transition-property: color, background-color;
+	transition-duration: var(--duration);
+	transition-timing-function: var(--easing);
 	user-select: none;
 }
 
@@ -236,7 +238,7 @@
 	--hover-bgcolor: transparent;
 
 	text-decoration: var(--link-text-decoration);
-	transition: var(--link-transition);
+	transition: color var(--duration) var(--easing);
 	box-shadow: none !important;
 }
 

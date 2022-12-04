@@ -17,7 +17,7 @@ a:not([class]),
 	background-color: transparent;
 	color: var(--link-color);
 	text-decoration: var(--link-text-decoration);
-	transition: var(--link-transition);
+	transition: color var(--duration) var(--easing);
 	text-decoration-skip-ink: auto;
 }
 
