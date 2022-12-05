@@ -1,7 +1,7 @@
 @import "./main.css";
 
 body {
-	--bg-color: --clr-blue-grey-50;
+	--bg-color: var(--clr-grey-100);
 
 	--caption-color: var(--clr-grey-900);
 	--danger-color: var(--clr-red-800);
