@@ -37,6 +37,16 @@
 	--svg-circle: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCI+DQo8Y2lyY2xlIGZpbGw9IiM0MjQyNDIiIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIvPg0KPC9zdmc+DQo=');
 }
 
+.c-field,
+.c-field-box,
+.c-field-button,
+.c-field-error,
+.c-field-info,
+.c-field-label {
+	--text-font: var(--ui-font);
+	--text-size: var(--text-sm);
+}
+
 
 /* Component: `c-field`
  ========================================================================== */
@@ -62,9 +72,6 @@
 	box-shadow: inset 0 0 .2rem var(--clr-grey-400), 0 0 0 var(--clr-blue-400);
 	box-sizing: border-box;
 	cursor: pointer;
-
-	font-family: var(--c-field-font-family);
-	font-size: var(--c-field-font-size);
 
 	transition-property: background-color, border-color, box-shadow;
 	transition-duration: 0.16s;
