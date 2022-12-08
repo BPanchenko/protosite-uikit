@@ -1,4 +1,5 @@
 @import "../settings/breakpoints.css";
+@import "../settings/space.css";
 
 /* Variables
  ========================================================================== */
@@ -15,7 +16,8 @@
 	display: block;
 	width: 100%;
 	max-width: var(--width);
-	margin: 4rem auto 6.4rem;
+	margin: var(--space-lg) auto 0;
+	padding-bottom: var(--space-xxl);
 }
 
 .o-container::after {

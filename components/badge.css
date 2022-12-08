@@ -14,7 +14,7 @@
 	vertical-align: middle;
 	border-radius: 50vw;
 	
-	padding: var(--space-xxs) var(--space-xs);
+	padding: var(--space-xs) var(--space-xs);
 	font-size: var(--text-xs);
 	line-height: 1.1;
 	text-transform: uppercase;

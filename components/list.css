@@ -78,14 +78,14 @@
 }
 
 .c-list__head {
-	padding: 0 0 var(--space-xxs);
-	margin-bottom: var(--space-xs);
+	padding: 0 0 var(--space-xs);
+	margin-bottom: var(--space-sm);
 	border-bottom: 0.2rem solid var(--clr-grey-300);
 	line-height: 4rem;
 }
 
 .c-list__head .c-list__cell {
-	padding: 0 var(--space-xs);
+	padding: 0 var(--space-sm);
 
 	line-height: inherit;
 	font-family: var(--font-primary);

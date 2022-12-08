@@ -78,7 +78,7 @@
 
 	.sizes {
 		right: var(--space-sm);
-		bottom: var(--space-xxs);
+		bottom: var(--space-xs);
 		font-family: var(--ui-font);
 		font-size: 1rem;
 		font-weight: 700;
