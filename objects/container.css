@@ -16,8 +16,8 @@
 	display: block;
 	width: 100%;
 	max-width: var(--width);
-	margin: var(--space-lg) auto 0;
-	padding-bottom: var(--space-xxl);
+	margin: 0 auto;
+	padding: var(--space-lg) 0 var(--space-xxl);
 }
 
 .o-container::after {
