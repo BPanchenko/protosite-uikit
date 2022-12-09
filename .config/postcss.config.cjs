@@ -5,6 +5,7 @@ module.exports = {
         require("postcss-nested"),
         require("postcss-custom-media"),
         require("@csstools/custom-units"),
-        require("@csstools/postcss-color-function")
+        require("@csstools/postcss-color-function"),
+		require("@csstools/postcss-cascade-layers")
     ]
 }

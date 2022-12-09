@@ -1,59 +1,60 @@
 {
-  "name": "@bpanchenko/uikit",
-  "version": "3.7.19",
-  "description": "CSS framework for developing web interfaces",
-  "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
-  "type": "module",
-  "main": "main.css",
-  "files": [
+	"name": "@bpanchenko/uikit",
+	"version": "3.8.20",
+	"description": "CSS framework for developing web interfaces",
+	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
+	"type": "module",
+	"main": "main.css",
+	"files": [
 		".config/postcss.config.cjs",
-    "components/*",
-    "document/*",
-    "objects/*",
-    "settings/*",
-    "styles/*",
-    "themes/*",
-    "utilities/*"
-  ],
-  "scripts": {
-    "build": "run-s main document components styles utilities objects theme-article theme-errordoc",
-    "components": "postcss ./components/main.css > ./assets/components.css --config ./.config/postcss.config.cjs --verbose",
-    "document": "postcss ./document/main.css > ./assets/document.css --config ./.config/postcss.config.cjs --verbose",
-    "objects": "postcss ./objects/main.css > ./assets/objects.css --config ./.config/postcss.config.cjs --verbose",
-    "main": "postcss ./main.css > ./assets/main.css --config ./.config/postcss.config.cjs --verbose",
-    "styles": "postcss ./styles/main.css > ./assets/styles.css --config ./.config/postcss.config.cjs --verbose",
-    "utilities": "postcss ./utilities/main.css > ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
-    "theme-article": "postcss ./themes/article.css > ./assets/theme-article.css --config ./.config/postcss.config.cjs --verbose",
-    "theme-errordoc": "postcss ./themes/errordoc.css > ./assets/theme-errordoc.css --config ./.config/postcss.config.cjs --verbose"
-  },
-  "analyze": true,
-  "bugs": {
-    "url": "https://github.com/BPanchenko/protosite-uikit/issues"
-  },
-  "preferGlobal": true,
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BPanchenko/protosite-uikit.git"
-  },
-  "devDependencies": {
-    "@csstools/custom-units": "0.1.1",
-    "@csstools/postcss-color-function": "1.1.1",
-    "cssnano": "5.1.14",
-    "cssnano-preset-default": "5.2.13",
-    "npm-run-all": "4.1.5",
-    "postcss": "8.4.19",
-    "postcss-cli": "10.1.0",
-    "postcss-custom-media": "9.0.1",
-    "postcss-import": "15.0.0",
-    "postcss-nested": "6.0.0",
-    "postcss-preset-env": "7.8.3",
-    "protosite-palette": "2.13.19"
-  },
-  "license": "ISC",
-  "author": {
-    "name": "Boris Panchenko",
-    "email": "boris.v.panchenko@mail.ru",
-    "url": "https://bpanchenko.ru"
-  }
+		"components/*",
+		"document/*",
+		"objects/*",
+		"settings/*",
+		"styles/*",
+		"themes/*",
+		"utilities/*"
+	],
+	"scripts": {
+		"build": "run-s main document components styles utilities objects theme-article theme-errordoc",
+		"components": "postcss ./components/main.css > ./assets/components.css --config ./.config/postcss.config.cjs --verbose",
+		"document": "postcss ./document/main.css > ./assets/document.css --config ./.config/postcss.config.cjs --verbose",
+		"objects": "postcss ./objects/main.css > ./assets/objects.css --config ./.config/postcss.config.cjs --verbose",
+		"main": "postcss ./main.css > ./assets/main.css --config ./.config/postcss.config.cjs --verbose",
+		"styles": "postcss ./styles/main.css > ./assets/styles.css --config ./.config/postcss.config.cjs --verbose",
+		"utilities": "postcss ./utilities/main.css > ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
+		"theme-article": "postcss ./themes/article.css > ./assets/theme-article.css --config ./.config/postcss.config.cjs --verbose",
+		"theme-errordoc": "postcss ./themes/errordoc.css > ./assets/theme-errordoc.css --config ./.config/postcss.config.cjs --verbose"
+	},
+	"analyze": true,
+	"bugs": {
+		"url": "https://github.com/BPanchenko/protosite-uikit/issues"
+	},
+	"preferGlobal": true,
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BPanchenko/protosite-uikit.git"
+	},
+	"devDependencies": {
+		"@csstools/custom-units": "0.1.1",
+		"@csstools/postcss-cascade-layers": "2.0.0",
+		"@csstools/postcss-color-function": "1.1.1",
+		"cssnano": "5.1.14",
+		"cssnano-preset-default": "5.2.13",
+		"npm-run-all": "4.1.5",
+		"postcss": "8.4.19",
+		"postcss-cli": "10.1.0",
+		"postcss-custom-media": "9.0.1",
+		"postcss-import": "15.0.0",
+		"postcss-nested": "6.0.0",
+		"postcss-preset-env": "7.8.3",
+		"protosite-palette": "2.13.19"
+	},
+	"license": "ISC",
+	"author": {
+		"name": "Boris Panchenko",
+		"email": "boris.v.panchenko@mail.ru",
+		"url": "https://bpanchenko.ru"
+	}
 }
