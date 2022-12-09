@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "3.8.21",
+	"version": "3.8.22",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -47,7 +47,6 @@
 		"postcss-custom-media": "9.0.1",
 		"postcss-import": "15.0.0",
 		"postcss-nested": "6.0.0",
-		"postcss-preset-env": "7.8.3",
 		"protosite-palette": "2.13.19"
 	},
 	"license": "ISC",
