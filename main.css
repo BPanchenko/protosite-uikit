@@ -1,5 +1,7 @@
-@import "./document/main.css";
+@layer document, styles;
+
 @import "./components/main.css";
+@import "./document/main.css";
 @import "./objects/main.css";
-@import "./utilities/main.css";
 @import "./styles/main.css";
+@import "./utilities/main.css";

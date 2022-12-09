@@ -1,4 +1,4 @@
-@layer normalize, headings;
+@layer document.normalize, document.headings;
 
 @import "./headings.css";
 @import "./list.css";

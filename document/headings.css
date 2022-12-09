@@ -2,7 +2,7 @@
 @import "../settings/space.css";
 @import "../settings/typography.css";
 
-@layer headings {
+@layer document.headings {
 
 	h1,
 	h2,

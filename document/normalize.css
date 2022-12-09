@@ -1,7 +1,7 @@
 @import "../settings/document.css";
 @import "../settings/typography.css";
 
-@layer normalize {
+@layer document.normalize {
 	html {
 		height: 100dvh;
 		-ms-text-size-adjust:100%;

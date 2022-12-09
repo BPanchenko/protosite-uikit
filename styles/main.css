@@ -2,37 +2,10 @@
 @import "./clean.css";
 @import "./color.css";
 @import "./floating.css";
+@import "./fonts.css";
 @import "./highlighted.css";
 @import "./hovered.css";
 @import "./inversed.css";
+@import "./loading.css";
 @import "./shadow.css";
 @import "./striped.css";
-
-/* Fonts
- ========================================================================== */
-
-.s-cursive {
-	font-family: var(--font-cursive);
-}
-
-.s-monospace {
-	font-family: var(--font-monospace);
-}
-
-
-/* Loading
- ========================================================================== */
-
-.c-list__body.s-loading::after {
-	content: ' ';
-
-	position: absolute;
-	z-index: 99;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-
-	background-color: rgba(255,255,255,.5);
-	cursor: wait;
-}
