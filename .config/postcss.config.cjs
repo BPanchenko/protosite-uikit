@@ -1,11 +1,11 @@
 module.exports = {
+	parser: false,
     plugins: [
         require("cssnano"),
         require("postcss-import"),
         require("postcss-nested"),
         require("postcss-custom-media"),
         require("@csstools/custom-units"),
-        require("@csstools/postcss-color-function"),
-		require("@csstools/postcss-cascade-layers")
+        require("@csstools/postcss-color-function")
     ]
 }

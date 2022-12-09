@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "3.8.20",
+	"version": "3.8.21",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -38,7 +38,6 @@
 	},
 	"devDependencies": {
 		"@csstools/custom-units": "0.1.1",
-		"@csstools/postcss-cascade-layers": "2.0.0",
 		"@csstools/postcss-color-function": "1.1.1",
 		"cssnano": "5.1.14",
 		"cssnano-preset-default": "5.2.13",
