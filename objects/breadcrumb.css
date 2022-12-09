@@ -39,7 +39,7 @@
 	margin: 0 0.6rem;
 }
 
-.o-breadcrumb__item.is-current {
+.o-breadcrumb__item:last-child {
 	font-family: var(--font-primary);
 	font-size: var(--text-md);
 	font-weight: 500;
