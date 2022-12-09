@@ -1,14 +1,16 @@
-
 @import "../settings/breakpoints.css";
 @import "../settings/space.css";
 
-.t-document .o-container {
-	width: auto;
-	max-width: 92rem;
-}
+.t-document {
+	min-height: auto;
 
-@media (--screen-tablet-and-smaller) {
-	.t-document .o-container {
-		margin: 0 var(--space-lg);
+	.o-container {
+		width: auto;
+		max-width: 92rem;
+
+		@media (--screen-tablet-and-smaller) {
+			margin: 0 var(--space-lg);
+		}
 	}
 }
+

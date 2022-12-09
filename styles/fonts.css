@@ -1,9 +1,12 @@
-@layer styles.fonts {
-	.s-cursive {
-		--text-font: var(--font-cursive);
-	}
-	
-	.s-monospace {
-		--text-font: var(--font-monospace);
-	}
+
+/* ========================================================================
+	Fonts
+=========================================================================== */
+
+.s-cursive {
+	--text-font: var(--font-cursive);
+}
+
+.s-monospace {
+	--text-font: var(--font-monospace);
 }

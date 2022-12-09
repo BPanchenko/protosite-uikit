@@ -1,8 +1,6 @@
-@layer document.normalize, document.headings;
-
+@import "./normalize.css";
+@import "./text.css";
+@import "./paragraph.css";
 @import "./headings.css";
 @import "./list.css";
-@import "./normalize.css";
-@import "./paragraph.css";
 @import "./table.css";
-@import "./text.css";
