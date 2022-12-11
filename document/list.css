@@ -1,3 +1,4 @@
+@import "../settings/space.css";
 
 /* ========================================================================
 	Ordered and Unordered lists
@@ -5,7 +6,7 @@
 
 ol,
 ul {
-	--li-margin-vertical: 0.5--unit;
+	--li-margin-vertical: var(--space-sm);
 	--li-nested-margin-vertical: 0;
 }
 
@@ -19,14 +20,15 @@ ul {
 }
 
 ul > li {
-	padding-left: 0.5rem;
 	margin-top: var(--li-margin-vertical);
 	margin-bottom: var(--li-margin-vertical);
+	padding-left: 1--space;
 
 	&::before {
-		content: '•';
+		content: '⁍';
 		display: inline-block;
-		margin-right: 0.8rem;
+		float: left;
+		margin-left: -1--unit;
 	}
 }
 

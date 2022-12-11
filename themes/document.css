@@ -1,16 +1,25 @@
 @import "../settings/breakpoints.css";
 @import "../settings/space.css";
 
+/* Variables
+=========================================================================== */
+
+.t-document {
+	.o-container {
+		--width: 100ch;
+	}
+}
+
+/* ========================================================================
+	Theme: Document
+=========================================================================== */
+
 .t-document {
 	min-height: auto;
 
 	.o-container {
-		width: auto;
-		max-width: 92rem;
-
-		@media (--screen-tablet-and-smaller) {
-			margin: 0 var(--space-lg);
-		}
+		margin: 0;
+		padding: 10vh var(--space-lg) var(--space-lg) 12vw;
 	}
 }
 

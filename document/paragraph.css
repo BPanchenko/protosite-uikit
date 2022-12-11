@@ -1,6 +1,7 @@
 
 @import "../settings/document.css";
 @import "../settings/typography.css";
+@import "../settings/space.css";
 
 /* ========================================================================
    Paragraph
@@ -9,9 +10,10 @@
 p {
 	display: block;
 	max-width: 80ch;
-	font-family: var(--font-primary);
-	font-size: var(--text-sm);
-	line-height: var(--line-height-md);
+}
+
+* + p {
+	margin-top: var(--space-sm);
 }
 
 
