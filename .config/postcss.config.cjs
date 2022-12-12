@@ -4,6 +4,7 @@ module.exports = {
         require("cssnano"),
         require("postcss-import"),
         require("postcss-nested"),
+        require("postcss-custom-selectors"),
         require("postcss-custom-media"),
         require("postcss-extend-rule")({
 			onRecursiveExtend: 'warm'

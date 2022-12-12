@@ -43,6 +43,7 @@
 		"postcss": "8.4.19",
 		"postcss-cli": "10.1.0",
 		"postcss-custom-media": "9.0.1",
+		"postcss-custom-selectors": "7.0.0",
 		"postcss-extend-rule": "4.0.0",
 		"postcss-import": "15.1.0",
 		"postcss-nested": "6.0.0",
