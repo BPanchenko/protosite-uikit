@@ -3,6 +3,7 @@
 :root {
 	--space:	  1.5--unit;
 	
+	--space-xxs:   0.125--unit;
 	--space-xs:   0.25--unit;
 	--space-sm:   0.5--unit;
 	--space-md:   2.5--unit;
