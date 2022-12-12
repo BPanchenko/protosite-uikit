@@ -1,9 +1,7 @@
+@import "../.snippets/custom-selectors.css";
 @import "../settings/document.css";
 @import "../settings/space.css";
 @import "../document/icon.css";
-
-@custom-selector :--button-is-active .c-button:active, .c-button[aria-pressed=true];
-@custom-selector :--button-has-focus .c-button:focus, .c-panel:not(.s-clean) .c-button:focus;
 
 /**
  * Component: Button
@@ -61,7 +59,7 @@
 	transition-timing-function: var(--easing);
 	user-select: none;
 	
-	& > :--icon {
+	& > :--icon-attr-on {
 		margin-right: var(--space-sm);
 		
 		&::before {

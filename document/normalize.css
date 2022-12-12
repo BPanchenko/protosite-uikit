@@ -1,3 +1,4 @@
+@import "../.snippets/custom-selectors.css";
 @import "../settings/document.css";
 @import "../settings/typography.css";
 
@@ -65,10 +66,6 @@ audio:not([controls]) {
 	height: 0;
 }
 
-template {
-	display: none;
-}
-
 /* Selection
 ========================================================================== */
 
@@ -82,7 +79,7 @@ template {
 	background-color: var(--selection-bg-color, transparent);
 	text-shadow: none;
 }
-*[unselectable="on"] {
+*[unselectable=on] {
 	user-select: none;
 }
 
@@ -102,7 +99,7 @@ hr {
 	padding: 0;
 }
 
-:matches(h1,h2,h3,h4,h5,h6) + hr {
+:--headings + hr {
 	margin-top: 0;
 }
 
@@ -110,11 +107,6 @@ hr {
 /* Block base
 ========================================================================== */
 
-p,
-ul,
-ol,
-dl,
-dd,
 blockquote,
 pre,
 address,
@@ -125,10 +117,6 @@ figcaption {
 }
 
 * + :where(
-	p,
-	ul,
-	ol,
-	dl,
 	blockquote,
 	pre,
 	address,

@@ -1,3 +1,4 @@
+@import "../.snippets/custom-selectors.css";
 @import "../settings/space.css";
 @import "../settings/typography.css";
 @import "../document/icon.css";
@@ -5,7 +6,7 @@
 /* Text
 =========================================================================== */
 
-.s-default {
+.s-default-size {
 	--text-size: var(--text-size-default);
 	--text-interligne: var(--interligne-default);
 }
@@ -57,31 +58,31 @@
 	}
 
 	&.s-lg {
-		--height: 4rem;
+		--height: 2.5--unit;
 		--padding-horizontal: var(--space-lg);
 		--text-size: var(--text-lg);
 	}
 
 	&.s-xl {
-		--height: 5.6rem;
+		--height: 3.5--unit;
 		--padding-horizontal: var(--space-lg);
 		--text-size: var(--text-xl);
 	}
 }
 
-.c-button {
-	&.s-sm.s-icon {
+.c-button.s-icon {
+	&.s-sm {
 		padding: var(--space-xs);
 		& + & {
 			margin-left: var(--space-xs);
 		}
 	}
 
-	&.s-lg.s-icon {
+	&.s-lg {
 		padding: var(--space-sm);
 	}
 
-	&.s-xl.s-icon {
+	&.s-xl {
 		padding: var(--space-sm);
 		& + & {
 			margin-left: var(--space-md);
@@ -93,7 +94,7 @@
 /* Element: Icon (md,lg)
 =========================================================================== */
 
-:--icon {
+:--icon-attr-on {
 	&.s-md::before {
 		--icon-size: var(--space-md);
 		--icon-weight: var(--font-medium);
