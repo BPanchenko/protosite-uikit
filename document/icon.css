@@ -1,5 +1,5 @@
-@import "../.snippets/custom-selectors.css";
-@import "../.snippets/icon.css";
+@import "../.snippet/custom-selectors.css";
+@import "../.snippet/icon.css";
 
 :--icon-attr-included {
 	@extend %icon;
