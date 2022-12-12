@@ -35,14 +35,10 @@
 /* Reset link to text view
 =========================================================================== */
 
-.s-text a,
 a.s-text {
-	color: var(text-color);
+	--link-color: var(--text-color);
 	text-decoration: none;
-
-	&:hover {
-		text-decoration: none;
-	}
+	&:hover { text-decoration: none; }
 }
 
 

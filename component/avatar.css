@@ -1,70 +1,41 @@
-@import "../settings/document.css";
+@import "../settings/main.css";
+@import "../settings/shadows.css";
 
-/**
- * Component: `c-avatar`
- * Description:	User Avatar
- *
- * Modifiers:	  `c-avatar--xs`
- *				  `c-avatar--sm`
- *				  `c-avatar--md`
- *				  `c-avatar--lg`
- *				  `c-avatar--xl`
- *
- * Markup: 
- *   <figure class="c-avatar c-avatar--md">
- *	 	<a href="..." class="c-avatar__link" target="_blank">
- *		 	<img src="..." class="c-avatar__image">
- *	 	</a>
- *   </figure>
- *
- ========================================================================== */
-
-.c-avatar {
-	--size: calc(5 * var(--unit));
-
-	--size-xs: 2.4rem;
-	--size-sm: 4rem;
-	--size-md: 8rem;
-	--size-lg: 12.8rem;
-	--size-xl: 19.2rem;
-}
 
 /* ========================================================================
-   Component: `c-avatar`
- ========================================================================== */
+	Component: Avatar
+=========================================================================== */
+
+.c-avatar {
+	--text-size: 0;
+	--size: 5--unit;
+}
 
 .c-avatar {
 	display: inline-block;
 	border-radius: 50%;
-	overflow: hidden;
-
 	width: var(--size);
 	height: var(--size);
-
-	font-size: .001px;
+	margin: 0;
+	overflow: hidden;
 	text-align: center;
 	vertical-align: middle;
-
-	background-size: cover;
 	user-select: none;
 
-	/* reset default styles figure */
-	margin: 0;
-}
+	:is(a, img) {
+		display: inline-block;
+		width: inherit;
+		height: inherit;
+	}
 
-.c-avatar :matches(a, img) {
-	display: inline-block;
-	width: inherit;
-	height: inherit;
-}
+	img {
+		object-fit: cover;
+	}
 
-.c-avatar img {
-	object-fit: cover;
-}
-
-/* picture on background */
-.c-avatar[style*="background"] {
-	box-shadow: var(--inset-shadow-2dp);
+	&[style*="background"] {
+		background-size: cover;
+		box-shadow: var(--inset-shadow-2dp);
+	}
 }
 
 
@@ -103,26 +74,6 @@
 .c-avatar:not([style*="background"]):empty::after,
 .c-avatar:not([style*=background]) .c-avatar__link:empty::after {
 	transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-
-/* Modifiers: Sizes
- ========================================================================== */
-
- .c-avatar--xs {
-	--size: var(--size-xs);
-}
-.c-avatar--sm {
-	--size: var(--size-sm);
-}
-.c-avatar--md {
-	--size: var(--size-md);
-}
-.c-avatar--lg {
-	--size: var(--size-lg);
-}
-.c-avatar--xl {
-	--size: var(--size-xl);
 }
 
 

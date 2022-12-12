@@ -11,8 +11,7 @@
  *
  ========================================================================== */
 
-.u-hidden,
-[aria-hidden=true] {
+:is(.u-hidden, [aria-hidden=true]) {
 	display: none !important;
 	visibility: hidden !important;
 }
@@ -96,7 +95,7 @@
 /* Toggle (Hover + Focus)
  ========================================================================== */
 
-.u-visible-toggle:not(:hover):not(:focus) .u-hidden-hover:not(:focus-within) {
+.u-visible-toggle:not(:hover):not(:focus-visible) .u-hidden-hover:not(:focus-within) {
 	position: absolute !important;
 	width: 0 !important;
 	height: 0 !important;
@@ -105,7 +104,7 @@
 	overflow: hidden !important;
 }
 
-.uk-visible-toggle:not(:hover):not(:focus) .uk-invisible-hover:not(:focus-within) {
+.u-visible-toggle:not(:hover):not(:focus-visible) .u-invisible-hover:not(:focus-within) {
 	opacity: 0 !important;
 }
 
@@ -113,7 +112,7 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
-.u-visible-toggle:focus {
+.u-visible-toggle:focus-visible {
 	outline: none;
 }
 

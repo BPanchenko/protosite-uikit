@@ -2,11 +2,8 @@
 /* Floating
 =========================================================================== */
 
-:where(
-	.u-float-left,
-	.u-float-right
-) {
-	max-width: min-content;
+:where(.u-float-left, .u-float-right) {
+	max-width: max-content;
 }
 
 .u-float-left { float: left; }

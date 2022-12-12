@@ -47,6 +47,30 @@
 }
 
 
+/* Component: Avatar (xs,sm,lg,xl)
+=========================================================================== */
+
+.c-avatar {
+	--size-xs: 1.5--unit;
+	--size-sm: 2.5--unit;
+	--size-lg: 8--unit;
+	--size-xl: 12--unit;
+
+	&.s-xs {
+		--size: var(--size-xs);
+	}
+	&.s-sm {
+		--size: var(--size-sm);
+	}
+	&.s-lg {
+		--size: var(--size-lg);
+	}
+	&.s-xl {
+		--size: var(--size-xl);
+	}
+}
+
+
 /* Component: Button (sm,lg,xl)
 =========================================================================== */
 
