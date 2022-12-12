@@ -1,4 +1,4 @@
-@custom-selector :--button-has-focus .c-button:focus, .c-panel:not(.s-clean) .c-button:focus;
+@custom-selector :--button-has-focus .c-button:focus-visible, .c-panel:not(.s-clean) .c-button:focus-visible;
 @custom-selector :--button-is-active .c-button:active, .c-button[aria-pressed=true];
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
 @custom-selector :--icon-attr-excluded i, .icon, .s-icon;

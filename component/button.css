@@ -155,7 +155,7 @@
 			border-bottom-left-radius: 0;
 			border-left: 1px solid var(--clr-grey-200);
 			
-			&:focus {
+			&:focus-visible {
 				border-left: 1px solid transparent;
 			}
 		}

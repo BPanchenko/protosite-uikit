@@ -38,7 +38,7 @@
 
 	&:active,
 	&:hover,
-	&:focus,
+	&:focus-visible,
 	&[aria-pressed=true] {
 		--color: var(--hover-color);
 	}
