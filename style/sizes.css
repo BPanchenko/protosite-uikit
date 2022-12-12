@@ -1,3 +1,6 @@
+@import "../settings/space.css";
+@import "../settings/typography.css";
+@import "../document/icon.css";
 
 /* Text
 =========================================================================== */
@@ -50,53 +53,37 @@
 	&.s-sm {
 		--height: var(--unit);
 		--padding-horizontal: var(--space-sm);
-		--font-size: var(--text-xs);
+		--text-size: var(--text-xs);
 	}
 
 	&.s-lg {
 		--height: 4rem;
 		--padding-horizontal: var(--space-lg);
-		--font-size: var(--text-lg);
+		--text-size: var(--text-lg);
 	}
 
 	&.s-xl {
-		--icon-size: 10--unit;
 		--height: 5.6rem;
 		--padding-horizontal: var(--space-lg);
-		--font-size: var(--text-xl);
+		--text-size: var(--text-xl);
 	}
 }
 
 .c-button {
-	&.s-sm {
-		&.c-button--icon {
-			padding: var(--space-xs);
-		}
-		&.c-button--icon + &.c-button--icon {
+	&.s-sm.s-icon {
+		padding: var(--space-xs);
+		& + & {
 			margin-left: var(--space-xs);
 		}
 	}
 
-	&.s-lg {
-		&.c-button--icon {
-			--icon-size: 4rem;
-			padding: var(--space-sm);
-		}
-		&.c-button--icon::before {
-			font-size: 32px;
-			font-weight: var(--font-medium);
-		}
+	&.s-lg.s-icon {
+		padding: var(--space-sm);
 	}
 
-	&.s-xl {
-		&.c-button--icon {
-			padding: var(--space-sm);
-		}
-		&.c-button--icon::before {
-			font-size: 128px;
-			font-weight: 800;
-		}
-		&.c-button--icon + &.c-button--icon {
+	&.s-xl.s-icon {
+		padding: var(--space-sm);
+		& + & {
 			margin-left: var(--space-md);
 		}
 	}
@@ -106,15 +93,15 @@
 /* Element: Icon (md,lg)
 =========================================================================== */
 
-i[data-glyph],
-.s-icon[data-glyph] {
+:--icon {
 	&.s-md::before {
-		font-weight: var(--font-medium);
-		font-size: 2--unit;
+		--icon-size: var(--space-md);
+		--icon-weight: var(--font-medium);
+		--text-size: 2--unit;
 	}
 
 	&.s-lg::before {
-		font-weight: var(--font-extra-bold);
-		font-size: 8--unit;
+		--icon-size: var(--space-xl);
+		--icon-weight: var(--font-extra-bold);
 	}
 }

@@ -1,42 +1,17 @@
 @import "../settings/document.css";
 @import "../settings/space.css";
+@import "../document/icon.css";
+
+@custom-selector :--active .c-button:active, .c-button[aria-pressed=true];
+@custom-selector :--focus .c-button:focus, .c-panel:not(.s-clean) .c-button:focus;
 
 /**
  * Component: Button
- * Description: Defines styles for buttons
  * 
- * Wrappers: `c-button-group`
- *		   `c-button-dropdown`
+ * Nested elements: `c-button__icon`, `c-button__text`
+ * Container: `c-button-group`
  * 
- * Styles:  `s-bordered`
- *		  `s-clean`
- *		  `s-danger`
- *		  `s-large`
- *		  `s-link`
- *		  `s-icon`
- *		  `s-primary`
- *		  `s-small`
- *		  `s-warning`
- *
- * States: `:active` or `[aria-pressed=true]`
- * 
- * Markup:
- * 
- * <!-- c-button-group -->
- * <div class="c-button-group">
- *	 <button class="c-button"></button>
- *	 <button class="c-button"></button>
- * </div>
- * 
- * <!-- c-button-dropdown -->
- * <div class="c-button-dropdown" data-ui-dropdown>
- *	 <button class="c-button"></button>
- *	 <ul class="c-dropdown">
- *		 <li><a href=""></a></li>
- *	 </ul>
- * </div>
- * 
- ========================================================================== */
+=========================================================================== */
 
 .c-button {
 	--height: 3.2rem;
@@ -44,7 +19,7 @@
 	--padding-vertical: 0;
 
 	--text-font: var(--ui-font);
-	--text-size: var(--text-md);
+	--text-size: var(--text-sm);
 
 	--color: var(--clr-white);
 	--hover-color: var(--clr-white);
@@ -86,7 +61,7 @@
 	transition-timing-function: var(--easing);
 	user-select: none;
 	
-	& > :is(i[data-glyph], .icon[data-glyph]) {
+	& > :--icon {
 		margin-right: var(--space-sm);
 		
 		&::before {
@@ -104,23 +79,11 @@
 	}
 }
 
-
-/* State: Actived (Pressed)
-=========================================================================== */
-
-.c-button {
-	&:active,
-	&[aria-pressed=true] {
-		box-shadow: none;
-	}
+:--active {
+	box-shadow: none;
 }
 
-
-/* State: Focus
-=========================================================================== */
-
-.c-button:focus,
-.c-panel:not(.s-clean) .c-button:focus {
+:--focus {
 	--bg-color: var(--focus-bg-color);
 }
 
@@ -132,8 +95,7 @@
 	.c-button {
 		box-shadow: none;
 		
-		&:active,
-		&[aria-pressed=true] {
+		:--active {
 			box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
 		}
 	}
@@ -144,36 +106,41 @@
    Nested elements: Icon and Text
 =========================================================================== */
 
-.c-button__icon,
-.c-button__text {
-	display: inline-block;
-	vertical-align: baseline;
-	line-height: 1;
-}
-.c-button__icon {
-	margin-left: -1rem;
-	margin-right: 1.3rem;
-}
-
-.c-button__text + .c-button__icon {
-	margin-left: 1.3rem;
-	margin-right: -1rem;
-}
-
-/* text-crop */
-
-.c-button__text::before,
-.c-button__text::after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-.c-button__text::before {
-	margin-bottom: -0.2em;
-}
-.c-button__text::after {
-	margin-top: 0;
+.c-button {
+	&__icon,
+	&__text {
+		display: inline-block;
+		vertical-align: baseline;
+		line-height: 1;
+	}
+	
+	&__icon {
+		margin-left: -1rem;
+		margin-right: 1.3rem;
+	}
+	
+	&__text + &__icon {
+		margin-left: 1.3rem;
+		margin-right: -1rem;
+	}
+	
+	&__text {
+		/* text-crop */
+	
+		:is(&::before, ::after) {
+			content: ' ';
+			display: block;
+			height: 0;
+			width: 0;
+		}
+	
+		&::before {
+			margin-bottom: -0.2em;
+		}
+		&::after {
+			margin-top: 0;
+		}
+	}
 }
 
 
@@ -205,7 +172,7 @@
 		& + .c-button,
 		&.s-icon + .c-button.s-icon,
 		&.s-link + .c-button.s-link {
-			margin-left: 0;
+			margin-left: 0 !important;
 		}
 	}
 }

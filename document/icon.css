@@ -1,9 +1,17 @@
 @import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
-
 @import "../settings/document.css";
+@import "../settings/typography.css";
 
-i[data-glyph],
-.icon[data-glyph] {
+@custom-selector :--icon i[data-glyph], .icon[data-glyph], .s-icon[data-glyph];
+
+%icon::before {
+	--icon-size: var(--unit);
+	--icon-weight: var(--font-normal);
+	--text-size: var(--icon-size);
+	--text-interligne: 1;
+}
+
+%icon {
 	&::before {
 		display: inline-block;
 		position: relative;
@@ -11,10 +19,7 @@ i[data-glyph],
 		vertical-align: baseline;
 		font-family: 'Iconic';
 		font-display: block;
-		font-weight: var(--font-normal);
-		font-style: normal;
-		font-size: var(--unit);
-		line-height: 1;
+		font-weight: var(--icon-weight);
 		speak: none;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -25,11 +30,16 @@ i[data-glyph],
 		line-height: 0;
 		
 		&::before {
-			width: var(--unit);
+			width: var(--icon-size);
+			height: var(--icon-size);
 			text-align: center;
 			box-sizing: content-box;
 		}
 	}
+}
+
+:--icon {
+	@extend %icon;
 }
 
 /* TODO: Define glyphs */
