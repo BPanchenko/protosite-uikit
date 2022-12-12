@@ -64,7 +64,7 @@
 	top: -0.1rem;
 	left: 0;
 	right: 0;
-	border-top: 0.1rem solid var(--clr-grey-800);
+	border-top: 0.1rem solid var(--divider-color);
 }
 
 

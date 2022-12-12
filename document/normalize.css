@@ -73,13 +73,13 @@ template {
 ========================================================================== */
 
 ::-moz-selection {
-	color: var(--clr-selection, currentColor);
-	background-color: var(--clr-selection-bg, transparent);
+	color: var(--selection-color, currentColor);
+	background-color: var(--selection-bg-color, transparent);
 	text-shadow: none;
 }
 ::selection {
-	color: var(--clr-selection, currentColor);
-	background-color: var(--clr-selection-bg, transparent);
+	color: var(--selection-color, currentColor);
+	background-color: var(--selection-bg-color, transparent);
 	text-shadow: none;
 }
 *[unselectable="on"] {

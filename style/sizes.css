@@ -5,44 +5,44 @@
 /* Text
 =========================================================================== */
 
-.s-default-size {
-	font-size: var(--text-size) !important;
-	line-height: var(--text-interligne) !important;
+.s-default {
+	--text-size: var(--text-size-default);
+	--text-interligne: var(--interligne-default);
 }
 
 .s-xs {
-	font-size: var(--text-xs);
-	line-height: var(--interligne-xs);
+	--text-size: var(--text-xs);
+	--text-interligne: var(--interligne-xs);
 }
 
 .s-sm {
-	font-size: var(--text-sm);
-	line-height: var(--interligne-sm);
+	--text-size: var(--text-sm);
+	--text-interligne: var(--interligne-sm);
 }
 
 .s-md {
-	font-size: var(--text-md);
-	line-height: var(--interligne-md);
+	--text-size: var(--text-md);
+	--text-interligne: var(--interligne-md);
 }
 
 .s-lg {
-	font-size: var(--text-lg);
-	line-height: var(--interligne-lg);
+	--text-size: var(--text-lg);
+	--text-interligne: var(--interligne-lg);
 }
 
 .s-xl {
-	font-size: var(--text-xl);
-	line-height: var(--interligne-xl);
+	--text-size: var(--text-xl);
+	--text-interligne: var(--interligne-xl);
 }
 
 .s-xxl {
-	font-size: var(--text-xxl);
-	line-height: var(--interligne-xxl);
+	--text-size: var(--text-xxl);
+	--text-interligne: var(--interligne-xxl);
 }
 
 .s-xxxl {
-	font-size: var(--text-xxxl);
-	line-height: var(--interligne-xxxl);
+	--text-size: var(--text-xxxl);
+	--text-interligne: var(--interligne-xxxl);
 }
 
 

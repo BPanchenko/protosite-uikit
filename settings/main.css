@@ -1,8 +1,9 @@
 @import "protosite-palette/assets/palette.css";
 
+/* Basic parameters
+=========================================================================== */
+
 :root {
-	--clr-black: --clr-grey-900;
-	--clr-white: #ffffff;
 	--easing: cubic-bezier(0.3, 0, 0.2, 1);
 	--duration: 0.16s;
 	--unit: 1.6rem;
@@ -10,4 +11,18 @@
 
 html {
 	font-size: 62.5%;
+}
+
+/* System colors
+=========================================================================== */
+
+:root {
+	--clr-black: var(--clr-grey-900);
+	--clr-white: #ffffff;
+	
+	--danger-color: var(--clr-red-800);
+	--muted-color: var(--clr-grey-600);
+	--primary-color: var(--clr-blue-800);
+	--success-color: var(--clr-green-800);
+	--warning-color: var(--clr-orange-800);
 }
