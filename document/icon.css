@@ -1,8 +1,26 @@
 @import "../.snippets/custom-selectors.css";
 @import "../.snippets/icon.css";
 
-:--icon-attr-on {
+:--icon-attr-included {
 	@extend %icon;
 }
 
-/* TODO: Define glyphs */
+:--icon-attr-excluded[data-glyph=aperture]::before { content: '\e007'; }
+:--icon-attr-excluded[data-glyph=arrow-right-angle-top-left-fill-acute]::before { content: '\e078'; }
+:--icon-attr-excluded[data-glyph=ban]::before { content: '\e12a'; }
+:--icon-attr-excluded[data-glyph=brain]::before { content: '\e13a'; }
+:--icon-attr-excluded[data-glyph=bug]::before { content: '\e145'; }
+:--icon-attr-excluded[data-glyph=check-thin]::before { content: '\e153'; }
+:--icon-attr-excluded[data-glyph=data-transfer-download]::before { content: '\e174'; }
+:--icon-attr-excluded[data-glyph=ellipses]::before { content: '\e185'; }
+:--icon-attr-excluded[data-glyph=envelope-closed]::before { content: '\e186'; }
+:--icon-attr-excluded[data-glyph=external-link]::before { content: '\e18e'; }
+:--icon-attr-excluded[data-glyph=firefly]::before { content: '\e1a6'; }
+:--icon-attr-excluded[data-glyph=fullscreen-enter]::before { content: '\e1af'; }
+:--icon-attr-excluded[data-glyph=key]::before { content: '\e1cd'; }
+:--icon-attr-excluded[data-glyph=lightbulb-alt-off]::before { content: '\e1d2'; }
+:--icon-attr-excluded[data-glyph=lightbulb-alt-on]::before { content: '\e1d3'; }
+:--icon-attr-excluded[data-glyph=lightbulb]::before { content: '\e1d4'; }
+:--icon-attr-excluded[data-glyph=social-github]::before { content: '\e23c'; }
+:--icon-attr-excluded[data-glyph=trash]::before { content: '\e25c'; }
+:--icon-attr-excluded[data-glyph=warning]::before { content: '\e267'; }
