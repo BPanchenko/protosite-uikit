@@ -37,13 +37,13 @@ a:not([class]):hover,
  ========================================================================== */
 
 b {
-	font-weight: 500;
+	font-weight: var(--font-medium);
 }
 b > b, strong {
-	font-weight: 600;
+	font-weight: var(--font-bold);
 }
 strong > strong {
-	font-weight: 700;
+	font-weight: var(--font-bold);
 }
 
 
@@ -52,7 +52,7 @@ strong > strong {
 
 small {
 	font-size: var(--text-sm);
-	line-height: var(--line-height-sm);
+	line-height: var(--interligne-sm);
 }
 
 

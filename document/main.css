@@ -1,6 +1,7 @@
 @import "./normalize.css";
 @import "./text.css";
+@import "./icon.css";
 @import "./paragraph.css";
 @import "./headings.css";
-@import "./list.css";
+@import "./lists.css";
 @import "./table.css";

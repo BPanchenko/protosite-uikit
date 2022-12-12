@@ -1,0 +1,120 @@
+
+/* Text
+=========================================================================== */
+
+.s-default-size {
+	font-size: var(--text-size) !important;
+	line-height: var(--text-interligne) !important;
+}
+
+.s-xs {
+	font-size: var(--text-xs);
+	line-height: var(--interligne-xs);
+}
+
+.s-sm {
+	font-size: var(--text-sm);
+	line-height: var(--interligne-sm);
+}
+
+.s-md {
+	font-size: var(--text-md);
+	line-height: var(--interligne-md);
+}
+
+.s-lg {
+	font-size: var(--text-lg);
+	line-height: var(--interligne-lg);
+}
+
+.s-xl {
+	font-size: var(--text-xl);
+	line-height: var(--interligne-xl);
+}
+
+.s-xxl {
+	font-size: var(--text-xxl);
+	line-height: var(--interligne-xxl);
+}
+
+.s-xxxl {
+	font-size: var(--text-xxxl);
+	line-height: var(--interligne-xxxl);
+}
+
+
+/* Component: Button (sm,lg,xl)
+=========================================================================== */
+
+.c-button {
+	&.s-sm {
+		--height: var(--unit);
+		--padding-horizontal: var(--space-sm);
+		--font-size: var(--text-xs);
+	}
+
+	&.s-lg {
+		--height: 4rem;
+		--padding-horizontal: var(--space-lg);
+		--font-size: var(--text-lg);
+	}
+
+	&.s-xl {
+		--icon-size: 10--unit;
+		--height: 5.6rem;
+		--padding-horizontal: var(--space-lg);
+		--font-size: var(--text-xl);
+	}
+}
+
+.c-button {
+	&.s-sm {
+		&.c-button--icon {
+			padding: var(--space-xs);
+		}
+		&.c-button--icon + &.c-button--icon {
+			margin-left: var(--space-xs);
+		}
+	}
+
+	&.s-lg {
+		&.c-button--icon {
+			--icon-size: 4rem;
+			padding: var(--space-sm);
+		}
+		&.c-button--icon::before {
+			font-size: 32px;
+			font-weight: var(--font-medium);
+		}
+	}
+
+	&.s-xl {
+		&.c-button--icon {
+			padding: var(--space-sm);
+		}
+		&.c-button--icon::before {
+			font-size: 128px;
+			font-weight: 800;
+		}
+		&.c-button--icon + &.c-button--icon {
+			margin-left: var(--space-md);
+		}
+	}
+}
+
+
+/* Element: Icon (md,lg)
+=========================================================================== */
+
+i[data-glyph],
+.s-icon[data-glyph] {
+	&.s-md::before {
+		font-weight: var(--font-medium);
+		font-size: 2--unit;
+	}
+
+	&.s-lg::before {
+		font-weight: var(--font-extra-bold);
+		font-size: 8--unit;
+	}
+}

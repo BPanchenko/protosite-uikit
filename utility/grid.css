@@ -1,0 +1,87 @@
+@import "../settings/document.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
+
+
+/* ========================================================================
+	Grid utility
+ ========================================================================== */
+
+.u-grid {
+	--color: var(--clr-blue);
+	--border-color: color(#FF0000 blackness(25%));
+}
+
+.u-grid,
+.u-grid .guide--horizontal,
+.u-grid .guide--vertical,
+.u-grid .line,
+.u-grid .sizes {
+	position: absolute;
+}
+
+.u-grid {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 80;
+	overflow: hidden;
+
+	outline: 1px dotted var(--border-color);
+
+	.guide--horizontal,
+	.guide--vertical {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	
+	.guide--horizontal .line {
+		top: 0;
+		right: auto;
+		bottom: 0;
+		left: var(--unit);
+	
+		width: 0.1rem;
+		height: 100%;
+	
+		border-right: 1px dotted var(--color);
+		opacity: 0.3;
+
+		&.s-axis {
+			border-left: 1px dotted white;
+			border-right: 1px dotted black;
+			opacity: 0.5;
+		}
+	}
+	
+	.guide--vertical .line {
+		top: var(--unit);
+		right: 0;
+		bottom: 0;
+		left: 0;
+	
+		width: 100%;
+		height: 0.1rem;
+	
+		border-top: 1px dotted var(--color);
+		opacity: 0.3;
+
+		&.s-axis {
+			border-top: 1px dotted white;
+			border-bottom: 1px dotted black;
+			opacity: 0.5;
+		}
+	}
+
+	.sizes {
+		right: var(--space-sm);
+		bottom: var(--space-xs);
+		font-family: var(--ui-font);
+		font-size: 1rem;
+		font-weight: var(--font-bold);
+		opacity: 0.7;
+	}
+}

@@ -1,0 +1,35 @@
+@import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
+
+@import "../settings/document.css";
+
+i[data-glyph],
+.icon[data-glyph] {
+	&::before {
+		display: inline-block;
+		position: relative;
+		top: 0.1rem;
+		vertical-align: baseline;
+		font-family: 'Iconic';
+		font-display: block;
+		font-weight: var(--font-normal);
+		font-style: normal;
+		font-size: var(--unit);
+		line-height: 1;
+		speak: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	
+	&:empty {
+		font-size: 0;
+		line-height: 0;
+		
+		&::before {
+			width: var(--unit);
+			text-align: center;
+			box-sizing: content-box;
+		}
+	}
+}
+
+/* TODO: Define glyphs */

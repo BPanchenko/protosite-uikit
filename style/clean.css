@@ -1,0 +1,39 @@
+@import "../settings/document.css";
+
+
+/* Component: Panel
+ ========================================================================== */
+
+.c-panel.s-clean {
+	background: transparent;
+	box-shadow: none;
+}
+
+
+/* Component: Button
+ ========================================================================== */
+
+.c-button.s-clean {
+	--bg-color: transparent;
+	--hover-bg-color: var(--clr-blue-grey-50);
+	--color: var(--text-color);
+	--hover-color: var(--text-color);
+}
+
+.c-button.s-clean {
+	box-shadow: none;
+
+	.c-button__icon {
+		margin-left: -.2rem;
+		margin-right: .8rem;
+	}
+	.c-button__text + .c-button__icon {
+		margin-left: .8rem;
+		margin-right: -.2rem;
+	}
+
+	&:active,
+	&[aria-pressed=true] {
+		background-color: var(--hover-bg-color);
+	}
+}

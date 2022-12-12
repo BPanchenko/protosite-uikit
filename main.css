@@ -1,6 +1,6 @@
 @import "./document/main.css";
-@import "./components/main.css";
-@import "./objects/main.css";
-@import "./styles/main.css";
-@import "./themes/document.css";
-@import "./utilities/main.css";
+@import "./component/main.css";
+@import "./object/main.css";
+@import "./style/main.css";
+@import "./theme/document.css";
+@import "./utility/main.css";

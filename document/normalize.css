@@ -22,7 +22,7 @@ body {
 	color: var(--text-color);
 	font-family: var(--text-font);
 	font-size: var(--text-size);
-	line-height: var(--text-line);
+	line-height: var(--text-interligne);
 }
 
 article,

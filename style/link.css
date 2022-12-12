@@ -1,0 +1,45 @@
+
+
+/* Component: Button
+=========================================================================== */
+
+.c-button.s-link {
+	--bg-color: transparent;
+	--color: var(--link-color);
+	--hover-bg-color: transparent;
+	--hover-color: var(--link-hover-color);
+	--padding-horizontal: var(--space-sm);
+}
+
+.c-button.s-link {
+	text-decoration: var(--link-text-decoration);
+	transition: color var(--duration) var(--easing);
+	box-shadow: none !important;
+	
+	.c-button__icon {
+		margin-left: -.2rem;
+		margin-right: .8rem;
+		text-decoration: none;
+	}
+	
+	.c-button__text {
+		text-decoration: var(--link-text-decoration);
+
+		& + .c-button__icon {
+			margin-left: .8rem;
+			margin-right: -.2rem;
+		}
+	}
+
+	&:hover,
+	&:hover .c-button__text {
+		text-decoration: var(--link-hover-text-decoration);
+	}
+
+	&:active,
+	&:hover,
+	&:focus,
+	&[aria-pressed=true] {
+		--color: var(--hover-color);
+	}
+}

@@ -1,0 +1,42 @@
+@import "../settings/document.css";
+
+
+/* Component: Button
+=========================================================================== */
+
+.c-button.s-bordered {
+	--bg-color: transparent;
+	--border-color: var(--clr-grey-600);
+	--color: var(--text-color);
+	--hover-bg-color: transparent;
+	--hover-color: var(--text-color);
+
+	&:active,
+	&[aria-pressed=true] {
+		--bg-color: var(--clr-blue-grey-400);
+	}
+
+	&.s-danger { --border-color: var(--danger-color); }
+	&.s-success { --border-color: var(--success-color); }
+	&.s-primary { --border-color: var(--primary-color); }
+	&.s-warning { --border-color: var(--warning-color); }
+}
+
+.c-button.s-bordered,
+.c-panel:not(.s-clean) .c-button.s-bordered {
+	border-color: var(--border-color);
+	border-style: solid;
+	border-width: 0.1rem;
+	box-shadow: none;
+}
+
+.c-button.s-bordered {
+	.c-button__icon {
+		margin-left: -.2rem;
+		margin-right: .8rem;
+	}
+	.c-button__text + .c-button__icon {
+		margin-left: .8rem;
+		margin-right: -.2rem;
+	}
+}

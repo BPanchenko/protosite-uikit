@@ -1,4 +1,5 @@
 @import "./main.css";
+@import "./typography.css";
 
 body {
 	--bg-color: var(--clr-grey-100);
@@ -17,6 +18,6 @@ body {
 
 	--text-color: color(var(--clr-black, black) a(0.87));
 	--text-font: var(--font-sans, system-ui);
-	--text-line: var(--line-height-md, 1.4);
+	--text-interligne: var(--interligne-md, 1.4);
 	--text-size: var(--text-md, 16px);
 }

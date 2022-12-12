@@ -1,0 +1,56 @@
+@import "../settings/space.css";
+@import "../document/icon.css";
+
+.s-icon[data-glyph] {
+	@extend .icon[data-glyph];
+}
+
+
+/* Component: Button
+=========================================================================== */
+
+.c-button.s-icon {
+	--bg-color: transparent;
+	--color: var(--text-color);
+	--hover-bg-color: var(--clr-blue-grey-50);
+	--hover-color: var(--text-color);
+	--icon-size: 2rem;
+
+	&[data-glyph] {
+		--text-size: 0;
+		--text-interligne: 0;
+	}
+
+	&:focus,
+	&:active,
+	&[aria-pressed=true] {
+		--bg-color: var(--clr-grey-200);
+	}
+}
+
+.c-button.s-icon {
+	box-shadow: none !important;
+	padding: 0 var(--space-sm);
+
+	&[data-glyph]::before {
+		width: 1em;
+		text-align: center;
+	}
+
+	&::before {
+		position: static;
+		line-height: 1.2;
+		text-align: center;
+		vertical-align: bottom;
+		transform-origin: center;
+	}
+
+	&:empty::before {
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+
+	& + & {
+		margin-left: var(--space-sm);
+	}
+}

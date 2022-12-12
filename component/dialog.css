@@ -1,0 +1,106 @@
+@import "../settings/document.css";
+@import "../settings/shadows.css";
+@import "../settings/space.css";
+@import "../settings/typography.css";
+
+/**
+ * Component:   `c-dialog`
+ *
+ * Elements:	`c-dialog__head`
+ *				`c-dialog__body`
+ *
+ * State:		`is-closed` (by default)
+ *				`is-opened`
+ *
+ ========================================================================== */
+
+:root {
+	--c-dialog-padding: var(--space-md);
+}
+
+
+/* ========================================================================
+   Component: `c-dialog`
+ ========================================================================== */
+
+.c-dialog {
+	contain: content;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	min-width: 50rem;
+	min-height: 30rem;
+	box-sizing: border-box;
+	padding-bottom: var(--c-dialog-padding);
+
+	background-color: var(--clr-white);
+	box-shadow: var(--shadow-8dp);
+
+	transition-property: transform, opacity;
+	transition-duration: 0.16s;
+	transition-timing-function: var(--easing);
+
+	border: none;
+	text-align: left;
+}
+.c-dialog > *:first-child {
+	padding-top: var(--c-dialog-padding);
+}
+
+.c-dialog,
+.c-dialog.is-closed {
+	z-index: -1;
+	transform: translate(-50%, -54%);
+	opacity: 0;
+}
+
+.c-dialog.is-opened {
+	z-index: 110;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+
+/* Element: `c-dialog__header`
+ ========================================================================== */
+
+.c-dialog__header {
+	padding: 0 var(--c-dialog-padding);
+}
+
+
+/* Element: `c-dialog__body`
+ ========================================================================== */
+
+.c-dialog__body {
+	padding: 0 var(--c-dialog-padding);
+}
+
+
+/* Wrapper: `c-dialog__body-viewport`
+ ========================================================================== */
+
+.c-dialog__body-viewport {
+	max-height: 26.2rem;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.c-dialog__header + .c-dialog__body-wrapper,
+.c-dialog__header + .c-dialog__body {
+	margin-top: var(--space);
+}
+
+
+/* Element: `c-dialog__buttons`
+ ========================================================================== */
+
+.c-dialog__buttons {
+	padding: var(--space-sm) var(--c-dialog-padding);
+	margin-top: var(--c-dialog-padding);
+
+	font-size: 0.001px;
+	line-height: 3.6rem;
+	text-align: right;
+}

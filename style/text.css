@@ -1,0 +1,54 @@
+@import "../settings/typography.css";
+
+
+/* Font Type
+=========================================================================== */
+
+.s-cursive {
+	--text-font: var(--font-cursive);
+}
+.s-monospace {
+	--text-font: var(--font-monospace);
+}
+.s-sans {
+	--text-font: var(--font-sans);
+}
+.s-serif {
+	--text-font: var(--font-serif);
+}
+
+
+/* Font Weight
+ ========================================================================== */
+
+.s-thin { font-weight: var(--font-thin); }
+.s-extra-light { font-weight: var(--font-extra-light); }
+.s-light { font-weight: var(--font-light); }
+.s-normal { font-weight: var(--font-normal); }
+.s-medium { font-weight: var(--font-medium); }
+.s-semi-bold { font-weight: var(--font-bold); }
+.s-bold { font-weight: var(--font-bold); }
+.s-extra-bold { font-weight: var(--font-extra-bold); }
+.s-heavy { font-weight: var(--font-heavy); }
+
+
+/* Reset link to text view
+=========================================================================== */
+
+.s-text a,
+a.s-text {
+	color: var(text-color);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+/* Text transformation
+ ========================================================================== */
+
+.s-uppercase { text-transform: uppercase; }
+.s-capitalize { text-transform: capitalize; }
+.s-lowercase { text-transform: lowercase; }

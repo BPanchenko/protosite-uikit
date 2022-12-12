@@ -1,0 +1,71 @@
+
+/* Floating
+=========================================================================== */
+
+:where(
+	.u-float-left,
+	.u-float-right
+) {
+	max-width: min-content;
+}
+
+.u-float-left { float: left; }
+.u-float-right { float: right; }
+
+
+/* Positioning
+============================================================================ */
+
+.u-position-absolute,
+:where(
+	.u-position-bottom,
+	.u-position-bottom-left,
+	.u-position-bottom-right,
+	.u-position-cover,
+	.u-position-top,
+	.u-position-top-left,
+	.u-position-top-right,
+) {
+	position: absolute;
+}
+
+.u-position-top {
+	top: 0;
+	width: 100%;
+}
+
+.u-position-bottom {
+	bottom: 0;
+	width: 100%;
+}
+
+.u-position-top-left {
+	top: 0;
+	left: 0;
+}
+
+.u-position-top-right {
+	top: 0;
+	right: 0;
+}
+
+.u-position-bottom-left {
+	bottom: 0;
+	left: 0;
+}
+
+.u-position-bottom-right {
+	bottom: 0;
+	right: 0;
+}
+
+.u-position-cover {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.u-position-relative {
+	position: relative;
+}

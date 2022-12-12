@@ -1,0 +1,16 @@
+
+/* Wrapping
+=========================================================================== */
+
+.u-text-break {
+	word-wrap: break-word;
+	hyphens: auto;
+}
+.u-text-nowrap {
+	white-space: nowrap;
+}
+.u-text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
