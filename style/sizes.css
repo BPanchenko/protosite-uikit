@@ -94,7 +94,7 @@
 /* Element: Icon (md,lg)
 =========================================================================== */
 
-:--icon-attr-on {
+:--icon-attr-included {
 	&.s-md::before {
 		--icon-size: var(--space-md);
 		--icon-weight: var(--font-medium);

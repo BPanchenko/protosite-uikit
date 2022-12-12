@@ -59,7 +59,7 @@
 	transition-timing-function: var(--easing);
 	user-select: none;
 	
-	& > :--icon-attr-on {
+	& > :--icon-attr-included {
 		margin-right: var(--space-sm);
 		
 		&::before {
