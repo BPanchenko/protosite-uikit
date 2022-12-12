@@ -1,5 +1,6 @@
 
 @import "../settings/document.css";
+@import "../settings/typography.css";
 
 /**
  * Name: Text elements
@@ -7,52 +8,12 @@
  *
  * ======================================================================== */
 
-
-/* Links
- ========================================================================== */
-
-a:not([class]),
-.u-link {
-	outline: 0;
-	background-color: transparent;
-	color: var(--link-color);
-	text-decoration: var(--link-text-decoration);
-	transition: color var(--duration) var(--easing);
-	text-decoration-skip-ink: auto;
-}
-
-a:not([class]):hover,
-.u-link:hover {
-	outline: 0;
-	color: var(--link-hover-color);
-	text-decoration: var(--link-hover-text-decoration);
-}
-
-.u-link {
-	cursor: pointer;
-}
-
-
-/* Weight modifiers
- ========================================================================== */
-
-b {
-	font-weight: var(--font-medium);
-}
-b > b, strong {
-	font-weight: var(--font-bold);
-}
-strong > strong {
-	font-weight: var(--font-bold);
-}
-
-
 /* Size modifiers
  ========================================================================== */
 
 small {
-	font-size: var(--text-sm);
-	line-height: var(--interligne-sm);
+	--text-size: var(--text-sm);
+	--text-interligne: var(--interligne-sm);
 }
 
 
@@ -60,30 +21,26 @@ small {
  ========================================================================== */
 
 abbr[title] {
-	border-bottom: 1px dotted;
+	border-bottom: 0.1rem dotted currentColor;
 }
 
 code,
 kbd,
 pre,
 samp {
-	font-family: var(--font-monospace, monospace);
-	font-size: 1.3rem;
+	--text-font: var(--font-monospace);
+	--text-size: var(--text-md);
 }
 
-ins {
+:where(ins) {
 	display: inline-block;
 	margin: 0 -0.2rem;
 	padding: 0 0.2rem;
-	background-color: var(--clr-green-100);
-	color: var(--clr-grey-900);
-	text-decoration: none;
 }
 
-mark {
+:where(ins, mark) {
+	--text-color: var(--highlighted-text-color);
 	background-color: var(--selection-background-color);
-	color: var(--selection-color);
-	text-decoration: none;
 }
 
 i,

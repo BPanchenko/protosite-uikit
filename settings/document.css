@@ -4,17 +4,14 @@
 body {
 	--bg-color: var(--clr-grey-100);
 
+	--caption-color: var(--clr-black);
+	--caption-link-color: var(--clr-blue-900);
 	--link-color: var(--clr-blue-800);
-	--link-hover-color: var(--clr-blue-900);
-	--link-hover-text-decoration: none;
-	--link-text-decoration: underline;
-
 	--text-color: color(var(--clr-black) a(0.87));
 	--text-font: var(--font-sans);
 	--text-interligne: var(--interligne-default);
 	--text-size: var(--text-size-default);
 
-	--caption-color: var(--clr-black);
 	--disabled-text-color: var(--clr-grey-400-tp);
 	--divider-color: var(--clr-grey-800);
 	--highlighted-text-color: var(--clr-black);

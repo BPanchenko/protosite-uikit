@@ -1,0 +1,44 @@
+@import "../.snippets/underline.css";
+@import "../settings/document.css";
+@import "../settings/space.css";
+@import "./headings.css";
+
+/* Color updates according to a link state and context */
+
+a {
+	&:active {
+		--link-color: var(--clr-red-800);
+	}
+	&:visited {
+		--link-color: var(--clr-purple-900);
+	}
+}
+
+:--headings a {
+	--link-color: var(--caption-link-color);
+
+	&:active {
+		--link-color: var(--clr-red-900);
+	}
+	&:visited {
+		--link-color: var(--clr-purple-900);
+	}
+}
+
+/* Rule */
+
+a {
+	@extend %underline;
+
+	color: var(--link-color);
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 0.1rem dashed currentColor;
+		border-radius: var(--space-xxs);
+	}
+}
