@@ -5,7 +5,9 @@ module.exports = {
         require("postcss-import"),
         require("postcss-nested"),
         require("postcss-custom-media"),
-        require("postcss-extend-rule"),
+        require("postcss-extend-rule")({
+			onRecursiveExtend: 'warm'
+		}),
         require("@csstools/custom-units")
     ]
 }
