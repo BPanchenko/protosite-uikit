@@ -4,13 +4,14 @@
 @import "./clean.css";
 @import "./cursor.css";
 @import "./floating.css";
-@import "./icon.css";
 @import "./highlighted.css";
 @import "./hovered.css";
+@import "./icon.css";
 @import "./inversed.css";
-@import "./loading.css";
 @import "./link.css";
+@import "./loading.css";
 @import "./shadows.css";
-@import "./striped.css";
 @import "./sizes.css";
+@import "./striped.css";
 @import "./text.css";
+@import "./transform.css";
