@@ -17,6 +17,10 @@
 .t-document {
 	min-height: auto;
 
+	ul li::before {
+		content: '⁍';
+	}
+
 	.o-container {
 		margin: 0;
 		padding: 10vh var(--space-lg) var(--space-lg) 12vw;

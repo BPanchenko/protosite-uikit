@@ -17,21 +17,19 @@
 		vertical-align: baseline;
 		font-family: 'Iconic';
 		font-display: block;
+		font-size: var(--text-size);
+		font-style: normal;
 		font-weight: var(--icon-weight);
+		line-height: 1;
 		speak: none;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 	
-	&:empty {
-		font-size: 0;
-		line-height: 0;
-		
-		&::before {
-			width: var(--icon-size);
-			height: var(--icon-size);
-			text-align: center;
-			box-sizing: content-box;
-		}
+	&:empty::before {
+		width: var(--icon-size);
+		height: var(--icon-size);
+		text-align: center;
+		box-sizing: content-box;
 	}
 }

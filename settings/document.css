@@ -7,7 +7,7 @@ body {
 	--caption-color: var(--clr-black);
 	--caption-link-color: var(--clr-blue-900);
 	--link-color: var(--clr-blue-800);
-	--text-color: color(var(--clr-black) a(0.87));
+	--text-color: var(--clr-grey-800);
 	--text-font: var(--font-sans);
 	--text-interligne: var(--interligne-default);
 	--text-size: var(--text-size-default);
@@ -17,6 +17,7 @@ body {
 	--highlighted-text-color: var(--clr-black);
 	--highlighted-bg-color: var(--clr-green-grey-300-tp);
 	--hint-color: var(--muted-color);
+	--secondary-text-color: var(--clr-grey-600);
 	--selection-bg-color: var(--clr-blue-600);
 	--selection-text-color: var(--clr-white);
 }

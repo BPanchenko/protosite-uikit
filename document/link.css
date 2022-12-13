@@ -6,6 +6,8 @@
 /* Color updates according to a link state and context */
 
 a {
+	--text-color: var(--link-color);
+
 	&:active {
 		--link-color: var(--clr-red-800);
 	}
@@ -29,9 +31,7 @@ a {
 
 a {
 	@extend %underline;
-
-	color: var(--link-color);
-
+	
 	&:hover,
 	&:focus-visible {
 		text-decoration: none;
