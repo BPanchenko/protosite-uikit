@@ -9,7 +9,7 @@ table.s-hovered > tr,
 table.s-hovered tbody tr,
 .c-list.s-hovered .c-list__item {
 	transition-property: background-color;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 }
 
@@ -28,7 +28,7 @@ table.s-hovered tbody tr:hover,
 .c-thumbnail.s-hovered {
 	top: 0;
 	transition-property: box-shadow, top;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 }
 

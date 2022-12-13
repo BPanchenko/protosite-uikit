@@ -74,7 +74,7 @@
 	cursor: pointer;
 
 	transition-property: background-color, border-color, box-shadow;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 }
 
@@ -195,7 +195,7 @@ input[type=file].c-field + .c-field {
 	user-select: none;
 
 	transition-property: color;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 }
 
@@ -335,7 +335,7 @@ input:disabled + .c-field-label {
 	color: var(--clr-red-400);
 
 	opacity: 0;
-	transition: opacity 0.16s var(--easing);
+	transition: opacity var(--duration) var(--easing);
 }
 
 
@@ -352,7 +352,7 @@ input:disabled + .c-field-label {
 
 	opacity: 1;
 	transition-property: color, opacity;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 }
 

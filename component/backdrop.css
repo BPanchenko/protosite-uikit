@@ -11,5 +11,5 @@
 	background-color: var(--clr-grey-800);
 
 	opacity: 0.2;
-	transition: opacity 160ms var(--easing);
+	transition: opacity var(--duration) var(--easing);
 }

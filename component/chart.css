@@ -63,7 +63,7 @@
 	fill: var(--c-chart-color);
 
 	transition-property: stroke, fill;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 }
 

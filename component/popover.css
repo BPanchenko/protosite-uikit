@@ -36,7 +36,7 @@
 	box-shadow: var(--shadow);
 
 	transition-property: opacity;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 
 	cursor: default;
@@ -77,7 +77,7 @@
 	transform-origin: 50% 50%;
 
 	transition-property: top, right, bottom, left, margin-top, margin-left, opacity;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 	transition-delay: 0;
 }

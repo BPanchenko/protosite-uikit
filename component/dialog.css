@@ -39,7 +39,7 @@
 	box-shadow: var(--shadow-8dp);
 
 	transition-property: transform, opacity;
-	transition-duration: 0.16s;
+	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 
 	border: none;
