@@ -1,13 +1,80 @@
+@import "../settings/document.css";
 @import "../settings/space.css";
 
 /* ========================================================================
-	Ordered and Unordered lists
+	Lists
 =========================================================================== */
 
-ol,
-ul {
-	--li-margin-vertical: var(--space-sm);
-	--li-nested-margin-vertical: 0;
+ol, ul {
+	li {
+		--vertical-space: var(--space-sm);
+
+		&::before {
+			--text-color: var(--secondary-text-color);
+		}
+
+		li {
+			--vertical-space: 0;
+		}
+	}
+}
+
+dl {
+	dt {
+		--text-color: var(--caption-color);
+		--vertical-space: var(--space);
+	}
+	dd {
+		--vertical-space: var(--space-sm);
+		--horizontal-space: var(--space);
+	}
+}
+
+
+/* ========================================================================
+   Description list
+=========================================================================== */
+
+dl:not(:empty) {
+	padding-bottom: var(--vertical-space);
+
+	dt {
+		font-weight: var(--font-bold);
+	}
+
+	dt + dd {
+		margin-top: var(--vertical-space);
+		margin-left: var(--horizontal-space);
+	}
+
+	:is(dt, dd) + dt {
+		margin-top: var(--vertical-space);
+	}
+}
+
+
+/* ========================================================================
+   Ordered list
+=========================================================================== */
+
+ol {
+	list-style: decimal;
+	padding-left: 2.4rem;
+}
+
+ol li {
+	margin-top: var(--vertical-space);
+	margin-bottom: var(--vertical-space);
+	padding-left: 0;
+}
+
+ol ol {
+	list-style: lower-alpha;
+}
+
+ol li li {
+	margin-top: var(--li-nested-margin-vertical);
+	margin-bottom: var(--li-nested-margin-vertical);
 }
 
 /* ========================================================================
@@ -16,63 +83,19 @@ ul {
 
 ul {
 	padding: 0;
+	margin: 0;
 	list-style: none;
 }
 
-ul > li {
-	margin-top: var(--li-margin-vertical);
-	margin-bottom: var(--li-margin-vertical);
-	padding-left: 1--space;
+ul li {
+	margin-top: var(--vertical-space);
+	margin-bottom: var(--vertical-space);
+	padding-left: var(--space);
 
 	&::before {
-		content: '⁍';
+		content: '•';
 		display: inline-block;
 		float: left;
 		margin-left: -1--unit;
 	}
 }
-
-ul > li > ul {
-	margin: 0;
-	list-style: none;
-}
-ul > li > ul > li {
-	margin-top: var(--li-nested-margin-vertical);
-	margin-bottom: var(--li-nested-margin-vertical);
-}
-
-
-/* ========================================================================
-   Ordered list
- ========================================================================== */
-
-ol {
-	list-style: decimal;
-	padding-left: 2.4rem;
-}
-
-ol > li {
-	background: none;
-	padding-left: 0;
-	margin-top: var(--li-margin-vertical);
-	margin-bottom: var(--li-margin-vertical);
-}
-
-ol > li > ol {
-	list-style: lower-alpha;
-}
-
-ol > li > ol > li {
-	margin-top: var(--li-nested-margin-vertical);
-	margin-bottom: var(--li-nested-margin-vertical);
-}
-
-/* Remove list styles on ul, ol elements with a class attribute
- ========================================================================== */
-
-ol[class],
-ul[class] {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-} 
