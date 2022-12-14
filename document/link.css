@@ -1,7 +1,7 @@
+@import "../.snippet/custom-selectors.css";
 @import "../.snippet/underline.css";
 @import "../settings/document.css";
 @import "../settings/space.css";
-@import "./headings.css";
 
 /* Color updates according to a link state and context */
 
