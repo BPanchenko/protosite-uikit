@@ -26,7 +26,7 @@
 	--text-size-default: var(--unit);
 	--text-xs: 0.6875--unit;
 	--text-sm: 0.875--unit;
-	--text-md: var(--unit);
+	--text-md: 1.125--unit;
 	--text-lg: 1.25--unit;
 	--text-xl: 1.75--unit;
 	--text-xxl: 2.25--unit;

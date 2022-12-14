@@ -1,64 +1,29 @@
 @import url("http://assets.protosite.rocks/fonts/pt-astra-sans/stylesheet.css");
 @import url("http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css");
 
+@import "../.snippet/custom-selectors.css";
 @import "../settings/document.css";
 @import "../settings/space.css";
 
-article,
-.o-article {
+
+/* Object: Article
+============================================================================ */
+
+article {
 	--caption-font: "PT Astra Sans", sans-serif;
 	--text-font: "PT Astra Serif", serif;
 }
 
-/*
-Object: Article
-
-Components:
-	o-article__picture
-	o-article__head
-	o-article__lead
-
-============================================================================ */
-
-:where(article, .o-article) {
+article {
 	text-rendering: geometricPrecision;
 
-	:matches(h1, h2, h3, h4, h5, h6) {
+	:--headings {
 		margin: 0;
 
 		& + hr {
 			margin-top: var(--space-sm);
 		}
 	}
-
-	& > * + * {
-		margin-top: var(--space);
-	}
-}
-
-
-/* Component: `o-article-lead`
-========================================================================== */
-
-.o-article-lead {
-	display: block;
-
-	max-width: 74rem;
-	margin-top: 2.1rem;
-	margin-bottom: 1.9rem;
-
-	font-family: inherit;
-	font-size: 1.6rem;
-	font-style: italic;
-	font-weight: var(--font-bold);
-	line-height: 2.8rem;
-	color: var(--caption-color);
-}
-
-.o-article-lead::before,
-.o-article-lead::after {
-	content: "";
-	display: table;
 }
 
 
