@@ -8,11 +8,20 @@
 a {
 	--text-color: var(--link-color);
 
-	&:active {
-		--link-color: var(--clr-red-800);
+	&:link {
+		--link-color: var(--default-link-color);
 	}
 	&:visited {
 		--link-color: var(--clr-purple-900);
+	}
+	&:hover {
+		--link-color: var(--clr-blue-700);
+	}
+	&:focus {
+		--link-color: var(--default-link-color);
+	}
+	&:active {
+		--link-color: var(--clr-red-800);
 	}
 }
 
@@ -31,6 +40,7 @@ a {
 
 a {
 	@extend %underline;
+	transition: color var(--duration) var(--easing);
 	
 	&:hover,
 	&:focus-visible {

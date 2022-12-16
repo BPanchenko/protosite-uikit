@@ -6,7 +6,7 @@ body {
 
 	--caption-color: var(--clr-black);
 	--caption-link-color: var(--clr-blue-900);
-	--link-color: var(--clr-blue-800);
+	--default-link-color: var(--clr-blue-800);
 	--text-color: var(--clr-grey-800);
 	--text-font: var(--font-sans);
 	--text-interligne: var(--interligne-default);
