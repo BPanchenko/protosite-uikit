@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.14.35",
+	"version": "4.14.36",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -15,7 +15,8 @@
 		"settings/*",
 		"style/*",
 		"theme/*",
-		"utility/*"
+		"utility/*",
+		"main.css"
 	],
 	"scripts": {
 		"build": "run-p main document components styles utilities objects theme-document",
