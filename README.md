@@ -3,7 +3,7 @@
 ### Установка пакета
 
 ```bash
-npm i @bpanchenko/uikit --save-dev
+npm i -D @bpanchenko/uikit
 ```
 
 ### Файлы сборки
