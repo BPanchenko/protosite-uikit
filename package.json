@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.15.37",
+	"version": "4.15.38",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -28,20 +28,12 @@
 		"utilities": "postcss ./utility/main.css --output ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
 		"theme-document": "postcss ./theme/document.css --output ./assets/theme-document.css --config ./.config/postcss.config.cjs --verbose"
 	},
-	"analyze": true,
-	"bugs": {
-		"url": "https://github.com/BPanchenko/protosite-uikit/issues"
-	},
-	"preferGlobal": true,
-	"private": false,
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/BPanchenko/protosite-uikit.git"
-	},
 	"dependencies": {
 		"@csstools/custom-units": "0.1.1",
 		"cssnano": "5.1.14",
 		"cssnano-preset-default": "5.2.13",
+		"postcss": "8.4.20",
+		"postcss-cli": "10.1.0",
 		"postcss-custom-media": "9.0.1",
 		"postcss-custom-selectors": "7.0.0",
 		"postcss-extend-rule": "4.0.0",
@@ -50,14 +42,19 @@
 		"protosite-palette": "2.13.20"
 	},
 	"devDependencies": {
-		"npm-run-all": "4.1.5",
-		"postcss": "8.4.20",
-		"postcss-cli": "10.1.0"
+		"npm-run-all": "4.1.5"
 	},
-	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BPanchenko/protosite-uikit.git"
+	},
+	"bugs": {
+		"url": "https://github.com/BPanchenko/protosite-uikit/issues"
+	},
 	"author": {
 		"name": "Boris Panchenko",
 		"email": "boris.v.panchenko@mail.ru",
 		"url": "https://bpanchenko.ru"
-	}
+	},
+	"license": "ISC"
 }
