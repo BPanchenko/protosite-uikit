@@ -11,9 +11,9 @@
  *
  ========================================================================== */
 
-:root {
-	--c-panel-padding-left: var(--space-md);
-	--c-panel-padding-right: var(--space-md);
+.c-panel {
+	--padding-vert: var(--space-md);
+	--padding-vert: var(--space-md);
 	--c-panel-head-padding-top: var(--space-md);
 	--c-panel-head-padding-bottom: var(--space-sm);
 	--c-panel-body-padding-top: var(--space-md);
@@ -74,9 +74,9 @@
 .c-panel__head {
 	position: relative;
 	padding: var(--c-panel-head-padding-top)
-			 var(--c-panel-padding-right)
+			 var(--padding-vert)
 			 var(--c-panel-head-padding-bottom)
-			 var(--c-panel-padding-left);
+			 var(--padding-vert);
 
 	border-top-left-radius: var(--c-panel-border-radius);
 	border-top-right-radius: var(--c-panel-border-radius);
@@ -105,9 +105,9 @@
 .c-panel__body {
 	position: relative;
 	padding: var(--c-panel-body-padding-top)
-			 var(--c-panel-padding-right)
+			 var(--padding-vert)
 			 var(--c-panel-body-padding-bottom)
-			 var(--c-panel-padding-left);
+			 var(--padding-vert);
 }
 
 .c-panel__body::before,
@@ -122,8 +122,8 @@
 	display: block;
 	position: absolute;
 	top: 0;
-	left: calc(var(--c-panel-padding-left) - var(--space-sm));
-	right: calc(var(--c-panel-padding-right) - var(--space-sm));
+	left: calc(var(--padding-vert) - var(--space-sm));
+	right: calc(var(--padding-vert) - var(--space-sm));
 	border-top: 1px solid var(--clr-grey-400);
 }
 
