@@ -11,8 +11,8 @@ body {
 	--caption-link-color: var(--clr-blue-900);
 	--text-color: var(--default-text-color);
 	--text-font: var(--font-sans);
-	--text-interligne: var(--interligne-default);
-	--text-size: var(--text-size-default);
+	--text-interligne: var(--default-interligne);
+	--text-size: var(--default-text-size);
 
 	--disabled-text-color: var(--clr-grey-400-tp);
 	--divider-color: var(--clr-grey-800);

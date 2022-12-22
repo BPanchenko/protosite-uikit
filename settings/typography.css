@@ -23,7 +23,7 @@
 	--font-extra-bold: 800;
 	--font-heavy: 900;
 
-	--text-size-default: var(--unit);
+	--default-text-size: var(--unit);
 	--text-xs: 0.6875--unit;
 	--text-sm: 0.875--unit;
 	--text-md: 1.125--unit;
@@ -32,7 +32,7 @@
 	--text-xxl: 2.25--unit;
 	--text-xxxl: 3--unit;
 
-	--interligne-default: 1.3;
+	--default-interligne: 1.3;
 	--interligne-xs: 1.1;
 	--interligne-sm: 1.2;
 	--interligne-md: 1.4;

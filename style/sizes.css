@@ -7,8 +7,8 @@
 =========================================================================== */
 
 .s-default-size {
-	--text-size: var(--text-size-default);
-	--text-interligne: var(--interligne-default);
+	--text-size: var(--default-text-size);
+	--text-interligne: var(--default-interligne);
 }
 
 .s-xs {
