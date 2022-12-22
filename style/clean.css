@@ -9,6 +9,10 @@
 	box-shadow: none;
 }
 
+.c-panel + .c-panel.s-clean {
+	margin-top: 0;
+}
+
 
 /* Component: Button
  ========================================================================== */
