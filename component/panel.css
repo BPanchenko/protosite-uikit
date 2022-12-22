@@ -1,6 +1,9 @@
+@import "../.snippet/custom-selectors.css";
+
 @import "../settings/document.css";
 @import "../settings/shadows.css";
 @import "../settings/space.css";
+@import "../settings/typography.css";
 
 /**
  * Component:	Panel
@@ -12,14 +15,10 @@
  ========================================================================== */
 
 .c-panel {
-	--padding-vert: var(--space-md);
-	--padding-vert: var(--space-md);
-	--c-panel-head-padding-top: var(--space-md);
-	--c-panel-head-padding-bottom: var(--space-sm);
-	--c-panel-body-padding-top: var(--space-md);
-	--c-panel-body-padding-bottom: var(--space-md);
-
-	--c-panel-border-radius: 0.2rem;
+	--bg-color: var(--clr-white);
+	--padding-horz: var(--space);
+	--padding-vert: var(--space);
+	--roundness: var(--space-xxs);
 }
 
 
@@ -31,17 +30,21 @@
 	contain: layout style;
 	display: block;
 	position: relative;
-	background-color: var(--clr-white);
-	border-radius: var(--c-panel-border-radius);
+	background-color: var(--bg-color);
+	border-radius: var(--roundness);
 	box-shadow: var(--shadow-2dp);
 	box-sizing: border-box;
-}
 
-.c-panel::before,
-.c-panel::after {
-	content: "";
-	display: table;
-	clear: both;
+	&:not(:has(> :is(.c-panel__head, .c-panel__body)))  {
+		padding: var(--padding-vert) var(--padding-horz);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 .c-panel:not([aria-hidden=true]) + .c-panel {
@@ -69,33 +72,25 @@
 
 
 /* Element: `c-panel__head`
- ========================================================================== */
+=========================================================================== */
 
 .c-panel__head {
 	position: relative;
-	padding: var(--c-panel-head-padding-top)
-			 var(--padding-vert)
-			 var(--c-panel-head-padding-bottom)
-			 var(--padding-vert);
+	padding: 0.75--padding-vert var(--padding-horz) 0.5--padding-vert;
 
-	border-top-left-radius: var(--c-panel-border-radius);
-	border-top-right-radius: var(--c-panel-border-radius);
-}
+	border-top-left-radius: var(--roundness);
+	border-top-right-radius: var(--roundness);
 
-.c-panel__head h1,
-.c-panel__head h2,
-.c-panel__head h3,
-.c-panel__head h4,
-.c-panel__head h5,
-.c-panel__head h6 {
-	margin-top: 0;
-	margin-bottom: 0;
-}
+	:--headings {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-.c-panel__head .c-panel__toolbar {
-	display: inline-block;
-	float: right;
-	vertical-align: middle;
+	.c-toolbar {
+		display: inline-block;
+		float: right;
+		vertical-align: middle;
+	}
 }
 
 
@@ -104,17 +99,14 @@
 
 .c-panel__body {
 	position: relative;
-	padding: var(--c-panel-body-padding-top)
-			 var(--padding-vert)
-			 var(--c-panel-body-padding-bottom)
-			 var(--padding-vert);
-}
+	padding: var(--padding-vert) var(--padding-horz);
 
-.c-panel__body::before,
-.c-panel__body::after {
-	content: "";
-	display: table;
-	clear: both;
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 .c-panel__head + .c-panel__body::before {

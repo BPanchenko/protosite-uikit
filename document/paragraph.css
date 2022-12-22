@@ -10,10 +10,15 @@
 p {
 	display: block;
 	max-width: 80ch;
+	margin: 0;
 }
 
 * + p {
 	margin-top: var(--space-sm);
+}
+
+p:has(+ *) {
+	margin-bottom: var(--space-sm);
 }
 
 
