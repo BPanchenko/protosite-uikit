@@ -1,5 +1,6 @@
 @import "../.snippet/custom-selectors.css";
 @import "../settings/document.css";
+@import "../settings/shadows.css";
 @import "../settings/space.css";
 @import "../document/icon.css";
 
@@ -13,48 +14,44 @@
 
 .c-button {
 	--height: 3.2rem;
-	--padding-horizontal: var(--space-md);
-	--padding-vertical: 0;
+	--padding-horz: var(--space);
+	--padding-vert: var(--space-xs);
 
+	--bg-color: var(--clr-white);
+	--border-color: var(--clr-grey-200);
+	--text-color: var(--clr-black);
+	--roundness: var(--space-xs);
+	--shadow: var(--shadow-sharp);
+	
 	--text-font: var(--ui-font);
 	--text-size: var(--text-sm);
-
-	--color: var(--clr-white);
-	--hover-color: var(--clr-white);
-	
-	--bg-color: var(--clr-blue-grey-400);
-	--focus-bg-color: var(--clr-blue-grey-600);
-	--hover-bg-color: var(--clr-blue-grey-500);
 	
 	&:hover {
-		--bg-color: var(--hover-bg-color);
-		--text-color: var(--hover-color);
+		--bg-color: var(--clr-grey-50);
 	}
 }
 
 .c-button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-
-	border: none;
 	outline: none;
-	text-align: center;
 
 	display: inline-block;
 	line-height: var(--height);
 	box-sizing: border-box;
-	padding: var(--padding-vertical) var(--padding-horizontal);
+	padding: var(--padding-vert) var(--padding-horz);
 	vertical-align: middle;
 
 	cursor: pointer;
 	font-weight: var(--font-medium);
 
 	background-color: var(--bg-color);
-	border-radius: 0.3rem;
-	box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-				0 2px 2px rgba(0,0,0,0.11);
+	border-color: var(--border-color);
+	border-radius: var(--roundness);
+	border-weight: var(--pixel);
+	box-shadow: var(--shadow);
 	
-	transition-property: color, background-color;
+	transition-property: color, background-color, box-shadow;
 	transition-duration: var(--duration);
 	transition-timing-function: var(--easing);
 	user-select: none;
