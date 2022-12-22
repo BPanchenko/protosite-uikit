@@ -23,66 +23,53 @@ h2 {
 }
 
 h3 {
-	--text-size: var(--text-xl);
+	--text-size: var(--text-lg);
 	--text-interligne: var(--interligne-xl);
 }
 
 h4 {
-	--text-size: var(--text-xl);
-	--text-interligne: var(--interligne-xl);
+	--text-size: var(--default-text-size);
+	--text-interligne: var(--default-interligne);
 }
 
 h5 {
-	--text-size: var(--text-xl);
-	--text-interligne: var(--interligne-xl);
+	--text-size: var(--default-text-size);
+	--text-interligne: var(--default-interligne);
 }
 
 h6 {
-	--text-size: var(--text-xl);
-	--text-interligne: var(--interligne-xl);
+	--text-size: var(--text-xs);
+	--text-interligne: var(--interligne-xs);
 }
 
 :--headings {
-	color: var(--caption-color);
 	font-weight: var(--font-bold);
 	margin: 0;
 }
 
 h1 {
-	font-size: 3.6rem;
 	font-weight: var(--font-bold);
-	line-height: 4rem;
 }
 
 h2 {
-	font-size: 2.8rem;
 	font-weight: var(--font-bold);
-	line-height: 3.2rem;
 }
 
 h3 {
-	font-size: 2rem;
 	font-weight: var(--font-bold);
-	line-height: 2.4rem;
 }
 
 h4 {
-	font-size: 1.6rem;
 	font-weight: var(--font-bold);
-	line-height: 1.8rem;
 }
 
 h5 {
-	font-size: 1.4rem;
 	font-weight: var(--font-medium);
-	line-height: 1.6rem;
 	text-transform: uppercase;
 }
 
 h6 {
-	font-size: 1.1rem;
-	font-weight: var(--font-bold);
-	line-height: 1.6rem;
+	font-weight: var(--font-medium);
 	text-transform: uppercase;
 }
 
