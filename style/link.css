@@ -1,45 +1,30 @@
-
+@import "../document/link.css";
 
 /* Component: Button
 =========================================================================== */
 
-.c-button.s-link {
-	--bg-color: transparent;
-	--color: var(--link-color);
-	--hover-bg-color: transparent;
-	--hover-color: var(--link-hover-color);
-	--padding-horizontal: var(--space-sm);
-}
+.c-button.s-link,
+.c-panel:not(.s-clean) .c-button.s-link {
+	@extend %underline;
 
-.c-button.s-link {
-	text-decoration: var(--link-text-decoration);
-	transition: color var(--duration) var(--easing);
-	box-shadow: none !important;
-	
-	.c-button__icon {
-		margin-left: -.2rem;
-		margin-right: .8rem;
+	--bg-color: transparent;
+	--border-color: transparent;
+	--text-color: var(--default-link-color);
+	--padding-horz: var(--space-xs);
+	--shadow: none;
+
+	&:hover,
+	&:focus-visible {
 		text-decoration: none;
 	}
-	
-	.c-button__text {
-		text-decoration: var(--link-text-decoration);
+}
 
-		& + .c-button__icon {
-			margin-left: .8rem;
-			margin-right: -.2rem;
-		}
-	}
+:--button-is-active.s-link,
+.c-panel:not(.s-clean) :--button-is-active.s-link {
+	@extend a:active;
+	--shadow: none;
+}
 
-	&:hover,
-	&:hover .c-button__text {
-		text-decoration: var(--link-hover-text-decoration);
-	}
-
-	&:active,
-	&:hover,
-	&:focus-visible,
-	&[aria-pressed=true] {
-		--color: var(--hover-color);
-	}
+:--button-has-focus.s-link {
+	--border-color: currentColor;
 }

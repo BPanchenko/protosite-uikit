@@ -15,23 +15,31 @@
 
 
 /* Component: Button
- ========================================================================== */
+=========================================================================== */
 
-.c-button.s-clean {
+.c-button.s-clean,
+.c-panel:not(.s-clean) .c-button.s-clean {
 	--bg-color: transparent;
 	--border-color: transparent;
-	--text-color: var(--default-text-color);
+	--padding-horz: var(--space-xs);
 	--shadow: none;
+	--text-color: var(--default-text-color);
 
-	&:hover, &:focus {
+	&:hover {
 		--bg-color: transparent;
 		--border-color: transparent;
 	}
 }
 
-:--button-is-active.s-clean {
+:--button-is-active.s-clean,
+.c-panel:not(.s-clean) :--button-is-active.s-clean {
 	--bg-color: transparent;
 	--border-color: transparent;
+	--shadow: none;
+}
+
+:--button-has-focus.s-clean {
+	--border-color: currentColor;
 }
 
 .c-button.s-clean {
