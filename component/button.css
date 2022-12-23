@@ -13,22 +13,30 @@
 =========================================================================== */
 
 .c-button {
-	--height: 3.2rem;
+	--height: 2.5--unit;
 	--padding-horz: var(--space);
 	--padding-vert: var(--space-xs);
 
 	--bg-color: var(--clr-white);
-	--border-color: var(--clr-grey-200);
+	--border-color: transparent;
 	--text-color: var(--clr-black);
 	--roundness: var(--space-xs);
-	--shadow: var(--shadow-sharp);
+	--shadow: var(--shadow-2dp);
 	
 	--text-font: var(--ui-font);
-	--text-size: var(--text-sm);
+	--text-interligne: var(--unit);
 	
 	&:hover {
 		--bg-color: var(--clr-grey-50);
 	}
+}
+
+:--button-is-active {
+	--shadow: none;
+}
+
+:--button-has-focus {
+	--border-color: var(--clr-violet-500);
 }
 
 .c-button {
@@ -37,22 +45,25 @@
 	outline: none;
 
 	display: inline-block;
-	line-height: var(--height);
+	min-height: var(--height);
 	box-sizing: border-box;
 	padding: var(--padding-vert) var(--padding-horz);
 	vertical-align: middle;
 
 	cursor: pointer;
+	color: var(--text-color);
+	font-family: var(--text-font);
 	font-weight: var(--font-medium);
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);
 	border-radius: var(--roundness);
-	border-weight: var(--pixel);
+	border-style: solid;
+	border-width: 0.5--pixel;
 	box-shadow: var(--shadow);
 	
 	transition-property: color, background-color, box-shadow;
-	transition-duration: var(--duration);
+	transition-duration: 0.5--duration;
 	transition-timing-function: var(--easing);
 	user-select: none;
 	
@@ -74,12 +85,8 @@
 	}
 }
 
-:--button-is-active {
-	box-shadow: none;
-}
-
 :--button-has-focus {
-	--bg-color: var(--focus-bg-color);
+	border-style: dashed;
 }
 
 
@@ -88,10 +95,11 @@
 
 .c-panel:not(.s-clean) {
 	.c-button {
-		box-shadow: none;
+		--border-color: var(--clr-grey-200);
+		--shadow: none;
 	}
 	:--button-is-active {
-		box-shadow: inset 0 .1rem .1rem 0 rgba(0,0,0,.14), inset 0 .1rem .3rem 0 rgba(0,0,0,.12);
+		--shadow: var(--inset-shadow-2dp);
 	}
 }
 
@@ -105,7 +113,6 @@
 	&__text {
 		display: inline-block;
 		vertical-align: baseline;
-		line-height: 1;
 	}
 	
 	&__icon {
