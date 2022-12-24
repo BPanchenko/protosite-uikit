@@ -11,8 +11,12 @@
 
 :--button-any.s-danger {
 	--bg-color: var(--clr-red-600);
-	--border-color: var(--clr-red-600);
+	--border-color: var(--clr-red-700);
 	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-danger {
+	--border-color: var(--clr-red-50);
 }
 
 
@@ -33,8 +37,13 @@
 }
 
 :--button-any.s-primary {
-	--bg-color: var(--primary-color);
+	--bg-color: var(--clr-blue-600);
+	--border-color: var(--clr-blue-700);
 	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-primary {
+	--border-color: var(--clr-blue-50);
 }
 
 
@@ -47,8 +56,13 @@
 }
 
 :--button-any.s-success {
-	--bg-color: var(--success-color);
+	--bg-color: var(--clr-green-600);
+	--border-color: var(--clr-green-700);
 	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-success {
+	--border-color: var(--clr-green-50);
 }
 
 
@@ -61,6 +75,11 @@
 }
 
 :--button-any.s-warning {
-	--bg-color: var(--warning-color);
+	--bg-color: var(--clr-amber-600);
+	--border-color: var(--clr-amber-700);
 	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-warning {
+	--border-color: var(--clr-amber-50);
 }

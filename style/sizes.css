@@ -75,22 +75,32 @@
 =========================================================================== */
 
 .c-button {
-	&.s-sm {
-		--height: var(--unit);
-		--padding-horizontal: var(--space-sm);
+	&.s-xs {
+		--height: 1.5--unit;
+		--padding-horz: var(--space-sm);
 		--text-size: var(--text-xs);
+		--text-interligne: var(--interligne-xs);
+
+		padding-top: var(--space-xs);
+		padding-bottom: var(--space-xxs);
+		text-transform: uppercase;
+	}
+
+	&.s-sm {
+		--height: 2--unit;
+		--padding-horz: var(--unit);
+		--padding-vert: var(--space-xs);
+		--text-size: var(--text-sm);
+		--text-interligne: var(--interligne-sm);
+
+		padding-top: var(--space-xs);
+		padding-bottom: var(--space-xxs);
 	}
 
 	&.s-lg {
-		--height: 2.5--unit;
-		--padding-horizontal: var(--space-lg);
-		--text-size: var(--text-lg);
-	}
-
-	&.s-xl {
 		--height: 3.5--unit;
-		--padding-horizontal: var(--space-lg);
 		--text-size: var(--text-xl);
+		--text-interligne: var(--interligne-xl);
 	}
 }
 
