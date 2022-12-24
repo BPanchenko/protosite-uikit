@@ -24,14 +24,6 @@ abbr[title] {
 	border-bottom: 0.1rem dotted currentColor;
 }
 
-code,
-kbd,
-pre,
-samp {
-	--text-font: var(--font-monospace);
-	--text-size: var(--text-md);
-}
-
 :where(ins) {
 	display: inline-block;
 	margin: 0 -0.2rem;

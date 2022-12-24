@@ -1,0 +1,16 @@
+code,
+kbd,
+pre,
+samp,
+var {
+	--text-font: var(--font-monospace);
+	--text-size: var(--text-sm);
+}
+
+code {
+	--text-color: var(--clr-black);
+	
+	background-color: var(--clr-grey-50);
+	border-radius: var(--space-xs);
+	padding: 0 var(--space-xs);
+}
