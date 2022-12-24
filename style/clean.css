@@ -17,8 +17,7 @@
 /* Component: Button
 =========================================================================== */
 
-.c-button.s-clean,
-.c-panel:not(.s-clean) .c-button.s-clean {
+:--button-any.s-clean {
 	--bg-color: transparent;
 	--border-color: transparent;
 	--padding-horz: var(--space-xs);
@@ -31,14 +30,13 @@
 	}
 }
 
-:--button-is-active.s-clean,
-.c-panel:not(.s-clean) :--button-is-active.s-clean {
+:--button-any-is-active.s-clean {
 	--bg-color: transparent;
 	--border-color: transparent;
 	--shadow: none;
 }
 
-:--button-has-focus.s-clean {
+:--button-any-has-focus.s-clean {
 	--border-color: currentColor;
 }
 

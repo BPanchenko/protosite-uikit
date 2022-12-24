@@ -29,13 +29,13 @@
 	&:hover {
 		--bg-color: var(--clr-grey-50);
 	}
+
+	&:--is-active {
+		--shadow: none;
+	}
 }
 
-:--button-is-active {
-	--shadow: none;
-}
-
-:--button-has-focus {
+:--button-any-has-focus {
 	--border-color: var(--clr-violet-500);
 }
 
@@ -85,7 +85,7 @@
 	}
 }
 
-:--button-has-focus {
+:--button-any-has-focus {
 	border-style: dashed;
 }
 
@@ -93,12 +93,11 @@
 /* Context: Button is placed on Panel
 =========================================================================== */
 
-.c-panel:not(.s-clean) {
-	.c-button {
-		--border-color: var(--clr-grey-200);
-		--shadow: none;
-	}
-	:--button-is-active {
+.c-panel:not(.s-clean) .c-button {
+	--border-color: var(--clr-grey-200);
+	--shadow: none;
+	
+	&:--is-active {
 		--shadow: var(--inset-shadow-2dp);
 	}
 }

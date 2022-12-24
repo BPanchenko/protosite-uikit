@@ -3,8 +3,7 @@
 /* Component: Button
 =========================================================================== */
 
-.c-button.s-link,
-.c-panel:not(.s-clean) .c-button.s-link {
+:--button-any.s-link {
 	@extend %underline;
 
 	--bg-color: transparent;
@@ -19,12 +18,11 @@
 	}
 }
 
-:--button-is-active.s-link,
-.c-panel:not(.s-clean) :--button-is-active.s-link {
+:--button-any-is-active.s-link {
 	@extend a:active;
 	--shadow: none;
 }
 
-:--button-has-focus.s-link {
+:--button-any-has-focus.s-link {
 	--border-color: currentColor;
 }

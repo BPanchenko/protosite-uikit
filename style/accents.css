@@ -9,8 +9,9 @@
 	--text-color: var(--danger-color);
 }
 
-.c-button.s-danger {
-	--bg-color: var(--danger-color);
+:--button-any.s-danger {
+	--bg-color: var(--clr-red-600);
+	--border-color: var(--clr-red-600);
 	--text-color: var(--clr-white);
 }
 
@@ -31,7 +32,7 @@
 	--text-color: var(--primary-color);
 }
 
-.c-button.s-primary {
+:--button-any.s-primary {
 	--bg-color: var(--primary-color);
 	--text-color: var(--clr-white);
 }
@@ -45,7 +46,7 @@
 	--text-color: var(--success-color);
 }
 
-.c-button.s-success {
+:--button-any.s-success {
 	--bg-color: var(--success-color);
 	--text-color: var(--clr-white);
 }
@@ -59,7 +60,7 @@
 	--text-color: var(--warning-color);
 }
 
-.c-button.s-warning {
+:--button-any.s-warning {
 	--bg-color: var(--warning-color);
 	--text-color: var(--clr-white);
 }
