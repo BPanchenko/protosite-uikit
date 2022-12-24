@@ -23,7 +23,7 @@
  ========================================================================== */
 
 .c-popover {
-	--background-color: var(--clr-grey-700);
+	--bg-color: var(--clr-grey-700);
 	--shadow: var(--shadow-2dp);
 
 	display: inline-block;
@@ -67,7 +67,7 @@
 	width: 0.8rem;
 	height: 0.8rem;
 
-	background-color: var(--background-color);
+	background-color: var(--bg-color);
 	box-shadow: var(--shadow);
 	border-radius: 0.1rem;
 
@@ -148,7 +148,7 @@
 	display: inline-block;
 	padding: 0.6rem 0.8rem;
 
-	background-color: var(--background-color);
+	background-color: var(--bg-color);
 	border-radius: 0.2rem;
 	overflow: hidden;
 	
@@ -176,23 +176,25 @@
 
 
 /* Visibility States
- ========================================================================== */
+=========================================================================== */
 
-.c-popover:matches(.is-visible, .is-hidden) {
-	animation-duration: 0.24s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: 1;
-}
-
-.c-popover.is-visible {
-	animation-name: popoverShow;
-	display: inline-block;
-	visibility: visible;
-}
-.c-popover.is-hidden {
-	animation-name: popoverHide;
-	display: none;
-	visibility: hidden;
+.c-popover {
+	&:is(.is-visible, .is-hidden) {
+		animation-duration: 1.5--duration;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;
+	}
+	
+	&.is-visible {
+		animation-name: popoverShow;
+		display: inline-block;
+		visibility: visible;
+	}
+	&.is-hidden {
+		animation-name: popoverHide;
+		display: none;
+		visibility: hidden;
+	}
 }
 
 @keyframes popoverShow {
@@ -209,7 +211,7 @@
  ========================================================================== */
 
 .c-popover.s-linkset {
-	--background-color: var(--clr-white);
+	--bg-color: var(--clr-white);
 }
 
 .c-popover.s-linkset a {
