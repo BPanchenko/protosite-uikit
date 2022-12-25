@@ -1,13 +1,13 @@
 @import "../.snippet/custom-selectors.css";
+@import "../.snippet/icon.css";
 @import "../settings/document.css";
 @import "../settings/shadows.css";
 @import "../settings/space.css";
-@import "../document/icon.css";
 
 /**
  * Component: Button
  * 
- * Nested elements: `c-button__icon`, `c-button__text`
+ * Nested elements: `icon`, `c-button__icon`, `c-button__text`
  * Container: `c-button-group`
  * 
 =========================================================================== */
@@ -70,6 +70,11 @@
 	transition-duration: 0.5--duration;
 	transition-timing-function: var(--easing);
 
+	&:empty {
+		--padding-horz: 0.5--height;
+		min-width: var(--height);
+	}
+
 	&:disabled {
 		background-color: var(--clr-grey-50-tp);
 		border-color: var(--clr-grey-400-tp);
@@ -116,8 +121,23 @@
 
 
 /* ========================================================================
-   Nested elements: Icon and Text
+   Icons
 =========================================================================== */
+
+.c-button[data-glyph] {
+	@extend %icon;
+
+	&::before {
+		line-height: 1;
+		vertical-align: middle;
+		top: -1--space-xxs;
+		left: -1--space-sm;
+	}
+
+	&:empty::before {
+		width: 0;
+	}
+}
 
 .c-button {
 	&__icon,

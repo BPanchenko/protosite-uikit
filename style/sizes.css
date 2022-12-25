@@ -84,6 +84,13 @@
 		padding-top: var(--space-xs);
 		padding-bottom: var(--space-xxs);
 		text-transform: uppercase;
+
+		&[data-glyph] {		
+			&::before {
+				top: -1--space-xxs;
+				left: -1--space-xs;
+			}
+		}
 	}
 
 	&.s-sm {
@@ -92,6 +99,12 @@
 		--padding-vert: var(--space-xs);
 		--text-interligne: 1.086;
 		--text-size: var(--text-sm);
+
+		&[data-glyph] {		
+			&::before {
+				left: -1--space-xs;
+			}
+		}
 	}
 
 	&.s-lg {
@@ -99,25 +112,18 @@
 		--padding-vert: 0.75--space;
 		--text-interligne: 0.9;
 		--text-size: var(--text-xl);
-	}
-}
 
-.c-button.s-icon {
-	&.s-sm {
-		padding: var(--space-xs);
-		& + & {
-			margin-left: var(--space-xs);
-		}
-	}
-
-	&.s-lg {
-		padding: var(--space-sm);
-	}
-
-	&.s-xl {
-		padding: var(--space-sm);
-		& + & {
-			margin-left: var(--space-md);
+		&[data-glyph] {		
+			&::before {
+				--icon-size: 2--unit;
+				--icon-weight: var(--font-extra-bold);
+				margin: -1--space-xs 1--space-xs -1--space-xs -1--space-xs;
+			}
+			&:empty&::before {
+				--icon-size: 2--unit;
+				--icon-weight: var(--font-extra-bold);
+				margin-left: -1--space-sm;
+			}
 		}
 	}
 }
