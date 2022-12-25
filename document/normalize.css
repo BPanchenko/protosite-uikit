@@ -156,30 +156,6 @@ textarea {
 	margin: 0;
 }
 
-button,
-select {
-	text-transform: none;
-}
-
-button,
-html input[type="button"], /* 1 */
-input[type="reset"],
-input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
-}
-
-button[disabled],
-input[disabled] {
-	cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
 input {
 	line-height: normal;
 }
