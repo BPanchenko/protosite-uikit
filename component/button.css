@@ -45,6 +45,7 @@
 	outline: none;
 	text-decoration: none;
 	user-select: none;
+	cursor: pointer;
 
 	display: inline-block;
 	min-height: var(--height);
@@ -52,7 +53,6 @@
 	padding: var(--padding-vert) var(--padding-horz);
 	vertical-align: middle;
 
-	cursor: pointer;
 	color: var(--text-color);
 	font-family: var(--text-font);
 	font-size: var(--text-size);
@@ -69,6 +69,15 @@
 	transition-property: color, background-color, box-shadow;
 	transition-duration: 0.5--duration;
 	transition-timing-function: var(--easing);
+
+	&:disabled {
+		background-color: var(--clr-grey-50-tp);
+		border-color: var(--clr-grey-400-tp);
+		border-style: dotted;
+		box-shadow: none;
+		color: var(--muted-color);
+		cursor: not-allowed;
+	}
 	
 	& > :--icon-attr-included {
 		margin-right: var(--space-sm);
