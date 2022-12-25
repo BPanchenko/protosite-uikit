@@ -78,8 +78,8 @@
 	&.s-xs {
 		--height: 1.5--unit;
 		--padding-horz: var(--space-sm);
+		--text-interligne: 1.4;
 		--text-size: var(--text-xs);
-		--text-interligne: var(--interligne-xs);
 
 		padding-top: var(--space-xs);
 		padding-bottom: var(--space-xxs);
@@ -90,17 +90,15 @@
 		--height: 2--unit;
 		--padding-horz: var(--unit);
 		--padding-vert: var(--space-xs);
+		--text-interligne: 1.086;
 		--text-size: var(--text-sm);
-		--text-interligne: var(--interligne-sm);
-
-		padding-top: var(--space-xs);
-		padding-bottom: var(--space-xxs);
 	}
 
 	&.s-lg {
-		--height: 3.5--unit;
+		--height: 4--unit;
+		--padding-vert: 0.75--space;
+		--text-interligne: 0.9;
 		--text-size: var(--text-xl);
-		--text-interligne: var(--interligne-xl);
 	}
 }
 

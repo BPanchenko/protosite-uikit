@@ -24,7 +24,7 @@
 	--shadow: var(--shadow-2dp);
 	
 	--text-font: var(--ui-font);
-	--text-interligne: var(--unit);
+	--text-interligne: 1.4;
 	
 	&:hover {
 		--bg-color: var(--clr-grey-50);
@@ -40,9 +40,11 @@
 }
 
 .c-button {
-	-webkit-appearance: none;
 	-moz-appearance: none;
+	-webkit-appearance: none;
 	outline: none;
+	text-decoration: none;
+	user-select: none;
 
 	display: inline-block;
 	min-height: var(--height);
@@ -67,7 +69,6 @@
 	transition-property: color, background-color, box-shadow;
 	transition-duration: 0.5--duration;
 	transition-timing-function: var(--easing);
-	user-select: none;
 	
 	& > :--icon-attr-included {
 		margin-right: var(--space-sm);
