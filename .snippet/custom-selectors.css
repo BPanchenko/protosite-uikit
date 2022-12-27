@@ -5,4 +5,4 @@
 @custom-selector :--is-active :active, [aria-pressed=true];
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
 @custom-selector :--icon-attr-excluded i, .icon, .s-icon;
-@custom-selector :--icon-attr-included i[data-glyph], .icon[data-glyph], .s-icon[data-glyph];
+@custom-selector :--icon-attr-included :--icon-attr-excluded[data-glyph];
