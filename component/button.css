@@ -6,26 +6,23 @@
 
 /**
  * Component: Button
- * 
  * Nested elements: `icon`, `c-button__icon`, `c-button__text`
- * Container: `c-button-group`
- * 
 =========================================================================== */
 
 .c-button {
 	--height: 2.5--unit;
 	--padding-horz: var(--space);
 	--padding-vert: var(--space-xs);
-
+	--roundness: var(--space-xs);
+	
 	--bg-color: var(--clr-white);
 	--border-color: transparent;
-	--text-color: var(--clr-black);
-	--roundness: var(--space-xs);
 	--shadow: var(--shadow-2dp);
-	
+
+	--text-color: var(--clr-black);
 	--text-font: var(--ui-font);
 	--text-interligne: 1.4;
-	
+
 	&:hover {
 		--bg-color: var(--clr-grey-50);
 	}
@@ -42,10 +39,10 @@
 .c-button {
 	-moz-appearance: none;
 	-webkit-appearance: none;
+	contain: content;
 	outline: none;
 	text-decoration: none;
 	user-select: none;
-	cursor: pointer;
 
 	display: inline-block;
 	min-height: var(--height);
@@ -65,6 +62,7 @@
 	border-style: solid;
 	border-width: 0.5--pixel;
 	box-shadow: var(--shadow);
+	cursor: pointer;
 	
 	transition-property: color, background-color, box-shadow;
 	transition-duration: 0.5--duration;
@@ -171,37 +169,6 @@
 		}
 		&::after {
 			margin-top: 0;
-		}
-	}
-}
-
-
-/* ========================================================================
-   Container: `c-button-group`
-=========================================================================== */
-
-.c-button-group {
-	display: inline-flex;
-	vertical-align: middle;
-
-	.c-button {
-		&:not(:first-child) {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-			border-left: 1px solid var(--clr-grey-200);
-			
-			&:focus-visible {
-				border-left: 1px solid transparent;
-			}
-		}
-
-		&:not(:last-child) {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-		
-		& + .c-button {
-			margin-left: 0 !important;
 		}
 	}
 }
