@@ -81,14 +81,6 @@
 		color: var(--muted-color);
 		cursor: not-allowed;
 	}
-	
-	& > :--icon-attr-included {
-		margin-right: var(--space-sm);
-		
-		&::before {
-			vertical-align: middle;
-		}
-	}
  
 	&::-moz-focus-inner {
 		border: 0;
@@ -109,7 +101,8 @@
    Icons
 =========================================================================== */
 
-.c-button[data-glyph] {
+.c-button[data-glyph],
+.c-button__icon {
 	@extend %icon;
 
 	&::before {
@@ -130,15 +123,10 @@
 		display: inline-block;
 		vertical-align: baseline;
 	}
-	
-	&__icon {
-		margin-left: -1rem;
-		margin-right: 1.3rem;
-	}
-	
-	&__text + &__icon {
-		margin-left: 1.3rem;
-		margin-right: -1rem;
+
+	&__text + &__icon,
+	&__icon + &__text {
+		margin-left: 0.75--unit;
 	}
 	
 	&__text {
