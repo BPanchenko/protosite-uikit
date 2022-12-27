@@ -28,9 +28,11 @@
  ========================================================================== */
  
 .c-panel {
-	contain: layout style;
+	contain: layout style paint;
 	display: block;
 	position: relative;
+	min-width: min-content;
+
 	background-color: var(--bg-color);
 	border-radius: var(--roundness);
 	box-shadow: var(--shadow);
