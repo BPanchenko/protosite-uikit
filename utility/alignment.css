@@ -119,18 +119,17 @@
 =========================================================================== */
 
 .u-vertical-align {
-	font-size: 0.001em;
+	font-size: 0;
 	
 	&::before {
-		/* TODO: WTF? */
 		content: '';
 		display: inline-block;
-		height: 100%;
+		height: 100vh;
 		vertical-align: middle;
 	}
 }
 
-:where(
+:is(
 	.u-vertical-align-top,
 	.u-vertical-align-middle,
 	.u-vertical-align-bottom
