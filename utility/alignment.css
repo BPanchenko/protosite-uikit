@@ -5,25 +5,18 @@
 
 
 /* Clearfix
- ========================================================================== */
+=========================================================================== */
 
-/*
- * 1. 'table-cell' приченяется к `:: before', потому для 'table' появляется промежуток в 1px, когда он становится элементом flex, только в Webkit
- * 2. 'table' применяется к `:: after', потому что 'clear' работает только с блочными элементами.
- * Примечание: "display: block" в сочетании с "overflow: hidden" не работает в Safari
- */
-
-/* 1 */
-.u-clearfix::before {
-	content: "";
-	display: table-cell;
-}
-
-/* 2 */
-.u-clearfix::after {
-	content: "";
-	display: table;
-	clear: both;
+.u-clearfix {
+	&::before {
+		content: '';
+		display: table-cell;
+	}
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
 
