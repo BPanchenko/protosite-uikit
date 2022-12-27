@@ -74,7 +74,7 @@
 }
 
 
-/* Element: `c-panel__head`
+/* Child element: `c-panel__head`
 =========================================================================== */
 
 .c-panel__head {
@@ -97,7 +97,7 @@
 }
 
 
-/* Element: `c-panel__body`
+/* Child element: `c-panel__body`
  ========================================================================== */
 
 .c-panel__body {
@@ -120,6 +120,19 @@
 	left: calc(var(--padding-vert) - var(--space-sm));
 	right: calc(var(--padding-vert) - var(--space-sm));
 	border-top: 1px solid var(--clr-grey-400);
+}
+
+
+/* Nested component: Button
+=========================================================================== */
+
+.c-panel:not(.s-clean) .c-button {
+	--border-color: var(--clr-grey-200);
+	--shadow: none;
+	
+	&:--is-active {
+		--shadow: var(--inset-shadow-2dp);
+	}
 }
 
 
