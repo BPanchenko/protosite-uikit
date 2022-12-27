@@ -15,7 +15,6 @@ body {
 	--text-size: var(--default-text-size);
 
 	--disabled-text-color: var(--clr-grey-400-tp);
-	--divider-color: var(--clr-grey-800);
 	--highlighted-text-color: var(--clr-black);
 	--highlighted-bg-color: var(--clr-green-grey-300-tp);
 	--hint-color: var(--muted-color);

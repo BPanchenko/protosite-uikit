@@ -67,10 +67,10 @@
 	content: "";
 	display: block;
 	position: absolute;
-	top: -0.1rem;
+	top: -1--pixel;
 	left: 0;
 	right: 0;
-	border-top: 0.1rem solid var(--divider-color);
+	border-top: var(--pixel) solid var(--clr-grey-800);
 }
 
 
