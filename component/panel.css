@@ -123,15 +123,23 @@
 }
 
 
-/* Nested component: Button
+/* Nested components: Button and Toolbar
 =========================================================================== */
 
-.c-panel:not(.s-clean) .c-button {
-	--border-color: var(--clr-grey-200);
-	--shadow: none;
-	
-	&:--is-active {
+.c-panel:not(.s-clean) {
+	:is(.c-button, .c-toolbar) {
+		--border-color: var(--clr-grey-200);
+		--shadow: none;
+	}
+
+	.c-button:--is-active {
 		--shadow: var(--inset-shadow-2dp);
+	}
+
+	.c-toolbar {
+		border-color: var(--border-color);
+		border-style: solid;
+		border-width: 0.5--pixel;
 	}
 }
 

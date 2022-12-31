@@ -1,0 +1,90 @@
+@import "../.snippet/custom-selectors.css";
+@import "../settings/document.css";
+@import "../settings/shadows.css";
+@import "../settings/space.css";
+
+/**
+ * Component: Toolbar
+ * Child elements: `icon`, `c-toolbar__label`, `c-button`
+=========================================================================== */
+
+.c-toolbar {
+	--height: 2.5--unit;
+	--roundness: var(--space-xs);
+	
+	--bg-color: var(--clr-white);
+	--border-color: transparent;
+	--shadow: var(--shadow-diffuse);
+
+	--text-font: var(--ui-font);
+	--text-interligne: var(--height);
+}
+
+.c-toolbar {
+	contain: content;
+	display: inline-flex;
+	min-width: min-content;
+	height: var(--height);
+	vertical-align: middle;
+
+	background-color: var(--bg-color);
+	border-radius: var(--roundness);
+	box-shadow: var(--shadow);
+	overflow: hidden;
+}
+
+/* Child component: Button
+=========================================================================== */
+
+.c-toolbar .c-button {
+	--border-color: var(--clr-grey-200);
+	--roundness: 0;
+	--shadow: none;
+
+	&:--is-active {
+		--shadow: var(--inset-shadow-2dp);
+	}
+}
+
+.c-toolbar .c-button {
+	border: none;
+	margin-top: -0.5--pixel;
+	margin-bottom: -0.5--pixel;
+
+	&:last-child {
+		margin-right: -1--pixel;
+	}
+
+	& + .c-button {
+		border-left: 0.5--pixel solid var(--border-color);
+		margin-left: 0;
+	}
+}
+
+
+
+/* Child elements: Icon and Label
+=========================================================================== */
+
+.c-toolbar__label,
+.c-toolbar :--icon-attr-included {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.c-toolbar__label {
+	padding-right: var(--space-sm);
+	padding-left: var(--unit);
+	margin-top: -0.5--pixel;
+}
+
+.c-toolbar :--icon-attr-included {
+	background-color: var(--clr-grey-50);
+	padding-right: var(--unit);
+	padding-left: var(--unit);
+	margin-top: 0.5--pixel;
+
+	& + .c-button {
+		border-left: 0.5--pixel solid var(--border-color);
+	}
+}
