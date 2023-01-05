@@ -2,13 +2,15 @@
 @import "../settings/shadows.css";
 
 
-/* ========================================================================
-	Component: Avatar
+/**
+ * Component: Avatar
+ * Nested elements: Link and Image
 =========================================================================== */
 
 .c-avatar {
 	--text-size: 0;
 	--size: 5--unit;
+	--shadow: var(--shadow-2dp);
 }
 
 .c-avatar {
@@ -21,7 +23,20 @@
 	text-align: center;
 	vertical-align: middle;
 	user-select: none;
+	box-shadow: var(--shadow);
 
+	&[style*="background"] {
+		--shadow: var(--inset-shadow-2dp);
+		background-size: cover;
+	}
+}
+
+
+/* ========================================================================
+	Nested elements
+=========================================================================== */
+
+.c-avatar {
 	:is(a, img) {
 		display: inline-block;
 		width: inherit;
@@ -30,11 +45,6 @@
 
 	img {
 		object-fit: cover;
-	}
-
-	&[style*="background"] {
-		background-size: cover;
-		box-shadow: var(--inset-shadow-2dp);
 	}
 }
 
@@ -48,32 +58,27 @@
 	background-color: var(--clr-grey-300);
 	border: 0.1rem solid var(--clr-grey-400);
 	box-sizing: border-box;
-}
 
-.c-avatar:not([style*="background"]):empty::before,
-.c-avatar:not([style*="background"]):empty::after,
-.c-avatar:not([style*="background"]) .c-avatar__link:empty::after,
-.c-avatar:not([style*="background"]) .c-avatar__link:empty::before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
+	&::before, &::after {
+		content: ' ';
 	
-	display: inline-block;
-	height: 40%;
-	width: 0.1rem;
-	background-color: var(--clr-grey-400);
-	
-	content: ' ';
-}
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		
+		display: inline-block;
+		height: 40vh;
+		width: 4--pixel;
+		background-color: var(--clr-grey-400-tp);
+	}
 
-.c-avatar:not([style*="background"]):empty::before,
-.c-avatar:not([style*=background]) .c-avatar__link:empty::before {
-	transform: translate(-50%, -50%) rotate(45deg);
-}
+	&::before {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
 
-.c-avatar:not([style*="background"]):empty::after,
-.c-avatar:not([style*=background]) .c-avatar__link:empty::after {
-	transform: translate(-50%, -50%) rotate(-45deg);
+	&::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
 }
 
 
@@ -81,5 +86,5 @@
  ========================================================================== */
 
 .c-panel:not(.s-clean) .c-avatar:not([style*="background"]) {
-	box-shadow: none;
+	--shadow: none;
 }
