@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.19.45",
+	"version": "4.20.45-beta.0",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -19,14 +19,15 @@
 		"main.css"
 	],
 	"scripts": {
-		"build": "run-p main document components styles utilities objects theme-document",
-		"components": "postcss ./component/main.css --output ./assets/components.css --config ./.config/postcss.config.cjs --verbose",
-		"document": "postcss ./document/main.css --output ./assets/document.css --config ./.config/postcss.config.cjs --verbose",
-		"objects": "postcss ./object/main.css --output ./assets/objects.css --config ./.config/postcss.config.cjs --verbose",
-		"main": "postcss ./main.css --output ./assets/main.css --config ./.config/postcss.config.cjs --verbose",
-		"styles": "postcss ./style/main.css --output ./assets/styles.css --config ./.config/postcss.config.cjs --verbose",
-		"utilities": "postcss ./utility/main.css --output ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
-		"theme-document": "postcss ./theme/document.css --output ./assets/theme-document.css --config ./.config/postcss.config.cjs --verbose"
+		"build": "run-p build:main build:document build:components build:styles build:utilities build:objects build:theme-document",
+		"build:components": "postcss ./component/main.css --output ./assets/components.css --config ./.config/postcss.config.cjs --verbose",
+		"build:document": "postcss ./document/main.css --output ./assets/document.css --config ./.config/postcss.config.cjs --verbose",
+		"build:objects": "postcss ./object/main.css --output ./assets/objects.css --config ./.config/postcss.config.cjs --verbose",
+		"build:main": "postcss ./main.css --output ./assets/main.css --config ./.config/postcss.config.cjs --verbose",
+		"build:styles": "postcss ./style/main.css --output ./assets/styles.css --config ./.config/postcss.config.cjs --verbose",
+		"build:utilities": "postcss ./utility/main.css --output ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
+		"build:theme-document": "postcss ./theme/document.css --output ./assets/theme-document.css --config ./.config/postcss.config.cjs --verbose",
+		"typify": "tcm . --namedExports"
 	},
 	"dependencies": {
 		"@csstools/custom-units": "0.1.1",
@@ -42,7 +43,8 @@
 		"protosite-palette": "2.13.20"
 	},
 	"devDependencies": {
-		"npm-run-all": "4.1.5"
+		"npm-run-all": "4.1.5",
+		"typed-css-modules": "0.7.2"
 	},
 	"repository": {
 		"type": "git",

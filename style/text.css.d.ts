@@ -1,0 +1,19 @@
+
+export const sCursive: string;
+export const sMonospace: string;
+export const sSans: string;
+export const sSerif: string;
+export const sThin: string;
+export const sExtraLight: string;
+export const sLight: string;
+export const sNormal: string;
+export const sMedium: string;
+export const sSemiBold: string;
+export const sBold: string;
+export const sExtraBold: string;
+export const sHeavy: string;
+export const sText: string;
+export const sUppercase: string;
+export const sCapitalize: string;
+export const sLowercase: string;
+
