@@ -43,8 +43,9 @@ h6 {
 }
 
 :--headings {
-	font-weight: var(--font-bold);
 	margin: 0;
+	font-weight: var(--font-bold);
+	text-rendering: geometricPrecision;
 }
 
 h1 {

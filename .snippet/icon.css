@@ -20,6 +20,7 @@
 		font-size: var(--text-size);
 		font-style: normal;
 		font-weight: var(--icon-weight);
+		text-rendering: geometricPrecision;
 		line-height: 1;
 		speak: none;
 		-webkit-font-smoothing: antialiased;

@@ -55,6 +55,7 @@
 	font-size: var(--text-size);
 	line-height: var(--text-interligne);
 	font-weight: var(--font-medium);
+	text-rendering: geometricPrecision;
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);

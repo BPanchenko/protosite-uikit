@@ -9,14 +9,12 @@
 /* Object: Article
 ============================================================================ */
 
-article {
+article, .o-article {
 	--caption-font: "PT Astra Sans", sans-serif;
 	--text-font: "PT Astra Serif", serif;
 }
 
-article {
-	text-rendering: geometricPrecision;
-
+article, .o-article {
 	:--headings {
 		margin: 0;
 
