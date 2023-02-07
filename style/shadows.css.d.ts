@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const sShadowSharp: string;
 export const sShadowDiffuse: string;
 export const sShadowDreamy: string;

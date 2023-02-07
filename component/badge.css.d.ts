@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const cBadge: string;
 export const cBadgePrimary: string;
 export const cBadgeInfo: string;

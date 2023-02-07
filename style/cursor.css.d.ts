@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const sCursorAuto: string;
 export const sCursorDefault: string;
 export const sCursorNone: string;

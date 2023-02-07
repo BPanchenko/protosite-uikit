@@ -1,18 +1,20 @@
+export const __esModule: true;
+
 export * from "./accents.css";
 export * from "./backgrounds.css";
-export * from "./clean.css";
+export { sClean } from "./clean.css";
 export * from "./cursor.css";
 export * from "./floating.css";
 export * from "./highlighted.css";
-export * from "./hovered.css";
-export * from "./icon.css";
+export { sHovered } from "./hovered.css";
+export { sIcon } from "./icon.css";
 export * from "./inversed.css";
 export * from "./lead.css";
 export * from "./link.css";
-export * from "./loading.css";
-export * from "./rounded.css";
+export { sLoading } from "./loading.css";
+export { sRounded } from "./rounded.css";
 export * from "./shadows.css";
-export * from "./sizes.css";
-export * from "./striped.css";
+export { sDefaultSize, sXs, sSm, sMd, sLg, sXl, sXxl, sXxxl } from "./sizes.css";
+export { sStriped } from "./striped.css";
 export * from "./text.css";
 export * from "./transform.css";

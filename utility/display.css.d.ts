@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const uDisplayBlock: string;
 export const uDisplayContents: string;
 export const uDisplayFlowRoot: string;

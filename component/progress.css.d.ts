@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const cProgress: string;
 export const cProgressBar: string;
 export const cProgressStriped: string;

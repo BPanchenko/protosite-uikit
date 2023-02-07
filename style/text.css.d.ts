@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const sCursive: string;
 export const sMonospace: string;
 export const sSans: string;

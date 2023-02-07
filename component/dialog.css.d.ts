@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const cDialog: string;
 export const isClosed: string;
 export const isOpened: string;

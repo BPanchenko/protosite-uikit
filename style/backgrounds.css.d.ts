@@ -1,3 +1,4 @@
+export const __esModule: true;
 export const sBgRed: string;
 export const sBgPink: string;
 export const sBgPurple: string;
@@ -19,3 +20,4 @@ export const sBgGrey: string;
 export const sBgBlueGrey: string;
 export const sBgBlack: string;
 export const sBgWhite: string;
+

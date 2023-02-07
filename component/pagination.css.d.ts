@@ -1,4 +1,4 @@
-
+export const __esModule: true;
 export const cPagination: string;
 export const cPaginationEllipsis: string;
 export const cPaginationPage: string;

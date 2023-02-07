@@ -1,5 +1,6 @@
-
+export const __esModule: true;
 export const cThumbnail: string;
+export const cPanel: string;
 export const cThumbnailCaption: string;
 export const cThumbnailShutter: string;
 export const cThumbnailLink: string;
