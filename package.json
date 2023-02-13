@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.22.47",
+	"version": "4.22.48",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -22,7 +22,7 @@
 	],
 	"scripts": {
 		"build": "run-s build:css build:ts",
-		"build:css": "node ./.scripts/css-builder.cjs",
+		"build:css": "node css-builder.cjs",
 		"build:ts": "tcm . --pattern 'assets/**/*.css' --namedExports"
 	},
 	"dependencies": {

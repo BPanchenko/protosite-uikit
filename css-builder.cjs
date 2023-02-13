@@ -6,7 +6,7 @@ const logger = require('node-color-log');
 const path = require('path');
 const pluralize = require('pluralize');
 const postcss = require('postcss');
-const postcssConfig = require('../.config/postcss.config.cjs');
+const postcssConfig = require('./.config/postcss.config.cjs');
 
 const ROOT = process.cwd();
 const ADVANCED_FOLDERS = ['component', 'style'];
@@ -43,7 +43,7 @@ const files = glob
   .map(file => path.resolve(ROOT, file));
 
 // Processing
-const hrstart = process.hrtime()
+const hrstart = process.hrtime();
 
 const promises = files.map(file => {
   const targetFile = getTargetFile(file);
