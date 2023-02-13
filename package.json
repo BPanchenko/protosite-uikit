@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.21.46",
+	"version": "4.22.46",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -21,22 +21,15 @@
 		"main.css"
 	],
 	"scripts": {
-		"build": "run-p build:main build:document build:components build:styles build:utilities build:objects build:theme-document",
-		"build:components": "postcss ./component/main.css --output ./assets/components.css --config ./.config/postcss.config.cjs --verbose",
-		"build:document": "postcss ./document/main.css --output ./assets/document.css --config ./.config/postcss.config.cjs --verbose",
-		"build:objects": "postcss ./object/main.css --output ./assets/objects.css --config ./.config/postcss.config.cjs --verbose",
-		"build:main": "postcss ./main.css --output ./assets/main.css --config ./.config/postcss.config.cjs --verbose",
-		"build:styles": "postcss ./style/main.css --output ./assets/styles.css --config ./.config/postcss.config.cjs --verbose",
-		"build:utilities": "postcss ./utility/main.css --output ./assets/utilities.css --config ./.config/postcss.config.cjs --verbose",
-		"build:theme-document": "postcss ./theme/document.css --output ./assets/theme-document.css --config ./.config/postcss.config.cjs --verbose",
-		"typify": "tcm . --namedExports"
+		"build": "run-s build:css build:ts",
+		"build:css": "node ./.scripts/css-builder.cjs",
+		"build:ts": "tcm . --namedExports"
 	},
 	"dependencies": {
 		"@csstools/custom-units": "0.1.1",
 		"cssnano": "5.1.14",
 		"cssnano-preset-default": "5.2.13",
 		"postcss": "8.4.20",
-		"postcss-cli": "10.1.0",
 		"postcss-custom-media": "9.0.1",
 		"postcss-custom-selectors": "7.0.0",
 		"postcss-extend-rule": "4.0.0",
@@ -45,7 +38,10 @@
 		"protosite-palette": "2.13.20"
 	},
 	"devDependencies": {
+		"lodash": "4.17.21",
+		"node-color-log": "10.0.2",
 		"npm-run-all": "4.1.5",
+		"pluralize": "8.0.0",
 		"typed-css-modules": "0.7.2"
 	},
 	"repository": {
