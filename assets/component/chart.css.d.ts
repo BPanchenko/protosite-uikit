@@ -9,7 +9,5 @@ export const point: string;
 export const dot: string;
 export const handle: string;
 export const pointHovered: string;
-export const cChartLoader: string;
-export const cChartTracker: string;
 export const cChartControls: string;
 
