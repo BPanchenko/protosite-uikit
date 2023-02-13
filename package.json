@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.21.45",
+	"version": "4.21.46",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -56,9 +56,11 @@
 		"url": "https://github.com/BPanchenko/protosite-uikit/issues"
 	},
 	"keywords": [
-		"uikit",
+		"bemit",
 		"css",
-		"postcss"
+		"oocss",
+		"postcss",
+		"uikit"
 	],
 	"license": "ISC",
 	"author": {
