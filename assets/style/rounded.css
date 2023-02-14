@@ -1,1 +1,0 @@
-.s-rounded:is(.c-button,.c-panel,.c-toolbar){--roundness:50vh}.s-rounded.c-toolbar .c-button:first-child{border-bottom-left-radius:50vh;border-top-left-radius:50vh}.s-rounded.c-toolbar .c-button:last-child{border-bottom-right-radius:50vh;border-top-right-radius:50vh}

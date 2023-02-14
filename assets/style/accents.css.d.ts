@@ -1,7 +1,0 @@
-export const __esModule: true;
-export const sDanger: string;
-export const sMuted: string;
-export const sPrimary: string;
-export const sSuccess: string;
-export const sWarning: string;
-

@@ -1,1 +1,0 @@
-.c-button.s-loading{box-shadow:none;cursor:progress}.c-list__body.s-loading:after{background-color:color(var(--bg-color) a(.5));bottom:0;content:" ";cursor:wait;left:0;position:absolute;right:0;top:0;z-index:99}
