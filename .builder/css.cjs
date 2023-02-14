@@ -16,7 +16,7 @@ const OUTPUT = path.resolve(ROOT, 'assets');
 
 const patterns = (() => {
   const packageJson = JSON.parse(
-  readFileSync(path.resolve(ROOT, 'package.json'), { flag: 'r' })
+  	readFileSync(path.resolve(ROOT, 'package.json'), { flag: 'r' })
   );
 
   const regex1 = /^([\w]+)\/\*$/i;
@@ -25,20 +25,20 @@ const patterns = (() => {
   return packageJson.files
     .filter(row => regex1.test(row))
     .map(row => {
-    let pattern = row.replace(regex2, '')
-    if (ADVANCED_FOLDERS.includes(pattern)) {
-      pattern += '/*.css';
-    } else {
-      pattern += '/main.css';
-    }
-    return pattern
-  })
+      let pattern = row.replace(regex2, '');
+      if (ADVANCED_FOLDERS.includes(pattern)) {
+        pattern += '/*.css';
+      } else {
+        pattern += '/main.css';
+      }
+      return pattern
+    })
 })();
 
 const files = glob
   .sync(`{${patterns.join(',')},main.css}`, {
     dot: false,
-	ignore: ['assets/**', 'settings/**']
+	  ignore: ['assets/**', 'settings/**']
   })
   .map(file => path.resolve(ROOT, file));
 
@@ -78,7 +78,7 @@ function checkFileDir(file) {
 function getTargetFile(file) {
   const fileProps = path.parse(file);
   let folder = fileProps.dir.replace(ROOT, '').replace('\\', '');
-  let fileName = fileProps.name
+  let fileName = fileProps.name;
 
   if (fileProps.name === 'main' && !isEmpty(folder)) {
     // main.css in the root does not change
