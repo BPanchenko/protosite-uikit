@@ -1,8 +1,8 @@
-const { existsSync, readFileSync, mkdirSync, writeFileSync } = require('fs');
-const { isEmpty, round } = require('lodash');
+const { readFileSync, writeFileSync } = require('fs');
+const { isEmpty } = require('lodash');
+const { checkFileDir, logError, logSuccess, logSummary } = require('./helpers.cjs');
 
 const glob = require('glob');
-const logger = require('node-color-log');
 const path = require('path');
 const pluralize = require('pluralize');
 const postcss = require('postcss');
@@ -43,7 +43,6 @@ const files = glob
   .map(file => path.resolve(ROOT, file));
 
 // Processing
-const hrstart = process.hrtime();
 
 const promises = files.map(file => {
   const targetFile = getTargetFile(file);
@@ -58,7 +57,7 @@ const promises = files.map(file => {
       writeFileSync(targetFile, result.css, { flag: 'w' });
       logSuccess(relTargetFile);
     }).catch(error => {
-      logger.error(error);
+      logError(error);
     });
 });
 
@@ -67,13 +66,6 @@ Promise.allSettled(promises).then(results => {
 });
 
 // Helpers
-
-function checkFileDir(file) {
-  const fileProps = path.parse(file);
-  if (!existsSync(fileProps.dir)) {
-    mkdirSync(fileProps.dir, { recursive: true });
-  }
-}
 
 function getTargetFile(file) {
   const fileProps = path.parse(file);
@@ -93,22 +85,4 @@ function getTargetFile(file) {
   }
   
   return path.join(OUTPUT, folder, fileName + fileProps.ext);
-}
-
-function logSuccess(savedFile) {
-  const hrend = process.hrtime(hrstart);
-  logger.bgColor('green').color('white').log('SAVED:').joint()
-    .log(` ${savedFile} `).joint()
-    .bold().log(`in ${roundNanoseconds(hrend[1])} s`);
-}
-
-function logSummary(array) {
-  const hrend = process.hrtime(hrstart);
-  logger.log('');
-  logger.bgColor('white').color('black')
-    .log(`Total: processed ${array.length} files in ${roundNanoseconds(hrend[1])} seconds`);
-}
-
-function roundNanoseconds(value) {
-  return round(value / 1000000000, 3);
 }
