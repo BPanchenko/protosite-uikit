@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.22.48",
+	"version": "4.22.49",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -21,9 +21,10 @@
 		"main.css"
 	],
 	"scripts": {
-		"build": "run-s build:css build:ts",
+		"build": "run-s clean build:css build:ts",
 		"build:css": "node .builder/css.cjs",
-		"build:ts": "tcm . --pattern 'assets/**/*.css' --namedExports"
+		"build:ts": "tcm . --pattern 'assets/**/*.css' --namedExports",
+		"clean": "rimraf assets"
 	},
 	"dependencies": {
 		"@csstools/custom-units": "0.1.1",
@@ -41,8 +42,7 @@
 		"lodash": "4.17.21",
 		"node-color-log": "10.0.2",
 		"npm-run-all": "4.1.5",
-		"pluralize": "8.0.0",
-		"typed-css-modules": "0.7.2"
+		"pluralize": "8.0.0"
 	},
 	"repository": {
 		"type": "git",
