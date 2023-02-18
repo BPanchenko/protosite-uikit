@@ -1,11 +1,10 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.22.49",
+	"version": "4.22.50",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
 	"main": "assets/main.css",
-	"types": "assets/main.css.d.ts",
 	"files": [
 		".config/cssnano.config.cjs",
 		".config/postcss.config.cjs",
@@ -23,7 +22,7 @@
 	"scripts": {
 		"build": "run-s clean build:css build:ts",
 		"build:css": "node .builder/css.cjs",
-		"build:ts": "tcm . --pattern 'assets/**/*.css' --namedExports",
+		"build:ts": "node .builder/ts.cjs",
 		"clean": "rimraf assets",
 		"prettier": "prettier --write ."
 	},
@@ -40,6 +39,8 @@
 		"protosite-palette": "2.13.20"
 	},
 	"devDependencies": {
+		"css": "3.0.0",
+		"glob": "8.1.0",
 		"lodash": "4.17.21",
 		"node-color-log": "10.0.2",
 		"npm-run-all": "4.1.5",
