@@ -1,6 +1,6 @@
-const { readFileSync, writeFileSync } = require('fs');
+const { existsSync, mkdirSync, readFileSync, writeFileSync } = require('fs');
 const { isEmpty } = require('lodash');
-const { checkFileDir, logError, logSuccess, logSummary } = require('./helpers.cjs');
+const { logError, logSuccess, logSummary } = require('./helpers.cjs');
 
 const glob = require('glob');
 const path = require('path');
@@ -15,57 +15,63 @@ const OUTPUT = path.resolve(ROOT, 'assets');
 // Input
 
 const patterns = (() => {
-  const packageJson = JSON.parse(
-  	readFileSync(path.resolve(ROOT, 'package.json'), { flag: 'r' })
-  );
+  const packageJson = JSON.parse(readFileSync(path.resolve(ROOT, 'package.json'), { flag: 'r' }));
 
   const regex1 = /^([\w]+)\/\*$/i;
   const regex2 = /[^\w]+/i;
 
   return packageJson.files
-    .filter(row => regex1.test(row))
-    .map(row => {
+    .filter((row) => regex1.test(row))
+    .map((row) => {
       let pattern = row.replace(regex2, '');
       if (ADVANCED_FOLDERS.includes(pattern)) {
         pattern += '/*.css';
       } else {
         pattern += '/main.css';
       }
-      return pattern
-    })
+      return pattern;
+    });
 })();
 
 const files = glob
   .sync(`{${patterns.join(',')},main.css}`, {
     dot: false,
-	  ignore: ['assets/**', 'settings/**']
+    ignore: ['assets/**', 'settings/**']
   })
-  .map(file => path.resolve(ROOT, file));
+  .map((file) => path.resolve(ROOT, file));
 
 // Processing
 
-const promises = files.map(file => {
+const promises = files.map((file) => {
   const targetFile = getTargetFile(file);
   const relTargetFile = targetFile.replace(ROOT, '').replace(/^\\/, '');
-  const css = readFileSync(file, { flag: 'r' });
+  const rawCss = readFileSync(file, { flag: 'r' });
 
   checkFileDir(targetFile);
-  
+
   return postcss(postcssConfig.plugins)
-    .process(css, { from: file, to: targetFile })
-    .then(result => {
+    .process(rawCss, { from: file, to: targetFile })
+    .then((result) => {
       writeFileSync(targetFile, result.css, { flag: 'w' });
       logSuccess(relTargetFile);
-    }).catch(error => {
+    })
+    .catch((error) => {
       logError(error);
     });
 });
 
-Promise.allSettled(promises).then(results => {
+Promise.allSettled(promises).then((results) => {
   logSummary(results);
 });
 
 // Helpers
+
+function checkFileDir(file) {
+  const fileProps = path.parse(file);
+  if (!existsSync(fileProps.dir)) {
+    mkdirSync(fileProps.dir, { recursive: true });
+  }
+}
 
 function getTargetFile(file) {
   const fileProps = path.parse(file);
@@ -83,6 +89,6 @@ function getTargetFile(file) {
     }
     folder = '';
   }
-  
+
   return path.join(OUTPUT, folder, fileName + fileProps.ext);
 }
