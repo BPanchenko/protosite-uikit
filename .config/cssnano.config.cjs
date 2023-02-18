@@ -1,5 +1,5 @@
-module.exports = require("cssnano-preset-default")({
-    discardComments: {
-        removeAll: true
-    }
-})
+module.exports = require('cssnano-preset-default')({
+  discardComments: {
+    removeAll: true
+  }
+});
