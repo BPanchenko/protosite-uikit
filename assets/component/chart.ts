@@ -1,0 +1,11 @@
+export const cChart: string = 'c-chart';
+export const cChartAxis: string = 'c-chart__axis';
+export const cChartCanvas: string = 'c-chart__canvas';
+export const cChartControls: string = 'c-chart__controls';
+export const cChartGraph: string = 'c-chart__graph';
+export const dot: string = 'dot';
+export const handle: string = 'handle';
+export const line: string = 'line';
+export const point: string = 'point';
+export const pointHovered: string = 'point--hovered';
+export const tick: string = 'tick';

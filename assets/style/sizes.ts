@@ -1,0 +1,12 @@
+export const cAvatar: string = 'c-avatar';
+export const cButton: string = 'c-button';
+export const icon: string = 'icon';
+export const sDefaultSize: string = 's-default-size';
+export const sIcon: string = 's-icon';
+export const sLg: string = 's-lg';
+export const sMd: string = 's-md';
+export const sSm: string = 's-sm';
+export const sXl: string = 's-xl';
+export const sXs: string = 's-xs';
+export const sXxl: string = 's-xxl';
+export const sXxxl: string = 's-xxxl';

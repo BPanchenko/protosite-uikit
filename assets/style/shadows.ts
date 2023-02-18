@@ -1,0 +1,13 @@
+export const sShadow: string = 's-shadow';
+export const sShadow16Dp: string = 's-shadow-16dp';
+export const sShadow24Dp: string = 's-shadow-24dp';
+export const sShadow2Dp: string = 's-shadow-2dp';
+export const sShadow3Dp: string = 's-shadow-3dp';
+export const sShadow4Dp: string = 's-shadow-4dp';
+export const sShadow6Dp: string = 's-shadow-6dp';
+export const sShadow8Dp: string = 's-shadow-8dp';
+export const sShadowDiffuse: string = 's-shadow-diffuse';
+export const sShadowDreamy: string = 's-shadow-dreamy';
+export const sShadowLonger: string = 's-shadow-longer';
+export const sShadowSharp: string = 's-shadow-sharp';
+export const sShadowShorter: string = 's-shadow-shorter';

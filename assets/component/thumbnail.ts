@@ -1,0 +1,11 @@
+export const cPanel: string = 'c-panel';
+export const cThumbnail: string = 'c-thumbnail';
+export const cThumbnailLg: string = 'c-thumbnail--lg';
+export const cThumbnailMd: string = 'c-thumbnail--md';
+export const cThumbnailSm: string = 'c-thumbnail--sm';
+export const cThumbnailSquare: string = 'c-thumbnail--square';
+export const cThumbnailXl: string = 'c-thumbnail--xl';
+export const cThumbnailXs: string = 'c-thumbnail--xs';
+export const cThumbnailCaption: string = 'c-thumbnail__caption';
+export const cThumbnailLink: string = 'c-thumbnail__link';
+export const cThumbnailShutter: string = 'c-thumbnail__shutter';
