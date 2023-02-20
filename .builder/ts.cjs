@@ -58,5 +58,5 @@ function checkFile(file) {
 
 function getTargetFile(file) {
   const fileProps = path.parse(file);
-  return path.join(fileProps.dir, fileProps.name + '.ts');
+  return path.join(fileProps.dir, fileProps.name + fileProps.ext + '.ts');
 }
