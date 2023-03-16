@@ -1,3 +1,4 @@
+@import "../.snippet/custom-selectors.css";
 @import "../settings/main.css";
 @import "../settings/shadows.css";
 
@@ -8,9 +9,11 @@
 =========================================================================== */
 
 .c-avatar {
-	--text-size: 0;
+	--bg-color: transparent;
+	--border: 1--pixel solid var(--muted-color);
+	--shadow: none;
 	--size: 5--unit;
-	--shadow: var(--shadow-2dp);
+	--text-size: 0;
 }
 
 .c-avatar {
@@ -23,21 +26,14 @@
 	text-align: center;
 	vertical-align: middle;
 	user-select: none;
+	
+	background-color: var(--bg-color);
+	border: var(--border);
 	box-shadow: var(--shadow);
-
-	&[style*="background"] {
-		--shadow: var(--inset-shadow-2dp);
-		background-size: cover;
-	}
 }
 
-
-/* ========================================================================
-	Nested elements
-=========================================================================== */
-
 .c-avatar {
-	:is(a, img) {
+	:where(a, img) {
 		display: inline-block;
 		width: inherit;
 		height: inherit;
@@ -48,43 +44,40 @@
 	}
 }
 
-
-/* State: `:empty`
- ========================================================================== */
-
-.c-avatar:not([style*="background"]):empty,
-.c-avatar:not([style*="background"]) .c-avatar__link:empty {
-	position: relative;
-	background-color: var(--clr-grey-300);
-	border: 0.1rem solid var(--clr-grey-400);
-	box-sizing: border-box;
-
-	&::before, &::after {
-		content: ' ';
-	
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		
-		display: inline-block;
-		height: 40vh;
-		width: 4--pixel;
-		background-color: var(--clr-grey-400-tp);
-	}
-
-	&::before {
-		transform: translate(-50%, -50%) rotate(45deg);
-	}
-
-	&::after {
-		transform: translate(-50%, -50%) rotate(-45deg);
-	}
+:--avatar-has-background {
+	background-size: cover;
 }
 
 
-/* Context: `c-panel`
- ========================================================================== */
+/* ========================================================================
+	Empty State
+=========================================================================== */
 
-.c-panel:not(.s-clean) .c-avatar:not([style*="background"]) {
-	--shadow: none;
+:--avatar-not-background {
+	&:empty {
+		--bg-color: var(--clr-grey-100-tp);
+		--border: none;
+		--shadow: none;
+	}
+
+	.c-avatar__link:empty {
+		position: relative;
+		box-sizing: border-box;
+	
+		&::before {
+			display: inline-block;
+			content: '';
+		
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			height: 40%;
+			width: 40%;
+			transform: translate(-50%, -50%);
+			
+			border-radius: 50%;
+			background-color: var(--clr-grey-300-tp);
+		}
+	}
 }

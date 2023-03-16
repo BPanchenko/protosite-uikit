@@ -1,3 +1,6 @@
+@custom-selector :--avatar .c-avatar:not(:empty), :--avatar-has-background;
+@custom-selector :--avatar-has-background .c-avatar[style*="background-image"];
+@custom-selector :--avatar-not-background .c-avatar:not([style*="background-image"]);
 @custom-selector :--button-any .c-button, .c-panel:not(.s-clean) .c-button;
 @custom-selector :--button-any-has-focus :--button-any:focus-visible;
 @custom-selector :--button-any-is-active :--button-any:--is-active;

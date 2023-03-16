@@ -1,10 +1,11 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.22.51",
+	"version": "4.22.52",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
 	"main": "assets/main.css",
+	"types": "assets/main.ts",
 	"files": [
 		".config/cssnano.config.cjs",
 		".config/postcss.config.cjs",
