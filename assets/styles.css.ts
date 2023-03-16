@@ -121,4 +121,5 @@ export const sWarning: string = 's-warning';
 export const sXl: string = 's-xl';
 export const sXs: string = 's-xs';
 export const sXxl: string = 's-xxl';
+export const sXxs: string = 's-xxs';
 export const sXxxl: string = 's-xxxl';

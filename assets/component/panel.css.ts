@@ -1,3 +1,4 @@
+export const cAvatar: string = 'c-avatar';
 export const cButton: string = 'c-button';
 export const cPanel: string = 'c-panel';
 export const cPanelDivider: string = 'c-panel-divider';
