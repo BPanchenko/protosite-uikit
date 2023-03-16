@@ -51,22 +51,34 @@
 =========================================================================== */
 
 .c-avatar {
+	--size-xxs: var(--unit);
 	--size-xs: 1.5--unit;
 	--size-sm: 2.5--unit;
+	--size-md: 6--unit;
 	--size-lg: 8--unit;
 	--size-xl: 12--unit;
+	--size-xxl: 16--unit;
 
+	&.s-xxs {
+		--size: var(--size-xxs);
+	}
 	&.s-xs {
 		--size: var(--size-xs);
 	}
 	&.s-sm {
 		--size: var(--size-sm);
 	}
+	&.s-md {
+		--size: var(--size-md);
+	}
 	&.s-lg {
 		--size: var(--size-lg);
 	}
 	&.s-xl {
 		--size: var(--size-xl);
+	}
+	&.s-xxl {
+		--size: var(--size-xxl);
 	}
 }
 
