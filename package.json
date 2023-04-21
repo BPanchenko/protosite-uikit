@@ -5,7 +5,7 @@
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
 	"main": "assets/main.css",
-	"types": "assets/main.ts",
+	"types": "assets/main.d.ts",
 	"files": [
 		".config/cssnano.config.cjs",
 		".config/postcss.config.cjs",
