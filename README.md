@@ -3,20 +3,7 @@
 ### Установка пакета
 
 ```bash
-npm i -D @bpanchenko/uikit
-```
-
-### Файлы сборки
-
-```bash
-http://assets.protosite.rocks/uikit/main.css
-http://assets.protosite.rocks/uikit/components.css
-http://assets.protosite.rocks/uikit/document.css
-http://assets.protosite.rocks/uikit/objects.css
-http://assets.protosite.rocks/uikit/styles.css
-http://assets.protosite.rocks/uikit/utilities.css
-http://assets.protosite.rocks/uikit/theme-article.css
-http://assets.protosite.rocks/uikit/theme-errordoc.css
+yarn add @bpanchenko/uikit -dev
 ```
 
 ## Директории
