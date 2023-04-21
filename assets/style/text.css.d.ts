@@ -1,0 +1,20 @@
+declare const clss: {
+	readonly sBold: string;
+	readonly sCapitalize: string;
+	readonly sCursive: string;
+	readonly sExtraBold: string;
+	readonly sExtraLight: string;
+	readonly sHeavy: string;
+	readonly sLight: string;
+	readonly sLowercase: string;
+	readonly sMedium: string;
+	readonly sMonospace: string;
+	readonly sNormal: string;
+	readonly sSans: string;
+	readonly sSemiBold: string;
+	readonly sSerif: string;
+	readonly sText: string;
+	readonly sThin: string;
+	readonly sUppercase: string;
+};
+export = clss;

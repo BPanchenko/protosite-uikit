@@ -1,0 +1,24 @@
+declare const clss: {
+	readonly sBgAmber: string;
+	readonly sBgBlack: string;
+	readonly sBgBlue: string;
+	readonly sBgBlueGrey: string;
+	readonly sBgBrown: string;
+	readonly sBgCyan: string;
+	readonly sBgDeepOrange: string;
+	readonly sBgGreen: string;
+	readonly sBgGrey: string;
+	readonly sBgIndigo: string;
+	readonly sBgLightBlue: string;
+	readonly sBgLightGreen: string;
+	readonly sBgLime: string;
+	readonly sBgOrange: string;
+	readonly sBgPink: string;
+	readonly sBgPurple: string;
+	readonly sBgRed: string;
+	readonly sBgTeal: string;
+	readonly sBgViolet: string;
+	readonly sBgWhite: string;
+	readonly sBgYellow: string;
+};
+export = clss;
