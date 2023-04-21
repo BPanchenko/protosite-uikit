@@ -3,7 +3,7 @@
 ### Установка пакета
 
 ```bash
-yarn add @bpanchenko/uikit -dev
+yarn add @bpanchenko/uikit --dev
 ```
 
 ## Директории
