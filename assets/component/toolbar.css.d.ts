@@ -1,10 +1,9 @@
-declare const ClassNames: {
-	readonly cButton: string;
-	readonly cToolbar: string;
-	readonly cToolbarLabel: string;
-	readonly icon: string;
-	readonly sIcon: string;
-};
+export const cButton: string;
+export const cToolbar: string;
+export const cToolbarLabel: string;
+export const icon: string;
+export const sIcon: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

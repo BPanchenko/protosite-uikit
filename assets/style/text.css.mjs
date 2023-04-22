@@ -1,3 +1,4 @@
+/// <reference path="text.css.d.ts" />
 export const sBold = 's-bold';
 export const sCapitalize = 's-capitalize';
 export const sCursive = 's-cursive';
@@ -15,4 +16,7 @@ export const sSerif = 's-serif';
 export const sText = 's-text';
 export const sThin = 's-thin';
 export const sUppercase = 's-uppercase';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

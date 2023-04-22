@@ -1,3 +1,4 @@
+/// <reference path="chart.css.d.ts" />
 export const cChart = 'c-chart';
 export const cChartAxis = 'c-chart__axis';
 export const cChartCanvas = 'c-chart__canvas';
@@ -9,4 +10,7 @@ export const line = 'line';
 export const point = 'point';
 export const pointHovered = 'point--hovered';
 export const tick = 'tick';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

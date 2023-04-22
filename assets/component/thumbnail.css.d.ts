@@ -1,16 +1,15 @@
-declare const ClassNames: {
-	readonly cPanel: string;
-	readonly cThumbnail: string;
-	readonly cThumbnailLg: string;
-	readonly cThumbnailMd: string;
-	readonly cThumbnailSm: string;
-	readonly cThumbnailSquare: string;
-	readonly cThumbnailXl: string;
-	readonly cThumbnailXs: string;
-	readonly cThumbnailCaption: string;
-	readonly cThumbnailLink: string;
-	readonly cThumbnailShutter: string;
-};
+export const cPanel: string;
+export const cThumbnail: string;
+export const cThumbnailLg: string;
+export const cThumbnailMd: string;
+export const cThumbnailSm: string;
+export const cThumbnailSquare: string;
+export const cThumbnailXl: string;
+export const cThumbnailXs: string;
+export const cThumbnailCaption: string;
+export const cThumbnailLink: string;
+export const cThumbnailShutter: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

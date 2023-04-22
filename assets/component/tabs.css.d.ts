@@ -1,11 +1,10 @@
-declare const ClassNames: {
-	readonly cPanel: string;
-	readonly cTab: string;
-	readonly cTabIndicator: string;
-	readonly cTabIcon: string;
-	readonly cTabLabel: string;
-	readonly cTabsContainer: string;
-};
+export const cPanel: string;
+export const cTab: string;
+export const cTabIndicator: string;
+export const cTabIcon: string;
+export const cTabLabel: string;
+export const cTabsContainer: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

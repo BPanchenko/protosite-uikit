@@ -1,13 +1,12 @@
-declare const ClassNames: {
-	readonly cAvatar: string;
-	readonly cButton: string;
-	readonly cPanel: string;
-	readonly cPanelDivider: string;
-	readonly cPanelBody: string;
-	readonly cPanelHead: string;
-	readonly cToolbar: string;
-	readonly sClean: string;
-};
+export const cAvatar: string;
+export const cButton: string;
+export const cPanel: string;
+export const cPanelDivider: string;
+export const cPanelBody: string;
+export const cPanelHead: string;
+export const cToolbar: string;
+export const sClean: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

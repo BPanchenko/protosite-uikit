@@ -1,17 +1,16 @@
-declare const ClassNames: {
-	readonly cField: string;
-	readonly cFieldBox: string;
-	readonly cFieldButton: string;
-	readonly cFieldError: string;
-	readonly cFieldIcon: string;
-	readonly cFieldInfo: string;
-	readonly cFieldLabel: string;
-	readonly iconic: string;
-	readonly isFilled: string;
-	readonly isFocused: string;
-	readonly isInvalid: string;
-	readonly sFloating: string;
-};
+export const cField: string;
+export const cFieldBox: string;
+export const cFieldButton: string;
+export const cFieldError: string;
+export const cFieldIcon: string;
+export const cFieldInfo: string;
+export const cFieldLabel: string;
+export const iconic: string;
+export const isFilled: string;
+export const isFocused: string;
+export const isInvalid: string;
+export const sFloating: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

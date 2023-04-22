@@ -1,3 +1,4 @@
+/// <reference path="backgrounds.css.d.ts" />
 export const sBgAmber = 's-bg-amber';
 export const sBgBlack = 's-bg-black';
 export const sBgBlue = 's-bg-blue';
@@ -19,4 +20,7 @@ export const sBgTeal = 's-bg-teal';
 export const sBgViolet = 's-bg-violet';
 export const sBgWhite = 's-bg-white';
 export const sBgYellow = 's-bg-yellow';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

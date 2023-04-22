@@ -1,3 +1,4 @@
+/// <reference path="thumbnail.css.d.ts" />
 export const cPanel = 'c-panel';
 export const cThumbnail = 'c-thumbnail';
 export const cThumbnailLg = 'c-thumbnail--lg';
@@ -9,4 +10,7 @@ export const cThumbnailXs = 'c-thumbnail--xs';
 export const cThumbnailCaption = 'c-thumbnail__caption';
 export const cThumbnailLink = 'c-thumbnail__link';
 export const cThumbnailShutter = 'c-thumbnail__shutter';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

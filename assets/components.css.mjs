@@ -1,3 +1,4 @@
+/// <reference path="components.css.d.ts" />
 export const cAvatar = 'c-avatar';
 export const cAvatarLink = 'c-avatar__link';
 export const cBackdrop = 'c-backdrop';
@@ -89,4 +90,7 @@ export const sFloating = 's-floating';
 export const sIcon = 's-icon';
 export const sLinkset = 's-linkset';
 export const tick = 'tick';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

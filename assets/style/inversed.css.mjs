@@ -1,2 +1,6 @@
+/// <reference path="inversed.css.d.ts" />
 export const sInversed = 's-inversed';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

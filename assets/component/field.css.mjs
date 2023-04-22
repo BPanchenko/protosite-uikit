@@ -1,3 +1,4 @@
+/// <reference path="field.css.d.ts" />
 export const cField = 'c-field';
 export const cFieldBox = 'c-field-box';
 export const cFieldButton = 'c-field-button';
@@ -10,4 +11,7 @@ export const isFilled = 'is-filled';
 export const isFocused = 'is-focused';
 export const isInvalid = 'is-invalid';
 export const sFloating = 's-floating';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

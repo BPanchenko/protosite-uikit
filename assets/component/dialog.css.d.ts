@@ -1,13 +1,12 @@
-declare const ClassNames: {
-	readonly cDialog: string;
-	readonly cDialogBody: string;
-	readonly cDialogBodyViewport: string;
-	readonly cDialogBodyWrapper: string;
-	readonly cDialogButtons: string;
-	readonly cDialogHeader: string;
-	readonly isClosed: string;
-	readonly isOpened: string;
-};
+export const cDialog: string;
+export const cDialogBody: string;
+export const cDialogBodyViewport: string;
+export const cDialogBodyWrapper: string;
+export const cDialogButtons: string;
+export const cDialogHeader: string;
+export const isClosed: string;
+export const isOpened: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

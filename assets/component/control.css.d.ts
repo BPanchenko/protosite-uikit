@@ -1,9 +1,8 @@
-declare const ClassNames: {
-	readonly cCtrl: string;
-	readonly cCtrlGroup: string;
-	readonly cCtrlPopover: string;
-	readonly cCtrlSort: string;
-};
+export const cCtrl: string;
+export const cCtrlGroup: string;
+export const cCtrlPopover: string;
+export const cCtrlSort: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

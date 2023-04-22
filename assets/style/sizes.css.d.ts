@@ -1,18 +1,17 @@
-declare const ClassNames: {
-	readonly cAvatar: string;
-	readonly cButton: string;
-	readonly icon: string;
-	readonly sDefaultSize: string;
-	readonly sIcon: string;
-	readonly sLg: string;
-	readonly sMd: string;
-	readonly sSm: string;
-	readonly sXl: string;
-	readonly sXs: string;
-	readonly sXxl: string;
-	readonly sXxs: string;
-	readonly sXxxl: string;
-};
+export const cAvatar: string;
+export const cButton: string;
+export const icon: string;
+export const sDefaultSize: string;
+export const sIcon: string;
+export const sLg: string;
+export const sMd: string;
+export const sSm: string;
+export const sXl: string;
+export const sXs: string;
+export const sXxl: string;
+export const sXxs: string;
+export const sXxxl: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

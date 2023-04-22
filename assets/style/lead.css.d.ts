@@ -1,6 +1,5 @@
-declare const ClassNames: {
-	readonly sLead: string;
-};
+export const sLead: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

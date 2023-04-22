@@ -1,18 +1,17 @@
-declare const ClassNames: {
-	readonly sShadow: string;
-	readonly sShadow16Dp: string;
-	readonly sShadow24Dp: string;
-	readonly sShadow2Dp: string;
-	readonly sShadow3Dp: string;
-	readonly sShadow4Dp: string;
-	readonly sShadow6Dp: string;
-	readonly sShadow8Dp: string;
-	readonly sShadowDiffuse: string;
-	readonly sShadowDreamy: string;
-	readonly sShadowLonger: string;
-	readonly sShadowSharp: string;
-	readonly sShadowShorter: string;
-};
+export const sShadow: string;
+export const sShadow16Dp: string;
+export const sShadow24Dp: string;
+export const sShadow2Dp: string;
+export const sShadow3Dp: string;
+export const sShadow4Dp: string;
+export const sShadow6Dp: string;
+export const sShadow8Dp: string;
+export const sShadowDiffuse: string;
+export const sShadowDreamy: string;
+export const sShadowLonger: string;
+export const sShadowSharp: string;
+export const sShadowShorter: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

@@ -1,22 +1,21 @@
-declare const ClassNames: {
-	readonly sBold: string;
-	readonly sCapitalize: string;
-	readonly sCursive: string;
-	readonly sExtraBold: string;
-	readonly sExtraLight: string;
-	readonly sHeavy: string;
-	readonly sLight: string;
-	readonly sLowercase: string;
-	readonly sMedium: string;
-	readonly sMonospace: string;
-	readonly sNormal: string;
-	readonly sSans: string;
-	readonly sSemiBold: string;
-	readonly sSerif: string;
-	readonly sText: string;
-	readonly sThin: string;
-	readonly sUppercase: string;
-};
+export const sBold: string;
+export const sCapitalize: string;
+export const sCursive: string;
+export const sExtraBold: string;
+export const sExtraLight: string;
+export const sHeavy: string;
+export const sLight: string;
+export const sLowercase: string;
+export const sMedium: string;
+export const sMonospace: string;
+export const sNormal: string;
+export const sSans: string;
+export const sSemiBold: string;
+export const sSerif: string;
+export const sText: string;
+export const sThin: string;
+export const sUppercase: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

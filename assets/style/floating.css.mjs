@@ -1,2 +1,6 @@
+/// <reference path="floating.css.d.ts" />
 export const sFloating = 's-floating';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

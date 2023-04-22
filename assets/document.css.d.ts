@@ -1,12 +1,11 @@
-declare const ClassNames: {
-	readonly icon: string;
-	readonly isActive: string;
-	readonly sCondensed: string;
-	readonly sIcon: string;
-	readonly uTextLg: string;
-	readonly uTextSm: string;
-	readonly uTextXs: string;
-};
+export const icon: string;
+export const isActive: string;
+export const sCondensed: string;
+export const sIcon: string;
+export const uTextLg: string;
+export const uTextSm: string;
+export const uTextXs: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

@@ -1,3 +1,4 @@
+/// <reference path="sizes.css.d.ts" />
 export const cAvatar = 'c-avatar';
 export const cButton = 'c-button';
 export const icon = 'icon';
@@ -11,4 +12,7 @@ export const sXs = 's-xs';
 export const sXxl = 's-xxl';
 export const sXxs = 's-xxs';
 export const sXxxl = 's-xxxl';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

@@ -1,10 +1,9 @@
-declare const ClassNames: {
-	readonly cPopover: string;
-	readonly cPopoverBody: string;
-	readonly isHidden: string;
-	readonly isVisible: string;
-	readonly sLinkset: string;
-};
+export const cPopover: string;
+export const cPopoverBody: string;
+export const isHidden: string;
+export const isVisible: string;
+export const sLinkset: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

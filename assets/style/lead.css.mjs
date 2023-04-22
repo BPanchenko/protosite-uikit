@@ -1,2 +1,6 @@
+/// <reference path="lead.css.d.ts" />
 export const sLead = 's-lead';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

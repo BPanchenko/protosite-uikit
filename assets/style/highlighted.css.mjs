@@ -1,2 +1,6 @@
+/// <reference path="highlighted.css.d.ts" />
 export const sHighlighted = 's-highlighted';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

@@ -1,3 +1,4 @@
+/// <reference path="utilities.css.d.ts" />
 export const guideHorizontal = 'guide--horizontal';
 export const guideVertical = 'guide--vertical';
 export const line = 'line';
@@ -86,4 +87,7 @@ export const uVerticalAlignBottom = 'u-vertical-align-bottom';
 export const uVerticalAlignMiddle = 'u-vertical-align-middle';
 export const uVerticalAlignTop = 'u-vertical-align-top';
 export const uVisibleToggle = 'u-visible-toggle';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

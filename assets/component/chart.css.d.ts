@@ -1,16 +1,15 @@
-declare const ClassNames: {
-	readonly cChart: string;
-	readonly cChartAxis: string;
-	readonly cChartCanvas: string;
-	readonly cChartControls: string;
-	readonly cChartGraph: string;
-	readonly dot: string;
-	readonly handle: string;
-	readonly line: string;
-	readonly point: string;
-	readonly pointHovered: string;
-	readonly tick: string;
-};
+export const cChart: string;
+export const cChartAxis: string;
+export const cChartCanvas: string;
+export const cChartControls: string;
+export const cChartGraph: string;
+export const dot: string;
+export const handle: string;
+export const line: string;
+export const point: string;
+export const pointHovered: string;
+export const tick: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

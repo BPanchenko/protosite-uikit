@@ -1,10 +1,9 @@
-declare const ClassNames: {
-	readonly sDanger: string;
-	readonly sMuted: string;
-	readonly sPrimary: string;
-	readonly sSuccess: string;
-	readonly sWarning: string;
-};
+export const sDanger: string;
+export const sMuted: string;
+export const sPrimary: string;
+export const sSuccess: string;
+export const sWarning: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

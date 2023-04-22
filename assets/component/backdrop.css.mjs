@@ -1,2 +1,6 @@
+/// <reference path="backdrop.css.d.ts" />
 export const cBackdrop = 'c-backdrop';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

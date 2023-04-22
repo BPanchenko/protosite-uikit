@@ -1,17 +1,16 @@
-declare const ClassNames: {
-	readonly cFieldBox: string;
-	readonly oArticle: string;
-	readonly oArticlePicture: string;
-	readonly oBreadcrumb: string;
-	readonly oBreadcrumbItem: string;
-	readonly oContainer: string;
-	readonly oForm: string;
-	readonly oFormBody: string;
-	readonly oFormButtons: string;
-	readonly oFormHead: string;
-	readonly oFormRow: string;
-	readonly sShort: string;
-};
+export const cFieldBox: string;
+export const oArticle: string;
+export const oArticlePicture: string;
+export const oBreadcrumb: string;
+export const oBreadcrumbItem: string;
+export const oContainer: string;
+export const oForm: string;
+export const oFormBody: string;
+export const oFormButtons: string;
+export const oFormHead: string;
+export const oFormRow: string;
+export const sShort: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

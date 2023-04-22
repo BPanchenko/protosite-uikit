@@ -1,12 +1,11 @@
-declare const ClassNames: {
-	readonly cList: string;
-	readonly cListBody: string;
-	readonly cListCell: string;
-	readonly cListFoot: string;
-	readonly cListHead: string;
-	readonly cListItem: string;
-	readonly cListMeta: string;
-};
+export const cList: string;
+export const cListBody: string;
+export const cListCell: string;
+export const cListFoot: string;
+export const cListHead: string;
+export const cListItem: string;
+export const cListMeta: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

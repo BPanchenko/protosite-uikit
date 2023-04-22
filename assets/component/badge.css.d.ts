@@ -1,11 +1,10 @@
-declare const ClassNames: {
-	readonly cBadge: string;
-	readonly cBadgeDanger: string;
-	readonly cBadgeInfo: string;
-	readonly cBadgePrimary: string;
-	readonly cBadgeSuccess: string;
-	readonly cBadgeWarning: string;
-};
+export const cBadge: string;
+export const cBadgeDanger: string;
+export const cBadgeInfo: string;
+export const cBadgePrimary: string;
+export const cBadgeSuccess: string;
+export const cBadgeWarning: string;
+
+
 declare const stylesheet: CSSStyleSheet;
-export as namespace ClassNames;
 export default stylesheet;

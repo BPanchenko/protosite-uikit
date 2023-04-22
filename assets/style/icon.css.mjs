@@ -1,3 +1,7 @@
+/// <reference path="icon.css.d.ts" />
 export const cButton = 'c-button';
 export const sIcon = 's-icon';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

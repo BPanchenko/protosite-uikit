@@ -1,3 +1,4 @@
+/// <reference path="cursor.css.d.ts" />
 export const sCursorAlias = 's-cursor-alias';
 export const sCursorAllScroll = 's-cursor-all-scroll';
 export const sCursorAuto = 's-cursor-auto';
@@ -34,4 +35,7 @@ export const sCursorWResize = 's-cursor-w-resize';
 export const sCursorWait = 's-cursor-wait';
 export const sCursorZoomIn = 's-cursor-zoom-in';
 export const sCursorZoomOut = 's-cursor-zoom-out';
-export default (new CSSStyleSheet());
+
+
+const stylesheet = new CSSStyleSheet();
+export default stylesheet;

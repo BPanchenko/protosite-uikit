@@ -8,7 +8,7 @@ const logger = require('node-color-log');
 const { camelCase, compact, flattenDeep, isEmpty, uniq } = require('lodash');
 
 const ROOT = process.cwd();
-const declaration = (...args) => `\treadonly ${args[0]}: string;\n`;
+const declaration = (...args) => `export const ${args[0]}: string;\n`;
 const definition = (...args) => `export const ${args[0]} = '${args[1]}';\n`;
 
 // Input
@@ -17,11 +17,11 @@ const files = glob.sync('assets/**/*.css').map((file) => path.resolve(ROOT, file
 
 // Processing
 
-files.forEach((file) => {
-  const { dts: dtsFile, mjs: mjsFile } = getTargetFiles(file);
+files.forEach((source) => {
+  const { name, dts: dtsFile, mjs: mjsFile } = getTargetOptions(source);
   const relDtsFile = dtsFile.replace(ROOT, '').replace(/^\\/, '');
   const relMjsFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
-  const css = readFileSync(file, { flag: 'r' }).toString();
+  const css = readFileSync(source, { flag: 'r' }).toString();
   const ast = parser.parse(css);
   const regex = /\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}/gi;
 
@@ -42,8 +42,8 @@ files.forEach((file) => {
     // 1. Prepend Static Code Row
 
     appendFileSync(
-      dtsFile,
-      'declare const ClassNames: {\n'
+      mjsFile,
+      `/// <reference path="${name}.d.ts" />\n`
     );
 
     // 2. Append Generated Rows
@@ -65,16 +65,17 @@ files.forEach((file) => {
 
     appendFileSync(
       dtsFile,
-      [
-        '};',
+      `\n\n${[
         'declare const stylesheet: CSSStyleSheet;',
-        'export as namespace ClassNames;',
         'export default stylesheet;'
-      ].join('\n')
+      ].join('\n')}\n`
     );
     appendFileSync(
       mjsFile,
-      'export default (new CSSStyleSheet());'
+      `\n\n${[
+        'const stylesheet = new CSSStyleSheet();',
+        'export default stylesheet;'
+      ].join('\n')}\n`
     );
 
   } else {
@@ -95,11 +96,14 @@ function checkFile(file) {
   }
 }
 
-function getTargetFiles(file) {
+function getTargetOptions(file) {
   const fileProps = path.parse(file);
-  const pathWithoutExt = path.join(fileProps.dir, fileProps.name + fileProps.ext)
+  const fileName = fileProps.name + fileProps.ext;
+  const dts = path.join(fileProps.dir, fileName + '.d.ts')
+  const mjs = path.join(fileProps.dir, fileName + '.mjs')
   return {
-    dts: pathWithoutExt + '.d.ts',
-    mjs: pathWithoutExt + '.mjs'
+    name: fileName,
+    dts,
+    mjs
   };
 }
