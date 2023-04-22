@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cPanel: string;
 	readonly cTab: string;
 	readonly cTabIndicator: string;
@@ -6,4 +6,6 @@ declare const clss: {
 	readonly cTabLabel: string;
 	readonly cTabsContainer: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

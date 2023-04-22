@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cDialog: string;
 	readonly cDialogBody: string;
 	readonly cDialogBodyViewport: string;
@@ -8,4 +8,6 @@ declare const clss: {
 	readonly isClosed: string;
 	readonly isOpened: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

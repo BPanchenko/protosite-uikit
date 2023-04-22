@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cList: string;
 	readonly cListBody: string;
 	readonly cListCell: string;
@@ -7,4 +7,6 @@ declare const clss: {
 	readonly cListItem: string;
 	readonly cListMeta: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cPanel: string;
 	readonly cThumbnail: string;
 	readonly cThumbnailLg: string;
@@ -11,4 +11,6 @@ declare const clss: {
 	readonly cThumbnailLink: string;
 	readonly cThumbnailShutter: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

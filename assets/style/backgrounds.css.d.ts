@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly sBgAmber: string;
 	readonly sBgBlack: string;
 	readonly sBgBlue: string;
@@ -21,4 +21,6 @@ declare const clss: {
 	readonly sBgWhite: string;
 	readonly sBgYellow: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

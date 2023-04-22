@@ -1,7 +1,9 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cButton: string;
 	readonly cPanel: string;
 	readonly sClean: string;
 	readonly sLink: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cAvatar: string;
 	readonly cAvatarLink: string;
 	readonly cBackdrop: string;
@@ -306,4 +306,6 @@ declare const clss: {
 	readonly uVerticalAlignTop: string;
 	readonly uVisibleToggle: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

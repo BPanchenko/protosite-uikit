@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cFieldBox: string;
 	readonly oArticle: string;
 	readonly oArticlePicture: string;
@@ -12,4 +12,6 @@ declare const clss: {
 	readonly oFormRow: string;
 	readonly sShort: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cBadge: string;
 	readonly cBadgeDanger: string;
 	readonly cBadgeInfo: string;
@@ -6,4 +6,6 @@ declare const clss: {
 	readonly cBadgeSuccess: string;
 	readonly cBadgeWarning: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly sShadow: string;
 	readonly sShadow16Dp: string;
 	readonly sShadow24Dp: string;
@@ -13,4 +13,6 @@ declare const clss: {
 	readonly sShadowSharp: string;
 	readonly sShadowShorter: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

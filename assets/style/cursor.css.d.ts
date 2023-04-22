@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly sCursorAlias: string;
 	readonly sCursorAllScroll: string;
 	readonly sCursorAuto: string;
@@ -36,4 +36,6 @@ declare const clss: {
 	readonly sCursorZoomIn: string;
 	readonly sCursorZoomOut: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

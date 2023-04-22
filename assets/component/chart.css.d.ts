@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cChart: string;
 	readonly cChartAxis: string;
 	readonly cChartCanvas: string;
@@ -11,4 +11,6 @@ declare const clss: {
 	readonly pointHovered: string;
 	readonly tick: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

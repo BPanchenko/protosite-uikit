@@ -1,8 +1,10 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly cButton: string;
 	readonly cToolbar: string;
 	readonly cToolbarLabel: string;
 	readonly icon: string;
 	readonly sIcon: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;

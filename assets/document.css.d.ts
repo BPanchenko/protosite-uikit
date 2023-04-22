@@ -1,4 +1,4 @@
-declare const clss: {
+declare const ClassNames: {
 	readonly icon: string;
 	readonly isActive: string;
 	readonly sCondensed: string;
@@ -7,4 +7,6 @@ declare const clss: {
 	readonly uTextSm: string;
 	readonly uTextXs: string;
 };
-export = clss;
+declare const stylesheet: CSSStyleSheet;
+export as namespace ClassNames;
+export default stylesheet;
