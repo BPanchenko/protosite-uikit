@@ -1,6 +1,6 @@
 {
 	"name": "@bpanchenko/uikit",
-	"version": "4.22.55",
+	"version": "4.22.56",
 	"description": "CSS framework for developing web interfaces",
 	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
 	"type": "module",
@@ -21,9 +21,9 @@
 		"main.css"
 	],
 	"scripts": {
-		"build": "run-s clean build:css build:ts",
+		"build": "run-s clean build:css build:esm",
 		"build:css": "node .builder/css.cjs",
-		"build:ts": "node .builder/ts.cjs",
+		"build:esm": "node .builder/esm.cjs",
 		"clean": "rimraf assets",
 		"prettier": "prettier --write ."
 	},

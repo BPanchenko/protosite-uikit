@@ -9,7 +9,7 @@ const { camelCase, compact, flattenDeep, isEmpty, uniq } = require('lodash');
 
 const ROOT = process.cwd();
 const declaration = (...args) => `\treadonly ${args[0]}: string;\n`;
-const definition = (...args) => `export const ${args[0]}: string = '${args[1]}';\n`;
+const definition = (...args) => `export const ${args[0]} = '${args[1]}';\n`;
 
 // Input
 
@@ -18,9 +18,9 @@ const files = glob.sync('assets/**/*.css').map((file) => path.resolve(ROOT, file
 // Processing
 
 files.forEach((file) => {
-  const { dts: dtsFile, ts: tsFile } = getTargetFiles(file);
+  const { dts: dtsFile, mjs: mjsFile } = getTargetFiles(file);
   const relDtsFile = dtsFile.replace(ROOT, '').replace(/^\\/, '');
-  const relTsFile = tsFile.replace(ROOT, '').replace(/^\\/, '');
+  const relMjsFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
   const css = readFileSync(file, { flag: 'r' }).toString();
   const ast = parser.parse(css);
   const regex = /\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}/gi;
@@ -35,15 +35,15 @@ files.forEach((file) => {
   clss.sort();
 
   checkFile(dtsFile);
-  checkFile(tsFile);
+  checkFile(mjsFile);
 
   if (!isEmpty(clss)) {
 
-    // 1. Prepend Static Code Block
+    // 1. Prepend Static Code Row
 
     appendFileSync(
       dtsFile,
-      'declare const clss: {\n'
+      'declare const ClassNames: {\n'
     );
 
     // 2. Append Generated Rows
@@ -56,7 +56,7 @@ files.forEach((file) => {
         declaration(formatted)
       );
       appendFileSync(
-        tsFile,
+        mjsFile,
         definition(formatted, className)
       );
     });
@@ -65,15 +65,24 @@ files.forEach((file) => {
 
     appendFileSync(
       dtsFile,
-      '};\nexport = clss;\n'
+      [
+        '};',
+        'declare const stylesheet: CSSStyleSheet;',
+        'export as namespace ClassNames;',
+        'export default stylesheet;'
+      ].join('\n')
+    );
+    appendFileSync(
+      mjsFile,
+      'export default (new CSSStyleSheet());'
     );
 
   } else {
-    logger.warn(`File ${relTsFile} is empty`);
+    logger.warn(`File ${relMjsFile} is empty`);
   }
 
   logSuccess(relDtsFile);
-  logSuccess(relTsFile);
+  logSuccess(relMjsFile);
 });
 
 logSummary(files);
@@ -91,6 +100,6 @@ function getTargetFiles(file) {
   const pathWithoutExt = path.join(fileProps.dir, fileProps.name + fileProps.ext)
   return {
     dts: pathWithoutExt + '.d.ts',
-    ts: pathWithoutExt + '.ts'
+    mjs: pathWithoutExt + '.mjs'
   };
 }
