@@ -6,11 +6,9 @@ const glob = require('glob');
 const parser = require('css');
 const path = require('path');
 const logger = require('node-color-log');
-const { camelCase, compact, flattenDeep, isEmpty, uniq } = require('lodash');
+const { compact, flattenDeep, isEmpty, uniq } = require('lodash');
 
 const ROOT = process.cwd();
-const declaration = (...args) => `\n`;
-const definition = (...args) => `export const ${args[0]} = '${args[1]}';\n`;
 
 // Input
 
@@ -38,30 +36,43 @@ files.forEach((source) => {
   if (!isEmpty(clss)) {
     const { name, cjs: cjsFile, dts: dtsFile, mjs: mjsFile } = getTargetOptions(source);
 
-    checkFile(cjsFile);
-    checkFile(dtsFile);
-    checkFile(mjsFile);
+    // CommonJS
+    {
+      const relCjsFile = cjsFile.replace(ROOT, '').replace(/^\\/, '');
+      checkFile(cjsFile);
+      appendFileSync(
+        cjsFile,
+        cjsTemplate(clss, name)
+      );
+      logSuccess(relCjsFile);
+    }
 
-    appendFileSync(
-      cjsFile,
-      cjsTemplate(clss, name)
-    );
-    appendFileSync(
-      dtsFile,
-      cjsTemplate(clss)
-    );
-    appendFileSync(
-      mjsFile,
-      cjsTemplate(clss, name)
-    );
+    // TS Declaration
+    {
+      const relDtsFile = dtsFile.replace(ROOT, '').replace(/^\\/, '');
+      checkFile(dtsFile);
+      appendFileSync(
+        dtsFile,
+        dtsTemplate(clss)
+      );
+      logSuccess(relDtsFile);
+    }
+
+    // ES Module
+    {
+      const relMjsFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
+      checkFile(mjsFile);
+      appendFileSync(
+        mjsFile,
+        mjsTemplate(clss, name)
+      );
+      logSuccess(relMjsFile);
+    }
 
   } else {
     const relSource = dtsFile.replace(ROOT, '').replace(/^\\/, '');
     logger.warn(`File ${relSource} is empty`);
   }
-
-  logSuccess(relDtsFile);
-  logSuccess(relMjsFile);
 });
 
 logSummary(files);
