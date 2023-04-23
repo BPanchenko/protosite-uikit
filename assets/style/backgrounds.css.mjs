@@ -21,6 +21,5 @@ export const sBgViolet = 's-bg-violet';
 export const sBgWhite = 's-bg-white';
 export const sBgYellow = 's-bg-yellow';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

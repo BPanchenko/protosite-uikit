@@ -125,6 +125,5 @@ export const sXxl = 's-xxl';
 export const sXxs = 's-xxs';
 export const sXxxl = 's-xxxl';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

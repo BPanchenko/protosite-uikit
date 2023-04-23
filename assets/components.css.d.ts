@@ -90,6 +90,5 @@ export const sIcon: string;
 export const sLinkset: string;
 export const tick: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

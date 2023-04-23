@@ -7,6 +7,5 @@ export const cListHead = 'c-list__head';
 export const cListItem = 'c-list__item';
 export const cListMeta = 'c-list__meta';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

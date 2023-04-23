@@ -7,6 +7,5 @@ export const uTextLg = 'u-text-lg';
 export const uTextSm = 'u-text-sm';
 export const uTextXs = 'u-text-xs';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

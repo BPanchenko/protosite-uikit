@@ -12,6 +12,5 @@ export const sShadowLonger: string;
 export const sShadowSharp: string;
 export const sShadowShorter: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

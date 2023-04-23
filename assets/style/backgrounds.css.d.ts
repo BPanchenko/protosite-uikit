@@ -20,6 +20,5 @@ export const sBgViolet: string;
 export const sBgWhite: string;
 export const sBgYellow: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -11,6 +11,5 @@ export const point = 'point';
 export const pointHovered = 'point--hovered';
 export const tick = 'tick';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

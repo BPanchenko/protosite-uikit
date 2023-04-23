@@ -12,6 +12,5 @@ export const oFormHead = 'o-form__head';
 export const oFormRow = 'o-form__row';
 export const sShort = 's-short';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

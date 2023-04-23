@@ -11,6 +11,5 @@ export const isFocused: string;
 export const isInvalid: string;
 export const sFloating: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -16,6 +16,5 @@ export const sText: string;
 export const sThin: string;
 export const sUppercase: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

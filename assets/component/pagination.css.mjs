@@ -5,6 +5,5 @@ export const cPaginationNext = 'c-pagination__next';
 export const cPaginationPage = 'c-pagination__page';
 export const cPaginationPrev = 'c-pagination__prev';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

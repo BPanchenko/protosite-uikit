@@ -6,6 +6,5 @@ export const cBadgePrimary = 'c-badge--primary';
 export const cBadgeSuccess = 'c-badge--success';
 export const cBadgeWarning = 'c-badge--warning';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

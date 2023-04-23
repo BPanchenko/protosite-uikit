@@ -7,6 +7,5 @@ export const cPanelHead: string;
 export const cToolbar: string;
 export const sClean: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

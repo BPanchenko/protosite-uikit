@@ -17,6 +17,5 @@ export const sText = 's-text';
 export const sThin = 's-thin';
 export const sUppercase = 's-uppercase';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

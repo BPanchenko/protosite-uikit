@@ -305,6 +305,5 @@ export const uVerticalAlignMiddle: string;
 export const uVerticalAlignTop: string;
 export const uVisibleToggle: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -10,6 +10,5 @@ export const cThumbnailCaption: string;
 export const cThumbnailLink: string;
 export const cThumbnailShutter: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

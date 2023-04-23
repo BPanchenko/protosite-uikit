@@ -91,6 +91,5 @@ export const sIcon = 's-icon';
 export const sLinkset = 's-linkset';
 export const tick = 'tick';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

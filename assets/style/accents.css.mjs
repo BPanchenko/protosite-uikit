@@ -5,6 +5,5 @@ export const sPrimary = 's-primary';
 export const sSuccess = 's-success';
 export const sWarning = 's-warning';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

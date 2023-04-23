@@ -35,6 +35,5 @@ export const sCursorWait: string;
 export const sCursorZoomIn: string;
 export const sCursorZoomOut: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

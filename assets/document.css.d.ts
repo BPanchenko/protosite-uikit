@@ -6,6 +6,5 @@ export const uTextLg: string;
 export const uTextSm: string;
 export const uTextXs: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -11,6 +11,5 @@ export const oFormHead: string;
 export const oFormRow: string;
 export const sShort: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

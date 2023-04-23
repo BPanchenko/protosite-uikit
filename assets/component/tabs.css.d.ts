@@ -5,6 +5,5 @@ export const cTabIcon: string;
 export const cTabLabel: string;
 export const cTabsContainer: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

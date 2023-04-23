@@ -10,6 +10,5 @@ export const point: string;
 export const pointHovered: string;
 export const tick: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

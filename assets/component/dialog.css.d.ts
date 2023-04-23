@@ -7,6 +7,5 @@ export const cDialogHeader: string;
 export const isClosed: string;
 export const isOpened: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

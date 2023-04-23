@@ -5,6 +5,5 @@ export const cPanel = 'c-panel';
 export const cThumbnail = 'c-thumbnail';
 export const sHovered = 's-hovered';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

@@ -8,6 +8,5 @@ export const cDialogHeader = 'c-dialog__header';
 export const isClosed = 'is-closed';
 export const isOpened = 'is-opened';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

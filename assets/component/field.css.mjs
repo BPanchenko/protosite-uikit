@@ -12,6 +12,5 @@ export const isFocused = 'is-focused';
 export const isInvalid = 'is-invalid';
 export const sFloating = 's-floating';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

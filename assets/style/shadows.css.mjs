@@ -13,6 +13,5 @@ export const sShadowLonger = 's-shadow-longer';
 export const sShadowSharp = 's-shadow-sharp';
 export const sShadowShorter = 's-shadow-shorter';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

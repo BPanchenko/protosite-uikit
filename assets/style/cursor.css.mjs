@@ -36,6 +36,5 @@ export const sCursorWait = 's-cursor-wait';
 export const sCursorZoomIn = 's-cursor-zoom-in';
 export const sCursorZoomOut = 's-cursor-zoom-out';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;

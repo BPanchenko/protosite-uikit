@@ -124,6 +124,5 @@ export const sXxl: string;
 export const sXxs: string;
 export const sXxxl: string;
 
-
 declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

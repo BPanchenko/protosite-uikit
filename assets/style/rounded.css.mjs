@@ -4,6 +4,5 @@ export const cPanel = 'c-panel';
 export const cToolbar = 'c-toolbar';
 export const sRounded = 's-rounded';
 
-
 const stylesheet = new CSSStyleSheet();
 export default stylesheet;
