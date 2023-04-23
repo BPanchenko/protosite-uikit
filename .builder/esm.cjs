@@ -1,5 +1,6 @@
 const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
 const { logSuccess, logSummary } = require('./helpers.cjs');
+const { cjsTemplate, dtsTemplate, mjsTemplate } = require('./templates.cjs');
 
 const glob = require('glob');
 const parser = require('css');
@@ -8,7 +9,7 @@ const logger = require('node-color-log');
 const { camelCase, compact, flattenDeep, isEmpty, uniq } = require('lodash');
 
 const ROOT = process.cwd();
-const declaration = (...args) => `export const ${args[0]}: string;\n`;
+const declaration = (...args) => `\n`;
 const definition = (...args) => `export const ${args[0]} = '${args[1]}';\n`;
 
 // Input
@@ -18,9 +19,9 @@ const files = glob.sync('assets/**/*.css').map((file) => path.resolve(ROOT, file
 // Processing
 
 files.forEach((source) => {
-  const { name, dts: dtsFile, mjs: mjsFile } = getTargetOptions(source);
-  const relDtsFile = dtsFile.replace(ROOT, '').replace(/^\\/, '');
-  const relMjsFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
+
+  // Parsing CSS
+
   const css = readFileSync(source, { flag: 'r' }).toString();
   const ast = parser.parse(css);
   const regex = /\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}/gi;
@@ -34,52 +35,29 @@ files.forEach((source) => {
   clss = uniq(clss);
   clss.sort();
 
-  checkFile(dtsFile);
-  checkFile(mjsFile);
-
   if (!isEmpty(clss)) {
+    const { name, cjs: cjsFile, dts: dtsFile, mjs: mjsFile } = getTargetOptions(source);
 
-    // 1. Prepend Static Code Row
+    checkFile(cjsFile);
+    checkFile(dtsFile);
+    checkFile(mjsFile);
 
     appendFileSync(
-      mjsFile,
-      `/// <reference path="${name}.d.ts" />\n`
+      cjsFile,
+      cjsTemplate(clss, name)
     );
-
-    // 2. Append Generated Rows
-
-    clss.forEach((cls) => {
-      const className = cls.slice(1);
-      const formatted = camelCase(cls);
-      appendFileSync(
-        dtsFile,
-        declaration(formatted)
-      );
-      appendFileSync(
-        mjsFile,
-        definition(formatted, className)
-      );
-    });
-
-    // 3. Append Static Code Block
-
     appendFileSync(
       dtsFile,
-      `\n\n${[
-        'declare const stylesheet: CSSStyleSheet;',
-        'export default stylesheet;'
-      ].join('\n')}\n`
+      cjsTemplate(clss)
     );
     appendFileSync(
       mjsFile,
-      `\n\n${[
-        'const stylesheet = new CSSStyleSheet();',
-        'export default stylesheet;'
-      ].join('\n')}\n`
+      cjsTemplate(clss, name)
     );
 
   } else {
-    logger.warn(`File ${relMjsFile} is empty`);
+    const relSource = dtsFile.replace(ROOT, '').replace(/^\\/, '');
+    logger.warn(`File ${relSource} is empty`);
   }
 
   logSuccess(relDtsFile);
@@ -100,10 +78,12 @@ function getTargetOptions(file) {
   const fileProps = path.parse(file);
   const fileName = fileProps.name + fileProps.ext;
   const dts = path.join(fileProps.dir, fileName + '.d.ts')
+  const cjs = path.join(fileProps.dir, fileName + '.cjs')
   const mjs = path.join(fileProps.dir, fileName + '.mjs')
   return {
     name: fileName,
     dts,
+    cjs,
     mjs
   };
 }
