@@ -13,10 +13,12 @@
 =========================================================================== */
 
 .o-form {
+	--caption-color: var(--highlighted-text-color);
+	--caption-font: var(--text-font);
 	--text-font: var(--ui-font);
-	
-	:--headings {
-		--text-font: var(--ui-font);
+
+	h6 {
+		--caption-color: var(--secondary-text-color);
 	}
 }
 
@@ -86,6 +88,17 @@
 .o-form__body + .o-form__buttons,
 .o-form__row + .o-form__buttons {
 	margin-top: var(--space-lg);
+}
+
+
+/* Restyling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.o-form {
+	h6 {
+		font-weight: var(--font-bold);
+		letter-spacing: 0.1em;
+	}
 }
 
 
