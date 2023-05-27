@@ -12,6 +12,31 @@
 	--text-color: var(--caption-color);
 }
 
+/* Group Rules
+========================================================================== */
+
+:--headings {
+	margin: 0;
+	font-weight: var(--font-bold);
+	text-rendering: geometricPrecision;
+
+	&[data-glyph] {
+		@extend %icon;
+	
+		&::before {
+			line-height: 1;
+			vertical-align: middle;
+		}
+	}
+}
+
+* + :--headings {
+	margin-top: var(--space);
+}
+
+/* Stylization of header levels
+========================================================================== */
+
 h1 {
 	--text-size: var(--text-xxl);
 	--text-interligne: var(--interligne-xxl);
@@ -42,12 +67,6 @@ h6 {
 	--text-interligne: var(--interligne-xs);
 }
 
-:--headings {
-	margin: 0;
-	font-weight: var(--font-bold);
-	text-rendering: geometricPrecision;
-}
-
 h1 {
 	font-weight: var(--font-bold);
 }
@@ -75,8 +94,3 @@ h6 {
 	font-weight: var(--font-medium);
 	text-transform: uppercase;
 }
-
-* + :is(h1, h2, h3, h4, h5, h6) {
-	margin-top: var(--space);
-}
-
