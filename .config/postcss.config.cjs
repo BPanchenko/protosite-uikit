@@ -9,6 +9,7 @@ module.exports = {
     require('postcss-extend-rule')({
       onRecursiveExtend: 'warm'
     }),
-    require('@csstools/custom-units')
+    require('@csstools/custom-units'),
+    require('postcss-reporter')({ clearReportedMessages: true })
   ]
 };
