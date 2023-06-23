@@ -1,21 +1,21 @@
-@import "../settings/breakpoints.css";
-@import "../settings/space.css";
-
-/* Variables
-=========================================================================== */
-
-.t-document {
-	.o-container {
-		--width: 100ch;
-	}
-}
+@import '../settings/breakpoints.css';
+@import '../settings/space.css';
 
 /* ========================================================================
 	Theme: Document
 =========================================================================== */
 
 .t-document {
-	min-height: auto;
+	.o-container {
+		--width: none;
+	}
+}
+
+/* Relayout and restyling
+=========================================================================== */
+
+.t-document {
+	min-height: none;
 
 	ul li::before {
 		content: '⁍';
@@ -26,4 +26,3 @@
 		padding: 10vh var(--space-lg) var(--space-lg) 12vw;
 	}
 }
-
