@@ -1,5 +1,4 @@
-@import "../settings/document.css";
-
+@import '../settings/document.css';
 
 /* Component: Panel
  ========================================================================== */
@@ -12,7 +11,6 @@
 .c-panel + .c-panel.s-clean {
 	margin-top: 0;
 }
-
 
 /* Component: Button
 =========================================================================== */
@@ -42,11 +40,11 @@
 
 .c-button.s-clean {
 	.c-button__icon {
-		margin-left: -.2rem;
-		margin-right: .8rem;
+		margin-left: -0.2rem;
+		margin-right: 0.8rem;
 	}
 	.c-button__text + .c-button__icon {
-		margin-left: .8rem;
-		margin-right: -.2rem;
+		margin-left: 0.8rem;
+		margin-right: -0.2rem;
 	}
 }

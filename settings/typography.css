@@ -1,17 +1,17 @@
-@import url("http://assets.protosite.rocks/fonts/jetbrains-mono/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/marck-script/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/pt-root-ui/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/pt-sans-caption/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/pt-sans/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/pt-serif/stylesheet.css");
+@import url('http://assets.protosite.rocks/fonts/jetbrains-mono/stylesheet.css');
+@import url('http://assets.protosite.rocks/fonts/marck-script/stylesheet.css');
+@import url('http://assets.protosite.rocks/fonts/pt-root-ui/stylesheet.css');
+@import url('http://assets.protosite.rocks/fonts/pt-sans-caption/stylesheet.css');
+@import url('http://assets.protosite.rocks/fonts/pt-sans/stylesheet.css');
+@import url('http://assets.protosite.rocks/fonts/pt-serif/stylesheet.css');
 
 :root {
-	--caption-font: "PT Sans Caption", sans-serif;
-	--font-cursive: "Marck Script", cursive;
-	--font-monospace: "JetBrains Mono", monospace;
-	--font-sans: "PT Sans", sans-serif;
-	--font-serif: "PT Serif", serif;
-	--ui-font: "PT Root UI", system-ui;
+	--caption-font: 'PT Sans Caption', sans-serif;
+	--font-cursive: 'Marck Script', cursive;
+	--font-monospace: 'JetBrains Mono', monospace;
+	--font-sans: 'PT Sans', sans-serif;
+	--font-serif: 'PT Serif', serif;
+	--ui-font: 'PT Root UI', system-ui;
 
 	--font-thin: 100;
 	--font-extra-light: 200;

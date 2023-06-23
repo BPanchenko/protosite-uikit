@@ -1,6 +1,6 @@
-@import url("http://assets.protosite.rocks/fonts/iconic/stylesheet.css");
-@import "../settings/main.css";
-@import "../settings/typography.css";
+@import url('http://assets.protosite.rocks/fonts/iconic/stylesheet.css');
+@import '../settings/main.css';
+@import '../settings/typography.css';
 
 %icon::before {
 	--icon-size: var(--unit);
@@ -26,7 +26,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-	
+
 	&:empty::before {
 		width: var(--icon-size);
 		height: var(--icon-size);

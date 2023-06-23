@@ -1,7 +1,6 @@
-@import "../.snippet/custom-selectors.css";
-@import "../settings/document.css";
-@import "../settings/typography.css";
-
+@import '../.snippet/custom-selectors.css';
+@import '../settings/document.css';
+@import '../settings/typography.css';
 
 /* ========================================================================
 	Normalize
@@ -38,7 +37,9 @@ main,
 menu,
 nav,
 section,
-summary { display: block; }
+summary {
+	display: block;
+}
 
 audio,
 canvas,
@@ -80,10 +81,9 @@ audio:not([controls]) {
 	background-color: var(--selection-bg-color, transparent);
 	text-shadow: none;
 }
-*[unselectable=on] {
+*[unselectable='on'] {
 	user-select: none;
 }
-
 
 /* Horizontal rule
 ========================================================================== */
@@ -104,7 +104,6 @@ hr {
 	margin-top: 0;
 }
 
-
 /* Block base
 ========================================================================== */
 
@@ -117,16 +116,9 @@ figcaption {
 	margin: 0;
 }
 
-* + :where(
-	blockquote,
-	pre,
-	address,
-	fieldset,
-	figure
-) {
+* + :where(blockquote, pre, address, fieldset, figure) {
 	margin-top: var(--space-xs);
 }
-
 
 /* Forms
 ========================================================================== */
@@ -161,23 +153,23 @@ input {
 	line-height: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
 	box-sizing: border-box;
 	padding: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
 	height: auto;
 }
 
-input[type="search"] {
+input[type='search'] {
 	-webkit-appearance: textfield;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
@@ -188,7 +180,6 @@ textarea {
 optgroup {
 	font-weight: bold;
 }
-
 
 /* Tables
 ========================================================================== */

@@ -1,7 +1,7 @@
-@import "../.snippet/custom-selectors.css";
-@import "../settings/space.css";
-@import "../settings/typography.css";
-@import "../document/icon.css";
+@import '../.snippet/custom-selectors.css';
+@import '../settings/space.css';
+@import '../settings/typography.css';
+@import '../document/icon.css';
 
 /* Text
 =========================================================================== */
@@ -46,7 +46,6 @@
 	--text-interligne: var(--interligne-xxxl);
 }
 
-
 /* Component: Avatar (xs,sm,lg,xl)
 =========================================================================== */
 
@@ -82,7 +81,6 @@
 	}
 }
 
-
 /* Component: Button (sm,lg,xl)
 =========================================================================== */
 
@@ -97,7 +95,7 @@
 		padding-bottom: var(--space-xxs);
 		text-transform: uppercase;
 
-		&[data-glyph] {		
+		&[data-glyph] {
 			&::before {
 				top: -1--space-xxs;
 				left: -1--space-xs;
@@ -112,7 +110,7 @@
 		--text-interligne: 1.086;
 		--text-size: var(--text-sm);
 
-		&[data-glyph] {		
+		&[data-glyph] {
 			&::before {
 				left: -1--space-xs;
 			}
@@ -125,7 +123,7 @@
 		--text-interligne: 0.9;
 		--text-size: var(--text-xl);
 
-		&[data-glyph] {		
+		&[data-glyph] {
 			&::before {
 				--icon-size: 2--unit;
 				--icon-weight: var(--font-extra-bold);
@@ -139,7 +137,6 @@
 		}
 	}
 }
-
 
 /* Element: Icon (md,lg)
 =========================================================================== */

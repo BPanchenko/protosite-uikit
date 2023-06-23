@@ -1,5 +1,5 @@
 /// <reference path="highlighted.css.d.ts" />
-const classNames = new Map([["sHighlighted","s-highlighted"]]);
+const classNames = new Map([['sHighlighted', 's-highlighted']]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

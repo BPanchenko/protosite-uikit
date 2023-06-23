@@ -1,5 +1,9 @@
 /// <reference path="striped.css.d.ts" />
-const classNames = new Map([["cList","c-list"],["cListItem","c-list__item"],["sStriped","s-striped"]]);
+const classNames = new Map([
+  ['cList', 'c-list'],
+  ['cListItem', 'c-list__item'],
+  ['sStriped', 's-striped']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

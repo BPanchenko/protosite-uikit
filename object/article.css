@@ -1,20 +1,21 @@
-@import url("http://assets.protosite.rocks/fonts/pt-astra-sans/stylesheet.css");
-@import url("http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css");
+@import url('http://assets.protosite.rocks/fonts/pt-astra-sans/stylesheet.css');
+@import url('http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css');
 
-@import "../.snippet/custom-selectors.css";
-@import "../settings/document.css";
-@import "../settings/space.css";
-
+@import '../.snippet/custom-selectors.css';
+@import '../settings/document.css';
+@import '../settings/space.css';
 
 /* Object: Article
 ============================================================================ */
 
-article, .o-article {
-	--caption-font: "PT Astra Sans", sans-serif;
-	--text-font: "PT Astra Serif", serif;
+article,
+.o-article {
+	--caption-font: 'PT Astra Sans', sans-serif;
+	--text-font: 'PT Astra Serif', serif;
 }
 
-article, .o-article {
+article,
+.o-article {
 	:--headings {
 		margin: 0;
 
@@ -23,7 +24,6 @@ article, .o-article {
 		}
 	}
 }
-
 
 /* Component: `o-article__picture`
 ========================================================================== */

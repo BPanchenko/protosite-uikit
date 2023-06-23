@@ -1,5 +1,10 @@
 /// <reference path="control.css.d.ts" />
-const classNames = new Map([["cCtrl","c-ctrl"],["cCtrlGroup","c-ctrl-group"],["cCtrlPopover","c-ctrl-popover"],["cCtrlSort","c-ctrl-sort"]]);
+const classNames = new Map([
+  ['cCtrl', 'c-ctrl'],
+  ['cCtrlGroup', 'c-ctrl-group'],
+  ['cCtrlPopover', 'c-ctrl-popover'],
+  ['cCtrlSort', 'c-ctrl-sort']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

@@ -1,5 +1,9 @@
 /// <reference path="progress.css.d.ts" />
-const classNames = new Map([["cProgress","c-progress"],["cProgressStriped","c-progress--striped"],["cProgressBar","c-progress__bar"]]);
+const classNames = new Map([
+  ['cProgress', 'c-progress'],
+  ['cProgressStriped', 'c-progress--striped'],
+  ['cProgressBar', 'c-progress__bar']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

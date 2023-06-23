@@ -1,6 +1,6 @@
-@import "../settings/document.css";
-@import "../settings/space.css";
-@import "../settings/typography.css";
+@import '../settings/document.css';
+@import '../settings/space.css';
+@import '../settings/typography.css';
 
 code,
 kbd,
@@ -13,7 +13,7 @@ var {
 
 code {
 	--text-color: var(--clr-black);
-	
+
 	background-color: var(--clr-grey-50);
 	border-radius: var(--space-xs);
 	padding: 0 var(--space-xs);

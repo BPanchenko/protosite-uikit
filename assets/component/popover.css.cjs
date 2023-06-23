@@ -1,5 +1,11 @@
 /// <reference path="popover.css.d.ts" />
-const classNames = new Map([["cPopover","c-popover"],["cPopoverBody","c-popover__body"],["isHidden","is-hidden"],["isVisible","is-visible"],["sLinkset","s-linkset"]]);
+const classNames = new Map([
+  ['cPopover', 'c-popover'],
+  ['cPopoverBody', 'c-popover__body'],
+  ['isHidden', 'is-hidden'],
+  ['isVisible', 'is-visible'],
+  ['sLinkset', 's-linkset']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

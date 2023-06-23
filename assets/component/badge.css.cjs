@@ -1,5 +1,12 @@
 /// <reference path="badge.css.d.ts" />
-const classNames = new Map([["cBadge","c-badge"],["cBadgeDanger","c-badge--danger"],["cBadgeInfo","c-badge--info"],["cBadgePrimary","c-badge--primary"],["cBadgeSuccess","c-badge--success"],["cBadgeWarning","c-badge--warning"]]);
+const classNames = new Map([
+  ['cBadge', 'c-badge'],
+  ['cBadgeDanger', 'c-badge--danger'],
+  ['cBadgeInfo', 'c-badge--info'],
+  ['cBadgePrimary', 'c-badge--primary'],
+  ['cBadgeSuccess', 'c-badge--success'],
+  ['cBadgeWarning', 'c-badge--warning']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

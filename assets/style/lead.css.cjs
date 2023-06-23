@@ -1,5 +1,5 @@
 /// <reference path="lead.css.d.ts" />
-const classNames = new Map([["sLead","s-lead"]]);
+const classNames = new Map([['sLead', 's-lead']]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

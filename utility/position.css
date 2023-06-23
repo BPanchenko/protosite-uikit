@@ -1,4 +1,3 @@
-
 /* Floating
 =========================================================================== */
 
@@ -6,23 +5,27 @@
 	max-width: max-content;
 }
 
-.u-float-left { float: left; }
-.u-float-right { float: right; }
-
+.u-float-left {
+	float: left;
+}
+.u-float-right {
+	float: right;
+}
 
 /* Positioning
 ============================================================================ */
 
 .u-position-absolute,
 :where(
-	.u-position-bottom,
-	.u-position-bottom-left,
-	.u-position-bottom-right,
-	.u-position-cover,
-	.u-position-top,
-	.u-position-top-left,
-	.u-position-top-right,
-) {
+		.u-position-bottom,
+		.u-position-bottom-left,
+		.u-position-bottom-right,
+		.u-position-cover,
+		.u-position-top,
+		.u-position-top-left,
+		.u-position-top-right,
+
+	) {
 	position: absolute;
 }
 

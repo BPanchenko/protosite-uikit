@@ -1,5 +1,5 @@
 /// <reference path="backdrop.css.d.ts" />
-const classNames = new Map([["cBackdrop","c-backdrop"]]);
+const classNames = new Map([['cBackdrop', 'c-backdrop']]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

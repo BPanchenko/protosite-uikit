@@ -1,8 +1,7 @@
-@import "../settings/document.css";
-@import "../settings/shadows.css";
-@import "../settings/space.css";
-@import "../settings/typography.css";
-
+@import '../settings/document.css';
+@import '../settings/shadows.css';
+@import '../settings/space.css';
+@import '../settings/typography.css';
 
 /**
  * Name: Thumbnail
@@ -22,9 +21,9 @@
 	--base-size: 15.2rem;
 	--size-xs: calc(3.5 * var(--unit)); /* 5.6rem */
 	--size-sm: calc(5.5 * var(--unit)); /* 8.8rem */
-	--size-md: calc(12 * var(--unit));  /* 19.2rem */
-	--size-lg: calc(16 * var(--unit));  /* 25.6rem */
-	--size-xl: calc(24 * var(--unit));  /* 38.4rem */
+	--size-md: calc(12 * var(--unit)); /* 19.2rem */
+	--size-lg: calc(16 * var(--unit)); /* 25.6rem */
+	--size-xl: calc(24 * var(--unit)); /* 38.4rem */
 }
 
 .c-thumbnail {
@@ -53,7 +52,6 @@
 	margin-left: var(--space);
 }
 
-
 /* Combination of components: `o-article` and `c-panel`
  ========================================================================== */
 
@@ -61,7 +59,6 @@
 	/* reset basic style */
 	box-shadow: none;
 }
-
 
 /* Element: `c-thumbnail__caption`
  ========================================================================== */
@@ -84,7 +81,6 @@
 	text-shadow: var(--text-shadow);
 }
 
-
 /* Element: `c-thumbnail__shutter`
  ========================================================================== */
 
@@ -103,7 +99,6 @@
 	color: var(--clr-white);
 	text-shadow: var(--text-shadow);
 }
-
 
 /* State: `:empty`
  ========================================================================== */
@@ -125,12 +120,12 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	
+
 	display: inline-block;
 	height: 40%;
 	width: 0.1rem;
 	background-color: var(--clr-grey-400);
-	
+
 	content: ' ';
 }
 
@@ -143,7 +138,6 @@
 .c-thumbnail .c-thumbnail__link:empty::after {
 	transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 
 /* ========================================================================
    Modifiers: `c-thumbnail--[xs,sm,md,lg,xl]`
@@ -216,7 +210,6 @@
 	font-size: var(--text-lg);
 	line-height: var(--interligne-lg);
 }
-
 
 /* Modifier: `c-thumbnail--square`
  ========================================================================== */

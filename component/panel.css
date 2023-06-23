@@ -1,9 +1,9 @@
-@import "../.snippet/custom-selectors.css";
+@import '../.snippet/custom-selectors.css';
 
-@import "../settings/document.css";
-@import "../settings/shadows.css";
-@import "../settings/space.css";
-@import "../settings/typography.css";
+@import '../settings/document.css';
+@import '../settings/shadows.css';
+@import '../settings/space.css';
+@import '../settings/typography.css';
 
 /**
  * Component:	Panel
@@ -22,11 +22,10 @@
 	--shadow: var(--shadow-3dp);
 }
 
-
 /* ========================================================================
 	Component
 =========================================================================== */
- 
+
 .c-panel {
 	contain: layout style paint;
 	display: block;
@@ -38,33 +37,32 @@
 	box-shadow: var(--shadow);
 	box-sizing: border-box;
 
-	&:not(:has(> :is(.c-panel__head, .c-panel__body)))  {
+	&:not(:has(> :is(.c-panel__head, .c-panel__body))) {
 		padding: var(--padding-vert) var(--padding-horz);
 	}
 
 	&::before,
 	&::after {
-		content: "";
+		content: '';
 		display: table;
 		clear: both;
 	}
 }
 
-.c-panel:not([aria-hidden=true]) + .c-panel {
-   margin-top: var(--space);
+.c-panel:not([aria-hidden='true']) + .c-panel {
+	margin-top: var(--space);
 }
-
 
 /* Subcomponent: `c-panel-divider`
 =========================================================================== */
- 
+
 .c-panel + .c-panel-divider {
 	position: relative;
 	margin-top: var(--space-md);
 }
 
 .c-panel + .c-panel-divider::after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	top: -1--pixel;
@@ -72,7 +70,6 @@
 	right: 0;
 	border-top: var(--pixel) solid var(--clr-grey-800);
 }
-
 
 /* Child element: `c-panel__head`
 =========================================================================== */
@@ -96,7 +93,6 @@
 	}
 }
 
-
 /* Child element: `c-panel__body`
 =========================================================================== */
 
@@ -106,7 +102,7 @@
 
 	&::before,
 	&::after {
-		content: "";
+		content: '';
 		display: table;
 		clear: both;
 	}
@@ -121,7 +117,6 @@
 	right: calc(var(--padding-vert) - var(--space-sm));
 	border-top: 1px solid var(--clr-grey-400);
 }
-
 
 /* Nested components: Button and Toolbar
 =========================================================================== */
@@ -143,7 +138,6 @@
 	}
 }
 
-
 /* ========================================================================
 	Context
 =========================================================================== */
@@ -162,7 +156,6 @@
 	}
 }
 
-
 /* ========================================================================
 	Mediaqueries
 =========================================================================== */
@@ -175,7 +168,7 @@
 		left: var(--space-sm);
 		right: var(--space-sm);
 	}
-	
+
 	.c-panel__body {
 		padding: var(--space-sm);
 	}

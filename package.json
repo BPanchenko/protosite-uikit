@@ -1,73 +1,73 @@
 {
-	"name": "@bpanchenko/uikit",
-	"version": "4.24.60",
-	"description": "CSS framework for developing web interfaces",
-	"homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
-	"type": "module",
-	"main": "assets/main.css",
-	"types": "assets/main.d.ts",
-	"files": [
-		".config/cssnano.config.cjs",
-		".config/postcss.config.cjs",
-		".snippet/*",
-		"assets/*",
-		"component/*",
-		"document/*",
-		"object/*",
-		"settings/*",
-		"style/*",
-		"theme/*",
-		"utility/*",
-		"main.css"
-	],
-	"scripts": {
-		"build": "run-s clean prettier build:css build:esm",
-		"build:css": "node .builder/css.cjs",
-		"build:esm": "node .builder/esm.cjs",
-		"clean": "rimraf assets",
-		"prettier": "prettier --write ."
-	},
-	"dependencies": {
-		"@csstools/custom-units": "0.1.1",
-		"cssnano": "5.1.14",
-		"cssnano-preset-default": "5.2.13",
-		"postcss": "8.4.20",
-		"postcss-custom-media": "9.0.1",
-		"postcss-custom-selectors": "7.0.0",
-		"postcss-extend-rule": "4.0.0",
-		"postcss-import": "15.1.0",
-		"postcss-nested": "6.0.0",
-		"protosite-palette": "2.13.20"
-	},
-	"devDependencies": {
-		"css": "3.0.0",
-		"glob": "8.1.0",
-		"lodash": "4.17.21",
-		"node-color-log": "10.0.2",
-		"npm-run-all": "4.1.5",
-		"pluralize": "8.0.0",
-		"postcss-reporter": "7.0.5",
-		"prettier": "2.8.4",
-		"rimraf": "4.1.2"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/BPanchenko/protosite-uikit.git"
-	},
-	"bugs": {
-		"url": "https://github.com/BPanchenko/protosite-uikit/issues"
-	},
-	"keywords": [
-		"bemit",
-		"css",
-		"oocss",
-		"postcss",
-		"uikit"
-	],
-	"license": "ISC",
-	"author": {
-		"name": "Boris Panchenko",
-		"email": "boris.v.panchenko@mail.ru",
-		"url": "https://bpanchenko.ru"
-	}
+  "name": "@bpanchenko/uikit",
+  "version": "4.24.60",
+  "description": "CSS framework for developing web interfaces",
+  "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
+  "type": "module",
+  "main": "assets/main.css",
+  "types": "assets/main.d.ts",
+  "files": [
+    ".config/cssnano.config.cjs",
+    ".config/postcss.config.cjs",
+    ".snippet/*",
+    "assets/*",
+    "component/*",
+    "document/*",
+    "object/*",
+    "settings/*",
+    "style/*",
+    "theme/*",
+    "utility/*",
+    "main.css"
+  ],
+  "scripts": {
+    "build": "run-s clean prettier build:css build:esm",
+    "build:css": "node .builder/css.cjs",
+    "build:esm": "node .builder/esm.cjs",
+    "clean": "rimraf assets",
+    "prettier": "prettier --write ."
+  },
+  "dependencies": {
+    "@csstools/custom-units": "0.1.1",
+    "cssnano": "5.1.14",
+    "cssnano-preset-default": "5.2.13",
+    "postcss": "8.4.20",
+    "postcss-custom-media": "9.0.1",
+    "postcss-custom-selectors": "7.0.0",
+    "postcss-extend-rule": "4.0.0",
+    "postcss-import": "15.1.0",
+    "postcss-nested": "6.0.0",
+    "protosite-palette": "2.13.20"
+  },
+  "devDependencies": {
+    "css": "3.0.0",
+    "glob": "8.1.0",
+    "lodash": "4.17.21",
+    "node-color-log": "10.0.2",
+    "npm-run-all": "4.1.5",
+    "pluralize": "8.0.0",
+    "postcss-reporter": "7.0.5",
+    "prettier": "2.8.4",
+    "rimraf": "4.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BPanchenko/protosite-uikit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BPanchenko/protosite-uikit/issues"
+  },
+  "keywords": [
+    "bemit",
+    "css",
+    "oocss",
+    "postcss",
+    "uikit"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "Boris Panchenko",
+    "email": "boris.v.panchenko@mail.ru",
+    "url": "https://bpanchenko.ru"
+  }
 }

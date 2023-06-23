@@ -1,5 +1,11 @@
 /// <reference path="accents.css.d.ts" />
-const classNames = new Map([["sDanger","s-danger"],["sMuted","s-muted"],["sPrimary","s-primary"],["sSuccess","s-success"],["sWarning","s-warning"]]);
+const classNames = new Map([
+  ['sDanger', 's-danger'],
+  ['sMuted', 's-muted'],
+  ['sPrimary', 's-primary'],
+  ['sSuccess', 's-success'],
+  ['sWarning', 's-warning']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

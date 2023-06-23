@@ -1,11 +1,11 @@
-@import "../settings/breakpoints.css";
-@import "../settings/document.css";
+@import '../settings/breakpoints.css';
+@import '../settings/document.css';
 
-@import "./alignment.css";
-@import "./display.css";
-@import "./grid.css";
-@import "./margins.css";
-@import "./position.css";
-@import "./scroll.css";
-@import "./text.css";
-@import "./visibility.css";
+@import './alignment.css';
+@import './display.css';
+@import './grid.css';
+@import './margins.css';
+@import './position.css';
+@import './scroll.css';
+@import './text.css';
+@import './visibility.css';

@@ -1,5 +1,5 @@
-@import "../settings/document.css";
-@import "../settings/shadows.css";
+@import '../settings/document.css';
+@import '../settings/shadows.css';
 
 /* ========================================================================
    The table element and the list component
@@ -19,7 +19,6 @@ table.s-hovered tbody tr:hover,
 	background-color: var(--clr-lime-50) !important;
 }
 
-
 /* ========================================================================
    Components: `c-panel`, `c-thumbnail`
  ========================================================================== */
@@ -33,7 +32,7 @@ table.s-hovered tbody tr:hover,
 }
 
 .c-panel.s-hovered:hover,
-.c-thumbnail.s-hovered:hover  {
+.c-thumbnail.s-hovered:hover {
 	box-shadow: var(--shadow-6dp);
 	top: -0.2rem;
 }

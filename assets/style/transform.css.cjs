@@ -1,5 +1,8 @@
 /// <reference path="transform.css.d.ts" />
-const classNames = new Map([["sFlipHorizontal","s-flip-horizontal"],["sFlipRotate90","s-flip-rotate-90"]]);
+const classNames = new Map([
+  ['sFlipHorizontal', 's-flip-horizontal'],
+  ['sFlipRotate90', 's-flip-rotate-90']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

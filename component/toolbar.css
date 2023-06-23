@@ -1,7 +1,7 @@
-@import "../.snippet/custom-selectors.css";
-@import "../settings/document.css";
-@import "../settings/shadows.css";
-@import "../settings/space.css";
+@import '../.snippet/custom-selectors.css';
+@import '../settings/document.css';
+@import '../settings/shadows.css';
+@import '../settings/space.css';
 
 /**
  * Component: Toolbar
@@ -11,7 +11,7 @@
 .c-toolbar {
 	--height: 2.5--unit;
 	--roundness: var(--space-xs);
-	
+
 	--bg-color: var(--clr-white);
 	--border-color: transparent;
 	--shadow: var(--shadow-diffuse);
@@ -60,8 +60,6 @@
 		margin-left: 0;
 	}
 }
-
-
 
 /* Child elements: Icon and Label
 =========================================================================== */

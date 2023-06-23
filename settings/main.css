@@ -1,4 +1,4 @@
-@import "protosite-palette/assets/palette.css";
+@import 'protosite-palette/assets/palette.css';
 
 /* Basic parameters
 =========================================================================== */
@@ -20,7 +20,7 @@ html {
 :root {
 	--clr-black: var(--clr-grey-900);
 	--clr-white: #ffffff;
-	
+
 	--danger-color: var(--clr-red-800);
 	--muted-color: var(--clr-grey-400-tp);
 	--primary-color: var(--clr-blue-800);

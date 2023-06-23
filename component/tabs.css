@@ -1,6 +1,5 @@
-@import "../settings/document.css";
-@import "../settings/space.css";
-
+@import '../settings/document.css';
+@import '../settings/space.css';
 
 /* ========================================================================
 	Component: `c-tab`
@@ -35,11 +34,11 @@
 	background-color: var(--clr-grey-100);
 }
 
-.c-tab[aria-selected=true] {
+.c-tab[aria-selected='true'] {
 	color: var(--clr-grey-900);
 	cursor: default;
 }
-.c-tab[aria-selected=true]:hover {
+.c-tab[aria-selected='true']:hover {
 	background-color: transparent;
 }
 
@@ -70,7 +69,6 @@
 	line-height: 2rem;
 }
 
-
 /* Wrapper: `c-tabs-container`
  ========================================================================== */
 
@@ -89,10 +87,9 @@
 	border-top: 0.1rem solid var(--clr-grey-300);
 }
 
-
 /* Element: `c-tab-indicator`
  ========================================================================== */
-		
+
 .c-tab-indicator {
 	display: block;
 	position: absolute;
@@ -106,7 +103,6 @@
 	transition-duration: 0.1s;
 	transition-timing-function: var(--easing);
 }
-
 
 /* ========================================================================
    Supports
@@ -130,7 +126,6 @@
 		float: left;
 	}
 }
-
 
 /* ========================================================================
    Context: tablist on the panel

@@ -1,5 +1,8 @@
 /// <reference path="avatar.css.d.ts" />
-const classNames = new Map([["cAvatar","c-avatar"],["cAvatarLink","c-avatar__link"]]);
+const classNames = new Map([
+  ['cAvatar', 'c-avatar'],
+  ['cAvatarLink', 'c-avatar__link']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

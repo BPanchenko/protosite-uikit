@@ -1,12 +1,6 @@
-
-.s-rounded:is(
-	.c-button,
-	.c-panel,
-	.c-toolbar
-) {
+.s-rounded:is(.c-button, .c-panel, .c-toolbar) {
 	--roundness: 50vh;
 }
-
 
 /* Toolbar
 =========================================================================== */

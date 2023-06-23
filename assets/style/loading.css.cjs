@@ -1,5 +1,9 @@
 /// <reference path="loading.css.d.ts" />
-const classNames = new Map([["cButton","c-button"],["cListBody","c-list__body"],["sLoading","s-loading"]]);
+const classNames = new Map([
+  ['cButton', 'c-button'],
+  ['cListBody', 'c-list__body'],
+  ['sLoading', 's-loading']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

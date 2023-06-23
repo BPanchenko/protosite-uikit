@@ -1,7 +1,7 @@
-@import "../settings/document.css";
-@import "../settings/shadows.css";
-@import "../settings/space.css";
-@import "../settings/typography.css";
+@import '../settings/document.css';
+@import '../settings/shadows.css';
+@import '../settings/space.css';
+@import '../settings/typography.css';
 
 /**
  * Component: `c-popover`
@@ -30,7 +30,7 @@
 	position: fixed;
 	left: 0;
 	top: 0;
-	transform: translate(0,0);
+	transform: translate(0, 0);
 	z-index: 200;
 	margin: var(--space);
 	box-shadow: var(--shadow);
@@ -45,10 +45,9 @@
 	font-size: 0.001px;
 }
 
-.c-popover[data-floating=true] {
+.c-popover[data-floating='true'] {
 	transition-property: opacity, transform;
 }
-
 
 /* Subelement: Caret of tooltip
  ========================================================================== */
@@ -82,62 +81,60 @@
 	transition-delay: 0;
 }
 
-
 /* Positioning */
 
-.c-popover[data-position=bottom]::after {
+.c-popover[data-position='bottom']::after {
 	top: -0.4rem;
 	left: 50%;
 	margin-left: -0.4rem;
 }
-.c-popover[data-position=top]::after {
+.c-popover[data-position='top']::after {
 	bottom: -0.4rem;
 	left: 50%;
 	margin-left: -0.4rem;
 }
-.c-popover[data-position=right]::after {
+.c-popover[data-position='right']::after {
 	top: 50%;
 	left: -0.4rem;
 	margin-top: -0.4rem;
 }
-.c-popover[data-position=left]::after {
+.c-popover[data-position='left']::after {
 	top: 50%;
 	right: -0.4rem;
 	margin-top: -0.4rem;
 }
-.c-popover[data-position=right-top]::after {
+.c-popover[data-position='right-top']::after {
 	top: 0.8rem;
 	left: -0.4rem;
 }
-.c-popover[data-position=right-bottom]::after {
+.c-popover[data-position='right-bottom']::after {
 	bottom: 0.8rem;
 	left: -0.4rem;
 }
-.c-popover[data-position=left-top]::after {
+.c-popover[data-position='left-top']::after {
 	top: 0.8rem;
 	right: -0.4rem;
 }
-.c-popover[data-position=left-bottom]::after {
+.c-popover[data-position='left-bottom']::after {
 	bottom: 0.8rem;
 	right: -0.4rem;
 }
-.c-popover[data-position=bottom-left]::after {
+.c-popover[data-position='bottom-left']::after {
 	top: -0.4rem;
 	left: 0.8rem;
 }
-.c-popover[data-position=bottom-right]::after {
+.c-popover[data-position='bottom-right']::after {
 	top: -0.4rem;
 	right: 0.8rem;
 }
-.c-popover[data-position=top-left]::after {
+.c-popover[data-position='top-left']::after {
 	bottom: -0.4rem;
 	left: 0.8rem;
 }
-.c-popover[data-position=top-right]::after {
+.c-popover[data-position='top-right']::after {
 	bottom: -0.4rem;
 	right: 0.8rem;
 }
-
 
 /* Element: `c-popover__body`
  ========================================================================== */
@@ -151,7 +148,7 @@
 	background-color: var(--bg-color);
 	border-radius: 0.2rem;
 	overflow: hidden;
-	
+
 	color: var(--clr-grey-50);
 	font-family: var(--font-primary);
 	font-size: var(--text-sm);
@@ -174,7 +171,6 @@
 	margin-top: 0;
 }
 
-
 /* Visibility States
 =========================================================================== */
 
@@ -184,7 +180,7 @@
 		animation-timing-function: ease-in-out;
 		animation-iteration-count: 1;
 	}
-	
+
 	&.is-visible {
 		animation-name: popoverShow;
 		display: inline-block;
@@ -198,14 +194,21 @@
 }
 
 @keyframes popoverShow {
-	from { opacity: 0; }
-	to { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 @keyframes popoverHide {
-	from { opacity: 1; }
-	to { opacity: 0; }
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
 }
-
 
 /* Style: `s-linkset`
  ========================================================================== */

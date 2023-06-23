@@ -1,5 +1,5 @@
-@import "../settings/space.css";
-@import "../settings/typography.css";
+@import '../settings/space.css';
+@import '../settings/typography.css';
 
 /**
  * Object: Form
@@ -35,9 +35,8 @@
 	font-size: 1.3rem;
 	cursor: default;
 	user-select: none;
-	padding-bottom: .2rem;
+	padding-bottom: 0.2rem;
 }
-
 
 /* Sub-object: `o-form__head`
 =========================================================================== */
@@ -54,7 +53,6 @@
 .o-form__head * + h6 {
 	margin-top: 0;
 }
-
 
 /* Sub-object: `o-form__row`
 =========================================================================== */
@@ -77,7 +75,6 @@
 	margin-top: var(--space-md);
 }
 
-
 /* Sub-object: `o-form__buttons`
 =========================================================================== */
 
@@ -90,7 +87,6 @@
 	margin-top: var(--space-lg);
 }
 
-
 /* Restyling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -100,7 +96,6 @@
 		letter-spacing: 0.1em;
 	}
 }
-
 
 /* Style: short form
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

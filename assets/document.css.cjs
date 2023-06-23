@@ -1,5 +1,13 @@
 /// <reference path="document.css.d.ts" />
-const classNames = new Map([["icon","icon"],["isActive","is-active"],["sCondensed","s-condensed"],["sIcon","s-icon"],["uTextLg","u-text-lg"],["uTextSm","u-text-sm"],["uTextXs","u-text-xs"]]);
+const classNames = new Map([
+  ['icon', 'icon'],
+  ['isActive', 'is-active'],
+  ['sCondensed', 's-condensed'],
+  ['sIcon', 's-icon'],
+  ['uTextLg', 'u-text-lg'],
+  ['uTextSm', 'u-text-sm'],
+  ['uTextXs', 'u-text-xs']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

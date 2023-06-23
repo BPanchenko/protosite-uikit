@@ -1,5 +1,8 @@
 /// <reference path="icon.css.d.ts" />
-const classNames = new Map([["cButton","c-button"],["sIcon","s-icon"]]);
+const classNames = new Map([
+  ['cButton', 'c-button'],
+  ['sIcon', 's-icon']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

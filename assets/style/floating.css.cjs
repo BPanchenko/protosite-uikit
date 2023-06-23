@@ -1,5 +1,5 @@
 /// <reference path="floating.css.d.ts" />
-const classNames = new Map([["sFloating","s-floating"]]);
+const classNames = new Map([['sFloating', 's-floating']]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

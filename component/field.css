@@ -1,6 +1,6 @@
-@import "../settings/document.css";
-@import "../settings/space.css";
-@import "../settings/typography.css";
+@import '../settings/document.css';
+@import '../settings/space.css';
+@import '../settings/typography.css';
 
 /**
  * Component:	`c-field`
@@ -44,7 +44,6 @@
 	--text-size: var(--text-sm);
 }
 
-
 /* Component: `c-field`
  ========================================================================== */
 
@@ -66,7 +65,7 @@
 	border-style: solid;
 	border-radius: 0.2rem;
 	outline: none;
-	box-shadow: inset 0 0 .2rem var(--clr-grey-400), 0 0 0 var(--clr-blue-400);
+	box-shadow: inset 0 0 0.2rem var(--clr-grey-400), 0 0 0 var(--clr-blue-400);
 	box-sizing: border-box;
 	cursor: pointer;
 
@@ -89,7 +88,7 @@
 
 .c-field:focus-visible {
 	border-color: var(--clr-blue-400);
-	box-shadow: inset 0 0 0 var(--clr-grey-400), 0 0 .3rem var(--clr-blue-400);
+	box-shadow: inset 0 0 0 var(--clr-grey-400), 0 0 0.3rem var(--clr-blue-400);
 }
 
 /* Style of the specific base
@@ -105,21 +104,21 @@ textarea.c-field {
 	min-height: calc(3 * var(--c-field-font-size) * var(--c-field-line-height) + var(--c-field-padding-top) + var(--c-field-padding-bottom));
 }
 
-input[type=checkbox].c-field,
-input[type=radio].c-field {
+input[type='checkbox'].c-field,
+input[type='radio'].c-field {
 	--size: 1.6rem;
 	width: var(--size);
 	height: var(--size);
 }
 
-input[type=checkbox].c-field:checked,
-input[type=radio].c-field:checked {
+input[type='checkbox'].c-field:checked,
+input[type='radio'].c-field:checked {
 	background-color: var(--clr-white);
 	box-shadow: none;
 }
 
-input[type=checkbox].c-field:checked::after,
-input[type=radio].c-field:checked::after {
+input[type='checkbox'].c-field:checked::after,
+input[type='radio'].c-field:checked::after {
 	content: ' ';
 	display: inline-block;
 	width: calc(var(--size) - 0.2rem);
@@ -130,40 +129,39 @@ input[type=radio].c-field:checked::after {
 	vertical-align: top;
 }
 
-input[type=checkbox].c-field:disabled,
-input[type=radio].c-field:disabled:checked::after {
+input[type='checkbox'].c-field:disabled,
+input[type='radio'].c-field:disabled:checked::after {
 	cursor: default;
 }
 
-input[type=checkbox].c-field:checked::after {
+input[type='checkbox'].c-field:checked::after {
 	content: '\e154';
 	font-family: 'Iconic';
-	font-size: 1.2rem;;
+	font-size: 1.2rem;
 	text-align: center;
 }
 
-input[type=radio].c-field {
+input[type='radio'].c-field {
 	border-radius: 50%;
 }
 
-input[type=radio].c-field:checked::after {
+input[type='radio'].c-field:checked::after {
 	background: var(--svg-circle) no-repeat center;
 	background-size: 0.8rem 0.8rem;
 }
 
-input[type=file].c-field {
+input[type='file'].c-field {
 	opacity: 0;
 	position: relative;
 	z-index: 2;
 	cursor: pointer;
 }
 
-input[type=file].c-field + .c-field {
+input[type='file'].c-field + .c-field {
 	position: absolute;
 	left: 0;
 	z-index: 1;
 }
-
 
 /* Wrapper: `c-field-box`
  ========================================================================== */
@@ -174,7 +172,6 @@ input[type=file].c-field + .c-field {
 	font-size: 0.001px;
 	contain: layout style;
 }
-
 
 /* Element: `c-field-label`
  ========================================================================== */
@@ -197,7 +194,7 @@ input[type=file].c-field + .c-field {
 
 .c-field-label::before,
 .c-field-label::after {
-	content: "";
+	content: '';
 	display: table;
 	clear: both;
 }
@@ -212,8 +209,8 @@ input[type=file].c-field + .c-field {
 	color: var(--secondary-text-color);
 }
 
-input[type=checkbox] + .c-field-label,
-input[type=radio] + .c-field-label {
+input[type='checkbox'] + .c-field-label,
+input[type='radio'] + .c-field-label {
 	position: static !important;
 	transition: none !important;
 	padding-left: var(--space-sm);
@@ -221,15 +218,14 @@ input[type=radio] + .c-field-label {
 	font-size: var(--c-field-font-size);
 	cursor: pointer;
 }
-input[type=checkbox]:checked + .c-field-label,
-input[type=radio]:checked + .c-field-label {
+input[type='checkbox']:checked + .c-field-label,
+input[type='radio']:checked + .c-field-label {
 	color: var(--highlighted-text-color);
 	font-weight: var(--font-medium);
 }
 input:disabled + .c-field-label {
 	cursor: default;
 }
-
 
 /* Element: `c-field-icon`
  ========================================================================== */
@@ -247,7 +243,7 @@ input:disabled + .c-field-label {
 
 	font-size: 1.6rem;
 	text-align: center;
-	text-shadow: 0.1rem 0.1rem rgba(255,255,255,0.3), 0 0.1rem rgba(255,255,255,0.3);
+	text-shadow: 0.1rem 0.1rem rgba(255, 255, 255, 0.3), 0 0.1rem rgba(255, 255, 255, 0.3);
 }
 
 .c-field-icon .iconic {
@@ -265,7 +261,7 @@ input:disabled + .c-field-label {
 
 .c-field-icon + .c-field,
 .c-field-icon + .c-field-label + .c-field,
-.c-field-icon + .c-field[type=file] + .c-field {
+.c-field-icon + .c-field[type='file'] + .c-field {
 	padding-left: var(--c-field-height) !important;
 }
 
@@ -273,7 +269,6 @@ input:disabled + .c-field-label {
  ========================================================================== */
 
 .c-field-button {
-
 	/* button default style */
 
 	-webkit-appearance: none;
@@ -285,7 +280,7 @@ input:disabled + .c-field-label {
 	text-align: center;
 	text-transform: none;
 	text-decoration: none;
-	text-shadow: 0.1rem 0.1rem rgba(255,255,255,0.3), 0 0.1rem rgba(255,255,255,0.3);
+	text-shadow: 0.1rem 0.1rem rgba(255, 255, 255, 0.3), 0 0.1rem rgba(255, 255, 255, 0.3);
 
 	display: inline-block;
 	vertical-align: middle;
@@ -315,7 +310,6 @@ input:disabled + .c-field-label {
 	vertical-align: middle;
 }
 
-
 /* Element: `c-field-error`
  ========================================================================== */
 
@@ -334,7 +328,6 @@ input:disabled + .c-field-label {
 	opacity: 0;
 	transition: opacity var(--duration) var(--easing);
 }
-
 
 /* Element: `c-field-info`
  ========================================================================== */
@@ -367,7 +360,6 @@ input:disabled + .c-field-label {
 	color: var(--clr-grey-500);
 }
 
-
 /* State: `is-invalid`
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -376,7 +368,7 @@ input:disabled + .c-field-label {
 	border-color: var(--clr-red-300);
 }
 .is-invalid .c-field:focus-visible {
-	box-shadow: inset 0 0 0 var(--clr-grey-400), 0 0 .3rem var(--clr-grey-400);
+	box-shadow: inset 0 0 0 var(--clr-grey-400), 0 0 0.3rem var(--clr-grey-400);
 }
 
 .is-invalid .c-field-icon,
@@ -391,7 +383,6 @@ input:disabled + .c-field-label {
 	opacity: 0;
 }
 
-
 /* States: `is-focused` and `is-filled`
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -401,9 +392,9 @@ input:disabled + .c-field-label {
 	background-color: var(--clr-white);
 }
 
-.is-filled input:not([type=file]).c-field,
-.is-focused input:not([type=file]).c-field,
-input.c-field:not([type=checkbox], [type=radio]):focus-visible {
+.is-filled input:not([type='file']).c-field,
+.is-focused input:not([type='file']).c-field,
+input.c-field:not([type='checkbox'], [type='radio']):focus-visible {
 	cursor: text;
 }
 
@@ -416,7 +407,6 @@ input.c-field:not([type=checkbox], [type=radio]):focus-visible {
 .is-focused .c-field-label {
 	color: var(--text-color);
 }
-
 
 /* ========================================================================
    Style: `s-floating`

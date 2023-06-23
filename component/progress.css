@@ -1,5 +1,5 @@
-@import "../settings/document.css";
-@import "../settings/space.css";
+@import '../settings/document.css';
+@import '../settings/space.css';
 
 /* ========================================================================
    Component: Progress
@@ -15,8 +15,9 @@
 	line-height: 1.4rem;
 }
 
-* + .c-progress { margin-top: var(--space-md); }
-
+* + .c-progress {
+	margin-top: var(--space-md);
+}
 
 /* Sub-element: `c-progress__bar`
  ========================================================================== */
@@ -33,13 +34,13 @@
 	text-align: center;
 }
 
-
 /* Modifier: `c-progress--striped`
  ========================================================================== */
 
 .c-progress--striped .c-progress__bar {
 	background-image: linear-gradient(
-		-45deg, rgba(255, 255, 255, 0.15) 25%,
+		-45deg,
+		rgba(255, 255, 255, 0.15) 25%,
 		transparent 25%,
 		transparent 50%,
 		rgba(255, 255, 255, 0.15) 50%,
@@ -53,18 +54,19 @@
 }
 
 @keyframes progress-bar-stripes {
-	0% { background-position: 0 0;}
-	100% { background-position: 30px 0; }
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 30px 0;
+	}
 }
-
 
 /* TODO Modifier: `c-progress--danger`
  ========================================================================== */
 
-
 /* TODO Modifier: `c-progress--success`
  ========================================================================== */
-
 
 /* TODO Modifier: `c-progress--warning`
  ========================================================================== */

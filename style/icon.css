@@ -1,5 +1,4 @@
-@import "../settings/space.css";
-
+@import '../settings/space.css';
 
 /* ========================================================================
    Style: Icon
@@ -17,7 +16,7 @@
 	&[data-glyph] {
 		--text-size: 0;
 		--text-interligne: 0;
-		
+
 		&::before {
 			--icon-size: var(--space);
 			--text-size: var(--unit);
@@ -26,7 +25,7 @@
 
 	&:focus-visible,
 	&:active,
-	&[aria-pressed=true] {
+	&[aria-pressed='true'] {
 		--bg-color: var(--clr-grey-200);
 	}
 }

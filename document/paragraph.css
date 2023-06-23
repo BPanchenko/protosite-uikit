@@ -1,7 +1,6 @@
-
-@import "../settings/document.css";
-@import "../settings/typography.css";
-@import "../settings/space.css";
+@import '../settings/document.css';
+@import '../settings/typography.css';
+@import '../settings/space.css';
 
 /* ========================================================================
    Paragraph
@@ -21,7 +20,6 @@ p {
 p:has(+ *) {
 	margin-bottom: var(--space-sm);
 }
-
 
 /* Figure inside the paragraph
  ========================================================================== */
@@ -53,7 +51,6 @@ p figure {
 	}
 }
 
-
 /* Image inside the paragraph
  ========================================================================== */
 
@@ -64,24 +61,23 @@ p {
 		max-height: 11.8rem;
 		margin: 0 auto;
 	}
-	
-	img[align="left"],
-	img[align="right"] {
+
+	img[align='left'],
+	img[align='right'] {
 		display: inline-block;
 		max-width: 19rem;
 	}
-	
-	img[align="left"] {
+
+	img[align='left'] {
 		float: left;
-		margin: 0.3rem 1.2rem 0 .8rem;
+		margin: 0.3rem 1.2rem 0 0.8rem;
 	}
-	
-	img[align="right"] {
+
+	img[align='right'] {
 		float: right;
 		margin: 0.3rem 0.8rem 0 1.2rem;
 	}
 }
-
 
 /* Various paragraph sizes
  ========================================================================== */

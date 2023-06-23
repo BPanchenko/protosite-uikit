@@ -1,5 +1,5 @@
-@import "../settings/document.css";
-@import "../settings/space.css";
+@import '../settings/document.css';
+@import '../settings/space.css';
 
 /**
  * Component:	   `c-badge`
@@ -13,18 +13,17 @@
 	display: inline-block;
 	vertical-align: middle;
 	border-radius: 50vw;
-	
+
 	padding: var(--space-xs) var(--space-xs);
 	font-size: var(--text-xs);
 	line-height: 1.1;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
-	
+
 	cursor: default;
 	background-color: var(--clr-grey-600);
 	color: var(--clr-white);
 }
-
 
 /* Color modifiers
  ========================================================================== */

@@ -1,7 +1,7 @@
-@import "../.snippet/custom-selectors.css";
-@import "../.snippet/underline.css";
-@import "../settings/document.css";
-@import "../settings/space.css";
+@import '../.snippet/custom-selectors.css';
+@import '../.snippet/underline.css';
+@import '../settings/document.css';
+@import '../settings/space.css';
 
 /* Color updates according to a link state and context */
 
@@ -41,7 +41,7 @@ a {
 a {
 	@extend %underline;
 	transition: color var(--duration) var(--easing);
-	
+
 	&:hover,
 	&:focus-visible {
 		text-decoration: none;

@@ -1,5 +1,15 @@
-.u-display-block { display: block !important; }
-.u-display-contents { display: contents !important; }
-.u-display-flow-root { display: flow-root !important; }
-.u-display-inline { display: inline !important; }
-.u-display-inline-block { display: inline-block !important; }
+.u-display-block {
+	display: block !important;
+}
+.u-display-contents {
+	display: contents !important;
+}
+.u-display-flow-root {
+	display: flow-root !important;
+}
+.u-display-inline {
+	display: inline !important;
+}
+.u-display-inline-block {
+	display: inline-block !important;
+}

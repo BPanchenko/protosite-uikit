@@ -1,5 +1,5 @@
 /// <reference path="inversed.css.d.ts" />
-const classNames = new Map([["sInversed","s-inversed"]]);
+const classNames = new Map([['sInversed', 's-inversed']]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

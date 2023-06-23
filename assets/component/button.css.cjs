@@ -1,5 +1,11 @@
 /// <reference path="button.css.d.ts" />
-const classNames = new Map([["cButton","c-button"],["cButtonIcon","c-button__icon"],["cButtonText","c-button__text"],["cPanel","c-panel"],["sClean","s-clean"]]);
+const classNames = new Map([
+  ['cButton', 'c-button'],
+  ['cButtonIcon', 'c-button__icon'],
+  ['cButtonText', 'c-button__text'],
+  ['cPanel', 'c-panel'],
+  ['sClean', 's-clean']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {

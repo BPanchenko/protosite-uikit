@@ -1,4 +1,4 @@
-@import "../settings/document.css";
+@import '../settings/document.css';
 
 /**
  * Component:	Chart
@@ -34,14 +34,16 @@
 	user-select: none;
 }
 
-
 /* ========================================================================
 	Element: `c-chart__axis`
  ========================================================================== */
 
-.c-chart__axis .tick line { stroke: var(--c-chart-color); }
-.c-chart__axis .tick text { color: var(--c-chart-color); }
-
+.c-chart__axis .tick line {
+	stroke: var(--c-chart-color);
+}
+.c-chart__axis .tick text {
+	color: var(--c-chart-color);
+}
 
 /* ========================================================================
 	Element: `c-chart__graph`
@@ -54,7 +56,6 @@
 	stroke-linecap: round;
 	fill: none;
 }
-
 
 /*circle*/
 .c-chart__graph .point .dot {
@@ -88,7 +89,6 @@
 
 /*g*/
 .c-chart__loader {
-
 }
 
 /* ========================================================================
@@ -97,7 +97,6 @@
 
 /*g*/
 .c-chart__tracker {
-
 }
 
 /* ========================================================================

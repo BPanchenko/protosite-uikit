@@ -1,5 +1,4 @@
-
-@import "../settings/document.css";
+@import '../settings/document.css';
 
 /* ========================================================================
    Table
@@ -16,7 +15,6 @@ table + table {
 	margin-top: var(--space);
 }
 
-
 /* Header cell
  ========================================================================== */
 
@@ -30,7 +28,6 @@ table th {
 	color: var(--caption-color);
 }
 
-
 /* Cell
  ========================================================================== */
 
@@ -38,7 +35,6 @@ table td {
 	padding: var(--space-sm) var(--space-xs);
 	vertical-align: top;
 }
-
 
 /* Footer
  ========================================================================== */
@@ -49,7 +45,6 @@ table tfoot {
 	font-weight: var(--font-light);
 	color: var(--text-color);
 }
-
 
 /* Caption
  ========================================================================== */
@@ -62,17 +57,15 @@ table caption {
 	color: var(--muted-color);
 }
 
-
 /* State: Active
  ========================================================================== */
 
 table > tr.is-active,
 table tbody tr.is-active,
-table > tr[aria-selected=true],
-table tbody tr[aria-selected=true] {
+table > tr[aria-selected='true'],
+table tbody tr[aria-selected='true'] {
 	background-color: var(--clr-blue-50) !important;
 }
-
 
 /* Style: Condensed
  ========================================================================== */

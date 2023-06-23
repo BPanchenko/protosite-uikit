@@ -1,5 +1,11 @@
 /// <reference path="toolbar.css.d.ts" />
-const classNames = new Map([["cButton","c-button"],["cToolbar","c-toolbar"],["cToolbarLabel","c-toolbar__label"],["icon","icon"],["sIcon","s-icon"]]);
+const classNames = new Map([
+  ['cButton', 'c-button'],
+  ['cToolbar', 'c-toolbar'],
+  ['cToolbarLabel', 'c-toolbar__label'],
+  ['icon', 'icon'],
+  ['sIcon', 's-icon']
+]);
 
 module.exports = new Proxy(classNames, {
   get(target, attr) {
