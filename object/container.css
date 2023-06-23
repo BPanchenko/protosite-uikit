@@ -1,11 +1,35 @@
-@import "../settings/breakpoints.css";
-@import "../settings/space.css";
+@import '../settings/breakpoints.css';
+@import '../settings/space.css';
 
 /* Variables
 =========================================================================== */
 
 .o-container {
 	--width: 92rem;
+
+	@media (--screen-xdesktop) {
+		--width: 130.4rem;
+	}
+
+	@media (--screen-desktop) {
+		--width: 111.2rem;
+	}
+
+	@media (--screen-tablet-landscape) {
+		--width: 92rem;
+	}
+
+	@media (--screen-tablet-portrait) {
+		--width: 72rem;
+	}
+
+	@media (--screen-handset-landscape) {
+		--width: 46.4rem;
+	}
+
+	@media (--screen-handset-portrait) {
+		--width: 32rem;
+	}
 }
 
 /* ========================================================================
@@ -22,47 +46,7 @@
 }
 
 .o-container::after {
-	content: "";
+	content: '';
 	display: table;
 	clear: both;
-}
-
-
-/* Media queries
- ========================================================================== */
-
-@media (--screen-xdesktop) {
-	.o-container {
-		--width: 130.4rem;
-	}
-}
-
-@media (--screen-desktop) {
-	.o-container {
-		--width: 111.2rem;
-	}
-}
-
-@media (--screen-tablet-landscape) {
-	.o-container {
-		--width: 92rem;
-	}
-}
-
-@media (--screen-tablet-portrait) {
-	.o-container {
-		--width: 72rem;
-	}
-}
-
-@media (--screen-handset-landscape) {
-	.o-container {
-		--width: 46.4rem;
-	}
-}
-
-@media (--screen-handset-portrait) {
-	.o-container {
-		--width: 32rem;
-	}
 }
