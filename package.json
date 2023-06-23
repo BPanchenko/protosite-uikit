@@ -21,7 +21,7 @@
 		"main.css"
 	],
 	"scripts": {
-		"build": "run-s clean build:css build:esm",
+		"build": "run-s clean prettier build:css build:esm",
 		"build:css": "node .builder/css.cjs",
 		"build:esm": "node .builder/esm.cjs",
 		"clean": "rimraf assets",
