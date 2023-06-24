@@ -8,7 +8,7 @@
 
 p {
 	display: block;
-	max-width: 80ch;
+	max-width: 100ch;
 	margin: 0;
 	text-rendering: optimizeLegibility;
 }
