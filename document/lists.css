@@ -7,6 +7,9 @@
 
 ol,
 ul {
+	display: block;
+	max-width: 100ch;
+
 	li {
 		--vertical-space: var(--space-sm);
 
