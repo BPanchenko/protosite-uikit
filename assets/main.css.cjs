@@ -123,6 +123,7 @@ const classNames = new Map([
   ['sBgYellow', 's-bg-yellow'],
   ['sBold', 's-bold'],
   ['sCapitalize', 's-capitalize'],
+  ['sCentered', 's-centered'],
   ['sClean', 's-clean'],
   ['sCondensed', 's-condensed'],
   ['sCursive', 's-cursive'],

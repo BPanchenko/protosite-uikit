@@ -121,6 +121,7 @@ export const sBgWhite: string;
 export const sBgYellow: string;
 export const sBold: string;
 export const sCapitalize: string;
+export const sCentered: string;
 export const sClean: string;
 export const sCondensed: string;
 export const sCursive: string;
