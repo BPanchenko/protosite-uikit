@@ -2,6 +2,7 @@
 @import '../settings/document.css';
 
 @import './alignment.css';
+@import './centering.css';
 @import './display.css';
 @import './grid.css';
 @import './margins.css';
