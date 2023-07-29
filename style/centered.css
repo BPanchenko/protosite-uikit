@@ -1,0 +1,19 @@
+@import '../settings/document.css';
+
+/* Style: `s-centered`
+=========================================================================== */
+
+.s-centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Object: Container
+=========================================================================== */
+
+.o-container.s-centered {
+	max-width: max-content;
+}
