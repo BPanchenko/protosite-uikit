@@ -1,0 +1,31 @@
+.s-animated-gradient {
+	background: linear-gradient(
+        to right,
+        rgb(9, 9, 121),
+        rgb(144, 6, 161),
+		rgb(0, 212, 255),
+        rgb(144, 6, 161),
+        rgb(9, 9, 121),
+        rgb(144, 6, 161),
+		rgb(0, 212, 255),
+        rgb(144, 6, 161),
+        rgb(9, 9, 121),
+        rgb(144, 6, 161),
+		rgb(0, 212, 255),
+        rgb(144, 6, 161),
+        rgb(9, 9, 121)
+    );
+    background-clip: text;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textAnimatedGradient 3s ease-in-out infinite alternate;
+}
+
+@keyframes textAnimatedGradient {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
