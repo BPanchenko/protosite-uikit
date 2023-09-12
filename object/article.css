@@ -1,6 +1,3 @@
-@import url('http://assets.protosite.rocks/fonts/pt-astra-sans/stylesheet.css');
-@import url('http://assets.protosite.rocks/fonts/pt-astra-serif/stylesheet.css');
-
 @import '../.snippet/custom-selectors.css';
 @import '../settings/document.css';
 @import '../settings/space.css';
