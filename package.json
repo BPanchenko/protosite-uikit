@@ -31,7 +31,7 @@
     "@csstools/custom-units": "0.1.1",
     "cssnano": "5.1.14",
     "cssnano-preset-default": "5.2.13",
-    "postcss": "8.4.20",
+    "postcss": "8.4.31",
     "postcss-custom-media": "9.0.1",
     "postcss-custom-selectors": "7.0.0",
     "postcss-extend-rule": "4.0.0",
