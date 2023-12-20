@@ -1,5 +1,7 @@
 # CSS фреймворк Protosite UIKit
 
+[![npm](https://img.shields.io/npm/v/@bpanchenko/uikit.svg)](https://www.npmjs.com/package/@bpanchenko/uikit)
+
 Библиотека правил CSS для определения представления элементов веб-интерфейса.
 
 Интерфейс подключения библитеки реализован в виде типизированного CSS-модуля для применения как в нативной реализации так и в CommonJS или
