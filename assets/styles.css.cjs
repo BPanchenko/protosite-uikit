@@ -11,6 +11,7 @@ const classNames = new Map([
   ['cThumbnail', 'c-thumbnail'],
   ['cToolbar', 'c-toolbar'],
   ['icon', 'icon'],
+  ['sAnimatedGradient', 's-animated-gradient'],
   ['sBgAmber', 's-bg-amber'],
   ['sBgBlack', 's-bg-black'],
   ['sBgBlue', 's-bg-blue'],

@@ -9,6 +9,7 @@ export const cPanel: string;
 export const cThumbnail: string;
 export const cToolbar: string;
 export const icon: string;
+export const sAnimatedGradient: string;
 export const sBgAmber: string;
 export const sBgBlack: string;
 export const sBgBlue: string;
