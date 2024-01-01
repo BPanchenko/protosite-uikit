@@ -72,16 +72,18 @@ audio:not([controls]) {
 ========================================================================== */
 
 ::-moz-selection {
-	color: var(--selection-color, currentColor);
+	color: var(--selection-text-color, currentColor);
 	background-color: var(--selection-bg-color, transparent);
 	text-shadow: none;
 }
+
 ::selection {
-	color: var(--selection-color, currentColor);
+	color: var(--selection-text-color, currentColor);
 	background-color: var(--selection-bg-color, transparent);
 	text-shadow: none;
 }
-*[unselectable='on'] {
+
+:is([unselectable='on'], [unselectable]):not([unselectable='off']) {
 	user-select: none;
 }
 
