@@ -19,6 +19,7 @@ body {
 	--highlighted-bg-color: var(--clr-green-grey-300-tp);
 	--hint-color: var(--muted-color);
 	--secondary-text-color: var(--clr-grey-600);
-	--selection-bg-color: var(--clr-blue-600);
+
+	--selection-bg-color: var(--clr-blue-700);
 	--selection-text-color: var(--clr-white);
 }

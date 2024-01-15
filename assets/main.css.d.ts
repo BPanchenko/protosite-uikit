@@ -97,6 +97,7 @@ export const oFormHead: string;
 export const oFormRow: string;
 export const point: string;
 export const pointHovered: string;
+export const sAnimatedGradient: string;
 export const sAxis: string;
 export const sBgAmber: string;
 export const sBgBlack: string;

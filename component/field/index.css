@@ -65,7 +65,9 @@
 
 .c-field:focus-visible {
 	border-color: var(--clr-blue-400);
-	box-shadow: inset 0 0 0 var(--clr-grey-400), 0 0 0.3rem var(--clr-blue-400);
+	box-shadow:
+		inset 0 0 0 var(--clr-grey-400),
+		0 0 0.3rem var(--clr-blue-400);
 }
 
 /* Style of the specific base
@@ -220,7 +222,9 @@ input:disabled + .c-field-label {
 
 	font-size: 1.6rem;
 	text-align: center;
-	text-shadow: 0.1rem 0.1rem rgba(255, 255, 255, 0.3), 0 0.1rem rgba(255, 255, 255, 0.3);
+	text-shadow:
+		0.1rem 0.1rem rgba(255, 255, 255, 0.3),
+		0 0.1rem rgba(255, 255, 255, 0.3);
 }
 
 .c-field-icon .iconic {
@@ -257,7 +261,9 @@ input:disabled + .c-field-label {
 	text-align: center;
 	text-transform: none;
 	text-decoration: none;
-	text-shadow: 0.1rem 0.1rem rgba(255, 255, 255, 0.3), 0 0.1rem rgba(255, 255, 255, 0.3);
+	text-shadow:
+		0.1rem 0.1rem rgba(255, 255, 255, 0.3),
+		0 0.1rem rgba(255, 255, 255, 0.3);
 
 	display: inline-block;
 	vertical-align: middle;
@@ -345,7 +351,9 @@ input:disabled + .c-field-label {
 	border-color: var(--clr-red-300);
 }
 .is-invalid .c-field:focus-visible {
-	box-shadow: inset 0 0 0 var(--clr-grey-400), 0 0 0.3rem var(--clr-grey-400);
+	box-shadow:
+		inset 0 0 0 var(--clr-grey-400),
+		0 0 0.3rem var(--clr-grey-400);
 }
 
 .is-invalid .c-field-icon,

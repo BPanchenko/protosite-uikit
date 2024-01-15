@@ -99,6 +99,7 @@ const classNames = new Map([
   ['oFormRow', 'o-form__row'],
   ['point', 'point'],
   ['pointHovered', 'point--hovered'],
+  ['sAnimatedGradient', 's-animated-gradient'],
   ['sAxis', 's-axis'],
   ['sBgAmber', 's-bg-amber'],
   ['sBgBlack', 's-bg-black'],
