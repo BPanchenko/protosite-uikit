@@ -1,6 +1,6 @@
-@import '../settings/document.css';
-@import '../settings/space.css';
-@import '../settings/typography.css';
+@import '../../.snippet/field.css';
+@import '../../settings/document.css';
+@import '../../settings/space.css';
 
 /**
  * Component:	`c-field`
@@ -48,30 +48,7 @@
  ========================================================================== */
 
 .c-field {
-	display: inline-block;
-	vertical-align: middle;
-	width: 100%;
-	height: var(--c-field-height);
-	line-height: var(--c-field-line-height);
-
-	padding-top: var(--c-field-padding-top);
-	padding-right: var(--c-field-padding-right);
-	padding-bottom: var(--c-field-padding-bottom);
-	padding-left: var(--c-field-padding-left);
-
-	background-color: white;
-	border-color: var(--clr-grey-500);
-	border-width: 0.1rem;
-	border-style: solid;
-	border-radius: 0.2rem;
-	outline: none;
-	box-shadow: inset 0 0 0.2rem var(--clr-grey-400), 0 0 0 var(--clr-blue-400);
-	box-sizing: border-box;
-	cursor: pointer;
-
-	transition-property: background-color, border-color, box-shadow;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	
 }
 
 .c-field:-webkit-autofill {

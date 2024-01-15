@@ -1,0 +1,37 @@
+@import '../../.snippet/custom-selectors.css';
+@import '../../.snippet/field.css';
+
+@import '../../settings/main.css';
+@import '../../settings/space.css';
+@import './index.css';
+
+:--select-field {
+	@extend %icon;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	selectedoption:empty::after {
+		content: 'Выбрать...';
+	}
+
+	&:open {
+		background-color: green;
+	}
+	&:closed {
+		background-color: red;
+	}
+
+	&::part(listbox):not(:popover-open) {
+		position: absolute;
+		display: flex;
+		width: 30rem;
+		height: 30rem;
+		outline: 1px dashed grey;
+	}
+
+	&::part(marker) {
+		display: block;
+		outline: 1px dashed black;
+	}
+}
