@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.25.70",
+  "version": "4.26.68",
   "description": "CSS framework for developing web interfaces",
   "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
   "type": "module",
@@ -30,13 +30,13 @@
   },
   "dependencies": {
     "@csstools/custom-units": "0.1.1",
-    "cssnano": "6.0.2",
-    "cssnano-preset-default": "6.0.2",
-    "postcss": "8.4.32",
+    "cssnano": "6.0.3",
+    "cssnano-preset-default": "6.0.3",
+    "postcss": "8.4.33",
     "postcss-custom-media": "10.0.2",
     "postcss-custom-selectors": "7.1.6",
     "postcss-extend-rule": "4.0.0",
-    "postcss-import": "15.1.0",
+    "postcss-import": "16.0.0",
     "postcss-nested": "6.0.1",
     "postcss-reporter": "7.0.5",
     "protosite-palette": "2.13.20"
@@ -48,7 +48,7 @@
     "node-color-log": "11.0.0",
     "npm-run-all": "4.1.5",
     "pluralize": "8.0.0",
-    "prettier": "3.1.1",
+    "prettier": "3.2.2",
     "rimraf": "5.0.5"
   },
   "repository": {
