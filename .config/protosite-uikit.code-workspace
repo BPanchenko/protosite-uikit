@@ -1,10 +1,11 @@
 {
 	"extensions": {
 		"recommendations": [
-			"csstools.postcss",
 			"amatiasq.sort-imports",
 			"bierner.markdown-mermaid",
+			"bradlc.vscode-tailwindcss",
 			"codezombiech.gitignore",
+			"csstools.postcss",
 			"davidanson.vscode-markdownlint",
 			"esbenp.prettier-vscode",
 			"github.vscode-pull-request-github",
@@ -14,7 +15,7 @@
 			"ritwickdey.liveserver",
 			"samverschueren.final-newline",
 			"tyriar.sort-lines",
-			"zengxingxin.sort-js-object-keys"
+			"zengxingxin.sort-js-object-keys",
 		]
 	},
 	"folders": [
