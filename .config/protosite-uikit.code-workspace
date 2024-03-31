@@ -24,7 +24,7 @@
 	],
 	"settings": {
 		"editor.detectIndentation": false,
-		"editor.fontFamily": "'JetBrains Mono', monospace",
+		"editor.fontFamily": "'Clincher Code', monospace",
 		"editor.fontLigatures": true,
 		"editor.fontSize": 13,
 		"editor.insertSpaces": false,
