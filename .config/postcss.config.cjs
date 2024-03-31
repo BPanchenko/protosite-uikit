@@ -1,7 +1,6 @@
 module.exports = {
   parser: false,
   plugins: [
-    require('cssnano')(require('./cssnano.config.cjs')),
     require('postcss-import'),
     require('postcss-nested'),
     require('postcss-custom-selectors'),
@@ -10,6 +9,7 @@ module.exports = {
       onRecursiveExtend: 'warm'
     }),
     require('@csstools/custom-units'),
-    require('postcss-reporter')({ clearReportedMessages: true })
+    require('postcss-reporter')({ clearReportedMessages: true }),
+    require('cssnano')(require('./cssnano.config.cjs'))
   ]
 };
