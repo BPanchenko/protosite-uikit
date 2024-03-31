@@ -1,4 +1,3 @@
-/// <reference path="thumbnail.d.ts" />
 const classNames = new Map([
   ['cPanel', 'c-panel'],
   ['cThumbnail', 'c-thumbnail'],
@@ -29,7 +28,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

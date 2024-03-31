@@ -1,9 +1,7 @@
-/// <reference path="icon.d.ts" />
-
 export const cButton = 'c-button'
 export const sIcon = 's-icon'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./icon.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

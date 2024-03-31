@@ -1,4 +1,3 @@
-/// <reference path="shadows.d.ts" />
 const classNames = new Map([
   ['sShadow', 's-shadow'],
   ['sShadow16Dp', 's-shadow-16dp'],
@@ -31,7 +30,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

@@ -1,8 +1,6 @@
-/// <reference path="backdrop.d.ts" />
-
 export const cBackdrop = 'c-backdrop'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./backdrop.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

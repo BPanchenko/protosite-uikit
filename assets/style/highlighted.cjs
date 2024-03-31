@@ -1,4 +1,3 @@
-/// <reference path="highlighted.d.ts" />
 const classNames = new Map([['sHighlighted', 's-highlighted']]);
 
 module.exports = new Proxy(classNames, {
@@ -17,7 +16,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

@@ -1,4 +1,3 @@
-/// <reference path="link.d.ts" />
 const classNames = new Map([
   ['cButton', 'c-button'],
   ['cPanel', 'c-panel'],
@@ -22,7 +21,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

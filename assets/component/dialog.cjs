@@ -1,4 +1,3 @@
-/// <reference path="dialog.d.ts" />
 const classNames = new Map([
   ['cDialog', 'c-dialog'],
   ['cDialogBody', 'c-dialog__body'],
@@ -26,7 +25,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

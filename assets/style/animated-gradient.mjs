@@ -1,8 +1,6 @@
-/// <reference path="animated-gradient.d.ts" />
-
 export const sAnimatedGradient = 's-animated-gradient'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./animated-gradient.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

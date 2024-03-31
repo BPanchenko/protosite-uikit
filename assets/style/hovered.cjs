@@ -1,4 +1,3 @@
-/// <reference path="hovered.d.ts" />
 const classNames = new Map([
   ['cList', 'c-list'],
   ['cListItem', 'c-list__item'],
@@ -23,7 +22,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

@@ -1,4 +1,3 @@
-/// <reference path="text.d.ts" />
 const classNames = new Map([
   ['sBold', 's-bold'],
   ['sCapitalize', 's-capitalize'],
@@ -35,7 +34,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

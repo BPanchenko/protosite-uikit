@@ -1,5 +1,3 @@
-/// <reference path="sizes.d.ts" />
-
 export const cAvatar = 'c-avatar'
 export const cButton = 'c-button'
 export const icon = 'icon'
@@ -14,7 +12,7 @@ export const sXxl = 's-xxl'
 export const sXxs = 's-xxs'
 export const sXxxl = 's-xxxl'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./sizes.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

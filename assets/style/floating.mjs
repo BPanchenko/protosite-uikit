@@ -1,8 +1,6 @@
-/// <reference path="floating.d.ts" />
-
 export const sFloating = 's-floating'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./floating.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

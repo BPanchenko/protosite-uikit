@@ -1,11 +1,9 @@
-/// <reference path="control.d.ts" />
-
 export const cCtrl = 'c-ctrl'
 export const cCtrlGroup = 'c-ctrl-group'
 export const cCtrlPopover = 'c-ctrl-popover'
 export const cCtrlSort = 'c-ctrl-sort'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./control.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

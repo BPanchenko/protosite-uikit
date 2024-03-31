@@ -1,12 +1,10 @@
-/// <reference path="toolbar.d.ts" />
-
 export const cButton = 'c-button'
 export const cToolbar = 'c-toolbar'
 export const cToolbarLabel = 'c-toolbar__label'
 export const icon = 'icon'
 export const sIcon = 's-icon'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./toolbar.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

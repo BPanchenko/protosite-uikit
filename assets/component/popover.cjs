@@ -1,4 +1,3 @@
-/// <reference path="popover.d.ts" />
 const classNames = new Map([
   ['cPopover', 'c-popover'],
   ['cPopoverBody', 'c-popover__body'],
@@ -23,7 +22,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

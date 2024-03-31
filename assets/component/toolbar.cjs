@@ -1,4 +1,3 @@
-/// <reference path="toolbar.d.ts" />
 const classNames = new Map([
   ['cButton', 'c-button'],
   ['cToolbar', 'c-toolbar'],
@@ -23,7 +22,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

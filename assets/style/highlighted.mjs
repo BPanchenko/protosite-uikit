@@ -1,8 +1,6 @@
-/// <reference path="highlighted.d.ts" />
-
 export const sHighlighted = 's-highlighted'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./highlighted.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

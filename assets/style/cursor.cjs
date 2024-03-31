@@ -1,4 +1,3 @@
-/// <reference path="cursor.d.ts" />
 const classNames = new Map([
   ['sCursorAlias', 's-cursor-alias'],
   ['sCursorAllScroll', 's-cursor-all-scroll'],
@@ -54,7 +53,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

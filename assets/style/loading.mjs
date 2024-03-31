@@ -1,10 +1,8 @@
-/// <reference path="loading.d.ts" />
-
 export const cButton = 'c-button'
 export const cListBody = 'c-list__body'
 export const sLoading = 's-loading'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./loading.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

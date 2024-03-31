@@ -1,5 +1,3 @@
-/// <reference path="dialog.d.ts" />
-
 export const cDialog = 'c-dialog'
 export const cDialogBody = 'c-dialog__body'
 export const cDialogBodyViewport = 'c-dialog__body-viewport'
@@ -9,7 +7,7 @@ export const cDialogHeader = 'c-dialog__header'
 export const isClosed = 'is-closed'
 export const isOpened = 'is-opened'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./dialog.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

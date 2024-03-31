@@ -1,5 +1,3 @@
-/// <reference path="main.d.ts" />
-
 export const cAvatar = 'c-avatar'
 export const cAvatarLink = 'c-avatar__link'
 export const cBackdrop = 'c-backdrop'
@@ -311,7 +309,7 @@ export const uVerticalAlignMiddle = 'u-vertical-align-middle'
 export const uVerticalAlignTop = 'u-vertical-align-top'
 export const uVisibleToggle = 'u-visible-toggle'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./main.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

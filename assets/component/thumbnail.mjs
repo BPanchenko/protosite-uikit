@@ -1,5 +1,3 @@
-/// <reference path="thumbnail.d.ts" />
-
 export const cPanel = 'c-panel'
 export const cThumbnail = 'c-thumbnail'
 export const cThumbnailLg = 'c-thumbnail--lg'
@@ -12,7 +10,7 @@ export const cThumbnailCaption = 'c-thumbnail__caption'
 export const cThumbnailLink = 'c-thumbnail__link'
 export const cThumbnailShutter = 'c-thumbnail__shutter'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./thumbnail.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

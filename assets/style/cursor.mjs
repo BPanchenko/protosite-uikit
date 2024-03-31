@@ -1,5 +1,3 @@
-/// <reference path="cursor.d.ts" />
-
 export const sCursorAlias = 's-cursor-alias'
 export const sCursorAllScroll = 's-cursor-all-scroll'
 export const sCursorAuto = 's-cursor-auto'
@@ -37,7 +35,7 @@ export const sCursorWait = 's-cursor-wait'
 export const sCursorZoomIn = 's-cursor-zoom-in'
 export const sCursorZoomOut = 's-cursor-zoom-out'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./cursor.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

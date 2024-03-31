@@ -1,12 +1,10 @@
-/// <reference path="pagination.d.ts" />
-
 export const cPagination = 'c-pagination'
 export const cPaginationEllipsis = 'c-pagination__ellipsis'
 export const cPaginationNext = 'c-pagination__next'
 export const cPaginationPage = 'c-pagination__page'
 export const cPaginationPrev = 'c-pagination__prev'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./pagination.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

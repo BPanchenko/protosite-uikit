@@ -1,4 +1,3 @@
-/// <reference path="chart.d.ts" />
 const classNames = new Map([
   ['cChart', 'c-chart'],
   ['cChartAxis', 'c-chart__axis'],
@@ -29,7 +28,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

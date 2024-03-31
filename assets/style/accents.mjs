@@ -1,12 +1,10 @@
-/// <reference path="accents.d.ts" />
-
 export const sDanger = 's-danger'
 export const sMuted = 's-muted'
 export const sPrimary = 's-primary'
 export const sSuccess = 's-success'
 export const sWarning = 's-warning'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./accents.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

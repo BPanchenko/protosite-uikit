@@ -1,4 +1,3 @@
-/// <reference path="backgrounds.d.ts" />
 const classNames = new Map([
   ['sBgAmber', 's-bg-amber'],
   ['sBgBlack', 's-bg-black'],
@@ -39,7 +38,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

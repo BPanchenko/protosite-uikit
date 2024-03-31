@@ -1,4 +1,3 @@
-/// <reference path="document.d.ts" />
 const classNames = new Map([
   ['icon', 'icon'],
   ['isActive', 'is-active'],
@@ -25,7 +24,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

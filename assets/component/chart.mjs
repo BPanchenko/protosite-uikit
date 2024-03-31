@@ -1,5 +1,3 @@
-/// <reference path="chart.d.ts" />
-
 export const cChart = 'c-chart'
 export const cChartAxis = 'c-chart__axis'
 export const cChartCanvas = 'c-chart__canvas'
@@ -12,7 +10,7 @@ export const point = 'point'
 export const pointHovered = 'point--hovered'
 export const tick = 'tick'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./chart.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

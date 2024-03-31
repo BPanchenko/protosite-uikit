@@ -1,9 +1,7 @@
-/// <reference path="transform.d.ts" />
-
 export const sFlipHorizontal = 's-flip-horizontal'
 export const sFlipRotate90 = 's-flip-rotate-90'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./transform.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

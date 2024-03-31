@@ -1,5 +1,3 @@
-/// <reference path="styles.d.ts" />
-
 export const cAvatar = 'c-avatar'
 export const cButton = 'c-button'
 export const cButtonIcon = 'c-button__icon'
@@ -127,7 +125,7 @@ export const sXxl = 's-xxl'
 export const sXxs = 's-xxs'
 export const sXxxl = 's-xxxl'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./styles.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

@@ -1,4 +1,3 @@
-/// <reference path="loading.d.ts" />
 const classNames = new Map([
   ['cButton', 'c-button'],
   ['cListBody', 'c-list__body'],
@@ -21,7 +20,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

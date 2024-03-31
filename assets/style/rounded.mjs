@@ -1,11 +1,9 @@
-/// <reference path="rounded.d.ts" />
-
 export const cButton = 'c-button'
 export const cPanel = 'c-panel'
 export const cToolbar = 'c-toolbar'
 export const sRounded = 's-rounded'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./rounded.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

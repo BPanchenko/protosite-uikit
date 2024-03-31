@@ -1,5 +1,3 @@
-/// <reference path="text.d.ts" />
-
 export const sBold = 's-bold'
 export const sCapitalize = 's-capitalize'
 export const sCursive = 's-cursive'
@@ -18,7 +16,7 @@ export const sText = 's-text'
 export const sThin = 's-thin'
 export const sUppercase = 's-uppercase'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./text.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

@@ -1,5 +1,3 @@
-/// <reference path="panel.d.ts" />
-
 export const cAvatar = 'c-avatar'
 export const cButton = 'c-button'
 export const cPanel = 'c-panel'
@@ -9,7 +7,7 @@ export const cPanelHead = 'c-panel__head'
 export const cToolbar = 'c-toolbar'
 export const sClean = 's-clean'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./panel.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

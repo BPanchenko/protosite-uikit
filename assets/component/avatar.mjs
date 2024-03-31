@@ -1,9 +1,7 @@
-/// <reference path="avatar.d.ts" />
-
 export const cAvatar = 'c-avatar'
 export const cAvatarLink = 'c-avatar__link'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./avatar.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

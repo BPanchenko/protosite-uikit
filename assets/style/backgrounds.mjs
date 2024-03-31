@@ -1,5 +1,3 @@
-/// <reference path="backgrounds.d.ts" />
-
 export const sBgAmber = 's-bg-amber'
 export const sBgBlack = 's-bg-black'
 export const sBgBlue = 's-bg-blue'
@@ -22,7 +20,7 @@ export const sBgViolet = 's-bg-violet'
 export const sBgWhite = 's-bg-white'
 export const sBgYellow = 's-bg-yellow'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./backgrounds.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

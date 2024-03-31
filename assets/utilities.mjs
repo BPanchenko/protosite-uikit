@@ -1,5 +1,3 @@
-/// <reference path="utilities.d.ts" />
-
 export const guideHorizontal = 'guide--horizontal'
 export const guideVertical = 'guide--vertical'
 export const line = 'line'
@@ -91,7 +89,7 @@ export const uVerticalAlignMiddle = 'u-vertical-align-middle'
 export const uVerticalAlignTop = 'u-vertical-align-top'
 export const uVisibleToggle = 'u-visible-toggle'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./utilities.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

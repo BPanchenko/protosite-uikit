@@ -1,4 +1,3 @@
-/// <reference path="objects.d.ts" />
 const classNames = new Map([
   ['cFieldBox', 'c-field-box'],
   ['oArticle', 'o-article'],
@@ -30,7 +29,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

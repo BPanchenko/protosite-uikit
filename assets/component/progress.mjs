@@ -1,10 +1,8 @@
-/// <reference path="progress.d.ts" />
-
 export const cProgress = 'c-progress'
 export const cProgressStriped = 'c-progress--striped'
 export const cProgressBar = 'c-progress__bar'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./progress.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

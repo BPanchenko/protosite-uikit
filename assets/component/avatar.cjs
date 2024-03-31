@@ -1,4 +1,3 @@
-/// <reference path="avatar.d.ts" />
 const classNames = new Map([
   ['cAvatar', 'c-avatar'],
   ['cAvatarLink', 'c-avatar__link']
@@ -20,7 +19,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

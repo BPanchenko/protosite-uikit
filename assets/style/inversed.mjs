@@ -1,8 +1,6 @@
-/// <reference path="inversed.d.ts" />
-
 export const sInversed = 's-inversed'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./inversed.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

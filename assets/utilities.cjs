@@ -1,4 +1,3 @@
-/// <reference path="utilities.d.ts" />
 const classNames = new Map([
   ['guideHorizontal', 'guide--horizontal'],
   ['guideVertical', 'guide--vertical'],
@@ -108,7 +107,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

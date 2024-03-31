@@ -1,5 +1,3 @@
-/// <reference path="shadows.d.ts" />
-
 export const sShadow = 's-shadow'
 export const sShadow16Dp = 's-shadow-16dp'
 export const sShadow24Dp = 's-shadow-24dp'
@@ -14,7 +12,7 @@ export const sShadowLonger = 's-shadow-longer'
 export const sShadowSharp = 's-shadow-sharp'
 export const sShadowShorter = 's-shadow-shorter'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./shadows.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

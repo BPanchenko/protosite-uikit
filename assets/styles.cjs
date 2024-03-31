@@ -1,4 +1,3 @@
-/// <reference path="styles.d.ts" />
 const classNames = new Map([
   ['cAvatar', 'c-avatar'],
   ['cButton', 'c-button'],
@@ -144,7 +143,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

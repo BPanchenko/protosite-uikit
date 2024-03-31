@@ -1,8 +1,6 @@
-/// <reference path="lead.d.ts" />
-
 export const sLead = 's-lead'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./lead.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

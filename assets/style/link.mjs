@@ -1,11 +1,9 @@
-/// <reference path="link.d.ts" />
-
 export const cButton = 'c-button'
 export const cPanel = 'c-panel'
 export const sClean = 's-clean'
 export const sLink = 's-link'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./link.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

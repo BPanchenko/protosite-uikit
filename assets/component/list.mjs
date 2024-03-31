@@ -1,5 +1,3 @@
-/// <reference path="list.d.ts" />
-
 export const cList = 'c-list'
 export const cListBody = 'c-list__body'
 export const cListCell = 'c-list__cell'
@@ -8,7 +6,7 @@ export const cListHead = 'c-list__head'
 export const cListItem = 'c-list__item'
 export const cListMeta = 'c-list__meta'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./list.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

@@ -1,5 +1,3 @@
-/// <reference path="objects.d.ts" />
-
 export const cFieldBox = 'c-field-box'
 export const oArticle = 'o-article'
 export const oArticlePicture = 'o-article__picture'
@@ -13,7 +11,7 @@ export const oFormHead = 'o-form__head'
 export const oFormRow = 'o-form__row'
 export const sShort = 's-short'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./objects.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

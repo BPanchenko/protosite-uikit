@@ -1,4 +1,3 @@
-/// <reference path="transform.d.ts" />
 const classNames = new Map([
   ['sFlipHorizontal', 's-flip-horizontal'],
   ['sFlipRotate90', 's-flip-rotate-90']
@@ -20,7 +19,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

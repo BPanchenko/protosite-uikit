@@ -1,12 +1,10 @@
-/// <reference path="hovered.d.ts" />
-
 export const cList = 'c-list'
 export const cListItem = 'c-list__item'
 export const cPanel = 'c-panel'
 export const cThumbnail = 'c-thumbnail'
 export const sHovered = 's-hovered'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./hovered.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {

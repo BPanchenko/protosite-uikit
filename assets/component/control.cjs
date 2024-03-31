@@ -1,4 +1,3 @@
-/// <reference path="control.d.ts" />
 const classNames = new Map([
   ['cCtrl', 'c-ctrl'],
   ['cCtrlGroup', 'c-ctrl-group'],
@@ -22,7 +21,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

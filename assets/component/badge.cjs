@@ -1,4 +1,3 @@
-/// <reference path="badge.d.ts" />
 const classNames = new Map([
   ['cBadge', 'c-badge'],
   ['cBadgeDanger', 'c-badge--danger'],
@@ -24,7 +23,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

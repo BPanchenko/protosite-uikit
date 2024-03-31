@@ -1,4 +1,3 @@
-/// <reference path="pagination.d.ts" />
 const classNames = new Map([
   ['cPagination', 'c-pagination'],
   ['cPaginationEllipsis', 'c-pagination__ellipsis'],
@@ -23,7 +22,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {

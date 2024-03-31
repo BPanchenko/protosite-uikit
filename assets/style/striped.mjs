@@ -1,10 +1,8 @@
-/// <reference path="striped.d.ts" />
-
 export const cList = 'c-list'
 export const cListItem = 'c-list__item'
 export const sStriped = 's-striped'
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve('./striped.css')
 
 	if (typeof CSSStyleSheet === 'undefined') {
