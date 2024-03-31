@@ -18,7 +18,9 @@
 	border-style: solid;
 	border-radius: 2--pixel;
 	outline: none;
-	box-shadow: inset 0 0 2--pixel var(--clr-grey-400, lightgrey), 0 0 0 var(--clr-blue-400, lightgrey);
+	box-shadow:
+		inset 0 0 2--pixel var(--clr-grey-400, lightgrey),
+		0 0 0 var(--clr-blue-400, lightgrey);
 	box-sizing: border-box;
 	cursor: pointer;
 

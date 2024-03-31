@@ -23,8 +23,7 @@
 		.u-position-cover,
 		.u-position-top,
 		.u-position-top-left,
-		.u-position-top-right,
-
+		.u-position-top-right
 	) {
 	position: absolute;
 }
