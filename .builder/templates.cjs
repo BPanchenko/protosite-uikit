@@ -9,7 +9,6 @@ function getEntries(array, serialized = false) {
 
 const cjsTemplate = (classNames, ref = '') =>
   trim(`
-/// <reference path="${ref}.d.ts" />
 const classNames = new Map(${getEntries(classNames, true)});
 
 module.exports = new Proxy(classNames, {
@@ -28,7 +27,7 @@ module.exports = new Proxy(classNames, {
         return stylesheet;
 
       default:
-        return target.get(attr);
+        return target.get(attr.toString());
     }
   },
   getPrototypeOf() {
@@ -37,30 +36,15 @@ module.exports = new Proxy(classNames, {
 });
 `);
 
-const dtsTemplate = (classNames) => {
-  const exportedClassNames = getEntries(classNames)
-    .map(([name, _value]) => `export const ${name}: string;`)
-    .join('\n');
-
-  return trim(`
-${exportedClassNames}
-export const stylesheet: CSSStyleSheet | CSSStyleDeclaration;
-
-export default stylesheet;
-  `);
-};
-
 const mjsTemplate = (classNames, ref = '') => {
   const exportedClassNames = getEntries(classNames)
     .map(([name, value]) => `export const ${name} = '${value}';`)
     .join('\n');
 
   return trim(`
-/// <reference path="${ref}.d.ts" />
-
 ${exportedClassNames}
 
-const stylesheet = (async () => {
+const stylesheet = await (async () => {
 	const cssFileURL = import.meta.resolve("./${ref}.css");
 
 	if (typeof CSSStyleSheet === 'undefined') {
@@ -85,8 +69,21 @@ export default stylesheet;
 `);
 };
 
+const dmtsTemplate = (classNames) => {
+  const exportedClassNames = getEntries(classNames)
+    .map(([name, _value]) => `export const ${name}: string;`)
+    .join('\n');
+
+  return trim(`
+${exportedClassNames}
+
+declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration;
+export default stylesheet;
+  `);
+};
+
 module.exports = {
   cjsTemplate,
-  dtsTemplate,
+  dmtsTemplate,
   mjsTemplate
 };

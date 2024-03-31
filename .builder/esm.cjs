@@ -1,6 +1,6 @@
 const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
 const { logSuccess, logSummary } = require('./helpers.cjs');
-const { cjsTemplate, dtsTemplate, mjsTemplate } = require('./templates.cjs');
+const { cjsTemplate, dmtsTemplate, mjsTemplate } = require('./templates.cjs');
 
 const glob = require('glob');
 const parser = require('css');
@@ -31,30 +31,30 @@ files.forEach((source) => {
   clss.sort();
 
   if (!isEmpty(clss)) {
-    const { name, cjs: cjsFile, dts: dtsFile, mjs: mjsFile } = getTargetOptions(source);
+    const { name, cjs: cjsFile, dmts: dmtsFile, mjs: mjsFile } = getTargetOptions(source);
 
     // CommonJS
     {
-      const relCjsFile = cjsFile.replace(ROOT, '').replace(/^\\/, '');
+      const relFile = cjsFile.replace(ROOT, '').replace(/^\\/, '');
       checkFile(cjsFile);
       appendFileSync(cjsFile, cjsTemplate(clss, name));
-      logSuccess(relCjsFile);
+      logSuccess(relFile);
     }
 
-    // TS Declaration
+    // ESM TS Declaration
     {
-      const relDtsFile = dtsFile.replace(ROOT, '').replace(/^\\/, '');
-      checkFile(dtsFile);
-      appendFileSync(dtsFile, dtsTemplate(clss));
-      logSuccess(relDtsFile);
+      const relFile = dmtsFile.replace(ROOT, '').replace(/^\\/, '');
+      checkFile(dmtsFile);
+      appendFileSync(dmtsFile, dmtsTemplate(clss));
+      logSuccess(relFile);
     }
 
     // ES Module
     {
-      const relMjsFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
+      const relFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
       checkFile(mjsFile);
       appendFileSync(mjsFile, mjsTemplate(clss, name));
-      logSuccess(relMjsFile);
+      logSuccess(relFile);
     }
   } else {
     const relSource = dtsFile.replace(ROOT, '').replace(/^\\/, '');
@@ -74,12 +74,14 @@ function checkFile(file) {
 
 function getTargetOptions(file) {
   const { dir, name } = path.parse(file);
-  const dts = path.join(dir, name + '.d.ts');
+  const dcts = path.join(dir, name + '.d.cts');
+  const dmts = path.join(dir, name + '.d.mts');
   const cjs = path.join(dir, name + '.cjs');
   const mjs = path.join(dir, name + '.mjs');
   return {
     name,
-    dts,
+    dcts,
+    dmts,
     cjs,
     mjs
   };

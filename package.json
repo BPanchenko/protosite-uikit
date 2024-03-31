@@ -1,9 +1,9 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.70",
+  "version": "4.26.71",
   "type": "module",
-  "types": "assets/main.d.ts",
-  "main": "assets/main.mjs",
+  "types": "./assets/main.d.mts",
+  "main": "./assets/main.mjs",
   "exports": {
     ".": {
       "import": "./assets/main.mjs",
@@ -12,7 +12,7 @@
     "./postcss.config": "./.config/postcss.config.cjs",
     "./postcss.config.js": "./.config/postcss.config.cjs",
     "./*.css": "./*.css",
-    "./*.d.ts": "./assets/*.d.ts",
+    "./*.d.mts": "./assets/*.d.mts",
     "./*": {
       "import": "./assets/*.mjs",
       "require": "./assets/*.cjs"
