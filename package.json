@@ -1,11 +1,27 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.69",
-  "description": "CSS framework for developing web interfaces",
-  "homepage": "https://github.com/BPanchenko/protosite-uikit#readme",
+  "version": "4.26.70",
   "type": "module",
-  "main": "assets/main.css",
   "types": "assets/main.d.ts",
+  "main": "assets/main.mjs",
+  "exports": {
+    ".": {
+      "import": "./assets/main.mjs",
+      "require": "./assets/main.cjs"
+    },
+    "./postcss.config": "./.config/postcss.config.cjs",
+    "./postcss.config.js": "./.config/postcss.config.cjs",
+    "./*.css": "./*.css",
+    "./*.d.ts": "./assets/*.d.ts",
+    "./*": {
+      "import": "./assets/*.mjs",
+      "require": "./assets/*.cjs"
+    },
+    "./*.js": {
+      "import": "./assets/*.mjs",
+      "require": "./assets/*.cjs"
+    }
+  },
   "files": [
     ".config/cssnano.config.cjs",
     ".config/postcss.config.cjs",
@@ -21,10 +37,6 @@
     "fonts.css",
     "main.css"
   ],
-  "exports": {
-    "./*.css": "./*.css",
-    "./postcss.config": "./.config/postcss.config.cjs"
-  },
   "scripts": {
     "build": "run-s prettier clean build:css build:esm prettier",
     "build:css": "node .builder/css.cjs",
@@ -36,6 +48,7 @@
     "@csstools/custom-units": "0.1.1",
     "cssnano": "6.1.2",
     "cssnano-preset-default": "6.1.2",
+    "cssstyle": "4.0.1",
     "postcss": "8.4.38",
     "postcss-custom-media": "10.0.4",
     "postcss-custom-selectors": "7.1.8",
@@ -62,6 +75,12 @@
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite-uikit/issues"
   },
+  "author": {
+    "name": "Boris Panchenko",
+    "email": "boris.v.panchenko@mail.ru",
+    "url": "https://bpanchenko.ru"
+  },
+  "description": "CSS framework for developing web interfaces",
   "keywords": [
     "bemit",
     "css",
@@ -69,10 +88,6 @@
     "postcss",
     "uikit"
   ],
-  "license": "LGPL-3.0-only",
-  "author": {
-    "name": "Boris Panchenko",
-    "email": "boris.v.panchenko@mail.ru",
-    "url": "https://bpanchenko.ru"
-  }
+  "homepage": "http://protosite.rocks",
+  "license": "LGPL-3.0-only"
 }

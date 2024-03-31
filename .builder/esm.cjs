@@ -73,13 +73,12 @@ function checkFile(file) {
 }
 
 function getTargetOptions(file) {
-  const fileProps = path.parse(file);
-  const fileName = fileProps.name + fileProps.ext;
-  const dts = path.join(fileProps.dir, fileName + '.d.ts');
-  const cjs = path.join(fileProps.dir, fileName + '.cjs');
-  const mjs = path.join(fileProps.dir, fileName + '.mjs');
+  const { dir, name } = path.parse(file);
+  const dts = path.join(dir, name + '.d.ts');
+  const cjs = path.join(dir, name + '.cjs');
+  const mjs = path.join(dir, name + '.mjs');
   return {
-    name: fileName,
+    name,
     dts,
     cjs,
     mjs
