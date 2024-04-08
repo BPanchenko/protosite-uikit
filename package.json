@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.71",
+  "version": "4.26.72",
   "type": "module",
   "types": "./assets/main.d.mts",
   "main": "./assets/main.mjs",
@@ -10,13 +10,10 @@
       "require": "./assets/main.cjs"
     },
     "./postcss.config": "./.config/postcss.config.cjs",
-    "./postcss.config.js": "./.config/postcss.config.cjs",
     "./*.css": "./*.css",
+    "./*.mjs": "./assets/*.mjs",
+    "./*.cjs": "./assets/*.cjs",
     "./*.d.mts": "./assets/*.d.mts",
-    "./*": {
-      "import": "./assets/*.mjs",
-      "require": "./assets/*.cjs"
-    },
     "./*.js": {
       "import": "./assets/*.mjs",
       "require": "./assets/*.cjs"
@@ -56,7 +53,7 @@
     "postcss-import": "16.1.0",
     "postcss-nested": "6.0.1",
     "postcss-reporter": "7.1.0",
-    "protosite-palette": "2.15.0"
+    "protosite-palette": "2.15.1"
   },
   "devDependencies": {
     "css": "3.0.0",
