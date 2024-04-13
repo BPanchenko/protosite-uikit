@@ -118,6 +118,7 @@ const classNames = new Map([
   ['sSuccess', 's-success'],
   ['sText', 's-text'],
   ['sThin', 's-thin'],
+  ['sUi', 's-ui'],
   ['sUppercase', 's-uppercase'],
   ['sWarning', 's-warning'],
   ['sXl', 's-xl'],

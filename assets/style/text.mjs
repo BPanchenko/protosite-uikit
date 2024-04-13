@@ -14,6 +14,7 @@ export const sSemiBold = 's-semi-bold'
 export const sSerif = 's-serif'
 export const sText = 's-text'
 export const sThin = 's-thin'
+export const sUi = 's-ui'
 export const sUppercase = 's-uppercase'
 
 const stylesheet = await (async () => {

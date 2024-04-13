@@ -117,6 +117,7 @@ export const sStriped: string
 export const sSuccess: string
 export const sText: string
 export const sThin: string
+export const sUi: string
 export const sUppercase: string
 export const sWarning: string
 export const sXl: string

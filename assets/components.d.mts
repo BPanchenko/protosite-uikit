@@ -15,7 +15,6 @@ export const cChartAxis: string
 export const cChartCanvas: string
 export const cChartControls: string
 export const cChartGraph: string
-export const cCombobox: string
 export const cCtrl: string
 export const cCtrlGroup: string
 export const cCtrlPopover: string
@@ -33,7 +32,6 @@ export const cFieldError: string
 export const cFieldIcon: string
 export const cFieldInfo: string
 export const cFieldLabel: string
-export const cFieldSelect: string
 export const cList: string
 export const cListBody: string
 export const cListCell: string
@@ -55,6 +53,7 @@ export const cPopoverBody: string
 export const cProgress: string
 export const cProgressStriped: string
 export const cProgressBar: string
+export const cSelectField: string
 export const cTab: string
 export const cTabIndicator: string
 export const cTabIcon: string

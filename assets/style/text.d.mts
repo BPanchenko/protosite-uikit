@@ -14,6 +14,7 @@ export const sSemiBold: string
 export const sSerif: string
 export const sText: string
 export const sThin: string
+export const sUi: string
 export const sUppercase: string
 
 declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration

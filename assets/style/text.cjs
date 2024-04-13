@@ -15,6 +15,7 @@ const classNames = new Map([
   ['sSerif', 's-serif'],
   ['sText', 's-text'],
   ['sThin', 's-thin'],
+  ['sUi', 's-ui'],
   ['sUppercase', 's-uppercase']
 ]);
 
