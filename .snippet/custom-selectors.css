@@ -9,6 +9,3 @@
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
 @custom-selector :--icon-attr-excluded i, .icon, .s-icon;
 @custom-selector :--icon-attr-included :--icon-attr-excluded[data-glyph];
-@custom-selector :--select-field .c-combobox, .c-field-select, combobox, selectlist, selectmenu;
-@custom-selector :--marker .c-marker, marker;
-@custom-selector :--marker-as-icon :--marker[data-glyph];

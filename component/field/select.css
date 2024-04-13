@@ -1,35 +1,64 @@
-@import '../../.snippet/custom-selectors.css';
-@import '../../.snippet/field.css';
-
+@import '../../.snippet/icon.css';
 @import '../../settings/main.css';
 @import '../../settings/space.css';
-@import './index.css';
 
-:--select-field {
-	@extend %icon;
+/*selectlist*/
+.c-select-field {
+	--button-glyph: '\e18a';
+	--check-glyph: '\e153';
+	--text-font: var(--ui-font);
 
-	-moz-appearance: none;
-	-webkit-appearance: none;
-
-	& > selectedoption:empty::after {
-		content: 'Выбрать...';
+	option {
+		--text-interligne: 2--unit;
+	}
+	.c-button__icon::before {
+		--icon-size: var(--text-md);
 	}
 
 	&:open {
-		background-color: green;
+		--button-glyph: '\e18d';
 	}
-	&:closed {
-		background-color: blue;
+}
+
+.c-select-field {
+	listbox {
+		border: none;
+		border-radius: var(--space-xxs);
+		text-align: right;
+		box-shadow: var(--shadow-3dp);
+		margin-top: var(--space-xs);
+
+		option {
+			cursor: pointer;
+			background-color: transparent;
+			transition: background-color 0.16s ease;
+			padding-right: var(--space);
+			padding-left: var(--space);
+
+			&:checked,
+			&:hover {
+				font-weight: var(--font-medium);
+			}
+
+			&:checked {
+				@extend %icon;
+
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				&::before {
+					content: var(--check-glyph);
+				}
+			}
+
+			&:hover {
+				background-color: var(--clr-grey-50);
+			}
+		}
 	}
 
-	&::part(listbox):not(:popover-open) {
-		position: absolute;
-		display: flex;
-		width: 30rem;
-		height: 30rem;
-	}
-
-	&::part(marker) {
-		display: block;
+	.c-button__icon::before {
+		content: var(--button-glyph);
 	}
 }
