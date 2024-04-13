@@ -15,6 +15,9 @@
 .s-serif {
 	--text-font: var(--font-serif);
 }
+.s-ui {
+	--text-font: var(--ui-font);
+}
 
 /* Font Weight
  ========================================================================== */

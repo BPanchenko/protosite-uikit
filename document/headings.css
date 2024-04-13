@@ -65,6 +65,7 @@ h5 {
 h6 {
 	--text-size: var(--text-xs);
 	--text-interligne: var(--interligne-xs);
+	letter-spacing: 0.1em;
 }
 
 h1 {
