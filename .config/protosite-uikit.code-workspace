@@ -1,7 +1,6 @@
 {
 	"extensions": {
 		"recommendations": [
-			"amatiasq.sort-imports",
 			"bierner.markdown-mermaid",
 			"bradlc.vscode-tailwindcss",
 			"codezombiech.gitignore",
