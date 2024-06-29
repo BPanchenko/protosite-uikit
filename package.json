@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.74",
+  "version": "4.26.75",
   "type": "module",
   "types": "./assets/main.d.mts",
   "main": "./assets/main.mjs",
@@ -42,9 +42,10 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@bpanchenko/palette": "3.0.0",
     "@csstools/custom-units": "0.1.1",
-    "cssnano": "7.0.1",
-    "cssnano-preset-default": "7.0.1",
+    "cssnano": "7.0.3",
+    "cssnano-preset-default": "7.0.3",
     "cssstyle": "4.0.1",
     "postcss": "8.4.38",
     "postcss-custom-media": "10.0.6",
@@ -52,17 +53,16 @@
     "postcss-extend-rule": "4.0.0",
     "postcss-import": "16.1.0",
     "postcss-nested": "6.0.1",
-    "postcss-reporter": "7.1.0",
-    "protosite-palette": "2.16.9"
+    "postcss-reporter": "7.1.0"
   },
   "devDependencies": {
     "css": "3.0.0",
-    "glob": "10.4.1",
+    "glob": "10.4.2",
     "lodash": "4.17.21",
     "node-color-log": "12.0.1",
     "npm-run-all": "4.1.5",
     "pluralize": "8.0.0",
-    "prettier": "3.2.5",
+    "prettier": "3.3.2",
     "rimraf": "5.0.7"
   },
   "repository": {
