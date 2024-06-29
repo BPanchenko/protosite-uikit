@@ -75,8 +75,8 @@
 	}
 
 	&:disabled {
-		background-color: var(--clr-grey-50-tp);
-		border-color: var(--clr-grey-400-tp);
+		background-color: var(--clr-grey-50);
+		border-color: var(--clr-grey-400);
 		border-style: dotted;
 		box-shadow: none;
 		color: var(--muted-color);

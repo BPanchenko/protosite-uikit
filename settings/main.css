@@ -22,7 +22,7 @@ html {
 	--clr-white: #ffffff;
 
 	--danger-color: var(--clr-red-800);
-	--muted-color: var(--clr-grey-400-tp);
+	--muted-color: var(--clr-grey-400);
 	--primary-color: var(--clr-blue-800);
 	--success-color: var(--clr-green-800);
 	--warning-color: var(--clr-orange-800);
