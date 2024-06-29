@@ -53,7 +53,7 @@
 
 :--avatar-not-background {
 	&:empty {
-		--bg-color: var(--clr-grey-100);
+		--bg-color: var(--clr-gray-100);
 		--border: none;
 		--shadow: none;
 	}
@@ -75,7 +75,7 @@
 			transform: translate(-50%, -50%);
 
 			border-radius: 50%;
-			background-color: var(--clr-grey-300);
+			background-color: var(--clr-gray-300);
 		}
 	}
 }

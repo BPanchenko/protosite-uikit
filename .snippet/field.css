@@ -13,13 +13,13 @@
 	padding-left: var(--c-field-padding-left, 0.4em);
 
 	background-color: var(--clr-white, white);
-	border-color: var(--clr-grey-500, darkgrey);
+	border-color: var(--clr-gray-500, darkgrey);
 	border-width: 1--pixel;
 	border-style: solid;
 	border-radius: 2--pixel;
 	outline: none;
 	box-shadow:
-		inset 0 0 2--pixel var(--clr-grey-400, lightgrey),
+		inset 0 0 2--pixel var(--clr-gray-400, lightgrey),
 		0 0 0 var(--clr-blue-400, lightgrey);
 	box-sizing: border-box;
 	cursor: pointer;

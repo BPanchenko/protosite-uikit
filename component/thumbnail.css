@@ -108,8 +108,8 @@
 	position: relative;
 	width: var(--base-size);
 	height: var(--base-size);
-	background-color: var(--clr-grey-300);
-	border: 0.1rem solid var(--clr-grey-400);
+	background-color: var(--clr-gray-300);
+	border: 0.1rem solid var(--clr-gray-400);
 	box-sizing: border-box;
 }
 
@@ -124,7 +124,7 @@
 	display: inline-block;
 	height: 40%;
 	width: 0.1rem;
-	background-color: var(--clr-grey-400);
+	background-color: var(--clr-gray-400);
 
 	content: ' ';
 }

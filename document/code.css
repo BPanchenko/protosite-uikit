@@ -14,7 +14,7 @@ var {
 code {
 	--text-color: var(--clr-black);
 
-	background-color: var(--clr-grey-50);
+	background-color: var(--clr-gray-50);
 	border-radius: var(--space-xs);
 	padding: 0 var(--space-xs);
 }

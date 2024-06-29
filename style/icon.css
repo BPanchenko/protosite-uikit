@@ -26,7 +26,7 @@
 	&:focus-visible,
 	&:active,
 	&[aria-pressed='true'] {
-		--bg-color: var(--clr-grey-200);
+		--bg-color: var(--clr-gray-200);
 	}
 }
 

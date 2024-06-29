@@ -23,7 +23,7 @@
  ========================================================================== */
 
 .c-popover {
-	--bg-color: var(--clr-grey-700);
+	--bg-color: var(--clr-gray-700);
 	--shadow: var(--shadow-2dp);
 
 	display: inline-block;
@@ -149,7 +149,7 @@
 	border-radius: 0.2rem;
 	overflow: hidden;
 
-	color: var(--clr-grey-50);
+	color: var(--clr-gray-50);
 	font-family: var(--font-primary);
 	font-size: var(--text-sm);
 	line-height: var(--interligne-sm);

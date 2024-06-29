@@ -22,7 +22,7 @@
 	background-color: transparent;
 	text-align: center;
 	line-height: 1;
-	color: var(--clr-grey-700);
+	color: var(--clr-gray-700);
 	cursor: pointer;
 
 	transition-property: background-color, color;
@@ -31,11 +31,11 @@
 }
 
 .c-tab:hover {
-	background-color: var(--clr-grey-100);
+	background-color: var(--clr-gray-100);
 }
 
 .c-tab[aria-selected='true'] {
-	color: var(--clr-grey-900);
+	color: var(--clr-gray-900);
 	cursor: default;
 }
 .c-tab[aria-selected='true']:hover {
@@ -84,7 +84,7 @@
 .c-tabs-container + hr {
 	margin-top: 0;
 	border-bottom: none;
-	border-top: 0.1rem solid var(--clr-grey-300);
+	border-top: 0.1rem solid var(--clr-gray-300);
 }
 
 /* Element: `c-tab-indicator`
@@ -97,7 +97,7 @@
 	bottom: 0;
 	transform: translateX(0);
 	height: 0.2rem;
-	background-color: var(--clr-grey-900);
+	background-color: var(--clr-gray-900);
 
 	transition-property: left, transform, width;
 	transition-duration: 0.1s;
@@ -141,5 +141,5 @@
 	bottom: -0.1rem;
 	left: 0;
 	right: 0;
-	border-bottom: 0.1rem solid var(--clr-grey-400);
+	border-bottom: 0.1rem solid var(--clr-gray-400);
 }

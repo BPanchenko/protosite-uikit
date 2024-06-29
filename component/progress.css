@@ -8,7 +8,7 @@
 .c-progress {
 	height: 1.4rem;
 	margin-bottom: var(--space-md);
-	background-color: var(--clr-grey-100);
+	background-color: var(--clr-gray-100);
 	border-radius: 0.2rem;
 	box-sizing: border-box;
 	overflow: hidden;

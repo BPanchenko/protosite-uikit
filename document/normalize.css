@@ -95,7 +95,7 @@ hr {
 	box-sizing: content-box;
 	height: 0;
 	border: 0;
-	color: var(--clr-grey-400, currentColor);
+	color: var(--clr-gray-400, currentColor);
 	border-top: 1px solid currentColor;
 	border-bottom: 1px solid var(--clr-white, white);
 	margin: var(--unit, 16px) 0;

@@ -10,7 +10,7 @@
 
 .o-breadcrumb {
 	display: block;
-	color: var(--clr-grey-600);
+	color: var(--clr-gray-600);
 	font-size: 0.001px;
 }
 
@@ -28,5 +28,5 @@
 
 .o-breadcrumb__item:last-child {
 	font-weight: var(--font-medium);
-	color: var(--clr-grey-800);
+	color: var(--clr-gray-800);
 }

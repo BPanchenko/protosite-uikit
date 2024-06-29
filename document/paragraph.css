@@ -32,7 +32,7 @@ p figure {
 	max-width: 30vw;
 	max-height: 18rem;
 
-	background-color: var(--clr-grey-300);
+	background-color: var(--clr-gray-300);
 	background-size: contain;
 
 	&::before,

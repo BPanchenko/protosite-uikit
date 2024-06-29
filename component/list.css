@@ -80,7 +80,7 @@
 .c-list__head {
 	padding: 0 0 var(--space-xs);
 	margin-bottom: var(--space-sm);
-	border-bottom: 0.2rem solid var(--clr-grey-300);
+	border-bottom: 0.2rem solid var(--clr-gray-300);
 	line-height: 4rem;
 }
 
@@ -98,7 +98,7 @@
 .c-list__item {
 	margin-bottom: calc(var(--space-xs) + 0.1rem);
 
-	border-bottom-color: var(--clr-grey-300);
+	border-bottom-color: var(--clr-gray-300);
 	border-bottom-width: 0.1rem;
 	border-bottom-style: solid;
 }

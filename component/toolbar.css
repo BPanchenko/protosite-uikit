@@ -37,7 +37,7 @@
 =========================================================================== */
 
 .c-toolbar .c-button {
-	--border-color: var(--clr-grey-200);
+	--border-color: var(--clr-gray-200);
 	--roundness: 0;
 	--shadow: none;
 
@@ -77,7 +77,7 @@
 }
 
 .c-toolbar :--icon-attr-included {
-	background-color: var(--clr-grey-50);
+	background-color: var(--clr-gray-50);
 	padding-right: var(--unit);
 	padding-left: var(--unit);
 	margin-top: 0.5--pixel;

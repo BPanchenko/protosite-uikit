@@ -21,7 +21,7 @@
 	letter-spacing: 0.04em;
 
 	cursor: default;
-	background-color: var(--clr-grey-600);
+	background-color: var(--clr-gray-600);
 	color: var(--clr-white);
 }
 
