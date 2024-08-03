@@ -1,18 +1,7 @@
 {
 	"extensions": {
 		"recommendations": [
-			"bierner.markdown-mermaid",
-			"bradlc.vscode-tailwindcss",
-			"codezombiech.gitignore",
-			"csstools.postcss",
-			"davidanson.vscode-markdownlint",
-			"esbenp.prettier-vscode",
-			"github.vscode-pull-request-github",
-			"jzarzoso.break-from-comma",
-			"ritwickdey.liveserver",
-			"samverschueren.final-newline",
-			"tyriar.sort-lines",
-			"zengxingxin.sort-js-object-keys"
+			"ecmel.vscode-html-css"
 		]
 	},
 	"folders": [
