@@ -57,7 +57,7 @@ files.forEach((source) => {
       logSuccess(relFile);
     }
   } else {
-    const relSource = dtsFile.replace(ROOT, '').replace(/^\\/, '');
+    const relSource = source.replace(ROOT, '').replace(/^\\/, '');
     logger.warn(`File ${relSource} is empty`);
   }
 });
