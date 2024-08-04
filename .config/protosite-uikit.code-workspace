@@ -1,8 +1,6 @@
 {
 	"extensions": {
-		"recommendations": [
-			"ecmel.vscode-html-css"
-		]
+		"recommendations": ["ecmel.vscode-html-css"]
 	},
 	"folders": [
 		{
