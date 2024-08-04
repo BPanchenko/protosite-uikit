@@ -1,6 +1,5 @@
 const classNames = new Map([
   ['cButton', 'c-button'],
-  ['cPanel', 'c-panel'],
   ['cToolbar', 'c-toolbar'],
   ['sRounded', 's-rounded']
 ]);

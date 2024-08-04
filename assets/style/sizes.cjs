@@ -1,5 +1,4 @@
 const classNames = new Map([
-  ['cAvatar', 'c-avatar'],
   ['cButton', 'c-button'],
   ['icon', 'icon'],
   ['sDefaultSize', 's-default-size'],
@@ -10,7 +9,6 @@ const classNames = new Map([
   ['sXl', 's-xl'],
   ['sXs', 's-xs'],
   ['sXxl', 's-xxl'],
-  ['sXxs', 's-xxs'],
   ['sXxxl', 's-xxxl']
 ]);
 

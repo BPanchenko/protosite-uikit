@@ -1,4 +1,3 @@
-export const cAvatar: string
 export const cButton: string
 export const cButtonIcon: string
 export const cButtonText: string
@@ -34,7 +33,6 @@ export const sBgYellow: string
 export const sBold: string
 export const sCapitalize: string
 export const sClean: string
-export const sCursive: string
 export const sCursorAlias: string
 export const sCursorAllScroll: string
 export const sCursorAuto: string
@@ -91,14 +89,10 @@ export const sLoading: string
 export const sLowercase: string
 export const sMd: string
 export const sMedium: string
-export const sMonospace: string
-export const sMuted: string
 export const sNormal: string
 export const sPrimary: string
 export const sRounded: string
-export const sSans: string
 export const sSemiBold: string
-export const sSerif: string
 export const sShadow: string
 export const sShadow16Dp: string
 export const sShadow24Dp: string
@@ -117,13 +111,11 @@ export const sStriped: string
 export const sSuccess: string
 export const sText: string
 export const sThin: string
-export const sUi: string
 export const sUppercase: string
 export const sWarning: string
 export const sXl: string
 export const sXs: string
 export const sXxl: string
-export const sXxs: string
 export const sXxxl: string
 
 declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration

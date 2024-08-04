@@ -1,5 +1,4 @@
 const classNames = new Map([
-  ['cAvatar', 'c-avatar'],
   ['cButton', 'c-button'],
   ['cButtonIcon', 'c-button__icon'],
   ['cButtonText', 'c-button__text'],
@@ -35,7 +34,6 @@ const classNames = new Map([
   ['sBold', 's-bold'],
   ['sCapitalize', 's-capitalize'],
   ['sClean', 's-clean'],
-  ['sCursive', 's-cursive'],
   ['sCursorAlias', 's-cursor-alias'],
   ['sCursorAllScroll', 's-cursor-all-scroll'],
   ['sCursorAuto', 's-cursor-auto'],
@@ -92,14 +90,10 @@ const classNames = new Map([
   ['sLowercase', 's-lowercase'],
   ['sMd', 's-md'],
   ['sMedium', 's-medium'],
-  ['sMonospace', 's-monospace'],
-  ['sMuted', 's-muted'],
   ['sNormal', 's-normal'],
   ['sPrimary', 's-primary'],
   ['sRounded', 's-rounded'],
-  ['sSans', 's-sans'],
   ['sSemiBold', 's-semi-bold'],
-  ['sSerif', 's-serif'],
   ['sShadow', 's-shadow'],
   ['sShadow16Dp', 's-shadow-16dp'],
   ['sShadow24Dp', 's-shadow-24dp'],
@@ -118,13 +112,11 @@ const classNames = new Map([
   ['sSuccess', 's-success'],
   ['sText', 's-text'],
   ['sThin', 's-thin'],
-  ['sUi', 's-ui'],
   ['sUppercase', 's-uppercase'],
   ['sWarning', 's-warning'],
   ['sXl', 's-xl'],
   ['sXs', 's-xs'],
   ['sXxl', 's-xxl'],
-  ['sXxs', 's-xxs'],
   ['sXxxl', 's-xxxl']
 ]);
 
