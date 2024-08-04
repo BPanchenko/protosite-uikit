@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.78",
+  "version": "4.26.79",
   "type": "module",
   "types": "./assets/main.d.mts",
   "main": "./assets/main.mjs",
@@ -44,16 +44,17 @@
   "dependencies": {
     "@bpanchenko/palette": "3.0.0",
     "@csstools/custom-units": "0.1.1",
-    "cssnano": "7.0.4",
     "cssnano-preset-default": "7.0.4",
+    "cssnano": "7.0.4",
     "cssstyle": "4.0.1",
-    "postcss": "8.4.40",
-    "postcss-custom-media": "10.0.8",
-    "postcss-custom-selectors": "7.1.12",
+    "postcss-custom-media": "11.0.0",
+    "postcss-custom-selectors": "8.0.0",
     "postcss-extend-rule": "4.0.0",
     "postcss-import": "16.1.0",
     "postcss-nested": "6.2.0",
-    "postcss-reporter": "7.1.0"
+    "postcss-prune-var": "1.1.2",
+    "postcss-reporter": "7.1.0",
+    "postcss": "8.4.40"
   },
   "devDependencies": {
     "css": "3.0.0",
