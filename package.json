@@ -11,6 +11,7 @@
     },
     "./postcss.config": "./.config/postcss.config.cjs",
     "./*.css": "./*.css",
+    "./*.json": "./*.json",
     "./*.mjs": "./assets/*.mjs",
     "./*.cjs": "./assets/*.cjs",
     "./*.d.mts": "./assets/*.d.mts",
