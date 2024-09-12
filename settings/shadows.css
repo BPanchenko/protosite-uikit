@@ -6,6 +6,9 @@
 	--shadow-sharp: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1),
 		0 16px 16px rgba(0, 0, 0, 0.05);
 
+	--inset-shadow-sharp: inset 0 -2px 1px rgba(0, 0, 0, 0.25), inset 0 -3px 2px rgba(0, 0, 0, 0.2), inset 0 -4px 4px rgba(0, 0, 0, 0.15),
+		inset 0 -9px 8px rgba(0, 0, 0, 0.1), inset 0 -18px 16px rgba(0, 0, 0, 0.05);
+
 	--shadow-diffuse: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.16),
 		0 8px 8px rgba(0, 0, 0, 0.2);
 
