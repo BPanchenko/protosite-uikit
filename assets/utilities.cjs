@@ -1,10 +1,5 @@
 const classNames = new Map([
-  ['guideHorizontal', 'guide--horizontal'],
-  ['guideVertical', 'guide--vertical'],
-  ['line', 'line'],
   ['oContainer', 'o-container'],
-  ['sAxis', 's-axis'],
-  ['sizes', 'sizes'],
   ['uAlignCenter', 'u-align-center'],
   ['uAlignLeft', 'u-align-left'],
   ['uAlignRight', 'u-align-right'],
@@ -17,7 +12,6 @@ const classNames = new Map([
   ['uDisplayInlineBlock', 'u-display-inline-block'],
   ['uFloatLeft', 'u-float-left'],
   ['uFloatRight', 'u-float-right'],
-  ['uGrid', 'u-grid'],
   ['uHidden', 'u-hidden'],
   ['uHiddenHover', 'u-hidden-hover'],
   ['uHiddenNotouch', 'u-hidden-notouch'],

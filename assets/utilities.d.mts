@@ -1,9 +1,4 @@
-export const guideHorizontal: string
-export const guideVertical: string
-export const line: string
 export const oContainer: string
-export const sAxis: string
-export const sizes: string
 export const uAlignCenter: string
 export const uAlignLeft: string
 export const uAlignRight: string
@@ -16,7 +11,6 @@ export const uDisplayInline: string
 export const uDisplayInlineBlock: string
 export const uFloatLeft: string
 export const uFloatRight: string
-export const uGrid: string
 export const uHidden: string
 export const uHiddenHover: string
 export const uHiddenNotouch: string

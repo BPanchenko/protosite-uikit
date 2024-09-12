@@ -1,5 +1,8 @@
 const classNames = new Map([
   ['cFieldBox', 'c-field-box'],
+  ['guideHorizontal', 'guide--horizontal'],
+  ['guideVertical', 'guide--vertical'],
+  ['line', 'line'],
   ['oArticle', 'o-article'],
   ['oArticlePicture', 'o-article__picture'],
   ['oBreadcrumb', 'o-breadcrumb'],
@@ -10,7 +13,10 @@ const classNames = new Map([
   ['oFormButtons', 'o-form__buttons'],
   ['oFormHead', 'o-form__head'],
   ['oFormRow', 'o-form__row'],
-  ['sShort', 's-short']
+  ['oGrid', 'o-grid'],
+  ['sAxis', 's-axis'],
+  ['sShort', 's-short'],
+  ['sizes', 'sizes']
 ]);
 
 module.exports = new Proxy(classNames, {

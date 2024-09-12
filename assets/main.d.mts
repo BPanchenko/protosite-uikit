@@ -96,6 +96,7 @@ export const oFormBody: string
 export const oFormButtons: string
 export const oFormHead: string
 export const oFormRow: string
+export const oGrid: string
 export const point: string
 export const pointHovered: string
 export const sAnimatedGradient: string
@@ -233,7 +234,6 @@ export const uDisplayInline: string
 export const uDisplayInlineBlock: string
 export const uFloatLeft: string
 export const uFloatRight: string
-export const uGrid: string
 export const uHidden: string
 export const uHiddenHover: string
 export const uHiddenNotouch: string
