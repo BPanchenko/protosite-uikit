@@ -1,6 +1,9 @@
-export const cButton: string
-export const cToolbar: string
-export const sRounded: string
+declare module "assets/style/rounded";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cButton: string;
+export const cToolbar: string;
+export const sRounded: string;
+
+export const cssText: string;
+export default stylesheet;

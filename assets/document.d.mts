@@ -1,10 +1,13 @@
-export const icon: string
-export const isActive: string
-export const sCondensed: string
-export const sIcon: string
-export const uTextLg: string
-export const uTextSm: string
-export const uTextXs: string
+declare module "assets/document";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const icon: string;
+export const isActive: string;
+export const sCondensed: string;
+export const sIcon: string;
+export const uTextLg: string;
+export const uTextSm: string;
+export const uTextXs: string;
+
+export const cssText: string;
+export default stylesheet;

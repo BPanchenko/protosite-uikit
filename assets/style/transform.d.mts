@@ -1,5 +1,8 @@
-export const sFlipHorizontal: string
-export const sFlipRotate90: string
+declare module "assets/style/transform";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sFlipHorizontal: string;
+export const sFlipRotate90: string;
+
+export const cssText: string;
+export default stylesheet;

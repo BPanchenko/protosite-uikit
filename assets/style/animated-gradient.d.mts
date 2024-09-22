@@ -1,4 +1,7 @@
-export const sAnimatedGradient: string
+declare module "assets/style/animated-gradient";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sAnimatedGradient: string;
+
+export const cssText: string;
+export default stylesheet;

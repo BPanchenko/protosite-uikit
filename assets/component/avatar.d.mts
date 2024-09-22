@@ -1,5 +1,8 @@
-export const cAvatar: string
-export const cAvatarLink: string
+declare module "assets/component/avatar";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cAvatar: string;
+export const cAvatarLink: string;
+
+export const cssText: string;
+export default stylesheet;

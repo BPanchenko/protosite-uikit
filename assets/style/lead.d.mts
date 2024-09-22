@@ -1,4 +1,7 @@
-export const sLead: string
+declare module "assets/style/lead";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sLead: string;
+
+export const cssText: string;
+export default stylesheet;

@@ -1,34 +1,24 @@
-const classNames = new Map([
-  ['cDialog', 'c-dialog'],
-  ['cDialogBody', 'c-dialog__body'],
-  ['cDialogBodyViewport', 'c-dialog__body-viewport'],
-  ['cDialogBodyWrapper', 'c-dialog__body-wrapper'],
-  ['cDialogButtons', 'c-dialog__buttons'],
-  ['cDialogHeader', 'c-dialog__header'],
-  ['isClosed', 'is-closed'],
-  ['isOpened', 'is-opened']
-]);
+/// <reference path="./dialog.d.mts" />
 
-module.exports = new Proxy(classNames, {
-  get(target, attr) {
-    switch (attr) {
-      case 'stylesheet':
-      case 'default':
-        const path = require('node:path');
-        const { CSSStyleDeclaration } = require('cssstyle');
-        const { readFileSync } = require('node:fs');
+module.exports = {
+	"cDialog": "c-dialog",
+	"cDialogBody": "c-dialog__body",
+	"cDialogBodyViewport": "c-dialog__body-viewport",
+	"cDialogBodyWrapper": "c-dialog__body-wrapper",
+	"cDialogButtons": "c-dialog__buttons",
+	"cDialogHeader": "c-dialog__header",
+	"isClosed": "is-closed",
+	"isOpened": "is-opened"
+};
+Object.defineProperty(module.exports, '__esModule', { value: true });
 
-        const cssFilePath = path.join(__dirname, 'dialog.css');
-        const cssText = readFileSync(cssFilePath, 'utf-8');
-        const stylesheet = new CSSStyleDeclaration();
-        stylesheet.cssText = cssText;
-        return stylesheet;
+require('construct-style-sheets-polyfill');
+const path = require('node:path');
+const fs = require('node:fs');
+const file = path.join(__dirname, 'dialog.css');
+const cssText = fs.readFileSync(file, 'utf-8');
+module.exports.cssText = cssText;
 
-      default:
-        return target.get(attr.toString());
-    }
-  },
-  getPrototypeOf() {
-    return Object;
-  }
-});
+const stylesheet = new CSSStyleSheet;
+stylesheet.replaceSync(cssText);
+module.exports.default = stylesheet;

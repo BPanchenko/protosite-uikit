@@ -1,6 +1,9 @@
-export const cButton: string
-export const cListBody: string
-export const sLoading: string
+declare module "assets/style/loading";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cButton: string;
+export const cListBody: string;
+export const sLoading: string;
+
+export const cssText: string;
+export default stylesheet;

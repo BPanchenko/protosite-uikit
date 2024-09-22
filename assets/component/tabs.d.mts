@@ -1,9 +1,12 @@
-export const cPanel: string
-export const cTab: string
-export const cTabIndicator: string
-export const cTabIcon: string
-export const cTabLabel: string
-export const cTabsContainer: string
+declare module "assets/component/tabs";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cPanel: string;
+export const cTab: string;
+export const cTabIndicator: string;
+export const cTabIcon: string;
+export const cTabLabel: string;
+export const cTabsContainer: string;
+
+export const cssText: string;
+export default stylesheet;

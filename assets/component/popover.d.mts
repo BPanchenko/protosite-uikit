@@ -1,8 +1,11 @@
-export const cPopover: string
-export const cPopoverBody: string
-export const isHidden: string
-export const isVisible: string
-export const sLinkset: string
+declare module "assets/component/popover";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cPopover: string;
+export const cPopoverBody: string;
+export const isHidden: string;
+export const isVisible: string;
+export const sLinkset: string;
+
+export const cssText: string;
+export default stylesheet;

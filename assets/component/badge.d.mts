@@ -1,9 +1,12 @@
-export const cBadge: string
-export const cBadgeDanger: string
-export const cBadgeInfo: string
-export const cBadgePrimary: string
-export const cBadgeSuccess: string
-export const cBadgeWarning: string
+declare module "assets/component/badge";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cBadge: string;
+export const cBadgeDanger: string;
+export const cBadgeInfo: string;
+export const cBadgePrimary: string;
+export const cBadgeSuccess: string;
+export const cBadgeWarning: string;
+
+export const cssText: string;
+export default stylesheet;

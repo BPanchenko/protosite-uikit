@@ -1,36 +1,23 @@
-export const sBold = 's-bold'
-export const sCapitalize = 's-capitalize'
-export const sExtraBold = 's-extra-bold'
-export const sExtraLight = 's-extra-light'
-export const sHeavy = 's-heavy'
-export const sLight = 's-light'
-export const sLowercase = 's-lowercase'
-export const sMedium = 's-medium'
-export const sNormal = 's-normal'
-export const sSemiBold = 's-semi-bold'
-export const sText = 's-text'
-export const sThin = 's-thin'
-export const sUppercase = 's-uppercase'
+export const sBold = 's-bold';
+export const sCapitalize = 's-capitalize';
+export const sExtraBold = 's-extra-bold';
+export const sExtraLight = 's-extra-light';
+export const sHeavy = 's-heavy';
+export const sLight = 's-light';
+export const sLowercase = 's-lowercase';
+export const sMedium = 's-medium';
+export const sNormal = 's-normal';
+export const sSemiBold = 's-semi-bold';
+export const sText = 's-text';
+export const sThin = 's-thin';
+export const sUppercase = 's-uppercase';
 
-const stylesheet = await (async () => {
-	const cssFileURL = import.meta.resolve('./text.css')
+const file = import.meta.resolve("./text.css");
+export const cssText = await fetch(file).then((r) => r.text());
 
-	if (typeof CSSStyleSheet === 'undefined') {
-		const { CSSStyleDeclaration } = await import('cssstyle')
-		const { readFileSync } = await import('node:fs')
-		const { fileURLToPath } = await import('node:url')
-		const cssStyleDeclaration = new CSSStyleDeclaration()
-		const cssText = readFileSync(fileURLToPath(cssFileURL), 'utf-8')
-		cssStyleDeclaration.cssText = cssText
-		return cssStyleDeclaration
-	} else if (typeof CSSStyleSheet === 'function') {
-		const cssStyleSheet = new CSSStyleSheet()
-		const cssText = await fetch(cssFileURL).then((r) => r.text())
-		cssStyleSheet.replaceSync(cssText)
-		return cssStyleSheet
-	}
-
-	return Object.create(null)
-})()
-
-export default stylesheet
+if (typeof CSSStyleSheet === undefined) {
+	await import('construct-style-sheets-polyfill');
+}
+const stylesheet = new CSSStyleSheet();
+stylesheet.replaceSync(cssText);
+export default stylesheet;

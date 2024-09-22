@@ -1,4 +1,7 @@
-export const cBackdrop: string
+declare module "assets/component/backdrop";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cBackdrop: string;
+
+export const cssText: string;
+export default stylesheet;

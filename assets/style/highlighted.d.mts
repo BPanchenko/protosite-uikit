@@ -1,4 +1,7 @@
-export const sHighlighted: string
+declare module "assets/style/highlighted";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sHighlighted: string;
+
+export const cssText: string;
+export default stylesheet;

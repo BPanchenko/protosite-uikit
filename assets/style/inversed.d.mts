@@ -1,4 +1,7 @@
-export const sInversed: string
+declare module "assets/style/inversed";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sInversed: string;
+
+export const cssText: string;
+export default stylesheet;

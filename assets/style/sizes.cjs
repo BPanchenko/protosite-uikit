@@ -1,37 +1,27 @@
-const classNames = new Map([
-  ['cButton', 'c-button'],
-  ['icon', 'icon'],
-  ['sDefaultSize', 's-default-size'],
-  ['sIcon', 's-icon'],
-  ['sLg', 's-lg'],
-  ['sMd', 's-md'],
-  ['sSm', 's-sm'],
-  ['sXl', 's-xl'],
-  ['sXs', 's-xs'],
-  ['sXxl', 's-xxl'],
-  ['sXxxl', 's-xxxl']
-]);
+/// <reference path="./sizes.d.mts" />
 
-module.exports = new Proxy(classNames, {
-  get(target, attr) {
-    switch (attr) {
-      case 'stylesheet':
-      case 'default':
-        const path = require('node:path');
-        const { CSSStyleDeclaration } = require('cssstyle');
-        const { readFileSync } = require('node:fs');
+module.exports = {
+	"cButton": "c-button",
+	"icon": "icon",
+	"sDefaultSize": "s-default-size",
+	"sIcon": "s-icon",
+	"sLg": "s-lg",
+	"sMd": "s-md",
+	"sSm": "s-sm",
+	"sXl": "s-xl",
+	"sXs": "s-xs",
+	"sXxl": "s-xxl",
+	"sXxxl": "s-xxxl"
+};
+Object.defineProperty(module.exports, '__esModule', { value: true });
 
-        const cssFilePath = path.join(__dirname, 'sizes.css');
-        const cssText = readFileSync(cssFilePath, 'utf-8');
-        const stylesheet = new CSSStyleDeclaration();
-        stylesheet.cssText = cssText;
-        return stylesheet;
+require('construct-style-sheets-polyfill');
+const path = require('node:path');
+const fs = require('node:fs');
+const file = path.join(__dirname, 'sizes.css');
+const cssText = fs.readFileSync(file, 'utf-8');
+module.exports.cssText = cssText;
 
-      default:
-        return target.get(attr.toString());
-    }
-  },
-  getPrototypeOf() {
-    return Object;
-  }
-});
+const stylesheet = new CSSStyleSheet;
+stylesheet.replaceSync(cssText);
+module.exports.default = stylesheet;

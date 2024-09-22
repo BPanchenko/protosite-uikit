@@ -1,8 +1,11 @@
-export const cList: string
-export const cListItem: string
-export const cPanel: string
-export const cThumbnail: string
-export const sHovered: string
+declare module "assets/style/hovered";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const cList: string;
+export const cListItem: string;
+export const cPanel: string;
+export const cThumbnail: string;
+export const sHovered: string;
+
+export const cssText: string;
+export default stylesheet;

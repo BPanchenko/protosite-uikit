@@ -1,4 +1,7 @@
-export const sFloating: string
+declare module "assets/style/floating";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sFloating: string;
+
+export const cssText: string;
+export default stylesheet;

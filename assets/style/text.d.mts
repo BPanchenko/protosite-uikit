@@ -1,16 +1,19 @@
-export const sBold: string
-export const sCapitalize: string
-export const sExtraBold: string
-export const sExtraLight: string
-export const sHeavy: string
-export const sLight: string
-export const sLowercase: string
-export const sMedium: string
-export const sNormal: string
-export const sSemiBold: string
-export const sText: string
-export const sThin: string
-export const sUppercase: string
+declare module "assets/style/text";
+declare const stylesheet: CSSStyleSheet;
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration
-export default stylesheet
+export const sBold: string;
+export const sCapitalize: string;
+export const sExtraBold: string;
+export const sExtraLight: string;
+export const sHeavy: string;
+export const sLight: string;
+export const sLowercase: string;
+export const sMedium: string;
+export const sNormal: string;
+export const sSemiBold: string;
+export const sText: string;
+export const sThin: string;
+export const sUppercase: string;
+
+export const cssText: string;
+export default stylesheet;
