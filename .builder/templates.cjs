@@ -9,31 +9,21 @@ function getEntries(array, serialized = false) {
 
 const cjsTemplate = (classNames, ref = '') =>
   trim(`
-const classNames = new Map(${getEntries(classNames, true)});
+/// <reference path="./${ref}.d.mts" />
 
-module.exports = new Proxy(classNames, {
-  get(target, attr) {
-    switch (attr) {
-      case 'stylesheet':
-      case 'default':
-		const path = require('node:path');
-        const { CSSStyleDeclaration } = require('cssstyle');
-        const { readFileSync } = require('node:fs');
+module.exports = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, "\t")};
+Object.defineProperty(module.exports, '__esModule', { value: true });
 
-        const cssFilePath = path.join(__dirname, '${ref}.css');
-        const cssText = readFileSync(cssFilePath, 'utf-8');
-        const stylesheet = new CSSStyleDeclaration();
-        stylesheet.cssText = cssText;
-        return stylesheet;
+require('construct-style-sheets-polyfill');
+const path = require('node:path');
+const fs = require('node:fs');
+const file = path.join(__dirname, '${ref}.css');
+const cssText = fs.readFileSync(file, 'utf-8');
+module.exports.cssText = cssText;
 
-      default:
-        return target.get(attr.toString());
-    }
-  },
-  getPrototypeOf() {
-    return Object;
-  }
-});
+const stylesheet = new CSSStyleSheet;
+stylesheet.replaceSync(cssText);
+module.exports.default = stylesheet;
 `);
 
 const mjsTemplate = (classNames, ref = '') => {
@@ -44,42 +34,32 @@ const mjsTemplate = (classNames, ref = '') => {
   return trim(`
 ${exportedClassNames}
 
-const stylesheet = await (async () => {
-	const cssFileURL = import.meta.resolve("./${ref}.css");
+const file = import.meta.resolve("./${ref}.css");
+export const cssText = await fetch(file).then((r) => r.text());
 
-	if (typeof CSSStyleSheet === 'undefined') {
-		const { CSSStyleDeclaration } = (await import('cssstyle'));
-		const { readFileSync } = (await import('node:fs'));
-		const { fileURLToPath } = (await import('node:url'));
-		const cssStyleDeclaration = new CSSStyleDeclaration();
-		const cssText = readFileSync(fileURLToPath(cssFileURL), 'utf-8');
-		cssStyleDeclaration.cssText = cssText;
-		return cssStyleDeclaration;
-	} else if (typeof CSSStyleSheet === 'function') {
-		const cssStyleSheet = new CSSStyleSheet()
-		const cssText = await fetch(cssFileURL).then(r => r.text());
-		cssStyleSheet.replaceSync(cssText);
-		return cssStyleSheet;
-	}
-
-	return Object.create(null);
-})();
-
+if (typeof CSSStyleSheet === undefined) {
+	await import('construct-style-sheets-polyfill');
+}
+const stylesheet = new CSSStyleSheet();
+stylesheet.replaceSync(cssText);
 export default stylesheet;
 `);
 };
 
-const dmtsTemplate = (classNames) => {
+const dmtsTemplate = (classNames, ref = '') => {
   const exportedClassNames = getEntries(classNames)
     .map(([name, _value]) => `export const ${name}: string;`)
     .join('\n');
 
   return trim(`
+declare module "${ref}";
+declare const stylesheet: CSSStyleSheet;
+
 ${exportedClassNames}
 
-declare const stylesheet: CSSStyleSheet | CSSStyleDeclaration;
+export const cssText: string;
 export default stylesheet;
-  `);
+`);
 };
 
 module.exports = {

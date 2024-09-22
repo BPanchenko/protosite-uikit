@@ -31,30 +31,28 @@ files.forEach((source) => {
   clss.sort();
 
   if (!isEmpty(clss)) {
-    const { name, cjs: cjsFile, dmts: dmtsFile, mjs: mjsFile } = getTargetOptions(source);
+    const { dir, name, cjs: cjsFile, dmts: dmtsFile, mjs: mjsFile } = getTargetOptions(source);
+	const module = path.join(path.relative(process.cwd(), dir), name).replaceAll('\\', '/')
 
     // CommonJS
     {
-      const relFile = cjsFile.replace(ROOT, '').replace(/^\\/, '');
       checkFile(cjsFile);
       appendFileSync(cjsFile, cjsTemplate(clss, name));
-      logSuccess(relFile);
+      logSuccess(module + '.cjs');
     }
 
     // ESM TS Declaration
     {
-      const relFile = dmtsFile.replace(ROOT, '').replace(/^\\/, '');
       checkFile(dmtsFile);
-      appendFileSync(dmtsFile, dmtsTemplate(clss));
-      logSuccess(relFile);
+      appendFileSync(dmtsFile, dmtsTemplate(clss, module));
+      logSuccess(module + '.d.mjs');
     }
 
     // ES Module
     {
-      const relFile = mjsFile.replace(ROOT, '').replace(/^\\/, '');
       checkFile(mjsFile);
       appendFileSync(mjsFile, mjsTemplate(clss, name));
-      logSuccess(relFile);
+      logSuccess(module + '.mjs');
     }
   } else {
     const relSource = source.replace(ROOT, '').replace(/^\\/, '');
@@ -79,6 +77,7 @@ function getTargetOptions(file) {
   const cjs = path.join(dir, name + '.cjs');
   const mjs = path.join(dir, name + '.mjs');
   return {
+	dir,
     name,
     dcts,
     dmts,
