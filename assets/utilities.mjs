@@ -1,3 +1,5 @@
+import stylesheet from './utilities.css' with { type: 'css' }
+
 export const oContainer = 'o-container';
 export const uAlignCenter = 'u-align-center';
 export const uAlignLeft = 'u-align-left';
@@ -83,12 +85,4 @@ export const uVerticalAlignMiddle = 'u-vertical-align-middle';
 export const uVerticalAlignTop = 'u-vertical-align-top';
 export const uVisibleToggle = 'u-visible-toggle';
 
-const file = import.meta.resolve("./utilities.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

@@ -1,5 +1,3 @@
-/// <reference path="./striped.d.mts" />
-
 module.exports = {
 	"cList": "c-list",
 	"cListItem": "c-list__item",

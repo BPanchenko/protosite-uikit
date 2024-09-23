@@ -1,5 +1,4 @@
-declare module "assets/component/popover";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/popover";
 
 export const cPopover: string;
 export const cPopoverBody: string;
@@ -7,5 +6,5 @@ export const isHidden: string;
 export const isVisible: string;
 export const sLinkset: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -1,3 +1,5 @@
+import stylesheet from './thumbnail.css' with { type: 'css' }
+
 export const cPanel = 'c-panel';
 export const cThumbnail = 'c-thumbnail';
 export const cThumbnailLg = 'c-thumbnail--lg';
@@ -10,12 +12,4 @@ export const cThumbnailCaption = 'c-thumbnail__caption';
 export const cThumbnailLink = 'c-thumbnail__link';
 export const cThumbnailShutter = 'c-thumbnail__shutter';
 
-const file = import.meta.resolve("./thumbnail.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

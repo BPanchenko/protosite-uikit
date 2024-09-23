@@ -1,5 +1,4 @@
-declare module "assets/utilities";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/utilities";
 
 export const oContainer: string;
 export const uAlignCenter: string;
@@ -86,5 +85,5 @@ export const uVerticalAlignMiddle: string;
 export const uVerticalAlignTop: string;
 export const uVisibleToggle: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -1,7 +1,6 @@
-declare module "assets/style/animated-gradient";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/animated-gradient";
 
 export const sAnimatedGradient: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

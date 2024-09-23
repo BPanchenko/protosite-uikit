@@ -1,10 +1,9 @@
-declare module "assets/style/link";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/link";
 
 export const cButton: string;
 export const cPanel: string;
 export const sClean: string;
 export const sLink: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

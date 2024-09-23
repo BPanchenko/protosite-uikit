@@ -1,7 +1,6 @@
-declare module "assets/component/backdrop";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/backdrop";
 
 export const cBackdrop: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

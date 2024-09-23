@@ -1,5 +1,4 @@
-declare module "assets/component/toolbar";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/toolbar";
 
 export const cButton: string;
 export const cToolbar: string;
@@ -7,5 +6,5 @@ export const cToolbarLabel: string;
 export const icon: string;
 export const sIcon: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

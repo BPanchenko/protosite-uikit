@@ -1,5 +1,4 @@
-declare module "assets/style/backgrounds";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/backgrounds";
 
 export const sBgAmber: string;
 export const sBgBlack: string;
@@ -23,5 +22,5 @@ export const sBgViolet: string;
 export const sBgWhite: string;
 export const sBgYellow: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

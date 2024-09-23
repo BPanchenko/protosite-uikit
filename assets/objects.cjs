@@ -1,5 +1,3 @@
-/// <reference path="./objects.d.mts" />
-
 module.exports = {
 	"cFieldBox": "c-field-box",
 	"guideHorizontal": "guide--horizontal",

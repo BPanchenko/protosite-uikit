@@ -1,5 +1,3 @@
-/// <reference path="./backgrounds.d.mts" />
-
 module.exports = {
 	"sBgAmber": "s-bg-amber",
 	"sBgBlack": "s-bg-black",

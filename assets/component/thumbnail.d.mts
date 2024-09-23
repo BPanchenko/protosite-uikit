@@ -1,5 +1,4 @@
-declare module "assets/component/thumbnail";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/thumbnail";
 
 export const cPanel: string;
 export const cThumbnail: string;
@@ -13,5 +12,5 @@ export const cThumbnailCaption: string;
 export const cThumbnailLink: string;
 export const cThumbnailShutter: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

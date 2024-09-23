@@ -1,5 +1,3 @@
-/// <reference path="./rounded.d.mts" />
-
 module.exports = {
 	"cButton": "c-button",
 	"cToolbar": "c-toolbar",

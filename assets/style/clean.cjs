@@ -1,5 +1,3 @@
-/// <reference path="./clean.d.mts" />
-
 module.exports = {
 	"cButton": "c-button",
 	"cButtonIcon": "c-button__icon",

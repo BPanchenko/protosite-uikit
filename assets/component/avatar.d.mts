@@ -1,8 +1,7 @@
-declare module "assets/component/avatar";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/avatar";
 
 export const cAvatar: string;
 export const cAvatarLink: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

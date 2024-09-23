@@ -1,5 +1,3 @@
-/// <reference path="./animated-gradient.d.mts" />
-
 module.exports = {
 	"sAnimatedGradient": "s-animated-gradient"
 };

@@ -1,5 +1,3 @@
-/// <reference path="./floating.d.mts" />
-
 module.exports = {
 	"sFloating": "s-floating"
 };

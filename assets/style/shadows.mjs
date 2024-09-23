@@ -1,3 +1,5 @@
+import stylesheet from './shadows.css' with { type: 'css' }
+
 export const sShadow = 's-shadow';
 export const sShadow16Dp = 's-shadow-16dp';
 export const sShadow24Dp = 's-shadow-24dp';
@@ -12,12 +14,4 @@ export const sShadowLonger = 's-shadow-longer';
 export const sShadowSharp = 's-shadow-sharp';
 export const sShadowShorter = 's-shadow-shorter';
 
-const file = import.meta.resolve("./shadows.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

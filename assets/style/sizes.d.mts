@@ -1,5 +1,4 @@
-declare module "assets/style/sizes";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/sizes";
 
 export const cButton: string;
 export const icon: string;
@@ -13,5 +12,5 @@ export const sXs: string;
 export const sXxl: string;
 export const sXxxl: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

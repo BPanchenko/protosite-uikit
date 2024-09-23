@@ -1,5 +1,4 @@
-declare module "assets/component/tabs";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/tabs";
 
 export const cPanel: string;
 export const cTab: string;
@@ -8,5 +7,5 @@ export const cTabIcon: string;
 export const cTabLabel: string;
 export const cTabsContainer: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

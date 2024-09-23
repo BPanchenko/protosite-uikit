@@ -1,5 +1,3 @@
-/// <reference path="./text.d.mts" />
-
 module.exports = {
 	"sBold": "s-bold",
 	"sCapitalize": "s-capitalize",

@@ -1,5 +1,3 @@
-/// <reference path="./shadows.d.mts" />
-
 module.exports = {
 	"sShadow": "s-shadow",
 	"sShadow16Dp": "s-shadow-16dp",

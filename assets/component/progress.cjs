@@ -1,5 +1,3 @@
-/// <reference path="./progress.d.mts" />
-
 module.exports = {
 	"cProgress": "c-progress",
 	"cProgressStriped": "c-progress--striped",

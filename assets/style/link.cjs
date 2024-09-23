@@ -1,5 +1,3 @@
-/// <reference path="./link.d.mts" />
-
 module.exports = {
 	"cButton": "c-button",
 	"cPanel": "c-panel",

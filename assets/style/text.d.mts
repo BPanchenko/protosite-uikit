@@ -1,5 +1,4 @@
-declare module "assets/style/text";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/text";
 
 export const sBold: string;
 export const sCapitalize: string;
@@ -15,5 +14,5 @@ export const sText: string;
 export const sThin: string;
 export const sUppercase: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

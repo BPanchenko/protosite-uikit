@@ -1,5 +1,4 @@
-declare module "assets/component/pagination";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/pagination";
 
 export const cPagination: string;
 export const cPaginationEllipsis: string;
@@ -7,5 +6,5 @@ export const cPaginationNext: string;
 export const cPaginationPage: string;
 export const cPaginationPrev: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -1,5 +1,4 @@
-declare module "assets/main";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/main";
 
 export const cAvatar: string;
 export const cAvatarLink: string;
@@ -312,5 +311,5 @@ export const uVerticalAlignMiddle: string;
 export const uVerticalAlignTop: string;
 export const uVisibleToggle: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -1,5 +1,3 @@
-/// <reference path="./list.d.mts" />
-
 module.exports = {
 	"cList": "c-list",
 	"cListBody": "c-list__body",

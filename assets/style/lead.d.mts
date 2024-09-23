@@ -1,7 +1,6 @@
-declare module "assets/style/lead";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/lead";
 
 export const sLead: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

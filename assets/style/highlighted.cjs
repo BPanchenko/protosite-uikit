@@ -1,5 +1,3 @@
-/// <reference path="./highlighted.d.mts" />
-
 module.exports = {
 	"sHighlighted": "s-highlighted"
 };

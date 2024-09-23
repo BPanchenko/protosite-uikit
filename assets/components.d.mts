@@ -1,5 +1,4 @@
-declare module "assets/components";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/components";
 
 export const cAvatar: string;
 export const cAvatarLink: string;
@@ -94,5 +93,5 @@ export const sIcon: string;
 export const sLinkset: string;
 export const tick: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

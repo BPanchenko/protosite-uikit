@@ -1,9 +1,8 @@
-declare module "assets/style/loading";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/loading";
 
 export const cButton: string;
 export const cListBody: string;
 export const sLoading: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

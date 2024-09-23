@@ -1,5 +1,4 @@
-declare module "assets/objects";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/objects";
 
 export const cFieldBox: string;
 export const guideHorizontal: string;
@@ -20,5 +19,5 @@ export const sAxis: string;
 export const sShort: string;
 export const sizes: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

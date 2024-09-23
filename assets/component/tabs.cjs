@@ -1,5 +1,3 @@
-/// <reference path="./tabs.d.mts" />
-
 module.exports = {
 	"cPanel": "c-panel",
 	"cTab": "c-tab",

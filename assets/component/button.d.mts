@@ -1,5 +1,4 @@
-declare module "assets/component/button";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/button";
 
 export const cButton: string;
 export const cButtonIcon: string;
@@ -7,5 +6,5 @@ export const cButtonText: string;
 export const cPanel: string;
 export const sClean: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

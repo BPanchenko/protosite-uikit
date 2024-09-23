@@ -1,5 +1,3 @@
-/// <reference path="./loading.d.mts" />
-
 module.exports = {
 	"cButton": "c-button",
 	"cListBody": "c-list__body",

@@ -1,5 +1,4 @@
-declare module "assets/component/chart";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/chart";
 
 export const cChart: string;
 export const cChartAxis: string;
@@ -13,5 +12,5 @@ export const point: string;
 export const pointHovered: string;
 export const tick: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

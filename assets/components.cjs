@@ -1,5 +1,3 @@
-/// <reference path="./components.d.mts" />
-
 module.exports = {
 	"cAvatar": "c-avatar",
 	"cAvatarLink": "c-avatar__link",

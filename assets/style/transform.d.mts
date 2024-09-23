@@ -1,8 +1,7 @@
-declare module "assets/style/transform";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/transform";
 
 export const sFlipHorizontal: string;
 export const sFlipRotate90: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

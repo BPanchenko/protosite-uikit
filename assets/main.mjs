@@ -1,3 +1,5 @@
+import stylesheet from './main.css' with { type: 'css' }
+
 export const cAvatar = 'c-avatar';
 export const cAvatarLink = 'c-avatar__link';
 export const cBackdrop = 'c-backdrop';
@@ -309,12 +311,4 @@ export const uVerticalAlignMiddle = 'u-vertical-align-middle';
 export const uVerticalAlignTop = 'u-vertical-align-top';
 export const uVisibleToggle = 'u-visible-toggle';
 
-const file = import.meta.resolve("./main.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

@@ -1,5 +1,3 @@
-/// <reference path="./transform.d.mts" />
-
 module.exports = {
 	"sFlipHorizontal": "s-flip-horizontal",
 	"sFlipRotate90": "s-flip-rotate-90"

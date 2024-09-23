@@ -1,5 +1,4 @@
-declare module "assets/style/shadows";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/shadows";
 
 export const sShadow: string;
 export const sShadow16Dp: string;
@@ -15,5 +14,5 @@ export const sShadowLonger: string;
 export const sShadowSharp: string;
 export const sShadowShorter: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

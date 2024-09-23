@@ -1,8 +1,7 @@
-declare module "assets/style/icon";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/icon";
 
 export const cButton: string;
 export const sIcon: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

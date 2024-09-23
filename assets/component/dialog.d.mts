@@ -1,5 +1,4 @@
-declare module "assets/component/dialog";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/dialog";
 
 export const cDialog: string;
 export const cDialogBody: string;
@@ -10,5 +9,5 @@ export const cDialogHeader: string;
 export const isClosed: string;
 export const isOpened: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

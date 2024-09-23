@@ -1,7 +1,6 @@
-declare module "assets/style/highlighted";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/highlighted";
 
 export const sHighlighted: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

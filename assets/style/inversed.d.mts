@@ -1,7 +1,6 @@
-declare module "assets/style/inversed";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/inversed";
 
 export const sInversed: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

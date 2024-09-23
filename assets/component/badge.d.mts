@@ -1,5 +1,4 @@
-declare module "assets/component/badge";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/badge";
 
 export const cBadge: string;
 export const cBadgeDanger: string;
@@ -8,5 +7,5 @@ export const cBadgePrimary: string;
 export const cBadgeSuccess: string;
 export const cBadgeWarning: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

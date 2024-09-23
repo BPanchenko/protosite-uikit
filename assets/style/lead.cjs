@@ -1,5 +1,3 @@
-/// <reference path="./lead.d.mts" />
-
 module.exports = {
 	"sLead": "s-lead"
 };

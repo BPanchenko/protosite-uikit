@@ -1,5 +1,4 @@
-declare module "assets/document";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/document";
 
 export const icon: string;
 export const isActive: string;
@@ -9,5 +8,5 @@ export const uTextLg: string;
 export const uTextSm: string;
 export const uTextXs: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

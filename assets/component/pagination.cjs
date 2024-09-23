@@ -1,5 +1,3 @@
-/// <reference path="./pagination.d.mts" />
-
 module.exports = {
 	"cPagination": "c-pagination",
 	"cPaginationEllipsis": "c-pagination__ellipsis",

@@ -1,3 +1,5 @@
+import stylesheet from './chart.css' with { type: 'css' }
+
 export const cChart = 'c-chart';
 export const cChartAxis = 'c-chart__axis';
 export const cChartCanvas = 'c-chart__canvas';
@@ -10,12 +12,4 @@ export const point = 'point';
 export const pointHovered = 'point--hovered';
 export const tick = 'tick';
 
-const file = import.meta.resolve("./chart.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

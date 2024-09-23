@@ -1,5 +1,3 @@
-/// <reference path="./control.d.mts" />
-
 module.exports = {
 	"cCtrl": "c-ctrl",
 	"cCtrlGroup": "c-ctrl-group",

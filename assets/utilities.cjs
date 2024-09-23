@@ -1,5 +1,3 @@
-/// <reference path="./utilities.d.mts" />
-
 module.exports = {
 	"oContainer": "o-container",
 	"uAlignCenter": "u-align-center",

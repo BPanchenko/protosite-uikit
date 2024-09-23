@@ -1,5 +1,3 @@
-/// <reference path="./panel.d.mts" />
-
 module.exports = {
 	"cAvatar": "c-avatar",
 	"cButton": "c-button",

@@ -1,5 +1,4 @@
-declare module "assets/style/hovered";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/hovered";
 
 export const cList: string;
 export const cListItem: string;
@@ -7,5 +6,5 @@ export const cPanel: string;
 export const cThumbnail: string;
 export const sHovered: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

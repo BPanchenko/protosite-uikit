@@ -1,5 +1,4 @@
-declare module "assets/style/cursor";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/cursor";
 
 export const sCursorAlias: string;
 export const sCursorAllScroll: string;
@@ -38,5 +37,5 @@ export const sCursorWait: string;
 export const sCursorZoomIn: string;
 export const sCursorZoomOut: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

@@ -1,5 +1,4 @@
-declare module "assets/component/panel";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/panel";
 
 export const cAvatar: string;
 export const cButton: string;
@@ -10,5 +9,5 @@ export const cPanelHead: string;
 export const cToolbar: string;
 export const sClean: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

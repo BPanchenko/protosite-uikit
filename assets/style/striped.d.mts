@@ -1,9 +1,8 @@
-declare module "assets/style/striped";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/striped";
 
 export const cList: string;
 export const cListItem: string;
 export const sStriped: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

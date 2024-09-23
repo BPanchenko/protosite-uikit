@@ -1,5 +1,3 @@
-/// <reference path="./thumbnail.d.mts" />
-
 module.exports = {
 	"cPanel": "c-panel",
 	"cThumbnail": "c-thumbnail",

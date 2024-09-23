@@ -1,3 +1,5 @@
+import stylesheet from './backgrounds.css' with { type: 'css' }
+
 export const sBgAmber = 's-bg-amber';
 export const sBgBlack = 's-bg-black';
 export const sBgBlue = 's-bg-blue';
@@ -20,12 +22,4 @@ export const sBgViolet = 's-bg-violet';
 export const sBgWhite = 's-bg-white';
 export const sBgYellow = 's-bg-yellow';
 
-const file = import.meta.resolve("./backgrounds.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

@@ -1,3 +1,5 @@
+import stylesheet from './cursor.css' with { type: 'css' }
+
 export const sCursorAlias = 's-cursor-alias';
 export const sCursorAllScroll = 's-cursor-all-scroll';
 export const sCursorAuto = 's-cursor-auto';
@@ -35,12 +37,4 @@ export const sCursorWait = 's-cursor-wait';
 export const sCursorZoomIn = 's-cursor-zoom-in';
 export const sCursorZoomOut = 's-cursor-zoom-out';
 
-const file = import.meta.resolve("./cursor.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

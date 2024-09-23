@@ -1,5 +1,3 @@
-/// <reference path="./cursor.d.mts" />
-
 module.exports = {
 	"sCursorAlias": "s-cursor-alias",
 	"sCursorAllScroll": "s-cursor-all-scroll",

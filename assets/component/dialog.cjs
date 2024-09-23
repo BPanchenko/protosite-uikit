@@ -1,5 +1,3 @@
-/// <reference path="./dialog.d.mts" />
-
 module.exports = {
 	"cDialog": "c-dialog",
 	"cDialogBody": "c-dialog__body",

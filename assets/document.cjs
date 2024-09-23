@@ -1,5 +1,3 @@
-/// <reference path="./document.d.mts" />
-
 module.exports = {
 	"icon": "icon",
 	"isActive": "is-active",

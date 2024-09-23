@@ -1,9 +1,8 @@
-declare module "assets/style/rounded";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/rounded";
 
 export const cButton: string;
 export const cToolbar: string;
 export const sRounded: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

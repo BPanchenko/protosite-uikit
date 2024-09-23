@@ -1,3 +1,5 @@
+import stylesheet from './components.css' with { type: 'css' }
+
 export const cAvatar = 'c-avatar';
 export const cAvatarLink = 'c-avatar__link';
 export const cBackdrop = 'c-backdrop';
@@ -91,12 +93,4 @@ export const sIcon = 's-icon';
 export const sLinkset = 's-linkset';
 export const tick = 'tick';
 
-const file = import.meta.resolve("./components.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

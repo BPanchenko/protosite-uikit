@@ -1,11 +1,5 @@
+import stylesheet from './highlighted.css' with { type: 'css' }
+
 export const sHighlighted = 's-highlighted';
 
-const file = import.meta.resolve("./highlighted.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

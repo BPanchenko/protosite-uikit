@@ -1,5 +1,3 @@
-/// <reference path="./icon.d.mts" />
-
 module.exports = {
 	"cButton": "c-button",
 	"sIcon": "s-icon"

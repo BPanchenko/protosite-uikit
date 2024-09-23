@@ -1,5 +1,3 @@
-/// <reference path="./inversed.d.mts" />
-
 module.exports = {
 	"sInversed": "s-inversed"
 };

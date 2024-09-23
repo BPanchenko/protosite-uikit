@@ -1,5 +1,3 @@
-/// <reference path="./backdrop.d.mts" />
-
 module.exports = {
 	"cBackdrop": "c-backdrop"
 };

@@ -1,5 +1,3 @@
-/// <reference path="./badge.d.mts" />
-
 module.exports = {
 	"cBadge": "c-badge",
 	"cBadgeDanger": "c-badge--danger",

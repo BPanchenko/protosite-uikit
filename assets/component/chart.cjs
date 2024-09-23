@@ -1,5 +1,3 @@
-/// <reference path="./chart.d.mts" />
-
 module.exports = {
 	"cChart": "c-chart",
 	"cChartAxis": "c-chart__axis",

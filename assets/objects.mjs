@@ -1,3 +1,5 @@
+import stylesheet from './objects.css' with { type: 'css' }
+
 export const cFieldBox = 'c-field-box';
 export const guideHorizontal = 'guide--horizontal';
 export const guideVertical = 'guide--vertical';
@@ -17,12 +19,4 @@ export const sAxis = 's-axis';
 export const sShort = 's-short';
 export const sizes = 'sizes';
 
-const file = import.meta.resolve("./objects.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;

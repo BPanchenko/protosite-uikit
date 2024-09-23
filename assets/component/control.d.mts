@@ -1,10 +1,9 @@
-declare module "assets/component/control";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/control";
 
 export const cCtrl: string;
 export const cCtrlGroup: string;
 export const cCtrlPopover: string;
 export const cCtrlSort: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

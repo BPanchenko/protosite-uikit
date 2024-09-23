@@ -1,5 +1,4 @@
-declare module "assets/component/list";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/component/list";
 
 export const cList: string;
 export const cListBody: string;
@@ -9,5 +8,5 @@ export const cListHead: string;
 export const cListItem: string;
 export const cListMeta: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

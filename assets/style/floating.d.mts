@@ -1,7 +1,6 @@
-declare module "assets/style/floating";
-declare const stylesheet: CSSStyleSheet;
+declare module "@bpanchenko/uikit/style/floating";
 
 export const sFloating: string;
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;

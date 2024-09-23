@@ -1,5 +1,3 @@
-/// <reference path="./popover.d.mts" />
-
 module.exports = {
 	"cPopover": "c-popover",
 	"cPopoverBody": "c-popover__body",
