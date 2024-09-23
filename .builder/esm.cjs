@@ -1,6 +1,7 @@
 const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
 const { logSuccess, logSummary } = require('./helpers.cjs');
 const { cjsTemplate, dmtsTemplate, mjsTemplate } = require('./templates.cjs');
+const packageJson = require('../package.json');
 
 const glob = require('glob');
 const parser = require('css');
@@ -32,7 +33,7 @@ files.forEach((source) => {
 
   if (!isEmpty(clss)) {
     const { dir, name, cjs: cjsFile, dmts: dmtsFile, mjs: mjsFile } = getTargetOptions(source);
-	const module = path.join(path.relative(process.cwd(), dir), name).replaceAll('\\', '/')
+    const module = path.join(path.relative(process.cwd(), dir), name).replaceAll('\\', '/').replace('assets', packageJson.name);
 
     // CommonJS
     {
@@ -77,7 +78,7 @@ function getTargetOptions(file) {
   const cjs = path.join(dir, name + '.cjs');
   const mjs = path.join(dir, name + '.mjs');
   return {
-	dir,
+    dir,
     name,
     dcts,
     dmts,

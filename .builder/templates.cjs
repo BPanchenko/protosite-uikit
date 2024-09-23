@@ -9,9 +9,7 @@ function getEntries(array, serialized = false) {
 
 const cjsTemplate = (classNames, ref = '') =>
   trim(`
-/// <reference path="./${ref}.d.mts" />
-
-module.exports = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, "\t")};
+module.exports = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, '\t')};
 Object.defineProperty(module.exports, '__esModule', { value: true });
 
 require('construct-style-sheets-polyfill');
@@ -32,16 +30,10 @@ const mjsTemplate = (classNames, ref = '') => {
     .join('\n');
 
   return trim(`
+import stylesheet from './${ref}.css' with { type: 'css' }
+
 ${exportedClassNames}
 
-const file = import.meta.resolve("./${ref}.css");
-export const cssText = await fetch(file).then((r) => r.text());
-
-if (typeof CSSStyleSheet === undefined) {
-	await import('construct-style-sheets-polyfill');
-}
-const stylesheet = new CSSStyleSheet();
-stylesheet.replaceSync(cssText);
 export default stylesheet;
 `);
 };
@@ -53,11 +45,10 @@ const dmtsTemplate = (classNames, ref = '') => {
 
   return trim(`
 declare module "${ref}";
-declare const stylesheet: CSSStyleSheet;
 
 ${exportedClassNames}
 
-export const cssText: string;
+declare const stylesheet: CSSStyleSheet;
 export default stylesheet;
 `);
 };

@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.83",
+  "version": "4.26.84",
   "type": "module",
   "types": "./assets/main.d.mts",
   "main": "./assets/main.mjs",
@@ -36,7 +36,7 @@
     "main.css"
   ],
   "scripts": {
-    "build": "run-s prettier clean build:css build:esm prettier",
+    "build": "run-s prettier clean build:css build:esm",
     "build:css": "node .builder/css.cjs",
     "build:esm": "node .builder/esm.cjs",
     "clean": "rimraf assets",
