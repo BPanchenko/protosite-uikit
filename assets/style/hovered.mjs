@@ -5,5 +5,6 @@ export const cListItem = 'c-list__item';
 export const cPanel = 'c-panel';
 export const cThumbnail = 'c-thumbnail';
 export const sHovered = 's-hovered';
+export const cssText = null;
 
 export default stylesheet;

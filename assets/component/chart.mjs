@@ -11,5 +11,6 @@ export const line = 'line';
 export const point = 'point';
 export const pointHovered = 'point--hovered';
 export const tick = 'tick';
+export const cssText = null;
 
 export default stylesheet;

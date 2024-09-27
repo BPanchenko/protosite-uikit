@@ -13,5 +13,6 @@ export const sSemiBold = 's-semi-bold';
 export const sText = 's-text';
 export const sThin = 's-thin';
 export const sUppercase = 's-uppercase';
+export const cssText = null;
 
 export default stylesheet;

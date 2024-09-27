@@ -6,5 +6,6 @@ export const cBadgeInfo = 'c-badge--info';
 export const cBadgePrimary = 'c-badge--primary';
 export const cBadgeSuccess = 'c-badge--success';
 export const cBadgeWarning = 'c-badge--warning';
+export const cssText = null;
 
 export default stylesheet;

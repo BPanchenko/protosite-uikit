@@ -13,5 +13,6 @@ export const sShadowDreamy = 's-shadow-dreamy';
 export const sShadowLonger = 's-shadow-longer';
 export const sShadowSharp = 's-shadow-sharp';
 export const sShadowShorter = 's-shadow-shorter';
+export const cssText = null;
 
 export default stylesheet;

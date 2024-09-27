@@ -5,5 +5,6 @@ export const cPopoverBody = 'c-popover__body';
 export const isHidden = 'is-hidden';
 export const isVisible = 'is-visible';
 export const sLinkset = 's-linkset';
+export const cssText = null;
 
 export default stylesheet;

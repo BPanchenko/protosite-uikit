@@ -310,5 +310,6 @@ export const uVerticalAlignBottom = 'u-vertical-align-bottom';
 export const uVerticalAlignMiddle = 'u-vertical-align-middle';
 export const uVerticalAlignTop = 'u-vertical-align-top';
 export const uVisibleToggle = 'u-visible-toggle';
+export const cssText = null;
 
 export default stylesheet;

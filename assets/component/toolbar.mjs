@@ -5,5 +5,6 @@ export const cToolbar = 'c-toolbar';
 export const cToolbarLabel = 'c-toolbar__label';
 export const icon = 'icon';
 export const sIcon = 's-icon';
+export const cssText = null;
 
 export default stylesheet;

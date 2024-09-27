@@ -8,5 +8,6 @@ export const cDialogButtons = 'c-dialog__buttons';
 export const cDialogHeader = 'c-dialog__header';
 export const isClosed = 'is-closed';
 export const isOpened = 'is-opened';
+export const cssText = null;
 
 export default stylesheet;

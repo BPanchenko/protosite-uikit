@@ -18,5 +18,6 @@ export const oGrid = 'o-grid';
 export const sAxis = 's-axis';
 export const sShort = 's-short';
 export const sizes = 'sizes';
+export const cssText = null;
 
 export default stylesheet;

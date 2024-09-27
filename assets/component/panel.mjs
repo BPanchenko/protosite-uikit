@@ -8,5 +8,6 @@ export const cPanelBody = 'c-panel__body';
 export const cPanelHead = 'c-panel__head';
 export const cToolbar = 'c-toolbar';
 export const sClean = 's-clean';
+export const cssText = null;
 
 export default stylesheet;

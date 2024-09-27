@@ -7,5 +7,6 @@ export const cListFoot = 'c-list__foot';
 export const cListHead = 'c-list__head';
 export const cListItem = 'c-list__item';
 export const cListMeta = 'c-list__meta';
+export const cssText = null;
 
 export default stylesheet;

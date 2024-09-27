@@ -92,5 +92,6 @@ export const sFloating = 's-floating';
 export const sIcon = 's-icon';
 export const sLinkset = 's-linkset';
 export const tick = 'tick';
+export const cssText = null;
 
 export default stylesheet;

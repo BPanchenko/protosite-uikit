@@ -11,5 +11,6 @@ export const cThumbnailXs = 'c-thumbnail--xs';
 export const cThumbnailCaption = 'c-thumbnail__caption';
 export const cThumbnailLink = 'c-thumbnail__link';
 export const cThumbnailShutter = 'c-thumbnail__shutter';
+export const cssText = null;
 
 export default stylesheet;

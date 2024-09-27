@@ -119,5 +119,6 @@ export const sXl = 's-xl';
 export const sXs = 's-xs';
 export const sXxl = 's-xxl';
 export const sXxxl = 's-xxxl';
+export const cssText = null;
 
 export default stylesheet;

@@ -6,5 +6,6 @@ export const cTabIndicator = 'c-tab-indicator';
 export const cTabIcon = 'c-tab__icon';
 export const cTabLabel = 'c-tab__label';
 export const cTabsContainer = 'c-tabs-container';
+export const cssText = null;
 
 export default stylesheet;
