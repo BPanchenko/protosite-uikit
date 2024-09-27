@@ -33,6 +33,7 @@ const mjsTemplate = (classNames, ref = '') => {
 import stylesheet from './${ref}.css' with { type: 'css' }
 
 ${exportedClassNames}
+export const cssText = null;
 
 export default stylesheet;
 `);

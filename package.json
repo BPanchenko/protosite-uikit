@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.84",
+  "version": "4.26.85",
   "type": "module",
   "types": "./assets/main.d.mts",
   "main": "./assets/main.mjs",
