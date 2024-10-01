@@ -1,4 +1,4 @@
-module.exports = {
+const cssClassNames = {
 	"cButton": "c-button",
 	"cButtonIcon": "c-button__icon",
 	"cButtonText": "c-button__text",
@@ -119,15 +119,22 @@ module.exports = {
 	"sXxl": "s-xxl",
 	"sXxxl": "s-xxxl"
 };
-Object.defineProperty(module.exports, '__esModule', { value: true });
 
-require('construct-style-sheets-polyfill');
+/** @type {CSSStyleSheet|null} */
+const cssStyleSheet = null;
+
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'styles.css');
-const cssText = fs.readFileSync(file, 'utf-8');
-module.exports.cssText = cssText;
 
-const stylesheet = new CSSStyleSheet;
-stylesheet.replaceSync(cssText);
-module.exports.default = stylesheet;
+/** @type {string|null} */
+const cssText = fs.readFileSync(file, 'utf-8');
+
+module.exports = {
+	__esModule: true,
+	default: cssText,
+	cssStyleSheet,
+	cssText,
+	...cssClassNames
+
+}

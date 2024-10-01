@@ -1,6 +1,12 @@
-import stylesheet from './animated-gradient.css' with { type: 'css' }
+import importedCSS from './animated-gradient.css' with { type: 'css' }
 
+/** @type {string} */
 export const sAnimatedGradient = 's-animated-gradient';
+
+/** @type {CSSStyleSheet|null} */
+export const cssStyleSheet = importedCSS;
+/** @type {string|null} */
 export const cssText = null;
 
-export default stylesheet;
+/** @type {CSSStyleSheet} */
+export default cssStyleSheet;

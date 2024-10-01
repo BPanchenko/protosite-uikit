@@ -1,4 +1,4 @@
-module.exports = {
+const cssClassNames = {
 	"cAvatar": "c-avatar",
 	"cButton": "c-button",
 	"cPanel": "c-panel",
@@ -8,15 +8,22 @@ module.exports = {
 	"cToolbar": "c-toolbar",
 	"sClean": "s-clean"
 };
-Object.defineProperty(module.exports, '__esModule', { value: true });
 
-require('construct-style-sheets-polyfill');
+/** @type {CSSStyleSheet|null} */
+const cssStyleSheet = null;
+
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'panel.css');
-const cssText = fs.readFileSync(file, 'utf-8');
-module.exports.cssText = cssText;
 
-const stylesheet = new CSSStyleSheet;
-stylesheet.replaceSync(cssText);
-module.exports.default = stylesheet;
+/** @type {string|null} */
+const cssText = fs.readFileSync(file, 'utf-8');
+
+module.exports = {
+	__esModule: true,
+	default: cssText,
+	cssStyleSheet,
+	cssText,
+	...cssClassNames
+
+}
