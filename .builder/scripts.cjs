@@ -32,7 +32,7 @@ files.forEach((source) => {
   clss.sort();
 
   if (!isEmpty(clss)) {
-    const { dir, name, cjs: cjsFile, dmts: dmtsFile, mjs: mjsFile } = getTargetOptions(source);
+    const { dir, name, cjs: cjsFile, mjs: mjsFile } = getTargetOptions(source);
     const module = path.join(path.relative(process.cwd(), dir), name).replaceAll('\\', '/').replace('assets', packageJson.name);
 
     // CommonJS
@@ -40,13 +40,6 @@ files.forEach((source) => {
       checkFile(cjsFile);
       appendFileSync(cjsFile, cjsTemplate(clss, name));
       logSuccess(module + '.cjs');
-    }
-
-    // ESM TS Declaration
-    {
-      checkFile(dmtsFile);
-      appendFileSync(dmtsFile, dmtsTemplate(clss, module));
-      logSuccess(module + '.d.mjs');
     }
 
     // ES Module
@@ -73,15 +66,11 @@ function checkFile(file) {
 
 function getTargetOptions(file) {
   const { dir, name } = path.parse(file);
-  const dcts = path.join(dir, name + '.d.cts');
-  const dmts = path.join(dir, name + '.d.mts');
   const cjs = path.join(dir, name + '.cjs');
   const mjs = path.join(dir, name + '.mjs');
   return {
     dir,
     name,
-    dcts,
-    dmts,
     cjs,
     mjs
   };

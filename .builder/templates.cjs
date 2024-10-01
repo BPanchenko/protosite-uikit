@@ -9,53 +9,49 @@ function getEntries(array, serialized = false) {
 
 const cjsTemplate = (classNames, ref = '') =>
   trim(`
-module.exports = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, '\t')};
-Object.defineProperty(module.exports, '__esModule', { value: true });
+const cssClassNames = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, '\t')};
 
-require('construct-style-sheets-polyfill');
+/** @type {CSSStyleSheet|null} */
+const cssStyleSheet = null;
+
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, '${ref}.css');
-const cssText = fs.readFileSync(file, 'utf-8');
-module.exports.cssText = cssText;
 
-const stylesheet = new CSSStyleSheet;
-stylesheet.replaceSync(cssText);
-module.exports.default = stylesheet;
+/** @type {string|null} */
+const cssText = fs.readFileSync(file, 'utf-8');
+
+module.exports = {
+	__esModule: true,
+	default: cssText,
+	cssStyleSheet,
+	cssText,
+	...cssClassNames
+
+}
 `);
 
 const mjsTemplate = (classNames, ref = '') => {
   const exportedClassNames = getEntries(classNames)
-    .map(([name, value]) => `export const ${name} = '${value}';`)
+    .map(([name, value]) => `/** @type {string} */\nexport const ${name} = '${value}';`)
     .join('\n');
 
   return trim(`
-import stylesheet from './${ref}.css' with { type: 'css' }
+import importedCSS from './${ref}.css' with { type: 'css' }
 
 ${exportedClassNames}
+
+/** @type {CSSStyleSheet|null} */
+export const cssStyleSheet = importedCSS;
+/** @type {string|null} */
 export const cssText = null;
 
-export default stylesheet;
-`);
-};
-
-const dmtsTemplate = (classNames, ref = '') => {
-  const exportedClassNames = getEntries(classNames)
-    .map(([name, _value]) => `export const ${name}: string;`)
-    .join('\n');
-
-  return trim(`
-declare module "${ref}";
-
-${exportedClassNames}
-
-declare const stylesheet: CSSStyleSheet;
-export default stylesheet;
+/** @type {CSSStyleSheet} */
+export default cssStyleSheet;
 `);
 };
 
 module.exports = {
   cjsTemplate,
-  dmtsTemplate,
   mjsTemplate
 };

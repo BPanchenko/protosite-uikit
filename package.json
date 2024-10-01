@@ -1,8 +1,7 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.26.85",
+  "version": "4.26.86",
   "type": "module",
-  "types": "./assets/main.d.mts",
   "main": "./assets/main.mjs",
   "exports": {
     ".": {
@@ -10,11 +9,9 @@
       "require": "./assets/main.cjs"
     },
     "./postcss.config": "./.config/postcss.config.cjs",
-    "./*.css": "./*.css",
-    "./*.json": "./*.json",
+    "./*.css": "./assets/*.css",
     "./*.mjs": "./assets/*.mjs",
     "./*.cjs": "./assets/*.cjs",
-    "./*.d.mts": "./assets/*.d.mts",
     "./*": {
       "import": "./assets/*.mjs",
       "require": "./assets/*.cjs"
@@ -32,20 +29,19 @@
     "style/*",
     "theme/*",
     "utility/*",
-    "fonts.css",
     "main.css"
   ],
   "scripts": {
-    "build": "run-s prettier clean build:css build:esm",
     "build:css": "node .builder/css.cjs",
-    "build:esm": "node .builder/esm.cjs",
+    "build:scripts": "node .builder/scripts.cjs",
+    "build": "run-s prettier clean build:css build:scripts",
     "clean": "rimraf assets",
+    "prepublish": "npm run build",
     "prettier": "prettier --write ."
   },
   "dependencies": {
     "@bpanchenko/palette": "3.1.0",
     "@csstools/custom-units": "0.1.1",
-    "construct-style-sheets-polyfill": "3.1.0",
     "cssnano": "7.0.6",
     "cssnano-preset-default": "7.0.6",
     "postcss": "8.4.47",
@@ -69,7 +65,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BPanchenko/protosite-uikit.git"
+    "url": "git+https://github.com/BPanchenko/protosite-uikit.git"
   },
   "bugs": {
     "url": "https://github.com/BPanchenko/protosite-uikit/issues"
