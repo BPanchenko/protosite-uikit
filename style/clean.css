@@ -1,17 +1,5 @@
 @import '../settings/document.css';
 
-/* Component: Panel
- ========================================================================== */
-
-.c-panel.s-clean {
-	--bg-color: transparent;
-	--shadow: none;
-}
-
-.c-panel + .c-panel.s-clean {
-	margin-top: 0;
-}
-
 /* Component: Button
 =========================================================================== */
 

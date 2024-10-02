@@ -5,6 +5,19 @@
 @import '../settings/space.css';
 @import '../settings/typography.css';
 
+.c-panel {
+	--bg-color: var(--clr-white);
+	--padding-horz: var(--space);
+	--padding-vert: var(--space);
+	--roundness: var(--space-xxs);
+	--shadow: var(--shadow-3dp);
+
+	&.s-clean {
+		--bg-color: transparent;
+		--shadow: none;
+	}
+}
+
 /**
  * Component:	Panel
  * Description: Reusable content areas.
@@ -12,18 +25,6 @@
  * Elements:	`c-panel__head`
  *				`c-panel__toolbar`
  *
-=========================================================================== */
-
-.c-panel {
-	--bg-color: var(--clr-white);
-	--padding-horz: var(--space);
-	--padding-vert: var(--space);
-	--roundness: var(--space-xxs);
-	--shadow: var(--shadow-3dp);
-}
-
-/* ========================================================================
-	Component
 =========================================================================== */
 
 .c-panel {
@@ -53,25 +54,25 @@
 	margin-top: var(--space);
 }
 
-/* Subcomponent: `c-panel-divider`
+/* Subcomponent: Divider
 =========================================================================== */
 
 .c-panel + .c-panel-divider {
 	position: relative;
 	margin-top: var(--space-md);
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -1--pixel;
+		left: 0;
+		right: 0;
+		border-top: var(--pixel) solid var(--clr-gray-800);
+	}
 }
 
-.c-panel + .c-panel-divider::after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: -1--pixel;
-	left: 0;
-	right: 0;
-	border-top: var(--pixel) solid var(--clr-gray-800);
-}
-
-/* Child element: `c-panel__head`
+/* Child: Header
 =========================================================================== */
 
 .c-panel__head {
@@ -93,7 +94,7 @@
 	}
 }
 
-/* Child element: `c-panel__body`
+/* Child: Body
 =========================================================================== */
 
 .c-panel__body {
@@ -118,41 +119,30 @@
 	border-top: 1px solid var(--clr-gray-400);
 }
 
-/* Nested components: Button and Toolbar
+/* Style: Clean
+ * Nested components: Button and Toolbar
 =========================================================================== */
 
-.c-panel:not(.s-clean) {
-	:is(.c-button, .c-toolbar) {
-		--border-color: var(--clr-gray-200);
-		--shadow: none;
+.c-panel {
+	& + &.s-clean {
+		margin-top: 0;
 	}
 
-	.c-button:--is-active {
-		--shadow: var(--inset-shadow-2dp);
-	}
+	&:not(.s-clean) {
+		:is(.c-button, .c-toolbar) {
+			--border-color: var(--clr-gray-200);
+			--shadow: none;
+		}
 
-	.c-toolbar {
-		border-color: var(--border-color);
-		border-style: solid;
-		border-width: 0.5--pixel;
-	}
-}
+		.c-button:--is-active {
+			--shadow: var(--inset-shadow-2dp);
+		}
 
-/* ========================================================================
-	Context
-=========================================================================== */
-
-:--avatar {
-	--border: none;
-	--shadow: var(--shadow-2dp);
-}
-
-.c-panel:not(.s-clean) :--avatar {
-	--shadow: var(--inset-shadow-2dp);
-
-	img {
-		z-index: -1;
-		position: relative;
+		.c-toolbar {
+			border-color: var(--border-color);
+			border-style: solid;
+			border-width: 0.5--pixel;
+		}
 	}
 }
 
@@ -163,10 +153,11 @@
 @media (--screen-handset) {
 	.c-panel__head {
 		padding: var(--space-sm) var(--space-sm) var(--space-xs) var(--space-sm);
-	}
-	.c-panel__head::after {
-		left: var(--space-sm);
-		right: var(--space-sm);
+
+		&::after {
+			left: var(--space-sm);
+			right: var(--space-sm);
+		}
 	}
 
 	.c-panel__body {

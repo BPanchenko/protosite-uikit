@@ -2,17 +2,31 @@
 @import '../settings/main.css';
 @import '../settings/shadows.css';
 
+.c-avatar {
+	--bg-color: transparent;
+	--border: 1--pixel solid var(--muted-color);
+	--shadow: var(--shadow-2dp);
+	--size: 5--unit;
+	--text-size: 0;
+
+	&:not([style*='background-image']):empty {
+		--bg-color: var(--clr-gray-100);
+		--border: none;
+		--shadow: none;
+	}
+}
+
 /**
  * Component: Avatar
  * Nested elements: Link and Image
 =========================================================================== */
 
-.c-avatar {
-	--bg-color: transparent;
-	--border: 1--pixel solid var(--muted-color);
-	--shadow: none;
-	--size: 5--unit;
-	--text-size: 0;
+:host {
+	display: contents;
+	pointer-events: none;
+	& > * {
+		pointer-events: auto;
+	}
 }
 
 .c-avatar {
@@ -29,9 +43,7 @@
 	background-color: var(--bg-color);
 	border: var(--border);
 	box-shadow: var(--shadow);
-}
 
-.c-avatar {
 	:where(a, img) {
 		display: inline-block;
 		width: inherit;
@@ -41,24 +53,15 @@
 	img {
 		object-fit: cover;
 	}
-}
 
-:--avatar-has-background {
-	background-size: cover;
-}
-
-/* ========================================================================
-	Empty State
-=========================================================================== */
-
-:--avatar-not-background {
-	&:empty {
-		--bg-color: var(--clr-gray-100);
-		--border: none;
-		--shadow: none;
+	&[style*='background-image'] {
+		background-size: cover;
 	}
 
-	.c-avatar__link:empty {
+	/** Empty State
+	=========================================================================== */
+
+	&:not([style*='background-image']) .c-avatar__link:empty {
 		position: relative;
 		box-sizing: border-box;
 
@@ -77,5 +80,17 @@
 			border-radius: 50%;
 			background-color: var(--clr-gray-300);
 		}
+	}
+}
+
+/** Context
+=========================================================================== */
+
+:host-context(.c-panel:not(.s-clean)) .c-avatar {
+	--shadow: var(--inset-shadow-2dp);
+
+	img {
+		z-index: -1;
+		position: relative;
 	}
 }
