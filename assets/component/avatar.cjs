@@ -2,7 +2,14 @@ const cssClassNames = {
 	"cAvatar": "c-avatar",
 	"cAvatarLink": "c-avatar__link",
 	"cPanel": "c-panel",
-	"sClean": "s-clean"
+	"sClean": "s-clean",
+	"sLg": "s-lg",
+	"sMd": "s-md",
+	"sSm": "s-sm",
+	"sXl": "s-xl",
+	"sXs": "s-xs",
+	"sXxl": "s-xxl",
+	"sXxs": "s-xxs"
 };
 
 /** @type {CSSStyleSheet|null} */
