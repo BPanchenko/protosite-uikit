@@ -1,5 +1,4 @@
 const cssClassNames = {
-	"cAvatar": "c-avatar",
 	"cButton": "c-button",
 	"cPanel": "c-panel",
 	"cPanelDivider": "c-panel-divider",

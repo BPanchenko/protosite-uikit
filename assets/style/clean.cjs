@@ -2,7 +2,6 @@ const cssClassNames = {
 	"cButton": "c-button",
 	"cButtonIcon": "c-button__icon",
 	"cButtonText": "c-button__text",
-	"cPanel": "c-panel",
 	"sClean": "s-clean"
 };
 

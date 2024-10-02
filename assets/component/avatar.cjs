@@ -1,6 +1,8 @@
 const cssClassNames = {
 	"cAvatar": "c-avatar",
-	"cAvatarLink": "c-avatar__link"
+	"cAvatarLink": "c-avatar__link",
+	"cPanel": "c-panel",
+	"sClean": "s-clean"
 };
 
 /** @type {CSSStyleSheet|null} */

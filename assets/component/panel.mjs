@@ -1,8 +1,6 @@
 import importedCSS from './panel.css' with { type: 'css' }
 
 /** @type {string} */
-export const cAvatar = 'c-avatar';
-/** @type {string} */
 export const cButton = 'c-button';
 /** @type {string} */
 export const cPanel = 'c-panel';

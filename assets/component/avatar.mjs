@@ -4,6 +4,10 @@ import importedCSS from './avatar.css' with { type: 'css' }
 export const cAvatar = 'c-avatar';
 /** @type {string} */
 export const cAvatarLink = 'c-avatar__link';
+/** @type {string} */
+export const cPanel = 'c-panel';
+/** @type {string} */
+export const sClean = 's-clean';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;
