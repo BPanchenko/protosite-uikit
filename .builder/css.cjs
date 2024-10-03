@@ -43,7 +43,7 @@ const files = glob
 // Processing
 
 const promises = files.map((file) => {
-  const targetFile = getTargetFile(file);
+  const { file: targetFile, folder } = getTargetFile(file);
   const relTargetFile = targetFile.replace(ROOT, '').replace(/^\\/, '');
   const rawCss = readFileSync(file, { flag: 'r' });
 
@@ -51,8 +51,11 @@ const promises = files.map((file) => {
 
   return postcss(postcssConfig.plugins)
     .process(rawCss, { from: file, to: targetFile })
-    .then((result) => {
-      writeFileSync(targetFile, result.css, { flag: 'w' });
+    .then(({ css }) => {
+      if (folder === 'component') {
+        css = css.replaceAll(':root', ':host');
+      }
+      writeFileSync(targetFile, css, { flag: 'w' });
       logSuccess(relTargetFile);
     })
     .catch((error) => {
@@ -90,5 +93,8 @@ function getTargetFile(file) {
     folder = '';
   }
 
-  return path.join(OUTPUT, folder, fileName + fileProps.ext);
+  return {
+    file: path.join(OUTPUT, folder, fileName + fileProps.ext),
+    folder
+  };
 }
