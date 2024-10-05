@@ -57,15 +57,15 @@ export const cDialogHeader = 'c-dialog__header';
 /** @type {string} */
 export const cField = 'c-field';
 /** @type {string} */
-export const cFieldBox = 'c-field-box';
-/** @type {string} */
 export const cFieldButton = 'c-field-button';
+/** @type {string} */
+export const cFieldContainer = 'c-field-container';
+/** @type {string} */
+export const cFieldDescription = 'c-field-description';
 /** @type {string} */
 export const cFieldError = 'c-field-error';
 /** @type {string} */
 export const cFieldIcon = 'c-field-icon';
-/** @type {string} */
-export const cFieldInfo = 'c-field-info';
 /** @type {string} */
 export const cFieldLabel = 'c-field-label';
 /** @type {string} */
@@ -111,7 +111,7 @@ export const cProgressStriped = 'c-progress--striped';
 /** @type {string} */
 export const cProgressBar = 'c-progress__bar';
 /** @type {string} */
-export const cSelectField = 'c-select-field';
+export const cSelectlist = 'c-selectlist';
 /** @type {string} */
 export const cTab = 'c-tab';
 /** @type {string} */
