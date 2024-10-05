@@ -1,9 +1,8 @@
-@import '../../.snippet/icon.css';
-@import '../../settings/main.css';
-@import '../../settings/space.css';
+@import '../.snippet/icon.css';
+@import '../settings/main.css';
+@import '../settings/space.css';
 
-/*selectlist*/
-.c-select-field {
+.c-selectlist {
 	--button-glyph: '\e18a';
 	--check-glyph: '\e153';
 	--text-font: var(--ui-font);
@@ -11,6 +10,7 @@
 	option {
 		--text-interligne: 2--unit;
 	}
+
 	.c-button__icon::before {
 		--icon-size: var(--text-md);
 	}
@@ -20,7 +20,7 @@
 	}
 }
 
-.c-select-field {
+.c-selectlist {
 	listbox {
 		border: none;
 		border-radius: var(--space-xxs);

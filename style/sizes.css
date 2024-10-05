@@ -106,7 +106,7 @@
 /* Element: Icon (md,lg)
 =========================================================================== */
 
-:--icon-attr-included {
+:--icon {
 	&.s-md::before {
 		--icon-size: var(--space-md);
 		--icon-weight: var(--font-medium);

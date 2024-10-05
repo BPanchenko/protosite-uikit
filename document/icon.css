@@ -1,7 +1,7 @@
 @import '../.snippet/custom-selectors.css';
 @import '../.snippet/icon.css';
 
-:--icon-attr-included {
+:--icon {
 	@extend %icon;
 }
 

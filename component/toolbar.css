@@ -65,7 +65,7 @@
 =========================================================================== */
 
 .c-toolbar__label,
-.c-toolbar :--icon-attr-included {
+.c-toolbar :--icon {
 	display: inline-block;
 	vertical-align: baseline;
 }
@@ -76,7 +76,7 @@
 	margin-top: -0.5--pixel;
 }
 
-.c-toolbar :--icon-attr-included {
+.c-toolbar :--icon {
 	background-color: var(--clr-gray-50);
 	padding-right: var(--unit);
 	padding-left: var(--unit);
