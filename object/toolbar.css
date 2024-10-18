@@ -3,12 +3,7 @@
 @import '../settings/shadows.css';
 @import '../settings/space.css';
 
-/**
- * Component: Toolbar
- * Child elements: `icon`, `c-toolbar__label`, `c-button`
-=========================================================================== */
-
-.c-toolbar {
+.o-toolbar {
 	--height: 2.5--unit;
 	--roundness: var(--space-xs);
 
@@ -18,9 +13,24 @@
 
 	--text-font: var(--ui-font);
 	--text-interligne: var(--height);
+
+	.c-button {
+		--border-color: var(--clr-gray-200);
+		--roundness: 0;
+		--shadow: none;
+	
+		&:--is-active {
+			--shadow: var(--inset-shadow-2dp);
+		}
+	}
 }
 
-.c-toolbar {
+/**
+ * Object: Toolbar
+ * Child components: `c-icon`, `c-label`, `c-button`
+=========================================================================== */
+
+.o-toolbar {
 	contain: content;
 	display: inline-flex;
 	min-width: min-content;
@@ -36,17 +46,7 @@
 /* Child component: Button
 =========================================================================== */
 
-.c-toolbar .c-button {
-	--border-color: var(--clr-gray-200);
-	--roundness: 0;
-	--shadow: none;
-
-	&:--is-active {
-		--shadow: var(--inset-shadow-2dp);
-	}
-}
-
-.c-toolbar .c-button {
+.o-toolbar .c-button {
 	border: none;
 	margin-top: -0.5--pixel;
 	margin-bottom: -0.5--pixel;
@@ -64,25 +64,26 @@
 /* Child elements: Icon and Label
 =========================================================================== */
 
-.c-toolbar__label,
-.c-toolbar :--icon {
-	display: inline-block;
-	vertical-align: baseline;
-}
-
-.c-toolbar__label {
-	padding-right: var(--space-sm);
-	padding-left: var(--unit);
-	margin-top: -0.5--pixel;
-}
-
-.c-toolbar :--icon {
-	background-color: var(--clr-gray-50);
-	padding-right: var(--unit);
-	padding-left: var(--unit);
-	margin-top: 0.5--pixel;
-
-	& + .c-button {
-		border-left: 0.5--pixel solid var(--border-color);
+.o-toolbar {
+	.c-label, :--icon {
+		display: inline-block;
+		vertical-align: baseline;
+	}
+	
+	.c-label {
+		padding-right: var(--space-sm);
+		padding-left: var(--unit);
+		margin-top: -0.5--pixel;
+	}
+	
+	:--icon {
+		background-color: var(--clr-gray-50);
+		padding-right: var(--unit);
+		padding-left: var(--unit);
+		margin-top: 0.5--pixel;
+	
+		& + .c-button {
+			border-left: 0.5--pixel solid var(--border-color);
+		}
 	}
 }

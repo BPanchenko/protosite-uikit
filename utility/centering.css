@@ -8,10 +8,3 @@
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
 }
-
-/* Object: Container
-=========================================================================== */
-
-.o-container.u-centering {
-	max-width: max-content;
-}

@@ -4,7 +4,7 @@
 /* Variables
 =========================================================================== */
 
-.o-container {
+.u-container {
 	--width: 92rem;
 
 	@media (--screen-xdesktop) {
@@ -33,20 +33,24 @@
 }
 
 /* ========================================================================
-	Object: Container
+	Utility: Container
 =========================================================================== */
 
-.o-container {
+.u-container {
+	container-name: inherit;
+	container-type: inline-size;
+
 	display: block;
 	max-width: var(--width);
 	width: 100%;
 
 	margin: 0 auto;
-	padding: var(--space-lg) 0 var(--space-xl);
-}
+	padding: var(--space) 0 var(--space-lg);
 
-.o-container::after {
-	content: '';
-	display: table;
-	clear: both;
+	&::before,
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }

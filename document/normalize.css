@@ -18,54 +18,27 @@ body {
 	text-rendering: optimizeSpeed;
 }
 
-:where(*, *::before, *::after) {
-	box-sizing: border-box;
-	color: var(--text-color);
-	font-family: var(--text-font);
-	font-size: var(--text-size);
-	line-height: var(--text-interligne);
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	display: block;
-}
-
-audio,
-canvas,
-img,
-svg,
-progress,
-video {
+:where(audio, canvas, img, svg, progress, video) {
 	display: inline-block;
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
 }
 
-img {
-	max-width: 100%;
-	display: block;
-	border: 0;
+:where(*, *::before, *::after) {
+	color: var(--text-color, currentColor);
+	font-family: var(--text-font, inherit);
+	font-size: var(--text-size, inherit);
+	line-height: var(--text-interligne, inherit);
+	font-weight: var(--text-boldness, inherit);
 }
 
-svg:not(:root) {
-	overflow: hidden;
-}
-
-audio:not([controls]) {
-	display: none;
-	height: 0;
+:where(body, header, main, footer, form, nav, article, section) {
+	color: var(--text-color);
+	font-family: var(--text-font);
+	font-size: var(--text-size);
+	line-height: var(--text-interligne);
+	font-weight: var(--text-boldness);
 }
 
 /* Selection

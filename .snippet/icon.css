@@ -1,15 +1,19 @@
 @import '../settings/main.css';
 @import '../settings/typography.css';
 
-%icon::before {
+%icon {
 	--icon-size: var(--unit);
 	--icon-weight: var(--font-normal);
+}
+
+%icon::before {
 	--text-size: var(--icon-size);
 	--text-interligne: 1;
 }
 
 %icon {
-	&::before {
+	&::before,
+	&::after {
 		display: inline-block;
 		position: relative;
 		top: 0.1rem;
@@ -26,7 +30,8 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	&:empty::before {
+	&:empty::before,
+	&:empty::after {
 		width: var(--icon-size);
 		height: var(--icon-size);
 		text-align: center;

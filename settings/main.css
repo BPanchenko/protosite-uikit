@@ -8,6 +8,9 @@
 	--easing: cubic-bezier(0.3, 0, 0.2, 1);
 	--pixel: 0.0625--unit;
 	--unit: 1.6rem;
+	
+	--bg-color: var(--clr-white, white);
+	--fg-color: var(--clr-black, black);
 }
 
 html {

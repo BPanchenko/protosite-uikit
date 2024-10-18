@@ -2,7 +2,7 @@
 @import '../settings/main.css';
 @import '../settings/space.css';
 
-.c-selectlist {
+.c-select {
 	--button-glyph: '\e18a';
 	--check-glyph: '\e153';
 	--text-font: var(--ui-font);
@@ -20,7 +20,7 @@
 	}
 }
 
-.c-selectlist {
+.c-select {
 	listbox {
 		border: none;
 		border-radius: var(--space-xxs);

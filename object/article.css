@@ -2,17 +2,12 @@
 @import '../settings/document.css';
 @import '../settings/space.css';
 
-/* Object: Article
-============================================================================ */
-
-article,
-.o-article {
+article {
 	--caption-font: 'PT Astra Sans', sans-serif;
 	--text-font: 'PT Astra Serif', serif;
 }
 
-article,
-.o-article {
+article {
 	:--headings {
 		margin: 0;
 
@@ -20,38 +15,34 @@ article,
 			margin-top: var(--space-sm);
 		}
 	}
-}
 
-/* Component: `o-article__picture`
-========================================================================== */
+	.c-picture {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
 
-.o-article__picture {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
+		width: 100%;
+		max-width: 60rem;
+		max-height: 12.6rem;
 
-	width: 100%;
-	max-width: 60rem;
-	max-height: 12.6rem;
+		background-color: var(--clr-blue-grey-300);
+		background-size: cover;
 
-	background-color: var(--clr-blue-grey-300);
-	background-size: cover;
-}
+		&::before,
+		&::after {
+			content: ' ';
+			position: absolute;
+			width: 100%;
+			display: block;
+			clear: both;
+		}
 
-/* Micro clearfix to make the body panel more robust */
-.o-article__picture::before,
-.o-article__picture::after {
-	content: ' ';
-	position: absolute;
-	width: 100%;
-	display: block;
-	clear: both;
-}
-
-.o-article__picture img {
-	float: none;
-	width: 100%;
-	max-height: inherit;
-	margin: 0;
-	object-fit: cover;
+		img {
+			float: none;
+			width: 100%;
+			max-height: inherit;
+			margin: 0;
+			object-fit: cover;
+		}
+	}
 }

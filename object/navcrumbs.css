@@ -1,0 +1,45 @@
+@import '../settings/document.css';
+
+.o-navcrumbs {
+	--text-font: var(--ui-font);
+
+	.c-crumb {
+		&:has(a:first-child) {
+			--text-color: var(--link-color);
+		}
+		&:last-of-type {
+			--text-color: var(--muted-color);
+		}
+	}
+}
+
+/**
+ * Object:		Navigation crumbs
+ * Description: Indicate the current page's location within a navigational hierarchy.
+ *
+ * Child components: `c-crumb`
+=========================================================================== */
+
+.o-navcrumbs {
+	display: block;
+
+	.c-crumb {
+		display: inline;
+		vertical-align: baseline;
+
+		&:not(:last-of-type)::after {
+			content: '/';
+			display: inline-block;
+			margin: 0 var(--space-sm);
+			color: currentColor;
+		}
+	
+		&:first-child {
+			@extend %icon;
+
+			&::before {
+				content: '\e1c1';
+			}
+		}
+	}
+}

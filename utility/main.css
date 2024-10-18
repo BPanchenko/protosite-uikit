@@ -1,8 +1,6 @@
-@import '../settings/breakpoints.css';
-@import '../settings/document.css';
-
 @import './alignment.css';
 @import './centering.css';
+@import './container.css';
 @import './display.css';
 @import './margins.css';
 @import './position.css';

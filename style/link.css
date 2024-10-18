@@ -8,7 +8,7 @@
 
 	--bg-color: transparent;
 	--border-color: transparent;
-	--text-color: var(--default-link-color);
+	--text-color: var(--link-color);
 	--padding-horz: var(--space-xs);
 	--shadow: none;
 

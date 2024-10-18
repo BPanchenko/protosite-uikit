@@ -6,7 +6,7 @@
 =========================================================================== */
 
 .t-document {
-	.o-container {
+	.u-container {
 		--width: none;
 	}
 }
@@ -21,7 +21,7 @@
 		content: '⁍';
 	}
 
-	.o-container {
+	.u-container {
 		margin: 0;
 		padding: 10vh var(--space-lg) var(--space-lg) 12vw;
 	}

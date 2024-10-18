@@ -8,7 +8,7 @@
 	--border-color: transparent;
 	--padding-horz: var(--space-xs);
 	--shadow: none;
-	--text-color: var(--default-text-color);
+	--text-color: var(--text-color);
 
 	&:hover {
 		--bg-color: transparent;

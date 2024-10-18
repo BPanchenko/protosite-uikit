@@ -3,23 +3,23 @@
 @import '../settings/typography.css';
 
 /* ========================================================================
-	Grid Object
+	Helper Component: Grid
 =========================================================================== */
 
-.o-grid {
+.c-grid {
 	--color: var(--clr-blue);
 	--border-color: color(var(--clr-red) blackness(25%));
 	--z-index: 200;
 }
 
-.o-grid {
+.c-grid {
 	position: absolute;
-	:is(.guide--horizontal, .guide--vertical, .line, .sizes) {
+	:is(&__guide--horizontal, &__guide--vertical, .line, .sizes) {
 		position: absolute;
 	}
 }
 
-.o-grid {
+.c-grid {
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -29,15 +29,15 @@
 
 	outline: 1px dotted var(--border-color);
 
-	.guide--horizontal,
-	.guide--vertical {
+	&__guide--horizontal,
+	&__guide--vertical {
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 	}
 
-	.guide--horizontal .line {
+	&__guide--horizontal .line {
 		top: 0;
 		right: auto;
 		bottom: 0;
@@ -56,7 +56,7 @@
 		}
 	}
 
-	.guide--vertical .line {
+	&__guide--vertical .line {
 		top: var(--unit);
 		right: 0;
 		bottom: 0;

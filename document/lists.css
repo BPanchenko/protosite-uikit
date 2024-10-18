@@ -1,28 +1,6 @@
 @import '../settings/document.css';
 @import '../settings/space.css';
 
-/* ========================================================================
-	Lists
-=========================================================================== */
-
-ol,
-ul {
-	display: block;
-	max-width: 100ch;
-
-	li {
-		--vertical-space: var(--space-sm);
-
-		&::before {
-			--text-color: var(--secondary-text-color);
-		}
-
-		li {
-			--vertical-space: 0;
-		}
-	}
-}
-
 dl {
 	dt {
 		--text-color: var(--caption-color);
@@ -34,8 +12,28 @@ dl {
 	}
 }
 
-/* ========================================================================
-   Description list
+:where(ol, ul) {
+	li {
+		--vertical-space: var(--space-sm);
+		li {
+			--vertical-space: 0;
+		}
+	}
+	li::before {
+		--text-color: var(--secondary-text-color);
+	}
+}
+
+/** Common
+=========================================================================== */
+
+ol,
+ul {
+	display: block;
+	max-width: 100ch;
+}
+
+/** Description list
 =========================================================================== */
 
 dl:not(:empty) {
@@ -55,43 +53,40 @@ dl:not(:empty) {
 	}
 }
 
-/* ========================================================================
-   Ordered list
+/** Ordered list
 =========================================================================== */
 
 ol {
 	list-style: decimal;
 	padding-left: 2.4rem;
+
+	li {
+		padding-left: 0;
+	}
+
+	li + li {
+		margin-top: var(--vertical-space);
+	}
+	li li + li {
+		margin-top: var(--li-nested-margin-vertical);
+	}
+
+	ol {
+		list-style: lower-alpha;
+	}
 }
 
-ol li {
-	margin-top: var(--vertical-space);
-	margin-bottom: var(--vertical-space);
-	padding-left: 0;
-}
-
-ol ol {
-	list-style: lower-alpha;
-}
-
-ol li li {
-	margin-top: var(--li-nested-margin-vertical);
-	margin-bottom: var(--li-nested-margin-vertical);
-}
-
-/* ========================================================================
-	Unordered list
+/** Unordered list
 =========================================================================== */
 
 ul {
+	margin-block-start: 0.5--unit;
+	margin-block-end: 1--unit;
 	padding: 0;
-	margin: 0;
 	list-style: none;
 }
 
 ul li {
-	margin-top: var(--vertical-space);
-	margin-bottom: var(--vertical-space);
 	padding-left: var(--space);
 
 	&::before {
@@ -99,5 +94,9 @@ ul li {
 		display: inline-block;
 		float: left;
 		margin-left: -1--unit;
+	}
+
+	& + li {
+		margin-top: var(--vertical-space);
 	}
 }

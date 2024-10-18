@@ -6,8 +6,6 @@
 /* Color updates according to a link state and context */
 
 a {
-	--text-color: var(--link-color);
-
 	&:link {
 		--link-color: var(--default-link-color);
 	}
@@ -18,7 +16,7 @@ a {
 		--link-color: var(--clr-blue-700);
 	}
 	&:focus {
-		--link-color: var(--default-link-color);
+		--link-color: var(--link-color);
 	}
 	&:active {
 		--link-color: var(--clr-red-800);
@@ -40,6 +38,7 @@ a {
 
 a {
 	@extend %underline;
+	color: var(--link-color);
 	transition: color var(--duration) var(--easing);
 
 	&:hover,
@@ -48,7 +47,7 @@ a {
 	}
 
 	&:focus-visible {
-		outline: var(--pixel) dashed currentColor;
-		border-radius: var(--space-xxs);
+		outline: 1--pixel dashed currentColor;
+		border-radius: 1--space-xxs;
 	}
 }

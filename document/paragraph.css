@@ -21,73 +21,101 @@ p:has(+ *) {
 	margin-bottom: var(--space-sm);
 }
 
-/* Figure inside the paragraph
- ========================================================================== */
-
-p figure {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-
-	max-width: 30vw;
-	max-height: 18rem;
-
-	background-color: var(--clr-gray-300);
-	background-size: contain;
-
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		display: block;
-		clear: both;
-	}
-
-	img {
-		width: 100%;
-		max-height: inherit;
-		object-fit: contain;
-	}
-}
-
-/* Image inside the paragraph
- ========================================================================== */
-
 p {
+	/* Image inside the paragraph
+	=========================================================================== */
+
 	img {
 		display: block;
 		width: auto;
 		max-height: 11.8rem;
 		margin: 0 auto;
+
+		&[align='left'],
+		&[align='right'] {
+			display: inline-block;
+			max-width: 19rem;
+		}
+
+		&[align='left'] {
+			float: left;
+			margin: 0.3rem 1.2rem 0 0.8rem;
+		}
+
+		&[align='right'] {
+			float: right;
+			margin: 0.3rem 0.8rem 0 1.2rem;
+		}
 	}
 
-	img[align='left'],
-	img[align='right'] {
+	/* Figure inside the paragraph
+	=========================================================================== */
+
+	figure {
 		display: inline-block;
-		max-width: 19rem;
-	}
+		padding: 0;
+		margin: 0;
 
-	img[align='left'] {
-		float: left;
-		margin: 0.3rem 1.2rem 0 0.8rem;
-	}
+		max-width: 30vw;
+		max-height: 18rem;
 
-	img[align='right'] {
-		float: right;
-		margin: 0.3rem 0.8rem 0 1.2rem;
+		background-color: var(--clr-gray-300);
+		background-size: contain;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			display: block;
+			clear: both;
+		}
+
+		img {
+			width: 100%;
+			max-height: inherit;
+			object-fit: contain;
+		}
 	}
 }
 
-/* Various paragraph sizes
- ========================================================================== */
+/** Restyle: Lead Paragraph
+=========================================================================== */
 
-p.u-text-lg {
-	max-width: 80ch;
+p.s-lead {
+	--text-size: var(--text-md);
 }
-p.u-text-sm {
-	max-width: 51.4rem;
+
+p.s-lead {
+	font-style: italic;
+	font-weight: var(--font-bold);
+	color: var(--caption-color);
+	text-wrap: balance;
 }
-p.u-text-xs {
-	max-width: 44.8rem;
+
+/** Restyle: Sizes
+=========================================================================== */
+
+p {
+	&.s-xxs {
+		max-width: 44.8rem;
+	}
+	&.s-xs {
+		max-width: 44.8rem;
+	}
+	&.s-sm {
+		max-width: 51.4rem;
+	}
+	&.s-md {
+		max-width: 72ch;
+	}
+	&.s-lg {
+		max-width: 80ch;
+	}
+	&.s-xl {
+		max-width: 80ch;
+	}
+	&.s-xxl {
+		max-width: 80ch;
+	}
 }
