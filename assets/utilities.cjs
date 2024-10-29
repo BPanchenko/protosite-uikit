@@ -1,10 +1,10 @@
 const cssClassNames = {
-	"oContainer": "o-container",
 	"uAlignCenter": "u-align-center",
 	"uAlignLeft": "u-align-left",
 	"uAlignRight": "u-align-right",
 	"uCentering": "u-centering",
 	"uClearfix": "u-clearfix",
+	"uContainer": "u-container",
 	"uDisplayBlock": "u-display-block",
 	"uDisplayContents": "u-display-contents",
 	"uDisplayFlowRoot": "u-display-flow-root",

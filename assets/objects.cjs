@@ -1,22 +1,19 @@
 const cssClassNames = {
+	"cButton": "c-button",
+	"cCrumb": "c-crumb",
 	"cFieldBox": "c-field-box",
-	"guideHorizontal": "guide--horizontal",
-	"guideVertical": "guide--vertical",
-	"line": "line",
-	"oArticle": "o-article",
-	"oArticlePicture": "o-article__picture",
-	"oBreadcrumb": "o-breadcrumb",
-	"oBreadcrumbItem": "o-breadcrumb__item",
-	"oContainer": "o-container",
+	"cIcon": "c-icon",
+	"cLabel": "c-label",
+	"cPicture": "c-picture",
 	"oForm": "o-form",
 	"oFormBody": "o-form__body",
 	"oFormButtons": "o-form__buttons",
 	"oFormHead": "o-form__head",
 	"oFormRow": "o-form__row",
-	"oGrid": "o-grid",
-	"sAxis": "s-axis",
-	"sShort": "s-short",
-	"sizes": "sizes"
+	"oNavcrumbs": "o-navcrumbs",
+	"oToolbar": "o-toolbar",
+	"sIcon": "s-icon",
+	"sShort": "s-short"
 };
 
 /** @type {CSSStyleSheet|null} */

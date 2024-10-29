@@ -1,6 +1,6 @@
 const cssClassNames = {
 	"cButton": "c-button",
-	"icon": "icon",
+	"cIcon": "c-icon",
 	"sDefaultSize": "s-default-size",
 	"sIcon": "s-icon",
 	"sLg": "s-lg",

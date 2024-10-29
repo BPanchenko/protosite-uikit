@@ -35,6 +35,8 @@ export const cChartControls = 'c-chart__controls';
 /** @type {string} */
 export const cChartGraph = 'c-chart__graph';
 /** @type {string} */
+export const cCrumb = 'c-crumb';
+/** @type {string} */
 export const cCtrl = 'c-ctrl';
 /** @type {string} */
 export const cCtrlGroup = 'c-ctrl-group';
@@ -71,6 +73,14 @@ export const cFieldIcon = 'c-field-icon';
 /** @type {string} */
 export const cFieldLabel = 'c-field-label';
 /** @type {string} */
+export const cGrid = 'c-grid';
+/** @type {string} */
+export const cGridGuide = 'c-grid__guide-';
+/** @type {string} */
+export const cIcon = 'c-icon';
+/** @type {string} */
+export const cLabel = 'c-label';
+/** @type {string} */
 export const cList = 'c-list';
 /** @type {string} */
 export const cListBody = 'c-list__body';
@@ -103,6 +113,8 @@ export const cPanelBody = 'c-panel__body';
 /** @type {string} */
 export const cPanelHead = 'c-panel__head';
 /** @type {string} */
+export const cPicture = 'c-picture';
+/** @type {string} */
 export const cPopover = 'c-popover';
 /** @type {string} */
 export const cPopoverBody = 'c-popover__body';
@@ -113,7 +125,7 @@ export const cProgressStriped = 'c-progress--striped';
 /** @type {string} */
 export const cProgressBar = 'c-progress__bar';
 /** @type {string} */
-export const cSelectlist = 'c-selectlist';
+export const cSelect = 'c-select';
 /** @type {string} */
 export const cTab = 'c-tab';
 /** @type {string} */
@@ -147,17 +159,9 @@ export const cThumbnailShutter = 'c-thumbnail__shutter';
 /** @type {string} */
 export const cToolbar = 'c-toolbar';
 /** @type {string} */
-export const cToolbarLabel = 'c-toolbar__label';
-/** @type {string} */
 export const dot = 'dot';
 /** @type {string} */
-export const guideHorizontal = 'guide--horizontal';
-/** @type {string} */
-export const guideVertical = 'guide--vertical';
-/** @type {string} */
 export const handle = 'handle';
-/** @type {string} */
-export const icon = 'icon';
 /** @type {string} */
 export const iconic = 'iconic';
 /** @type {string} */
@@ -179,16 +183,6 @@ export const isVisible = 'is-visible';
 /** @type {string} */
 export const line = 'line';
 /** @type {string} */
-export const oArticle = 'o-article';
-/** @type {string} */
-export const oArticlePicture = 'o-article__picture';
-/** @type {string} */
-export const oBreadcrumb = 'o-breadcrumb';
-/** @type {string} */
-export const oBreadcrumbItem = 'o-breadcrumb__item';
-/** @type {string} */
-export const oContainer = 'o-container';
-/** @type {string} */
 export const oForm = 'o-form';
 /** @type {string} */
 export const oFormBody = 'o-form__body';
@@ -199,7 +193,9 @@ export const oFormHead = 'o-form__head';
 /** @type {string} */
 export const oFormRow = 'o-form__row';
 /** @type {string} */
-export const oGrid = 'o-grid';
+export const oNavcrumbs = 'o-navcrumbs';
+/** @type {string} */
+export const oToolbar = 'o-toolbar';
 /** @type {string} */
 export const point = 'point';
 /** @type {string} */
@@ -461,6 +457,8 @@ export const uCentering = 'u-centering';
 /** @type {string} */
 export const uClearfix = 'u-clearfix';
 /** @type {string} */
+export const uContainer = 'u-container';
+/** @type {string} */
 export const uDisplayBlock = 'u-display-block';
 /** @type {string} */
 export const uDisplayContents = 'u-display-contents';
@@ -597,21 +595,15 @@ export const uTextJustify = 'u-text-justify';
 /** @type {string} */
 export const uTextLeft = 'u-text-left';
 /** @type {string} */
-export const uTextLg = 'u-text-lg';
-/** @type {string} */
 export const uTextMiddle = 'u-text-middle';
 /** @type {string} */
 export const uTextNowrap = 'u-text-nowrap';
 /** @type {string} */
 export const uTextRight = 'u-text-right';
 /** @type {string} */
-export const uTextSm = 'u-text-sm';
-/** @type {string} */
 export const uTextTop = 'u-text-top';
 /** @type {string} */
 export const uTextTruncate = 'u-text-truncate';
-/** @type {string} */
-export const uTextXs = 'u-text-xs';
 /** @type {string} */
 export const uVerticalAlign = 'u-vertical-align';
 /** @type {string} */

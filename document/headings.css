@@ -73,11 +73,13 @@ h6 {
 	--text-size: var(--text-xs);
 }
 
-h3, h4 {
+h3,
+h4 {
 	text-wrap: balance;
 }
 
-h5, h6 {
+h5,
+h6 {
 	text-transform: uppercase;
 }
 

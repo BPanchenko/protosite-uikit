@@ -8,7 +8,7 @@
 	--easing: cubic-bezier(0.3, 0, 0.2, 1);
 	--pixel: 0.0625--unit;
 	--unit: 1.6rem;
-	
+
 	--clr-black: var(--clr-gray-900);
 	--clr-white: #ffffff;
 	--bg-color: var(--clr-white);

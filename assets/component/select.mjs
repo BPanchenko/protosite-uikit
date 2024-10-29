@@ -1,7 +1,9 @@
-import importedCSS from './lead.css' with { type: 'css' }
+import importedCSS from './select.css' with { type: 'css' }
 
 /** @type {string} */
-export const sLead = 's-lead';
+export const cButtonIcon = 'c-button__icon';
+/** @type {string} */
+export const cSelect = 'c-select';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;

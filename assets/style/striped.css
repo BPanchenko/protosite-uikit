@@ -1,1 +1,1 @@
-html{font-size:62.5%}.c-list.s-striped .c-list__item:nth-of-type(odd),table.s-striped tbody tr:nth-of-type(odd),table.s-striped>tr:nth-of-type(odd){background-color:var(--clr-blue-grey-50)}.c-list.s-striped .c-list__item:after{content:normal}
+.c-list.s-striped .c-list__item:nth-of-type(odd),table.s-striped tbody tr:nth-of-type(odd),table.s-striped>tr:nth-of-type(odd){background-color:var(--clr-blue-grey-50)}.c-list.s-striped .c-list__item:after{content:normal}

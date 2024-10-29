@@ -7,6 +7,8 @@ export const cButtonIcon = 'c-button__icon';
 /** @type {string} */
 export const cButtonText = 'c-button__text';
 /** @type {string} */
+export const cIcon = 'c-icon';
+/** @type {string} */
 export const cList = 'c-list';
 /** @type {string} */
 export const cListBody = 'c-list__body';
@@ -18,8 +20,6 @@ export const cPanel = 'c-panel';
 export const cThumbnail = 'c-thumbnail';
 /** @type {string} */
 export const cToolbar = 'c-toolbar';
-/** @type {string} */
-export const icon = 'icon';
 /** @type {string} */
 export const sAnimatedGradient = 's-animated-gradient';
 /** @type {string} */
@@ -167,8 +167,6 @@ export const sIcon = 's-icon';
 /** @type {string} */
 export const sInversed = 's-inversed';
 /** @type {string} */
-export const sLead = 's-lead';
-/** @type {string} */
 export const sLg = 's-lg';
 /** @type {string} */
 export const sLight = 's-light';
@@ -182,6 +180,8 @@ export const sLowercase = 's-lowercase';
 export const sMd = 's-md';
 /** @type {string} */
 export const sMedium = 's-medium';
+/** @type {string} */
+export const sMuted = 's-muted';
 /** @type {string} */
 export const sNormal = 's-normal';
 /** @type {string} */

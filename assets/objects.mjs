@@ -1,23 +1,17 @@
 import importedCSS from './objects.css' with { type: 'css' }
 
 /** @type {string} */
+export const cButton = 'c-button';
+/** @type {string} */
+export const cCrumb = 'c-crumb';
+/** @type {string} */
 export const cFieldBox = 'c-field-box';
 /** @type {string} */
-export const guideHorizontal = 'guide--horizontal';
+export const cIcon = 'c-icon';
 /** @type {string} */
-export const guideVertical = 'guide--vertical';
+export const cLabel = 'c-label';
 /** @type {string} */
-export const line = 'line';
-/** @type {string} */
-export const oArticle = 'o-article';
-/** @type {string} */
-export const oArticlePicture = 'o-article__picture';
-/** @type {string} */
-export const oBreadcrumb = 'o-breadcrumb';
-/** @type {string} */
-export const oBreadcrumbItem = 'o-breadcrumb__item';
-/** @type {string} */
-export const oContainer = 'o-container';
+export const cPicture = 'c-picture';
 /** @type {string} */
 export const oForm = 'o-form';
 /** @type {string} */
@@ -29,13 +23,13 @@ export const oFormHead = 'o-form__head';
 /** @type {string} */
 export const oFormRow = 'o-form__row';
 /** @type {string} */
-export const oGrid = 'o-grid';
+export const oNavcrumbs = 'o-navcrumbs';
 /** @type {string} */
-export const sAxis = 's-axis';
+export const oToolbar = 'o-toolbar';
+/** @type {string} */
+export const sIcon = 's-icon';
 /** @type {string} */
 export const sShort = 's-short';
-/** @type {string} */
-export const sizes = 'sizes';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;

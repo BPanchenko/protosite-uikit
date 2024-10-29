@@ -1,1 +1,1 @@
-:root{--clr-gray-900:#171717}html{font-size:62.5%}body{--highlighted-text-color:var(--clr-gray-900);--highlighted-bg-color:var(--clr-green-gray-300,#6e7e74)}.s-highlighted{background-color:var(--highlighted-bg-color,transparent);color:var(--highlighted-text-color,currentColor);font-weight:700}
+:root{--clr-gray-900:#171717}body{--highlighted-text-color:var(--clr-gray-900);--highlighted-bg-color:var(--clr-green-gray-300)}.s-highlighted{background-color:var(--highlighted-bg-color,transparent);color:var(--highlighted-text-color,currentColor);font-weight:700}

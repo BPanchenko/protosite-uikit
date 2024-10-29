@@ -1,1 +1,1 @@
-html{font-size:62.5%}:root{--space-sm:max(0.5 * var(--unit))}.c-button.s-icon{box-shadow:none!important;padding:0 var(--space-sm)}.c-button.s-icon+.c-button.s-icon{margin-left:var(--space-sm)}
+:root{--space-sm:max(0.5 * var(--unit))}.c-button.s-icon{box-shadow:none!important;padding:0 var(--space-sm)}.c-button.s-icon+.c-button.s-icon{margin-left:var(--space-sm)}

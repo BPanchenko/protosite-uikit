@@ -3,7 +3,7 @@ import importedCSS from './sizes.css' with { type: 'css' }
 /** @type {string} */
 export const cButton = 'c-button';
 /** @type {string} */
-export const icon = 'icon';
+export const cIcon = 'c-icon';
 /** @type {string} */
 export const sDefaultSize = 's-default-size';
 /** @type {string} */

@@ -1,8 +1,6 @@
 import importedCSS from './utilities.css' with { type: 'css' }
 
 /** @type {string} */
-export const oContainer = 'o-container';
-/** @type {string} */
 export const uAlignCenter = 'u-align-center';
 /** @type {string} */
 export const uAlignLeft = 'u-align-left';
@@ -12,6 +10,8 @@ export const uAlignRight = 'u-align-right';
 export const uCentering = 'u-centering';
 /** @type {string} */
 export const uClearfix = 'u-clearfix';
+/** @type {string} */
+export const uContainer = 'u-container';
 /** @type {string} */
 export const uDisplayBlock = 'u-display-block';
 /** @type {string} */

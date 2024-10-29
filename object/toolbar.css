@@ -18,7 +18,7 @@
 		--border-color: var(--clr-gray-200);
 		--roundness: 0;
 		--shadow: none;
-	
+
 		&:--is-active {
 			--shadow: var(--inset-shadow-2dp);
 		}
@@ -65,23 +65,24 @@
 =========================================================================== */
 
 .o-toolbar {
-	.c-label, :--icon {
+	.c-label,
+	:--icon {
 		display: inline-block;
 		vertical-align: baseline;
 	}
-	
+
 	.c-label {
 		padding-right: var(--space-sm);
 		padding-left: var(--unit);
 		margin-top: -0.5--pixel;
 	}
-	
+
 	:--icon {
 		background-color: var(--clr-gray-50);
 		padding-right: var(--unit);
 		padding-left: var(--unit);
 		margin-top: 0.5--pixel;
-	
+
 		& + .c-button {
 			border-left: 0.5--pixel solid var(--border-color);
 		}

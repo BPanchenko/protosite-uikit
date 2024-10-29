@@ -1,1 +1,1 @@
-:root{--clr-gray-800:#353535;--duration:0.16s;--easing:cubic-bezier(0.3,0,0.2,1)}html{font-size:62.5%}.c-backdrop{background-color:var(--clr-gray-800);bottom:0;contain:strict;left:0;opacity:.2;position:fixed;right:0;top:0;transition:opacity var(--duration) var(--easing);z-index:100}
+:root{--clr-gray-800:#353535;--duration:0.16s;--easing:cubic-bezier(0.3,0,0.2,1)}.c-backdrop{background-color:var(--clr-gray-800);bottom:0;contain:strict;left:0;opacity:.2;position:fixed;right:0;top:0;transition:opacity var(--duration) var(--easing);z-index:100}

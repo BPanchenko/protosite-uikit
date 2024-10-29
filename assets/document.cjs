@@ -1,11 +1,16 @@
 const cssClassNames = {
-	"icon": "icon",
+	"cIcon": "c-icon",
 	"isActive": "is-active",
 	"sCondensed": "s-condensed",
 	"sIcon": "s-icon",
-	"uTextLg": "u-text-lg",
-	"uTextSm": "u-text-sm",
-	"uTextXs": "u-text-xs"
+	"sLead": "s-lead",
+	"sLg": "s-lg",
+	"sMd": "s-md",
+	"sSm": "s-sm",
+	"sXl": "s-xl",
+	"sXs": "s-xs",
+	"sXxl": "s-xxl",
+	"sXxs": "s-xxs"
 };
 
 /** @type {CSSStyleSheet|null} */

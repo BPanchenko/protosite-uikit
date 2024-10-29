@@ -1,15 +1,15 @@
-import importedCSS from './toolbar.css' with { type: 'css' }
+import importedCSS from './grid.css' with { type: 'css' }
 
 /** @type {string} */
-export const cButton = 'c-button';
+export const cGrid = 'c-grid';
 /** @type {string} */
-export const cToolbar = 'c-toolbar';
+export const cGridGuide = 'c-grid__guide-';
 /** @type {string} */
-export const cToolbarLabel = 'c-toolbar__label';
+export const line = 'line';
 /** @type {string} */
-export const icon = 'icon';
+export const sAxis = 's-axis';
 /** @type {string} */
-export const sIcon = 's-icon';
+export const sizes = 'sizes';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;

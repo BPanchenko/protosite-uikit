@@ -33,7 +33,7 @@
 			margin: 0 var(--space-sm);
 			color: currentColor;
 		}
-	
+
 		&:first-child a {
 			@extend %icon;
 

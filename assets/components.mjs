@@ -69,6 +69,12 @@ export const cFieldIcon = 'c-field-icon';
 /** @type {string} */
 export const cFieldLabel = 'c-field-label';
 /** @type {string} */
+export const cGrid = 'c-grid';
+/** @type {string} */
+export const cGridGuide = 'c-grid__guide-';
+/** @type {string} */
+export const cIcon = 'c-icon';
+/** @type {string} */
 export const cList = 'c-list';
 /** @type {string} */
 export const cListBody = 'c-list__body';
@@ -111,7 +117,7 @@ export const cProgressStriped = 'c-progress--striped';
 /** @type {string} */
 export const cProgressBar = 'c-progress__bar';
 /** @type {string} */
-export const cSelectlist = 'c-selectlist';
+export const cSelect = 'c-select';
 /** @type {string} */
 export const cTab = 'c-tab';
 /** @type {string} */
@@ -145,13 +151,9 @@ export const cThumbnailShutter = 'c-thumbnail__shutter';
 /** @type {string} */
 export const cToolbar = 'c-toolbar';
 /** @type {string} */
-export const cToolbarLabel = 'c-toolbar__label';
-/** @type {string} */
 export const dot = 'dot';
 /** @type {string} */
 export const handle = 'handle';
-/** @type {string} */
-export const icon = 'icon';
 /** @type {string} */
 export const iconic = 'iconic';
 /** @type {string} */
@@ -175,6 +177,8 @@ export const point = 'point';
 /** @type {string} */
 export const pointHovered = 'point--hovered';
 /** @type {string} */
+export const sAxis = 's-axis';
+/** @type {string} */
 export const sClean = 's-clean';
 /** @type {string} */
 export const sFloating = 's-floating';
@@ -196,6 +200,8 @@ export const sXs = 's-xs';
 export const sXxl = 's-xxl';
 /** @type {string} */
 export const sXxs = 's-xxs';
+/** @type {string} */
+export const sizes = 'sizes';
 /** @type {string} */
 export const tick = 'tick';
 
