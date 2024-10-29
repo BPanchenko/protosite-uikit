@@ -58,7 +58,7 @@ dl:not(:empty) {
 
 ol {
 	list-style: decimal;
-	padding-left: 2.4rem;
+	padding-left: var(--list-indent);
 
 	li {
 		padding-left: 0;
@@ -82,13 +82,11 @@ ol {
 ul {
 	margin-block-start: 0.5--unit;
 	margin-block-end: 1--unit;
-	padding: 0;
+	padding-left: var(--list-indent);
 	list-style: none;
 }
 
 ul li {
-	padding-left: var(--space);
-
 	&::before {
 		content: '•';
 		display: inline-block;
