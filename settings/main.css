@@ -9,24 +9,8 @@
 	--pixel: 0.0625--unit;
 	--unit: 1.6rem;
 	
-	--bg-color: var(--clr-white, white);
-	--fg-color: var(--clr-black, black);
-}
-
-html {
-	font-size: 62.5%;
-}
-
-/* System colors
-=========================================================================== */
-
-:root {
 	--clr-black: var(--clr-gray-900);
 	--clr-white: #ffffff;
-
-	--danger-color: var(--clr-red-800);
-	--muted-color: var(--clr-gray-400);
-	--primary-color: var(--clr-blue-800);
-	--success-color: var(--clr-green-800);
-	--warning-color: var(--clr-orange-800);
+	--bg-color: var(--clr-white);
+	--fg-color: var(--clr-black);
 }

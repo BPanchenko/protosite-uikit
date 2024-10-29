@@ -27,14 +27,14 @@
 		display: inline;
 		vertical-align: baseline;
 
-		&:not(:last-of-type)::after {
-			content: '/';
+		& + .c-crumb::before {
+			content: '\276C';
 			display: inline-block;
 			margin: 0 var(--space-sm);
 			color: currentColor;
 		}
 	
-		&:first-child {
+		&:first-child a {
 			@extend %icon;
 
 			&::before {

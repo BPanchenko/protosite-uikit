@@ -1,6 +1,5 @@
 @import '../.snippet/custom-selectors.css';
 @import '../settings/document.css';
-@import '../settings/typography.css';
 
 /* ========================================================================
 	Normalize
@@ -8,7 +7,9 @@
 
 html {
 	height: 100%;
+	font-size: 62.5%;
 }
+
 
 body {
 	min-height: 100vh;
@@ -41,26 +42,7 @@ body {
 	font-weight: var(--text-boldness);
 }
 
-/* Selection
-========================================================================== */
-
-::-moz-selection {
-	color: var(--selection-text-color, currentColor);
-	background-color: var(--selection-bg-color, transparent);
-	text-shadow: none;
-}
-
-::selection {
-	color: var(--selection-text-color, currentColor);
-	background-color: var(--selection-bg-color, transparent);
-	text-shadow: none;
-}
-
-:is([unselectable='on'], [unselectable]):not([unselectable='off']) {
-	user-select: none;
-}
-
-/* Horizontal rule
+/** Horizontal rule
 ========================================================================== */
 
 hr {
@@ -68,7 +50,7 @@ hr {
 	box-sizing: content-box;
 	height: 0;
 	border: 0;
-	color: var(--clr-gray-400, currentColor);
+	color: var(--clr-gray-400);
 	border-top: 1px solid currentColor;
 	border-bottom: 1px solid var(--clr-white, white);
 	margin: var(--unit, 16px) 0;
@@ -79,7 +61,7 @@ hr {
 	margin-top: 0;
 }
 
-/* Block base
+/** Block base
 ========================================================================== */
 
 blockquote,
@@ -95,7 +77,7 @@ figcaption {
 	margin-top: var(--space-xs);
 }
 
-/* Forms
+/** Forms
 ========================================================================== */
 
 label {
@@ -156,7 +138,7 @@ optgroup {
 	font-weight: bold;
 }
 
-/* Tables
+/** Tables
 ========================================================================== */
 
 table {
@@ -167,4 +149,23 @@ table {
 td,
 th {
 	padding: 0;
+}
+
+/** Selection
+========================================================================== */
+
+::-moz-selection {
+	color: var(--selection-text-color);
+	background-color: var(--selection-bg-color);
+	text-shadow: none;
+}
+
+::selection {
+	color: var(--selection-text-color);
+	background-color: var(--selection-bg-color);
+	text-shadow: none;
+}
+
+:is([unselectable='on'], [unselectable]):not([unselectable='off']) {
+	user-select: none;
 }
