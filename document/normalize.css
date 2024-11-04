@@ -45,15 +45,15 @@ body {
 ========================================================================== */
 
 hr {
-	display: block;
-	box-sizing: content-box;
-	height: 0;
-	border: 0;
-	color: var(--clr-gray-400);
-	border-top: 1px solid currentColor;
-	border-bottom: 1px solid var(--clr-white, white);
-	margin: var(--unit, 16px) 0;
-	padding: 0;
+	height: 1--pixel;
+	margin-top: 1--unit;
+    margin-bottom: 1--unit;
+	
+	border: unset;
+	margin: unset;
+	padding: unset;
+	background-color: var(--delimeter-color);
+	border-bottom: 1px solid var(--clr-white);
 }
 
 :--headings + hr {

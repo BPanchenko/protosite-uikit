@@ -1,8 +1,6 @@
 @import '../settings/document.css';
 
 .o-navcrumbs {
-	--text-font: var(--ui-font);
-
 	.c-crumb {
 		&:has(a:first-child) {
 			--text-color: var(--link-color);
@@ -36,6 +34,7 @@
 
 		&:first-child a {
 			@extend %icon;
+			--icon-size: 1--space;
 
 			&::before {
 				content: '\e1c1';

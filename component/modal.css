@@ -4,10 +4,10 @@
 @import '../settings/typography.css';
 
 /**
- * Component:   `c-dialog`
+ * Component:   `c-modal`
  *
- * Elements:	`c-dialog__head`
- *				`c-dialog__body`
+ * Elements:	`c-modal__head`
+ *				`c-modal__body`
  *
  * State:		`is-closed` (by default)
  *				`is-opened`
@@ -15,14 +15,14 @@
  ========================================================================== */
 
 :root {
-	--c-dialog-padding: var(--space-md);
+	--c-modal-padding: var(--space-md);
 }
 
 /* ========================================================================
-   Component: `c-dialog`
+   Component: `c-modal`
  ========================================================================== */
 
-.c-dialog {
+.c-modal {
 	contain: content;
 	position: fixed;
 	top: 50%;
@@ -32,7 +32,7 @@
 	min-width: 50rem;
 	min-height: 30rem;
 	box-sizing: border-box;
-	padding-bottom: var(--c-dialog-padding);
+	padding-bottom: var(--c-modal-padding);
 
 	background-color: var(--clr-white);
 	box-shadow: var(--shadow-8dp);
@@ -44,57 +44,43 @@
 	border: none;
 	text-align: left;
 }
-.c-dialog > *:first-child {
-	padding-top: var(--c-dialog-padding);
+.c-modal > *:first-child {
+	padding-top: var(--c-modal-padding);
 }
 
-.c-dialog,
-.c-dialog.is-closed {
+.c-modal,
+.c-modal.is-closed {
 	z-index: -1;
 	transform: translate(-50%, -54%);
 	opacity: 0;
 }
 
-.c-dialog.is-opened {
+.c-modal.is-opened {
 	z-index: 110;
 	transform: translate(-50%, -50%);
 	opacity: 1;
 }
 
-/* Element: `c-dialog__header`
+/* Element: `c-modal__header`
  ========================================================================== */
 
-.c-dialog__header {
-	padding: 0 var(--c-dialog-padding);
+.c-modal__header {
+	padding: 0 var(--c-modal-padding);
 }
 
-/* Element: `c-dialog__body`
+/* Element: `c-modal__body`
  ========================================================================== */
 
-.c-dialog__body {
-	padding: 0 var(--c-dialog-padding);
+.c-modal__body {
+	padding: 0 var(--c-modal-padding);
 }
 
-/* Wrapper: `c-dialog__body-viewport`
+/* Element: `c-modal__foot`
  ========================================================================== */
 
-.c-dialog__body-viewport {
-	max-height: 26.2rem;
-	overflow: auto;
-	overflow-x: hidden;
-}
-
-.c-dialog__header + .c-dialog__body-wrapper,
-.c-dialog__header + .c-dialog__body {
-	margin-top: var(--space);
-}
-
-/* Element: `c-dialog__buttons`
- ========================================================================== */
-
-.c-dialog__buttons {
-	padding: var(--space-sm) var(--c-dialog-padding);
-	margin-top: var(--c-dialog-padding);
+.c-modal__foot {
+	padding: var(--space-sm) var(--c-modal-padding);
+	margin-top: var(--c-modal-padding);
 
 	font-size: 0.001px;
 	line-height: 3.6rem;

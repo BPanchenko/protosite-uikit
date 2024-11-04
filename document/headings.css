@@ -24,7 +24,6 @@
 		@extend %icon;
 
 		&::before {
-			line-height: 1;
 			vertical-align: middle;
 		}
 	}
@@ -37,52 +36,52 @@
 /* Stylization of header levels
 ========================================================================== */
 
-h1 {
+:where(h1, h2, h3, h4) {
 	--text-boldness: var(--font-bold);
-	--text-size: var(--text-xxl);
+}
+
+:where(h5, h6) {
+	--text-boldness: var(--font-medium);
+}
+
+h1 {
 	--text-interligne: var(--interligne-xxl);
+	--text-size: var(--text-xxl);
 }
 
 h2 {
-	--text-boldness: var(--font-bold);
-	--text-size: var(--text-xl);
 	--text-interligne: var(--interligne-xl);
+	--text-size: var(--text-xl);
 }
 
 h3 {
-	--text-boldness: var(--font-bold);
-	--text-size: var(--text-lg);
 	--text-interligne: var(--interligne-xl);
+	--text-size: var(--text-lg);
 }
 
 h4 {
-	--text-boldness: var(--font-bold);
-	--text-size: var(--default-text-size);
 	--text-interligne: var(--default-interligne);
+	--text-size: var(--default-text-size);
 }
 
 h5 {
-	--text-boldness: var(--font-medium);
-	--text-size: var(--default-text-size);
 	--text-interligne: var(--default-interligne);
+	--text-size: var(--default-text-size);
 }
 
 h6 {
-	--text-boldness: var(--font-medium);
 	--text-interligne: var(--interligne-xs);
 	--text-size: var(--text-xs);
 }
 
-h3,
-h4 {
+:where(h3, h4) {
 	text-wrap: balance;
 }
 
-h5,
-h6 {
+:where(h5, h6) {
 	text-transform: uppercase;
 }
 
 h6 {
-	letter-spacing: 0.1em;
+	letter-spacing: 0.0875em;
 }

@@ -1,40 +1,37 @@
 @import '../settings/main.css';
 @import '../settings/typography.css';
 
-%icon {
+:root {
+	--icon-font: 'Iconic';
 	--icon-size: var(--unit);
 	--icon-weight: var(--font-normal);
 }
 
-%icon::before {
-	--text-size: var(--icon-size);
-	--text-interligne: 1;
-}
-
 %icon {
+	container-name: icon-bearer;
+	line-gap-override: 125%;
+
 	&::before,
 	&::after {
-		display: inline-block;
-		position: relative;
-		top: 0.1rem;
-		vertical-align: baseline;
-		font-family: 'Iconic';
-		font-display: block;
-		font-size: var(--text-size);
+		font-family: var(--icon-font);
+		font-size: var(--icon-size);
 		font-style: normal;
 		font-weight: var(--icon-weight);
-		text-rendering: geometricPrecision;
 		line-height: 1;
-		speak: none;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+		text-rendering: geometricPrecision;
 
-	&:empty::before,
-	&:empty::after {
+		display: inline-block;
+		box-sizing: content-box;
 		width: var(--icon-size);
 		height: var(--icon-size);
+		
 		text-align: center;
-		box-sizing: content-box;
+		vertical-align: baseline;
+		speak: none;
+	}
+
+	&:empty {
+		width: var(--icon-size);
+		height: var(--icon-size);
 	}
 }

@@ -26,6 +26,7 @@ body {
 	--caption-color: var(--clr-black);
 	--caption-link-color: var(--clr-blue-900);
 
+	--delimeter-color: var(--clr-gray-400);
 	--disabled-text-color: var(--clr-gray-400);
 	--highlighted-text-color: var(--clr-gray-900);
 	--highlighted-bg-color: var(--clr-green-gray-300);

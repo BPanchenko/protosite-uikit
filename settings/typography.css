@@ -1,9 +1,11 @@
 :root {
-	--caption-font: 'PT Sans Caption', sans-serif;
 	--font-cursive: 'Marck Script', cursive;
 	--font-monospace: 'JetBrains Mono', monospace;
 	--font-sans: 'PT Sans', sans-serif;
 	--font-serif: 'PT Serif', serif;
+
+	--caption-font: 'PT Sans Caption', sans-serif;
+	--text-font: 'PT Sans', sans-serif;
 	--ui-font: 'PT Root UI', system-ui;
 
 	--font-thin: 100;
