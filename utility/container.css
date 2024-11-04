@@ -7,15 +7,15 @@
 .u-container {
 	--width: 92rem;
 
-	@media (--screen-xdesktop) {
-		--width: 130.4rem;
-	}
-
 	@media (--screen-desktop) {
 		--width: 111.2rem;
 	}
 
-	@media (--screen-tablet-landscape) {
+	@media (--screen-2k) {
+		--width: 130.4rem;
+	}
+
+	@media (--screen-tablet) {
 		--width: 92rem;
 	}
 
@@ -45,7 +45,7 @@
 	width: 100%;
 
 	margin: 0 auto;
-	padding: var(--space) 0 var(--space-lg);
+	padding-block: var(--space-md);
 
 	&::before,
 	&::after {

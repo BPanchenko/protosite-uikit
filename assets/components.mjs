@@ -43,18 +43,6 @@ export const cCtrlPopover = 'c-ctrl-popover';
 /** @type {string} */
 export const cCtrlSort = 'c-ctrl-sort';
 /** @type {string} */
-export const cDialog = 'c-dialog';
-/** @type {string} */
-export const cDialogBody = 'c-dialog__body';
-/** @type {string} */
-export const cDialogBodyViewport = 'c-dialog__body-viewport';
-/** @type {string} */
-export const cDialogBodyWrapper = 'c-dialog__body-wrapper';
-/** @type {string} */
-export const cDialogButtons = 'c-dialog__buttons';
-/** @type {string} */
-export const cDialogHeader = 'c-dialog__header';
-/** @type {string} */
 export const cField = 'c-field';
 /** @type {string} */
 export const cFieldButton = 'c-field-button';
@@ -88,6 +76,14 @@ export const cListHead = 'c-list__head';
 export const cListItem = 'c-list__item';
 /** @type {string} */
 export const cListMeta = 'c-list__meta';
+/** @type {string} */
+export const cModal = 'c-modal';
+/** @type {string} */
+export const cModalBody = 'c-modal__body';
+/** @type {string} */
+export const cModalFoot = 'c-modal__foot';
+/** @type {string} */
+export const cModalHeader = 'c-modal__header';
 /** @type {string} */
 export const cPagination = 'c-pagination';
 /** @type {string} */

@@ -71,7 +71,6 @@ const cssClassNames = {
 	"sCursorZoomIn": "s-cursor-zoom-in",
 	"sCursorZoomOut": "s-cursor-zoom-out",
 	"sDanger": "s-danger",
-	"sDefaultSize": "s-default-size",
 	"sExtraBold": "s-extra-bold",
 	"sExtraLight": "s-extra-light",
 	"sFlipHorizontal": "s-flip-horizontal",
@@ -114,10 +113,7 @@ const cssClassNames = {
 	"sThin": "s-thin",
 	"sUppercase": "s-uppercase",
 	"sWarning": "s-warning",
-	"sXl": "s-xl",
-	"sXs": "s-xs",
-	"sXxl": "s-xxl",
-	"sXxxl": "s-xxxl"
+	"sXs": "s-xs"
 };
 
 /** @type {CSSStyleSheet|null} */

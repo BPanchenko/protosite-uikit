@@ -1,19 +1,17 @@
-import importedCSS from './sizes.css' with { type: 'css' }
+import importedCSS from './modal.css' with { type: 'css' }
 
 /** @type {string} */
-export const cButton = 'c-button';
+export const cModal = 'c-modal';
 /** @type {string} */
-export const cIcon = 'c-icon';
+export const cModalBody = 'c-modal__body';
 /** @type {string} */
-export const sIcon = 's-icon';
+export const cModalFoot = 'c-modal__foot';
 /** @type {string} */
-export const sLg = 's-lg';
+export const cModalHeader = 'c-modal__header';
 /** @type {string} */
-export const sMd = 's-md';
+export const isClosed = 'is-closed';
 /** @type {string} */
-export const sSm = 's-sm';
-/** @type {string} */
-export const sXs = 's-xs';
+export const isOpened = 'is-opened';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;
