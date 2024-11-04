@@ -2,6 +2,7 @@
 @import '../settings/typography.css';
 
 :root {
+	--icon-color: currentColor;
 	--icon-font: 'Iconic';
 	--icon-size: var(--unit);
 	--icon-weight: var(--font-normal);
@@ -9,7 +10,6 @@
 
 %icon {
 	container-name: icon-bearer;
-	line-gap-override: 125%;
 
 	&::before,
 	&::after {
@@ -19,6 +19,7 @@
 		font-weight: var(--icon-weight);
 		line-height: 1;
 		text-rendering: geometricPrecision;
+		color: var(--icon-color);
 
 		display: inline-block;
 		box-sizing: content-box;

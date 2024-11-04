@@ -8,17 +8,18 @@
 
 p {
 	display: block;
-	max-width: 100ch;
-	margin: 0;
+	max-width: var(--print-width);
+	margin-block: unset;
+	margin-inline: unset;
 	text-rendering: optimizeLegibility;
 }
 
 * + p {
-	margin-top: var(--space-sm);
+	margin-block-start: var(--space-sm);
 }
 
 p:has(+ *) {
-	margin-bottom: var(--space-sm);
+	margin-block-end: var(--space-sm);
 }
 
 p {

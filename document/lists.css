@@ -4,52 +4,63 @@
 dl {
 	dt {
 		--text-color: var(--caption-color);
-		--vertical-space: var(--space);
+		--row-gap: var(--space);
 	}
 	dd {
-		--vertical-space: var(--space-sm);
-		--horizontal-space: var(--space);
+		--row-gap: var(--space-sm);
 	}
 }
 
 :where(ol, ul) {
 	li {
-		--vertical-space: var(--space-sm);
+		--row-gap: var(--space-sm);
 		li {
-			--vertical-space: 0;
+			--row-gap: 0;
 		}
-	}
-	li::before {
-		--text-color: var(--secondary-text-color);
 	}
 }
 
-/** Common
-=========================================================================== */
+ul li {
+	@extend %icon;
+	--icon-color: var(--secondary-text-color);
+	--icon-size: 0.3--unit;
+}
 
-ol,
-ul {
+:where(dl, ol, ul) {
+	margin-block-end: 1em;
+	margin-block-start: 0.5em;
+	padding-inline-start: var(--list-indent);
+}
+
+:where(dl, dt, ol, ul) {
+	text-rendering: optimizeLegibility;
+	/* Lists are characterized similarly to paragraph parameters */
 	display: block;
-	max-width: 100ch;
+}
+
+:where(dt, dd) {
+	box-sizing: border-box;
+	max-width: var(--print-width);
 }
 
 /** Description list
 =========================================================================== */
 
 dl:not(:empty) {
-	padding-bottom: var(--vertical-space);
+	padding-bottom: var(--row-gap);
 
 	dt {
 		font-weight: var(--font-bold);
 	}
 
-	dt + dd {
-		margin-top: var(--vertical-space);
-		margin-left: var(--horizontal-space);
+	dd {
+		margin-inline-start: unset;
+		padding-block-start: var(--row-gap);
+		margin-inline-start: var(--list-indent);
 	}
 
 	:is(dt, dd) + dt {
-		margin-top: var(--vertical-space);
+		margin-top: var(--row-gap);
 	}
 }
 
@@ -58,14 +69,13 @@ dl:not(:empty) {
 
 ol {
 	list-style: decimal;
-	padding-left: var(--list-indent);
 
 	li {
 		padding-left: 0;
 	}
 
 	li + li {
-		margin-top: var(--vertical-space);
+		margin-top: var(--row-gap);
 	}
 	li li + li {
 		margin-top: var(--li-nested-margin-vertical);
@@ -80,21 +90,19 @@ ol {
 =========================================================================== */
 
 ul {
-	margin-block-start: 0.5--unit;
-	margin-block-end: 1--unit;
-	padding-left: var(--list-indent);
 	list-style: none;
-}
-
-ul li {
-	&::before {
-		content: '•';
-		display: inline-block;
-		float: left;
-		margin-left: -1--unit;
-	}
-
-	& + li {
-		margin-top: var(--vertical-space);
+	
+	li {
+		&::before {
+			content: '\e22e';
+			display: inline-block;
+			position: relative;
+			margin-left: -1--list-indent;
+			width: 1--list-indent;
+		}
+	
+		& + li {
+			margin-top: var(--row-gap);
+		}
 	}
 }

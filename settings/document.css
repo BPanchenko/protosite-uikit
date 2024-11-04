@@ -4,6 +4,7 @@
 
 body {
 	--list-indent: var(--space);
+	--print-width: 72ch;
 
 	--text-boldness: var(--font-normal);
 	--text-font: var(--font-sans);
