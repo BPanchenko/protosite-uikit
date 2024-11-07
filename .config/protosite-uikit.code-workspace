@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
+		"css.styleSheets": [".design/**/*.css"],
 		"editor.detectIndentation": false,
 		"editor.fontFamily": "'Clincher Code', monospace",
 		"editor.fontLigatures": true,
