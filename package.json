@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.27.92",
+  "version": "4.28.92",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
@@ -36,6 +36,7 @@
     "build:scripts": "node .builder/scripts.cjs",
     "build": "run-s prettier clean build:css build:scripts",
     "clean": "rimraf assets",
+    "optimize": "node .builder/css-optimizer.cjs",
     "prepublish": "npm run build",
     "prettier": "prettier --write ."
   },
@@ -55,6 +56,7 @@
   },
   "devDependencies": {
     "css": "3.0.0",
+    "csso": "5.0.5",
     "glob": "11.0.0",
     "lodash": "4.17.21",
     "node-color-log": "12.0.1",

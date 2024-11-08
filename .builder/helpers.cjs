@@ -19,6 +19,17 @@ function logSuccess(savedFile, hrstart = start) {
     .log(`in ${roundNanoseconds(hrend[1])} s`);
 }
 
+function logSuccessOptimized(savedFile, hrstart = start) {
+  const hrend = process.hrtime(hrstart);
+  logger
+    .bgColor('cyan')
+    .append('OPTIMIZED:')
+    .reset()
+    .append(` ${savedFile} `)
+    .bold()
+    .log(`in ${roundNanoseconds(hrend[1])} s`);
+}
+
 function logSummary(array, hrstart = start) {
   const hrend = process.hrtime(hrstart);
   logger
@@ -35,5 +46,6 @@ function roundNanoseconds(value) {
 module.exports = {
   logError,
   logSuccess,
+  logSuccessOptimized,
   logSummary
 };
