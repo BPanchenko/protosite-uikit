@@ -1,3 +1,4 @@
+@import '../.snippet/icon.css';
 @import '../settings/main.css';
 
 .c-arrow {
@@ -20,6 +21,7 @@
 		width: var(--icon-size);
 		height: var(--icon-size);
 		pointer-events: none;
+		vertical-align: middle;
 
 		&::after {
 			content: unset;
@@ -31,34 +33,43 @@
 =========================================================================== */
 
 .c-arrow {
-	--size-xxs: var(--unit);
-	--size-xs: 1.5--unit;
+	--size-xxs: 0.75--unit;
+	--size-xs: 1.75--unit;
 	--size-sm: 2.5--unit;
-	--size-md: 6--unit;
-	--size-lg: 8--unit;
-	--size-xl: 12--unit;
-	--size-xxl: 16--unit;
+	--size-md: 5--unit;
+	--size-lg: 10--unit;
+	--size-xl: 16--unit;
+	--size-xxl: 20--unit;
 
-	&.s-xxs i[data-glyph] {
-		--icon-size: var(--size-xxs);
-	}
-	&.s-xs i[data-glyph] {
-		--icon-size: var(--size-xs);
-	}
-	&.s-sm i[data-glyph] {
-		--icon-size: var(--size-sm);
-	}
-	&.s-md i[data-glyph] {
-		--icon-size: var(--size-md);
-	}
-	&.s-lg i[data-glyph] {
-		--icon-size: var(--size-lg);
-	}
-	&.s-xl i[data-glyph] {
-		--icon-size: var(--size-xl);
-	}
-	&.s-xxl i[data-glyph] {
-		--icon-size: var(--size-xxl);
+	i[data-glyph] {
+		&.s-xxs {
+			--icon-size: var(--size-xxs);
+			--icon-weight: 400;
+		}
+		&.s-xs {
+			--icon-size: var(--size-xs);
+			--icon-weight: 400;
+		}
+		&.s-sm {
+			--icon-size: var(--size-sm);
+			--icon-weight: 400;
+		}
+		&.s-md {
+			--icon-size: var(--size-md);
+			--icon-weight: 500;
+		}
+		&.s-lg {
+			--icon-size: var(--size-lg);
+			--icon-weight: 500;
+		}
+		&.s-xl {
+			--icon-size: var(--size-xl);
+			--icon-weight: 800;
+		}
+		&.s-xxl {
+			--icon-size: var(--size-xxl);
+			--icon-weight: 800;
+		}
 	}
 }
 
@@ -66,6 +77,13 @@
 =========================================================================== */
 
 .c-arrow {
+	i[data-glyph='arrow'] {
+		outline: 1--pixel dotted currentColor;
+		&::before {
+			content: '\e1e0';
+		}
+	}
+
 	i[data-glyph='arrow-bottom-fill-acute']::before {
 		content: '\e008';
 	}
