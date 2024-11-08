@@ -1,4 +1,5 @@
 const cssClassNames = {
+	"cArrow": "c-arrow",
 	"cAvatar": "c-avatar",
 	"cAvatarLink": "c-avatar__link",
 	"cBackdrop": "c-backdrop",

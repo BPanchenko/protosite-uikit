@@ -91,7 +91,7 @@ ol {
 
 ul {
 	list-style: none;
-	
+
 	li {
 		&::before {
 			content: '\e22e';
@@ -100,7 +100,7 @@ ul {
 			margin-left: -1--list-indent;
 			width: 1--list-indent;
 		}
-	
+
 		& + li {
 			margin-top: var(--row-gap);
 		}

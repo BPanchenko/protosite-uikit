@@ -1,6 +1,8 @@
 import importedCSS from './components.css' with { type: 'css' }
 
 /** @type {string} */
+export const cArrow = 'c-arrow';
+/** @type {string} */
 export const cAvatar = 'c-avatar';
 /** @type {string} */
 export const cAvatarLink = 'c-avatar__link';
