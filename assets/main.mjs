@@ -7,6 +7,8 @@ export const cAvatar = 'c-avatar';
 /** @type {string} */
 export const cAvatarLink = 'c-avatar__link';
 /** @type {string} */
+export const cAvatarRoot = 'c-avatar__root';
+/** @type {string} */
 export const cBackdrop = 'c-backdrop';
 /** @type {string} */
 export const cBadge = 'c-badge';

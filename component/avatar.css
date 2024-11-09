@@ -1,4 +1,3 @@
-@import '../.snippet/custom-selectors.css';
 @import '../settings/main.css';
 @import '../settings/shadows.css';
 
@@ -6,8 +5,16 @@
 	--bg-color: transparent;
 	--border: 1--pixel solid var(--muted-color);
 	--shadow: var(--shadow-2dp);
-	--size: 5--unit;
 	--text-size: 0;
+
+	--size: 5--unit;
+	--size-xxs: 1--unit;
+	--size-xs: 1.5--unit;
+	--size-sm: 2.5--unit;
+	--size-md: 6--unit;
+	--size-lg: 8--unit;
+	--size-xl: 12--unit;
+	--size-xxl: 16--unit;
 
 	&:not([style*='background-image']):empty {
 		--bg-color: var(--clr-gray-100);
@@ -18,8 +25,46 @@
 
 /**
  * Component: Avatar
- * Nested elements: Link and Image
+ * Elements: Link, Image and Root
 =========================================================================== */
+
+.c-avatar,
+.c-avatar__root,
+.c-avatar__link {
+	display: inline-block;
+	border-radius: 50%;
+	width: var(--size);
+	height: var(--size);
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+}
+
+:is(.c-avatar, .c-avatar__root) {
+	background-color: var(--bg-color);
+	border: var(--border);
+	box-shadow: var(--shadow);
+}
+
+.c-avatar,
+.c-avatar__root {
+	figure {
+		margin: 0;
+	}
+
+	img {
+		user-select: auto;
+		width: inherit;
+		height: inherit;
+		object-fit: cover;
+	}
+
+	&[style*='background-image'],
+	[style*='background-image'] {
+		background-size: cover;
+	}
+}
 
 :host {
 	display: contents;
@@ -29,72 +74,11 @@
 	}
 }
 
-.c-avatar {
-	display: inline-block;
-	border-radius: 50%;
-	width: var(--size);
-	height: var(--size);
-	margin: 0;
-	overflow: hidden;
-	text-align: center;
-	vertical-align: middle;
-	user-select: none;
-
-	background-color: var(--bg-color);
-	border: var(--border);
-	box-shadow: var(--shadow);
-
-	:where(a, img) {
-		display: inline-block;
-		width: inherit;
-		height: inherit;
-	}
-
-	img {
-		object-fit: cover;
-	}
-
-	&[style*='background-image'] {
-		background-size: cover;
-	}
-
-	/** Empty State
-	=========================================================================== */
-
-	&:not([style*='background-image']) .c-avatar__link:empty {
-		position: relative;
-		box-sizing: border-box;
-
-		&::before {
-			display: inline-block;
-			content: '';
-
-			position: absolute;
-			top: 50%;
-			left: 50%;
-
-			height: 40%;
-			width: 40%;
-			transform: translate(-50%, -50%);
-
-			border-radius: 50%;
-			background-color: var(--clr-gray-300);
-		}
-	}
-}
-
 /** Restyle: Sizes
 =========================================================================== */
 
-.c-avatar {
-	--size-xxs: var(--unit);
-	--size-xs: 1.5--unit;
-	--size-sm: 2.5--unit;
-	--size-md: 6--unit;
-	--size-lg: 8--unit;
-	--size-xl: 12--unit;
-	--size-xxl: 16--unit;
-
+.c-avatar,
+.c-avatar__root {
 	&.s-xxs {
 		--size: var(--size-xxs);
 	}
@@ -121,7 +105,7 @@
 /** Context
 =========================================================================== */
 
-:host-context(.c-panel:not(.s-clean)) .c-avatar {
+:host-context(.c-panel:not(.s-clean)) :is(.c-avatar, .c-avatar__root) {
 	--shadow: var(--inset-shadow-2dp);
 
 	img {
