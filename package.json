@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.28.94",
+  "version": "4.28.95",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
@@ -41,11 +41,11 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "@bpanchenko/palette": "3.1.0",
+    "@bpanchenko/palette": "3.2.5",
     "@csstools/custom-units": "0.1.1",
     "cssnano": "7.0.6",
     "cssnano-preset-default": "7.0.6",
-    "postcss": "8.4.47",
+    "postcss": "8.4.49",
     "postcss-custom-media": "11.0.5",
     "postcss-custom-selectors": "8.0.4",
     "postcss-extend-rule": "4.0.0",
