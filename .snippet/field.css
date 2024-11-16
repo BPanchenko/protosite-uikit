@@ -1,10 +1,11 @@
 @import '../settings/document.css';
 
 :root {
-	--field-radius: 2--pixel;
-	--field-height: 1.5--unit;
-	--field-space-horz: 0.25--unit;
-	--field-space-vert: 0.125--unit 0.1975--unit;
+	--field-radius: 4--pixel;
+	--field-height: 2.5--unit;
+	--field-shadow: inset 0 0 2--pixel var(--clr-gray-400, lightgrey), 0 0 0 var(--clr-blue-400, lightgrey);
+	--field-space-horz: 1--space;
+	--field-space-vert: 0.125--unit 0.125--unit;
 }
 
 %field {
@@ -18,15 +19,13 @@
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);
-	border-width: 1--pixel;
-	border-style: solid;
 	border-radius: var(--field-radius);
-	outline: none;
-	box-shadow:
-		inset 0 0 2--pixel var(--clr-gray-400, lightgrey),
-		0 0 0 var(--clr-blue-400, lightgrey);
+	border-style: solid;
+	border-width: 1--pixel;
+	box-shadow: var(--field-shadow);
 	box-sizing: border-box;
 	cursor: pointer;
+	outline: none;
 
 	transition-property: background-color, border-color, box-shadow;
 	transition-duration: var(--duration);
