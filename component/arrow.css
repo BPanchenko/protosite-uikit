@@ -17,7 +17,9 @@
 
 :host {
 	display: contents;
-	& > * { pointer-events: none; }
+	& > * {
+		pointer-events: none;
+	}
 }
 
 /**

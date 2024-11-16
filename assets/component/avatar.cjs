@@ -1,7 +1,6 @@
 const cssClassNames = {
 	"cAvatar": "c-avatar",
 	"cAvatarLink": "c-avatar__link",
-	"cAvatarRoot": "c-avatar__root",
 	"cPanel": "c-panel",
 	"sClean": "s-clean",
 	"sLg": "s-lg",

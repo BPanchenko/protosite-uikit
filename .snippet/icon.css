@@ -1,7 +1,8 @@
 @import '../settings/main.css';
 @import '../settings/typography.css';
 
-:host, :root {
+:host,
+:root {
 	--icon-font: 'Iconic';
 	--icon-size: var(--unit);
 	--icon-weight: var(--font-normal);

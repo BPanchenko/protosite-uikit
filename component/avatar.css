@@ -17,7 +17,7 @@
 	--size-xxl: 16--unit;
 }
 
-:is(.c-avatar, :host [role=img]):not([style*='background-image']):empty {
+:is(.c-avatar, :host [role='img']):not([style*='background-image']):empty {
 	--bg-color: var(--clr-gray-100);
 	--border: none;
 	--shadow: none;
@@ -30,7 +30,7 @@
 
 .c-avatar,
 .c-avatar__link,
-:host :is([role=img], a) {
+:host :is([role='img'], a) {
 	display: inline-block;
 	border-radius: 50%;
 	width: var(--size);
@@ -41,7 +41,7 @@
 	user-select: none;
 }
 
-:is(.c-avatar, :host [role=img]) {
+:is(.c-avatar, :host [role='img']) {
 	background-color: var(--bg-color);
 	border: var(--border);
 	box-shadow: var(--shadow);
@@ -73,7 +73,7 @@
 /** Restyle: Sizes
 =========================================================================== */
 
-:is(.c-avatar, :host [role=img]) {
+:is(.c-avatar, :host [role='img']) {
 	&.s-xxs {
 		--size: var(--size-xxs);
 	}
