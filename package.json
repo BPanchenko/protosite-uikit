@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.28.95",
+  "version": "4.28.96",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
