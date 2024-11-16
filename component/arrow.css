@@ -2,9 +2,10 @@
 @import '../settings/main.css';
 @import '../document/icon-glyphs-arrow.css';
 
-@custom-selector :--arrow .c-arrow, :is(:host, .c-arrow) i;
+@custom-selector :--component .c-arrow, :host;
+@custom-selector :--icon .c-arrow, :host i;
 
-:is(:host, .c-arrow) {
+:--component {
 	--size-xxs: 0.75--unit;
 	--size-xs: 1.75--unit;
 	--size-sm: 2.5--unit;
@@ -14,36 +15,37 @@
 	--size-xxl: 20--unit;
 }
 
+:host {
+	display: contents;
+	& > * { pointer-events: none; }
+}
+
 /**
  * Component: Arrow
 =========================================================================== */
 
-:--arrow[data-glyph] {
+:--icon[data-glyph] {
 	@extend %icon;
+	--icon-code: '\e1e0';
 
 	display: inline-block;
 	width: var(--icon-size);
 	height: var(--icon-size);
-	pointer-events: none;
 	vertical-align: middle;
 
 	&::before {
-		vertical-align: middle;
+		all: unset;
 	}
 
 	&::after {
-		all: unset;
+		vertical-align: middle;
 	}
-}
-
-:host {
-	display: contents;
 }
 
 /** Restyle: Sizes
 =========================================================================== */
 
-:--arrow {
+:--icon {
 	&.s-xxs {
 		--icon-size: var(--size-xxs);
 		--icon-weight: 400;
@@ -71,18 +73,5 @@
 	&.s-xxl {
 		--icon-size: var(--size-xxl);
 		--icon-weight: 800;
-	}
-}
-
-/** Default Arrow
-=========================================================================== */
-
-:--arrow {
-	&[data-glyph='arrow'],
-	&[data-glyph=''] {
-		outline: 1--pixel dotted currentColor;
-		&::before {
-			content: '\e1e0';
-		}
 	}
 }
