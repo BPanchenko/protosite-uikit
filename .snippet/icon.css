@@ -1,18 +1,21 @@
 @import '../settings/main.css';
 @import '../settings/typography.css';
 
-:root {
-	--icon-color: currentColor;
+:host, :root {
 	--icon-font: 'Iconic';
 	--icon-size: var(--unit);
 	--icon-weight: var(--font-normal);
 }
 
 %icon {
+	--icon-code: '\e219';
+	--icon-color: currentColor;
+
 	container-name: icon-bearer;
 
 	&::before,
 	&::after {
+		content: var(--icon-code);
 		font-family: var(--icon-font);
 		font-size: var(--icon-size);
 		font-style: normal;
