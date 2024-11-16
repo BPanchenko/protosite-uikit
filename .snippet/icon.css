@@ -33,6 +33,13 @@
 		speak: none;
 	}
 
+	&[data-glyph^='\\'] {
+		&::before,
+		&::after {
+			content: attr(data-glyph);
+		}
+	}
+
 	&:empty {
 		width: var(--icon-size);
 		height: var(--icon-size);
