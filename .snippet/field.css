@@ -1,22 +1,26 @@
 @import '../settings/document.css';
 
+:root {
+	--field-radius: 2--pixel;
+	--field-height: 1.5--unit;
+	--field-space-horz: 0.25--unit;
+	--field-space-vert: 0.125--unit 0.1975--unit;
+}
+
 %field {
 	display: inline-block;
 	vertical-align: middle;
-	width: 100%;
-	height: var(--c-field-height, 1.5em);
-	line-height: var(--c-field-line-height, 1.4em);
+	width: inherit;
+	min-height: var(--field-height);
 
-	padding-top: var(--c-field-padding-top, 0.2em);
-	padding-right: var(--c-field-padding-right, 0.4em);
-	padding-bottom: var(--c-field-padding-bottom, 0.3em);
-	padding-left: var(--c-field-padding-left, 0.4em);
+	padding-block: var(--field-space-vert);
+	padding-inline: var(--field-space-horz);
 
-	background-color: var(--clr-white, white);
-	border-color: var(--clr-gray-500, darkgrey);
+	background-color: var(--bg-color);
+	border-color: var(--border-color);
 	border-width: 1--pixel;
 	border-style: solid;
-	border-radius: 2--pixel;
+	border-radius: var(--field-radius);
 	outline: none;
 	box-shadow:
 		inset 0 0 2--pixel var(--clr-gray-400, lightgrey),

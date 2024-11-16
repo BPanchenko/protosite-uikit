@@ -15,6 +15,8 @@ body {
 
 body {
 	--bg-color: var(--clr-gray-100);
+	--border-color: var(--clr-gray-800);
+
 	--danger-color: var(--clr-red-800);
 	--muted-color: var(--clr-gray-400);
 	--primary-color: var(--clr-blue-800);

@@ -6,6 +6,11 @@
 @custom-selector :--error .c-field-error:not(:empty);
 @custom-selector :--label .c-field-label:not(:empty);
 
+:root {
+	--checkbox-glyph: '\e154';
+	--radiobutton-glyph: '\e22d';
+}
+
 .c-field,
 .c-field-container,
 .c-field-button,
@@ -25,10 +30,6 @@
 
 	--text-font: var(--ui-font);
 	--font-size: var(--text-md);
-	--line-height: var(--interligne-default);
-
-	--checkbox-glyph: '\e154';
-	--radio-glyph: '\e22d';
 
 	&:is([type='checkbox'], [type='radio']) {
 		--size: var(--default-text-size);
@@ -143,7 +144,7 @@
 	&[type='radio'] {
 		border-radius: 50%;
 		&:checked::after {
-			content: var(--radio-glyph);
+			content: var(--radiobutton-glyph);
 		}
 	}
 
@@ -161,7 +162,7 @@
 }
 
 textarea.c-field {
-	min-height: calc(3 * var(--font-size) * var(--line-height) + var(--padding-top) + var(--padding-bottom));
+	min-height: calc(3 * var(--font-size) * var(--text-interligne) + var(--padding-top) + var(--padding-bottom));
 }
 
 /* Wrapper: `c-field-container`
