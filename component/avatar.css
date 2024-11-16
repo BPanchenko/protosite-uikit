@@ -1,7 +1,7 @@
 @import '../settings/main.css';
 @import '../settings/shadows.css';
 
-.c-avatar {
+:is(.c-avatar, :host) {
 	--bg-color: transparent;
 	--border: 1--pixel solid var(--muted-color);
 	--shadow: var(--shadow-2dp);
@@ -15,22 +15,22 @@
 	--size-lg: 8--unit;
 	--size-xl: 12--unit;
 	--size-xxl: 16--unit;
+}
 
-	&:not([style*='background-image']):empty {
-		--bg-color: var(--clr-gray-100);
-		--border: none;
-		--shadow: none;
-	}
+:is(.c-avatar, :host [role=img]):not([style*='background-image']):empty {
+	--bg-color: var(--clr-gray-100);
+	--border: none;
+	--shadow: none;
 }
 
 /**
  * Component: Avatar
- * Elements: Link, Image and Root
+ * Children: Image and Link
 =========================================================================== */
 
 .c-avatar,
-.c-avatar__root,
-.c-avatar__link {
+.c-avatar__link,
+:host :is([role=img], a) {
 	display: inline-block;
 	border-radius: 50%;
 	width: var(--size);
@@ -41,17 +41,10 @@
 	user-select: none;
 }
 
-:is(.c-avatar, .c-avatar__root) {
+:is(.c-avatar, :host [role=img]) {
 	background-color: var(--bg-color);
 	border: var(--border);
 	box-shadow: var(--shadow);
-}
-
-.c-avatar,
-.c-avatar__root {
-	figure {
-		margin: 0;
-	}
 
 	img {
 		user-select: auto;
@@ -60,9 +53,12 @@
 		object-fit: cover;
 	}
 
-	&[style*='background-image'],
-	[style*='background-image'] {
+	&[style*='background-image'] {
 		background-size: cover;
+
+		img {
+			display: none;
+		}
 	}
 }
 
@@ -77,8 +73,7 @@
 /** Restyle: Sizes
 =========================================================================== */
 
-.c-avatar,
-.c-avatar__root {
+:is(.c-avatar, :host [role=img]) {
 	&.s-xxs {
 		--size: var(--size-xxs);
 	}
@@ -102,10 +97,10 @@
 	}
 }
 
-/** Context
+/** Context: Panel Component
 =========================================================================== */
 
-:host-context(.c-panel:not(.s-clean)) :is(.c-avatar, .c-avatar__root) {
+:is(.c-panel, :host-context(.c-panel)):not(.s-clean) .c-avatar {
 	--shadow: var(--inset-shadow-2dp);
 
 	img {
