@@ -57,7 +57,7 @@ const cssClassNames = {
 	"cProgress": "c-progress",
 	"cProgressStriped": "c-progress--striped",
 	"cProgressBar": "c-progress__bar",
-	"cSelect": "c-select",
+	"cSelectField": "c-select-field",
 	"cTab": "c-tab",
 	"cTabIndicator": "c-tab-indicator",
 	"cTabIcon": "c-tab__icon",

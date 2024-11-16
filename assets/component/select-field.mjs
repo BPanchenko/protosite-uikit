@@ -1,9 +1,9 @@
-import importedCSS from './select.css' with { type: 'css' }
+import importedCSS from './select-field.css' with { type: 'css' }
 
 /** @type {string} */
-export const cButtonIcon = 'c-button__icon';
+export const cPanel = 'c-panel';
 /** @type {string} */
-export const cSelect = 'c-select';
+export const cSelectField = 'c-select-field';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;

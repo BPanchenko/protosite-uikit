@@ -1,6 +1,6 @@
 const cssClassNames = {
-	"cButtonIcon": "c-button__icon",
-	"cSelect": "c-select"
+	"cPanel": "c-panel",
+	"cSelectField": "c-select-field"
 };
 
 /** @type {CSSStyleSheet|null} */
@@ -8,7 +8,7 @@ const cssStyleSheet = null;
 
 const path = require('node:path');
 const fs = require('node:fs');
-const file = path.join(__dirname, 'select.css');
+const file = path.join(__dirname, 'select-field.css');
 
 /** @type {string|null} */
 const cssText = fs.readFileSync(file, 'utf-8');
