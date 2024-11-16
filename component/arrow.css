@@ -28,7 +28,6 @@
 
 :--icon[data-glyph] {
 	@extend %icon;
-	--icon-code: '\e1e0';
 
 	display: inline-block;
 	width: var(--icon-size);

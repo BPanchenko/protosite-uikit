@@ -1,17 +1,15 @@
 @import '../settings/main.css';
 @import '../settings/typography.css';
 
-:host,
 :root {
+	--icon-code: '\e231';
+	--icon-color: var(--text-color, currentColor);
 	--icon-font: 'Iconic';
-	--icon-size: var(--unit);
-	--icon-weight: var(--font-normal);
+	--icon-size: var(--unit, 16px);
+	--icon-weight: var(--font-normal, 400);
 }
 
 %icon {
-	--icon-code: '\e219';
-	--icon-color: currentColor;
-
 	container-name: icon-bearer;
 
 	&::before,
