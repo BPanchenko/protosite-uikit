@@ -1,3 +1,4 @@
+@import '@bpanchenko/palette/assets/palette.css';
 @import './main.css';
 @import './space.css';
 @import './typography.css';
@@ -25,7 +26,7 @@ body {
 	--link-color: var(--default-link-color);
 	--text-color: var(--default-text-color);
 
-	--caption-color: var(--clr-black);
+	--caption-color: var(--clr-foreground);
 	--caption-link-color: var(--clr-blue-900);
 
 	--delimeter-color: var(--clr-gray-400);

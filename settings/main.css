@@ -1,4 +1,4 @@
-@import '@bpanchenko/palette/assets/palette.css';
+@import '@bpanchenko/palette/assets/colors.css';
 
 /* Basic parameters
 =========================================================================== */
@@ -9,8 +9,6 @@
 	--pixel: 0.0625--unit;
 	--unit: 1.6rem;
 
-	--clr-black: var(--clr-gray-900);
-	--clr-white: #ffffff;
-	--bg-color: var(--clr-white);
-	--fg-color: var(--clr-black);
+	--clr-black: var(--clr-foreground, #000);
+	--clr-white: #fff;
 }

@@ -15,7 +15,7 @@
 	--padding-vert: var(--space-xs);
 	--roundness: var(--space-xs);
 
-	--bg-color: var(--clr-white);
+	--bg-color: var(--clr-background);
 	--border-color: transparent;
 	--shadow: var(--shadow-2dp);
 
