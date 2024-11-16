@@ -14,7 +14,6 @@
 
 	&::before,
 	&::after {
-		content: var(--icon-code);
 		font-family: var(--icon-font);
 		font-size: var(--icon-size);
 		font-style: normal;
@@ -33,11 +32,12 @@
 		speak: none;
 	}
 
-	&[data-glyph^='\\'] {
-		&::before,
-		&::after {
-			content: attr(data-glyph);
-		}
+	&::before {
+		content: var(--icon-code);
+	}
+
+	&[data-glyph^='\\']::before {
+		content: attr(data-glyph);
 	}
 
 	&:empty {

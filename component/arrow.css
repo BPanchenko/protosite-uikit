@@ -34,12 +34,16 @@
 	height: var(--icon-size);
 	vertical-align: middle;
 
-	&::before {
-		all: unset;
+	&::after {
+		content: var(--icon-code);
 	}
 
-	&::after {
-		vertical-align: middle;
+	&[data-glyph^='\\']::after {
+		content: attr(data-glyph);
+	}
+
+	&::before {
+		all: unset;
 	}
 }
 
