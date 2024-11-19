@@ -10,16 +10,19 @@ a {
 		--link-color: var(--default-link-color);
 	}
 	&:visited {
-		--link-color: var(--clr-purple-900);
+		--link-color: var(--clr-purple-800);
 	}
 	&:hover {
 		--link-color: var(--clr-blue-700);
 	}
 	&:focus {
-		--link-color: var(--link-color);
+		--link-color: var(--clr-purple-600);
 	}
 	&:active {
 		--link-color: var(--clr-red-800);
+	}
+	&:local-link {
+		--link-color: var(--clr-green-800);
 	}
 }
 

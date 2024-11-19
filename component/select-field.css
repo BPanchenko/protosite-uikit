@@ -65,6 +65,18 @@
 	--marker-glyph: '\e18d';
 }
 
+:host {
+	outline: 3--pixel dashed var(--clr-violet-700);
+
+	> * {
+		pointer-events: none;
+	}
+
+	> [role][aria-activedescendant] {
+		pointer-events: auto;
+	}
+}
+
 :--component {
 	position: relative;
 	display: inline-block;
@@ -76,6 +88,10 @@
 	border-style: solid;
 	border-radius: var(--field-radius);
 	box-shadow: var(--field-shadow);
+
+	&:expanded {
+		outline: 3--pixel dashed var(--clr-violet-700);
+	}
 
 	[role='button'] {
 		@extend %icon;
@@ -157,11 +173,4 @@
 			}
 		}
 	}
-}
-
-/* Panel context
-=========================================================================== */
-
-.c-panel:has(.c-select-field, c-select-field) {
-	contain: layout style;
 }
