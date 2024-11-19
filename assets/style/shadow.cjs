@@ -19,7 +19,7 @@ const cssStyleSheet = null;
 
 const path = require('node:path');
 const fs = require('node:fs');
-const file = path.join(__dirname, 'shadows.css');
+const file = path.join(__dirname, 'shadow.css');
 
 /** @type {string|null} */
 const cssText = fs.readFileSync(file, 'utf-8');

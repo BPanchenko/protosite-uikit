@@ -1,5 +1,5 @@
 @import '../settings/main.css';
-@import '../settings/shadows.css';
+@import '../settings/shadow.css';
 
 :is(.c-avatar, :host) {
 	--bg-color: transparent;

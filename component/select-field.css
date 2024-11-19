@@ -2,6 +2,7 @@
 @import '../.snippet/field.css';
 @import '../settings/main.css';
 @import '../settings/space.css';
+@import '../settings/shadow.css';
 
 @custom-selector :--component .c-select-field, :host;
 @custom-selector :--collapsed-component .c-select-field:has([role='button'][aria-expanded='false']), :host(:collapsed);

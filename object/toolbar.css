@@ -1,6 +1,6 @@
 @import '../.snippet/custom-selectors.css';
 @import '../settings/document.css';
-@import '../settings/shadows.css';
+@import '../settings/shadow.css';
 @import '../settings/space.css';
 
 .o-toolbar {

@@ -1,4 +1,4 @@
-import importedCSS from './shadows.css' with { type: 'css' }
+import importedCSS from './shadow.css' with { type: 'css' }
 
 /** @type {string} */
 export const sShadow = 's-shadow';
