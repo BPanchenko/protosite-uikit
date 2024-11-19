@@ -1,0 +1,32 @@
+<template id="tpl-select-field">
+	<input
+		id="value"
+		type="hidden"
+		name="clr-copy-format"
+		part="value"
+	>
+	<div
+		aria-activedescendant=""
+		aria-controls="listbox"
+		id="button"
+		part="button"
+		role="button"
+	>
+		<span aria-label="" part="selected-option"></span>
+	</div>
+	<slot name="listbox">
+		<!--
+			Both aria-selected and aria-checked are valid for option.
+			Some user interfaces indicate selection with aria-selected in single-select list boxes and with aria-checked in multi-select list boxes.
+		-->
+		<div
+			aria-labelledby="button"
+			aria-multiselectable="false"
+			id="listbox"
+			role="listbox"
+			part="listbox"
+		>
+			<slot></slot>
+		</div>
+	</slot>
+</template>
