@@ -1,8 +1,6 @@
 import importedCSS from './select-field.css' with { type: 'css' }
 
 /** @type {string} */
-export const cPanel = 'c-panel';
-/** @type {string} */
 export const cSelectField = 'c-select-field';
 
 /** @type {CSSStyleSheet|null} */

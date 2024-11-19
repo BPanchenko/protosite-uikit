@@ -1,5 +1,4 @@
 const cssClassNames = {
-	"cPanel": "c-panel",
 	"cSelectField": "c-select-field"
 };
 
