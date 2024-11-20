@@ -59,6 +59,7 @@
 
 	width: 100%;
 	max-width: var(--width);
+	height: 100dvh;
 	margin: 0 auto;
 	padding-block: var(--space-md);
 
