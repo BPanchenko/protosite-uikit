@@ -6,46 +6,46 @@
 
 .u-container {
 	--device: 'tablet';
-	--width: 92rem;
+	--size: 92rem;
 
 	@media (--screen-desktop) {
 		--device: 'desktop';
-		--width: 111.2rem;
+		--size: 111.2rem;
 	}
 
 	@media (--screen-2k) {
 		--device: 'screen-2k';
-		--width: 130.4rem;
+		--size: 130.4rem;
 	}
 
 	@media (--screen-4k) {
 		--device: 'screen-4k';
-		--width: 130.4rem;
+		--size: 130.4rem;
 	}
 
 	@media (--screen-8k) {
 		--device: 'screen-8k';
-		--width: 130.4rem;
+		--size: 130.4rem;
 	}
 
 	@media (--screen-tablet) {
 		--device: 'tablet';
-		--width: 92rem;
+		--size: 92rem;
 	}
 
 	@media (--screen-tablet-portrait) {
 		--device: 'tablet';
-		--width: 72rem;
+		--size: 72rem;
 	}
 
 	@media (--screen-handset-landscape) {
 		--device: 'handset';
-		--width: 46.4rem;
+		--size: 46.4rem;
 	}
 
 	@media (--screen-handset-portrait) {
 		--device: 'handset';
-		--width: 32rem;
+		--size: 32rem;
 	}
 }
 
@@ -54,23 +54,17 @@
 =========================================================================== */
 
 .u-container {
+	display: block;
+	box-sizing: border-box;
+	padding-block: var(--space-md);
+	margin: 0 auto;
+
 	container-name: root-container;
 	container-type: inline-size;
 
-	width: 100%;
-	max-width: var(--width);
-	height: 100dvh;
-	margin: 0 auto;
-	padding-block: var(--space-md);
-
-	.u-container {
-		all: unset;
-	}
-}
-
-.u-container {
-	display: block;
-	width: inherit;
+	inline-size: 100%;
+	block-size: 100dvh;
+	max-inline-size: var(--size);
 
 	&::before,
 	&::after {
@@ -78,4 +72,8 @@
 		display: table;
 		clear: both;
 	}
+}
+
+.u-container .u-container {
+	all: unset;
 }
