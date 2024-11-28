@@ -1,12 +1,12 @@
 const { existsSync, mkdirSync, readFileSync, writeFileSync } = require('fs');
 const { isEmpty } = require('lodash');
-const { logError, logSuccess, logSummary } = require('./helpers.cjs');
+const { logger } = require('../logger.cjs');
 
 const glob = require('glob');
 const path = require('path');
 const pluralize = require('pluralize');
 const postcss = require('postcss');
-const postcssConfig = require('../.config/postcss.config.cjs');
+const postcssConfig = require('../../.config/postcss.config.cjs');
 
 const ROOT = process.cwd();
 const ADVANCED_FOLDERS = ['component', 'style'];
@@ -53,15 +53,15 @@ const promises = files.map((file) => {
     .process(rawCss, { from: file, to: targetFile })
     .then((result) => {
       writeFileSync(targetFile, result.css, { flag: 'w' });
-      logSuccess(relTargetFile);
+      logger.logSuccess(relTargetFile);
     })
     .catch((error) => {
-      logError(error);
+      logger.error(error);
     });
 });
 
 Promise.allSettled(promises).then((results) => {
-  logSummary(results);
+  logger.logSummaryFiles(results);
 });
 
 // Helpers

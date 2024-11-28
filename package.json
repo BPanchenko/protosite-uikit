@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.29.100",
+  "version": "4.30.100",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
@@ -32,13 +32,14 @@
     "main.css"
   ],
   "scripts": {
-    "build:css": "node .builder/css.cjs",
-    "build:scripts": "node .builder/scripts.cjs",
+    "build:css": "node .kernel/builder/css.cjs",
+    "build:scripts": "node .kernel/builder/scripts.cjs",
     "build": "run-s prettier clean build:css build:scripts",
     "clean": "rimraf assets",
-    "optimize": "node .builder/css-optimizer.cjs",
+    "optimize": "node .kernel/builder/css-optimizer.cjs",
     "prepublish": "npm run build",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "watch": "node ./.kernel/watcher.js"
   },
   "dependencies": {
     "@bpanchenko/palette": "3.3.5",
@@ -57,13 +58,15 @@
   "devDependencies": {
     "css": "3.0.0",
     "csso": "5.0.5",
+    "date-format": "4.0.14",
     "glob": "11.0.0",
     "lodash": "4.17.21",
     "node-color-log": "12.0.1",
     "npm-run-all": "4.1.5",
     "pluralize": "8.0.0",
-    "prettier": "3.3.3",
-    "rimraf": "6.0.1"
+    "prettier": "3.4.1",
+    "rimraf": "6.0.1",
+    "watcher": "2.3.1"
   },
   "repository": {
     "type": "git",

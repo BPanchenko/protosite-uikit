@@ -1,7 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const { readFileSync, writeFileSync } = require('fs');
-const { logSummary, logSuccessOptimized } = require('./helpers.cjs');
+const { logger } = require('../logger.cjs');
 const { minify } = require('csso');
 
 const ROOT = process.cwd();
@@ -15,7 +15,7 @@ files.forEach((file) => {
   const rawCss = readFileSync(file, { flag: 'r', encoding: 'utf-8' });
   const minifiedCss = minify(rawCss).css;
   writeFileSync(file, minifiedCss, { flag: 'w' });
-  logSuccessOptimized(relTargetFile);
+  logger.logSuccessOptimized(relTargetFile);
 });
 
-logSummary(files);
+logger.logSummaryFiles(files);

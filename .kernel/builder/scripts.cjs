@@ -1,13 +1,12 @@
-const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
-const { logSuccess, logSummary } = require('./helpers.cjs');
-const { cjsTemplate, dmtsTemplate, mjsTemplate } = require('./templates.cjs');
-const packageJson = require('../package.json');
-
 const glob = require('glob');
 const parser = require('css');
 const path = require('path');
-const logger = require('node-color-log');
 const { compact, flattenDeep, isEmpty, uniq } = require('lodash');
+const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
+
+const { logger } = require('../logger.cjs');
+const { cjsTemplate, mjsTemplate } = require('./templates.cjs');
+const packageJson = require('../../package.json');
 
 const ROOT = process.cwd();
 
@@ -39,14 +38,14 @@ files.forEach((source) => {
     {
       checkFile(cjsFile);
       appendFileSync(cjsFile, cjsTemplate(clss, name));
-      logSuccess(module + '.cjs');
+      logger.logSuccess(module + '.cjs');
     }
 
     // ES Module
     {
       checkFile(mjsFile);
       appendFileSync(mjsFile, mjsTemplate(clss, name));
-      logSuccess(module + '.mjs');
+      logger.logSuccess(module + '.mjs');
     }
   } else {
     const relSource = source.replace(ROOT, '').replace(/^\\/, '');
@@ -54,7 +53,7 @@ files.forEach((source) => {
   }
 });
 
-logSummary(files);
+logger.logSummaryFiles(files);
 
 // Helpers
 
