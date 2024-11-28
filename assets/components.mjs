@@ -109,8 +109,6 @@ export const cProgressStriped = 'c-progress--striped';
 /** @type {string} */
 export const cProgressBar = 'c-progress__bar';
 /** @type {string} */
-export const cSelectField = 'c-select-field';
-/** @type {string} */
 export const cTab = 'c-tab';
 /** @type {string} */
 export const cTabIndicator = 'c-tab-indicator';

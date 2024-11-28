@@ -1,11 +1,15 @@
 const cssClassNames = {
 	"cButton": "c-button",
 	"cIcon": "c-icon",
+	"sDefaultSize": "s-default-size",
 	"sIcon": "s-icon",
 	"sLg": "s-lg",
 	"sMd": "s-md",
 	"sSm": "s-sm",
-	"sXs": "s-xs"
+	"sXl": "s-xl",
+	"sXs": "s-xs",
+	"sXxl": "s-xxl",
+	"sXxxl": "s-xxxl"
 };
 
 /** @type {CSSStyleSheet|null} */

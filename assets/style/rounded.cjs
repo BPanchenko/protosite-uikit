@@ -1,5 +1,6 @@
 const cssClassNames = {
 	"cButton": "c-button",
+	"cPanel": "c-panel",
 	"cToolbar": "c-toolbar",
 	"sRounded": "s-rounded"
 };

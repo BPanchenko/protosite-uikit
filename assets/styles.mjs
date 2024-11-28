@@ -71,6 +71,8 @@ export const sCapitalize = 's-capitalize';
 /** @type {string} */
 export const sClean = 's-clean';
 /** @type {string} */
+export const sCursive = 's-cursive';
+/** @type {string} */
 export const sCursorAlias = 's-cursor-alias';
 /** @type {string} */
 export const sCursorAllScroll = 's-cursor-all-scroll';
@@ -145,6 +147,8 @@ export const sCursorZoomOut = 's-cursor-zoom-out';
 /** @type {string} */
 export const sDanger = 's-danger';
 /** @type {string} */
+export const sDefaultSize = 's-default-size';
+/** @type {string} */
 export const sExtraBold = 's-extra-bold';
 /** @type {string} */
 export const sExtraLight = 's-extra-light';
@@ -179,6 +183,8 @@ export const sMd = 's-md';
 /** @type {string} */
 export const sMedium = 's-medium';
 /** @type {string} */
+export const sMonospace = 's-monospace';
+/** @type {string} */
 export const sMuted = 's-muted';
 /** @type {string} */
 export const sNormal = 's-normal';
@@ -187,7 +193,11 @@ export const sPrimary = 's-primary';
 /** @type {string} */
 export const sRounded = 's-rounded';
 /** @type {string} */
+export const sSans = 's-sans';
+/** @type {string} */
 export const sSemiBold = 's-semi-bold';
+/** @type {string} */
+export const sSerif = 's-serif';
 /** @type {string} */
 export const sShadow = 's-shadow';
 /** @type {string} */
@@ -225,11 +235,19 @@ export const sText = 's-text';
 /** @type {string} */
 export const sThin = 's-thin';
 /** @type {string} */
+export const sUi = 's-ui';
+/** @type {string} */
 export const sUppercase = 's-uppercase';
 /** @type {string} */
 export const sWarning = 's-warning';
 /** @type {string} */
+export const sXl = 's-xl';
+/** @type {string} */
 export const sXs = 's-xs';
+/** @type {string} */
+export const sXxl = 's-xxl';
+/** @type {string} */
+export const sXxxl = 's-xxxl';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;

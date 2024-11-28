@@ -1,13 +1,15 @@
-import importedCSS from './rounded.css' with { type: 'css' }
+import importedCSS from './coloring.css' with { type: 'css' }
 
 /** @type {string} */
-export const cButton = 'c-button';
+export const sDanger = 's-danger';
 /** @type {string} */
-export const cPanel = 'c-panel';
+export const sMuted = 's-muted';
 /** @type {string} */
-export const cToolbar = 'c-toolbar';
+export const sPrimary = 's-primary';
 /** @type {string} */
-export const sRounded = 's-rounded';
+export const sSuccess = 's-success';
+/** @type {string} */
+export const sWarning = 's-warning';
 
 /** @type {CSSStyleSheet|null} */
 export const cssStyleSheet = importedCSS;
