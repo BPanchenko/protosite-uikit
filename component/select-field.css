@@ -35,14 +35,15 @@
 	--option-start-space: 2--unit;
 	--option-end-space: 0.75--unit;
 	--option-bg-color: var(--clr-gray-50);
+}
 
-	&:state(collapsed) {
-		--marker-glyph: '\e18a';
-	}
+:host(:state(collapsed)) {
+	--marker-glyph: '\e18a';
+}
 
-	&:state(expanded) {
-		--marker-glyph: '\e18d';
-	}
+:host(:state(expanded)) {
+	--marker-glyph: '\e18d';
+	--shadow: var(--shadow-3dp);
 }
 
 [role='button'] {
@@ -167,11 +168,21 @@
 		outline-style: solid;
 		outline-offset: -0.8--listbox-gap;
 		text-align: right;
+
+		display: none;
+		height: 0;
+		overflow: hidden;
+		transition: height ease 1s;
 	}
 
 	[role='status'][aria-label]::before {
 		content: attr(aria-label) ' ';
 	}
+}
+
+:host(:state(expanded)) [role='listbox'] {
+	display: block;
+	height: max-content;
 }
 
 [role='option'] {
