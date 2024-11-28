@@ -1,29 +1,37 @@
 @import '../settings/document.css';
 
 :root {
-	--field-radius: 4--pixel;
 	--field-height: 2.5--unit;
+	--field-horz-space: 1--space;
+	--field-radius: 4--pixel;
 	--field-shadow: inset 0 0 2--pixel var(--clr-gray-400, lightgrey), 0 0 0 var(--clr-blue-400, lightgrey);
-	--field-space-horz: 1--space;
-	--field-space-vert: 0.125--unit 0.125--unit;
+	--field-vert-space: 0.125--unit;
+}
+
+%field {
+	--height: var(--field-height);
+	--horz-space: var(--field-horz-space);
+	--radius: var(--field-radius);
+	--shadow: var(--field-shadow);
+	--vert-space: var(--field-vert-space);
 }
 
 %field {
 	display: inline-block;
 	vertical-align: middle;
-	width: inherit;
-	min-height: var(--field-height);
 
-	padding-block: var(--field-space-vert);
-	padding-inline: var(--field-space-horz);
+	box-sizing: border-box;
+	inline-size: inherit;
+	min-block-size: var(--height);
+	padding-block: var(--vert-space);
+	padding-inline: var(--horz-space);
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);
-	border-radius: var(--field-radius);
+	border-radius: var(--radius);
 	border-style: solid;
 	border-width: 1--pixel;
-	box-shadow: var(--field-shadow);
-	box-sizing: border-box;
+	box-shadow: var(--shadow);
 	cursor: pointer;
 	outline: none;
 

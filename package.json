@@ -35,7 +35,7 @@
     "build:css": "node .kernel/builder/css.cjs",
     "build:scripts": "node .kernel/builder/scripts.cjs",
     "build": "run-s prettier clean build:css build:scripts",
-    "clean": "rimraf assets",
+    "clean": "rimraf assets --preserve-root",
     "optimize": "node .kernel/builder/css-optimizer.cjs",
     "prepublish": "npm run build",
     "prettier": "prettier --write .",

@@ -8,7 +8,7 @@ import { logger } from './logger.cjs'
 
 const build = debounce(
 	() => {
-		child_process.exec('npm run build', (error, stdout, stderr) => {
+		child_process.exec('npm run build:css', (error, stdout, stderr) => {
 			if (error) {
 				console.error(`exec error: ${error}`)
 				return

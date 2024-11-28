@@ -10,7 +10,7 @@
 	--padding-horz: var(--space);
 	--padding-vert: var(--space);
 	--roundness: var(--space-xxs);
-	--shadow: var(--shadow-3dp);
+	--shadow: var(--shadow-shorter);
 
 	&.s-clean {
 		--bg-color: transparent;
