@@ -37,13 +37,16 @@
 	--option-bg-color: var(--clr-gray-50);
 }
 
+:host(:hover) {
+	--shadow: var(--shadow-3dp);
+}
+
 :host(:state(collapsed)) {
 	--marker-glyph: '\e18a';
 }
 
 :host(:state(expanded)) {
 	--marker-glyph: '\e18d';
-	--shadow: var(--shadow-3dp);
 }
 
 [role='button'] {
@@ -55,33 +58,6 @@
 	--bg-color: var(--clr-white);
 	--text-color: var(--clr-foreground);
 	--shadow: var(--shadow-3dp);
-}
-
-[role='option'] {
-	::slotted(&) {
-		--bg-color: transparent;
-		--icon-code: '';
-		--text-interligne: 2.5em;
-	}
-
-	::slotted(&:hover) {
-		--bg-color: var(--option-bg-color);
-	}
-
-	&:--selected {
-		::slotted(&) {
-			--icon-code: var(--option-glyph);
-			--text-color: var(--clr-gray-300);
-		}
-
-		::slotted(&:hover) {
-			--bg-color: transparent;
-		}
-	}
-
-	::slotted(&:is(:hover, :--selected)) {
-		--text-boldness: var(--font-medium);
-	}
 }
 
 [role='status'] {
@@ -107,18 +83,6 @@
 	border-style: solid;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
-
-	&:state(expanded) {
-		outline: 3--pixel dashed var(--clr-violet-700);
-	}
-
-	&:state(collapsed) {
-		outline: 3--pixel dashed var(--clr-lime-600);
-	}
-
-	[role][aria-activedescendant] {
-		pointer-events: auto;
-	}
 
 	[role='button'] {
 		@extend %icon;
@@ -178,11 +142,50 @@
 	[role='status'][aria-label]::before {
 		content: attr(aria-label) ' ';
 	}
+
+	* {
+		pointer-events: none;
+	}
 }
 
-:host(:state(expanded)) [role='listbox'] {
+:host([aria-expanded='true']) [role='listbox'] {
 	display: block;
 	height: max-content;
+}
+
+/**
+ * Option Element
+=========================================================================== */
+
+[role='option'] {
+	::slotted(&) {
+		--bg-color: transparent;
+		--icon-code: '';
+		--text-interligne: 2.5em;
+	}
+
+	::slotted(&:hover) {
+		--bg-color: var(--option-bg-color);
+	}
+
+	::slotted(&[aria-activedescendant='true']) {
+		--text-boldness: var(--font-medium);
+	}
+
+	&:--selected {
+		::slotted(&) {
+			--icon-code: var(--option-glyph);
+			--text-color: var(--clr-gray-300);
+		}
+
+		::slotted(&:hover) {
+			--bg-color: transparent;
+		}
+	}
+
+	::slotted(&:is(:hover, :--selected)) {
+		--text-boldness: var(--font-medium);
+	}
 }
 
 [role='option'] {
