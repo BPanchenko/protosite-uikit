@@ -39,6 +39,7 @@
     "optimize": "node .kernel/builder/css-optimizer.cjs",
     "prepublish": "npm run build",
     "prettier": "prettier --write .",
+    "publish": "node ./.kernel/publisher.js",
     "watch": "node ./.kernel/watcher.js"
   },
   "dependencies": {
@@ -56,6 +57,7 @@
     "postcss-reporter": "7.1.0"
   },
   "devDependencies": {
+    "basic-ftp": "5.0.5",
     "css": "3.0.0",
     "csso": "5.0.5",
     "date-format": "4.0.14",
