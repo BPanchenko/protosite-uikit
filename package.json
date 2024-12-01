@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.31.102",
+  "version": "4.31.103",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
@@ -36,10 +36,11 @@
     "build:scripts": "node .kernel/builder/scripts.cjs",
     "build": "run-s prettier clean build:css build:scripts",
     "clean": "rimraf assets --preserve-root",
+    "deploy": "node ./.kernel/deployer.js",
     "optimize": "node .kernel/builder/css-optimizer.cjs",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
+    "postpublish": "npm run deploy",
     "prettier": "prettier --write .",
-    "publish": "node ./.kernel/publisher.js",
     "watch": "node ./.kernel/watcher.js"
   },
   "dependencies": {
