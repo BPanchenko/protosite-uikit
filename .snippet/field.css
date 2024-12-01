@@ -1,19 +1,11 @@
 @import '../settings/document.css';
 
-:root {
-	--field-height: 2.5--unit;
-	--field-horz-space: 1--space;
-	--field-radius: 4--pixel;
-	--field-shadow: inset 0 0 2--pixel var(--clr-gray-400, lightgrey), 0 0 0 var(--clr-blue-400, lightgrey);
-	--field-vert-space: 0.125--unit;
-}
-
 %field {
-	--height: var(--field-height);
-	--horz-space: var(--field-horz-space);
-	--radius: var(--field-radius);
-	--shadow: var(--field-shadow);
-	--vert-space: var(--field-vert-space);
+	--height: 2.5--unit;
+	--horz-space: 1--space;
+	--radius: 4--pixel;
+	--shadow: inset 0 0 2--pixel var(--clr-gray-400, lightgrey), 0 0 0 var(--clr-blue-400, lightgrey);
+	--vert-space: 0.125--unit;
 }
 
 %field {
