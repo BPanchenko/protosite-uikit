@@ -7,12 +7,6 @@ import { logger } from './logger.cjs'
 import ftpAccess from '../.config/ftp.json' with { type: 'json' }
 
 const extensions = ['css', 'mjs']
-
-const asIs = globSync(['assets/*.{css,mjs}', 'assets/style/*.{css,mjs}']).map((file) => [
-	path.resolve(file),
-	path.join('uikit', path.relative('assets', file)).replaceAll('\\', '/')
-])
-
 const components = [
 	['assets/component/arrow', 'uikit/component/arrow'],
 	['assets/component/avatar', 'uikit/component/avatar'],
@@ -44,9 +38,14 @@ const components = [
 	)
 	.reduce((agr, modules) => agr.concat(modules))
 
+const asIs = globSync(['assets/*.{css,mjs}', 'assets/style/*.{css,mjs}']).map((file) => [
+	path.resolve(file),
+	path.join('uikit', path.relative('assets', file)).replaceAll('\\', '/')
+])
+
 const files = new Map(components.concat(asIs).sort(([_a, a], [_b, b]) => (a < b ? -1 : a > b ? 1 : 0)))
 
-;(async function publish() {
+;(async function deploy() {
 	const client = new Client()
 
 	try {
@@ -58,7 +57,7 @@ const files = new Map(components.concat(asIs).sort(([_a, a], [_b, b]) => (a < b 
 			logger.uploadedFile(to)
 		}
 	} catch (err) {
-		console.log(err)
+		logger.error(err)
 	}
 
 	client.close()
