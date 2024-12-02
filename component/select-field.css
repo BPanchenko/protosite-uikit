@@ -5,6 +5,9 @@
 @import '../settings/shadow.css';
 @import '../settings/typography.css';
 
+/** Settings
+=========================================================================== */
+
 @custom-selector :--selected [aria-checked='true'], [aria-selected='true'];
 
 :host {
@@ -64,8 +67,13 @@
 }
 
 /**
- * Component: Select Field
- * Children: HTML Input element, custom subcomponents Button and ListBox
+ * Web Component: Select Field
+ * Childnodes:
+ *	Button subcomponent as the main element of user interaction;
+ *	Status of current selection as an element that is a child of the button;
+ *	Listbox subcomponent with existing options of selection.
+ *	
+ * [ProtoSite](http://protosite.rocks/components/select-field.html)
 =========================================================================== */
 
 :host {
@@ -154,7 +162,12 @@
 }
 
 /**
- * Option Element
+ * Option of the value available for user selection.
+ * It is an element nested in Listbox and whose role is option.
+ * The option element can contain text or an image,
+ * or a DOM subtree specified by other UI components.
+ *	
+ * [ProtoSite](http://protosite.rocks/components/select-field.html)
 =========================================================================== */
 
 [role='option'] {
