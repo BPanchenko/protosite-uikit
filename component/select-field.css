@@ -11,16 +11,15 @@
 @custom-selector :--selected [aria-checked='true'], [aria-selected='true'];
 
 :host {
+	@extend %field-settings;
+
 	--text-boldness: var(--font-normal);
 	--text-font: var(--ui-font);
 	--text-interligne: var(--default-interligne);
 	--text-size: var(--default-text-size);
-}
 
-:host {
 	--bg-color: var(--clr-background);
 	--border-color: transparent;
-	--radius: var(--field-radius);
 	--shadow: var(--shadow-2dp);
 
 	--bottom-space: 0.125--unit;
@@ -70,7 +69,7 @@
  * Web Component: Select Field
  * Childnodes:
  *	Button subcomponent as the main element of user interaction;
- *	Status of current selection as an element that is a child of the button;
+ *	Status of choice as an element that is a child of the button;
  *	Listbox subcomponent with existing options of selection.
  *	
  * [ProtoSite](http://protosite.rocks/components/select-field.html)
@@ -99,7 +98,7 @@
 
 		box-sizing: border-box;
 		inline-size: 100%;
-		min-block-size: calc(1--field-height - 2--pixel);
+		min-block-size: calc(1--height - 2--pixel);
 		padding-block: var(--top-space) var(--bottom-space);
 		padding-inline: var(--left-space) var(--right-space);
 
@@ -149,10 +148,6 @@
 
 	[role='status'][aria-label]::before {
 		content: attr(aria-label) ' ';
-	}
-
-	* {
-		pointer-events: none;
 	}
 }
 

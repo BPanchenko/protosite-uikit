@@ -1,6 +1,6 @@
 @import '../settings/document.css';
 
-%field {
+%field-settings {
 	--height: 2.5--unit;
 	--horz-space: 1--space;
 	--radius: 4--pixel;
