@@ -6,36 +6,31 @@ import debounce from 'lodash/debounce.js'
 import Watcher from 'watcher'
 import { logger } from './logger.cjs'
 
-const build = debounce(
-	() => {
-		child_process.exec('npm run build:css', (error, stdout, stderr) => {
-			if (error) {
-				console.error(`exec error: ${error}`)
-				return
-			}
-			console.log(`stdout: ${stdout}`)
-			console.error(`stderr: ${stderr}`)
-		})
-	},
-	850,
-	{
-		maxWait: 1000
-	}
-)
-const options = {
-	recursive: true,
-	renameDetection: true
+const build = debounce(() => child_process.exec('npm run build:css', (error, stdout, stderr) => logger.log(stdout)), 850, { maxWait: 1000 })
+const deploy = debounce(() => child_process.exec('npm run deploy', (error, stdout, stderr) => logger.log(stdout)), 2000, { maxWait: 3000 })
+
+const eventHandler = (event, targetPath, targetPathNext) => {
+	logger.event(event, targetPath, targetPathNext ?? '')
 }
-const root = process.cwd()
 
-const watcher = new Watcher(
-	['component', 'document', 'object', 'settings', 'style', 'theme', 'utility'].map((dir) => path.join(root, dir)),
-	options,
-	(event, targetPath, targetPathNext) => {
-		logger.event(event, targetPath, targetPathNext ?? '')
-	}
+new Watcher(
+	['assets'].map((dir) => path.resolve(dir)),
+	{
+		recursive: true
+	},
+	eventHandler
 )
+	.on('ready', () => logger.info(`Watching Assets is running`))
+	.on('change', () => deploy())
 
-watcher.on('all', () => build())
-watcher.on('ready', () => logger.info(`Watching the source code is running`))
+new Watcher(
+	['component', 'document', 'object', 'settings', 'style', 'theme', 'utility'].map((dir) => path.resolve(dir)),
+	{
+		recursive: true,
+		renameDetection: true
+	},
+	eventHandler
+)
+	.on('ready', () => logger.info(`Watching Source Code is running`))
+	.on('change', () => build())
 ;['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((sig) => process.on(sig, () => watcher.close()))
