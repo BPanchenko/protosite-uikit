@@ -28,8 +28,7 @@
 =========================================================================== */
 
 .c-panel {
-	contain: layout style;
-
+	contain: layout style paint;
 	display: block;
 	position: relative;
 	min-width: min-content;
