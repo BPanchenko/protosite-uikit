@@ -51,6 +51,10 @@
 	--marker-glyph: '\e18d';
 }
 
+:host-context(.c-panel) {
+	--shadow: none;
+}
+
 [role='button'] {
 	--icon-code: var(--marker-glyph);
 	--icon-size: var(--text-md);
@@ -90,6 +94,7 @@
 	border-style: solid;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
+	user-select: none;
 
 	[role='button'] {
 		@extend %icon;
@@ -151,7 +156,7 @@
 	}
 }
 
-:host([aria-expanded='true']) [role='listbox'] {
+:host(:state(expanded)) [role='listbox'] {
 	display: block;
 	height: max-content;
 }

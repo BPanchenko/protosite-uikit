@@ -38,10 +38,6 @@
 	box-shadow: var(--shadow);
 	box-sizing: border-box;
 
-	&:not(:has(> :is(.c-panel__head, .c-panel__body))) {
-		padding: var(--padding-vert) var(--padding-horz);
-	}
-
 	&::before,
 	&::after {
 		content: '';
@@ -52,6 +48,17 @@
 
 .c-panel:not([aria-hidden='true']) + .c-panel {
 	margin-top: var(--space);
+}
+
+/** Content-based behavior adjustment */
+.c-panel {
+	&:not(:has(> :is(.c-panel__head, .c-panel__body))) {
+		padding: var(--padding-vert) var(--padding-horz);
+	}
+
+	&:has(:is([aria-haspopup='listbox'], [aria-haspopup='menu'], [role='combobox'], [role='menu'], [role='menubar'])) {
+		contain: style;
+	}
 }
 
 /* Subcomponent: Divider
