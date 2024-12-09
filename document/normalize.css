@@ -168,3 +168,10 @@ th {
 :is([unselectable='on'], [unselectable]):not([unselectable='off']) {
 	user-select: none;
 }
+
+/** Custom Elements
+========================================================================== */
+
+:not(:defined) {
+	content-visibility: hidden;
+}
