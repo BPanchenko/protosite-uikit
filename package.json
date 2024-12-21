@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.32.104",
+  "version": "5.0.000-beta",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
@@ -40,6 +40,7 @@
     "optimize": "node .kernel/builder/css-optimizer.cjs",
     "prepublishOnly": "npm run build",
     "postpublish": "npm run deploy",
+    "predict": "node ./.kernel/progressor.cjs",
     "prettier": "prettier --write .",
     "watch": "node ./.kernel/watcher.js"
   },

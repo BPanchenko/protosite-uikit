@@ -5,7 +5,7 @@ const path = require('node:path');
 const process = require('node:process');
 const util = require('node:util');
 
-const { inspectOptions, root, roundNanoseconds } = require('./lib.cjs');
+const { inspectOptions, root, roundNanoseconds } = require('./lib/index.cjs');
 
 const start = process.hrtime();
 

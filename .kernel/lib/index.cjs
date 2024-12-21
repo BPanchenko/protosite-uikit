@@ -4,7 +4,7 @@ const path = require('node:path');
 const { existsSync, mkdirSync } = require('node:fs');
 
 const inspectOptions = {
-  depth: 3,
+  depth: 10,
   compact: false,
   showHidden: true,
   sorted: true,
