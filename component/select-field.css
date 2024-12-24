@@ -7,7 +7,79 @@
 
 @custom-selector :--selected-state [aria-checked='true'], [aria-selected='true'];
 
-@layer host-settings, childnodes-settings;
+/** Component Settings
+=========================================================================== */
+
+:host {
+	@extend %field-settings;
+
+	--text-boldness: var(--font-normal);
+	--text-font: var(--ui-font);
+	--text-interligne: var(--default-interligne);
+	--text-size: var(--default-text-size);
+
+	--bg-color: var(--clr-background);
+
+	--bottom-space: 0.125--unit;
+	--left-space: 1--space;
+	--right-space: 0.75--unit;
+	--top-space: 0.125--unit;
+
+	--listbox-gap: 0.1875--space;
+	--listbox-bg-color: var(--bg-color);
+	--listbox-border-color: var(--clr-gray-100);
+	--marker-color: currentColor;
+	--marker-glyph: '\e18a';
+	--marker-indent: 1--space;
+	--option-glyph: '\e035';
+	--option-start-space: 2--unit;
+	--option-end-space: 0.75--unit;
+	--option-bg-color: var(--clr-gray-50);
+}
+
+/** Starting */
+
+:host {
+	--border-color: transparent;
+	--marker-color: var(--clr-gray-400);
+	--shadow: var(--shadow-2dp);
+}
+
+/** Modifications */
+
+:host(:state(expanded)) {
+	--marker-glyph: '\e18d';
+}
+
+:host(:hover),
+:host(:focus),
+:host(:state(expanded)) {
+	--marker-color: currentColor;
+}
+
+:host(:hover),
+:host(:focus) {
+	--shadow: var(--shadow-3dp);
+}
+
+:host-context(.c-panel:not(.s-clean)) {
+	--shadow: none;
+}
+
+/** Childnodes Settings
+=========================================================================== */
+
+[role='button'] {
+	--icon-code: var(--marker-glyph);
+	--icon-color: var(--marker-color);
+	--icon-size: var(--text-md);
+}
+
+[role='listbox'] {
+	--bg-color: var(--clr-white);
+	--text-color: var(--clr-foreground);
+	--shadow: var(--shadow-3dp);
+}
 
 /**
  * Web Component: Select Field
@@ -199,80 +271,5 @@
 		&::after {
 			content: var(--icon-code);
 		}
-	}
-}
-
-/** Settings
-=========================================================================== */
-
-@layer host-settings {
-	:host {
-		@extend %field-settings;
-
-		--text-boldness: var(--font-normal);
-		--text-font: var(--ui-font);
-		--text-interligne: var(--default-interligne);
-		--text-size: var(--default-text-size);
-
-		--bg-color: var(--clr-background);
-
-		--bottom-space: 0.125--unit;
-		--left-space: 1--space;
-		--right-space: 0.75--unit;
-		--top-space: 0.125--unit;
-
-		--listbox-gap: 0.1875--space;
-		--listbox-bg-color: var(--bg-color);
-		--listbox-border-color: var(--clr-gray-100);
-		--marker-color: currentColor;
-		--marker-glyph: '\e18a';
-		--marker-indent: 1--space;
-		--option-glyph: '\e035';
-		--option-start-space: 2--unit;
-		--option-end-space: 0.75--unit;
-		--option-bg-color: var(--clr-gray-50);
-	}
-
-	/** Starting */
-
-	:host {
-		--border-color: transparent;
-		--marker-color: var(--clr-gray-400);
-		--shadow: var(--shadow-2dp);
-	}
-
-	/** Modifications */
-
-	:host(:state(expanded)) {
-		--marker-glyph: '\e18d';
-	}
-
-	:host(:hover),
-	:host(:focus),
-	:host(:state(expanded)) {
-		--marker-color: currentColor;
-	}
-
-	:host(:hover),
-	:host(:focus) {
-		--shadow: var(--shadow-3dp);
-	}
-
-	:host-context(.c-panel:not(.s-clean)) {
-		--shadow: none;
-	}
-}
-
-@layer childnodes-settings {
-	[role='button'] {
-		--icon-code: var(--marker-glyph);
-		--icon-color: var(--marker-color);
-		--icon-size: var(--text-md);
-	}
-
-	[role='listbox'] {
-		--bg-color: var(--clr-white);
-		--text-color: var(--clr-foreground);
-		--shadow: var(--shadow-3dp);
 	}
 }

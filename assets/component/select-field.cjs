@@ -1,5 +1,6 @@
 const cssClassNames = {
-	"cPanel": "c-panel"
+	"cPanel": "c-panel",
+	"sClean": "s-clean"
 };
 
 /** @type {CSSStyleSheet|null} */
