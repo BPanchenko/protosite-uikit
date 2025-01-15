@@ -5,8 +5,6 @@
 @import '../settings/shadow.css';
 @import '../settings/typography.css';
 
-@custom-selector :--selected-state [aria-checked='true'], [aria-selected='true'];
-
 /** Component Settings
 =========================================================================== */
 
@@ -47,13 +45,13 @@
 
 /** Modifications */
 
-:host(:state(expanded)) {
+:host(:state(--expanded)) {
 	--marker-glyph: '\e18d';
 }
 
 :host(:hover),
 :host(:focus),
-:host(:state(expanded)) {
+:host(:state(--expanded)) {
 	--marker-color: currentColor;
 }
 
@@ -99,6 +97,7 @@
 	vertical-align: middle;
 	inline-size: inherit;
 	block-size: max-content;
+	padding-inline: unset;
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);
@@ -127,12 +126,12 @@
 		cursor: pointer;
 
 		&::after {
-			content: var(--marker-glyph);
-			transition: color ease 0.16s;
+			all: unset;
 		}
 
 		&::before {
-			all: unset;
+			content: var(--marker-glyph);
+			transition: color var(--easing) 0.16s;
 		}
 
 		&:focus {
@@ -150,8 +149,10 @@
 		interpolate-size: allow-keywords;
 		inline-size: max-content;
 		block-size: max-content;
+		max-block-size: 25vh;
+
 		padding: 1--listbox-gap;
-		margin-block-start: 1--space-xs;
+		margin-block-start: var(--space-sm);
 
 		background-color: var(--listbox-bg-color);
 		border-radius: 0.375--unit;
@@ -160,22 +161,33 @@
 		outline-width: 1--pixel;
 		outline-style: solid;
 		outline-offset: -0.8--listbox-gap;
-		text-align: right;
 
+		animation-duration: 460ms;
+		animation-fill-mode: backwards;
+		animation-name: none;
+		animation-timing-function: var(--easing);
+		transform-origin: top;
 		display: none;
-		height: 0;
 		overflow: hidden;
-		transition: height ease 1s;
+		overflow-y: clip;
+		overflow-clip-margin: var(--space-sm);
+
+		&::part(container) {
+			display: block;
+			opacity: 0;
+			transition: opacity var(--easing) 240ms;
+		}
 	}
 
 	[role='status'] {
 		&::before {
 			unset: all;
-			transition: color ease 1s;
+			transition: color var(--easing) 680ms;
 		}
 
 		&[aria-label]:not(:empty)::before {
 			content: attr(aria-label) ' ';
+			color: var(--marker-color);
 		}
 		&[aria-placeholder]:empty::before {
 			content: attr(aria-placeholder);
@@ -194,9 +206,32 @@
 	outline-offset: -0.8--listbox-gap;
 }
 
-:host(:state(expanded)) [role='listbox'] {
+:host(:state(--disabled)) {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+:host(:state(--expanded)) [role='listbox'] {
 	display: block;
-	height: max-content;
+	animation-name: expand-listbox;
+
+	&::part(container) {
+		opacity: 1;
+	}
+}
+
+:host(:state(--expanded):not(:state(--animating))) [role='listbox'] {
+	overflow-y: auto;
+}
+
+:host(:state(--collapsed)) [role='listbox'] {
+	animation-duration: 240ms;
+	animation-name: collapse-listbox;
+	display: none;
+
+	&::part(container) {
+		opacity: 0;
+	}
 }
 
 /**
@@ -219,23 +254,19 @@
 		--bg-color: var(--option-bg-color);
 	}
 
-	::slotted(&[aria-activedescendant='true']) {
+	::slotted(&:is([aria-current='true'], [aria-selected='true'])) {
 		--text-boldness: var(--font-medium);
 	}
 
-	&:--selected-state {
+	&[aria-selected='true'] {
 		::slotted(&) {
 			--icon-code: var(--option-glyph);
-			--text-color: var(--clr-gray-300);
+			--text-color: var(--clr-gray-400);
 		}
 
 		::slotted(&:hover) {
 			--bg-color: transparent;
 		}
-	}
-
-	::slotted(&:is(:hover, :--selected-state)) {
-		--text-boldness: var(--font-medium);
 	}
 }
 
@@ -243,20 +274,23 @@
 	::slotted(&) {
 		padding-inline-start: var(--option-start-space);
 		padding-inline-end: var(--option-end-space);
+		margin-block-end: 1--pixel;
 
 		background-color: var(--bg-color);
-		transition: background-color 0.16s ease;
+		transition: background-color 160ms var(--easing);
 		cursor: pointer;
 	}
 
 	::slotted(&:first-of-type) {
 		border-radius: var(--space-sm) var(--space-sm) 0 0;
 	}
+
 	::slotted(&:last-of-type) {
 		border-radius: 0 0 var(--space-sm) var(--space-sm);
+		margin-block-end: unset;
 	}
 
-	::slotted(&:--selected-state) {
+	::slotted(&[aria-selected='true']) {
 		@extend %icon;
 
 		display: flex;
@@ -271,5 +305,41 @@
 		&::after {
 			content: var(--icon-code);
 		}
+	}
+}
+
+/** Animation
+=========================================================================== */
+
+@keyframes expand-listbox {
+	from {
+		display: none;
+		block-size: 0;
+	}
+
+	to {
+		display: block;
+		block-size: max-content;
+	}
+}
+
+@keyframes collapse-listbox {
+	from {
+		block-size: max-content;
+		display: block;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	70% {
+		opacity: 0.9;
+		transform: translateY(0);
+	}
+
+	100% {
+		display: none;
+		block-size: 0;
+		opacity: 0;
+		transform: translateY(-1--space-xs);
 	}
 }
