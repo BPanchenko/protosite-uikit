@@ -1,6 +1,16 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.32.105",
+  "version": "4.32.106",
+  "description": "CSS framework for developing web interfaces",
+  "keywords": [
+    "Component Library",
+    "Web Components",
+    "UI Kit",
+    "bemit",
+    "itcss",
+    "oocss"
+  ],
+  "homepage": "http://protosite.rocks",
   "type": "module",
   "main": "./assets/main.mjs",
   "exports": {
@@ -83,14 +93,5 @@
     "email": "boris.v.panchenko@mail.ru",
     "url": "https://bpanchenko.ru"
   },
-  "description": "CSS framework for developing web interfaces",
-  "keywords": [
-    "bemit",
-    "css",
-    "oocss",
-    "postcss",
-    "uikit"
-  ],
-  "homepage": "http://protosite.rocks",
   "license": "LGPL-3.0-only"
 }
