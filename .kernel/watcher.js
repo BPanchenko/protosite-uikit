@@ -13,7 +13,7 @@ const eventHandler = (event, targetPath, targetPathNext) => {
 	logger.event(event, targetPath, targetPathNext ?? '')
 }
 
-new Watcher(
+const watcherAssets = new Watcher(
 	['assets'].map((dir) => path.resolve(dir)),
 	{
 		recursive: true
@@ -23,7 +23,7 @@ new Watcher(
 	.on('ready', () => logger.info(`Watching Assets is running`))
 	.on('change', () => deploy())
 
-new Watcher(
+const watcherSources = new Watcher(
 	['component', 'document', 'object', 'settings', 'style', 'theme', 'utility'].map((dir) => path.resolve(dir)),
 	{
 		recursive: true,
@@ -33,4 +33,4 @@ new Watcher(
 )
 	.on('ready', () => logger.info(`Watching Source Code is running`))
 	.on('change', () => build())
-;['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((sig) => process.on(sig, () => watcher.close()))
+;['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((sig) => process.on(sig, () => (watcherAssets.close(), watcherSources.close())))
