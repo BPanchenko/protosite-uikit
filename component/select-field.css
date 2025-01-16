@@ -19,8 +19,8 @@
 	--bg-color: var(--clr-background);
 
 	--bottom-space: 0.125--unit;
-	--left-space: 1--space;
-	--right-space: 0.75--unit;
+	--left-space: 0.75--space;
+	--right-space: 1--space-md;
 	--top-space: 0.125--unit;
 
 	--listbox-gap: 0.1875--space;
@@ -28,10 +28,10 @@
 	--listbox-border-color: var(--clr-gray-100);
 	--marker-color: currentColor;
 	--marker-glyph: '\e18a';
-	--marker-indent: 1--space;
-	--option-glyph: '\e035';
-	--option-start-space: 2--unit;
-	--option-end-space: 0.75--unit;
+	--marker-indent: 1--left-space;
+	--option-glyph: '\e159';
+	--option-start-space: 0.75--unit;
+	--option-end-space: 2--unit;
 	--option-bg-color: var(--clr-gray-50);
 }
 
@@ -142,7 +142,7 @@
 	[role='listbox'] {
 		position: absolute;
 		position-anchor: --anchor-on-marker;
-		position-area: end;
+		position-area: inline-start block-end;
 		justify-self: end;
 		z-index: 2;
 
@@ -254,14 +254,17 @@
 		--bg-color: var(--option-bg-color);
 	}
 
-	::slotted(&:is([aria-current='true'], [aria-selected='true'])) {
-		--text-boldness: var(--font-medium);
+	::slotted(&[aria-current='true']) {
+		--text-boldness: var(--font-bold);
 	}
 
 	&[aria-selected='true'] {
 		::slotted(&) {
 			--icon-code: var(--option-glyph);
-			--text-color: var(--clr-gray-400);
+			--icon-color: var(--clr-gray-400);
+			--icon-size: 0.75--unit;
+			--text-boldness: var(--font-normal);
+			--text-color: var(--clr-gray-500);
 		}
 
 		::slotted(&:hover) {
@@ -295,14 +298,13 @@
 
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		gap: 0.5em;
 		cursor: default;
 
-		&::before {
+		&::after {
 			all: unset;
 		}
-		&::after {
+		&::before {
 			content: var(--icon-code);
 		}
 	}
@@ -313,12 +315,10 @@
 
 @keyframes expand-listbox {
 	from {
-		display: none;
 		block-size: 0;
 	}
 
 	to {
-		display: block;
 		block-size: max-content;
 	}
 }
