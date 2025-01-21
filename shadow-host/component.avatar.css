@@ -1,7 +1,7 @@
 @import '../settings/main.css';
 @import '../settings/shadow.css';
 
-.c-avatar {
+:host {
 	--bg-color: transparent;
 	--border: 1--pixel solid var(--muted-color);
 	--shadow: var(--shadow-2dp);
@@ -17,10 +17,34 @@
 	--size-xxl: 16--unit;
 }
 
-.c-avatar:not([style*='background-image']):empty {
+:host [part='root']:not([style*='background-image']):empty {
 	--bg-color: var(--clr-gray-100);
 	--border: none;
 	--shadow: none;
+}
+
+/* Size modifiers */
+
+:host(.s-xxs) [part='root'] {
+	--size: var(--size-xxs);
+}
+:host(.s-xs) [part='root'] {
+	--size: var(--size-xs);
+}
+:host(.s-sm) [part='root'] {
+	--size: var(--size-sm);
+}
+:host(.s-md) [part='root'] {
+	--size: var(--size-md);
+}
+:host(.s-lg) [part='root'] {
+	--size: var(--size-lg);
+}
+:host(.s-xl) [part='root'] {
+	--size: var(--size-xl);
+}
+:host(.s-xxl) [part='root'] {
+	--size: var(--size-xxl);
 }
 
 /**
@@ -28,8 +52,7 @@
  * Children: Image and Link
 =========================================================================== */
 
-.c-avatar,
-.c-avatar__link {
+:host :is([part='root'], a) {
 	display: inline-block;
 	border-radius: 50%;
 	width: var(--size);
@@ -40,7 +63,7 @@
 	user-select: none;
 }
 
-.c-avatar {
+:host [part='root'] {
 	background-color: var(--bg-color);
 	border: var(--border);
 	box-shadow: var(--shadow);
@@ -61,37 +84,18 @@
 	}
 }
 
-/** Restyle: Sizes
-=========================================================================== */
-
-.c-avatar {
-	&.s-xxs {
-		--size: var(--size-xxs);
-	}
-	&.s-xs {
-		--size: var(--size-xs);
-	}
-	&.s-sm {
-		--size: var(--size-sm);
-	}
-	&.s-md {
-		--size: var(--size-md);
-	}
-	&.s-lg {
-		--size: var(--size-lg);
-	}
-	&.s-xl {
-		--size: var(--size-xl);
-	}
-	&.s-xxl {
-		--size: var(--size-xxl);
+:host {
+	display: contents;
+	pointer-events: none;
+	& > * {
+		pointer-events: auto;
 	}
 }
 
 /** Context: Panel Component
 =========================================================================== */
 
-.c-panel:not(.s-clean) .c-avatar {
+:host-context(.c-panel:not(.s-clean)) {
 	--shadow: var(--inset-shadow-2dp);
 
 	img {
