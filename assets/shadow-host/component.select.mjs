@@ -1,4 +1,4 @@
-import importedCSS from './select.css' with { type: 'css' }
+import importedCSS from './component.select.css' with { type: 'css' }
 
 /** @type {string} */
 export const cPanel = 'c-panel';

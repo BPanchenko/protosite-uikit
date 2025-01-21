@@ -1,4 +1,4 @@
-import importedCSS from './arrow.css' with { type: 'css' }
+import importedCSS from './element.arrow.css' with { type: 'css' }
 
 /** @type {string} */
 export const sLg = 's-lg';
