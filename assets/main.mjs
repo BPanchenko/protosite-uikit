@@ -1,6 +1,10 @@
 import importedCSS from './main.css' with { type: 'css' }
 
 /** @type {string} */
+export const cAvatar = 'c-avatar';
+/** @type {string} */
+export const cAvatarLink = 'c-avatar__link';
+/** @type {string} */
 export const cBackdrop = 'c-backdrop';
 /** @type {string} */
 export const cBadge = 'c-badge';
