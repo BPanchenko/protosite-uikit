@@ -2,10 +2,14 @@
 @import '../settings/main.css';
 @import '../document/icon-glyphs-arrow.css';
 
-@custom-selector :--component .c-arrow, :host;
-@custom-selector :--icon .c-arrow, :host i;
+/**
+ * Core Element: Arrow Image
+ */
 
-:--component {
+/** Settings
+=========================================================================== */
+
+:host {
 	--size-xxs: 0.75--unit;
 	--size-xs: 1.75--unit;
 	--size-sm: 2.5--unit;
@@ -15,18 +19,54 @@
 	--size-xxl: 20--unit;
 }
 
+/* Size modifiers */
+
+:host(.s-xxs) [part='icon'] {
+	--icon-size: var(--size-xxs);
+	--icon-weight: 400;
+}
+
+:host(.s-xs) [part='icon'] {
+	--icon-size: var(--size-xs);
+	--icon-weight: 400;
+}
+
+:host(.s-sm) [part='icon'] {
+	--icon-size: var(--size-sm);
+	--icon-weight: 400;
+}
+
+:host(.s-md) [part='icon'] {
+	--icon-size: var(--size-md);
+	--icon-weight: 500;
+}
+
+:host(.s-lg) [part='icon'] {
+	--icon-size: var(--size-lg);
+	--icon-weight: 500;
+}
+
+:host(.s-xl) [part='icon'] {
+	--icon-size: var(--size-xl);
+	--icon-weight: 800;
+}
+
+:host(.s-xxl) [part='icon'] {
+	--icon-size: var(--size-xxl);
+	--icon-weight: 800;
+}
+
+/** Rules
+=========================================================================== */
+
 :host {
-	display: contents;
+	display: inline-block;
 	& > * {
 		pointer-events: none;
 	}
 }
 
-/**
- * Component: Arrow
-=========================================================================== */
-
-:--icon[data-glyph] {
+:host [part='icon'][data-glyph] {
 	@extend %icon;
 
 	display: inline-block;
@@ -44,39 +84,5 @@
 
 	&::before {
 		all: unset;
-	}
-}
-
-/** Restyle: Sizes
-=========================================================================== */
-
-:--icon {
-	&.s-xxs {
-		--icon-size: var(--size-xxs);
-		--icon-weight: 400;
-	}
-	&.s-xs {
-		--icon-size: var(--size-xs);
-		--icon-weight: 400;
-	}
-	&.s-sm {
-		--icon-size: var(--size-sm);
-		--icon-weight: 400;
-	}
-	&.s-md {
-		--icon-size: var(--size-md);
-		--icon-weight: 500;
-	}
-	&.s-lg {
-		--icon-size: var(--size-lg);
-		--icon-weight: 500;
-	}
-	&.s-xl {
-		--icon-size: var(--size-xl);
-		--icon-weight: 800;
-	}
-	&.s-xxl {
-		--icon-size: var(--size-xxl);
-		--icon-weight: 800;
 	}
 }

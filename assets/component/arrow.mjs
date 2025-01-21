@@ -1,8 +1,6 @@
 import importedCSS from './arrow.css' with { type: 'css' }
 
 /** @type {string} */
-export const cArrow = 'c-arrow';
-/** @type {string} */
 export const sLg = 's-lg';
 /** @type {string} */
 export const sMd = 's-md';

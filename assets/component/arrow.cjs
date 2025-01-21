@@ -1,5 +1,4 @@
 const cssClassNames = {
-	"cArrow": "c-arrow",
 	"sLg": "s-lg",
 	"sMd": "s-md",
 	"sSm": "s-sm",
