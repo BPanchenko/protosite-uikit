@@ -9,7 +9,7 @@ const postcss = require('postcss');
 const postcssConfig = require('../../.config/postcss.config.cjs');
 
 const ROOT = process.cwd();
-const ADVANCED_FOLDERS = ['component', 'style'];
+const ADVANCED_FOLDERS = ['component', 'shadow-host', 'style'];
 const OUTPUT = path.resolve(ROOT, 'assets');
 
 // Input
@@ -17,8 +17,8 @@ const OUTPUT = path.resolve(ROOT, 'assets');
 const patterns = (() => {
   const packageJson = JSON.parse(readFileSync(path.resolve(ROOT, 'package.json'), { flag: 'r' }));
 
-  const regex1 = /^([\w]+)\/\*$/i;
-  const regex2 = /[^\w]+/i;
+  const regex1 = /^([-\w]+)\/\*$/i;
+  const regex2 = /[^-\w]+/i;
 
   return packageJson.files
     .filter((row) => regex1.test(row))

@@ -5,16 +5,19 @@ import { logger } from './logger.cjs'
 
 import ftpAccess from '../.config/ftp.json' with { type: 'json' }
 
-const coreStylesheets = [
-	['assets/component/select.css', 'core/component.select.css'],
-	['assets/component/arrow.css', 'core/element.arrow.css']
-]
+const shadyCssDir = 'assets/shadow-host'
 
-const uikitModules = globSync(['assets/*.{css,mjs}', 'assets/component/*.{css,mjs}', 'assets/style/*.{css,mjs}'], {
-	ignore: ['assets/component/arrow.{css,mjs}', 'assets/component/select.{css,mjs}']
-}).map((file) => [file, path.join('uikit', path.relative('assets', file)).replaceAll('\\', '/')])
+const coreFiles = globSync(shadyCssDir + '/*.css').map((file) => [
+	file,
+	path.join('core', path.relative(shadyCssDir, file)).replaceAll('\\', '/')
+])
 
-const files = new Map([...coreStylesheets, ...uikitModules].sort(([_a, a], [_b, b]) => (a < b ? -1 : a > b ? 1 : 0)))
+const uikitFiles = globSync(['assets/*.{css,mjs}', 'assets/component/*.{css,mjs}', 'assets/style/*.{css,mjs}']).map((file) => [
+	file,
+	path.join('uikit', path.relative('assets', file)).replaceAll('\\', '/')
+])
+
+const files = new Map([...coreFiles, ...uikitFiles].sort(([_a, a], [_b, b]) => (a < b ? -1 : a > b ? 1 : 0)))
 
 ;(async function deploy() {
 	const client = new Client()
