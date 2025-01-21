@@ -11,6 +11,7 @@
 %field {
 	display: inline-block;
 	vertical-align: middle;
+	text-align: left;
 
 	box-sizing: border-box;
 	inline-size: inherit;

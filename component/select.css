@@ -5,7 +5,17 @@
 @import '../settings/shadow.css';
 @import '../settings/typography.css';
 
-/** Component Settings
+/**
+ * Core Component: Select Field
+ * Childnodes:
+ *	Button subcomponent as the main element of user interaction;
+ *	Status of choice as an element that is a child of the button;
+ *	Listbox subcomponent with existing options of selection.
+ *	
+ * [ProtoSite](http://protosite.rocks/components/select.html)
+ */
+
+/** Settings
 =========================================================================== */
 
 :host {
@@ -79,14 +89,7 @@
 	--shadow: var(--shadow-3dp);
 }
 
-/**
- * Web Component: Select Field
- * Childnodes:
- *	Button subcomponent as the main element of user interaction;
- *	Status of choice as an element that is a child of the button;
- *	Listbox subcomponent with existing options of selection.
- *	
- * [ProtoSite](http://protosite.rocks/components/select-field.html)
+/** Rules
 =========================================================================== */
 
 :host {
@@ -240,7 +243,7 @@
  * The option element can contain text or an image,
  * or a DOM subtree specified by other UI components.
  *	
- * [ProtoSite](http://protosite.rocks/components/select-field.html)
+ * [ProtoSite](http://protosite.rocks/components/select.html)
 =========================================================================== */
 
 [role='option'] {
