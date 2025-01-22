@@ -5,10 +5,8 @@ export const sFlipHorizontal = 's-flip-horizontal';
 /** @type {string} */
 export const sFlipRotate90 = 's-flip-rotate-90';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

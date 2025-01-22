@@ -1,4 +1,4 @@
-const cssClassNames = {
+const classNames = {
 	"sShadow": "s-shadow",
 	"sShadow16Dp": "s-shadow-16dp",
 	"sShadow24Dp": "s-shadow-24dp",
@@ -14,21 +14,15 @@ const cssClassNames = {
 	"sShadowShorter": "s-shadow-shorter"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'shadow.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }

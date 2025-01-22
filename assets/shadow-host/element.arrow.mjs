@@ -1,6 +1,8 @@
 import importedCSS from './element.arrow.css' with { type: 'css' }
 
 /** @type {string} */
+export const eIcon = 'e-icon';
+/** @type {string} */
 export const sLg = 's-lg';
 /** @type {string} */
 export const sMd = 's-md';
@@ -15,10 +17,8 @@ export const sXxl = 's-xxl';
 /** @type {string} */
 export const sXxs = 's-xxs';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

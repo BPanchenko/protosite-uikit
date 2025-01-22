@@ -11,10 +11,8 @@ export const cThumbnail = 'c-thumbnail';
 /** @type {string} */
 export const sHovered = 's-hovered';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

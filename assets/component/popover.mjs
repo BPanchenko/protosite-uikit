@@ -11,10 +11,8 @@ export const isVisible = 'is-visible';
 /** @type {string} */
 export const sLinkset = 's-linkset';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

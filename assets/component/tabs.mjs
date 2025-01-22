@@ -13,10 +13,8 @@ export const cTabLabel = 'c-tab__label';
 /** @type {string} */
 export const cTabsContainer = 'c-tabs-container';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

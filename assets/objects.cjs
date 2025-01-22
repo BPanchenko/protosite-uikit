@@ -1,4 +1,4 @@
-const cssClassNames = {
+const classNames = {
 	"cButton": "c-button",
 	"cCrumb": "c-crumb",
 	"cFieldBox": "c-field-box",
@@ -16,21 +16,15 @@ const cssClassNames = {
 	"sShort": "s-short"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'objects.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }

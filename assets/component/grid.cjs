@@ -1,4 +1,4 @@
-const cssClassNames = {
+const classNames = {
 	"cGrid": "c-grid",
 	"cGridGuide": "c-grid__guide-",
 	"line": "line",
@@ -6,21 +6,15 @@ const cssClassNames = {
 	"sizes": "sizes"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'grid.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }

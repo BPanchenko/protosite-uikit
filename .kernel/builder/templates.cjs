@@ -9,25 +9,19 @@ function getEntries(array, serialized = false) {
 
 const cjsTemplate = (classNames, ref = '') =>
   trim(`
-const cssClassNames = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, '\t')};
-
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
+const classNames = ${JSON.stringify(Object.fromEntries(getEntries(classNames)), null, '\t')};
 
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, '${ref}.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }
 `);
 
@@ -41,13 +35,11 @@ import importedCSS from './${ref}.css' with { type: 'css' }
 
 ${exportedClassNames}
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;
 `);
 };
 

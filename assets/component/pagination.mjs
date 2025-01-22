@@ -11,10 +11,8 @@ export const cPaginationPage = 'c-pagination__page';
 /** @type {string} */
 export const cPaginationPrev = 'c-pagination__prev';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

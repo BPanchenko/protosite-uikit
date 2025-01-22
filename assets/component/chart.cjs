@@ -1,4 +1,4 @@
-const cssClassNames = {
+const classNames = {
 	"cChart": "c-chart",
 	"cChartAxis": "c-chart__axis",
 	"cChartCanvas": "c-chart__canvas",
@@ -12,21 +12,15 @@ const cssClassNames = {
 	"tick": "tick"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'chart.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }

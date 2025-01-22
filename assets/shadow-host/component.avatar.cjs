@@ -1,4 +1,4 @@
-const cssClassNames = {
+const classNames = {
 	"cPanel": "c-panel",
 	"sClean": "s-clean",
 	"sLg": "s-lg",
@@ -10,21 +10,15 @@ const cssClassNames = {
 	"sXxs": "s-xxs"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'component.avatar.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }

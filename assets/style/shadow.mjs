@@ -27,10 +27,8 @@ export const sShadowSharp = 's-shadow-sharp';
 /** @type {string} */
 export const sShadowShorter = 's-shadow-shorter';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

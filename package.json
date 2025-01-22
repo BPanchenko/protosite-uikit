@@ -49,8 +49,8 @@
     "clean": "rimraf assets --preserve-root",
     "deploy": "node ./.kernel/deployer.js",
     "optimize": "node .kernel/builder/css-optimizer.cjs",
+    "postbuild": "npm run deploy",
     "prepublishOnly": "npm run build",
-    "postpublish": "npm run deploy",
     "prettier": "prettier --write .",
     "watch": "node ./.kernel/watcher.js"
   },

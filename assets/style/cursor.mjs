@@ -73,10 +73,8 @@ export const sCursorZoomIn = 's-cursor-zoom-in';
 /** @type {string} */
 export const sCursorZoomOut = 's-cursor-zoom-out';
 
-/** @type {CSSStyleSheet|null} */
-export const cssStyleSheet = importedCSS;
-/** @type {string|null} */
-export const cssText = null;
+/** @type {CSSStyleSheet} */
+export const styleSheet = importedCSS;
 
 /** @type {CSSStyleSheet} */
-export default cssStyleSheet;
+export default styleSheet;

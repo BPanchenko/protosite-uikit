@@ -1,4 +1,4 @@
-const cssClassNames = {
+const classNames = {
 	"cButton": "c-button",
 	"cIcon": "c-icon",
 	"sDefaultSize": "s-default-size",
@@ -12,21 +12,15 @@ const cssClassNames = {
 	"sXxxl": "s-xxxl"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'sizes.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }
