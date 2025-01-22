@@ -1,4 +1,5 @@
-const cssClassNames = {
+const classNames = {
+	"eIcon": "e-icon",
 	"sLg": "s-lg",
 	"sMd": "s-md",
 	"sSm": "s-sm",
@@ -8,21 +9,15 @@ const cssClassNames = {
 	"sXxs": "s-xxs"
 };
 
-/** @type {CSSStyleSheet|null} */
-const cssStyleSheet = null;
-
 const path = require('node:path');
 const fs = require('node:fs');
 const file = path.join(__dirname, 'element.arrow.css');
 
-/** @type {string|null} */
-const cssText = fs.readFileSync(file, 'utf-8');
+/** @type {string} */
+const content = fs.readFileSync(file, 'utf-8');
 
 module.exports = {
-	__esModule: true,
-	default: cssText,
-	cssStyleSheet,
-	cssText,
-	...cssClassNames
-
+	default: content,
+	content,
+	...classNames
 }

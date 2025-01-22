@@ -21,37 +21,37 @@
 
 /* Size modifiers */
 
-:host(.s-xxs) [part='icon'] {
+:host(.s-xxs) .e-icon {
 	--icon-size: var(--size-xxs);
 	--icon-weight: 400;
 }
 
-:host(.s-xs) [part='icon'] {
+:host(.s-xs) .e-icon {
 	--icon-size: var(--size-xs);
 	--icon-weight: 400;
 }
 
-:host(.s-sm) [part='icon'] {
+:host(.s-sm) .e-icon {
 	--icon-size: var(--size-sm);
 	--icon-weight: 400;
 }
 
-:host(.s-md) [part='icon'] {
+:host(.s-md) .e-icon {
 	--icon-size: var(--size-md);
 	--icon-weight: 500;
 }
 
-:host(.s-lg) [part='icon'] {
+:host(.s-lg) .e-icon {
 	--icon-size: var(--size-lg);
 	--icon-weight: 500;
 }
 
-:host(.s-xl) [part='icon'] {
+:host(.s-xl) .e-icon {
 	--icon-size: var(--size-xl);
 	--icon-weight: 800;
 }
 
-:host(.s-xxl) [part='icon'] {
+:host(.s-xxl) .e-icon {
 	--icon-size: var(--size-xxl);
 	--icon-weight: 800;
 }
@@ -60,29 +60,30 @@
 =========================================================================== */
 
 :host {
-	display: inline-block;
-	& > * {
+	display: contents;
+
+	* {
 		pointer-events: none;
 	}
-}
 
-:host [part='icon'][data-glyph] {
-	@extend %icon;
+	.e-icon[data-glyph] {
+		@extend %icon;
 
-	display: inline-block;
-	width: var(--icon-size);
-	height: var(--icon-size);
-	vertical-align: middle;
+		display: inline-block;
+		width: var(--icon-size);
+		height: var(--icon-size);
+		vertical-align: middle;
 
-	&::after {
-		content: var(--icon-code);
-	}
+		&::after {
+			content: var(--icon-code);
+		}
 
-	&[data-glyph^='\\']::after {
-		content: attr(data-glyph);
-	}
+		&[data-glyph^='\\']::after {
+			content: attr(data-glyph);
+		}
 
-	&::before {
-		all: unset;
+		&::before {
+			all: unset;
+		}
 	}
 }
