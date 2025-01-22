@@ -24,7 +24,7 @@ const watcherAssets = new Watcher(
 	.on('change', () => deploy())
 
 const watcherSources = new Watcher(
-	['component', 'document', 'object', 'settings', 'style', 'theme', 'utility'].map((dir) => path.resolve(dir)),
+	['component', 'document', 'object', 'settings', 'shadow-host', 'style', 'theme', 'utility'].map((dir) => path.resolve(dir)),
 	{
 		recursive: true,
 		renameDetection: true

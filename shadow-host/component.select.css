@@ -30,7 +30,7 @@
 
 	--bottom-space: 0.125--unit;
 	--left-space: 0.75--space;
-	--right-space: 1--space-md;
+	--right-space: 1--space;
 	--top-space: 0.125--unit;
 
 	--listbox-gap: 0.1875--space;
@@ -45,7 +45,7 @@
 	--option-bg-color: var(--clr-gray-50);
 }
 
-/** Starting */
+/** Initial Styling */
 
 :host {
 	--border-color: transparent;
@@ -70,7 +70,11 @@
 	--shadow: var(--shadow-3dp);
 }
 
+/** Context */
+
 :host-context(.c-panel:not(.s-clean)) {
+	--border-color: var(--clr-gray-500);
+	--marker-color: var(--text-color);
 	--shadow: none;
 }
 
@@ -101,6 +105,7 @@
 	inline-size: inherit;
 	block-size: max-content;
 	padding-inline: unset;
+	padding-block: unset;
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);
@@ -149,6 +154,7 @@
 		justify-self: end;
 		z-index: 2;
 
+		display: none;
 		interpolate-size: allow-keywords;
 		inline-size: max-content;
 		block-size: max-content;
@@ -170,10 +176,10 @@
 		animation-name: none;
 		animation-timing-function: var(--easing);
 		transform-origin: top;
-		display: none;
 		overflow: hidden;
 		overflow-y: clip;
 		overflow-clip-margin: var(--space-sm);
+		scroll-snap-stop: always;
 
 		&::part(container) {
 			display: block;
@@ -203,7 +209,7 @@
 =========================================================================== */
 
 :host(:focus) {
-	outline-color: var(--clr-red-800);
+	outline-color: var(--clr-purple-800);
 	outline-width: 1--pixel;
 	outline-style: dashed;
 	outline-offset: -0.8--listbox-gap;
@@ -230,7 +236,7 @@
 :host(:state(--collapsed)) [role='listbox'] {
 	animation-duration: 240ms;
 	animation-name: collapse-listbox;
-	display: none;
+	overflow: hidden;
 
 	&::part(container) {
 		opacity: 0;
