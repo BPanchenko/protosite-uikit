@@ -18,14 +18,15 @@ body {
 	text-rendering: optimizeSpeed;
 }
 
-:where(audio, canvas, img, svg, progress, video) {
-	display: inline-block;
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+* {
+	color: var(--text-color);
+	font-family: var(--text-font);
+	font-size: var(--text-size);
+	line-height: var(--text-interligne);
+	font-weight: var(--text-boldness);
 }
 
-:where(*, *::before, *::after) {
+:where(*::before, *::after) {
 	color: var(--text-color, currentColor);
 	font-family: var(--text-font, inherit);
 	font-size: var(--text-size, inherit);
@@ -33,12 +34,11 @@ body {
 	font-weight: var(--text-boldness, inherit);
 }
 
-:where(body, header, main, footer, form, nav, article, section) {
-	color: var(--text-color);
-	font-family: var(--text-font);
-	font-size: var(--text-size);
-	line-height: var(--text-interligne);
-	font-weight: var(--text-boldness);
+:where(audio, canvas, img, svg, progress, video) {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
 }
 
 /** Horizontal rule
@@ -169,9 +169,9 @@ th {
 	user-select: none;
 }
 
-/** Custom Elements
+/** Undefined Custom Elements waiting for loaded resources
 ========================================================================== */
 
-:not(:defined) {
-	content-visibility: hidden;
+:where(c-select, e-listbox):not(:state(--defined)) {
+	display: none;
 }

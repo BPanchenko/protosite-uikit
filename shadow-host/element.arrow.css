@@ -21,37 +21,37 @@
 
 /* Size modifiers */
 
-:host(.s-xxs) .e-icon {
+:host(.s-xxs) .icon {
 	--icon-size: var(--size-xxs);
 	--icon-weight: 400;
 }
 
-:host(.s-xs) .e-icon {
+:host(.s-xs) .icon {
 	--icon-size: var(--size-xs);
 	--icon-weight: 400;
 }
 
-:host(.s-sm) .e-icon {
+:host(.s-sm) .icon {
 	--icon-size: var(--size-sm);
 	--icon-weight: 400;
 }
 
-:host(.s-md) .e-icon {
+:host(.s-md) .icon {
 	--icon-size: var(--size-md);
 	--icon-weight: 500;
 }
 
-:host(.s-lg) .e-icon {
+:host(.s-lg) .icon {
 	--icon-size: var(--size-lg);
 	--icon-weight: 500;
 }
 
-:host(.s-xl) .e-icon {
+:host(.s-xl) .icon {
 	--icon-size: var(--size-xl);
 	--icon-weight: 800;
 }
 
-:host(.s-xxl) .e-icon {
+:host(.s-xxl) .icon {
 	--icon-size: var(--size-xxl);
 	--icon-weight: 800;
 }
@@ -66,7 +66,7 @@
 		pointer-events: none;
 	}
 
-	.e-icon[data-glyph] {
+	.icon[data-glyph] {
 		@extend %icon;
 
 		display: inline-block;

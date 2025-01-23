@@ -1,5 +1,5 @@
 const classNames = {
-	"eIcon": "e-icon",
+	"icon": "icon",
 	"sLg": "s-lg",
 	"sMd": "s-md",
 	"sSm": "s-sm",

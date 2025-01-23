@@ -8,9 +8,9 @@
 /**
  * Core Component: Select Field
  * Childnodes:
- *	Button subcomponent as the main element of user interaction;
- *	Status of choice as an element that is a child of the button;
- *	Listbox subcomponent with existing options of selection.
+ *	- Button as the first element of user interaction;
+ *	- Status of choice as an element that is a child of the button;
+ *	- Picker with selection options.
  *	
  * [ProtoSite](http://protosite.rocks/components/select.html)
  */
@@ -21,28 +21,48 @@
 :host {
 	@extend %field-settings;
 
+	--bg-color: var(--clr-white);
+	--width: max-content;
+
 	--text-boldness: var(--font-normal);
 	--text-font: var(--ui-font);
 	--text-interligne: var(--default-interligne);
 	--text-size: var(--default-text-size);
-
-	--bg-color: var(--clr-background);
 
 	--bottom-space: 0.125--unit;
 	--left-space: 0.75--space;
 	--right-space: 1--space;
 	--top-space: 0.125--unit;
 
-	--listbox-gap: 0.1875--space;
-	--listbox-bg-color: var(--bg-color);
-	--listbox-border-color: var(--clr-gray-100);
 	--marker-color: currentColor;
 	--marker-glyph: '\e18a';
 	--marker-indent: 1--left-space;
-	--option-glyph: '\e159';
-	--option-start-space: 0.75--unit;
-	--option-end-space: 2--unit;
 	--option-bg-color: var(--clr-gray-50);
+	--option-end-space: 2--unit;
+	--option-glyph: '\e153';
+	--option-start-space: 0.75--unit;
+	--picker-space: 0.1875--space;
+
+	#button {
+		--icon-code: var(--marker-glyph);
+		--icon-color: var(--marker-color);
+		--icon-size: var(--text-md);
+	}
+
+	#picker {
+		--bg-color: var(--clr-white);
+		--border-color: var(--clr-gray-100);
+		--text-color: var(--clr-foreground);
+		--shadow: var(--shadow-4dp);
+		--size: 25svmax;
+	}
+
+	#status {
+		--text-boldness: var(--font-medium);
+		&::before {
+			--text-boldness: var(--font-normal);
+		}
+	}
 }
 
 /** Initial Styling */
@@ -55,10 +75,6 @@
 
 /** Modifications */
 
-:host(:state(--expanded)) {
-	--marker-glyph: '\e18d';
-}
-
 :host(:hover),
 :host(:focus),
 :host(:state(--expanded)) {
@@ -70,27 +86,23 @@
 	--shadow: var(--shadow-3dp);
 }
 
+:host(:state(--expanded)) {
+	--marker-glyph: '\e18d';
+}
+
 /** Context */
 
 :host-context(.c-panel:not(.s-clean)) {
-	--border-color: var(--clr-gray-500);
-	--marker-color: var(--text-color);
+	--border-color: var(--clr-gray-400);
 	--shadow: none;
-}
 
-/** Childnodes Settings
-=========================================================================== */
+	&:host(:focus) {
+		--border-color: var(--clr-gray-100);
+	}
 
-[role='button'] {
-	--icon-code: var(--marker-glyph);
-	--icon-color: var(--marker-color);
-	--icon-size: var(--text-md);
-}
-
-[role='listbox'] {
-	--bg-color: var(--clr-white);
-	--text-color: var(--clr-foreground);
-	--shadow: var(--shadow-3dp);
+	&:host(:state(--expanded)) {
+		--shadow: var(--shadow-2dp);
+	}
 }
 
 /** Rules
@@ -102,10 +114,12 @@
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
-	inline-size: inherit;
+
+	box-sizing: content-box;
+	inline-size: var(--width);
 	block-size: max-content;
-	padding-inline: unset;
 	padding-block: unset;
+	padding-inline: 1--picker-space;
 
 	background-color: var(--bg-color);
 	border-color: var(--border-color);
@@ -114,17 +128,35 @@
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	user-select: none;
+}
 
-	[role='button'] {
+:host(:focus) {
+	outline-color: var(--clr-purple-800);
+	outline-width: 1--pixel;
+	outline-style: dashed;
+	outline-offset: -0.8--picker-space;
+}
+
+:host(:state(--disabled)) {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/** Childnode: Button
+=========================================================================== */
+
+:host {
+	#button {
 		@extend %icon;
 
-		anchor-name: --anchor-on-marker;
+		anchor-name: --anchor;
 
 		box-sizing: border-box;
 		inline-size: 100%;
-		min-block-size: calc(1--height - 2--pixel);
+		block-size: calc(1--height - 2--pixel);
 		padding-block: var(--top-space) var(--bottom-space);
-		padding-inline: var(--left-space) var(--right-space);
+		padding-inline-start: calc(var(--left-space) - var(--picker-space));
+		padding-inline-end: calc(var(--right-space) - var(--picker-space));
 
 		display: flex;
 		align-items: center;
@@ -146,104 +178,153 @@
 			outline: unset;
 		}
 	}
+}
 
-	[role='listbox'] {
+/** Childnode: Picker
+=========================================================================== */
+
+:host {
+	#picker {
 		position: absolute;
-		position-anchor: --anchor-on-marker;
+		position-anchor: --anchor;
 		position-area: inline-start block-end;
 		justify-self: end;
 		z-index: 2;
 
 		display: none;
+		box-sizing: content-box;
 		interpolate-size: allow-keywords;
-		inline-size: max-content;
+		inline-size: var(--width);
 		block-size: max-content;
-		max-block-size: 25vh;
-
-		padding: 1--listbox-gap;
+		padding: 1--picker-space;
 		margin-block-start: var(--space-sm);
 
-		background-color: var(--listbox-bg-color);
-		border-radius: 0.375--unit;
+		background-color: var(--bg-color);
+		border-radius: 0.5--unit;
 		box-shadow: var(--shadow);
-		outline-color: var(--listbox-border-color);
+		outline-color: var(--border-color);
 		outline-width: 1--pixel;
 		outline-style: solid;
-		outline-offset: -0.8--listbox-gap;
+		outline-offset: -0.75--picker-space;
 
 		animation-duration: 460ms;
 		animation-fill-mode: backwards;
 		animation-name: none;
 		animation-timing-function: var(--easing);
 		transform-origin: top;
-		overflow: hidden;
-		overflow-y: clip;
-		overflow-clip-margin: var(--space-sm);
-		scroll-snap-stop: always;
 
-		&::part(container) {
-			display: block;
-			opacity: 0;
-			transition: opacity var(--easing) 240ms;
-		}
-	}
+		&[role='listbox'] {
+			overflow: hidden;
 
-	[role='status'] {
-		&::before {
-			unset: all;
-			transition: color var(--easing) 680ms;
-		}
+			&::part(container) {
+				display: flex;
+				gap: 1--pixel;
+				transition: opacity var(--easing) 240ms;
+			}
 
-		&[aria-label]:not(:empty)::before {
-			content: attr(aria-label) ' ';
-			color: var(--marker-color);
-		}
-		&[aria-placeholder]:empty::before {
-			content: attr(aria-placeholder);
-			color: var(--marker-color);
+			&[aria-orientation='horizontal']::part(container) {
+				flex-direction: row;
+				inline-size: max-content;
+				max-inline-size: var(--size);
+			}
+
+			&[aria-orientation='vertical']::part(container) {
+				flex-direction: column;
+				block-size: max-content;
+				max-block-size: var(--size);
+			}
 		}
 	}
 }
 
-/** Modifiers
-=========================================================================== */
-
-:host(:focus) {
-	outline-color: var(--clr-purple-800);
-	outline-width: 1--pixel;
-	outline-style: dashed;
-	outline-offset: -0.8--listbox-gap;
-}
-
-:host(:state(--disabled)) {
-	opacity: 0.5;
-	pointer-events: none;
-}
-
-:host(:state(--expanded)) [role='listbox'] {
+:host(:state(--expanded)) #picker {
 	display: block;
-	animation-name: expand-listbox;
-
-	&::part(container) {
-		opacity: 1;
-	}
+	animation-name: expand-picker;
 }
 
-:host(:state(--expanded):not(:state(--animating))) [role='listbox'] {
-	overflow-y: auto;
+:host(:state(--expanded):not(:state(--animating))) #picker {
 }
 
-:host(:state(--collapsed)) [role='listbox'] {
+:host(:state(--collapsed)) #picker {
 	animation-duration: 240ms;
-	animation-name: collapse-listbox;
-	overflow: hidden;
+	animation-name: collapse-picker;
 
-	&::part(container) {
+	&[role='listbox']::part(container) {
 		opacity: 0;
 	}
 }
 
+@keyframes collapse-picker {
+	from {
+		block-size: max-content;
+		display: block;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	70% {
+		transform: translateY(0);
+	}
+
+	85% {
+		opacity: 1;
+	}
+
+	to {
+		block-size: 0;
+		display: none;
+		opacity: 0;
+		transform: translateY(-1--space-xs);
+	}
+}
+
+@keyframes expand-picker {
+	from {
+		block-size: 0;
+		transform: translateY(-1--space-sm);
+	}
+
+	40% {
+		transform: translateY(0);
+	}
+
+	to {
+		block-size: max-content;
+		transform: unset;
+	}
+}
+
+/** Childnode: Status
+=========================================================================== */
+
+:host {
+	#status {
+		font-weight: var(--text-boldness);
+
+		&::before {
+			unset: all;
+
+			color: var(--marker-color);
+			font-weight: var(--text-boldness);
+			transition: color var(--easing) 680ms;
+		}
+
+		&:empty[aria-placeholder]::before {
+			content: attr(aria-placeholder);
+		}
+		&:not(:empty)[aria-label]::before {
+			content: attr(aria-label) ' ';
+		}
+	}
+}
+
+:host(:state(--expanded)) #status:not(:empty)[aria-label]::before {
+	color: var(--clr-gray-400);
+}
+
 /**
+ * Element: Option (placed into a slot)
+ *
  * Option of the value available for user selection.
  * It is an element nested in Listbox and whose role is option.
  * The option element can contain text or an image,
@@ -263,16 +344,11 @@
 		--bg-color: var(--option-bg-color);
 	}
 
-	::slotted(&[aria-current='true']) {
-		--text-boldness: var(--font-bold);
-	}
-
 	&[aria-selected='true'] {
 		::slotted(&) {
 			--icon-code: var(--option-glyph);
 			--icon-color: var(--clr-gray-400);
-			--icon-size: 0.75--unit;
-			--text-boldness: var(--font-normal);
+			--icon-size: var(--unit);
 			--text-color: var(--clr-gray-500);
 		}
 
@@ -280,17 +356,23 @@
 			--bg-color: transparent;
 		}
 	}
+
+	::slotted(&[aria-current='true'][aria-selected='false']) {
+		--text-boldness: var(--font-medium);
+	}
 }
 
 [role='option'] {
 	::slotted(&) {
 		padding-inline-start: var(--option-start-space);
 		padding-inline-end: var(--option-end-space);
-		margin-block-end: 1--pixel;
 
 		background-color: var(--bg-color);
-		transition: background-color 160ms var(--easing);
 		cursor: pointer;
+
+		transition-duration: 160ms;
+		transition-property: background-color, transform;
+		transition-timing-function: var(--easing);
 	}
 
 	::slotted(&:first-of-type) {
@@ -302,12 +384,17 @@
 		margin-block-end: unset;
 	}
 
+	::slotted(&[aria-current='true']) {
+		transform: translateX(var(--space-sm));
+	}
+
 	::slotted(&[aria-selected='true']) {
 		@extend %icon;
 
 		display: flex;
 		align-items: center;
-		gap: 0.5em;
+		gap: var(--space-sm);
+		padding-inline-start: 1.1--option-start-space;
 		cursor: default;
 
 		&::after {
@@ -319,36 +406,13 @@
 	}
 }
 
-/** Animation
-=========================================================================== */
+/* Correct border radius of an option into scrolled listbox */
 
-@keyframes expand-listbox {
-	from {
-		block-size: 0;
+:host #picker[role='listbox']:state(--scrolled) {
+	::slotted([role='option']:first-of-type) {
+		border-top-right-radius: 0;
 	}
-
-	to {
-		block-size: max-content;
-	}
-}
-
-@keyframes collapse-listbox {
-	from {
-		block-size: max-content;
-		display: block;
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	70% {
-		opacity: 0.9;
-		transform: translateY(0);
-	}
-
-	100% {
-		display: none;
-		block-size: 0;
-		opacity: 0;
-		transform: translateY(-1--space-xs);
+	::slotted([role='option']:first-of-type) {
+		border-bottom-right-radius: 0;
 	}
 }

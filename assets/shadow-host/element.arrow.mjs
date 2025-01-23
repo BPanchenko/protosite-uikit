@@ -1,7 +1,7 @@
 import importedCSS from './element.arrow.css' with { type: 'css' }
 
 /** @type {string} */
-export const eIcon = 'e-icon';
+export const icon = 'icon';
 /** @type {string} */
 export const sLg = 's-lg';
 /** @type {string} */
