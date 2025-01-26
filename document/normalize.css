@@ -172,6 +172,6 @@ th {
 /** Undefined Custom Elements waiting for loaded resources
 ========================================================================== */
 
-:where(c-select, e-listbox):not(:state(--defined)) {
+:where(c-avatar, c-select, e-listbox):not(:state(--defined)) {
 	display: none;
 }

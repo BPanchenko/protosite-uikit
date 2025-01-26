@@ -1,9 +1,20 @@
 @import '../settings/main.css';
 @import '../settings/shadow.css';
 
+/**
+ * Core Component: Avatar
+ * Childnodes: Link, Mask and Image.
+ *	
+ * [ProtoSite](http://protosite.rocks/components/avatar.html)
+ */
+
+/** Settings
+=========================================================================== */
+
 :host {
 	--bg-color: transparent;
-	--border: 1--pixel solid var(--muted-color);
+	--border-color: var(--clr-gray-300);
+	--radius: 50%;
 	--shadow: var(--shadow-2dp);
 	--text-size: 0;
 
@@ -15,91 +26,102 @@
 	--size-lg: 8--unit;
 	--size-xl: 12--unit;
 	--size-xxl: 16--unit;
-}
 
-:host [part='root']:not([style*='background-image']):empty {
-	--bg-color: var(--clr-gray-100);
-	--border: none;
-	--shadow: none;
+	#mask {
+		--shadow: none;
+	}
 }
 
 /* Size modifiers */
 
-:host(.s-xxs) [part='root'] {
+:host(.s-xxs) {
 	--size: var(--size-xxs);
 }
-:host(.s-xs) [part='root'] {
+:host(.s-xs) {
 	--size: var(--size-xs);
 }
-:host(.s-sm) [part='root'] {
+:host(.s-sm) {
 	--size: var(--size-sm);
 }
-:host(.s-md) [part='root'] {
+:host(.s-md) {
 	--size: var(--size-md);
 }
-:host(.s-lg) [part='root'] {
+:host(.s-lg) {
 	--size: var(--size-lg);
 }
-:host(.s-xl) [part='root'] {
+:host(.s-xl) {
 	--size: var(--size-xl);
 }
-:host(.s-xxl) [part='root'] {
+:host(.s-xxl) {
 	--size: var(--size-xxl);
 }
 
-/**
- * Component: Avatar
- * Children: Image and Link
-=========================================================================== */
-
-:host :is([part='root'], a) {
-	display: inline-block;
-	border-radius: 50%;
-	width: var(--size);
-	height: var(--size);
-	overflow: hidden;
-	text-align: center;
-	vertical-align: middle;
-	user-select: none;
-}
-
-:host [part='root'] {
-	background-color: var(--bg-color);
-	border: var(--border);
-	box-shadow: var(--shadow);
-
-	img {
-		user-select: auto;
-		width: inherit;
-		height: inherit;
-		object-fit: cover;
-	}
-
-	&[style*='background-image'] {
-		background-size: cover;
-
-		img {
-			display: none;
-		}
-	}
-}
-
-:host {
-	display: contents;
-	pointer-events: none;
-	& > * {
-		pointer-events: auto;
-	}
-}
-
-/** Context: Panel Component
-=========================================================================== */
+/** Context */
 
 :host-context(.c-panel:not(.s-clean)) {
-	--shadow: var(--inset-shadow-2dp);
+	--bg-color: var(--clr-gray-200);
+	--shadow: none;
 
-	img {
-		z-index: -1;
-		position: relative;
+	#mask {
+		--shadow: var(--inset-shadow-2dp);
 	}
+}
+
+/** Rules
+=========================================================================== */
+
+:host {
+	display: inline-block;
+	inline-size: var(--size);
+	block-size: var(--size);
+
+	background-color: var(--bg-color);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	overflow: hidden;
+	user-select: none;
+	vertical-align: middle;
+	position: relative;
+
+	:is(#link, #mask, #image) {
+		inline-size: var(--size);
+		block-size: var(--size);
+		border-radius: var(--radius);
+		overflow: hidden;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+	}
+
+	:is(#link, #image) {
+		display: none;
+	}
+
+	#link[href] {
+		display: block;
+		pointer-events: auto;
+		z-index: 3;
+	}
+
+	#mask {
+		display: block;
+		box-shadow: var(--shadow);
+		box-sizing: border-box;
+		opacity: 0.8;
+		border: 1--pixel solid var(--border-color);
+		z-index: 2;
+	}
+
+	#image[src] {
+		display: block;
+		object-fit: cover;
+		pointer-events: auto;
+		z-index: 1;
+	}
+}
+
+:host-context(.c-panel:not(.s-clean)) #mask {
+	border: unset;
 }
