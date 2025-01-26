@@ -1,6 +1,4 @@
 const classNames = {
-	"cAvatar": "c-avatar",
-	"cAvatarLink": "c-avatar__link",
 	"cBackdrop": "c-backdrop",
 	"cBadge": "c-badge",
 	"cBadgeDanger": "c-badge--danger",
@@ -88,14 +86,7 @@ const classNames = {
 	"sClean": "s-clean",
 	"sFloating": "s-floating",
 	"sIcon": "s-icon",
-	"sLg": "s-lg",
 	"sLinkset": "s-linkset",
-	"sMd": "s-md",
-	"sSm": "s-sm",
-	"sXl": "s-xl",
-	"sXs": "s-xs",
-	"sXxl": "s-xxl",
-	"sXxs": "s-xxs",
 	"sizes": "sizes",
 	"tick": "tick"
 };
