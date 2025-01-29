@@ -1,79 +1,55 @@
-@import '../settings/breakpoints.css';
-@import '../settings/space.css';
-
-/* Variables
-=========================================================================== */
-
-.u-container {
-	--device: 'tablet';
-	--size: 92rem;
-
-	@media (--screen-desktop) {
-		--device: 'desktop';
-		--size: 111.2rem;
-	}
-
-	@media (--screen-2k) {
-		--device: 'screen-2k';
-		--size: 130.4rem;
-	}
-
-	@media (--screen-4k) {
-		--device: 'screen-4k';
-		--size: 130.4rem;
-	}
-
-	@media (--screen-8k) {
-		--device: 'screen-8k';
-		--size: 130.4rem;
-	}
-
-	@media (--screen-tablet) {
-		--device: 'tablet';
-		--size: 92rem;
-	}
-
-	@media (--screen-tablet-portrait) {
-		--device: 'tablet';
-		--size: 72rem;
-	}
-
-	@media (--screen-handset-landscape) {
-		--device: 'handset';
-		--size: 46.4rem;
-	}
-
-	@media (--screen-handset-portrait) {
-		--device: 'handset';
-		--size: 32rem;
-	}
-}
-
 /* ========================================================================
 	Utility: Container
 =========================================================================== */
 
+@import '../settings/breakpoint.css';
+@import '../settings/space.css';
+
+/* Settings
+=========================================================================== */
+
 .u-container {
-	display: block;
-	box-sizing: border-box;
-	padding-block: var(--space-md);
-	margin: 0 auto;
+	--width: 100dvw;
+	--height: 100dvh;
 
-	container-name: root-container;
-	container-type: inline-size;
+	@media (--device-desktop) {
+		--width: 160rem;
+	}
 
-	inline-size: 100%;
-	block-size: 100dvh;
-	max-inline-size: var(--size);
+	@media (--device-laptop) {
+		--width: 88vw;
+	}
 
-	&::before,
-	&::after {
-		content: '';
-		display: table;
-		clear: both;
+	@media (--device-tablet) {
+		--width: 92vw;
+	}
+
+	@media (--device-handset) {
+		--width: 96vw;
 	}
 }
 
-.u-container .u-container {
-	all: unset;
+/* Rules
+=========================================================================== */
+
+.u-container {
+	container-name: root-container;
+	container-type: inline-size;
+
+	display: block;
+	inline-size: auto;
+	max-inline-size: var(--width);
+	block-size: max-content;
+	min-block-size: var(--height);
+	padding-block: var(--space-md);
+	margin-inline: auto;
+	box-sizing: border-box;
+	
+	.u-container {
+		container-name: unset;
+		max-inline-size: unset;
+		min-block-size: unset;
+		padding-block-start: unset;
+		margin-inline: unset;
+	}
 }
