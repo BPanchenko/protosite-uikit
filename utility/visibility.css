@@ -1,149 +1,108 @@
-@import '../settings/breakpoints.css';
+@import '../settings/breakpoint.css';
 
 /**
  * Utilities:
- *	`[aria-hidden=true]`
  *	`u-hidden`
- *	`u-hidden@{breakpoint}`
- *	`u-visible@{breakpoint}`
- *	`u-visible-hover`
- *	`u-visible-hover-inline`
- *
- ========================================================================== */
+ *	`u-hidden@{device-breakpoint}`
+ *	`u-hidden@print`
+ *	`u-hidden-touch`
+ *	`u-hidden-notouch`
+ *	`u-invisible`
+ *	`u-invisible@{device-breakpoint}`
+ *	`u-visible`
+ *	`u-visible@{device-breakpoint}`
+=========================================================================== */
 
-:is(.u-hidden, [aria-hidden='true']) {
-	display: none !important;
-	visibility: hidden !important;
+.u-hidden {
+	content-visibility: hidden;
+	&.u-visible {
+		content-visibility: revert-layer;
+	}
 }
 
 .u-invisible {
-	visibility: hidden !important;
-}
-
-@media (--screen-xdesktop) {
-	.u-hidden\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait {
-		display: none !important;
+	visibility: hidden;
+	&.u-visible {
+		visibility: revert-layer;
 	}
 }
 
-@media (--screen-desktop) {
+.u-visible:not(:is(.u-hidden, .u-invisible)) {
+	visibility: visible;
+	content-visibility: visible;
+}
+
+@media (--device-desktop) {
 	.u-hidden\@desktop,
-	.u-visible\@xdesktop,
+	.u-visible\@laptop,
 	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait {
-		display: none !important;
+	.u-visible\@handset {
+		content-visibility: hidden;
+	}
+
+	.u-invisible\@desktop {
+		visibility: hidden;
 	}
 }
 
-@media (--screen-tablet-landscape) {
+@media (--device-laptop) {
+	.u-hidden\@laptop,
+	.u-visible\@desktop,
+	.u-visible\@tablet,
+	.u-visible\@handset {
+		content-visibility: hidden;
+	}
+
+	.u-invisible\@laptop {
+		visibility: hidden;
+	}
+}
+
+@media (--device-tablet) {
 	.u-hidden\@tablet,
-	.u-hidden\@tablet-landscape,
-	.u-visible\@xdesktop,
 	.u-visible\@desktop,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait {
-		display: none !important;
+	.u-visible\@laptop,
+	.u-visible\@handset {
+		content-visibility: hidden;
+	}
+
+	.u-invisible\@tablet {
+		visibility: hidden;
 	}
 }
 
-@media (--screen-tablet-portrait) {
-	.u-hidden\@tablet,
-	.u-hidden\@tablet-portrait,
-	.u-visible\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet-landscape,
-	.u-visible\@handset,
-	.u-visible\@handset-landscape,
-	.u-visible\@handset-portrait {
-		display: none !important;
-	}
-}
-
-@media (--screen-handset-landscape) {
+@media (--device-handset) {
 	.u-hidden\@handset,
-	.u-hidden\@handset-landscape,
-	.u-visible\@xdesktop,
 	.u-visible\@desktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset-portrait {
-		display: none !important;
+	.u-visible\@laptop,
+	.u-visible\@tablet {
+		content-visibility: hidden;
 	}
-}
 
-@media (--screen-handset-portrait) {
-	.u-hidden\@handset,
-	.u-hidden\@handset-portrait,
-	.u-visible\@xdesktop,
-	.u-visible\@desktop,
-	.u-visible\@tablet,
-	.u-visible\@tablet-landscape,
-	.u-visible\@tablet-portrait,
-	.u-visible\@handset-landscape {
-		display: none !important;
+	.u-invisible\@handset {
+		visibility: hidden;
 	}
 }
 
 @media print {
 	.u-hidden\@print {
-		display: none !important;
-		visibility: hidden !important;
+		display: none;
+		visibility: hidden;
 	}
-}
-
-/* Toggle (Hover + Focus)
- ========================================================================== */
-
-.u-visible-toggle:not(:hover):not(:focus-visible) .u-hidden-hover:not(:focus-within) {
-	position: absolute !important;
-	width: 0 !important;
-	height: 0 !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	overflow: hidden !important;
-}
-
-.u-visible-toggle:not(:hover):not(:focus-visible) .u-invisible-hover:not(:focus-within) {
-	opacity: 0 !important;
-}
-
-.u-visible-toggle {
-	-webkit-tap-highlight-color: transparent;
-}
-
-.u-visible-toggle:focus-visible {
-	outline: none;
 }
 
 /* Touch
- ========================================================================== */
+=========================================================================== */
+
+.u-hidden-notouch {
+	content-visibility: hidden;
+}
 
 @media (pointer: coarse) {
 	.u-hidden-touch {
-		display: none !important;
+		content-visibility: hidden;
 	}
-}
-
-.u-hidden-notouch {
-	display: none !important;
-}
-
-@media (pointer: coarse) {
 	.u-hidden-notouch {
-		display: block !important;
+		content-visibility: visible;
 	}
 }
