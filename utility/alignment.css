@@ -1,6 +1,5 @@
-@import '../settings/breakpoints.css';
-@import '../settings/document.css';
-@import '../settings/typography.css';
+@import '../settings/breakpoint.css';
+@import '../settings/space.css';
 
 /* Clearfix
 =========================================================================== */
@@ -21,28 +20,32 @@
 =========================================================================== */
 
 [class*='u-align'] {
+	--margin: var(--space);
+}
+
+[class*='u-align'] {
 	display: block;
-	margin-bottom: var(--space);
+	margin-block-end: var(--margin);
 }
 
 * + [class*='u-align'] {
-	margin-top: var(--space);
+	margin-block-start: var(--margin);
 }
 
 .u-align-center {
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
 }
 
 .u-align-left {
-	margin-top: 0;
-	margin-right: var(--space);
+	margin-block-start: unset;
+	margin-inline-end: var(--margin);
 	float: left;
 }
 
 .u-align-right {
-	margin-top: 0;
-	margin-left: var(--space);
+	margin-block-start: unset;
+	margin-inline-start: var(--margin);
 	float: right;
 }
 
@@ -50,144 +53,74 @@
  ========================================================================== */
 
 .u-text-left {
-	text-align: left !important;
+	text-align: left;
 }
 .u-text-right {
-	text-align: right !important;
+	text-align: right;
 }
 .u-text-center {
-	text-align: center !important;
+	text-align: center;
 }
 .u-text-justify {
-	text-align: justify !important;
+	text-align: justify;
 }
 
-.u-text-top {
-	vertical-align: top !important;
-}
-.u-text-middle {
-	vertical-align: middle !important;
-}
-.u-text-bottom {
-	vertical-align: bottom !important;
-}
-
-/* xdesktop */
-@media (--screen-xdesktop) {
-	.u-text-center\@xdesktop {
-		text-align: center !important;
-	}
-	.u-text-left\@xdesktop {
-		text-align: left !important;
-	}
-	.u-text-right\@xdesktop {
-		text-align: right !important;
-	}
-}
-
-/* desktop */
-@media (--screen-desktop) {
+@media (--device-desktop) {
 	.u-text-center\@desktop {
-		text-align: center !important;
+		text-align: center;
 	}
 	.u-text-left\@desktop {
-		text-align: left !important;
+		text-align: left;
 	}
 	.u-text-right\@desktop {
-		text-align: right !important;
+		text-align: right;
+	}
+	.u-text-justify\@desktop {
+		text-align: right;
 	}
 }
 
-/* tablet-landscape */
-@media (--screen-tablet-landscape) {
-	.u-text-center\@tablet,
-	.u-text-center\@tablet-landscape {
-		text-align: center !important;
+@media (--device-laptop) {
+	.u-text-center\@laptop {
+		text-align: center;
 	}
-	.u-text-left\@tablet,
-	.u-text-left\@tablet-landscape {
-		text-align: left !important;
+	.u-text-left\@laptop {
+		text-align: left;
 	}
-	.u-text-right\@tablet,
-	.u-text-right\@tablet-landscape {
-		text-align: right !important;
+	.u-text-right\@laptop {
+		text-align: right;
 	}
-}
-
-/* tablet-portrait */
-@media (--screen-tablet-portrait) {
-	.u-text-center\@tablet,
-	.u-text-center\@tablet-portrait {
-		text-align: center !important;
-	}
-	.u-text-left\@tablet,
-	.u-text-left\@tablet-portrait {
-		text-align: left !important;
-	}
-	.u-text-right\@tablet,
-	.u-text-right\@tablet-portrait {
-		text-align: right !important;
+	.u-text-justify\@laptop {
+		text-align: right;
 	}
 }
 
-/* handset-landscape */
-@media (--screen-handset-landscape) {
-	.u-text-center\@handset,
-	.u-text-center\@handset-landscape {
-		text-align: center !important;
+@media (--device-tablet) {
+	.u-text-center\@tablet {
+		text-align: center;
 	}
-	.u-text-left\@handset,
-	.u-text-left\@handset-landscape {
-		text-align: left !important;
+	.u-text-left\@tablet {
+		text-align: left;
 	}
-	.u-text-right\@handset,
-	.u-text-right\@handset-landscape {
-		text-align: right !important;
+	.u-text-right\@tablet {
+		text-align: right;
 	}
-}
-
-/* handset-portrait */
-@media (--screen-handset-portrait) {
-	.u-text-center\@handset,
-	.u-text-center\@handset-portrait {
-		text-align: center !important;
-	}
-	.u-text-left\@handset,
-	.u-text-left\@handset-portrait {
-		text-align: left !important;
-	}
-	.u-text-right\@handset,
-	.u-text-right\@handset-portrait {
-		text-align: right !important;
+	.u-text-justify\@tablet {
+		text-align: right;
 	}
 }
 
-/* Vertical alignment of inline elements or inline-block elements
-=========================================================================== */
-
-.u-vertical-align {
-	font-size: 0;
-
-	&::before {
-		content: '';
-		display: inline-block;
-		height: 100vh;
-		vertical-align: middle;
+@media (--device-handset) {
+	.u-text-center\@handset {
+		text-align: center;
 	}
-}
-
-:is(.u-vertical-align-top, .u-vertical-align-middle, .u-vertical-align-bottom) {
-	display: inline-block;
-	max-width: max-content;
-	font-size: var(--text-size);
-}
-
-.u-vertical-align-top {
-	vertical-align: top;
-}
-.u-vertical-align-middle {
-	vertical-align: middle;
-}
-.u-vertical-align-bottom {
-	vertical-align: bottom;
+	.u-text-left\@handset {
+		text-align: left;
+	}
+	.u-text-right\@handset {
+		text-align: right;
+	}
+	.u-text-justify\@handset {
+		text-align: right;
+	}
 }
