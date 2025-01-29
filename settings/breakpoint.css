@@ -1,0 +1,45 @@
+/* ========================================================================
+	Breakpoints
+===================================+======================================= */
+
+/**
+ * Device type.
+ * Overlapping queries with Threshold Conditions.
+ */
+
+@custom-media --device-desktop-landscape screen and (min-width: 1920px) and (orientation: landscape);
+@custom-media --device-desktop-portrait screen and (min-width: 1050px) and (orientation: portrait);
+@custom-media --device-desktop (--device-tablet-landscape) or (--device-tablet-portrait);
+
+@custom-media --device-laptop screen and (min-width: 1180px) and (max-width: 1920px) and (orientation: landscape);
+
+@custom-media --device-tablet-landscape screen and (max-width: 1180px) and (orientation: landscape);
+@custom-media --device-tablet-portrait screen and (max-width: 1050px) and (orientation: portrait);
+@custom-media --device-tablet (--device-tablet-landscape) or (--device-tablet-portrait);
+
+@custom-media --device-handset-landscape screen and (max-width: 960px) and (orientation: landscape);
+@custom-media --device-handset-portrait screen and (max-width: 540px) and (orientation: portrait);
+@custom-media --device-handset (--device-handset-landscape) or (--device-handset-portrait);
+
+/**
+ * Display resolution.
+ * Strict queries with Minimum and Maximum Conditions.
+ */
+
+@custom-media --display-hd-landscape screen and (min-width: 1280px) and (max-width: 1920px) and (orientation: landscape);
+@custom-media --display-hd-portrait screen and (min-width: 720px) and (max-width: 1080px) and (orientation: portrait);
+@custom-media --display-hd (--display-hd-landscape) or (--display-hd-portrait);
+
+@custom-media --display-fullhd-landscape screen and (min-width: 1920px) and (max-width: 2560px) and (orientation: landscape);
+@custom-media --display-fullhd-portrait screen and (min-width: 1080px) and (max-width: 1440px) and (orientation: portrait);
+@custom-media --display-fullhd (--display-fullhd-landscape) or (--display-fullhd-portrait);
+
+@custom-media --display-2k-landscape screen and (min-width: 2560px) and (max-width: 3840px) and (orientation: landscape);
+@custom-media --display-2k-portrait screen and (min-width: 1440px) and (max-width: 2160px) and (orientation: portrait);
+@custom-media --display-2k (--display-2k-landscape) or (--display-2k-portrait);
+
+@custom-media --display-4k-landscape screen and (min-width: 3840px) and (max-width: 7680px) and (orientation: landscape);
+@custom-media --display-4k-portrait screen and (min-width: 2160px) and (max-width: 4320px) and (orientation: portrait);
+@custom-media --display-4k (--display-4k-landscape) or (--display-4k-portrait);
+
+@custom-media --display-8k screen and (((min-width: 7680px) and (orientation: landscape)) or ((min-width: 4320px) and (orientation: portrait)));

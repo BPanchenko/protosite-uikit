@@ -1,19 +1,10 @@
+/* ========================================================================
+	Color theme
+===================================+======================================= */
+
 @import '@bpanchenko/palette/assets/palette.css';
-@import './main.css';
-@import './space.css';
-@import './typography.css';
 
-body {
-	--list-indent: var(--space);
-	--print-width: 72ch;
-
-	--text-boldness: var(--font-normal);
-	--text-font: var(--font-sans);
-	--text-interligne: var(--default-interligne);
-	--text-size: var(--default-text-size);
-}
-
-body {
+:root {
 	--bg-color: var(--clr-gray-100);
 	--border-color: var(--clr-gray-800);
 
