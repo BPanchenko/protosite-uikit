@@ -1,19 +1,42 @@
-@import '../.snippet/custom-selectors.css';
-@import '../settings/document.css';
-
 /* ========================================================================
-	Normalize
+	Sectioning root
 =========================================================================== */
+
+@import '../settings/basic.css';
+
+/** Root Inherited Settings
+========================================================================== */
+
+body {
+	--duration: var(--base-duration);
+	--easing: var(--base-easing);
+
+	--bkgd-color: var(--base-bkgd-color);
+	--bord-color: var(--base-bdr-color);
+
+	--caption-color: var(--clr-black);
+	--caption-font: var(--accent-font);
+
+	--line-thickness: var(--base-line-thickness);
+	--link-color: var(--base-link-color);
+	--text-boldness: var(--base-text-boldness);
+	--text-color: var(--base-text-color);
+	--text-font: var(--base-text-font);
+	--text-interligne: var(--base-text-interligne);
+	--text-size: var(--base-text-size);
+	--text-width: var(--base-text-width);
+}
+
+/** Rules
+========================================================================== */
 
 html {
 	font-size: 62.5%;
 }
 
 body {
-	margin-block: 0;
-	margin-inline: var(--space);
-
-	background-color: var(--bg-color);
+	background-color: var(--bkgd-color);
+	margin: unset;
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
 }
@@ -39,25 +62,6 @@ body {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
-}
-
-/** Horizontal rule
-========================================================================== */
-
-hr {
-	border: unset;
-	margin: unset;
-	padding: unset;
-
-	block-size: 1--pixel;
-	margin-block: 1--unit;
-
-	background-color: var(--delimeter-color);
-	border-bottom: 1px solid var(--clr-white);
-}
-
-:--headings + hr {
-	margin-block-start: 0;
 }
 
 /** Block base
@@ -137,31 +141,18 @@ optgroup {
 	font-weight: bold;
 }
 
-/** Tables
-========================================================================== */
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-td,
-th {
-	padding: 0;
-}
-
 /** Selection
 ========================================================================== */
 
 ::-moz-selection {
 	color: var(--selection-text-color);
-	background-color: var(--selection-bg-color);
+	background-color: var(--selection-bkgd-color);
 	text-shadow: none;
 }
 
 ::selection {
 	color: var(--selection-text-color);
-	background-color: var(--selection-bg-color);
+	background-color: var(--selection-bkgd-color);
 	text-shadow: none;
 }
 
