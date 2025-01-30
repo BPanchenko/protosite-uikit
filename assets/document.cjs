@@ -1,6 +1,5 @@
 const classNames = {
 	"cIcon": "c-icon",
-	"isActive": "is-active",
 	"sCondensed": "s-condensed",
 	"sIcon": "s-icon",
 	"sLead": "s-lead",

@@ -1,7 +1,4 @@
 const classNames = {
-	"cButton": "c-button",
-	"cPanel": "c-panel",
-	"sClean": "s-clean",
 	"sLink": "s-link"
 };
 

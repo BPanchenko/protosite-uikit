@@ -3,8 +3,6 @@ import importedCSS from './document.css' with { type: 'css' }
 /** @type {string} */
 export const cIcon = 'c-icon';
 /** @type {string} */
-export const isActive = 'is-active';
-/** @type {string} */
 export const sCondensed = 's-condensed';
 /** @type {string} */
 export const sIcon = 's-icon';

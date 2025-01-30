@@ -155,8 +155,6 @@ export const handle = 'handle';
 /** @type {string} */
 export const iconic = 'iconic';
 /** @type {string} */
-export const isActive = 'is-active';
-/** @type {string} */
 export const isClosed = 'is-closed';
 /** @type {string} */
 export const isFilled = 'is-filled';
@@ -465,93 +463,89 @@ export const uFloatRight = 'u-float-right';
 /** @type {string} */
 export const uHidden = 'u-hidden';
 /** @type {string} */
-export const uHiddenHover = 'u-hidden-hover';
-/** @type {string} */
 export const uHiddenNotouch = 'u-hidden-notouch';
 /** @type {string} */
 export const uInvisible = 'u-invisible';
 /** @type {string} */
-export const uInvisibleHover = 'u-invisible-hover';
+export const uMgn = 'u-mgn';
 /** @type {string} */
-export const uMargin = 'u-margin';
+export const uMgnBottom = 'u-mgn-bottom';
 /** @type {string} */
-export const uMarginBottom = 'u-margin-bottom';
+export const uMgnBottomRemove = 'u-mgn-bottom-remove';
 /** @type {string} */
-export const uMarginBottomRemove = 'u-margin-bottom-remove';
+export const uMgnLeft = 'u-mgn-left';
 /** @type {string} */
-export const uMarginLeft = 'u-margin-left';
+export const uMgnLeftRemove = 'u-mgn-left-remove';
 /** @type {string} */
-export const uMarginLeftRemove = 'u-margin-left-remove';
+export const uMgnLg = 'u-mgn-lg';
 /** @type {string} */
-export const uMarginLg = 'u-margin-lg';
+export const uMgnLgBottom = 'u-mgn-lg-bottom';
 /** @type {string} */
-export const uMarginLgBottom = 'u-margin-lg-bottom';
+export const uMgnLgLeft = 'u-mgn-lg-left';
 /** @type {string} */
-export const uMarginLgLeft = 'u-margin-lg-left';
+export const uMgnLgRight = 'u-mgn-lg-right';
 /** @type {string} */
-export const uMarginLgRight = 'u-margin-lg-right';
+export const uMgnLgTop = 'u-mgn-lg-top';
 /** @type {string} */
-export const uMarginLgTop = 'u-margin-lg-top';
+export const uMgnMd = 'u-mgn-md';
 /** @type {string} */
-export const uMarginMd = 'u-margin-md';
+export const uMgnMdBottom = 'u-mgn-md-bottom';
 /** @type {string} */
-export const uMarginMdBottom = 'u-margin-md-bottom';
+export const uMgnMdLeft = 'u-mgn-md-left';
 /** @type {string} */
-export const uMarginMdLeft = 'u-margin-md-left';
+export const uMgnMdRight = 'u-mgn-md-right';
 /** @type {string} */
-export const uMarginMdRight = 'u-margin-md-right';
+export const uMgnMdTop = 'u-mgn-md-top';
 /** @type {string} */
-export const uMarginMdTop = 'u-margin-md-top';
+export const uMgnRemove = 'u-mgn-remove';
 /** @type {string} */
-export const uMarginRemove = 'u-margin-remove';
+export const uMgnRight = 'u-mgn-right';
 /** @type {string} */
-export const uMarginRight = 'u-margin-right';
+export const uMgnRightRemove = 'u-mgn-right-remove';
 /** @type {string} */
-export const uMarginRightRemove = 'u-margin-right-remove';
+export const uMgnSm = 'u-mgn-sm';
 /** @type {string} */
-export const uMarginSm = 'u-margin-sm';
+export const uMgnSmBottom = 'u-mgn-sm-bottom';
 /** @type {string} */
-export const uMarginSmBottom = 'u-margin-sm-bottom';
+export const uMgnSmLeft = 'u-mgn-sm-left';
 /** @type {string} */
-export const uMarginSmLeft = 'u-margin-sm-left';
+export const uMgnSmRight = 'u-mgn-sm-right';
 /** @type {string} */
-export const uMarginSmRight = 'u-margin-sm-right';
+export const uMgnSmTop = 'u-mgn-sm-top';
 /** @type {string} */
-export const uMarginSmTop = 'u-margin-sm-top';
+export const uMgnTop = 'u-mgn-top';
 /** @type {string} */
-export const uMarginTop = 'u-margin-top';
+export const uMgnTopRemove = 'u-mgn-top-remove';
 /** @type {string} */
-export const uMarginTopRemove = 'u-margin-top-remove';
+export const uMgnXl = 'u-mgn-xl';
 /** @type {string} */
-export const uMarginXl = 'u-margin-xl';
+export const uMgnXlBottom = 'u-mgn-xl-bottom';
 /** @type {string} */
-export const uMarginXlBottom = 'u-margin-xl-bottom';
+export const uMgnXlLeft = 'u-mgn-xl-left';
 /** @type {string} */
-export const uMarginXlLeft = 'u-margin-xl-left';
+export const uMgnXlRight = 'u-mgn-xl-right';
 /** @type {string} */
-export const uMarginXlRight = 'u-margin-xl-right';
+export const uMgnXlTop = 'u-mgn-xl-top';
 /** @type {string} */
-export const uMarginXlTop = 'u-margin-xl-top';
+export const uMgnXs = 'u-mgn-xs';
 /** @type {string} */
-export const uMarginXs = 'u-margin-xs';
+export const uMgnXsBottom = 'u-mgn-xs-bottom';
 /** @type {string} */
-export const uMarginXsBottom = 'u-margin-xs-bottom';
+export const uMgnXsLeft = 'u-mgn-xs-left';
 /** @type {string} */
-export const uMarginXsLeft = 'u-margin-xs-left';
+export const uMgnXsRight = 'u-mgn-xs-right';
 /** @type {string} */
-export const uMarginXsRight = 'u-margin-xs-right';
+export const uMgnXsTop = 'u-mgn-xs-top';
 /** @type {string} */
-export const uMarginXsTop = 'u-margin-xs-top';
+export const uMgnXxl = 'u-mgn-xxl';
 /** @type {string} */
-export const uMarginXxl = 'u-margin-xxl';
+export const uMgnXxlBottom = 'u-mgn-xxl-bottom';
 /** @type {string} */
-export const uMarginXxlBottom = 'u-margin-xxl-bottom';
+export const uMgnXxlLeft = 'u-mgn-xxl-left';
 /** @type {string} */
-export const uMarginXxlLeft = 'u-margin-xxl-left';
+export const uMgnXxlRight = 'u-mgn-xxl-right';
 /** @type {string} */
-export const uMarginXxlRight = 'u-margin-xxl-right';
-/** @type {string} */
-export const uMarginXxlTop = 'u-margin-xxl-top';
+export const uMgnXxlTop = 'u-mgn-xxl-top';
 /** @type {string} */
 export const uPositionAbsolute = 'u-position-absolute';
 /** @type {string} */
@@ -575,8 +569,6 @@ export const uScrollDisable = 'u-scroll-disable';
 /** @type {string} */
 export const uScrollEnable = 'u-scroll-enable';
 /** @type {string} */
-export const uTextBottom = 'u-text-bottom';
-/** @type {string} */
 export const uTextBreak = 'u-text-break';
 /** @type {string} */
 export const uTextCenter = 'u-text-center';
@@ -585,25 +577,13 @@ export const uTextJustify = 'u-text-justify';
 /** @type {string} */
 export const uTextLeft = 'u-text-left';
 /** @type {string} */
-export const uTextMiddle = 'u-text-middle';
-/** @type {string} */
 export const uTextNowrap = 'u-text-nowrap';
 /** @type {string} */
 export const uTextRight = 'u-text-right';
 /** @type {string} */
-export const uTextTop = 'u-text-top';
-/** @type {string} */
 export const uTextTruncate = 'u-text-truncate';
 /** @type {string} */
-export const uVerticalAlign = 'u-vertical-align';
-/** @type {string} */
-export const uVerticalAlignBottom = 'u-vertical-align-bottom';
-/** @type {string} */
-export const uVerticalAlignMiddle = 'u-vertical-align-middle';
-/** @type {string} */
-export const uVerticalAlignTop = 'u-vertical-align-top';
-/** @type {string} */
-export const uVisibleToggle = 'u-visible-toggle';
+export const uVisible = 'u-visible';
 
 /** @type {CSSStyleSheet} */
 export const styleSheet = importedCSS;
