@@ -1,4 +1,5 @@
-@import '../settings/document.css';
+@import '../settings/basic.css';
+@import '../settings/color.css';
 
 .c-backdrop {
 	contain: strict;
@@ -11,5 +12,5 @@
 	background-color: var(--clr-gray-800);
 
 	opacity: 0.2;
-	transition: opacity var(--duration) var(--easing);
+	transition: opacity var(--base-duration) var(--base-easing);
 }

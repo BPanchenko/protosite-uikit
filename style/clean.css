@@ -1,29 +1,29 @@
-@import '../settings/document.css';
+@import '../settings/basic.css';
 
 /* Component: Button
 =========================================================================== */
 
 :--button-any.s-clean {
-	--bg-color: transparent;
-	--border-color: transparent;
+	--bkgd-color: transparent;
+	--bord-color: transparent;
 	--padding-horz: var(--space-xs);
 	--shadow: none;
 	--text-color: var(--text-color);
 
 	&:hover {
-		--bg-color: transparent;
-		--border-color: transparent;
+		--bkgd-color: transparent;
+		--bord-color: transparent;
 	}
 }
 
 :--button-any-is-active.s-clean {
-	--bg-color: transparent;
-	--border-color: transparent;
+	--bkgd-color: transparent;
+	--bord-color: transparent;
 	--shadow: none;
 }
 
 :--button-any-has-focus.s-clean {
-	--border-color: currentColor;
+	--bord-color: currentColor;
 }
 
 .c-button.s-clean {

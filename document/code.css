@@ -1,5 +1,5 @@
-@import '../settings/document.css';
-@import '../settings/space.css';
+@import '../settings/color.css';
+@import '../settings/basic.css';
 @import '../settings/typography.css';
 
 code,
@@ -8,6 +8,7 @@ pre,
 samp,
 var {
 	--text-font: var(--font-monospace);
+	--text-interligne: 1.3;
 	--text-size: var(--text-sm);
 }
 

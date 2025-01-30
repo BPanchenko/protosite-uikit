@@ -1,4 +1,4 @@
-@import '../settings/document.css';
+@import '../settings/color.css';
 
 /* Style: `s-danger`
 =========================================================================== */
@@ -9,13 +9,13 @@
 }
 
 :--button-any.s-danger {
-	--bg-color: var(--clr-red-600);
-	--border-color: var(--clr-red-700);
+	--bkgd-color: var(--clr-red-600);
+	--bord-color: var(--clr-red-700);
 	--text-color: var(--clr-white);
 }
 
 :--button-any-has-focus.s-danger {
-	--border-color: var(--clr-red-50);
+	--bord-color: var(--clr-red-50);
 }
 
 /* Style: `s-muted`
@@ -34,13 +34,13 @@
 }
 
 :--button-any.s-primary {
-	--bg-color: var(--clr-blue-600);
-	--border-color: var(--clr-blue-700);
+	--bkgd-color: var(--clr-blue-600);
+	--bord-color: var(--clr-blue-700);
 	--text-color: var(--clr-white);
 }
 
 :--button-any-has-focus.s-primary {
-	--border-color: var(--clr-blue-50);
+	--bord-color: var(--clr-blue-50);
 }
 
 /* Style: `s-success`
@@ -52,13 +52,13 @@
 }
 
 :--button-any.s-success {
-	--bg-color: var(--clr-green-600);
-	--border-color: var(--clr-green-700);
+	--bkgd-color: var(--clr-green-600);
+	--bord-color: var(--clr-green-700);
 	--text-color: var(--clr-white);
 }
 
 :--button-any-has-focus.s-success {
-	--border-color: var(--clr-green-50);
+	--bord-color: var(--clr-green-50);
 }
 
 /* Style: `s-warning`
@@ -70,11 +70,11 @@
 }
 
 :--button-any.s-warning {
-	--bg-color: var(--clr-amber-600);
-	--border-color: var(--clr-amber-700);
+	--bkgd-color: var(--clr-amber-600);
+	--bord-color: var(--clr-amber-700);
 	--text-color: var(--clr-white);
 }
 
 :--button-any-has-focus.s-warning {
-	--border-color: var(--clr-amber-50);
+	--bord-color: var(--clr-amber-50);
 }

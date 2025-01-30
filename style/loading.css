@@ -21,6 +21,6 @@
 	bottom: 0;
 	left: 0;
 
-	background-color: color(var(--bg-color) a(0.5));
+	background-color: color(var(--bkgd-color) a(0.5));
 	cursor: wait;
 }

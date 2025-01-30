@@ -1,25 +1,25 @@
-@import '../settings/document.css';
+@import '../settings/color.css';
 @import '../settings/typography.css';
-@import '../settings/space.css';
+@import '../settings/basic.css';
 
 /* ========================================================================
    Paragraph
- ========================================================================== */
+=========================================================================== */
 
 p {
 	display: block;
-	max-width: var(--print-width);
+	max-width: var(--text-width);
 	margin-block: unset;
 	margin-inline: unset;
 	text-rendering: optimizeLegibility;
 }
 
 * + p {
-	margin-block-start: var(--space-sm);
+	margin-block-start: var(--space);
 }
 
 p:has(+ *) {
-	margin-block-end: var(--space-sm);
+	margin-block-end: var(--space);
 }
 
 p {

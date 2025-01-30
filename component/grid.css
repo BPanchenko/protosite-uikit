@@ -1,5 +1,5 @@
-@import '../settings/document.css';
-@import '../settings/space.css';
+@import '../settings/color.css';
+@import '../settings/basic.css';
 @import '../settings/typography.css';
 
 /* ========================================================================
@@ -8,7 +8,7 @@
 
 .c-grid {
 	--color: var(--clr-blue);
-	--border-color: color(var(--clr-red) blackness(25%));
+	--bord-color: color(var(--clr-red) blackness(25%));
 	--z-index: 200;
 }
 
@@ -27,7 +27,7 @@
 	z-index: var(--z-index);
 	overflow: hidden;
 
-	outline: 1px dotted var(--border-color);
+	outline: 1px dotted var(--bord-color);
 
 	&__guide--horizontal,
 	&__guide--vertical {

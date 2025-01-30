@@ -1,4 +1,4 @@
-@import '../settings/document.css';
+@import '../settings/color.css';
 
 /**
  * Component:	Chart
@@ -64,8 +64,8 @@
 	fill: var(--c-chart-color);
 
 	transition-property: stroke, fill;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 }
 
 /*circle*/

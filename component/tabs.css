@@ -1,5 +1,5 @@
-@import '../settings/document.css';
-@import '../settings/space.css';
+@import '../settings/color.css';
+@import '../settings/basic.css';
 
 /* ========================================================================
 	Component: `c-tab`
@@ -27,7 +27,7 @@
 
 	transition-property: background-color, color;
 	transition-duration: 0.1s;
-	transition-timing-function: var(--easing);
+	transition-timing-function: var(--base-easing);
 }
 
 .c-tab:hover {
@@ -101,7 +101,7 @@
 
 	transition-property: left, transform, width;
 	transition-duration: 0.1s;
-	transition-timing-function: var(--easing);
+	transition-timing-function: var(--base-easing);
 }
 
 /* ========================================================================

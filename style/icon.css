@@ -1,14 +1,14 @@
-@import '../settings/space.css';
-
 /* ========================================================================
    Style: Icon
 =========================================================================== */
+
+@import '../settings/basic.css';
 
 /* Component: Button
 =========================================================================== */
 
 .c-button.s-icon {
-	--bg-color: transparent;
+	--bkgd-color: transparent;
 	--color: var(--text-color);
 	--hover-bg-color: var(--clr-blue-grey-50);
 	--hover-color: var(--text-color);
@@ -26,7 +26,7 @@
 	&:focus-visible,
 	&:active,
 	&[aria-pressed='true'] {
-		--bg-color: var(--clr-gray-200);
+		--bkgd-color: var(--clr-gray-200);
 	}
 }
 

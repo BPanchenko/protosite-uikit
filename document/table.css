@@ -1,74 +1,62 @@
-@import '../settings/document.css';
-
 /* ========================================================================
    Table
- ========================================================================== */
+=========================================================================== */
+
+@import '../settings/basic.css';
+
+/* Settings
+=========================================================================== */
+
+table {
+	:where(th, tfoot) {
+		--text-color: var(--caption-color);
+		--text-interligne: 1.1;
+		--text-size: var(--text-sm);
+	}
+
+	:where(tr, td)[aria-selected='true'] {
+	}
+
+	th {
+		--text-boldness: var(--font-medium);
+	}
+
+	tfoot {
+		--text-interligne: var(--interligne-sm);
+	}
+}
+
+/* Rules
+=========================================================================== */
 
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	width: 100%;
 	margin-bottom: var(--space);
+
+	th {
+		padding: var(--space);
+		vertical-align: bottom;
+	}
+
+	td {
+		padding-block: var(--space-sm);
+		padding-inline: var(--space-xs);
+		vertical-align: top;
+	}
+}
+
+:where(table, tr, td) {
+	background-color: var(--bkgd-color);
 }
 
 table + table {
-	margin-top: var(--space);
-}
-
-/* Header cell
- ========================================================================== */
-
-table th {
-	padding: var(--space-sm) var(--space-xs);
-	text-align: left;
-	vertical-align: bottom;
-	font-family: var(--font-primary);
-	font-size: var(--text-md);
-	font-weight: var(--font-bold);
-	color: var(--caption-color);
-}
-
-/* Cell
- ========================================================================== */
-
-table td {
-	padding: var(--space-sm) var(--space-xs);
-	vertical-align: top;
-}
-
-/* Footer
- ========================================================================== */
-
-table tfoot {
-	font-family: var(--font-primary);
-	font-size: var(--text-sm);
-	font-weight: var(--font-light);
-	color: var(--text-color);
-}
-
-/* Caption
- ========================================================================== */
-
-table caption {
-	text-align: left;
-	font-family: var(--font-primary);
-	font-size: var(--text-md);
-	font-weight: var(--font-light);
-	color: var(--muted-color);
-}
-
-/* State: Active
- ========================================================================== */
-
-table > tr.is-active,
-table tbody tr.is-active,
-table > tr[aria-selected='true'],
-table tbody tr[aria-selected='true'] {
-	background-color: var(--clr-blue-50) !important;
+	margin-top: var(--space-md);
 }
 
 /* Style: Condensed
- ========================================================================== */
+=========================================================================== */
 
 table.s-condensed th,
 table.s-condensed td {

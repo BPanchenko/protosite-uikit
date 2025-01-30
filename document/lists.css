@@ -1,5 +1,5 @@
-@import '../settings/document.css';
-@import '../settings/space.css';
+@import '../settings/color.css';
+@import '../settings/basic.css';
 
 dl {
 	dt {
@@ -22,14 +22,14 @@ dl {
 
 ul li {
 	@extend %icon;
-	--icon-color: var(--secondary-text-color);
+	--icon-color: var(--secondary-color);
 	--icon-size: 0.3--unit;
 }
 
 :where(dl, ol, ul) {
 	margin-block-end: 1em;
 	margin-block-start: 0.5em;
-	padding-inline-start: var(--list-indent);
+	padding-inline-start: var(--space);
 }
 
 :where(dl, dt, ol, ul) {
@@ -40,7 +40,7 @@ ul li {
 
 :where(dt, dd) {
 	box-sizing: border-box;
-	max-width: var(--print-width);
+	max-width: var(--text-width);
 }
 
 /** Description list
@@ -56,7 +56,7 @@ dl:not(:empty) {
 	dd {
 		margin-inline-start: unset;
 		padding-block-start: var(--row-gap);
-		margin-inline-start: var(--list-indent);
+		margin-inline-start: var(--space);
 	}
 
 	:is(dt, dd) + dt {
@@ -97,8 +97,8 @@ ul {
 			content: '\e22e';
 			display: inline-block;
 			position: relative;
-			margin-left: -1--list-indent;
-			width: 1--list-indent;
+			margin-left: -1--space;
+			width: 1--space;
 		}
 
 		& + li {

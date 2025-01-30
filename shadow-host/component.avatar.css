@@ -1,4 +1,4 @@
-@import '../settings/main.css';
+@import '../settings/basic.css';
 @import '../settings/shadow.css';
 
 /**
@@ -12,8 +12,8 @@
 =========================================================================== */
 
 :host {
-	--bg-color: transparent;
-	--border-color: var(--clr-gray-300);
+	--bkgd-color: transparent;
+	--bord-color: var(--clr-gray-300);
 	--radius: 50%;
 	--shadow: var(--shadow-2dp);
 	--text-size: 0;
@@ -59,7 +59,7 @@
 /** Context */
 
 :host-context(.c-panel:not(.s-clean)) {
-	--bg-color: var(--clr-gray-200);
+	--bkgd-color: var(--clr-gray-200);
 	--shadow: none;
 
 	#mask {
@@ -75,7 +75,7 @@
 	inline-size: var(--size);
 	block-size: var(--size);
 
-	background-color: var(--bg-color);
+	background-color: var(--bkgd-color);
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
 	overflow: hidden;
@@ -110,7 +110,7 @@
 		box-shadow: var(--shadow);
 		box-sizing: border-box;
 		opacity: 0.8;
-		border: 1--pixel solid var(--border-color);
+		border: 1--pixel solid var(--bord-color);
 		z-index: 2;
 	}
 

@@ -1,9 +1,9 @@
-@import '../settings/space.css';
+@import '../settings/basic.css';
 
 %underline {
 	text-decoration-line: underline;
 	text-decoration-style: solid;
 	text-decoration-color: currentColor;
-	text-decoration-thickness: 0.0625--unit;
+	text-decoration-thickness: var(--line-thickness);
 	text-underline-offset: var(--space-xxs);
 }

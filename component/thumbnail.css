@@ -1,6 +1,7 @@
-@import '../settings/document.css';
+@import '../settings/basic.css';
+@import '../settings/color.css';
 @import '../settings/shadow.css';
-@import '../settings/space.css';
+@import '../settings/basic.css';
 @import '../settings/typography.css';
 
 /**
@@ -18,12 +19,12 @@
  ========================================================================== */
 
 .c-thumbnail {
-	--base-size: 15.2rem;
-	--size-xs: calc(3.5 * var(--unit)); /* 5.6rem */
-	--size-sm: calc(5.5 * var(--unit)); /* 8.8rem */
-	--size-md: calc(12 * var(--unit)); /* 19.2rem */
-	--size-lg: calc(16 * var(--unit)); /* 25.6rem */
-	--size-xl: calc(24 * var(--unit)); /* 38.4rem */
+	--size: 15.2rem;
+	--size-xs: 3.5--unit;
+	--size-sm: 5.5--unit;
+	--size-md: 12--unit;
+	--size-lg: 16--unit;
+	--size-xl: 24--unit;
 }
 
 .c-thumbnail {
@@ -31,7 +32,7 @@
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
-	max-width: var(--base-size);
+	max-width: var(--size);
 
 	vertical-align: bottom;
 
@@ -106,8 +107,8 @@
 .c-thumbnail:empty,
 .c-thumbnail .c-thumbnail__link:empty {
 	position: relative;
-	width: var(--base-size);
-	height: var(--base-size);
+	width: var(--size);
+	height: var(--size);
 	background-color: var(--clr-gray-300);
 	border: 0.1rem solid var(--clr-gray-400);
 	box-sizing: border-box;
@@ -217,8 +218,8 @@
 .c-thumbnail--square img {
 	max-width: none;
 	max-height: none;
-	width: var(--base-size);
-	height: var(--base-size);
+	width: var(--size);
+	height: var(--size);
 }
 
 .c-thumbnail--square.c-thumbnail--xs img {

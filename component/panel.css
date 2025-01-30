@@ -1,19 +1,19 @@
 @import '../.snippet/custom-selectors.css';
 
-@import '../settings/document.css';
+@import '../settings/color.css';
 @import '../settings/shadow.css';
-@import '../settings/space.css';
+@import '../settings/basic.css';
 @import '../settings/typography.css';
 
 .c-panel {
-	--bg-color: var(--clr-white);
+	--bkgd-color: var(--clr-white);
 	--padding-horz: var(--space);
 	--padding-vert: var(--space);
 	--roundness: var(--space-xxs);
 	--shadow: var(--shadow-shorter);
 
 	&.s-clean {
-		--bg-color: transparent;
+		--bkgd-color: transparent;
 		--shadow: none;
 	}
 }
@@ -33,7 +33,7 @@
 	position: relative;
 	min-width: min-content;
 
-	background-color: var(--bg-color);
+	background-color: var(--bkgd-color);
 	border-radius: var(--roundness);
 	box-shadow: var(--shadow);
 	box-sizing: border-box;
@@ -137,7 +137,7 @@
 
 	&:not(.s-clean) {
 		:is(.c-button, .c-toolbar) {
-			--border-color: var(--clr-gray-200);
+			--bord-color: var(--clr-gray-200);
 			--shadow: none;
 		}
 
@@ -146,7 +146,7 @@
 		}
 
 		.c-toolbar {
-			border-color: var(--border-color);
+			border-color: var(--bord-color);
 			border-style: solid;
 			border-width: 0.5--pixel;
 		}
@@ -157,7 +157,7 @@
 	Mediaqueries
 =========================================================================== */
 
-@media (--screen-handset) {
+@media (--device-handset) {
 	.c-panel__head {
 		padding: var(--space-sm) var(--space-sm) var(--space-xs) var(--space-sm);
 

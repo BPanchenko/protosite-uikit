@@ -1,13 +1,13 @@
-@import '../.snippet/custom-selectors.css';
-@import '../settings/space.css';
-@import '../settings/typography.css';
+@import '../settings/basic.css';
 @import '../document/icon.css';
+
+@import '../.snippet/custom-selectors.css';
 
 /* Text
 =========================================================================== */
 
 .s-default-size {
-	--text-size: var(--default-text-size);
+	--text-size: var(--base-text-size);
 	--text-interligne: var(--default-interligne);
 }
 

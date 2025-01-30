@@ -1,6 +1,6 @@
-@import '../.snippet/icon.css';
-@import '../settings/main.css';
+@import '../settings/basic.css';
 @import '../document/icon-glyphs-arrow.css';
+@import '../.snippet/icon.css';
 
 /**
  * Core Element: Arrow Image

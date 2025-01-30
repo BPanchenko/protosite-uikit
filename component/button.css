@@ -1,8 +1,8 @@
 @import '../.snippet/custom-selectors.css';
 @import '../.snippet/icon.css';
-@import '../settings/document.css';
+@import '../settings/color.css';
 @import '../settings/shadow.css';
-@import '../settings/space.css';
+@import '../settings/basic.css';
 
 /**
  * Component: Button
@@ -15,8 +15,8 @@
 	--padding-vert: var(--space-xs);
 	--roundness: var(--space-xs);
 
-	--bg-color: var(--clr-background);
-	--border-color: transparent;
+	--bkgd-color: var(--clr-background);
+	--bord-color: transparent;
 	--shadow: var(--shadow-2dp);
 
 	--text-color: var(--clr-black);
@@ -24,7 +24,7 @@
 	--text-interligne: 1.4;
 
 	&:hover {
-		--bg-color: var(--clr-gray-50);
+		--bkgd-color: var(--clr-gray-50);
 	}
 
 	&:--is-active {
@@ -33,7 +33,7 @@
 }
 
 :--button-any-has-focus {
-	--border-color: var(--clr-violet-500);
+	--bord-color: var(--clr-violet-500);
 }
 
 .c-button {
@@ -57,8 +57,8 @@
 	font-weight: var(--font-medium);
 	text-rendering: geometricPrecision;
 
-	background-color: var(--bg-color);
-	border-color: var(--border-color);
+	background-color: var(--bkgd-color);
+	border-color: var(--bord-color);
 	border-radius: var(--roundness);
 	border-style: solid;
 	border-width: 0.5--pixel;
@@ -66,8 +66,8 @@
 	cursor: pointer;
 
 	transition-property: color, background-color, box-shadow;
-	transition-duration: 0.5--duration;
-	transition-timing-function: var(--easing);
+	transition-duration: 0.5--base-duration;
+	transition-timing-function: var(--base-easing);
 
 	&:empty {
 		--padding-horz: 0.5--height;
@@ -79,7 +79,7 @@
 		border-color: var(--clr-gray-400);
 		border-style: dotted;
 		box-shadow: none;
-		color: var(--muted-color);
+		color: var(--disabled-color);
 		cursor: not-allowed;
 	}
 

@@ -1,10 +1,10 @@
-@import '../settings/document.css';
+@import '../settings/color.css';
 
 /* Text
 =========================================================================== */
 
 .s-highlighted {
 	color: var(--highlighted-text-color, currentColor);
-	background-color: var(--highlighted-bg-color, transparent);
+	background-color: var(--highlighted-bkgd-color, transparent);
 	font-weight: bold;
 }

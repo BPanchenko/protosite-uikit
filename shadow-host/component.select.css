@@ -1,9 +1,8 @@
+@import '../settings/basic.css';
+@import '../settings/shadow.css';
+
 @import '../.snippet/icon.css';
 @import '../.snippet/field.css';
-@import '../settings/main.css';
-@import '../settings/space.css';
-@import '../settings/shadow.css';
-@import '../settings/typography.css';
 
 /**
  * Core Component: Select Field
@@ -21,13 +20,13 @@
 :host {
 	@extend %field-settings;
 
-	--bg-color: var(--clr-white);
+	--bkgd-color: var(--clr-white);
 	--width: max-content;
 
 	--text-boldness: var(--font-normal);
 	--text-font: var(--ui-font);
-	--text-interligne: var(--default-interligne);
-	--text-size: var(--default-text-size);
+	--text-interligne: var(--base-interligne);
+	--text-size: var(--base-text-size);
 
 	--bottom-space: 0.125--unit;
 	--left-space: 0.75--space;
@@ -36,7 +35,6 @@
 
 	--marker-color: currentColor;
 	--marker-glyph: '\e18a';
-	--marker-indent: 1--left-space;
 	--option-bg-color: var(--clr-gray-50);
 	--option-end-space: 2--unit;
 	--option-glyph: '\e153';
@@ -50,8 +48,8 @@
 	}
 
 	#picker {
-		--bg-color: var(--clr-white);
-		--border-color: var(--clr-gray-100);
+		--bkgd-color: var(--clr-white);
+		--bord-color: var(--clr-gray-100);
 		--text-color: var(--clr-foreground);
 		--shadow: var(--shadow-4dp);
 		--size: 25svmax;
@@ -68,7 +66,7 @@
 /** Initial Styling */
 
 :host {
-	--border-color: transparent;
+	--bord-color: transparent;
 	--marker-color: var(--clr-gray-400);
 	--shadow: var(--shadow-2dp);
 }
@@ -93,11 +91,11 @@
 /** Context */
 
 :host-context(.c-panel:not(.s-clean)) {
-	--border-color: var(--clr-gray-400);
+	--bord-color: var(--clr-gray-400);
 	--shadow: none;
 
 	&:host(:focus) {
-		--border-color: var(--clr-gray-100);
+		--bord-color: var(--clr-gray-100);
 	}
 
 	&:host(:state(--expanded)) {
@@ -111,9 +109,9 @@
 :host {
 	@extend %field;
 
-	position: relative;
+	content-visibility: auto;
 	display: inline-block;
-	vertical-align: middle;
+	position: relative;
 
 	box-sizing: content-box;
 	inline-size: var(--width);
@@ -121,8 +119,10 @@
 	padding-block: unset;
 	padding-inline: 1--picker-space;
 
-	background-color: var(--bg-color);
-	border-color: var(--border-color);
+	vertical-align: middle;
+
+	background-color: var(--bkgd-color);
+	border-color: var(--bord-color);
 	border-width: 1--pixel;
 	border-style: solid;
 	border-radius: var(--radius);
@@ -160,7 +160,7 @@
 
 		display: flex;
 		align-items: center;
-		column-gap: var(--marker-indent);
+		column-gap: var(--left-space);
 
 		border-radius: inherit;
 		cursor: pointer;
@@ -171,7 +171,7 @@
 
 		&::before {
 			content: var(--marker-glyph);
-			transition: color var(--easing) 0.16s;
+			transition: color var(--base-easing) 0.16s;
 		}
 
 		&:focus {
@@ -191,6 +191,7 @@
 		justify-self: end;
 		z-index: 2;
 
+		content-visibility: hidden;
 		display: none;
 		box-sizing: content-box;
 		interpolate-size: allow-keywords;
@@ -199,18 +200,18 @@
 		padding: 1--picker-space;
 		margin-block-start: var(--space-sm);
 
-		background-color: var(--bg-color);
+		background-color: var(--bkgd-color);
 		border-radius: 0.5--unit;
 		box-shadow: var(--shadow);
-		outline-color: var(--border-color);
+		outline-color: var(--bord-color);
 		outline-width: 1--pixel;
 		outline-style: solid;
 		outline-offset: -0.75--picker-space;
 
 		animation-duration: 460ms;
-		animation-fill-mode: backwards;
+		animation-fill-mode: both;
 		animation-name: none;
-		animation-timing-function: var(--easing);
+		animation-timing-function: var(--base-easing);
 		transform-origin: top;
 
 		&[role='listbox'] {
@@ -219,7 +220,7 @@
 			&::part(container) {
 				display: flex;
 				gap: 1--pixel;
-				transition: opacity var(--easing) 240ms;
+				transition: opacity var(--base-easing) 240ms;
 			}
 
 			&[aria-orientation='horizontal']::part(container) {
@@ -238,6 +239,7 @@
 }
 
 :host(:state(--expanded)) #picker {
+	content-visibility: auto;
 	display: block;
 	animation-name: expand-picker;
 }
@@ -246,6 +248,7 @@
 }
 
 :host(:state(--collapsed)) #picker {
+	content-visibility: auto;
 	animation-duration: 240ms;
 	animation-name: collapse-picker;
 
@@ -280,6 +283,7 @@
 
 @keyframes expand-picker {
 	from {
+		display: none;
 		block-size: 0;
 		transform: translateY(-1--space-sm);
 	}
@@ -289,6 +293,7 @@
 	}
 
 	to {
+		display: block;
 		block-size: max-content;
 		transform: unset;
 	}
@@ -306,7 +311,7 @@
 
 			color: var(--marker-color);
 			font-weight: var(--text-boldness);
-			transition: color var(--easing) 680ms;
+			transition: color var(--base-easing) 680ms;
 		}
 
 		&:empty[aria-placeholder]::before {
@@ -335,16 +340,27 @@
 
 [role='option'] {
 	::slotted(&) {
-		--bg-color: transparent;
+		--bkgd-color: transparent;
 		--icon-code: '';
 		--text-interligne: 2.5em;
+		--space-start: var(--option-start-space);
+		--space-end: var(--option-end-space);
 	}
 
 	::slotted(&:hover) {
-		--bg-color: var(--option-bg-color);
+		--bkgd-color: var(--option-bg-color);
+	}
+
+	::slotted(&[aria-current='true']) {
+		--space-end: calc(var(--option-end-space) - var(--space-xs));
+		--space-start: calc(var(--option-start-space) + var(--space-xs));
+		--text-boldness: var(--font-medium);
 	}
 
 	&[aria-selected='true'] {
+		--space-end: calc(var(--option-end-space) - var(--space-xxs));
+		--space-start: calc(var(--option-start-space) + var(--space-xxs));
+
 		::slotted(&) {
 			--icon-code: var(--option-glyph);
 			--icon-color: var(--clr-gray-400);
@@ -353,26 +369,27 @@
 		}
 
 		::slotted(&:hover) {
-			--bg-color: transparent;
+			--bkgd-color: transparent;
 		}
 	}
 
-	::slotted(&[aria-current='true'][aria-selected='false']) {
-		--text-boldness: var(--font-medium);
+	::slotted(&[aria-current='true'][aria-selected='true']) {
+		--space-end: calc(var(--option-end-space) - var(--space-xs) - var(--space-xxs));
+		--space-start: calc(var(--option-start-space) + var(--space-xxs) + var(--space-xs));
 	}
 }
 
 [role='option'] {
 	::slotted(&) {
-		padding-inline-start: var(--option-start-space);
-		padding-inline-end: var(--option-end-space);
+		padding-inline-start: var(--space-start);
+		padding-inline-end: var(--space-end);
 
-		background-color: var(--bg-color);
+		background-color: var(--bkgd-color);
 		cursor: pointer;
 
 		transition-duration: 160ms;
-		transition-property: background-color, transform;
-		transition-timing-function: var(--easing);
+		transition-property: background-color, padding-inline;
+		transition-timing-function: var(--base-easing);
 	}
 
 	::slotted(&:first-of-type) {
@@ -384,17 +401,15 @@
 		margin-block-end: unset;
 	}
 
-	::slotted(&[aria-current='true']) {
-		transform: translateX(var(--space-sm));
-	}
-
 	::slotted(&[aria-selected='true']) {
 		@extend %icon;
 
 		display: flex;
 		align-items: center;
-		gap: var(--space-sm);
+		flex-flow: row nowrap;
+		column-gap: var(--space-sm);
 		padding-inline-start: 1.1--option-start-space;
+		padding-inline-end: calc(1--option-end-space - 0.1--option-start-space);
 		cursor: default;
 
 		&::after {
@@ -403,6 +418,11 @@
 		&::before {
 			content: var(--icon-code);
 		}
+	}
+
+	::slotted(&[aria-selected='true'][aria-current='true']) {
+		padding-inline-start: 1.6--option-start-space;
+		padding-inline-end: calc(1--option-end-space - 0.6--option-start-space);
 	}
 }
 

@@ -1,4 +1,4 @@
-@import '../settings/document.css';
+@import '../settings/color.css';
 @import '../settings/typography.css';
 
 /**
@@ -6,6 +6,21 @@
  * Description:	Defining styles for formatting text
  *
  * ======================================================================== */
+
+/** Horizontal rule
+========================================================================== */
+
+hr {
+	border: unset;
+	margin: unset;
+	padding: unset;
+
+	block-size: 1--pixel;
+	margin-block: 1--unit;
+
+	background-color: var(--delimeter-color);
+	border-bottom: 1px solid var(--clr-white);
+}
 
 /* Size modifiers
  ========================================================================== */

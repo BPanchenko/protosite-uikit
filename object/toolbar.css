@@ -1,21 +1,21 @@
 @import '../.snippet/custom-selectors.css';
-@import '../settings/document.css';
+@import '../settings/color.css';
 @import '../settings/shadow.css';
-@import '../settings/space.css';
+@import '../settings/basic.css';
 
 .o-toolbar {
 	--height: 2.5--unit;
 	--roundness: var(--space-xs);
 
-	--bg-color: var(--clr-white);
-	--border-color: transparent;
+	--bkgd-color: var(--clr-white);
+	--bord-color: transparent;
 	--shadow: var(--shadow-diffuse);
 
 	--text-font: var(--ui-font);
 	--text-interligne: var(--height);
 
 	.c-button {
-		--border-color: var(--clr-gray-200);
+		--bord-color: var(--clr-gray-200);
 		--roundness: 0;
 		--shadow: none;
 
@@ -37,7 +37,7 @@
 	height: var(--height);
 	vertical-align: middle;
 
-	background-color: var(--bg-color);
+	background-color: var(--bkgd-color);
 	border-radius: var(--roundness);
 	box-shadow: var(--shadow);
 	overflow: hidden;
@@ -56,7 +56,7 @@
 	}
 
 	& + .c-button {
-		border-left: 0.5--pixel solid var(--border-color);
+		border-left: 0.5--pixel solid var(--bord-color);
 		margin-left: 0;
 	}
 }
@@ -84,7 +84,7 @@
 		margin-top: 0.5--pixel;
 
 		& + .c-button {
-			border-left: 0.5--pixel solid var(--border-color);
+			border-left: 0.5--pixel solid var(--bord-color);
 		}
 	}
 }

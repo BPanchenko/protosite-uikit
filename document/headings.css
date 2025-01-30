@@ -1,18 +1,19 @@
-@import '../.snippet/custom-selectors.css';
-@import '../settings/document.css';
-@import '../settings/space.css';
-@import '../settings/typography.css';
-
 /* ========================================================================
 	Headings
 =========================================================================== */
+
+@import '../settings/basic.css';
+@import '../.snippet/custom-selectors.css';
+
+/* Settings
+========================================================================== */
 
 :--headings {
 	--text-font: var(--caption-font);
 	--text-color: var(--caption-color);
 }
 
-/* Group Rules
+/* Rules
 ========================================================================== */
 
 :--headings {
@@ -31,6 +32,10 @@
 
 * + :--headings {
 	margin-top: var(--space);
+}
+
+:--headings + hr {
+	margin-block-start: 0;
 }
 
 /* Stylization of header levels
@@ -61,12 +66,12 @@ h3 {
 
 h4 {
 	--text-interligne: var(--default-interligne);
-	--text-size: var(--default-text-size);
+	--text-size: var(--base-text-size);
 }
 
 h5 {
 	--text-interligne: var(--default-interligne);
-	--text-size: var(--default-text-size);
+	--text-size: var(--base-text-size);
 }
 
 h6 {

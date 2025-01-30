@@ -1,4 +1,4 @@
-@import '../settings/space.css';
+@import '../settings/basic.css';
 
 [class*='u-mgn'] {
 	--margin: var(--space);

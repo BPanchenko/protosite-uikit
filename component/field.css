@@ -1,6 +1,6 @@
 @import '../.snippet/field.css';
-@import '../settings/document.css';
-@import '../settings/space.css';
+@import '../settings/color.css';
+@import '../settings/basic.css';
 
 @custom-selector :--description .c-field-description:not(:empty);
 @custom-selector :--error .c-field-error:not(:empty);
@@ -32,7 +32,7 @@
 	--font-size: var(--text-md);
 
 	&:is([type='checkbox'], [type='radio']) {
-		--size: var(--default-text-size);
+		--size: var(--base-text-size);
 	}
 }
 
@@ -42,13 +42,13 @@
 }
 
 ::-webkit-input-placeholder {
-	color: var(--secondary-text-color);
+	color: var(--secondary-color);
 }
 ::-moz-placeholder {
-	color: var(--secondary-text-color);
+	color: var(--secondary-color);
 }
 :-ms-input-placeholder {
-	color: var(--secondary-text-color);
+	color: var(--secondary-color);
 }
 
 /**
@@ -190,8 +190,8 @@ textarea.c-field {
 	user-select: none;
 
 	transition-property: color;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 
 	&::before,
 	&::after {
@@ -294,8 +294,8 @@ textarea.c-field {
 	line-height: 1.45;
 
 	transition-property: color, background-color;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 	user-select: none;
 
 	:--icon {
@@ -319,7 +319,7 @@ textarea.c-field {
 	color: var(--clr-red-400);
 
 	opacity: 0;
-	transition: opacity var(--duration) var(--easing);
+	transition: opacity var(--base-duration) var(--base-easing);
 }
 
 /* Element: `c-field-description`
@@ -335,8 +335,8 @@ textarea.c-field {
 
 	opacity: 1;
 	transition-property: color, opacity;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 
 	&[data-tooltip] {
 		border-bottom: 0.1rem dotted var(--clr-gray-500);

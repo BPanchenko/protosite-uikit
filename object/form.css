@@ -1,4 +1,4 @@
-@import '../settings/space.css';
+@import '../settings/basic.css';
 @import '../settings/typography.css';
 
 /**
@@ -18,7 +18,7 @@
 	--text-font: var(--ui-font);
 
 	h6 {
-		--caption-color: var(--secondary-text-color);
+		--caption-color: var(--secondary-color);
 	}
 }
 

@@ -1,6 +1,6 @@
-@import '../settings/document.css';
+@import '../settings/color.css';
 @import '../settings/shadow.css';
-@import '../settings/space.css';
+@import '../settings/basic.css';
 @import '../settings/typography.css';
 
 /**
@@ -23,7 +23,7 @@
  ========================================================================== */
 
 .c-popover {
-	--bg-color: var(--clr-gray-700);
+	--bkgd-color: var(--clr-gray-700);
 	--shadow: var(--shadow-2dp);
 
 	display: inline-block;
@@ -36,8 +36,8 @@
 	box-shadow: var(--shadow);
 
 	transition-property: opacity;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 
 	cursor: default;
 	user-select: none;
@@ -66,7 +66,7 @@
 	width: 0.8rem;
 	height: 0.8rem;
 
-	background-color: var(--bg-color);
+	background-color: var(--bkgd-color);
 	box-shadow: var(--shadow);
 	border-radius: 0.1rem;
 
@@ -76,8 +76,8 @@
 	transform-origin: 50% 50%;
 
 	transition-property: top, right, bottom, left, margin-top, margin-left, opacity;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 	transition-delay: 0;
 }
 
@@ -145,7 +145,7 @@
 	display: inline-block;
 	padding: 0.6rem 0.8rem;
 
-	background-color: var(--bg-color);
+	background-color: var(--bkgd-color);
 	border-radius: 0.2rem;
 	overflow: hidden;
 
@@ -176,7 +176,7 @@
 
 .c-popover {
 	&:is(.is-visible, .is-hidden) {
-		animation-duration: 1.5--duration;
+		animation-duration: 1.5--base-duration;
 		animation-timing-function: ease-in-out;
 		animation-iteration-count: 1;
 	}
@@ -214,7 +214,7 @@
  ========================================================================== */
 
 .c-popover.s-linkset {
-	--bg-color: var(--clr-white);
+	--bkgd-color: var(--clr-white);
 }
 
 .c-popover.s-linkset a {

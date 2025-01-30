@@ -1,39 +1,26 @@
-@import '../.snippet/custom-selectors.css';
-@import '../.snippet/underline.css';
-@import '../settings/document.css';
-@import '../settings/space.css';
+@import '../settings/color.css';
+@import '../settings/basic.css';
 
-/* Color updates according to a link state and context */
+@import '../.snippet/underline.css';
 
 a {
 	&:link {
-		--link-color: var(--default-link-color);
+		--text-color: var(--base-link-color);
 	}
 	&:visited {
-		--link-color: var(--clr-purple-800);
+		--text-color: var(--clr-purple-800);
 	}
 	&:hover {
-		--link-color: var(--clr-blue-700);
+		--text-color: var(--clr-blue-700);
 	}
 	&:focus {
-		--link-color: var(--clr-purple-600);
+		--text-color: var(--clr-purple-600);
 	}
 	&:active {
-		--link-color: var(--clr-red-800);
+		--text-color: var(--clr-red-800);
 	}
 	&:local-link {
-		--link-color: var(--clr-green-800);
-	}
-}
-
-:--headings a {
-	--link-color: var(--caption-link-color);
-
-	&:active {
-		--link-color: var(--clr-red-900);
-	}
-	&:visited {
-		--link-color: var(--clr-purple-900);
+		--text-color: var(--clr-green-800);
 	}
 }
 
@@ -41,8 +28,10 @@ a {
 
 a {
 	@extend %underline;
-	color: var(--link-color);
-	transition: color var(--duration) var(--easing);
+
+	transition-duration: var(--duration);
+	transition-property: color;
+	transition-timing-function: var(--easing);
 
 	&:hover,
 	&:focus-visible {

@@ -2,8 +2,8 @@
 	Utility: Container
 =========================================================================== */
 
+@import '../settings/basic.css';
 @import '../settings/breakpoint.css';
-@import '../settings/space.css';
 
 /* Settings
 =========================================================================== */
@@ -44,7 +44,7 @@
 	padding-block: var(--space-md);
 	margin-inline: auto;
 	box-sizing: border-box;
-	
+
 	.u-container {
 		container-name: unset;
 		max-inline-size: unset;

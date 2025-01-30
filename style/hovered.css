@@ -1,4 +1,4 @@
-@import '../settings/document.css';
+@import '../settings/basic.css';
 @import '../settings/shadow.css';
 
 /* ========================================================================
@@ -9,8 +9,8 @@ table.s-hovered > tr,
 table.s-hovered tbody tr,
 .c-list.s-hovered .c-list__item {
 	transition-property: background-color;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 }
 
 table.s-hovered > tr:hover,
@@ -27,8 +27,8 @@ table.s-hovered tbody tr:hover,
 .c-thumbnail.s-hovered {
 	top: 0;
 	transition-property: box-shadow, top;
-	transition-duration: var(--duration);
-	transition-timing-function: var(--easing);
+	transition-duration: var(--base-duration);
+	transition-timing-function: var(--base-easing);
 }
 
 .c-panel.s-hovered:hover,
