@@ -5,30 +5,21 @@
 @import '@bpanchenko/palette/assets/palette.css';
 
 :root {
-	--bg-color: var(--clr-gray-100);
-	--border-color: var(--clr-gray-800);
-
+	--visited-color: var(--clr-red-500);
+	--active-color: var(--clr-red-500);
+	--disabled-color: var(--clr-gray-400);
 	--danger-color: var(--clr-red-800);
 	--muted-color: var(--clr-gray-400);
 	--primary-color: var(--clr-blue-800);
+	--secondary-color: var(--clr-gray-600);
 	--success-color: var(--clr-green-800);
 	--warning-color: var(--clr-orange-800);
 
-	--default-link-color: var(--clr-blue-800);
-	--default-text-color: var(--clr-gray-800);
-	--link-color: var(--default-link-color);
-	--text-color: var(--default-text-color);
-
-	--caption-color: var(--clr-foreground);
-	--caption-link-color: var(--clr-blue-900);
-
 	--delimeter-color: var(--clr-gray-400);
-	--disabled-text-color: var(--clr-gray-400);
-	--highlighted-text-color: var(--clr-gray-900);
-	--highlighted-bg-color: var(--clr-green-gray-300);
 	--hint-color: var(--muted-color);
-	--secondary-text-color: var(--clr-gray-600);
 
-	--selection-bg-color: var(--clr-blue-700);
+	--highlighted-text-color: var(--clr-gray-900);
+	--highlighted-bkgd-color: var(--clr-green-gray-300);
+	--selection-bkgd-color: var(--clr-blue-700);
 	--selection-text-color: var(--clr-white);
 }

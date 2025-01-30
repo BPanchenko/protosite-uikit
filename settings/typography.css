@@ -3,15 +3,6 @@
 ===================================+======================================= */
 
 :root {
-	--font-cursive: 'Marck Script', cursive;
-	--font-monospace: 'JetBrains Mono', monospace;
-	--font-sans: 'PT Sans', sans-serif;
-	--font-serif: 'PT Serif', serif;
-
-	--caption-font: 'PT Sans Caption', sans-serif;
-	--text-font: 'PT Sans', sans-serif;
-	--ui-font: 'PT Root UI', system-ui;
-
 	--font-thin: 100;
 	--font-extra-light: 200;
 	--font-light: 300;
@@ -22,29 +13,12 @@
 	--font-extra-bold: 800;
 	--font-heavy: 900;
 
-	--default-text-size: var(--unit);
-	--text-xs: 0.6875--unit;
-	--text-sm: 0.875--unit;
-	--text-md: 1.125--unit;
-	--text-lg: 1.25--unit;
-	--text-xl: 1.75--unit;
-	--text-xxl: 2.25--unit;
-	--text-xxxl: 3--unit;
+	--font-cursive: 'Marck Script', cursive;
+	--font-monospace: 'JetBrains Mono', monospace;
+	--font-sans: 'PT Sans', sans-serif;
+	--font-serif: 'PT Serif', serif;
 
-	--default-interligne: 1.3;
-	--interligne-xs: 1.1;
-	--interligne-sm: 1.2;
-	--interligne-md: 1.4;
-	--interligne-lg: 1.2;
-	--interligne-xl: 1.2;
-	--interligne-xxl: 1.3;
-	--interligne-xxxl: 1.3;
-}
-
-:root {
-	--text-boldness: var(--font-normal);
-	--text-font: var(--font-sans);
-	--text-interligne: var(--default-interligne);
-	--text-size: var(--default-text-size);
-	--text-width: 72ch;
+	--accent-font: 'PT Sans Caption', sans-serif;
+	--read-font: var(--font-sans);
+	--ui-font: 'PT Root UI', system-ui;
 }
