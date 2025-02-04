@@ -7,12 +7,13 @@ const path = require('path');
 const pluralize = require('pluralize');
 const postcss = require('postcss');
 
+const packageJson = require('../../package.json');
 const lightDomConfig = require('../../.config/postcss.light-dom.cjs');
 const shadowDomConfig = require('../../.config/postcss.shadow-dom.cjs');
 
 const ROOT = process.cwd();
-const ADVANCED_FOLDERS = ['component', 'shadow-dom', 'style'];
-const OUTPUT = path.resolve(ROOT, 'assets');
+const ADVANCED_FOLDERS = ['component', 'element', 'shadow-dom', 'style'];
+const DIST = path.resolve(ROOT, 'assets');
 
 // Input
 
@@ -45,19 +46,22 @@ const files = glob
 // Processing
 
 const promises = files.map((file) => {
-  const { folder, targetFile } = getTargetFile(file);
-  const relTargetFile = targetFile.replace(ROOT, '').replace(/^\\/, '');
+  const { absTargetPath, folder } = getTargetFile(file);
+
+  const relTargetPath = path.relative(ROOT, absTargetPath);
+
+  const module = path.join(packageJson.name, relTargetPath).split(path.sep).join(path.posix.sep);
   const rawCss = readFileSync(file, { flag: 'r' });
   const isShadyCSS = folder === 'shadow-dom';
 
   const { parser, plugins } = isShadyCSS ? shadowDomConfig : lightDomConfig;
 
-  checkFileDir(targetFile);
+  checkFileDir(absTargetPath);
   return postcss(plugins)
-    .process(rawCss, { from: file, to: targetFile, parser })
+    .process(rawCss, { from: file, to: absTargetPath, parser })
     .then((result) => {
-      writeFileSync(targetFile, result.css, { flag: 'w' });
-      logger.logSuccess(relTargetFile);
+      writeFileSync(absTargetPath, result.css, { flag: 'w' });
+      logger.logSuccess(module);
     })
     .catch((error) => {
       logger.error(error);
@@ -83,22 +87,15 @@ function getTargetFile(file) {
   let fileName = fileProps.name;
 
   if (fileProps.name === 'main' && !isEmpty(folder)) {
-    // main.css in the root does not change
-    // other main.css files are renamed and moved to the root
-
-    if (folder === 'document') {
-      fileName = folder;
-    } else {
-      fileName = pluralize.plural(folder);
-    }
+    fileName = pluralize.plural(folder);
     folder = '';
   }
 
-  const targetFile = path.join(OUTPUT, folder, fileName + fileProps.ext);
+  const absTargetPath = path.join(DIST, folder, fileName + fileProps.ext);
 
   return {
-    folder,
+    absTargetPath,
     fileName,
-    targetFile
+    folder
   };
 }

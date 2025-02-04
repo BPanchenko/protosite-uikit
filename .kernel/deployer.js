@@ -5,17 +5,27 @@ import { logger } from './logger.cjs'
 
 import ftpAccess from '../.config/ftp.json' with { type: 'json' }
 
-const shadyCssDir = 'assets/shadow-dom'
+const baseUrl = new URL('http://assets.protosite.rocks/')
 
-const coreFiles = globSync(shadyCssDir + '/*.css').map((file) => [
-	file,
-	path.join('core', path.relative(shadyCssDir, file)).replaceAll('\\', '/')
-])
+const ROOT = process.cwd()
+const DIST = path.resolve(ROOT, 'assets')
+const SHADY = path.resolve(DIST, 'shadow-dom')
 
-const uikitFiles = globSync(['assets/*.{css,mjs}', 'assets/component/*.{css,mjs}', 'assets/style/*.{css,mjs}']).map((file) => [
-	file,
-	path.join('uikit', path.relative('assets', file)).replaceAll('\\', '/')
-])
+const coreFiles = globSync('assets/shadow-dom/*.css', {
+	root: SHADY,
+	absolute: true
+}).map((absFilePath) => {
+	const remotePath = path.join('core', path.relative(SHADY, absFilePath)).split(path.sep).join('/')
+	return [absFilePath, remotePath]
+})
+
+const uikitFiles = globSync(['assets/*.{css,mjs}', 'assets/{component,element,style}/*.{css,mjs}'], {
+	root: DIST,
+	absolute: true
+}).map((absFilePath) => {
+	const remotePath = path.join('uikit', path.relative(DIST, absFilePath)).split(path.sep).join('/')
+	return [absFilePath, remotePath]
+})
 
 const files = new Map([...coreFiles, ...uikitFiles].sort(([_a, a], [_b, b]) => (a < b ? -1 : a > b ? 1 : 0)))
 
@@ -26,9 +36,9 @@ const files = new Map([...coreFiles, ...uikitFiles].sort(([_a, a], [_b, b]) => (
 		await client.access(ftpAccess)
 		logger.uploadCaption()
 
-		for (const [from, to] of files.entries()) {
+		for (const [from, to] of files) {
 			await client.uploadFrom(from, to)
-			logger.uploadedFile(to)
+			logger.uploadedFile(new URL(to, baseUrl).toString())
 		}
 	} catch (err) {
 		logger.error(err)

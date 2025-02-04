@@ -1,55 +1,68 @@
 const glob = require('glob');
 const safe = require('postcss-safe-parser');
-const path = require('path');
-const { compact, flattenDeep, isEmpty, uniq } = require('lodash');
+const path = require('node:path');
+const { isEmpty, isArrayLike, chain } = require('lodash');
 const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
 
-const { logger } = require('../logger.cjs');
+const { logger, debug } = require('../logger.cjs');
 const { cjsTemplate, mjsTemplate } = require('./templates.cjs');
 const packageJson = require('../../package.json');
 
 const ROOT = process.cwd();
+const DIST = path.resolve(ROOT, 'assets');
 
-// Input
+const classNameRegex = /\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}/gi;
 
-const files = glob.sync('assets/**/*.css').map((file) => path.resolve(ROOT, file));
+const takeClassNamesFromNodeList = (nodes) => {
+  const result = [];
+  for (const node of nodes) {
+    if (node.type === 'atrule' && isArrayLike(node.nodes)) {
+      result.push(...takeClassNamesFromNodeList(node.nodes));
+      continue;
+    }
+    if (node.type === 'rule' && classNameRegex.test(node.selector)) {
+      result.push(node.selector.match(classNameRegex));
+      continue;
+    }
+  }
+  return result;
+};
 
-// Processing
+// Input Processing
 
-files.forEach((source) => {
+const files = glob.sync('assets/**/*.css', {
+  root: DIST,
+  absolute: true
+});
+
+files.forEach((absFilePath) => {
+  const relFilePath = path.relative(DIST, absFilePath);
+
   // Parsing CSS
-
-  const css = readFileSync(source, { flag: 'r' }).toString();
+  const css = readFileSync(absFilePath, { flag: 'r' }).toString();
   const ast = safe(css);
-  const regex = /\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}/gi;
 
-  let clss = ast.nodes.map((node) => node.selector && node.selector.match(regex));
+  const classNames = chain(takeClassNamesFromNodeList(ast.nodes)).flattenDeep().compact().uniq().value();
 
-  clss = flattenDeep(clss);
-  clss = compact(clss);
-  clss = uniq(clss);
-  clss.sort();
-
-  if (!isEmpty(clss)) {
-    const { dir, name, cjs: cjsFile, mjs: mjsFile } = getTargetOptions(source);
-    const module = path.join(path.relative(process.cwd(), dir), name).replaceAll('\\', '/').replace('assets', packageJson.name);
+  if (!isEmpty(classNames)) {
+    const { name, dir, cjs: cjsFile, mjs: mjsFile } = getTargetOptions(absFilePath);
+    const module = path.join(packageJson.name, path.relative(DIST, dir), name).split(path.sep).join(path.posix.sep);
 
     // CommonJS
     {
       checkFile(cjsFile);
-      appendFileSync(cjsFile, cjsTemplate(clss, name));
+      appendFileSync(cjsFile, cjsTemplate(classNames, name));
       logger.logSuccess(module + '.cjs');
     }
 
     // ES Module
     {
       checkFile(mjsFile);
-      appendFileSync(mjsFile, mjsTemplate(clss, name));
+      appendFileSync(mjsFile, mjsTemplate(classNames, name));
       logger.logSuccess(module + '.mjs');
     }
   } else {
-    const relSource = source.replace(ROOT, '').replace(/^\\/, '');
-    logger.warn(`File ${relSource} is empty`);
+    logger.warn(`File ${relFilePath} is empty`);
   }
 });
 
