@@ -1,47 +1,39 @@
 @import '../settings/basic.css';
 @import '../settings/typography.css';
 
-:root {
-	--icon-code: '\e231';
-	--icon-color: var(--text-color, currentColor);
-	--icon-font: 'Iconic';
-	--icon-size: var(--unit, 16px);
-	--icon-weight: var(--font-normal, 400);
+%icon-pseudo-element {
+	content: var(--icon-code);
+	display: inline;
+
+	font-family: var(--icon-font);
+	font-size: var(--icon-size);
+	font-style: normal;
+	font-weight: var(--icon-weight);
+	line-height: 1;
+	text-rendering: geometricPrecision;
+	color: var(--icon-color);
+
+	text-align: center;
+	vertical-align: baseline;
+	speak: none;
 }
 
-%icon {
-	container-name: icon-bearer;
-
-	&::before,
-	&::after {
-		font-family: var(--icon-font);
-		font-size: var(--icon-size);
-		font-style: normal;
-		font-weight: var(--icon-weight);
-		line-height: 1;
-		text-rendering: geometricPrecision;
-		color: var(--icon-color);
-
-		display: inline-block;
-		box-sizing: content-box;
-		width: var(--icon-size);
-		height: var(--icon-size);
-
-		text-align: center;
-		vertical-align: baseline;
-		speak: none;
+%icon-modifiers {
+	&.s-md {
+		--icon-size: var(--space-md);
+		--icon-weight: var(--font-medium);
 	}
 
-	&::before {
-		content: var(--icon-code);
+	&.s-lg {
+		--icon-size: var(--space-xl);
+		--icon-weight: var(--font-extra-bold);
 	}
+}
 
-	&[data-glyph^='\\']::before {
-		content: attr(data-glyph);
-	}
-
-	&:empty {
-		width: var(--icon-size);
-		height: var(--icon-size);
-	}
+%icon-settings {
+	--icon-code: '\e231';
+	--icon-color: var(--text-color);
+	--icon-font: 'Iconic';
+	--icon-size: var(--unit);
+	--icon-weight: var(--font-normal);
 }

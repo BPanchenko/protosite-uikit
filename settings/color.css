@@ -5,17 +5,26 @@
 @import '@bpanchenko/palette/assets/palette.css';
 
 :root {
+	--base-bkgd-color: var(--clr-background);
+	--base-bord-color: var(--clr-gray-400);
+	--base-text-color: var(--clr-foreground);
+	--base-link-color: var(--clr-blue-800);
+}
+
+:root {
+	--disabled-color: var(--clr-gray-400);
+
 	--visited-color: var(--clr-red-500);
 	--active-color: var(--clr-red-500);
-	--disabled-color: var(--clr-gray-400);
 	--danger-color: var(--clr-red-800);
 	--muted-color: var(--clr-gray-400);
-	--primary-color: var(--clr-blue-800);
-	--secondary-color: var(--clr-gray-600);
 	--success-color: var(--clr-green-800);
 	--warning-color: var(--clr-orange-800);
 
-	--delimeter-color: var(--clr-gray-400);
+	--primary-color: var(--clr-blue-800);
+	--secondary-color: var(--clr-gray-600);
+
+	--delimiter-color: var(--clr-gray-400);
 	--hint-color: var(--muted-color);
 
 	--highlighted-text-color: var(--clr-gray-900);

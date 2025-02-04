@@ -4,4 +4,4 @@
 @custom-selector :--button-is-active .c-button:active, .c-button[aria-pressed='true'];
 @custom-selector :--is-active :active, [aria-pressed='true'];
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
-@custom-selector :--icon :is(i, .c-icon, .s-icon)[data-glyph];
+@custom-selector :--icon .icon, [data-glyph];

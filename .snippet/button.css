@@ -1,5 +1,4 @@
 @import '../settings/basic.css';
-@import '../settings/color.css';
 @import '../settings/shadow.css';
 
 %button-settings {
@@ -32,4 +31,42 @@
 	transition-property: background-color, border-color, box-shadow;
 	transition-duration: var(--base-duration);
 	transition-timing-function: var(--base-easing);
+}
+
+:--button-any.s-warning {
+	--bkgd-color: var(--clr-amber-600);
+	--bord-color: var(--clr-amber-700);
+	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-warning {
+	--bord-color: var(--clr-amber-50);
+}
+
+:--button-any.s-success {
+	--bkgd-color: var(--clr-green-600);
+	--bord-color: var(--clr-green-700);
+	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-success {
+	--bord-color: var(--clr-green-50);
+}
+:--button-any.s-primary {
+	--bkgd-color: var(--clr-blue-600);
+	--bord-color: var(--clr-blue-700);
+	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-primary {
+	--bord-color: var(--clr-blue-50);
+}
+:--button-any.s-danger {
+	--bkgd-color: var(--clr-red-600);
+	--bord-color: var(--clr-red-700);
+	--text-color: var(--clr-white);
+}
+
+:--button-any-has-focus.s-danger {
+	--bord-color: var(--clr-red-50);
 }
