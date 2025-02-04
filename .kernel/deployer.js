@@ -5,7 +5,7 @@ import { logger } from './logger.cjs'
 
 import ftpAccess from '../.config/ftp.json' with { type: 'json' }
 
-const shadyCssDir = 'assets/shadow-host'
+const shadyCssDir = 'assets/shadow-dom'
 
 const coreFiles = globSync(shadyCssDir + '/*.css').map((file) => [
 	file,

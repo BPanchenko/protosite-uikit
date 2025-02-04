@@ -23,6 +23,9 @@
 	--bkgd-color: var(--clr-white);
 	--width: max-content;
 
+	--marker-glyph: '\e18a';
+	--option-glyph: '\e153';
+
 	--text-boldness: var(--font-normal);
 	--text-font: var(--ui-font);
 	--text-interligne: var(--base-interligne);
@@ -34,10 +37,8 @@
 	--top-space: 0.125--unit;
 
 	--marker-color: currentColor;
-	--marker-glyph: '\e18a';
 	--option-bg-color: var(--clr-gray-50);
 	--option-end-space: 2--unit;
-	--option-glyph: '\e153';
 	--option-start-space: 0.75--unit;
 	--picker-space: 0.1875--space;
 
@@ -140,6 +141,14 @@
 :host(:state(--disabled)) {
 	opacity: 0.5;
 	pointer-events: none;
+}
+
+:where(#button, #picker, #status, ::slotted([role='option'])) {
+	color: var(--text-color);
+	font-family: var(--text-font);
+	font-size: var(--text-size);
+	line-height: var(--text-interligne);
+	font-weight: var(--text-boldness);
 }
 
 /** Childnode: Button
@@ -350,6 +359,13 @@
 	::slotted(&:hover) {
 		--bkgd-color: var(--option-bg-color);
 	}
+}
+
+[role='option'] {
+	::slotted(&[aria-selected='true']),
+	::slotted(&[aria-current='true']) {
+		@extend %icon-settings;
+	}
 
 	::slotted(&[aria-current='true']) {
 		--space-end: calc(var(--option-end-space) - var(--space-xs));
@@ -428,7 +444,7 @@
 
 /* Correct border radius of an option into scrolled listbox */
 
-:host #picker[role='listbox']:state(--scrolled) {
+#picker[role='listbox']:state(--scrolled) {
 	::slotted([role='option']:first-of-type) {
 		border-top-right-radius: 0;
 	}

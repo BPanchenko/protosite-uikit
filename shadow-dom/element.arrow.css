@@ -1,6 +1,6 @@
-@import '../settings/basic.css';
-@import '../document/icon-glyphs-arrow.css';
 @import '../.snippet/icon.css';
+@import '../document/icon-glyphs-arrow.css';
+@import '../settings/basic.css';
 
 /**
  * Core Element: Arrow Image
@@ -10,6 +10,8 @@
 =========================================================================== */
 
 :host {
+	@extend %icon-settings;
+
 	--size-xxs: 0.75--unit;
 	--size-xs: 1.75--unit;
 	--size-sm: 2.5--unit;
@@ -17,41 +19,46 @@
 	--size-lg: 10--unit;
 	--size-xl: 16--unit;
 	--size-xxl: 20--unit;
+
+	--text-boldness: var(--font-normal);
+	--text-color: currentColor;
+	--text-interligne: 1;
+	--text-size: var(--unit);
 }
 
 /* Size modifiers */
 
-:host(.s-xxs) .icon {
+:host(.s-xxs) {
 	--icon-size: var(--size-xxs);
 	--icon-weight: 400;
 }
 
-:host(.s-xs) .icon {
+:host(.s-xs) {
 	--icon-size: var(--size-xs);
 	--icon-weight: 400;
 }
 
-:host(.s-sm) .icon {
+:host(.s-sm) {
 	--icon-size: var(--size-sm);
 	--icon-weight: 400;
 }
 
-:host(.s-md) .icon {
+:host(.s-md) {
 	--icon-size: var(--size-md);
 	--icon-weight: 500;
 }
 
-:host(.s-lg) .icon {
+:host(.s-lg) {
 	--icon-size: var(--size-lg);
 	--icon-weight: 500;
 }
 
-:host(.s-xl) .icon {
+:host(.s-xl) {
 	--icon-size: var(--size-xl);
 	--icon-weight: 800;
 }
 
-:host(.s-xxl) .icon {
+:host(.s-xxl) {
 	--icon-size: var(--size-xxl);
 	--icon-weight: 800;
 }
@@ -61,29 +68,30 @@
 
 :host {
 	display: contents;
+}
 
-	* {
-		pointer-events: none;
+.icon {
+	@extend %icon;
+
+	display: inline-block;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	vertical-align: middle;
+
+	&::after {
+		content: var(--icon-code);
 	}
 
-	.icon[data-glyph] {
-		@extend %icon;
-
-		display: inline-block;
-		width: var(--icon-size);
-		height: var(--icon-size);
-		vertical-align: middle;
-
-		&::after {
-			content: var(--icon-code);
-		}
-
-		&[data-glyph^='\\']::after {
-			content: attr(data-glyph);
-		}
-
-		&::before {
-			all: unset;
-		}
+	&::before {
+		all: unset;
 	}
+}
+
+:where(.icon, ::slotted(*)) {
+	pointer-events: none;
+	color: var(--text-color);
+	font-family: var(--text-font);
+	font-size: var(--text-size);
+	line-height: var(--text-interligne);
+	font-weight: var(--text-boldness);
 }
