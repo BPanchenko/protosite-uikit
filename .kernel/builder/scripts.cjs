@@ -1,5 +1,5 @@
 const glob = require('glob');
-const parser = require('css');
+const safe = require('postcss-safe-parser');
 const path = require('path');
 const { compact, flattenDeep, isEmpty, uniq } = require('lodash');
 const { appendFileSync, existsSync, readFileSync, truncateSync } = require('fs');
@@ -20,10 +20,10 @@ files.forEach((source) => {
   // Parsing CSS
 
   const css = readFileSync(source, { flag: 'r' }).toString();
-  const ast = parser.parse(css);
+  const ast = safe(css);
   const regex = /\.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}/gi;
 
-  let clss = ast.stylesheet.rules.map(({ selectors = [] }) => selectors.map((sel) => sel.match(regex)));
+  let clss = ast.nodes.map((node) => node.selector && node.selector.match(regex));
 
   clss = flattenDeep(clss);
   clss = compact(clss);

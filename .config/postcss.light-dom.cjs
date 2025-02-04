@@ -1,5 +1,7 @@
+const safe = require('postcss-safe-parser');
+
 module.exports = {
-  parser: false,
+  parser: safe,
   plugins: [
     require('postcss-import'),
     require('postcss-nested'),
