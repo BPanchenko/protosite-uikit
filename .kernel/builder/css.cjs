@@ -6,10 +6,12 @@ const glob = require('glob');
 const path = require('path');
 const pluralize = require('pluralize');
 const postcss = require('postcss');
-const postcssConfig = require('../../.config/postcss.config.cjs');
+
+const lightDomConfig = require('../../.config/postcss.light-dom.cjs');
+const shadowDomConfig = require('../../.config/postcss.shadow-dom.cjs');
 
 const ROOT = process.cwd();
-const ADVANCED_FOLDERS = ['component', 'shadow-host', 'style'];
+const ADVANCED_FOLDERS = ['component', 'shadow-dom', 'style'];
 const OUTPUT = path.resolve(ROOT, 'assets');
 
 // Input
@@ -43,14 +45,16 @@ const files = glob
 // Processing
 
 const promises = files.map((file) => {
-  const targetFile = getTargetFile(file);
+  const { folder, targetFile } = getTargetFile(file);
   const relTargetFile = targetFile.replace(ROOT, '').replace(/^\\/, '');
   const rawCss = readFileSync(file, { flag: 'r' });
+  const isShadyCSS = folder === 'shadow-dom';
+
+  const { parser, plugins } = isShadyCSS ? shadowDomConfig : lightDomConfig;
 
   checkFileDir(targetFile);
-
-  return postcss(postcssConfig.plugins)
-    .process(rawCss, { from: file, to: targetFile })
+  return postcss(plugins)
+    .process(rawCss, { from: file, to: targetFile, parser })
     .then((result) => {
       writeFileSync(targetFile, result.css, { flag: 'w' });
       logger.logSuccess(relTargetFile);
@@ -90,5 +94,11 @@ function getTargetFile(file) {
     folder = '';
   }
 
-  return path.join(OUTPUT, folder, fileName + fileProps.ext);
+  const targetFile = path.join(OUTPUT, folder, fileName + fileProps.ext);
+
+  return {
+    folder,
+    fileName,
+    targetFile
+  };
 }

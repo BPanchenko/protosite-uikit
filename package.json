@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.35.112",
+  "version": "4.36.112",
   "description": "CSS framework for developing web interfaces",
   "keywords": [
     "Component Library",
@@ -18,7 +18,8 @@
       "import": "./assets/main.mjs",
       "require": "./assets/main.cjs"
     },
-    "./postcss.config": "./.config/postcss.config.cjs",
+    "./postcss.config": "./.config/postcss.light-dom.cjs",
+    "./postcss.shady.config": "./.config/postcss.shadow-dom.cjs",
     "./*.css": "./assets/*.css",
     "./*.mjs": "./assets/*.mjs",
     "./*.cjs": "./assets/*.cjs",
