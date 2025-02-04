@@ -32,6 +32,11 @@
 	}
 }
 
+.c-button[data-glyph],
+.c-button__icon {
+	@extend %icon-settings;
+}
+
 :--button-any-has-focus {
 	--bord-color: var(--clr-violet-500);
 }

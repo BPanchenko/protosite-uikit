@@ -1,13 +1,13 @@
 const classNames = {
-	"cPanel": "c-panel",
-	"sClean": "s-clean",
-	"sLg": "s-lg",
-	"sMd": "s-md",
-	"sSm": "s-sm",
-	"sXl": "s-xl",
+	"sXxs": "s-xxs",
 	"sXs": "s-xs",
+	"sSm": "s-sm",
+	"sMd": "s-md",
+	"sLg": "s-lg",
+	"sXl": "s-xl",
 	"sXxl": "s-xxl",
-	"sXxs": "s-xxs"
+	"cPanel": "c-panel",
+	"sClean": "s-clean"
 };
 
 const path = require('node:path');

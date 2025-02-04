@@ -1,7 +1,7 @@
 const classNames = {
 	"cButton": "c-button",
-	"cListBody": "c-list__body",
-	"sLoading": "s-loading"
+	"sLoading": "s-loading",
+	"cListBody": "c-list__body"
 };
 
 const path = require('node:path');

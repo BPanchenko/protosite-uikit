@@ -1,22 +1,22 @@
 const classNames = {
-	"sBold": "s-bold",
-	"sCapitalize": "s-capitalize",
 	"sCursive": "s-cursive",
-	"sExtraBold": "s-extra-bold",
-	"sExtraLight": "s-extra-light",
-	"sHeavy": "s-heavy",
-	"sLight": "s-light",
-	"sLowercase": "s-lowercase",
-	"sMedium": "s-medium",
 	"sMonospace": "s-monospace",
-	"sNormal": "s-normal",
 	"sSans": "s-sans",
-	"sSemiBold": "s-semi-bold",
 	"sSerif": "s-serif",
-	"sText": "s-text",
-	"sThin": "s-thin",
 	"sUi": "s-ui",
-	"sUppercase": "s-uppercase"
+	"sThin": "s-thin",
+	"sExtraLight": "s-extra-light",
+	"sLight": "s-light",
+	"sNormal": "s-normal",
+	"sMedium": "s-medium",
+	"sBold": "s-bold",
+	"sSemiBold": "s-semi-bold",
+	"sExtraBold": "s-extra-bold",
+	"sHeavy": "s-heavy",
+	"sText": "s-text",
+	"sUppercase": "s-uppercase",
+	"sCapitalize": "s-capitalize",
+	"sLowercase": "s-lowercase"
 };
 
 const path = require('node:path');

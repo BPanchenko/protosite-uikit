@@ -1,7 +1,7 @@
 const classNames = {
 	"cList": "c-list",
-	"cListItem": "c-list__item",
-	"sStriped": "s-striped"
+	"sStriped": "s-striped",
+	"cListItem": "c-list__item"
 };
 
 const path = require('node:path');

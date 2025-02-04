@@ -5,10 +5,6 @@ export const cPopover = 'c-popover';
 /** @type {string} */
 export const cPopoverBody = 'c-popover__body';
 /** @type {string} */
-export const isHidden = 'is-hidden';
-/** @type {string} */
-export const isVisible = 'is-visible';
-/** @type {string} */
 export const sLinkset = 's-linkset';
 
 /** @type {CSSStyleSheet} */

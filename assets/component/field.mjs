@@ -11,17 +11,15 @@ export const cFieldDescription = 'c-field-description';
 /** @type {string} */
 export const cFieldError = 'c-field-error';
 /** @type {string} */
-export const cFieldIcon = 'c-field-icon';
-/** @type {string} */
 export const cFieldLabel = 'c-field-label';
 /** @type {string} */
-export const iconic = 'iconic';
+export const cFieldIcon = 'c-field-icon';
+/** @type {string} */
+export const isInvalid = 'is-invalid';
 /** @type {string} */
 export const isFilled = 'is-filled';
 /** @type {string} */
 export const isFocused = 'is-focused';
-/** @type {string} */
-export const isInvalid = 'is-invalid';
 /** @type {string} */
 export const sFloating = 's-floating';
 

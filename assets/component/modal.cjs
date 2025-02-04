@@ -1,10 +1,10 @@
 const classNames = {
 	"cModal": "c-modal",
-	"cModalBody": "c-modal__body",
-	"cModalFoot": "c-modal__foot",
-	"cModalHeader": "c-modal__header",
 	"isClosed": "is-closed",
-	"isOpened": "is-opened"
+	"isOpened": "is-opened",
+	"cModalBody": "c-modal__body",
+	"cModalHeader": "c-modal__header",
+	"cModalFoot": "c-modal__foot"
 };
 
 const path = require('node:path');

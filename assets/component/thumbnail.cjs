@@ -1,15 +1,15 @@
 const classNames = {
-	"cPanel": "c-panel",
 	"cThumbnail": "c-thumbnail",
-	"cThumbnailLg": "c-thumbnail--lg",
-	"cThumbnailMd": "c-thumbnail--md",
-	"cThumbnailSm": "c-thumbnail--sm",
-	"cThumbnailSquare": "c-thumbnail--square",
-	"cThumbnailXl": "c-thumbnail--xl",
-	"cThumbnailXs": "c-thumbnail--xs",
+	"cPanel": "c-panel",
 	"cThumbnailCaption": "c-thumbnail__caption",
+	"cThumbnailShutter": "c-thumbnail__shutter",
 	"cThumbnailLink": "c-thumbnail__link",
-	"cThumbnailShutter": "c-thumbnail__shutter"
+	"cThumbnailXs": "c-thumbnail--xs",
+	"cThumbnailSm": "c-thumbnail--sm",
+	"cThumbnailMd": "c-thumbnail--md",
+	"cThumbnailLg": "c-thumbnail--lg",
+	"cThumbnailXl": "c-thumbnail--xl",
+	"cThumbnailSquare": "c-thumbnail--square"
 };
 
 const path = require('node:path');

@@ -1,8 +1,8 @@
 const classNames = {
 	"cCtrl": "c-ctrl",
 	"cCtrlGroup": "c-ctrl-group",
-	"cCtrlPopover": "c-ctrl-popover",
-	"cCtrlSort": "c-ctrl-sort"
+	"cCtrlSort": "c-ctrl-sort",
+	"cCtrlPopover": "c-ctrl-popover"
 };
 
 const path = require('node:path');

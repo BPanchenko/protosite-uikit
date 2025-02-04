@@ -1,8 +1,6 @@
 const classNames = {
 	"cPopover": "c-popover",
 	"cPopoverBody": "c-popover__body",
-	"isHidden": "is-hidden",
-	"isVisible": "is-visible",
 	"sLinkset": "s-linkset"
 };
 

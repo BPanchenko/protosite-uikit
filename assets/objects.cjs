@@ -1,19 +1,14 @@
 const classNames = {
-	"cButton": "c-button",
-	"cCrumb": "c-crumb",
-	"cFieldBox": "c-field-box",
-	"cIcon": "c-icon",
-	"cLabel": "c-label",
-	"cPicture": "c-picture",
 	"oForm": "o-form",
-	"oFormBody": "o-form__body",
-	"oFormButtons": "o-form__buttons",
 	"oFormHead": "o-form__head",
 	"oFormRow": "o-form__row",
+	"cFieldBox": "c-field-box",
+	"oFormButtons": "o-form__buttons",
+	"oFormBody": "o-form__body",
+	"sShort": "s-short",
 	"oNavcrumbs": "o-navcrumbs",
 	"oToolbar": "o-toolbar",
-	"sIcon": "s-icon",
-	"sShort": "s-short"
+	"cButton": "c-button"
 };
 
 const path = require('node:path');

@@ -5,8 +5,6 @@ export const cButton = 'c-button';
 /** @type {string} */
 export const cButtonIcon = 'c-button__icon';
 /** @type {string} */
-export const cButtonText = 'c-button__text';
-/** @type {string} */
 export const cPanel = 'c-panel';
 /** @type {string} */
 export const sClean = 's-clean';

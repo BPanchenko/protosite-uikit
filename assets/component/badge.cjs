@@ -1,10 +1,5 @@
 const classNames = {
-	"cBadge": "c-badge",
-	"cBadgeDanger": "c-badge--danger",
-	"cBadgeInfo": "c-badge--info",
-	"cBadgePrimary": "c-badge--primary",
-	"cBadgeSuccess": "c-badge--success",
-	"cBadgeWarning": "c-badge--warning"
+	"cBadge": "c-badge"
 };
 
 const path = require('node:path');

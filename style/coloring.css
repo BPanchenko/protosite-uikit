@@ -1,80 +1,35 @@
+/* Styles:
+ *   `s-danger`
+ *   `s-primary`
+ *   `s-muted`
+ *   `s-danger`
+=========================================================================== */
+
 @import '../settings/color.css';
 
-/* Style: `s-danger`
-=========================================================================== */
-
-.s-danger,
-.s-danger:hover {
+.s-danger {
+	--bord-color: var(--danger-color);
 	--text-color: var(--danger-color);
-}
 
-:--button-any.s-danger {
-	--bkgd-color: var(--clr-red-600);
-	--bord-color: var(--clr-red-700);
-	--text-color: var(--clr-white);
+	&:hover {
+	}
 }
-
-:--button-any-has-focus.s-danger {
-	--bord-color: var(--clr-red-50);
-}
-
-/* Style: `s-muted`
-=========================================================================== */
 
 .s-muted {
 	--text-color: var(--muted-color);
 }
-
-/* Style: `s-primary`
-=========================================================================== */
 
 .s-primary,
 .s-primary:hover {
 	--text-color: var(--primary-color);
 }
 
-:--button-any.s-primary {
-	--bkgd-color: var(--clr-blue-600);
-	--bord-color: var(--clr-blue-700);
-	--text-color: var(--clr-white);
-}
-
-:--button-any-has-focus.s-primary {
-	--bord-color: var(--clr-blue-50);
-}
-
-/* Style: `s-success`
-=========================================================================== */
-
 .s-success,
 .s-success:hover {
 	--text-color: var(--success-color);
 }
 
-:--button-any.s-success {
-	--bkgd-color: var(--clr-green-600);
-	--bord-color: var(--clr-green-700);
-	--text-color: var(--clr-white);
-}
-
-:--button-any-has-focus.s-success {
-	--bord-color: var(--clr-green-50);
-}
-
-/* Style: `s-warning`
-=========================================================================== */
-
 .s-warning,
 .s-warning:hover {
 	--text-color: var(--warning-color);
-}
-
-:--button-any.s-warning {
-	--bkgd-color: var(--clr-amber-600);
-	--bord-color: var(--clr-amber-700);
-	--text-color: var(--clr-white);
-}
-
-:--button-any-has-focus.s-warning {
-	--bord-color: var(--clr-amber-50);
 }

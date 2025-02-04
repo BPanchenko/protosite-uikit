@@ -33,6 +33,7 @@
 		}
 
 		&:first-child a {
+			@extend %icon-settings;
 			@extend %icon;
 			--icon-size: 1--space;
 

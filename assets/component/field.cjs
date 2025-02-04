@@ -4,12 +4,11 @@ const classNames = {
 	"cFieldContainer": "c-field-container",
 	"cFieldDescription": "c-field-description",
 	"cFieldError": "c-field-error",
-	"cFieldIcon": "c-field-icon",
 	"cFieldLabel": "c-field-label",
-	"iconic": "iconic",
+	"cFieldIcon": "c-field-icon",
+	"isInvalid": "is-invalid",
 	"isFilled": "is-filled",
 	"isFocused": "is-focused",
-	"isInvalid": "is-invalid",
 	"sFloating": "s-floating"
 };
 

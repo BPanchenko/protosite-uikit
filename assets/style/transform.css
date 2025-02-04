@@ -1,1 +1,1 @@
-.s-flip-horizontal:not([data-glyph]),.s-flip-horizontal[data-glyph]:before{transform:scaleX(-1);transform:scaleY(-1);transform:scale(-1)}.s-flip-rotate-90:not([data-glyph]),.s-flip-rotate-90[data-glyph]:before{transform:rotate(-90deg)}
+.s-flip-horizontal{&:not([data-glyph]),&[data-glyph]:before{transform:scaleX(-1)}}.s-flip-horizontal{&:not([data-glyph]),&[data-glyph]:before{transform:scaleY(-1)}}.s-flip-horizontal{&:not([data-glyph]),&[data-glyph]:before{transform:scale(-1)}}.s-flip-rotate-90{&:not([data-glyph]),&[data-glyph]:before{transform:rotate(-90deg)}}

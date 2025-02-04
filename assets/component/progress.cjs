@@ -1,7 +1,7 @@
 const classNames = {
 	"cProgress": "c-progress",
-	"cProgressStriped": "c-progress--striped",
-	"cProgressBar": "c-progress__bar"
+	"cProgressBar": "c-progress__bar",
+	"cProgressStriped": "c-progress--striped"
 };
 
 const path = require('node:path');

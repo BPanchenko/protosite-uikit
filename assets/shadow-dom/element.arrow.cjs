@@ -1,20 +1,17 @@
 const classNames = {
-	"cIcon": "c-icon",
-	"sCondensed": "s-condensed",
-	"sIcon": "s-icon",
-	"sLead": "s-lead",
-	"sLg": "s-lg",
-	"sMd": "s-md",
-	"sSm": "s-sm",
-	"sXl": "s-xl",
+	"icon": "icon",
+	"sXxs": "s-xxs",
 	"sXs": "s-xs",
-	"sXxl": "s-xxl",
-	"sXxs": "s-xxs"
+	"sSm": "s-sm",
+	"sMd": "s-md",
+	"sLg": "s-lg",
+	"sXl": "s-xl",
+	"sXxl": "s-xxl"
 };
 
 const path = require('node:path');
 const fs = require('node:fs');
-const file = path.join(__dirname, 'document.css');
+const file = path.join(__dirname, 'element.arrow.css');
 
 /** @type {string} */
 const content = fs.readFileSync(file, 'utf-8');

@@ -1,11 +1,17 @@
 import importedCSS from './shadow.css' with { type: 'css' }
 
 /** @type {string} */
+export const sShadowSharp = 's-shadow-sharp';
+/** @type {string} */
+export const sShadowDiffuse = 's-shadow-diffuse';
+/** @type {string} */
+export const sShadowDreamy = 's-shadow-dreamy';
+/** @type {string} */
+export const sShadowShorter = 's-shadow-shorter';
+/** @type {string} */
+export const sShadowLonger = 's-shadow-longer';
+/** @type {string} */
 export const sShadow = 's-shadow';
-/** @type {string} */
-export const sShadow16Dp = 's-shadow-16dp';
-/** @type {string} */
-export const sShadow24Dp = 's-shadow-24dp';
 /** @type {string} */
 export const sShadow2Dp = 's-shadow-2dp';
 /** @type {string} */
@@ -17,15 +23,9 @@ export const sShadow6Dp = 's-shadow-6dp';
 /** @type {string} */
 export const sShadow8Dp = 's-shadow-8dp';
 /** @type {string} */
-export const sShadowDiffuse = 's-shadow-diffuse';
+export const sShadow16Dp = 's-shadow-16dp';
 /** @type {string} */
-export const sShadowDreamy = 's-shadow-dreamy';
-/** @type {string} */
-export const sShadowLonger = 's-shadow-longer';
-/** @type {string} */
-export const sShadowSharp = 's-shadow-sharp';
-/** @type {string} */
-export const sShadowShorter = 's-shadow-shorter';
+export const sShadow24Dp = 's-shadow-24dp';
 
 /** @type {CSSStyleSheet} */
 export const styleSheet = importedCSS;

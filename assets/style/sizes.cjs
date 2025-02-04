@@ -1,15 +1,13 @@
 const classNames = {
-	"cButton": "c-button",
-	"cIcon": "c-icon",
 	"sDefaultSize": "s-default-size",
-	"sIcon": "s-icon",
-	"sLg": "s-lg",
-	"sMd": "s-md",
-	"sSm": "s-sm",
-	"sXl": "s-xl",
 	"sXs": "s-xs",
+	"sSm": "s-sm",
+	"sMd": "s-md",
+	"sLg": "s-lg",
+	"sXl": "s-xl",
 	"sXxl": "s-xxl",
-	"sXxxl": "s-xxxl"
+	"sXxxl": "s-xxxl",
+	"cButton": "c-button"
 };
 
 const path = require('node:path');

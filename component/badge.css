@@ -1,7 +1,3 @@
-@import '../settings/color.css';
-@import '../settings/basic.css';
-@import '../settings/typography.css';
-
 /**
  * Component:	   `c-badge`
  * Description:	 Defines styles for badges
@@ -9,6 +5,38 @@
  * Modifiers:	   `c-badge--*colors*`
  * 
  ========================================================================== */
+
+@import '../settings/color.css';
+@import '../settings/basic.css';
+@import '../settings/typography.css';
+
+/* Settings
+=========================================================================== */
+
+.c-badge {
+	--bkgd-color: var(--clr-gray-600);
+	--bord-color: transparent;
+	--text-color: var(--clr-white);
+
+	&.s-primary {
+		--bkgd-color: var(--primary-color);
+	}
+	&.s-info {
+		--bkgd-color: var(--clr-cyan-800);
+	}
+	&.s-success {
+		--bkgd-color: var(--success-color);
+	}
+	&.s-warning {
+		--bkgd-color: var(--warning-color);
+	}
+	&.s-danger {
+		--bkgd-color: var(--danger-color);
+	}
+}
+
+/* Rules
+=========================================================================== */
 
 .c-badge {
 	display: inline-block;
@@ -21,26 +49,8 @@
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
 
-	cursor: default;
-	background-color: var(--clr-gray-600);
-	color: var(--clr-white);
-}
-
-/* Color modifiers
- ========================================================================== */
-
-.c-badge--primary {
-	background-color: var(--primary-color);
-}
-.c-badge--info {
-	background-color: var(--clr-cyan-800);
-}
-.c-badge--success {
-	background-color: var(--success-color);
-}
-.c-badge--warning {
-	background-color: var(--warning-color);
-}
-.c-badge--danger {
-	background-color: var(--danger-color);
+	background-color: var(--bkgd-color);
+	border-color: var(--bord-color);
+	border-style: solid;
+	border-width: 1--pixel;
 }

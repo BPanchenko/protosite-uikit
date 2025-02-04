@@ -1,9 +1,9 @@
 const classNames = {
 	"cList": "c-list",
+	"sHovered": "s-hovered",
 	"cListItem": "c-list__item",
 	"cPanel": "c-panel",
-	"cThumbnail": "c-thumbnail",
-	"sHovered": "s-hovered"
+	"cThumbnail": "c-thumbnail"
 };
 
 const path = require('node:path');

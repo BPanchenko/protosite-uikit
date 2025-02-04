@@ -1,0 +1,1 @@
+*{color:var(--text-color);font-family:var(--text-font);font-size:var(--text-size);font-weight:var(--text-boldness);line-height:var(--text-interligne)}:where(:before,:after){color:var(--text-color,currentColor);font-family:var(--text-font,inherit);font-size:var(--text-size,inherit);font-weight:var(--text-boldness,inherit);line-height:var(--text-interligne,inherit)}

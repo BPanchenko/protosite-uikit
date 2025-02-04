@@ -1,15 +1,15 @@
 const classNames = {
 	"cChart": "c-chart",
-	"cChartAxis": "c-chart__axis",
 	"cChartCanvas": "c-chart__canvas",
-	"cChartControls": "c-chart__controls",
+	"cChartAxis": "c-chart__axis",
+	"tick": "tick",
 	"cChartGraph": "c-chart__graph",
-	"dot": "dot",
-	"handle": "handle",
 	"line": "line",
 	"point": "point",
+	"dot": "dot",
+	"handle": "handle",
 	"pointHovered": "point--hovered",
-	"tick": "tick"
+	"cChartControls": "c-chart__controls"
 };
 
 const path = require('node:path');

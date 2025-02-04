@@ -1,12 +1,12 @@
-@import '../settings/basic.css';
-@import '../settings/shadow.css';
-
 /**
  * Core Component: Avatar
  * Childnodes: Link, Mask and Image.
  *	
  * [ProtoSite](http://protosite.rocks/components/avatar.html)
  */
+
+@import '../settings/basic.css';
+@import '../settings/shadow.css';
 
 /** Settings
 =========================================================================== */

@@ -1,11 +1,8 @@
 const classNames = {
-	"cButton": "c-button",
 	"cPanel": "c-panel",
 	"cPanelDivider": "c-panel-divider",
-	"cPanelBody": "c-panel__body",
 	"cPanelHead": "c-panel__head",
-	"cToolbar": "c-toolbar",
-	"sClean": "s-clean"
+	"cPanelBody": "c-panel__body"
 };
 
 const path = require('node:path');

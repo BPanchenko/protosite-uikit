@@ -7,4 +7,13 @@
 	left: 50%;
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
+	inline-size: 100%;
+	block-size: 100%;
+	max-inline-size: max-content;
+	max-block-size: max-content;
+	z-index: 10;
+}
+
+.u-container:has(.u-centering) {
+	position: relative;
 }

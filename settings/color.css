@@ -5,7 +5,7 @@
 @import '@bpanchenko/palette/assets/palette.css';
 
 :root {
-	--base-bkgd-color: var(--clr-background);
+	--base-bkgd-color: var(--clr-gray-100);
 	--base-bord-color: var(--clr-gray-400);
 	--base-text-color: var(--clr-foreground);
 	--base-link-color: var(--clr-blue-800);

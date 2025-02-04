@@ -1,10 +1,10 @@
 const classNames = {
-	"cPanel": "c-panel",
 	"cTab": "c-tab",
-	"cTabIndicator": "c-tab-indicator",
 	"cTabIcon": "c-tab__icon",
 	"cTabLabel": "c-tab__label",
-	"cTabsContainer": "c-tabs-container"
+	"cTabsContainer": "c-tabs-container",
+	"cTabIndicator": "c-tab-indicator",
+	"cPanel": "c-panel"
 };
 
 const path = require('node:path');

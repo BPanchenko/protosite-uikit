@@ -1,7 +1,7 @@
-import importedCSS from './backdrop.css' with { type: 'css' }
+import importedCSS from './paragraph.css' with { type: 'css' }
 
 /** @type {string} */
-export const cBackdrop = 'c-backdrop';
+export const sLead = 's-lead';
 
 /** @type {CSSStyleSheet} */
 export const styleSheet = importedCSS;
