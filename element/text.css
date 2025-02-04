@@ -18,7 +18,7 @@ hr {
 	block-size: 1--pixel;
 	margin-block: 1--unit;
 
-	background-color: var(--delimeter-color);
+	background-color: var(--delimiter-color);
 	border-bottom: 1px solid var(--clr-white);
 }
 

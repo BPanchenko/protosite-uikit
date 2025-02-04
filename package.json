@@ -34,7 +34,7 @@
     ".snippet/*",
     "assets/*",
     "component/*",
-    "document/*",
+    "element/*",
     "object/*",
     "settings/*",
     "shadow-dom/*",

@@ -1,0 +1,15 @@
+* {
+	color: var(--text-color);
+	font-family: var(--text-font);
+	font-size: var(--text-size);
+	line-height: var(--text-interligne);
+	font-weight: var(--text-boldness);
+}
+
+:where(*::before, *::after) {
+	color: var(--text-color, currentColor);
+	font-family: var(--text-font, inherit);
+	font-size: var(--text-size, inherit);
+	line-height: var(--text-interligne, inherit);
+	font-weight: var(--text-boldness, inherit);
+}

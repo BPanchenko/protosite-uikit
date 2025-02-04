@@ -1,0 +1,44 @@
+@import '../.snippet/custom-selectors.css';
+@import '../.snippet/icon.css';
+
+@layer settings, modifiers, rules;
+
+@layer rules {
+	:--icon {
+		container-name: icon-container;
+		container-type: inline-size;
+
+		&::after {
+			@extend %icon-pseudo-element;
+		}
+
+		&:empty {
+			display: inline-block;
+			box-sizing: content-box;
+			inline-size: var(--icon-size);
+			block-size: var(--icon-size);
+		}
+	}
+}
+
+@layer modifiers {
+	:--icon::after {
+		@container icon-container (min-width: 4rem) {
+			--icon-weight: var(--font-medium);
+		}
+
+		@container icon-container (min-width: 12.8rem) {
+			--icon-weight: var(--font-extra-bold);
+		}
+	}
+
+	:--icon {
+		@extend %icon-modifiers;
+	}
+}
+
+@layer settings {
+	:--icon {
+		@extend %icon-settings;
+	}
+}

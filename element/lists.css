@@ -21,6 +21,7 @@ dl {
 }
 
 ul li {
+	@extend %icon-settings;
 	@extend %icon;
 	--icon-color: var(--secondary-color);
 	--icon-size: 0.3--unit;

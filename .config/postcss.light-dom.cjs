@@ -4,7 +4,6 @@ module.exports = {
   parser: safe,
   plugins: [
     require('postcss-import'),
-    require('postcss-nested'),
     require('postcss-custom-selectors'),
     require('postcss-custom-media'),
     require('postcss-extend-rule')({
