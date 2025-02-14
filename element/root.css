@@ -14,7 +14,7 @@ body {
 	--easing: var(--base-easing);
 
 	--bkgd-color: var(--base-bkgd-color);
-	--bord-color: var(--base-bdr-color);
+	--bord-color: var(--base-bord-color);
 
 	--caption-color: var(--clr-black);
 	--caption-font: var(--accent-font);
