@@ -39,7 +39,7 @@ a {
 	}
 
 	&:focus-visible {
-		outline: 1--pixel dashed currentColor;
+		outline: 1--rpx dashed currentColor;
 		border-radius: 1--space-xxs;
 	}
 }

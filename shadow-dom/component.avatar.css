@@ -110,7 +110,7 @@
 		box-shadow: var(--shadow);
 		box-sizing: border-box;
 		opacity: 0.8;
-		border: 1--pixel solid var(--bord-color);
+		border: 1--rpx solid var(--bord-color);
 		z-index: 2;
 	}
 

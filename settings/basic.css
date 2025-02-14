@@ -9,7 +9,7 @@
 
 :root {
 	--unit: 1.6rem;
-	--pixel: 0.0625--unit;
+	--rpx: 0.0625--unit;
 	--space: 1.5--unit;
 	--space-xxs: 0.125--unit;
 	--space-xs: 0.25--unit;

@@ -6,7 +6,7 @@
 	--base-text-boldness: var(--font-normal);
 	--base-text-font: var(--font-sans);
 	--base-text-width: 36--unit;
-	--base-line-thickness: 1.25--pixel;
+	--base-line-thickness: 1.25--rpx;
 
 	--base-interligne: 1.5;
 	--interligne-xs: 1.1;

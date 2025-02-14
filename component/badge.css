@@ -52,5 +52,5 @@
 	background-color: var(--bkgd-color);
 	border-color: var(--bord-color);
 	border-style: solid;
-	border-width: 1--pixel;
+	border-width: 1--rpx;
 }

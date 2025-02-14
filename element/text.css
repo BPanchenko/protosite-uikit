@@ -15,7 +15,7 @@ hr {
 	margin: unset;
 	padding: unset;
 
-	block-size: 1--pixel;
+	block-size: 1--rpx;
 	margin-block: 1--unit;
 
 	background-color: var(--delimiter-color);

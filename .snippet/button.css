@@ -24,7 +24,7 @@
 	border-color: var(--bord-color);
 	border-radius: var(--radius);
 	border-style: solid;
-	border-width: 1--pixel;
+	border-width: 1--rpx;
 	box-shadow: var(--shadow);
 	cursor: pointer;
 

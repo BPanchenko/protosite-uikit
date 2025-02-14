@@ -124,7 +124,7 @@
 
 	background-color: var(--bkgd-color);
 	border-color: var(--bord-color);
-	border-width: 1--pixel;
+	border-width: 1--rpx;
 	border-style: solid;
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
@@ -133,7 +133,7 @@
 
 :host(:focus) {
 	outline-color: var(--clr-purple-800);
-	outline-width: 1--pixel;
+	outline-width: 1--rpx;
 	outline-style: dashed;
 	outline-offset: -0.8--picker-space;
 }
@@ -162,7 +162,7 @@
 
 		box-sizing: border-box;
 		inline-size: 100%;
-		block-size: calc(1--height - 2--pixel);
+		block-size: calc(1--height - 2--rpx);
 		padding-block: var(--top-space) var(--bottom-space);
 		padding-inline-start: calc(var(--left-space) - var(--picker-space));
 		padding-inline-end: calc(var(--right-space) - var(--picker-space));
@@ -213,7 +213,7 @@
 		border-radius: 0.5--unit;
 		box-shadow: var(--shadow);
 		outline-color: var(--bord-color);
-		outline-width: 1--pixel;
+		outline-width: 1--rpx;
 		outline-style: solid;
 		outline-offset: -0.75--picker-space;
 
@@ -228,7 +228,7 @@
 
 			&::part(container) {
 				display: flex;
-				gap: 1--pixel;
+				gap: 1--rpx;
 				transition: opacity var(--base-easing) 240ms;
 			}
 

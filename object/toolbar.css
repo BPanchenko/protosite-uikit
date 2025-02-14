@@ -48,15 +48,15 @@
 
 .o-toolbar .c-button {
 	border: none;
-	margin-top: -0.5--pixel;
-	margin-bottom: -0.5--pixel;
+	margin-top: -0.5--rpx;
+	margin-bottom: -0.5--rpx;
 
 	&:last-child {
-		margin-right: -1--pixel;
+		margin-right: -1--rpx;
 	}
 
 	& + .c-button {
-		border-left: 0.5--pixel solid var(--bord-color);
+		border-left: 0.5--rpx solid var(--bord-color);
 		margin-left: 0;
 	}
 }
@@ -74,17 +74,17 @@
 	.c-label {
 		padding-right: var(--space-sm);
 		padding-left: var(--unit);
-		margin-top: -0.5--pixel;
+		margin-top: -0.5--rpx;
 	}
 
 	:--icon {
 		background-color: var(--clr-gray-50);
 		padding-right: var(--unit);
 		padding-left: var(--unit);
-		margin-top: 0.5--pixel;
+		margin-top: 0.5--rpx;
 
 		& + .c-button {
-			border-left: 0.5--pixel solid var(--bord-color);
+			border-left: 0.5--rpx solid var(--bord-color);
 		}
 	}
 }
