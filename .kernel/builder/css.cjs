@@ -8,8 +8,7 @@ const pluralize = require('pluralize');
 const postcss = require('postcss');
 
 const packageJson = require('../../package.json');
-const lightDomConfig = require('../../.config/postcss.light-dom.cjs');
-const shadowDomConfig = require('../../.config/postcss.shadow-dom.cjs');
+const { parser, initConfig } = require('#config/postcss.config.cjs');
 
 const ROOT = process.cwd();
 const ADVANCED_FOLDERS = ['component', 'element', 'shadow-dom', 'style'];
@@ -53,8 +52,12 @@ const promises = files.map((file) => {
   const module = path.join(packageJson.name, relTargetPath).split(path.sep).join(path.posix.sep);
   const rawCss = readFileSync(file, { flag: 'r' });
   const isShadyCSS = folder === 'shadow-dom';
+  const isScopedModule = false === isEmpty(folder);
 
-  const { parser, plugins } = isShadyCSS ? shadowDomConfig : lightDomConfig;
+  const { plugins } = initConfig({
+    adaptToShadowDOM: isShadyCSS,
+    removeUnusedVariables: isScopedModule
+  });
 
   checkFileDir(absTargetPath);
   return postcss(plugins)
@@ -86,7 +89,7 @@ function getTargetFile(file) {
   let folder = fileProps.dir.replace(ROOT, '').replace('\\', '');
   let fileName = fileProps.name;
 
-  if (fileProps.name === 'main' && !isEmpty(folder)) {
+  if (fileProps.name === 'main' && false === isEmpty(folder)) {
     fileName = pluralize.plural(folder);
     folder = '';
   }

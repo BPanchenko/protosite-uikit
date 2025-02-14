@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.36.115",
+  "version": "4.37.115",
   "description": "CSS framework for developing web interfaces",
   "keywords": [
     "Component Library",
@@ -13,24 +13,10 @@
   "homepage": "http://protosite.rocks",
   "type": "module",
   "main": "./assets/main.mjs",
-  "exports": {
-    ".": {
-      "import": "./assets/main.mjs",
-      "require": "./assets/main.cjs"
-    },
-    "./postcss.config": "./.config/postcss.light-dom.cjs",
-    "./postcss.shady.config": "./.config/postcss.shadow-dom.cjs",
-    "./*.css": "./assets/*.css",
-    "./*.mjs": "./assets/*.mjs",
-    "./*.cjs": "./assets/*.cjs",
-    "./*": {
-      "import": "./assets/*.mjs",
-      "require": "./assets/*.cjs"
-    }
-  },
   "files": [
     ".config/cssnano.config.cjs",
     ".config/postcss.config.cjs",
+    ".kernel/lib/postcss-shadow-dom.plugin.cjs",
     ".snippet/*",
     "assets/*",
     "component/*",
@@ -43,6 +29,24 @@
     "utility/*",
     "main.css"
   ],
+  "exports": {
+    ".": {
+      "import": "./assets/main.mjs",
+      "require": "./assets/main.cjs"
+    },
+    "./postcss.config": "./.config/postcss.config.cjs",
+    "./*.css": "./assets/*.css",
+    "./*.mjs": "./assets/*.mjs",
+    "./*.cjs": "./assets/*.cjs",
+    "./*": {
+      "import": "./assets/*.mjs",
+      "require": "./assets/*.cjs"
+    }
+  },
+  "imports": {
+    "#config/*": "./.config/*",
+    "#library/*": "./.kernel/lib/*"
+  },
   "scripts": {
     "build:css": "node .kernel/builder/css.cjs",
     "build:scripts": "node .kernel/builder/scripts.cjs",

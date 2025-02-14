@@ -1,5 +1,3 @@
-const { debug } = require('../.kernel/logger.cjs');
-
 /**
  * Check if specified selector is a :root
  * @param  {String} selector
