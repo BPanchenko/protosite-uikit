@@ -137,7 +137,8 @@
 	&__text {
 		/* text-crop */
 
-		:is(&::before, &::after) {
+		&::before,
+		&::after {
 			content: ' ';
 			display: block;
 			height: 0;
@@ -147,6 +148,7 @@
 		&::before {
 			margin-bottom: -0.2em;
 		}
+
 		&::after {
 			margin-top: 0;
 		}

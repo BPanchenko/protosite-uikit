@@ -1,8 +1,7 @@
 const classNames = {
 	"sRounded": "s-rounded",
-	"cButton": "c-button",
-	"cPanel": "c-panel",
-	"cToolbar": "c-toolbar"
+	"cToolbar": "c-toolbar",
+	"cButton": "c-button"
 };
 
 const path = require('node:path');

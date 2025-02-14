@@ -1,6 +1,6 @@
 const classNames = {
-	"sClean": "s-clean",
-	"cButton": "c-button"
+	"cButton": "c-button",
+	"sClean": "s-clean"
 };
 
 const path = require('node:path');

@@ -1,11 +1,11 @@
 const classNames = {
 	"cField": "c-field",
-	"cFieldButton": "c-field-button",
-	"cFieldContainer": "c-field-container",
 	"cFieldDescription": "c-field-description",
 	"cFieldError": "c-field-error",
 	"cFieldLabel": "c-field-label",
+	"cFieldContainer": "c-field-container",
 	"cFieldIcon": "c-field-icon",
+	"cFieldButton": "c-field-button",
 	"isInvalid": "is-invalid",
 	"isFilled": "is-filled",
 	"isFocused": "is-focused",

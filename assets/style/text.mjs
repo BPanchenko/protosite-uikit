@@ -1,16 +1,6 @@
 import importedCSS from './text.css' with { type: 'css' }
 
 /** @type {string} */
-export const sCursive = 's-cursive';
-/** @type {string} */
-export const sMonospace = 's-monospace';
-/** @type {string} */
-export const sSans = 's-sans';
-/** @type {string} */
-export const sSerif = 's-serif';
-/** @type {string} */
-export const sUi = 's-ui';
-/** @type {string} */
 export const sThin = 's-thin';
 /** @type {string} */
 export const sExtraLight = 's-extra-light';

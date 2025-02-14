@@ -3,17 +3,17 @@ import importedCSS from './field.css' with { type: 'css' }
 /** @type {string} */
 export const cField = 'c-field';
 /** @type {string} */
-export const cFieldButton = 'c-field-button';
-/** @type {string} */
-export const cFieldContainer = 'c-field-container';
-/** @type {string} */
 export const cFieldDescription = 'c-field-description';
 /** @type {string} */
 export const cFieldError = 'c-field-error';
 /** @type {string} */
 export const cFieldLabel = 'c-field-label';
 /** @type {string} */
+export const cFieldContainer = 'c-field-container';
+/** @type {string} */
 export const cFieldIcon = 'c-field-icon';
+/** @type {string} */
+export const cFieldButton = 'c-field-button';
 /** @type {string} */
 export const isInvalid = 'is-invalid';
 /** @type {string} */

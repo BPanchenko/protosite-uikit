@@ -1,9 +1,4 @@
 const classNames = {
-	"sCursive": "s-cursive",
-	"sMonospace": "s-monospace",
-	"sSans": "s-sans",
-	"sSerif": "s-serif",
-	"sUi": "s-ui",
 	"sThin": "s-thin",
 	"sExtraLight": "s-extra-light",
 	"sLight": "s-light",

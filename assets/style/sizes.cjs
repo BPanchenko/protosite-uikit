@@ -1,12 +1,4 @@
 const classNames = {
-	"sDefaultSize": "s-default-size",
-	"sXs": "s-xs",
-	"sSm": "s-sm",
-	"sMd": "s-md",
-	"sLg": "s-lg",
-	"sXl": "s-xl",
-	"sXxl": "s-xxl",
-	"sXxxl": "s-xxxl",
 	"cButton": "c-button"
 };
 
