@@ -38,8 +38,6 @@
 	--shadow-key-penumbra-opacity: 0.14;
 	--shadow-ambient-shadow-opacity: 0.12;
 
-	--shadow: var(--shadow-4dp);
-
 	--shadow-2dp: 0 2px 2px 0 rgb(var(--clr-foreground-rgb) / var(--shadow-key-penumbra-opacity)),
 		0 3px 1px -2px rgb(var(--clr-foreground-rgb) / var(--shadow-key-umbra-opacity)),
 		0 1px 5px 0 rgb(var(--clr-foreground-rgb) / var(--shadow-ambient-shadow-opacity));

@@ -1,17 +1,17 @@
 @import '../settings/basic.css';
 @import '../settings/color.css';
-@import '../settings/basic.css';
 @import '../settings/shadow.css';
 
 %field-settings {
 	--height: 2.5--unit;
-	--horz-space: 1--space;
 	--radius: 4--rpx;
 	--shadow: var(--shadow-2dp);
-	--vert-space: 0.125--unit;
 }
 
 %field {
+	position: relative;
+
+	content-visibility: auto;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: left;
@@ -19,14 +19,14 @@
 	box-sizing: border-box;
 	inline-size: inherit;
 	min-block-size: var(--height);
-	padding-block: var(--vert-space);
-	padding-inline: var(--horz-space);
+	padding-block: 0.125--unit;
+	padding-inline: var(--space);
 
 	background-color: var(--bkgd-color);
 	border-color: var(--bord-color);
 	border-radius: var(--radius);
 	border-style: solid;
-	border-width: 1--rpx;
+	border-width: var(--rpx);
 	box-shadow: var(--shadow);
 	cursor: pointer;
 	outline: none;
