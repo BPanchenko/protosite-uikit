@@ -10,7 +10,6 @@ module.exports = {
       onRecursiveExtend: 'warm'
     }),
     require('@csstools/custom-units'),
-    require('postcss-reporter')({ clearReportedMessages: true }),
     require('cssnano')(require('./cssnano.config.cjs'))
   ]
 };
