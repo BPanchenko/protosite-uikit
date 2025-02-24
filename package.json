@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.37.116",
+  "version": "4.37.117",
   "description": "CSS framework for developing web interfaces",
   "keywords": [
     "Component Library",
@@ -18,16 +18,7 @@
     ".config/postcss.config.cjs",
     ".kernel/lib/postcss-shadow-dom.plugin.cjs",
     ".snippet/*",
-    "assets/*",
-    "component/*",
-    "element/*",
-    "object/*",
-    "settings/*",
-    "shadow-dom/*",
-    "style/*",
-    "theme/*",
-    "utility/*",
-    "main.css"
+    "assets/*"
   ],
   "exports": {
     ".": {
@@ -64,14 +55,14 @@
     "@csstools/custom-units": "0.1.1",
     "cssnano": "7.0.6",
     "cssnano-preset-default": "7.0.6",
-    "postcss": "8.5.1",
+    "postcss": "8.5.3",
     "postcss-custom-media": "11.0.5",
     "postcss-custom-selectors": "8.0.4",
     "postcss-extend-rule": "4.0.0",
     "postcss-import": "16.1.0",
     "postcss-nested": "7.0.2",
-    "postcss-prune-var": "1.1.2",
-    "postcss-preset-env": "10.1.3"
+    "postcss-preset-env": "10.1.5",
+    "postcss-prune-var": "1.1.2"
   },
   "devDependencies": {
     "basic-ftp": "5.0.5",
@@ -82,16 +73,9 @@
     "npm-run-all": "4.1.5",
     "pluralize": "8.0.0",
     "postcss-safe-parser": "7.0.1",
-    "prettier": "3.4.2",
+    "prettier": "3.5.2",
     "rimraf": "6.0.1",
     "watcher": "2.3.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BPanchenko/protosite-uikit.git"
-  },
-  "bugs": {
-    "url": "https://github.com/BPanchenko/protosite-uikit/issues"
   },
   "author": {
     "name": "Boris Panchenko",
