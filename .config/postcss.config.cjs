@@ -41,7 +41,7 @@ const initConfig = (options = {}) => {
   const { adaptToShadowDOM = false, removeUnusedVariables = false } = options;
   const plugins = Array.from(pluginsByDefault);
 
-  if (adaptToShadowDOM) plugins.push(require('#library/postcss-shadow-dom.plugin.cjs'));
+  if (adaptToShadowDOM) plugins.push(require('./postcss-shadow-dom.plugin.cjs'));
 
   if (removeUnusedVariables) plugins.push(require('postcss-prune-var'));
 

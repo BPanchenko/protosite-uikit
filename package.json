@@ -1,6 +1,6 @@
 {
   "name": "@bpanchenko/uikit",
-  "version": "4.37.117",
+  "version": "4.37.118",
   "description": "CSS framework for developing web interfaces",
   "keywords": [
     "Component Library",
@@ -14,10 +14,6 @@
   "type": "module",
   "main": "./assets/main.mjs",
   "files": [
-    ".config/cssnano.config.cjs",
-    ".config/postcss.config.cjs",
-    ".kernel/lib/postcss-shadow-dom.plugin.cjs",
-    ".snippet/*",
     "assets/*"
   ],
   "exports": {
@@ -33,10 +29,6 @@
       "import": "./assets/*.mjs",
       "require": "./assets/*.cjs"
     }
-  },
-  "imports": {
-    "#config/*": "./.config/*",
-    "#library/*": "./.kernel/lib/*"
   },
   "scripts": {
     "build:css": "node .kernel/builder/css.cjs",

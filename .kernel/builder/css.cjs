@@ -7,8 +7,7 @@ const path = require('path');
 const pluralize = require('pluralize');
 const postcss = require('postcss');
 
-const packageJson = require('../../package.json');
-const { parser, initConfig } = require('#config/postcss.config.cjs');
+const { parser, initConfig } = require('../../.config/postcss.config.cjs');
 
 const ROOT = process.cwd();
 const DIST = path.resolve(ROOT, 'assets');
