@@ -189,8 +189,6 @@
 	justify-self: end;
 	z-index: 2;
 
-	content-visibility: hidden;
-	display: none;
 	box-sizing: content-box;
 	interpolate-size: allow-keywords;
 	inline-size: var(--width);
@@ -206,15 +204,14 @@
 	outline-style: solid;
 	outline-offset: -0.75--picker-space;
 
-	animation-duration: 460ms;
-	animation-fill-mode: both;
 	animation-name: none;
+	animation-fill-mode: forwards;
 	animation-timing-function: var(--base-easing);
+
+	content-visibility: hidden;
 	transform-origin: top;
 
 	&[role='listbox'] {
-		overflow: hidden;
-
 		&::part(container) {
 			display: flex;
 			gap: var(--rpx);
@@ -235,23 +232,19 @@
 	}
 }
 
+:host(:state(--collapsed)) #picker,
 :host(:state(--expanded)) #picker {
 	content-visibility: auto;
-	display: block;
-	animation-name: expand-picker;
-}
-
-:host(:state(--expanded):not(:state(--animating))) #picker {
 }
 
 :host(:state(--collapsed)) #picker {
-	content-visibility: auto;
-	animation-duration: 240ms;
 	animation-name: collapse-picker;
+	animation-duration: 240ms;
+}
 
-	&[role='listbox']::part(container) {
-		opacity: 0;
-	}
+:host(:state(--expanded)) #picker {
+	animation-name: expand-picker;
+	animation-duration: 320ms;
 }
 
 @keyframes collapse-picker {
@@ -263,11 +256,8 @@
 	}
 
 	70% {
-		transform: translateY(0);
-	}
-
-	85% {
 		opacity: 1;
+		transform: translateY(0);
 	}
 
 	to {
