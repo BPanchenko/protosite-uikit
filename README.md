@@ -64,56 +64,78 @@ TypeScript окружении разработки веб-приложений. 
 
 Базовые переменные дизайн-системы Протосайта: размерности величин и экранов адаптивной вёрстки, шрифты, тени, палитра цветов.
 
-## Использование активов библиотеки
+## Подключение модулей библиотеки
 
-#### Через подключение модулей пакета Node.js
+#### Установка пакета NPM
 
 ```shell
-yarn add @bpanchenko/uikit -D
+npm install @bpanchenko/uikit --save-dev
 ```
 
-#### Через загрузку ресурсов веб-страницы в браузер
+#### Подгрузка внешнего ресурса
 
-```js
-//assets.protosite.rocks/uikit/components.{css,mjs}
-//assets.protosite.rocks/uikit/document.{css,mjs}
-//assets.protosite.rocks/uikit/main.{css,mjs}
-//assets.protosite.rocks/uikit/objects.{css,mjs}
-//assets.protosite.rocks/uikit/styles.{css,mjs}
-//assets.protosite.rocks/uikit/utilities.{css,mjs}
+```
+//assets.protosite.xyz/uikit/
+ ├── component
+ │   ├── badge.css
+ │   ├── button.css
+ │   ├── chart.css
+ │   ├── control.css
+ │   ├── field.css
+ │   ├── grid.css
+ │   ├── list.css
+ │   ├── modal.css
+ │   ├── pagination.css
+ │   ├── panel.css
+ │   ├── popover.css
+ │   ├── progress.css
+ │   ├── tabs.css
+ │   └── thumbnail.css
+ │
+ ├── element
+ │   ├── any-mixes.css
+ │   ├── code.css
+ │   ├── headings.css
+ │   ├── icon.css
+ │   ├── icon.glyphs-arrow.css
+ │   ├── icon.glyphs.css
+ │   ├── link.css
+ │   ├── lists.css
+ │   ├── paragraph.css
+ │   ├── root.css
+ │   ├── table.css
+ │   └── text.css
+ │
+ ├── style
+ │   ├── animated-gradient.css
+ │   ├── backgrounds.css
+ │   ├── clean.css
+ │   ├── coloring.css
+ │   ├── cursor.css
+ │   ├── floating.css
+ │   ├── highlighted.css
+ │   ├── hovered.css
+ │   ├── icon.css
+ │   ├── inversed.css
+ │   ├── link.css
+ │   ├── loading.css
+ │   ├── rounded.css
+ │   ├── shadow.css
+ │   ├── sizes.css
+ │   ├── striped.css
+ │   ├── text.css
+ │   └── transform.css
+ │
+ ├── components.css
+ ├── elements.css
+ ├── main.css
+ ├── objects.css
+ ├── styles.css
+ └── utilities.css
+```
 
-//assets.protosite.rocks/uikit/component/avatar.{css,mjs}
-//assets.protosite.rocks/uikit/component/backdrop.{css,mjs}
-//assets.protosite.rocks/uikit/component/badge.{css,mjs}
-//assets.protosite.rocks/uikit/component/button.{css,mjs}
-//assets.protosite.rocks/uikit/component/chart.{css,mjs}
-//assets.protosite.rocks/uikit/component/control.{css,mjs}
-//assets.protosite.rocks/uikit/component/dialog.{css,mjs}
-//assets.protosite.rocks/uikit/component/list.{css,mjs}
-//assets.protosite.rocks/uikit/component/pagination.{css,mjs}
-//assets.protosite.rocks/uikit/component/panel.{css,mjs}
-//assets.protosite.rocks/uikit/component/popover.{css,mjs}
-//assets.protosite.rocks/uikit/component/progress.{css,mjs}
-//assets.protosite.rocks/uikit/component/tabs.{css,mjs}
-//assets.protosite.rocks/uikit/component/thumbnail.{css,mjs}
-//assets.protosite.rocks/uikit/component/toolbar.{css,mjs}
-
-//assets.protosite.rocks/uikit/style/animated-gradient.{css,mjs}
-//assets.protosite.rocks/uikit/style/backgrounds.{css,mjs}
-//assets.protosite.rocks/uikit/style/clean.{css,mjs}
-//assets.protosite.rocks/uikit/style/cursor.{css,mjs}
-//assets.protosite.rocks/uikit/style/floating.{css,mjs}
-//assets.protosite.rocks/uikit/style/highlighted.{css,mjs}
-//assets.protosite.rocks/uikit/style/hovered.{css,mjs}
-//assets.protosite.rocks/uikit/style/icon.{css,mjs}
-//assets.protosite.rocks/uikit/style/inversed.{css,mjs}
-//assets.protosite.rocks/uikit/style/lead.{css,mjs}
-//assets.protosite.rocks/uikit/style/link.{css,mjs}
-//assets.protosite.rocks/uikit/style/loading.{css,mjs}
-//assets.protosite.rocks/uikit/style/rounded.{css,mjs}
-//assets.protosite.rocks/uikit/style/shadows.{css,mjs}
-//assets.protosite.rocks/uikit/style/sizes.{css,mjs}
-//assets.protosite.rocks/uikit/style/striped.{css,mjs}
-//assets.protosite.rocks/uikit/style/text.{css,mjs}
-//assets.protosite.rocks/uikit/style/transform.{css,mjs}
+Таблицы стилей сопровождаются модулями JavaScript с расширением `.mjs`, например:
+```
+//assets.protosite.xyz/uikit/elements.css
+//assets.protosite.xyz/uikit/elements.mjs
 ```
