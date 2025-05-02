@@ -5,7 +5,7 @@ import { logger } from './logger.cjs'
 
 import ftpAccess from '../.config/ftp.json' with { type: 'json' }
 
-const baseUrl = new URL('http://assets.protosite.rocks/')
+const baseUrl = new URL('http://assets.protosite.xyz/')
 
 const ROOT = process.cwd()
 const DIST = path.resolve(ROOT, 'assets')
