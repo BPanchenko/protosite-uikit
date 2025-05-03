@@ -135,6 +135,7 @@ npm install @bpanchenko/uikit --save-dev
 ```
 
 Таблицы стилей сопровождаются модулями JavaScript с расширением `.mjs`, например:
+
 ```
 //assets.protosite.xyz/uikit/elements.css
 //assets.protosite.xyz/uikit/elements.mjs

@@ -11,6 +11,8 @@ export const cPanel = 'c-panel';
 /** @type {string} */
 export const sClean = 's-clean';
 /** @type {string} */
+export const cButtonText = 'c-button__text';
+/** @type {string} */
 export const cChart = 'c-chart';
 /** @type {string} */
 export const cChartCanvas = 'c-chart__canvas';

@@ -4,6 +4,7 @@ const classNames = {
 	"cButtonIcon": "c-button__icon",
 	"cPanel": "c-panel",
 	"sClean": "s-clean",
+	"cButtonText": "c-button__text",
 	"cChart": "c-chart",
 	"cChartCanvas": "c-chart__canvas",
 	"cChartAxis": "c-chart__axis",

@@ -8,6 +8,8 @@ export const cButtonIcon = 'c-button__icon';
 export const cPanel = 'c-panel';
 /** @type {string} */
 export const sClean = 's-clean';
+/** @type {string} */
+export const cButtonText = 'c-button__text';
 
 /** @type {CSSStyleSheet} */
 export const styleSheet = importedCSS;

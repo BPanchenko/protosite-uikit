@@ -1,95 +1,95 @@
 @import '../settings/basic.css';
 
-[class*='u-mgn'] {
+[class*='u-margin'] {
 	--margin: var(--space);
 }
 
-[class*='u-mgn-xs'] {
+[class*='u-margin-xs'] {
 	--margin: var(--space-xs);
 }
 
-[class*='u-mgn-sm'] {
+[class*='u-margin-sm'] {
 	--margin: var(--space-sm);
 }
 
-[class*='u-mgn-md'] {
+[class*='u-margin-md'] {
 	--margin: var(--space-md);
 }
 
-[class*='u-mgn-lg'] {
+[class*='u-margin-lg'] {
 	--margin: var(--space-lg);
 }
 
-[class*='u-mgn-xl'] {
+[class*='u-margin-xl'] {
 	--margin: var(--space-xl);
 }
 
-[class*='u-mgn-xxl'] {
+[class*='u-margin-xxl'] {
 	--margin: var(--space-xxl);
 }
 
-.u-mgn-xs,
-.u-mgn-sm,
-.u-mgn-md,
-.u-mgn-lg,
-.u-mgn-xl,
-.u-mgn-xxl,
-.u-mgn {
+.u-margin-xs,
+.u-margin-sm,
+.u-margin-md,
+.u-margin-lg,
+.u-margin-xl,
+.u-margin-xxl,
+.u-margin {
 	margin: var(--margin);
 }
 
-.u-mgn-xs-top,
-.u-mgn-sm-top,
-.u-mgn-md-top,
-.u-mgn-lg-top,
-.u-mgn-xl-top,
-.u-mgn-xxl-top,
-.u-mgn-top {
+.u-margin-xs-top,
+.u-margin-sm-top,
+.u-margin-md-top,
+.u-margin-lg-top,
+.u-margin-xl-top,
+.u-margin-xxl-top,
+.u-margin-top {
 	margin-block-start: var(--margin);
 }
 
-.u-mgn-xs-right,
-.u-mgn-sm-right,
-.u-mgn-md-right,
-.u-mgn-lg-right,
-.u-mgn-xl-right,
-.u-mgn-xxl-right,
-.u-mgn-right {
+.u-margin-xs-right,
+.u-margin-sm-right,
+.u-margin-md-right,
+.u-margin-lg-right,
+.u-margin-xl-right,
+.u-margin-xxl-right,
+.u-margin-right {
 	margin-inline-end: var(--margin);
 }
 
-.u-mgn-xs-bottom,
-.u-mgn-sm-bottom,
-.u-mgn-md-bottom,
-.u-mgn-lg-bottom,
-.u-mgn-xl-bottom,
-.u-mgn-xxl-bottom,
-.u-mgn-bottom {
+.u-margin-xs-bottom,
+.u-margin-sm-bottom,
+.u-margin-md-bottom,
+.u-margin-lg-bottom,
+.u-margin-xl-bottom,
+.u-margin-xxl-bottom,
+.u-margin-bottom {
 	margin-block-end: var(--margin);
 }
 
-.u-mgn-xs-left,
-.u-mgn-sm-left,
-.u-mgn-md-left,
-.u-mgn-lg-left,
-.u-mgn-xl-left,
-.u-mgn-xxl-left,
-.u-mgn-left {
+.u-margin-xs-left,
+.u-margin-sm-left,
+.u-margin-md-left,
+.u-margin-lg-left,
+.u-margin-xl-left,
+.u-margin-xxl-left,
+.u-margin-left {
 	margin-inline-start: var(--margin);
 }
 
-.u-mgn-remove {
+.u-margin-remove {
 	margin: unset;
 }
-.u-mgn-top-remove {
+.u-margin-top-remove {
 	margin-block-start: unset;
 }
-.u-mgn-right-remove {
+.u-margin-right-remove {
 	margin-inline-end: unset;
 }
-.u-mgn-bottom-remove {
+.u-margin-bottom-remove {
 	margin-block-end: unset;
 }
-.u-mgn-left-remove {
+.u-margin-left-remove {
 	margin-inline-start: unset;
 }
