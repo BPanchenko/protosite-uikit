@@ -19,6 +19,10 @@
 			block-size: var(--icon-size);
 		}
 	}
+
+	a[data-glyph]:empty {
+		text-decoration: none;
+	}
 }
 
 @layer modifiers {

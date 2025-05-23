@@ -5,9 +5,6 @@
 		&:has(a:first-child) {
 			--text-color: var(--link-color);
 		}
-		&:last-of-type {
-			--text-color: var(--muted-color);
-		}
 	}
 }
 
@@ -35,7 +32,9 @@
 		&:first-child a {
 			@extend %icon-settings;
 			@extend %icon;
+
 			--icon-size: 1--space;
+			text-decoration: none;
 
 			&::before {
 				content: '\e1c1';

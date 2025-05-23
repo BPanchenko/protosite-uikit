@@ -33,8 +33,9 @@ a {
 	transition-property: color;
 	transition-timing-function: var(--easing);
 
-	&:hover,
-	&:focus-visible {
+	&:empty,
+	&:focus-visible,
+	&:hover {
 		text-decoration: none;
 	}
 
