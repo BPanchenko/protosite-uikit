@@ -1,5 +1,8 @@
 const classNames = {
-	"cGrid": "c-grid"
+	"cGrid": "c-grid",
+	"cGridGuide": "c-grid__guide-",
+	"line": "line",
+	"sizes": "sizes"
 };
 
 const path = require('node:path');

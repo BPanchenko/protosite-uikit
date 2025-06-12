@@ -77,6 +77,10 @@ export const sFloating = 's-floating';
 /** @type {string} */
 export const cGrid = 'c-grid';
 /** @type {string} */
+export const cGridGuide = 'c-grid__guide-';
+/** @type {string} */
+export const sizes = 'sizes';
+/** @type {string} */
 export const cList = 'c-list';
 /** @type {string} */
 export const cListBody = 'c-list__body';

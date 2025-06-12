@@ -32,6 +32,8 @@ const classNames = {
 	"isFocused": "is-focused",
 	"sFloating": "s-floating",
 	"cGrid": "c-grid",
+	"cGridGuide": "c-grid__guide-",
+	"sizes": "sizes",
 	"cList": "c-list",
 	"cListBody": "c-list__body",
 	"cListCell": "c-list__cell",
